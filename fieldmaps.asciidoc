@@ -1501,5 +1501,5 @@ latexmath:[N= (N_{z} + 1) \times (N_{y} + 1) \times (N_{x} + 1)].
 [bibliography]
 References
 ~~~~~~~~~~
-* [[[bib:enge]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
-* [[[bib:superfish]]] J. H. Billen and L. M. Young, _Poisson superfish_, tech. rep. LA-UR-96-1834 (Los Alamos National Laboratory, 2004).
+* [[[bib_enge]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
+* [[[bib_superfish]]] J. H. Billen and L. M. Young, _Poisson superfish_, tech. rep. LA-UR-96-1834 (Los Alamos National Laboratory, 2004).

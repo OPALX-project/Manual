@@ -52,7 +52,7 @@ ORIGIN::
   Position vector of the origin of the line. All elements in this line
   that are placed using `ELEMEDGE` use this position as reference.
 ORIENTATION::
-  Vector of Tait-Bryan angles [bib:tait-bryan] of the orientation of the
+  Vector of Tait-Bryan angles [bib_tait-bryan] of the orientation of the
   line at the origin.
 
 [[sub-lines]]

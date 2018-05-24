@@ -769,5 +769,5 @@ link:examples/matchedDistribution.output[]
 [bibliography]
 References
 ~~~~~~~~~~
-* [[[bib:howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
-* [[[bib:schietinger]]] T. Schietinger, http://amas.web.psi.ch/tools/H5root/index.html[_H5root_], 2006.
+* [[[bib_howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+* [[[bib_schietinger]]] T. Schietinger, http://amas.web.psi.ch/tools/H5root/index.html[_H5root_], 2006.
