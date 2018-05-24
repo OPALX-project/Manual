@@ -279,11 +279,12 @@ Name:DISTRIBUTION, TYPE = FROMFILE,
 The text input file for the `FROMFILE` distribution type has slightly a
 slightly different format, depending on whether the distribution is to
 be _injected_ or _emitted_. The _injected_ file format is defined in
-Table <<fromfileinjfileformat,8>>. The _emitted_ file format is defined in
-Table <<fromfileemitfileformat,9>>.
+Table <<fromfileinjfileformat,8>>. The particle coordinates are defined in Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec:variablesopalcycl[_OPAL-cycl_ variables]. The _emitted_ file format is defined in
+Table <<fromfileemitfileformat,9>>. The particle coordinates are defined in Section link:opalt#sec:variablesopalt[_OPAL-t_ variables] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
+[cols="<,<,<,<,<,<",]
 
 [#fromfileinjfileformat]
-.File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Sections link:opalt#sec:variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec:variablesopalcycl[_OPAL-cycl_ variables].
+.File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. 
 [cols="<,<,<,<,<,<",]
 |=======================================================================
 |N | | | | |
@@ -298,8 +299,7 @@ Table <<fromfileemitfileformat,9>>.
 |=======================================================================
 
 [#fromfileemitfileformat]
-.File format for _emitted_ `FROMFILE` distribution type. N is the number of particles in the file. The particle coordinates are defined in Section link:opalt#sec:variablesopalt[_OPAL-t_ variables] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
-[cols="<,<,<,<,<,<",]
+.File format for _emitted_ `FROMFILE` distribution type. N is the number of particles in the file. 
 |=======================================================================
 |N | | | | |
 |latexmath:[x_{1}] |latexmath:[p_{x1}] |latexmath:[y_{1}]
