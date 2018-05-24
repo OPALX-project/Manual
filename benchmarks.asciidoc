@@ -21,7 +21,7 @@ TRACE 3D
 
 TRACE 3D is an interactive beam dynamics program that calculates the
 envelopes of a bunched beam, including linear space-change forces
-<<bib#TraceMan>>. It provides an instantaneous beam profile diagram and
+<<bib:TraceMan>>. It provides an instantaneous beam profile diagram and
 delineates the transverse and longitudinal phase plane, where the
 ellipses are characterized by the Twiss parameters and emittances (total
 and unnormalized).
@@ -64,7 +64,7 @@ and
 where latexmath:[\beta] and latexmath:[\gamma] are the relativist
 parameters, latexmath:[\lambda] is the free-space wavelength of the RF
 and W is the kinetic energy [MeV] at the beam center. This internal
-conversion can be displayed using the _command W_ (see <<bib#TraceMan>> page
+conversion can be displayed using the _command W_ (see <<bib:TraceMan>> page
 42).
 
 [[sec:T3D_input]]
@@ -114,9 +114,9 @@ TRANSPORT
 
 TRANSPORT is a computer program for first-order and second-order matrix
 multiplication, intended for the design of beam transport system
-<<bib#transport>>. The TRANSPORT version for Windows provides a graphic
+<<bib:transport>>. The TRANSPORT version for Windows provides a graphic
 beam profile diagram, as well as a sigma matrix description of the
-simulated beam and line <<bib#Transport_GUI>>. Differently from TRACE 3D, the
+simulated beam and line <<bib:Transport_GUI>>. Differently from TRACE 3D, the
 ellipses are characterized by the sigma-matrix coefficients and the
 Twiss parameters and emittances (total and unnormalized) are reported as
 output information.
@@ -148,7 +148,7 @@ from the assumed central trajectory.
 
 Even if TRANSPORT supports this standard set of units [cm, mrad and %];
 however using *card 15*, the users can redefine the units (see page 99
-on TRANSPORT documentation <<bib#transport>> for more details).
+on TRANSPORT documentation <<bib:transport>> for more details).
 
 [[sec:TRAN_input]]
 TRANSPORT Input beam
@@ -184,7 +184,7 @@ directly used as input beam in TRANSPORT. An example of TRACE 3D
 sigma-matrix structure is shown in Figure <<trace_z,2>>.
 
 [#fig:trace_z]
-.Figure 2: Sigma-matrix structure in TRACE 3D <<bib#TraceMan>>
+.Figure 2: Sigma-matrix structure in TRACE 3D <<bib:TraceMan>>
 image:figures/Benchmarks/TRACE_z.png[]
 
 From the sigma-matrix coefficients, TRANSPORT reports in output the
@@ -199,10 +199,10 @@ TRANSPORT Graphic Interface
 An improved version of TRANSPORT has been embedded in a new graphic
 shell written in C++ and is providing GUI type tools, which makes it
 easier to design new beam lines. A screen shot of a modern GUI Transport
-interface <<bib#Transport_GUI>> is shown in Figure <<fig:TRANSPORT,3>>.
+interface <<bib:Transport_GUI>> is shown in Figure <<fig:TRANSPORT,3>>.
 
 [#fig:TRANSPORT]
-.Figure 3: GUI TRANSPORT graphic interface <<bib#Tran_ex>>. The continuous lines describe the beam envelope in the vertical plane (above) and horizontal plane (below). The dashed line displays the dispersion. The elements in the beam line are drawn as blue and red rectangles
+.Figure 3: GUI TRANSPORT graphic interface <<bib:Tran_ex>>. The continuous lines describe the beam envelope in the vertical plane (above) and horizontal plane (below). The dashed line displays the dispersion. The elements in the beam line are drawn as blue and red rectangles
 image:figures/Benchmarks/TRANSPORT.png[]
 
 [[sec:T3D_TRAN]]
@@ -831,7 +831,7 @@ Benchmark
 ^^^^^^^^^
 
 The _OPAL_ dipoles all have fringe fields. When comparisons are done
-between _OPAL_ and ELEGANT <<bib#elegant>> for example, one needs to
+between _OPAL_ and ELEGANT <<bib:elegant>> for example, one needs to
 appropriately set the FINT attribute of the bending magnet in ELEGANT in
 order to represent the field correctly. Although ELEGANT tracks in the
 (latexmath:[x, x', y, y', s, \delta]) phase space, where
@@ -1050,8 +1050,8 @@ image:figures/Benchmarks/opal-impact-1MHz-z.png[]
 References
 ~~~~~~~~~~
 
-* [[[bib#TraceMan]]] K. Crandall and D. Rusthoi, _Documentation for trace: an interactive beam-transport code_, tech. rep. (Los Alamos National Laboratory).
-* [[[bib#transport]]] K. L. Brown et al., _TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems_, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
-* [[[bib#TransportGUI]]] U. Rohrer, _PSI graphic transport framework based on a cern-slac-fermilab version by K.L. Brown et al_, tech. rep. (PSI).
-* [[[bib#Tran_ex]]] U. Rohrer, http://aea.web.psi.ch/Urs_Rohrer/MyWeb/moregifs/gantryb.gif.
-* [[[bib#elegant]]] M. Borland, https://www1.aps.anl.gov/icms_files/lsnotes/files/APS_1418218.pdf[_Elegant: a flexible SDDS-compliant code for accelerator simulation_], tech. rep. LS-287 (Advanced Photon Source, Sept. 2000).
+* [[[bib:TraceMan]]] K. Crandall and D. Rusthoi, _Documentation for trace: an interactive beam-transport code_, tech. rep. (Los Alamos National Laboratory).
+* [[[bib:transport]]] K. L. Brown et al., _TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems_, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
+* [[[bib:TransportGUI]]] U. Rohrer, _PSI graphic transport framework based on a cern-slac-fermilab version by K.L. Brown et al_, tech. rep. (PSI).
+* [[[bib:Tran_ex]]] U. Rohrer, http://aea.web.psi.ch/Urs_Rohrer/MyWeb/moregifs/gantryb.gif.
+* [[[bib:elegant]]] M. Borland, https://www1.aps.anl.gov/icms_files/lsnotes/files/APS_1418218.pdf[_Elegant: a flexible SDDS-compliant code for accelerator simulation_], tech. rep. LS-287 (Advanced Photon Source, Sept. 2000).
