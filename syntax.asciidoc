@@ -24,7 +24,7 @@ Statements:
 [cols="<3,^1,<4",]
 |===
 |_comment_    | :  | `//` _anything-except-newline_
-|             | \| | `/\*` __anything-except__ `\*/` `*/`
+|             | \| | `/\*` __anything-except__ `*/` `*/`
 |_identifier_ | :  | `[a-zA-Z][a-zA-Z0-9-]`
 |_integer_ |: |`[0-9]+`
 |_string_ |: |`’`__anything-except-single-quote__`’`
