@@ -112,7 +112,7 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 |latexmath:[\left(k_{1}\left[\text{m}^{-2}\right\]\right)\cdot\left(\text{B}\rho\left[\text{T m}\right\]\right)]
 |latexmath:[k_{1}] |latexmath:[\left[\text{T}/\text{m}\right\]]
 
-|Quantity 2+^|`MADX` 3+^|Conversion 2+^|`OPAL-Input`
+|Quantity 2+^|`MADX` 3+^|Conversion |`OPAL-Input` |
 
 |Element Position |`at :=` |latexmath:[\left[\text{m}\right\]]
 |`ELEMEDGE` |= |(Center of the element) - (Length of the element)/2
@@ -120,7 +120,7 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 
 | |Center of the element | | | | |Begin of the element |
 
-|Quantity 2+^|`OPAL-Output` 3+^|Conversion 2+^|`OPAL-Input`
+|Quantity 2+^|`OPAL-Output` 3+^|Conversion |`OPAL-Input` |
 
 |Momenta |latexmath:[\bar{p}_{x}]
 |latexmath:[\left[\beta\gamma\right\]]
