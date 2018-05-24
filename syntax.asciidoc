@@ -19,9 +19,7 @@ font*.
 Statements:
 ~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_comment_    | :  | `//` _anything-except-newline_
 |             | \| | `/*` __anything-except-__`*/` `*/`
@@ -58,9 +56,7 @@ Statements:
 Real expressions:
 ~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_real-expression_ |: |_real-term_
 | |\| |`+` _real-term_
@@ -118,9 +114,7 @@ Real expressions:
 Real variables and constants:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_real-prefix_ |: |empty
 | |\| |`REAL`
@@ -155,9 +149,7 @@ Real variables and constants:
 Logical expressions:
 ~~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_logical-expression_ |: |_and-expression_
 | |\| |_logical-expression_ \|\| _and-expression_
@@ -180,9 +172,7 @@ Logical expressions:
 Logical variables:
 ~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_logical-prefix_ |: |`BOOL`
 | |\| |`BOOL CONST`
@@ -197,9 +187,7 @@ _logical-expression_
 String expressions:
 ~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_string-expression_ |: |_string_
 | |\| |_identifier_ *// taken as a string*
@@ -210,9 +198,7 @@ String expressions:
 String constants:
 ~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_string-prefix_ |: |`STRING`
 |_string-definition_ |: |_string-prefix_ _string-name_ `=`
@@ -226,9 +212,7 @@ _string-expression_
 Real array expressions:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_array-expression_ |: |_array-term_
 | |\| |`+` _array-term_
@@ -255,9 +239,7 @@ Real array expressions:
 Real array definitions:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_array-prefix_ |: |`REAL VECTOR`
 |_array-definition_ |: |_array-prefix_ _array-name_ `=`
@@ -269,9 +251,7 @@ _array-expression_
 Constraints:
 ~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_constraint_ |: |_array-expression_ _constraint-operator_
 _array-expression_
@@ -284,9 +264,7 @@ _array-expression_
 Variable references:
 ~~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_variable-reference_ |: |_real-name_
 | |\| |_object-name_ `->` _attribute-name_
@@ -296,9 +274,7 @@ Variable references:
 Token lists:
 ~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_token-list_ |: |_anything-except-comma_
 |_token-list-array_ |: |_token-list_
@@ -309,9 +285,7 @@ Token lists:
 Regular expressions:
 ~~~~~~~~~~~~~~~~~~~~
 
-[frame=none]
-[grid=none]
-[cols="<3,^1,<4",]
+[cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_regular-expression_ |: |`"`__UNIX-regular-expression__`"`
 |===
