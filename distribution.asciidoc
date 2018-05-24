@@ -801,7 +801,7 @@ the longitudinal time profile of the distribution is generated.
 `BINOMIAL` Distribution Type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `BINOMIAL` type of distribution is based on <<bib:JohoDist>>. The shape of
+The `BINOMIAL` type of distribution is based on <<bib_JohoDist>>. The shape of
 the binomial distribution is governed by one parameter latexmath:[m].
 By varying this single parameter one obtains the most commonly used
 distributions for our type of simulations, as listed in
@@ -833,7 +833,7 @@ Table <<binomdist,15>> and shown in Figure <<binomialproperties,2>>.
 |=======================================================================
 
 [#binomialproperties]
-.Figure 2: Properties of binomial Phase Space Distributions (taken from  <<bib:JohoDist>>).
+.Figure 2: Properties of binomial Phase Space Distributions (taken from  <<bib_JohoDist>>).
 image:./figures/distribution/BinomialProperties.png[width=700]
 
 The attributes of a `BINOMIAL` distribution are defined in Table <<distattrbinomial,16>>.
@@ -1001,7 +1001,7 @@ Emission Model: `NONEQUIL`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The `NONEQUIL` emission model is based on an actual physical model of
-particle emission as described in <<bib:flo97>>, <<bib:clen2000>>, <<bib:dowe2009>>. The
+particle emission as described in <<bib_flo97>>, <<bib_clen2000>>, <<bib_dowe2009>>. The
 attributes needed by this emission model are listed in
 Table <<distattremitmodelnonequil,19>>.
 

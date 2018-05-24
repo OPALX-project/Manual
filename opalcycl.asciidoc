@@ -702,8 +702,8 @@ Multi-particle tracking mode
 The intermediate phase space data of all particles and some interesting
 parameters, including RMS envelop size, RMS emittance, external field,
 time, energy, length of path, number of bunches and tracking step, are
-stored in the H5hut file-format <<bib:howison2010>> and can be analyzed
-using the H5root <<bib:schietinger>>. The frequency of the data output can
+stored in the H5hut file-format <<bib_howison2010>> and can be analyzed
+using the H5root <<bib_schietinger>>. The frequency of the data output can
 be set using the `PSDUMPFREQ` option of `OPTION` statement
 see Section link:control#sec:option[Option Statement].
 The file is named like the input file but the

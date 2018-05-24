@@ -33,7 +33,7 @@ FFT Based Particle-Mesh (PM) Solver
 
 The Particle-Mesh (PM) solver is one of the oldest improvements over the
 PP solver. Still one of the best references is the book by R.W. Hockney
-& J.W. Eastwood <<bib:hockney>>. The PM solver introduces a discretization of
+& J.W. Eastwood <<bib_hockney>>. The PM solver introduces a discretization of
 space. The rectangular computation domain
 latexmath:[\Omega:=[-L_x,L_x\]\times[-L_y,L_y\]\times[-L_t,L_t\]], just
 big enough to include all particles, is segmented into a regular mesh of
@@ -45,7 +45,7 @@ self-consistent electrostatic beam dynamics code that models the
 transport of intense charged particle beams in accelerators. If the
 bunch is small compared to the transverse size of the beam pipe, the
 conducting walls are usually neglected. In such cases the Hockney method
-may be employed <<bib:hockney>>, <<bib:eastwoodandbrownrigg>> and <<bib:hockneyandeastwood>>. In
+may be employed <<bib_hockney>>, <<bib_eastwoodandbrownrigg>> and <<bib_hockneyandeastwood>>. In
 that method, rather than computing latexmath:[N_p^2] point-to-point
 interactions (where latexmath:[N_p] is the number of macro-particles),
 the potential is instead calculated on a grid of size
@@ -61,7 +61,7 @@ transversely, or when the bunch length is long compared with the pipe
 transverse size, the conducting boundaries cannot be ignored. Poisson
 solvers have been developed previously to treat a bunch of charge in an
 open-ended pipe with various geometries
-<<bib:qiangandryne>> , <<bib:qiangandgluckstern>>.
+<<bib_qiangandryne>> , <<bib_qiangandgluckstern>>.
 
 The solution of the Poisson equation,
 
@@ -240,8 +240,8 @@ the Green function is a symmetric function of its arguments, the value
 at the end of the Green function array (at grid point latexmath:[J-1])
 can be dropped, since it will be recovered implicitly through the
 symmetry of Equation [periodicgreenfunction]. In that case the approach
-is identical to the Hockney method <<bib:hockney>>, <<bib:eastwoodandbrownrigg>>
-and <<bib:hockneyandeastwood>>. Lastly, note that the above
+is identical to the Hockney method <<bib_hockney>>, <<bib_eastwoodandbrownrigg>>
+and <<bib_hockneyandeastwood>>. Lastly, note that the above
 proof that the convolution, Equation [fftconvolution], is identical to
 Equation [bruteforceconvolution] in the unpadded region, works even when
 latexmath:[W^{-j k}] and latexmath:[W^{m k}] are replaced by
@@ -300,7 +300,7 @@ the resulting system of equations is symmetric or `mildly' non-symmetric
 positive definite. In all cases, the system is solved by the
 preconditioned conjugate gradient algorithm with smoothed aggregation
 (SA) based algebraic multigrid (AMG) preconditioning. More details are
-given in <<bib:Adelmann2009p543>>.
+given in <<bib_Adelmann2009p543>>.
 
 [[energy-binning]]
 Energy Binning
@@ -416,8 +416,8 @@ Define Greens Function
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Two Greens functions can be selected: `INTEGRATED`, `STANDARD`. The
-integrated Green’s function is described in <<bib:qiang2005>>, <<bib:qiang2006-1>>,
-<<bib:qiang2006-2>>. Default setting is `INTEGRATED`.
+integrated Green’s function is described in <<bib_qiang2005>>, <<bib_qiang2006-1>>,
+<<bib_qiang2006-2>>. Default setting is `INTEGRATED`.
 
 [[sec:FSBBOX]]
 Define Bounding Box Enlargement

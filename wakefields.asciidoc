@@ -112,22 +112,22 @@ CSR Wakefields
 The electromagnetic field due to a particle moving on a circle in free
 space can be calculated exactly with the Liénard-Wiechert potentials.
 The field has been calculated for all points on the same circle
-<<bib:schott>> ,<<bib:schwinger1949>>. For high particle energies the radiated
+<<bib_schott>> ,<<bib_schwinger1949>>. For high particle energies the radiated
 power is almost exclusively emitted in forward direction, whereas for
 low energies a fraction is also emitted in transverse and backward
 direction. For the case of high-energetic particles an impedance in
-forward direction can be calculated <<bib:murphy1997>>. The procedure is
+forward direction can be calculated <<bib_murphy1997>>. The procedure is
 then the same as for a regular wakefield with the important difference
 that wakes exert forces on trailing particles only. The electromagnetic
 fields of a particle propagating on the mid-plane between two parallel
-metallic plates that stretch to infinity <<bib:schwinger1949>> and for
-finite plates <<bib:nodvick1954>> can also be calculated. For the infinite
-plates an impedance can be calculated <<bib:murphy1997>>.
+metallic plates that stretch to infinity <<bib_schwinger1949>> and for
+finite plates <<bib_nodvick1954>> can also be calculated. For the infinite
+plates an impedance can be calculated <<bib_murphy1997>>.
 
 All of these approaches for CSR neglect any transient effects due to the
 finite length of the bend. Instead they describe the steady state case
 of a bunch circling infinitely long in the field of a dipole magnet. In
-<<bib:saldin1997>> the four different stages of a bunch passing a bending
+<<bib_saldin1997>> the four different stages of a bunch passing a bending
 magnet are treated separately and for each a corresponding wake function
 is derived. This model is used in _OPAL-t_ for `1D-CSR`.
 
@@ -137,7 +137,7 @@ current time. On the other hand it gives a good approximation of effects
 due to CSR in short time.
 
 In addition to the `1D-CSR` model also one that makes use of an
-integrated Green function <<bib:mitchell2013>>, `1D-CSR-IGF`.
+integrated Green function <<bib_mitchell2013>>, `1D-CSR-IGF`.
 
 [[sec:wakecmd]]
 The `WAKE` Command
@@ -270,7 +270,7 @@ points to calculate the force on the particle it is also possible to
 specify these in a file.To get required data points of the wakefield not
 provide in the file we linearly interpolate the available function
 values. The files are specified in the SDDS format
-<<bib:borland1995>>, <<bib:borland1998>>.
+<<bib_borland1995>>, <<bib_borland1998>>.
 
 Whenever a file is specified _OPAL_ will use the wakefield found in the
 file and ignore all other commands related to round beam pipes.
