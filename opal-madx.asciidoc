@@ -43,7 +43,7 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 
 [cols="<,^,>,<,^,<,^,>",options="header",]
 |=======================================================================
-|Quantity 2+^|`MADX`  3+^|Conversion  |_OPAL-Output_
+|Quantity 2+^|`MADX`  3+^|Conversion  |_OPAL-Output_ |
 
 |Momenta 
 |latexmath:[\bar{p}_{x}] 
