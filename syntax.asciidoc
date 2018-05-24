@@ -28,7 +28,7 @@ Statements:
 |_identifier_ | :  | `[a-zA-Z][a-zA-Z0-9-]`
 |_integer_ |: |`[0-9]+`
 |_string_ |: |`’` __anything-except-single-quote__ `’`
-| |\| |`"`anything-except-double-quote`"`
+| |\| |`"` anything-except-double-quote `"`
 |_command_ |: |_keyword_ _attribute-list_
 | |\| |_label_ `:` _keyword_ _attribute-list_
 |_keyword_ |: |_identifier_
