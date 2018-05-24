@@ -44,10 +44,15 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 [cols="<,^,>,<,^,<,^,>",options="header",]
 |=======================================================================
 |Quantity 2+^|`MADX`  3+^|Conversion  2+^|_OPAL-Output_
-|Momenta |latexmath:[\bar{p}_{x}] |[rad]
-|latexmath:[\bar{p}_{x}][latexmath:[\beta\gamma]] |=
+
+|Momenta 
+|latexmath:[\bar{p}_{x}] 
+|[rad]
+|latexmath:[\bar{p}_{x}][latexmath:[\beta\gamma]] 
+|=
 |latexmath:[\left(\bar{p}_{x}\left[\text{rad}\right\]\right)\cdot\left(\beta\gamma\right)]
-|latexmath:[\bar{p}_{x}] |[latexmath:[\beta\gamma]]
+|latexmath:[\bar{p}_{x}] 
+|[latexmath:[\beta\gamma]]
 
 |Correlation of latexmath:[\bar{x}],latexmath:[\bar{p}_{x}]
 |latexmath:[\delta] |[1] |latexmath:[\delta] |=
