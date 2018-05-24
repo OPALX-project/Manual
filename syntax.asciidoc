@@ -22,11 +22,11 @@ Statements:
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
 |_comment_    | :  | `//` _anything-except-newline_
-|             | \| | `/*` __anything-except-__`*/` `*/`
+|             | \| | `/\*` __anything-except__ `*/` `*/`
 |_identifier_ | :  | `[a-zA-Z][a-zA-Z0-9-]`
 |_integer_ |: |`[0-9]+`
-|_string_ |: |`’`__anything-except-single-quote__`’`
-| |\| |`"`anything-except-double-quote`"`
+|_string_ |: |`’` __anything-except-single-quote__ `’`
+| |\| |`"` anything-except-double-quote `"`
 |_command_ |: |_keyword_ _attribute-list_
 | |\| |_label_ `:` _keyword_ _attribute-list_
 |_keyword_ |: |_identifier_
