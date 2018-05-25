@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:syntax]]
+[[chp.syntax]]
 OPAL Language Syntax
 --------------------
 

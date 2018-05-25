@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:control]]
+[[chp.control]]
 Control Statements
 ------------------
 
@@ -15,7 +15,7 @@ Control Statements
 Getting Help
 ~~~~~~~~~~~~
 
-[[sec:help]]
+[[sec.help]]
 HELP Command
 ^^^^^^^^^^^^
 
@@ -41,7 +41,7 @@ HELP,NAME=TWISS;
 HELP,TWISS;
 ....
 
-[[sec:show]]
+[[sec.show]]
 SHOW Command
 ^^^^^^^^^^^^
 
@@ -66,7 +66,7 @@ SHOW,NAME="QD.*\.L*";
 SHOW,"QD.*\.L*";
 ....
 
-[[sec:what]]
+[[sec.what]]
 WHAT Command
 ^^^^^^^^^^^^
 
@@ -90,7 +90,7 @@ WHAT,NAME=QD;
 WHAT,QD;
 ....
 
-[[sec:stop]]
+[[sec.stop]]
 STOP / QUIT Statement
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -101,10 +101,10 @@ STOP or QUIT;
 ....
 
 terminates execution of the _OPAL_ program, or, when the statement
-occurs in a `CALL` file see Section_<<sec:call>>, returns to the calling file.
+occurs in a `CALL` file see Section_<<sec.call>>, returns to the calling file.
 Any statement following the `STOP` or `QUIT` statement is ignored.
 
-[[sec:option]]
+[[sec.option]]
 OPTION Statement
 ~~~~~~~~~~~~~~~~
 
@@ -348,7 +348,7 @@ OPTION,SEED=987456321
 Parameter Statements
 ~~~~~~~~~~~~~~~~~~~~
 
-[[sec:variable]]
+[[sec.variable]]
 Variable Definitions
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -376,7 +376,7 @@ definition may be thought of as a mathematical equation. However, _OPAL_
 is not able to solve the equation for a quantity on the right-hand side.
 
 An assignment in the sense of the FORTRAN or C languages can be achieved
-by using the `EVAL` function see Section <<sec:eval>>.
+by using the `EVAL` function see Section <<sec.eval>>.
 
 A reserved variable is the value `P0` which is used as the global
 reference momentum for normalizing all magnetic field coefficients.
@@ -455,7 +455,7 @@ BOOL FLAG = X != 0;
 Circular definitions are not allowed, but redefinitions by assignment
 are allowed.
 
-[[sec:constant]]
+[[sec.constant]]
 Symbolic Constants
 ^^^^^^^^^^^^^^^^^^
 
@@ -479,7 +479,7 @@ Example:
 CONST IN=0.0254; // conversion of inches to meters
 ....
 
-[[sec:vector]]
+[[sec.vector]]
 Vector Values
 ^^^^^^^^^^^^^
 
@@ -506,7 +506,7 @@ VECTOR A_ON=TABLE(10,1);
 
 Circular definitions are not allowed.
 
-[[sec:eval]]
+[[sec.eval]]
 Assignment to Variables
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -542,7 +542,7 @@ WHILE (X <= 0.10) {
 }
 ....
 
-[[sec:value]]
+[[sec.value]]
 VALUE: Output of Expressions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -580,7 +580,7 @@ programmable calculator. One may also tabulate functions.
 Miscellaneous Commands
 ~~~~~~~~~~~~~~~~~~~~~~
 
-[[sec:echo]]
+[[sec.echo]]
 ECHO Statement
 ^^^^^^^^^^^^^^
 
@@ -594,7 +594,7 @@ ECHO,message;           // shortcut
 `message` is a string value see Section link:format#sec:astring[String Attributes]. It is immediately
 transmitted to the `ECHO` stream.
 
-[[sec:system]]
+[[sec.system]]
 SYSTEM: Execute System Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -626,7 +626,7 @@ SYSTEM,"ls -l"
 
 causes a listing of the current directory in long form on the terminal.
 
-[[sec:title]]
+[[sec.title]]
 TITLE Statement
 ~~~~~~~~~~~~~~~
 
@@ -647,7 +647,7 @@ empty. It can be redefined at any time.
 File Handling
 ~~~~~~~~~~~~~
 
-[[sec:call]]
+[[sec.call]]
 CALL Statement
 ^^^^^^^^^^^^^^
 
@@ -667,7 +667,7 @@ CALL,FILE="structure";
 CALL,"structure";
 ....
 
-[[sec:save]]
+[[sec.save]]
 SAVE Statement
 ^^^^^^^^^^^^^^
 
@@ -688,7 +688,7 @@ SAVE,FILE="structure";
 SAVE,"structure";
 ....
 
-[[sec:if]]
+[[sec.if]]
 IF: Conditional Execution
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -709,7 +709,7 @@ statements following the `IF` is executed if the condition is satisfied.
 If the condition is false, and there is an `ELSE`, the statement or
 group following the `ELSE` is executed.
 
-[[sec:while]]
+[[sec.while]]
 WHILE: Repeated Execution
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -728,7 +728,7 @@ following the `WHILE` is repeated as long as the condition is satisfied.
 Of course some variable(s) must be changed within the `WHILE` group to
 allow the loop to terminate.
 
-[[sec:macro]]
+[[sec.macro]]
 MACRO: Macro Statements (Subroutines)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

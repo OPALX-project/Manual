@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:fieldsolver]]
+[[chp.fieldsolver]]
 Field Solver
 ------------
 
@@ -27,7 +27,7 @@ than one Lorentz frame is defined, the total space charge forces are
 then the summation of contributions from all Lorentz frames. More
 details will be given in Version 2.0.0.
 
-[[sec:fieldsolver:fftbased]]
+[[sec.fieldsolver:fftbased]]
 FFT Based Particle-Mesh (PM) Solver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -86,7 +86,7 @@ an observation location latexmath:[(x,y,z)].
 
 For an isolated distribution of charge this reduces to
 
-[[eq:convolutionsolution]]
+[[eq.convolutionsolution]]
 [latexmath]
 ++++
 \phi(x,y,z)=\int\int\int{\mathrm{d}x' \,\mathrm{d}y' \,\mathrm{d}z'}\rho(x',y',z') G(x-x',y-y',z-z'),
@@ -94,7 +94,7 @@ For an isolated distribution of charge this reduces to
 
 where
 
-[[eq:isolatedgreenfunction]]
+[[eq.isolatedgreenfunction]]
 [latexmath]
 ++++
 G(u,v,w)={\frac{1}{\sqrt{u^2+v^2+w^2}}}.
@@ -103,7 +103,7 @@ G(u,v,w)={\frac{1}{\sqrt{u^2+v^2+w^2}}}.
 A simple discretization of Equation [convolutionsolution] on a Cartesian
 grid with cell size latexmath:[(h_x,h_y,h_z)] leads to,
 
-[[eq:openbruteforceconvolution]]
+[[eq.openbruteforceconvolution]]
 [latexmath]
 ++++
 \phi_{i,j,k}=h_x h_y h_z \sum_{i'=1}^{M_x}\sum_{j'=1}^{M_y}\sum_{k'=1}^{M_t}  \rho_{i',j',k'}G_{i-i',j-j',k-k'},
@@ -121,7 +121,7 @@ FFTs can be used to compute convolutions by appropriate zero-padding of
 the sequences. Discrete convolutions arise in solving the Poisson
 equation, and one is typically interested in the following,
 
-[[eq:bruteforceconvolution]]
+[[eq.bruteforceconvolution]]
 [latexmath]
 ++++
 \bar{\phi}_j=\sum_{k=0}^{K-1}\bar{\rho}_k \bar{G}_{j-k}\quad,
@@ -151,12 +151,12 @@ latexmath:[\rho],
 \bar{\rho}_k & \quad \text{if }k=0,\ldots,K-1 \\
 0 & \quad \text{if }k=K,\ldots,N-1. \\
 \end{array}\right.
-++++ 
+++++
 
 Define a periodic Green function,
 latexmath:[G_m], as follows, 
 
-[[eq:periodicgreenfunction]]
+[[eq.periodicgreenfunction]]
 [latexmath]
 ++++
 G_m=\left\{
@@ -165,11 +165,11 @@ G_m=\left\{
 0 & \quad \text{if }m=J,\ldots,N-K, \\
 G_{m+iN}=G_{m} & \quad \text{for } i \text{ integer }.
 \end{array}\right.
-++++ 
+++++
 
 Now consider the sum
 
-[[eq:fftconvolution]]
+[[eq.fftconvolution]]
 [latexmath]
 ++++
 {\phi}_j=\frac{1}{N}\sum_{k=0}^{N-1} W^{-jk}
@@ -209,7 +209,7 @@ It follows that
 But latexmath:[G] is periodic with period
 latexmath:[N]. Hence,
 
-[[eq:finaleqn]]
+[[eq.finaleqn]]
 [latexmath]
 ++++
 {\phi}_j=\sum_{n=0}^{K-1}~\bar{\rho}_n G_{j-n}
@@ -249,7 +249,7 @@ latexmath:[W^{j k}] and latexmath:[W^{-m k}], respectively, in
 Equation [fftconvolution]. In other words, the FFT-based approach can be
 used to compute
 
-[[eq:bruteforcecorrelation]]
+[[eq.bruteforcecorrelation]]
 [latexmath]
 ++++
 \bar{\phi}_j=\sum_{k=0}^{K-1}\bar{\rho}_k \bar{G}_{j+k}\quad,
@@ -271,7 +271,7 @@ Algorithm used in _OPAL_
 As a result, the solution of Equation [openbruteforceconvolution] is
 then given by
 
-[[eq:oneterm]]
+[[eq.oneterm]]
 [latexmath]
 ++++
 \phi_{i,j,k}=h_x h_y h_z \text{FFT}^{-1} \{ ( \text{FFT}\{\rho_{i,j,k}\}) ( \text{FFT}\{G_{i,j,k}\}) \}
@@ -313,7 +313,7 @@ used so that within each Lorentz frame the energy spread is small and
 hence the electrostatic approximation is valid. More details will be
 given in Version 2.0.0.
 
-[[sec:fieldsolvercmd]]
+[[sec.fieldsolvercmd]]
 The `FIELDSOLVER` Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -378,7 +378,7 @@ grid
 |`AMR_TAGGING` |Mesh-refinement strategy
 |=======================================================================
 
-[[sec:FSFSTYPE]]
+[[sec.FSFSTYPE]]
 Define the Fieldsolver to be used
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -386,7 +386,7 @@ At present only a FFT based solver is available. Future solvers will
 include Finite Element solvers and a Multigrid solver with
 Shortley-Weller boundary conditions for irregular domains.
 
-[[sec:FSDomDEC]]
+[[sec.FSDomDEC]]
 Define Domain Decomposition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -395,14 +395,14 @@ can be parallel (`TRUE`) or serial `FALSE`. The default settings are:
 parallel in latexmath:[z] and serial in latexmath:[x] and
 latexmath:[y].
 
-[[sec:FSMX]]
+[[sec.FSMX]]
 Define Number of Grid Points
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Number of grid points in latexmath:[x], latexmath:[y] and
 latexmath:[z] for a rectangular grid.
 
-[[sec:FSBC]]
+[[sec.FSBC]]
 Define Boundary Conditions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -411,7 +411,7 @@ latexmath:[x], latexmath:[y] namely: `OPEN` and for latexmath:[z]
 `OPEN` & `PERIODIC`. In the case you select for latexmath:[z] periodic
 you are about to model a DC-beam.
 
-[[sec:FSGREEN]]
+[[sec.FSGREEN]]
 Define Greens Function
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -419,7 +419,7 @@ Two Greens functions can be selected: `INTEGRATED`, `STANDARD`. The
 integrated Green’s function is described in <<bib.qiang2005>>, <<bib.qiang2006-1>>,
 <<bib.qiang2006-2>>. Default setting is `INTEGRATED`.
 
-[[sec:FSBBOX]]
+[[sec.FSBBOX]]
 Define Bounding Box Enlargement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -427,40 +427,40 @@ The bounding box defines a minimal rectangular domain including all
 particles. With `BBOXINCR` the bounding box can be enlarged by a factor
 given in percent of the minimal rectangular domain.
 
-[[sec:GEOMETRY]]
+[[sec.GEOMETRY]]
 Define Geometry
 ~~~~~~~~~~~~~~~
 
 The list of geometries defining the beam line boundary. For further
 details see Chapter link:geometry[Geometry].
 
-[[sec:ITSOLVER]]
+[[sec.ITSOLVER]]
 Define Iterative Solver
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The iterative solver for solving the preconditioned system: `CG`,
 `BiCGSTAB` or `GMRES`.
 
-[[sec:INTERPL]]
+[[sec.INTERPL]]
 Define Interpolation for Boundary Points
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The interpolation method for grid points near the boundary: `CONSTANT`,
 `LINEAR` or `QUADRATIC`.
 
-[[sec:TOL]]
+[[sec.TOL]]
 Define Tolerance
 ~~~~~~~~~~~~~~~~
 
 The tolerance for the iterative solver used by the `MG` solver.
 
-[[sec:MAXITERS]]
+[[sec.MAXITERS]]
 Define Maximal Iterations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The maximal number of iterations the iterative solver performs.
 
-[[sec:PRECMODE]]
+[[sec.PRECMODE]]
 Define Preconditioner Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -482,7 +482,7 @@ default)
 |`REUSE` |The preconditioner is reused
 |=======================================================================
 
-[[sec:FSENBINS]]
+[[sec.FSENBINS]]
 Define the number of Energy Bins to use
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -499,7 +499,7 @@ latexmath:[\mathrm{ENBINS} \le \mathrm{NNEIGHBB}].
 The variable `MINSTEPFORREBIN` defines the number of integration step
 that have to pass until all energy bins are merged into one.
 
-[[sec:AMR]]
+[[sec.AMR]]
 Define AMR Solver
 ~~~~~~~~~~~~~~~~~
 

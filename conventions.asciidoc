@@ -7,11 +7,11 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:conventions]]
+[[chp.conventions]]
 Conventions
 -----------
 
-[[sec:units]]
+[[sec.units]]
 Physical Units
 ~~~~~~~~~~~~~~
 

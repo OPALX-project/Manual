@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:opalt]]
+[[chp.opalt]]
 _OPAL-t_
 --------
 
@@ -36,7 +36,7 @@ calculation to model beams with large energy spread. In the very near
 future a parallel Multigrid solver taking into account the exact
 geometry will be implemented.
 
-[[sec:variablesopalt]]
+[[sec.variablesopalt]]
 Variables in _OPAL-t_
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -106,7 +106,7 @@ freely in three-dimensional space.
 See Section link:element#sec:Element:common[Common Attributes for all Elements]
 for how to define an aperture.
 
-[[sec:CoordinateSystems]]
+[[sec.CoordinateSystems]]
 Coordinate Systems
 ~~~~~~~~~~~~~~~~~~
 
@@ -281,7 +281,7 @@ and orientations of all other elements.
 The accuracy of this method is good for all elements except for those
 that overlap with the field of a dipole.
 
-[[sec:orbitthreader]]
+[[sec.orbitthreader]]
 Orbit Threader and Autophasing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -939,7 +939,7 @@ yield
 
 The substitution of (<<eq-01, 1>>)
 into Maxwell’s equations allows for the derivation of
-recursion relations. ([eq:23]) gives
+recursion relations. ([eq.23]) gives
 
 [latexmath]
 ++++
@@ -954,7 +954,7 @@ Equating the powers in latexmath:[x^i z^{2k}]
 a_{i,k} = \frac{i+1}{2k+1} b_{i+1,k}
 ++++
 
-A similar result is obtained from ([eq:24])
+A similar result is obtained from ([eq.24])
 
 [#eq-12]
 [latexmath]
@@ -967,7 +967,7 @@ A similar result is obtained from ([eq:24])
 
 The last equation from
 latexmath:[\nabla \times \mathbf{B} = 0] should be consistent with the
-two recursion relations obtained. ([eq:22]) implies
+two recursion relations obtained. ([eq.22]) implies
 
 [latexmath]
 ++++
@@ -979,7 +979,7 @@ two recursion relations obtained. ([eq:22]) implies
 \Rightarrow \frac{\partial_s a_{i,k}}{i+1} = \frac{1}{\rho} c_{i,k} + c_{i+1,k}
 ++++
 
-This results follows directly from ([eq:11]) and ([eq:12]); therefore
+This results follows directly from ([eq.11]) and ([eq.12]); therefore
 the relations are consistent. Furthermore, the last required relations
 is obtained from the divergence of *B*
 
@@ -993,7 +993,7 @@ is obtained from the divergence of *B*
 \Rightarrow \partial_s c_{i,k} + \frac{2(k+1)}{\rho} b_{i-1,k+1} + 2(k+1) b_{i,k+1} + \frac{1}{\rho} a_{i,k} + (i+1) a_{i+1,k} + \frac{1}{\rho} a_{i,k} = 0
 ++++
 
-Using the relation ([eq:11]) to replace the latexmath:[a] coefficients
+Using the relation ([eq.11]) to replace the latexmath:[a] coefficients
 with latexmath:[b]’s we arrive at
 
 [latexmath]
@@ -1145,7 +1145,7 @@ transverse field is a constant latexmath:[T_{dipole}(x) = B_0] and
 ++++
 
 This expression can be
-replaced in ([eq:40]) to obtain a more explicit equation.
+replaced in ([eq.40]) to obtain a more explicit equation.
 
 [bibliography]
 References

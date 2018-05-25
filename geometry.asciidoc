@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:geometry]]
+[[chp.geometry]]
 Geometry
 --------
 
@@ -20,7 +20,7 @@ modes:
 boundary geometry
 2.  specify a cylinder with an elliptic base area
 
-[[sec:geometrycmd]]
+[[sec.geometrycmd]]
 Geometry Command
 ~~~~~~~~~~~~~~~~
 

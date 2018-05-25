@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:tutorial]]
+[[chp.tutorial]]
 Tutorial
 --------
 
@@ -93,7 +93,7 @@ Example:
 opal input.in --restartfn input.h5 --restart -1 --info 3
 ....
 
-[[sec:trackautoph]]
+[[sec.trackautoph]]
 Auto-phase Example
 ~~~~~~~~~~~~~~~~~~
 
@@ -129,19 +129,19 @@ FINSS_RGUN
 
 with the first entry defining the number of cavities in the simulation.
 
-[[sec:examplesbeamlines]]
+[[sec.examplesbeamlines]]
 Examples of Particle Accelerators and Beamlines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 link:examples/OBLA-Gun/OBLA-Gun.in[]
 
-[[sec:felinj]]
+[[sec.felinj]]
 PSI XFEL 250 MeV Injector
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 link:examples/diagnostic.in[]
 
-[[sec:inj2]]
+[[sec.inj2]]
 PSI Injector II Cyclotron
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -239,7 +239,7 @@ image:figures/cyclotron/Inj2-z-pz-step-870KeV.png[width=250]
 image:figures/cyclotron/Inj2-z-pz-step-15MeV.png[width=250]
 image:figures/cyclotron/Inj2-z-pz-step-30MeV.png[width=250]
 
-[[sec:Ring]]
+[[sec.Ring]]
 PSI Ring Cyclotron
 ^^^^^^^^^^^^^^^^^^
 
@@ -265,7 +265,7 @@ result and tune calculation result in the PSI Ring cyclotron. Limited by
 size of the user guide, we don’t plan to show too much details as in
 Injector II.
 
-[[sec:oldtonewdist]]
+[[sec.oldtonewdist]]
 Translate Old to New Distribution Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -295,7 +295,7 @@ same as before. These changes are only due to _OPAL_ using a different
 sequence of numbers to create your distribution, and not because of
 errors in the calculation. (Or at least we hope not.)
 
-[[sec:oldtonewdistgungaussandastra]]
+[[sec.oldtonewdistgungaussandastra]]
 `GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` Distribution Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

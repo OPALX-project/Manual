@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:moo]]
+[[chp.moo]]
 Multi Objective Optimisation
 ----------------------------
 
@@ -35,9 +35,9 @@ optimization problems consist of a solution vector and optionally a
 number of equality and inequality constraints. Formally, a general
 multi-objective optimization problem has the form
 
-[[eq:moop:obj]]
-[[eq:moop:constr]]
-[[eq:moop:dvar]]
+[[eq.moop:obj]]
+[[eq.moop:constr]]
+[[eq.moop:dvar]]
 [latexmath]
 ++++
 \begin{aligned}
@@ -48,9 +48,9 @@ multi-objective optimization problem has the form
 ++++
 
 The latexmath:[M]
-objectives ([eq:moop:obj]) are minimized, subject to latexmath:[J]
-inequality constraints ([eq:moop:constr]). An latexmath:[n]-vector
-([eq:moop:dvar]) contains all the design variables with appropriate
+objectives ([eq.moop:obj]) are minimized, subject to latexmath:[J]
+inequality constraints ([eq.moop:constr]). An latexmath:[n]-vector
+([eq.moop:dvar]) contains all the design variables with appropriate
 lower and upper bounds, constraining the design space.
 
 In contrast to single-objective optimization the objective functions
@@ -58,14 +58,14 @@ span a multi-dimensional space in addition to the design variable space
 – for each point in design space there exists a point in objective
 space. The mapping from the latexmath:[n] dimensional design space to
 the latexmath:[M] dimensional objective space visualized in
-Figure <<fig:des_to_obj,1>> is often non-linear. This impedes the search for
+Figure <<fig.des_to_obj,1>> is often non-linear. This impedes the search for
 optimal solutions and increases the computational cost as a result of
 expensive objective function evaluation. Additionally, depending in
 which of the two spaces the algorithm uses to determine the next step,
 it can be difficult to assure an even sampling of both spaces
 simultaneously.
 
-[#fig:des_to_obj]
+[#fig.des_to_obj]
 .Figure 1: The (often non-linear) mapping latexmath:[f : \mathbb{R}^n \rightarrow \mathbb{R}^M] from design to objective space. The dashed lines represent the constraints in design space and the set of solutions (Pareto front) in objective space.
 image:figures/optimiser/design_objective_space.png[]
 
@@ -111,14 +111,14 @@ solution points can be approximated iteratively as the set of
 non-dominated solutions.
 
 The problem of deciding if a point truly belongs to the Pareto set is
-NP-hard. As shown in Figure <<fig:pareto-def,2>> there exist "weaker"
+NP-hard. As shown in Figure <<fig.pareto-def,2>> there exist "weaker"
 formulations of Pareto optimality. Of special interest is the result
 shown in [paya:01], where the authors present a polynomial (in the input
 size of the problem and latexmath:[1/\varepsilon]) algorithm for
 finding an approximation, with accuracy latexmath:[\varepsilon], of
 the Pareto set for database queries.
 
-[fig:pareto-def]
+[fig.pareto-def]
 .Figure 2: Various definitions regarding Pareto optimality.
 image:figures/optimiser/pareto-defs.png[]
 

@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:autophasing]]
+[[chp.autophasing]]
 Auto-phasing Algorithm
 ----------------------
 

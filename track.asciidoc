@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:track]]
+[[chp.track]]
 Tracking
 --------
 
@@ -46,7 +46,7 @@ to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
 |`ENDTRACK`       | Leave tracking mode
 |=======================================================================
 
-[[sec:trackmode]]
+[[sec.trackmode]]
 Track Mode
 ~~~~~~~~~~
 
@@ -166,7 +166,7 @@ _OPAL_ leaves *track mode* when it sees the command
   ENDTRACK;
 ....
 
-[[sec:trackrun]]
+[[sec.trackrun]]
 Track Particles
 ~~~~~~~~~~~~~~~
 

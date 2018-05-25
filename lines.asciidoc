@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp:lines]]
+[[chp.lines]]
 Beam Lines
 ----------
 
@@ -32,7 +32,7 @@ Each `member` may be one of the following:
 
 Beam lines can be nested to any level.
 
-[[sec:simple-beam-lines]]
+[[sec.simple-beam-lines]]
 Simple Beam Lines
 ~~~~~~~~~~~~~~~~~
 
