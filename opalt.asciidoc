@@ -8,8 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.opalt]]
-_OPAL-t_
---------
+## _OPAL-t_
 
 [[introduction]]
 Introduction
