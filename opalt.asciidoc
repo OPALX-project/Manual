@@ -9,7 +9,7 @@ toc::[]
 
 [[chp.opalt]]
 _OPAL-t_
---------
+---------
 
 [[introduction]]
 Introduction
