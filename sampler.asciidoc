@@ -8,9 +8,9 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.sample]]
-Sampler 
+Sampler
 --------
-This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ). 
+This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
 
 **Be aware of the fact, this is an experimental feature in V2.0.0**
 
@@ -33,7 +33,7 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 [cols="<1,<5",options="header",]
 |=======================================================================
 | Attribute     | Description
-| SEQUENCE      | Boolean for random or sequence mode (default: true)
+| SEQUENCE      | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
 | INPUT         | Path to input file.
 | OUTPUT        | Name used in output file generation.
 | OUTDIR        | Name of directory used to run and store generation output files.
@@ -44,6 +44,9 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
 |=======================================================================
+
+The difference between `SEQUENCE = TRUE` and `SEQUENCE = FALSE` is depicted in the following figure.
+image:figures/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
 SAMPLING Command
 ^^^^^^^^^^^^^^^^
