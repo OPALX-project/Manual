@@ -121,7 +121,7 @@ written can be controlled with the `OPTION` statement
 see Section link:control#sec.option[Option Statement] with the flag `STATDUMPFREQ`.
 
 .H5root enables a variety of data analysis and post processing task on _OPAL_ data
-image::figures/H5rootPicture1.png[width=18cm]
+image::figures/H5rootPicture.png[width=18cm]
 
 Very important information is displayed on the _stdout_ i.e. the _terminal_. The user is strongly advised to consult
 the stdout frequently.  
