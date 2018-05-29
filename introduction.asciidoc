@@ -92,7 +92,7 @@ One example of an non trivial test-example is the PSI DC GUN. In
 <<guncomp1>> the comparison between _Impact-t_ and _OPAL-t_ is
 shown. This example is part of the regression test suite that is run
 every night. The input file is found in
-Section <<tutorial.asccidoc#sec.examplesbeamlines,Examples of Particle Accelerators and Beamlines>>.
+Section link:tutorial#sec.examplesbeamlines[Examples of Particle Accelerators and Beamlines].
 
 Misprints and obscurity are almost inevitable in a document of this
 size. Comments and _active contributions_ from readers are therefore
