@@ -134,7 +134,7 @@ for a detailed list of changes in _OPAL_.
 
 See the https://gitlab.psi.ch/OPAL/src/issues[issue list] in the repository.
 
-See also link:pitfalls[pitfalls and limitations].
+See also link:pitfalls#pitfalls-and-limitations[pitfalls and limitations].
 
 [[acknowledgments]]
 === Acknowledgments
