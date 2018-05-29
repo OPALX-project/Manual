@@ -66,15 +66,14 @@ The following example is exemplifying this fact:
 |Gauss 3D | latexmath:[10^8] | latexmath:[1024^3] | Integrated | 10
 |===
 
-Figure <<walldrift,1>> shows the parallel efficiency time as a function of
-used cores for a test example with parameters given in Table <<pex1,1>>. The
+<<walldrift>> shows the parallel efficiency time as a function of
+used cores for a test example with parameters given in <<pex1>>. The
 data were obtained on a Cray XT5 at the Swiss Center for Scientific
 Computing.
 
 [#walldrift]
-**Figure 1: Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores**
-
-image:figures/drift2c1.png[width=10cm]
+.Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
+image::figures/drift2c1.png[width=10cm]
 
 [[quality-management]]
 === Quality Management
