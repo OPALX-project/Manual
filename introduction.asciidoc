@@ -7,14 +7,11 @@ link:home[Back to Main Page]
 
 toc::[]
 
-<<<
 [[chp.Introduction]]
-Introduction
-------------
+== Introduction
 
 [[aim-of-opal-and-history]]
-Aim of _OPAL_ and History
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Aim of _OPAL_ and History
 
 _OPAL_ is a tool for charged-particle optics in accelerator structures
 and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
@@ -50,8 +47,7 @@ The following icon `DOPAL-t` means that a feature is not yet available
 in _OPAL-t_. A similar icon is used for _OPAL-cycl_.
 
 [[parallel-processing-capabilities]]
-Parallel Processing Capabilities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Parallel Processing Capabilities
 
 _OPAL_ is built to harness the power of parallel processing for an
 improved quantitative understanding of particle accelerators. This goal
@@ -78,11 +74,10 @@ Computing.
 [#walldrift]
 **Figure 1: Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores**
 
-image:figures/drift2c1.png[scaledwidth=10cm]
+image:figures/drift2c1.png[width=10cm]
 
 [[quality-management]]
-Quality Management
-~~~~~~~~~~~~~~~~~~
+=== Quality Management
 
 Documentation and quality assurance are given our highest attention
 since we are convinced that adequate documentation is a key factor in
@@ -110,8 +105,7 @@ image:figures/Gun/GunCompEn.png[scaledwidth=50.0%]
 image:figures/Gun/GunCompEx.png[scaledwidth=50.0%]
 
 [[output]]
-Output
-~~~~~~
+=== Output
 
 The phase space is stored in the H5hut file-format <<bib.howison2010>> and can be analyzed
 using e.g. H5root <<bib.schietinger>>. The frequency of the data output (phase space and
@@ -136,22 +130,19 @@ the stdout frequently.
 
 
 [[change-history]]
-Change History
-~~~~~~~~~~~~~~
+=== Change History
 
 See link:../ReleaseNotes/ReleaseNotes[Release Notes] for a detailed list of changes in _OPAL_.
 
 [[known-issues-and-limitations]]
-Known Issues and Limitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Known Issues and Limitations
 
 See the https://gitlab.psi.ch/OPAL/src/issues[issue list] in the repository.
 
 See also link:pitfalls[pitfalls and limitations].
 
 [[acknowledgments]]
-Acknowledgments
-~~~~~~~~~~~~~~~
+=== Acknowledgments
 
 The contributions of various individuals and groups are acknowledged in
 the relevant chapters, however a few individuals have or had
@@ -165,8 +156,7 @@ Yuanjie Bi, Jianjun Yang, Colwyn Gulliford, Hao Zha, Christopher Mayes
 and Tulin Kaman.
 
 [[citation]]
-Citation
-~~~~~~~~
+=== Citation
 
 Please cite _OPAL_ in the following way:
 
@@ -185,8 +175,7 @@ year = {(2008-2018)}
 ....
 
 [[bibliography]]
-References
-~~~~~~~~~~
+=== References
 * [[[bib.classic]]] F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
 * [[[bib.qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
 * [[[bib.howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
