@@ -92,7 +92,7 @@ One example of an non trivial test-example is the PSI DC GUN. In
 <<guncomp1>> the comparison between _Impact-t_ and _OPAL-t_ is
 shown. This example is part of the regression test suite that is run
 every night. The input file is found in
-ifdef::gitlab_html5[]
+ifdef::gitlab-html5[]
 Section link:tutorial#sec.examplesbeamlines[Examples of Particle Accelerators and Beamlines].
 endif::[]
 ifdef::backend-docbook5[]
