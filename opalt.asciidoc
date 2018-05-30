@@ -8,12 +8,10 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.opalt]]
-_OPAL-t_
----------
+== _OPAL-t_
 
 [[introduction]]
-Introduction
-~~~~~~~~~~~~
+=== Introduction
 
 _OPAL-t_ is a fully three-dimensional program to track in time,
 relativistic particles taking into account space charge forces,
@@ -37,8 +35,7 @@ future a parallel Multigrid solver taking into account the exact
 geometry will be implemented.
 
 [[sec.variablesopalt]]
-Variables in _OPAL-t_
-~~~~~~~~~~~~~~~~~~~~~
+=== Variables in _OPAL-t_
 
 _OPAL-t_ uses the following canonical variables to
 describe the motion of particles. The physical units are listed in
@@ -63,8 +60,7 @@ PZ::
 The independent variable is *t* [s].
 
 [[integration-of-the-equation-of-motion]]
-Integration of the Equation of Motion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Integration of the Equation of Motion
 
 _OPAL-t_ integrates the relativistic Lorentz equation
 [latexmath]
@@ -80,8 +76,7 @@ positions and momenta _OPAL-t_ uses the Boris-Buneman algorithm
 <<bib.langdon>>.
 
 [[positioning-of-elements]]
-Positioning of Elements
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Positioning of Elements
 
 Since _OPAL_ version 2.0 of _OPAL_ elements can be placed in space using
 3D coordinates `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI`, see
@@ -107,8 +102,7 @@ See Section link:element#sec:Element:common[Common Attributes for all Elements]
 for how to define an aperture.
 
 [[sec.CoordinateSystems]]
-Coordinate Systems
-~~~~~~~~~~~~~~~~~~
+=== Coordinate Systems
 
 The motion of a charged particle in an accelerator can be described by
 relativistic Hamilton mechanics. A particular motion is that of the
@@ -125,8 +119,7 @@ relation between them can be expressed as
 ++++
 
 [[global-cartesian-coordinate-system]]
-Global Cartesian Coordinate System
-++++++++++++++++++++++++++++++++++
+==== Global Cartesian Coordinate System
 
 We define the global cartesian coordinate system, also known as floor
 coordinate system with latexmath:[K], a point in this coordinate
@@ -140,8 +133,7 @@ latexmath:[e_0, \ldots , e_i, \ldots e_n].
 image:figures/opalt/coords.png[]
 
 [[local-cartesian-coordinate-system]]
-Local Cartesian Coordinate System
-+++++++++++++++++++++++++++++++++
+==== Local Cartesian Coordinate System
 
 A local coordinate system latexmath:[K'_i] is attached to each element
 latexmath:[e_i]. This is simply a frame in which latexmath:[(0,0,0)]
@@ -222,8 +214,7 @@ defined using either `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI` or `ORIGIN`
 and `ORIENTATION`, see Section link:lines#sec:simple-beam-lines[Simple Beam Lines].
 
 [[space-charge-coordinate-system]]
-Space Charge Coordinate System
-++++++++++++++++++++++++++++++
+==== Space Charge Coordinate System
 
 In order to calculate space charge in the electrostatic approximation,
 we introduce a co-moving coordinate system latexmath:[K_{\text{sc}}],
@@ -231,8 +222,7 @@ in which the origin coincides with the mean position of the particles
 and the mean momentum is parallel to the z-axis.
 
 [[curvilinear-coordinate-system]]
-Curvilinear Coordinate System
-+++++++++++++++++++++++++++++
+==== Curvilinear Coordinate System
 
 In order to compute statistics of the particle ensemble,
 latexmath:[K_s] is introduced. The accompanying tripod (Dreibein) of
@@ -248,16 +238,14 @@ image:figures/opalt/curvcoords.png[]
 Both coordinate systems are described in Figure <<KS2,2>>.
 
 [[design-or-reference-orbit]]
-Design or Reference Orbit
-^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Design or Reference Orbit
 
 The reference orbit consists of a series of straight sections and
 circular arcs and is *computed* by the Orbit Threader i.e. deduced from
 the element placement in the floor coordinate system.
 
 [[compatibility-mode]]
-Compatibility Mode
-^^^^^^^^^^^^^^^^^^
+==== Compatibility Mode
 
 To facilitate the change for users we will provide a compatibility mode.
 The idea is that the user does not have to change the input file.
@@ -282,8 +270,7 @@ The accuracy of this method is good for all elements except for those
 that overlap with the field of a dipole.
 
 [[sec.orbitthreader]]
-Orbit Threader and Autophasing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Orbit Threader and Autophasing
 
 The `OrbitThreader` integrates a design particle through the lattice and
 setups up a multi map structure (`IndexMap`). Furthermore when the
@@ -298,8 +285,7 @@ the example given in Figure <<KS1,1>>. An implicit drift is modelled as an
 empty set latexmath:[\emptyset].
 
 [[flow-diagram-of-opal-t]]
-Flow Diagram of _OPAL-t_
-^^^^^^^^^^^^^^^^^^^^^^^^
+=== Flow Diagram of _OPAL-t_
 
 [#OPALTSchemeSimple]
 .Figure 3 : Schematic workflow of _OPAL-t_’s execute method.
@@ -322,16 +308,14 @@ trajectories of the particles are integrated and the computation of the
 statistics of the six-dimensional phase space are performed in the
 reference coordinate system.
 
-[[output]]
-Output
-~~~~~~
+[[sec.opalt-output]]
+=== Output
 
 In addition to the progress report that _OPAL-t_ writes to the standard
 output (stdout) it also writes different files for various purposes.
 
 [[input_file_name-.stat]]
-_<input_file_name >.stat_
-^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _<input_file_name >.stat_
 
 This file is used to log the statistical properties of the bunch in the
 ASCII variant of the SDDS format <<bib.borland1995>>. It can be viewed
@@ -461,8 +445,7 @@ run serial)
 |=======================================================================
 
 [[datainput_file_name-_monitors.stat]]
-_data/<input_file_name >_Monitors.stat_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _data/<input_file_name >_Monitors.stat_
 
 _OPAL-t_ computes the statistics of the bunch for every `MONITOR` that
 it passes. The information that is written can be found in the following
@@ -549,16 +532,14 @@ in floor coordinate system
 |=======================================================================
 
 [[datainput_file_name-_3d.opal]]
-_data/<input_file_name >_3D.opal_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _data/<input_file_name >_3D.opal_
 
 _OPAL-t_ copies the input file into this file and replaces all
 occurrences of `ELEMEDGE` with the corresponding position using `X`,
 `Y`, `Z`, `THETA`, `PHI` and `PSI`.
 
 [[datainput_file_name-_elementpositions.txt]]
-_data/<input_file_name >_ElementPositions.txt_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _data/<input_file_name >_ElementPositions.txt_
 
 _OPAL-t_ stores for every element the position of the entrance and the
 exit. Additionally the reference trajectory inside dipoles is stored. On
@@ -568,8 +549,7 @@ store the z-component then the x-component and finally the y-component
 of the position in floor coordinates.
 
 [[datainput_file_name-_elementpositions.py]]
-_data/<input_file_name >_ElementPositions.py_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _data/<input_file_name >_ElementPositions.py_
 
 This Python script can be used to generate visualizations of the beam
 line in different formats. Beside an ASCII file that can be printed
@@ -597,8 +577,7 @@ The following arguments can be passed
 * `--normal x y z` specify the normal for projection with the components `x`, `y` and `z`
 
 [[datainput_file_name-_elementpositions.stat]]
-_data/<input_file_name >_ElementPositions.stat_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _data/<input_file_name >_ElementPositions.stat_
 
 This file can be used when plotting the statistics of the bunch to
 indicate the positions of the magnets. It is written in the SDDS format.
@@ -632,8 +611,7 @@ present
 |=======================================================================
 
 [[datainput_file_name-_designpath.dat]]
-_data/<input_file_name >_DesignPath.dat_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== _data/<input_file_name >_DesignPath.dat_
 
 The trajectory of the reference particle is stored in this ASCII file.
 The content of the columns are listed in the following table.
@@ -659,8 +637,7 @@ The content of the columns are listed in the following table.
 |========================================================
 
 [[multiple-species]]
-Multiple Species
-~~~~~~~~~~~~~~~~
+=== Multiple Species
 
 In the present version only one particle species can be defined
 see Chapter link:beam[Beam Command], however due to the underlying general structure, the
@@ -668,8 +645,7 @@ implementation of a true multi species version of _OPAL_ should be
 simple to accomplish.
 
 [[multipoles-in-different-coordinate-systems]]
-Multipoles in different Coordinate systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Multipoles in different Coordinate systems
 
 In the following sections there are three models presented for the
 fringe field of a multipole. The first one deals with a straight
@@ -679,8 +655,7 @@ be different by starting with a more compact functional form of the
 field which is then adapted to straight and curved geometries.
 
 [[fringe-field-models]]
-Fringe field models
-^^^^^^^^^^^^^^^^^^^
+==== Fringe field models
 
 _(for a straight multipole)_
 
@@ -876,8 +851,7 @@ field boundary and latexmath:[\lambda] characterizes the fringe field
 length.
 
 [[fringe-field-of-a-curved-multipole]]
-Fringe field of a curved multipole
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Fringe field of a curved multipole
 
 _(fixed radius)_
 
@@ -1015,8 +989,7 @@ an example, for a dipole magnet, the latexmath:[B_{1,0}] function can
 be model as an Enge function or latexmath:[tanh].
 
 [[fringe-field-of-a-curved-multipole-1]]
-Fringe field of a curved multipole
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Fringe field of a curved multipole
 
 _(variable radius of curvature)_
 
@@ -1035,8 +1008,7 @@ rho (s) \propto B(z=0, x=0, s) = B_x (z=0,x=0) = b_{0,0}(s)
 ++++
 
 [[fringe-field-of-a-multipole]]
-Fringe field of a multipole
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Fringe field of a multipole
 
 _This is a different, more compact treatment_ The derivation is more
 clear if we gather the variables together in functions. We assume again
@@ -1148,8 +1120,7 @@ This expression can be
 replaced in ([eq.40]) to obtain a more explicit equation.
 
 [bibliography]
-References
-~~~~~~~~~~
+=== References
 * [[[bib.qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
 * [[[bib.qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
 * [[[bib.qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).

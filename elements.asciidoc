@@ -7,13 +7,11 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.element]]
-Elements
---------
+[[chp.elements]]
+== Elements
 
-[[sec.elm-format]]
-Element Input Format
-~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.input-format]]
+=== Element Input Format
 
 All physical elements are defined by statements of the form
 
@@ -51,9 +49,8 @@ Example:
 QF: QUADRUPOLE, L=1.8, K1=0.015832;
 ....
 
-[[sec.Element:common]]
-Common Attributes for all Elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.common]]
+=== Common Attributes for all Elements
 
 The following attributes are allowed on all elements:
 
@@ -154,9 +151,8 @@ DPSI::
 All elements can have arbitrary additional attributes which are defined
 in the respective section.
 
-[[sec.drift]]
-Drift Spaces
-~~~~~~~~~~~~
+[[sec.elements.drift]]
+=== Drift Spaces
 
 ....
 label:DRIFT, TYPE=string, APERTURE=string, L=real;
@@ -174,9 +170,8 @@ reference system for a drift space is a Cartesian coordinate system This
 is a restricted feature: `DOPAL-cycl`. In _OPAL-t_ drifts are implicitly
 given, if no field is present.
 
-[[sec.bend]]
-Bending Magnets
-~~~~~~~~~~~~~~~
+[[sec.elements.bend]]
+=== Bending Magnets
 
 Bending magnets refer to dipole fields that bend particle trajectories.
 Currently _OPAL_ supports the following different bend elements: `RBEND`, (valid
@@ -188,20 +183,21 @@ Describing a bending magnet can be somewhat complicated as there can be
 many parameters to consider: bend angle, bend radius, entrance and exit
 angles etc. Therefore we have divided this section into several parts:
 
-1.  Sections <<sec.RBend>> and <<sec.SBend>> describe the geometry and attributes of the
+1.  Sections <<sec.elements.RBend>> and <<sec.elements.SBend>> describe the geometry and attributes of the
 _OPAL-t_ bend elements `RBEND` and `SBEND`.
 2.  Section <<sec.RBendSBendExamp>> describes how to implement an `RBEND` or
 `SBEND` in an _OPAL-t_ simulation.
 3.  Section <<sec.SBend3D>> is self contained. It describes how to implement
 an `SBEND3D` element in an _OPAL-cycl_ simulation.
 
-[#fig.rbend]
-.Figure 1: Illustration of a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha]. The entrance edge angle, latexmath:[E_{1}], is positive in this example. An `RBEND` has parallel entrance and exit pole faces, so the exit angle, latexmath:[E_{2}], is uniquely determined by the bend angle, latexmath:[\alpha], and latexmath:[E_{1}] (latexmath:[E_{2}=\alpha - E_{1}]). For a positively charge particle, the magnetic field is directed out of the page.
-image:figures/Elements/rbend.png[]
+<<figrbend>> illustrates a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha]. The entrance edge angle, latexmath:[E_{1}], is positive in this example. An `RBEND` has parallel entrance and exit pole faces, so the exit angle, latexmath:[E_{2}], is uniquely determined by the bend angle, latexmath:[\alpha], and latexmath:[E_{1}] (latexmath:[E_{2}=\alpha - E_{1}]). For a positively charge particle, the magnetic field is directed out of the page.
 
-[[sec.RBend]]
-RBend (_OPAL-t_)
-^^^^^^^^^^^^^^^^
+[#figrbend]
+.Illustration of a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha].
+image::figures/Elements/rbend.png[width=10cm]
+
+[[sec.elements.RBend]]
+==== RBend (_OPAL-t_)
 
 An `RBEND` is a rectangular bending magnet. The key property of an
 `RBEND` is that it has parallel pole faces. Figure <<fig.rbend,1>> shows an
@@ -243,12 +239,11 @@ FMAPFN::
   Name of the field map for the magnet. Currently maps of type
   link:fieldmaps#sec:1DProfile1[`1DProfile1`] can be used. The default option
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
-  see Section_<<sec.benddefaultfieldmapopalt>>. The field map is used to
+  see Section_<<sec.elements.elements.benddefaultfieldmapopalt>>. The field map is used to
   describe the fringe fields of the magnet see Section link:fieldmaps#sec:1DProfile1[`1DProfile1`].
 
-[[sec.RBend3D]]
-RBend3D (_OPAL-t_)
-^^^^^^^^^^^^^^^^^^
+[[sec.elements.RBend3D]]
+==== RBend3D (_OPAL-t_)
 
 An `RBEND3D3D` is a rectangular bending magnet. The key property of an
 `RBEND3D` is that it has parallel pole faces. Figure <<fig.rbend,1>> shows an
@@ -290,16 +285,17 @@ FMAPFN::
   Name of the field map for the magnet. Currently maps of type
   link:fieldmaps#sec:1DProfile1[`1DProfile1`] can be used. The default option
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
-  see Section <<sec.benddefaultfieldmapopalt>>. The field map is used to
+  see Section <<sec.elements.benddefaultfieldmapopalt>>. The field map is used to
   describe the fringe fields of the magnet link:fieldmaps#sec:1DProfile1[`1DProfile1`].
 
 [#fig.sbend]
-.Figure 2: Illustration of a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]. In this example the entrance and exit edge angles latexmath:[E_{1}] and latexmath:[E_{2}] have positive values. For a positively charge particle, the magnetic field is directed out of the page.
-image:figures/Elements/sbend.png[]
+Figure <<fig.sbend>> illustrates a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]. In this example the entrance and exit edge angles latexmath:[E_{1}] and latexmath:[E_{2}] have positive values. For a positively charge particle, the magnetic field is directed out of the page.
 
-[[sec.SBend]]
-SBend (_OPAL-t_)
-^^^^^^^^^^^^^^^^
+.Illustration of a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]
+image::figures/Elements/sbend.png[]
+
+[[sec.elements.SBend]]
+==== SBend (_OPAL-t_)
 
 An `SBEND` is a sector bending magnet. An `SBEND` can have independent
 entrance and exit edge angles. Figure <<fig.sbend,2>> shows an `SBEND` with a
@@ -347,12 +343,11 @@ FMAPFN::
   Name of the field map for the magnet. Currently maps of type
   link:fieldmaps#sec:1DProfile1[`1DProfile1`] can be used. The default option
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
-  see Section_<<sec.benddefaultfieldmapopalt>>. The field map is used to
+  see Section_<<sec.elements.benddefaultfieldmapopalt>>. The field map is used to
   describe the fringe fields of the magnet see Section link:fieldmaps#sec:1DProfile1[`1DProfile1`].
 
-[[sec.RBendSBendExamp]]
-RBend and SBend Examples (_OPAL-t_)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.elements.RBendSBendExamp]]
+==== RBend and SBend Examples (_OPAL-t_)
 
 Describing an `RBEND` or an `SBEND` in an _OPAL-t_ simulation requires
 effectively identical commands. There are only slight differences
@@ -378,7 +373,7 @@ doesn’t correspond to the `DESIGNENERGY`.
 4.  Internally the bend geometry is setup based on the ideal reference
 trajectory, as shown in Figures <<fig.rbend,1>> and <<fig.sbend,2>>.
 5.  If the default field map, `1DPROFILE-DEFAULT`
-see Section <<sec.benddefaultfieldmapopalt>>, is used, the fringe fields will
+see Section <<sec.elements.benddefaultfieldmapopalt>>, is used, the fringe fields will
 be adjusted so that the effective length of the real, soft edge magnet
 matches the ideal, hard edge bend that is defined by the reference
 trajectory.
@@ -386,7 +381,7 @@ trajectory.
 For the rest of this section, we will give several examples of how to
 input bends in an _OPAL-t_ simulation. We will start with a simple
 example using the `ANGLE` attribute to set the bend strength and using
-the default field map see Section <<sec.benddefaultfieldmapopalt>> for
+the default field map see Section <<sec.elements.benddefaultfieldmapopalt>> for
 describing the magnet fringe fields see Section link:fieldmaps#sec:1DProfile1[`1DProfile1`]:
 
 ....
@@ -404,7 +399,7 @@ Figure <<fig.rbend,1>>). It has a design energy of 10 MeV, a length of 0.5 m, a
 vertical gap of 2 cm and a 0latexmath:[^{\circ}] entrance edge angle.
 (Therefore the exit edge angle is 30latexmath:[^{\circ}].) We are
 using the default, internal field map "1DPROFILE1-DEFAULT"
-see Section <<sec.benddefaultfieldmapopalt>> which describes the magnet fringe
+see Section <<sec.elements.benddefaultfieldmapopalt>> which describes the magnet fringe
 fields see Section link:fieldmaps#sec:1DProfile1[`1DProfile1`]. When _OPAL_ is run, you will get the
 following output (assuming an electron beam) for this `RBEND`
 definition:
@@ -890,12 +885,11 @@ the bend angle of the reference particle through the soft edge magnet.
 In other words, the effective length of the soft edge, real magnet is
 the same as the hard edge magnet described by the reference trajectory.
 
-[[sec.opaltrbendsbendfields]]
-Bend Fields from 1D Field Maps (_OPAL-t_)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.elements.opaltrbendsbendfields]]
+==== Bend Fields from 1D Field Maps (_OPAL-t_)
 
 [#fig.rbend_enge_fringe]
-.Figure 3: Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see Equation [enge_func] with the parameters from the default `1DProfile1` field map described in Section <<sec.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
+.Figure 3: Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see Equation [enge_func] with the parameters from the default `1DProfile1` field map described in Section <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
 image:figures/Elements/Enge-func-plot.png[]
 
 So far we have described how to setup an `RBEND` or `SBEND` element, but
@@ -1037,9 +1031,8 @@ on the region, _OPAL-t_ then determines the values of
 latexmath:[\Delta_x], latexmath:[y] and latexmath:[\Delta_z], and
 then calculates the field values using the above expressions.
 
-[[sec.benddefaultfieldmapopalt]]
-Default Field Map (_OPAL-t_)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.elements.benddefaultfieldmapopalt]]
+==== Default Field Map (_OPAL-t_)
 
 Rather than force users to calculate the field of a dipole and then fit
 that field to find Enge coefficients for the dipoles in their
@@ -1089,9 +1082,8 @@ As one can see, the default magnet gap for `1DPROFILE1-DEFAULT` is
 set to 2.0 cm. This value can be overridden by the `GAP` attribute of the
 magnet (see Sections <<sec.RBend>> and <<sec.SBend>>).
 
-[[sec.SBend3D]]
-SBend3D (OPAL-CYCL)
-^^^^^^^^^^^^^^^^^^^
+[[sec.elements.SBend3D]]
+==== SBend3D (_OPAL-cycl_)
 
 The SBend3D element enables definition of a bend from 3D field maps.
 This can be used in conjunction with the `RINGDEFINITION` element to
@@ -1175,9 +1167,8 @@ This is a restricted feature: _OPAL-cycl_.
 image:figures/Elements/sbend3d-1.png[width=375]
 image:figures/Elements/sbend3d-2.png[width=375]
 
-[[sec.quadrupole]]
-Quadrupole
-~~~~~~~~~~
+[[sec.elements.quadrupole]]
+=== Quadrupole
 
 ....
 label:QUADRUPOLE, TYPE=string, APERTURE=real-vector,
@@ -1209,9 +1200,8 @@ QP1: Quadrupole, L=1.20, ELEMEDGE=-0.5265,
      FMAPFN="1T1.T7", K1=0.11;
 ....
 
-[[sec.sextupole]]
-Sextupole
-~~~~~~~~~
+[[sec.elements.sextupole]]
+=== Sextupole
 
 ....
 label: SEXTUPOLE, TYPE=string, APERTURE=real-vector,
@@ -1239,9 +1229,8 @@ S:SEXTUPOLE, L=0.4, K2=0.00134;
 
 The reference system for a sextupole is a Cartesian coordinate system
 
-[[sec.octupole]]
-Octupole
-~~~~~~~~
+[[sec.elements.octupole]]
+=== Octupole
 
 ....
 label:OCTUPOLE, TYPE=string, APERTURE=real-vector,
@@ -1269,11 +1258,10 @@ O3:OCTUPOLE, L=0.3, K3=0.543;
 
 The reference system for an octupole is a Cartesian coordinate system
 
-[[sec.multipole]]
-General Multipole
-~~~~~~~~~~~~~~~~~
+[[sec.elements.multipole]]
+=== General Multipole
 
-A `MULTIPOLE` is in _OPAL-t_ is of arbitrary order.
+A `MULTIPOLE` in _OPAL-t_ is of arbitrary order.
 
 ....
 label:MULTIPOLE, TYPE=string, APERTURE=real-vector,
@@ -1310,9 +1298,8 @@ A multipole has no effect on the reference orbit, i.e. the reference
 system at its exit is the same as at its entrance. Use the dipole
 component only to model a defective multipole.
 
-[[sec.multipoleT]]
-General Multipole (will replace Section <<multipole>> when implemented)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.multipoleT]]
+=== General Multipole (will replace Section <<isec.elements.multipole>> when implemented)
 
 A `MULTIPOLET` is in _OPAL-t_ a general multipole with extended
 features. It can represent a straight or curved magnet. In the curved
@@ -1412,9 +1399,8 @@ where latexmath:[S(s)] is the fringe field. This element uses the Tanh model for
 
 Starting from Maxwell's laws, the functions latexmath:[f_n] are computed recursively and finally each component of the magnetic field is obtained from latexmath:[V] using the corresponding geometries.
 
-[[sec.solenoid]]
-Solenoid
-~~~~~~~~
+[[sec.elements.solenoid]]
+=== Solenoid
 
 ....
 label:SOLENOID, TYPE=string, APERTURE=real-vector,
@@ -1444,9 +1430,8 @@ SP1: Solenoid, L=1.20, ELEMEDGE=-0.5265, KS=0.11,
      FMAPFN="1T1.T7";
 ....
 
-[[sec.cyclotron]]
-Cyclotron
-~~~~~~~~~
+[[sec.elements.cyclotron]]
+=== Cyclotron
 
 ....
 label:CYCLOTRON, TYPE=string, CYHARMON=int,
@@ -1605,9 +1590,8 @@ Ring: CYCLOTRON, TYPE="RINGCYC", CYHARMON=6, PHIINIT=0.0, PRINIT=0.0,
 
 This is a restricted feature: _OPAL-cycl_.
 
-[[sec.ringdefinition]]
-Ring Definition
-~~~~~~~~~~~~~~~
+[[sec.elements.ringdefinition]]
+=== Ring Definition
 
 ....
 label: RINGDEFINITION,
@@ -1658,9 +1642,8 @@ ringdef: RINGDEFINITION, HARMONIC_NUMBER=6, LAT_RINIT=2350.0, LAT_PHIINIT=0.0,
          BEAM_RINIT=2266.0, SYMMETRY=4.0, RFFREQ=0.2;
 ....
 
-[[local-cartesian-offset]]
-Local Cartesian Offset
-^^^^^^^^^^^^^^^^^^^^^^
+[[sec.elements.local-cartesian-offset]]
+==== Local Cartesian Offset
 
 The `LOCAL_CARTESIAN_OFFSET` enables the user to place an object at an
 arbitrary position in the coordinate system of the preceding element.
@@ -1679,18 +1662,16 @@ END_NORMAL_Y::
   y component of the normal vector defining the placement of the next
   element in the coordinate system of the preceding element.
 
-[[sec.source]]
-Source
-~~~~~~
+[[sec.elements.source]]
+=== Source
 
 This element only works in _OPAL-t_. It’s only purpose in _OPAL-t_ is to
 indicate that the particle source is contained in the beamline. This is
 needed to place the elements in three-dimensional space when using
 `ELEMEDGE`. Otherwise it has no effect on the particles.
 
-[[sec.cavity]]
-RF Cavities (_OPAL-t_ and _OPAL-cycl_)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.cavity]]
+=== RF Cavities (_OPAL-t_ and _OPAL-cycl_)
 
 For an `RFCAVITY` the three modes have four real attributes in common:
 
@@ -1711,9 +1692,8 @@ LAG::
   (see Appendix link:autophase[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
 
-[[sec.cavity-t]]
-_OPAL-t_ mode
-^^^^^^^^^^^^^
+[[sec.elements.cavity-t]]
+==== _OPAL-t_ mode
 
 Using a RF Cavity in _OPAL-t_ mode, the following additional parameters
 are defined:
@@ -1751,9 +1731,8 @@ rf2: RFCavity, L=0.54, VOLT=6.250, LAG=136.0/360.0,
      FREQ=4497.536;
 ....
 
-[[sec.cavity-cycl]]
-_OPAL-cycl_ mode
-^^^^^^^^^^^^^^^^
+[[sec.elements.cavity-cycl]]
+==== _OPAL-cycl_ mode
 
 Using a RF Cavity (standing wave) in _OPAL-cycl_ mode, the following
 parameters are defined:
@@ -1799,9 +1778,8 @@ and its parameters.
 .Figure 5:Schematic of the simplified geometry of a cavity gap and parameters
 image:./figures/cyclotron/Cavity.png[]
 
-[[sec.variable-rf-cavity-cycl]]
-RF Cavities with Time Dependent Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.variable-rf-cavity-cycl]]
+=== RF Cavities with Time Dependent Parameters
 
 The `VARIABLE_RF_CAVITY` element can be used to define RF Cavities with
 Time Dependent Parameters in _OPAL-cycl_ mode. Variable RF Cavities must
@@ -1831,9 +1809,8 @@ The field inside the cavity is given by
 with no field outside the cavity boundary. There is no magnetic field or
 transverse dependence on electric field.
 
-[[sec.polynomial-time-dependence]]
-Time Dependence
-^^^^^^^^^^^^^^^
+[[sec.elements.polynomial-time-dependence]]
+==== Time Dependence
 
 The `POLYNOMIAL_TIME_DEPENDENCE` element is used to define time
 dependent parameters in RF cavities in terms of a third order
@@ -1873,9 +1850,8 @@ RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLI
            FREQUENCY_MODEL="RF_FREQUENCY", L=100., HEIGHT=200., WIDTH=2000.;
 ....
 
-[[sec.travelingwave]]
-Traveling Wave Structure
-~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.travelingwave]]
+=== Traveling Wave Structure
 
 [#FINSB-RAC-field]
 .Figure 6:The on-axis field of an S-band (2997.924 MHz) `TRAVELINGWAVE` structure. The field of a single cavity is shown between its entrance and exit fringe fields. The fringe fields extend one half wavelength (latexmath:[\lambda/2]) to either side.
@@ -1994,9 +1970,8 @@ lrf0: TravelingWave, L=0.0253, VOLT=14.750,
       FREQ=1498.956, LAG=248.0/360.0;
 ....
 
-[[sec.monitor]]
-Monitor
-~~~~~~~
+[[sec.elements.monitor]]
+=== Monitor
 
 A `MONITOR` detects all particles passing it and writes the position,
 the momentum and the time when they hit it into an H5hut file.
@@ -2017,9 +1992,8 @@ the monitor.
 
 This is a restricted feature: `DOPAL-cycl`.
 
-[[sec.collimators]]
-Collimators
-~~~~~~~~~~~
+[[sec.elements.collimators]]
+=== Collimators
 
 Four types of collimators are defined:
 
@@ -2057,9 +2031,8 @@ the length.
 
 The reference system for a collimator is a Cartesian coordinate system.
 
-[[opal-t-mode]]
-_OPAL-t_ mode
-^^^^^^^^^^^^^
+[[sec.elements.opal-t-mode]]
+==== _OPAL-t_ mode
 
 The `CCOLLIMATOR` isn’t supported. ``ECOLLIMATOR``s and ``RCOLLIMATOR``s
 detect all particles which are outside the aperture defined by `XSIZE`
@@ -2131,9 +2104,8 @@ image:figures/Elements/pepperpot.png[]
 
 In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separat file (using `FNAME`; comments and newlines are allowed).
 
-[[opal-cycl-mode]]
-_OPAL-cycl_ mode
-^^^^^^^^^^^^^^^^
+[[sec.elements.opal-cycl-mode]]
+==== _OPAL-cycl_ mode
 
 Only `CCOLLIMATOR` is available for _OPAL-cycl_. This element is radial
 rectangular collimator which can be used to collimate the radial tail
@@ -2193,9 +2165,8 @@ cma2: CCollimator, XSTART=x3, XEND=x4,YSTART=y3, YEND=y4,
 The particles lost on the CCOLLIMATOR are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
-[[septum-opal-cycl]]
-Septum (_OPAL-cycl_)
-~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.septum-opal-cycl]]
+=== Septum (_OPAL-cycl_)
 
 This is a restricted feature: `DOPAL-t`. The particles hitting on the
 septum is removed from the bunch. There are 5 parameters to describe a
@@ -2224,9 +2195,8 @@ ystart=-1200.0, yend=-150.0, width=0.05;
 The particles lost on the SEPTUM are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
-[[probe-opal-cycl]]
-Probe (_OPAL-cycl_)
-~~~~~~~~~~~~~~~~~~~
+[[sec.elements.probe-opal-cycl]]
+=== Probe (_OPAL-cycl_)
 
 The particles hitting on the probe is recorded. There are 5 parameters
 to describe a probe.
@@ -2256,9 +2226,8 @@ _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
-[[stripper-opal-cycl]]
-Stripper (_OPAL-cycl_)
-~~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.stripper-opal-cycl]]
+=== Stripper (_OPAL-cycl_)
 
 A stripper element strip the electron(s) from a particle. The particle
 hitting the stripper is recorded in the file, which contains the time,
@@ -2304,9 +2273,8 @@ No matter what the value of STOP is, the particles hitting on the
 STRIPPER are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec:option[`ASCIIDUMP`] is true).
 
-[[degrader-opal-t]]
-Degrader (_OPAL-t_)
-~~~~~~~~~~~~~~~~~~~
+[[sec.elements.degrader-opal-t]]
+=== Degrader (_OPAL-t_)
 
 Elliptical degrader with an overall length `L`.
 
@@ -2323,9 +2291,8 @@ DEGPHYS: PARTICLEMATTERINTERACTION, TYPE="DEGRADER", MATERIAL="Graphite";
 DEG1: DEGRADER, L=0.15, ELEMEDGE=0.02, PARTICLEMATTERINTERACTION=DEGPHYS;
 ....
 
-[[sec.corrector]]
-Correctors (_OPAL-t_)
-~~~~~~~~~~~~~~~~~~~~~
+[[sec.elements.corrector]]
+=== Correctors (_OPAL-t_)
 
 Three types of correctors are available:
 
@@ -2389,7 +2356,7 @@ The reference system for an orbit corrector is a Cartesian coordinate
 system.
 
 [bibliography]
-References
-~~~~~~~~~~
+=== References
+
 * [[[bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
 * [[[bib.enge]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
