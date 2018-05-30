@@ -47,7 +47,7 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 
 The difference between `SEQUENCE = TRUE` and `SEQUENCE = FALSE` can be depicted in the following figure.
 image:figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
-The two sampling methods differ in the number of samples since with `SEQUENCE = TRUE` every combination of individual sampling is computed. Thus the total number is `$N =N_1 \times N_2 \times\dots\times N_n$`where `$n$` is the number of `DVARS`. With `SEQUENCE = FALSE` the number of sampling points is `$N = \min(N_1, N_2,\dots, N_n$`. 
+The two sampling methods differ in the number of samples since with `SEQUENCE = TRUE` every combination of individual sampling is computed. Thus the total number is [$N =N_1 \times N_2 \times\dots\times N_n$] where [$n$] is the number of `DVARS`. With `SEQUENCE = FALSE` the number of sampling points is [$N = \min(N_1, N_2,\dots, N_n$]. 
 SAMPLING Command
 ^^^^^^^^^^^^^^^^
 [#samplingcommandattributes]
