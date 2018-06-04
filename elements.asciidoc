@@ -129,7 +129,7 @@ ORIGIN::
   position the element. Can’t be combined with `THETA` and `PHI`. Use
   `ORIENTATION` instead.
 ORIENTATION::
-  Vector of Tait-Bryan angles <<bib.tait-bryan>>. An alternative to rotate
+  Vector of Tait-Bryan angles <<bib.tait-bryan_elements,bib.tait-bryan>>. An alternative to rotate
   the element instead of using `THETA`, `PHI` and `PSI`. Can’t be
   combined with `X`, `Y` and `Z`, use `ORIGIN` instead.
 DX::
@@ -200,11 +200,11 @@ image::figures/Elements/rbend.png[width=10cm]
 ==== RBend (_OPAL-t_)
 
 An `RBEND` is a rectangular bending magnet. The key property of an
-`RBEND` is that it has parallel pole faces. Figure <<fig.rbend,1>> shows an
+`RBEND` is that it has parallel pole faces. Figure <<fig_rbend,1>> shows an
 `RBEND` with a positive bend angle and a positive entrance edge angle.
 
 L::
-  Physical length of magnet (meters, see Figure <<fig.rbend,1>>).
+  Physical length of magnet (meters, see Figure <<fig_rbend,1>>).
 GAP::
   Full vertical gap of the magnet (meters).
 HAPERT::
@@ -224,17 +224,17 @@ K0S::
 K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
-  where latexmath:[R] is the bend radius as defined in Figure <<fig.rbend,1>>.
+  where latexmath:[R] is the bend radius as defined in Figure <<fig_rbend,1>>.
   Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
   instead.
 E1::
-  Entrance edge angle (radians). Figure <<fig.rbend,1>> shows the definition of
+  Entrance edge angle (radians). Figure <<fig_rbend,1>> shows the definition of
   a positive entrance edge angle. (Note that the exit edge angle is
   fixed in an `RBEND` element to
   latexmath:[\mathrm{E2} = \mathrm{ANGLE} - \mathrm{E1}]).
 DESIGNENERGY::
   Energy of the reference particle (MeV). The reference particle travels
-  approximately the path shown in Figure <<fig.rbend,1>>.
+  approximately the path shown in Figure <<fig_rbend,1>>.
 FMAPFN::
   Name of the field map for the magnet. Currently maps of type
   link:fieldmaps#sec:1DProfile1[`1DProfile1`] can be used. The default option
@@ -246,11 +246,11 @@ FMAPFN::
 ==== RBend3D (_OPAL-t_)
 
 An `RBEND3D3D` is a rectangular bending magnet. The key property of an
-`RBEND3D` is that it has parallel pole faces. Figure <<fig.rbend,1>> shows an
+`RBEND3D` is that it has parallel pole faces. Figure <<fig_rbend,1>> shows an
 `RBEND3D` with a positive bend angle and a positive entrance edge angle.
 
 L::
-  Physical length of magnet (meters, see Figure <<fig.rbend,1>>).
+  Physical length of magnet (meters, see Figure <<fig_rbend,1>>).
 GAP::
   Full vertical gap of the magnet (meters).
 HAPERT::
@@ -270,17 +270,17 @@ K0S::
 K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
-  where latexmath:[R] is the bend radius as defined in Figure <<fig.rbend,1>>.
+  where latexmath:[R] is the bend radius as defined in Figure <<fig_rbend,1>>.
   Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
   instead.
 E1::
-  Entrance edge angle (radians). Figure <<fig.rbend,1>> shows the definition of
+  Entrance edge angle (radians). Figure <<fig_rbend,1>> shows the definition of
   a positive entrance edge angle. (Note that the exit edge angle is
   fixed in an `RBEND3D` element to
   latexmath:[\mathrm{E2} = \mathrm{ANGLE} - \mathrm{E1}]).
 DESIGNENERGY::
   Energy of the reference particle (MeV). The reference particle travels
-  approximately the path shown in Figure <<fig.rbend,1>>.
+  approximately the path shown in Figure <<fig_rbend,1>>.
 FMAPFN::
   Name of the field map for the magnet. Currently maps of type
   link:fieldmaps#sec:1DProfile1[`1DProfile1`] can be used. The default option
@@ -288,8 +288,8 @@ FMAPFN::
   see Section <<sec.elements.benddefaultfieldmapopalt>>. The field map is used to
   describe the fringe fields of the magnet link:fieldmaps#sec:1DProfile1[`1DProfile1`].
 
-[#fig.sbend]
-Figure <<fig.sbend>> illustrates a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]. In this example the entrance and exit edge angles latexmath:[E_{1}] and latexmath:[E_{2}] have positive values. For a positively charge particle, the magnetic field is directed out of the page.
+[#fig_sbend]
+Figure <<fig_sbend>> illustrates a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]. In this example the entrance and exit edge angles latexmath:[E_{1}] and latexmath:[E_{2}] have positive values. For a positively charge particle, the magnetic field is directed out of the page.
 
 .Illustration of a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]
 image::figures/Elements/sbend.png[]
@@ -298,12 +298,12 @@ image::figures/Elements/sbend.png[]
 ==== SBend (_OPAL-t_)
 
 An `SBEND` is a sector bending magnet. An `SBEND` can have independent
-entrance and exit edge angles. Figure <<fig.sbend,2>> shows an `SBEND` with a
+entrance and exit edge angles. Figure <<fig_sbend,2>> shows an `SBEND` with a
 positive bend angle, a positive entrance edge angle, and a positive exit
 edge angle.
 
 L::
-  Chord length of the bend reference arc in meters (see Figure <<fig.sbend,2>>),
+  Chord length of the bend reference arc in meters (see Figure <<fig_sbend,2>>),
   given by: latexmath:[L = 2 R \sin\left(\frac{\alpha}{2}\right)]
 GAP::
   Full vertical gap of the magnet (meters).
@@ -327,18 +327,18 @@ K0S::
 K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
-  where latexmath:[R] is the bend radius as defined in Figure <<fig.sbend,2>>.
+  where latexmath:[R] is the bend radius as defined in Figure <<fig_sbend,2>>.
   Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
   instead.
 E1::
-  Entrance edge angle (rad). Figure <<fig.sbend,2>> shows the definition of a
+  Entrance edge angle (rad). Figure <<fig_sbend,2>> shows the definition of a
   positive entrance edge angle.
 E2::
-  Exit edge angle (rad). Figure <<fig.sbend,2>> shows the definition of a
+  Exit edge angle (rad). Figure <<fig_sbend,2>> shows the definition of a
   positive exit edge angle.
 DESIGNENERGY::
   Energy of the bend reference particle (MeV). The reference particle
-  travels approximately the path shown in Figure <<fig.sbend,2>>.
+  travels approximately the path shown in Figure <<fig_sbend,2>>.
 FMAPFN::
   Name of the field map for the magnet. Currently maps of type
   link:fieldmaps#sec:1DProfile1[`1DProfile1`] can be used. The default option
@@ -363,7 +363,7 @@ When implementing an `RBEND` or `SBEND` in an _OPAL-t_ simulation, it is
 important to note the following:
 
 1.  Internally _OPAL-t_ treats all bends as positive, as defined by
-Figures <<fig.rbend,1>> and <<fig.sbend,2>>. Bends in other directions within the x/y plane are
+Figures <<fig_rbend,1>> and <<fig.sbend,2>>. Bends in other directions within the x/y plane are
 accomplished by rotating a positive bend about its z axis.
 2.  If the `ANGLE` attribute is set to a non-zero value, the `K0` and
 `K0S` attributes will be ignored.
@@ -371,7 +371,7 @@ accomplished by rotating a positive bend about its z axis.
 will be bent through a different angle if its mean kinetic energy
 doesn’t correspond to the `DESIGNENERGY`.
 4.  Internally the bend geometry is setup based on the ideal reference
-trajectory, as shown in Figures <<fig.rbend,1>> and <<fig.sbend,2>>.
+trajectory, as shown in Figures <<fig_rbend,1>> and <<fig.sbend,2>>.
 5.  If the default field map, `1DPROFILE-DEFAULT`
 see Section <<sec.elements.benddefaultfieldmapopalt>>, is used, the fringe fields will
 be adjusted so that the effective length of the real, soft edge magnet
@@ -395,7 +395,7 @@ Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
 
 This is a definition of a simple `RBEND` that bends the beam in a
 positive direction 30 degrees (towards the negative x axis as if
-Figure <<fig.rbend,1>>). It has a design energy of 10 MeV, a length of 0.5 m, a
+Figure <<fig_rbend,1>>). It has a design energy of 10 MeV, a length of 0.5 m, a
 vertical gap of 2 cm and a 0latexmath:[^{\circ}] entrance edge angle.
 (Therefore the exit edge angle is 30latexmath:[^{\circ}].) We are
 using the default, internal field map "1DPROFILE1-DEFAULT"
@@ -431,7 +431,7 @@ RBend > Reference particle is bent: 0 rad (0 degrees) in y plane
 ....
 
 The first section of this output gives the properties of the reference
-trajectory like that described in Figure <<fig.rbend,1>>. From the value of
+trajectory like that described in Figure <<fig_rbend,1>>. From the value of
 `ANGLE` and the length, `L`, of the magnet, _OPAL_ calculates the 10 MeV
 reference particle trajectory radius, `R`. From the bend geometry and
 the entrance angle (0latexmath:[^{\circ}] in this case), the exit
@@ -577,7 +577,7 @@ RBend > Reference particle is bent: 0 rad (0 degrees) in y plane
 ....
 
 In general, we suggest to always define a bend in the positive x
-direction (as in Figure <<fig.rbend,1>>) and then use the `ROTATION` attribute
+direction (as in Figure <<fig_rbend,1>>) and then use the `ROTATION` attribute
 to bend in other directions in the x/y plane (as in examples 2 and 4
 above).
 
@@ -888,7 +888,7 @@ the same as the hard edge magnet described by the reference trajectory.
 [[sec.elements.opaltrbendsbendfields]]
 ==== Bend Fields from 1D Field Maps (_OPAL-t_)
 
-[#fig.rbend_enge_fringe]
+[#fig_rbend_enge_fringe]
 .Figure 3: Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see Equation [enge_func] with the parameters from the default `1DProfile1` field map described in Section <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
 image:figures/Elements/Enge-func-plot.png[]
 
@@ -901,7 +901,7 @@ regions:
 2.  Central field.
 3.  Exit fringe field.
 
-This can be seen clearly in Figure link:fieldmaps#fig.rbend_field_profile[3 of Chapter Fieldmaps].
+This can be seen clearly in Figure link:fieldmaps#fig_rbend_field_profile[3 of Chapter Fieldmaps].
 
 The purpose of the `1DProfile1` field map see Section link:fieldmaps#sec:1DProfile1[`1DProfile1`]
 associated with the element is to define the Enge functions
@@ -924,10 +924,10 @@ the Enge function, latexmath:[N_{order}], and the constants
 latexmath:[c_0] to latexmath:[c_{N_{order}}] are free parameters
 that are chosen so that the function closely approximates the fringe
 region of the magnet being modeled. An example of the entrance fringe
-field is shown in Figure <<fig.rbend_enge_fringe,3>>.
+field is shown in Figure <<fig_rbend_enge_fringe,3>>.
 
 Let us assume we have a correctly defined positive `RBEND` or `SBEND`
-element as illustrated in Figures <<fig.rbend,1>> and <<fig.sbend,2>>. (As already stated, any
+element as illustrated in Figures <<fig_rbend,1>> and <<fig.sbend,2>>. (As already stated, any
 bend can be described by a rotated positive bend.) _OPAL-t_ then has the
 following information:
 
@@ -1036,7 +1036,7 @@ then calculates the field values using the above expressions.
 
 Rather than force users to calculate the field of a dipole and then fit
 that field to find Enge coefficients for the dipoles in their
-simulation, we have a default set of values we use from <<bib.enge>> that are
+simulation, we have a default set of values we use from <<bib.enge_elements>> that are
 set when the default field map, `1DPROFILE1-DEFAULT` is used:
 
 [latexmath]
@@ -1117,7 +1117,7 @@ direction and tertiary to the radial direction.
 
 Below two examples of a `SBEND3D` which loads a field maps with
 different units. The `triplet` example has units of cm and fields units
-of Gauss, where the `Dipole` example (Figure <<fig.sbend3d1,4>>) uses meter and
+of Gauss, where the `Dipole` example (Figure <<fig_sbend3d1,4>>) uses meter and
 Tesla. The first 8 lines in the field map are ignored.
 
 ....
@@ -1162,7 +1162,7 @@ BY [FIELD_UNITS]
 
 This is a restricted feature: _OPAL-cycl_.
 
-[#fig.sbend3d1]
+[#fig_sbend3d1]
 .Figure 4: A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
 image:figures/Elements/sbend3d-1.png[width=375]
 image:figures/Elements/sbend3d-2.png[width=375]
@@ -2358,5 +2358,5 @@ system.
 [bibliography]
 === References
 
-* [[[bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
-* [[[bib.enge]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
+* [[[bib.tait-bryan_elements,bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
+* [[[bib.enge_elements]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).

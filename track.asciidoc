@@ -8,8 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.track]]
-Tracking
---------
+== Tracking
 
 [#trackcmd]
 .Commands accepted in Tracking Mode
@@ -46,9 +45,8 @@ to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
 |`ENDTRACK`       | Leave tracking mode
 |=======================================================================
 
-[[sec.trackmode]]
-Track Mode
-~~~~~~~~~~
+[[sec.track.mode]]
+=== Track Mode
 
 Before starting to track, a link:lines[beam line] and a 
 link:beam[beam] must be selected. The time step (`DT`) and the
@@ -166,9 +164,8 @@ _OPAL_ leaves *track mode* when it sees the command
   ENDTRACK;
 ....
 
-[[sec.trackrun]]
-Track Particles
-~~~~~~~~~~~~~~~
+[[sec.track.particles]]
+=== Track Particles
 
 This command starts or continues the actual tracking:
 
@@ -247,9 +244,8 @@ run, file="table", turns=5, mbmode="AUTO", paramb=10.0,
 This command tracks 5 bunches in cyclotron and writes the results on
 file `table`.
 
-[[ssec:statistical-errors]]
-`STATISTICAL-ERRORS`
-^^^^^^^^^^^^^^^^^^^^
+[[sec.track.statistical-errors]]
+=== `STATISTICAL-ERRORS`
 
 This method can be used to quantify the effects of imperfections to
 alignment or other physical quantities such as e.g. the phase or the

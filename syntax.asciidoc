@@ -8,16 +8,14 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.syntax]]
-OPAL Language Syntax
---------------------
+== OPAL Language Syntax
 
 Words in _italic font_ are syntactic entities, and characters in
 `monospaced font` must be entered as shown. Comments are given in *bold
 font*.
 
-[[statements]]
-Statements:
-~~~~~~~~~~~
+[[sec.syntax.statements]]
+=== Statements
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -52,9 +50,8 @@ Statements:
 | |\| |_regular-expression_
 |===
 
-[[real-expressions]]
-Real expressions:
-~~~~~~~~~~~~~~~~~
+[[sec.syntax.real-expressions]]
+=== Real expressions
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -110,9 +107,8 @@ Real expressions:
 | |\| |`VABSMAX`
 |===
 
-[[real-variables-and-constants]]
-Real variables and constants:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.real-variables-and-constants]]
+=== Real variables and constants:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -145,9 +141,8 @@ Real variables and constants:
 |_column-name_ |: |_identifier_
 |===
 
-[[logical-expressions]]
-Logical expressions:
-~~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.logical-expressions]]
+=== Logical expressions:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -168,9 +163,8 @@ Logical expressions:
 | |\| |`<=`
 |===
 
-[[logical-variables]]
-Logical variables:
-~~~~~~~~~~~~~~~~~~
+[[sec.syntax.logical-variables]]
+=== Logical variables:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -183,9 +177,8 @@ _logical-expression_
 | | |*// expression retained*
 |===
 
-[[string-expressions]]
-String expressions:
-~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.string-expressions]]
+=== String expressions:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -194,9 +187,8 @@ String expressions:
 | |\| |_string-expression_ `&` _string_
 |===
 
-[[string-constants]]
-String constants:
-~~~~~~~~~~~~~~~~~
+[[sec.syntax.string-constants]]
+=== String constants:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -208,9 +200,8 @@ _string-expression_
 | | |*// expression retained*
 |===
 
-[[real-array-expressions]]
-Real array expressions:
-~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.real-array-expressions]]
+=== Real array expressions:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -235,9 +226,8 @@ Real array expressions:
 |_array-name_ |: |_identifier_
 |===
 
-[[real-array-definitions]]
-Real array definitions:
-~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.real-array-definitions]]
+=== Real array definitions:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -247,9 +237,8 @@ _array-expression_
 | |\| |_array-prefix_ _array-name_ `:=` _array-expression_
 |===
 
-[[constraints]]
-Constraints:
-~~~~~~~~~~~~
+[[sec.syntax.constraints]]
+=== Constraints:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -260,9 +249,8 @@ _array-expression_
 | |\| |`>`
 |===
 
-[[variable-references]]
-Variable references:
-~~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.variable-references]]
+=== Variable references:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -270,9 +258,8 @@ Variable references:
 | |\| |_object-name_ `->` _attribute-name_
 |===
 
-[[token-lists]]
-Token lists:
-~~~~~~~~~~~~
+[[sec.syntax.token-lists]]
+=== Token lists:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===
@@ -281,9 +268,8 @@ Token lists:
 | |\| |_token-list-array_ `,` _token-list_
 |===
 
-[[regular-expressions]]
-Regular expressions:
-~~~~~~~~~~~~~~~~~~~~
+[[sec.syntax.regular-expressions]]
+=== Regular expressions:
 
 [cols="<3,^1,<4",frame=none,grid=none]
 |===

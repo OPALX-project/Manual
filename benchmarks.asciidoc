@@ -102,9 +102,9 @@ envelopes are latexmath:[\sqrt{5}]-times their respective RMS values.
 TRACE 3D Graphic Interface
 ++++++++++++++++++++++++++
 
-An example of TRACE 3D graphic interface is shown in Figure <<fig.trace,1>>.
+An example of TRACE 3D graphic interface is shown in Figure <<fig_trace,1>>.
 
-[#fig.trace]
+[#fig_trace]
 .Figure 1: TRACE 3D graphic interface where: (1) input beam in transverse plane (above) and longitudinal plane (below); (2) output beam in transverse plane (above) and longitudinal plane (below); (3) summary of beam parameters such as input and output emittances and desired value for matching function; (4) line lattice with different elements and beam envelope. The color legend is: blue line for horizontal plane, red line for vertical plane, green line for longitudinal plane and yellow line for dispersion.
 image:figures/Benchmarks/Trace.png[]
 
@@ -183,7 +183,7 @@ sigma-matrix for the input beam, printed out by _command Z_, can be
 directly used as input beam in TRANSPORT. An example of TRACE 3D
 sigma-matrix structure is shown in Figure <<trace_z,2>>.
 
-[#fig.trace_z]
+[#fig_trace_z]
 .Figure 2: Sigma-matrix structure in TRACE 3D <<bib.TraceMan>>
 image:figures/Benchmarks/TRACE_z.png[]
 
@@ -199,9 +199,9 @@ TRANSPORT Graphic Interface
 An improved version of TRANSPORT has been embedded in a new graphic
 shell written in C++ and is providing GUI type tools, which makes it
 easier to design new beam lines. A screen shot of a modern GUI Transport
-interface <<bib.Transport_GUI>> is shown in Figure <<fig.TRANSPORT,3>>.
+interface <<bib.Transport_GUI>> is shown in Figure <<fig_TRANSPORT,3>>.
 
-[#fig.TRANSPORT]
+[#fig_TRANSPORT]
 .Figure 3: GUI TRANSPORT graphic interface <<bib.Tran_ex>>. The continuous lines describe the beam envelope in the vertical plane (above) and horizontal plane (below). The dashed line displays the dispersion. The elements in the beam line are drawn as blue and red rectangles
 image:figures/Benchmarks/TRANSPORT.png[]
 
@@ -248,16 +248,16 @@ EMITI = 0.730, 0.730, 7.56
 ....
 
 Thanks to the TRACE 3D graphic interface, the input beam can immediately
-be visualized in the three phase plane as shown in Figure <<fig.Input_TRACE,4>>.
+be visualized in the three phase plane as shown in Figure <<fig_Input_TRACE,4>>.
 
-[#fig.Input_TRACE]
+[#fig_Input_TRACE]
 .Figure 4: TRACE 3D input beam in the transversal plane (above) and in the longitudinal plane (below)
 image:figures/Benchmarks/Input_Trace.png[]
 
 The corresponding sigma-matrix with the relative units is displayed by
 command Z:
 
-[#fig.TRACE_z_Input]
+[#fig_TRACE_z_Input]
 .Figure 5: TRACE 3D sigma-matrix for the  beam
 image:figures/Benchmarks/TRACE_z_input.png[]
 
@@ -277,7 +277,7 @@ At this point, the TRANSPORT input beam is defined by *card 1*:
 ....
 
 using exactly the same sigma-matrix coefficients of
-Figure <<fig.TRACE_z_Input,5>>. Other two cards must be added in order to use
+Figure <<fig_TRACE_z_Input,5>>. Other two cards must be added in order to use
 exactly the TRACE 3D R-matrix formalism:
 
 ....
@@ -324,9 +324,9 @@ entrance edge angle:
 
 A same configuration has been used for exit edge angle using
 latexmath:[\beta = {5}{^{\circ}}]. The beam envelopes in the three
-phase planes for this simulation are shown in Figure <<fig.Trace_env,6>>.
+phase planes for this simulation are shown in Figure <<fig_Trace_env,6>>.
 
-[#fig.Trace_env]
+[#fig_Trace_env]
 .Figure 6: Beam envelopes in TRACE 3D for a SBEND with entrance and exit edge angles. The blue line describes the beam envelope in the horizontal plane, the red line in the vertical plane, the green line in the longitudinal plane. The yellow line displays the dispersion
 image:figures/Benchmarks/Trace_SBEND_edge.png[]
 
@@ -366,9 +366,9 @@ reported in the Table <<Edge_Trans,4>>.
 
 Running the Graphic TRANSPORT version, the beam envelopes in the
 transverse phase planes for this simulation are shown in
-Figure <<fig.Tran_env,7>>.
+Figure <<fig_Tran_env,7>>.
 
-[#fig.Tran_env]
+[#fig_Tran_env]
 .Figure 7: Beam envelopes in TRANSPORT for a SBEND with entrance and exit edge angles. The continuous lines describe the beam envelope in the vertical plane (above) and horizontal plane (below). The dashed line displays the dispersion.
 image:figures/Benchmarks/TRANS_SBEND_edge.png[]
 
@@ -400,9 +400,9 @@ element in the line are summarized.
 |=======================================================================
 
 The perfect agreement between these two codes arises immediately looking
-at Figure <<fig.T3D_Tra_env,8>>.
+at Figure <<fig_T3D_Tra_env,8>>.
 
-[#fig.T3D_Tra_env]
+[#fig_T3D_Tra_env]
 .Figure 8: Transversal beam size comparison between TRACE 3D and TRANSPORT
 image:figures/Benchmarks/T3D_Tra_SBEND_edge_env.png[]
 
@@ -412,7 +412,7 @@ While the vertical emittance remains constant and equal to the initial
 value (latexmath:[\epsilon_y = ] 0.730 latexmath:[\pi]-mm-mrad) ,
 the horizontal and longitudinal emittances are expected growing after
 the bending magnet. The results are reported in Table <<Emittance,6>> and in
-Figure_<<fig.T3D_Tra_emi,9>>.
+Figure_<<fig_T3D_Tra_emi,9>>.
 
 [#Emittance]
 .Horizontal and longitudinal emittance comparison between TRACE 3D and TRANSPORT, both expressed in latexmath:[\pi]-mm-mrad
@@ -434,7 +434,7 @@ Figure_<<fig.T3D_Tra_emi,9>>.
 |Drift 2 |0.631 |0.973 |0.65 |0.973 |0.65
 |=======================================================================
 
-[#fig.T3D_Tra_emi]
+[#fig_T3D_Tra_emi]
 .Figure 9: Emittance comparison between TRACE and TRANSPORT
 image:figures/Benchmarks/T3D_Tra_SBEND_edge_emi.png[]
 
@@ -518,7 +518,7 @@ distribution;
 * multiply for the relativistic factor
 latexmath:[\beta\gamma ={0.1224}] for 7 MeV protons;
 
-In case of the modified sigma-matrix in Figure <<fig.TRACE_z_Input,5>>, the
+In case of the modified sigma-matrix in Figure <<fig_TRACE_z_Input,5>>, the
 corresponding _OPAL_ parameters for the `GAUSS` distributions are:
 
 ....
@@ -621,7 +621,7 @@ _OPAL_ language has been done with the following tests:
 ** TEST 3: K1 latexmath:[=] n/latexmath:[\rho]
 +
 Only the TEST 2 reports a reasonable behavior on the beam size and
-emittance, as shown in Figure <<fig.SBEND_FI,12>> using:
+emittance, as shown in Figure <<fig_SBEND_FI,12>> using:
 +
 ....
 // Bending magnet configuration:
@@ -629,7 +629,7 @@ K1=1.5
 E1=0, E2=0,
 ....
 +
-[#fig.SBEND_FI]
+[#fig_SBEND_FI]
 .Figure 12: TRACE 3D and _OPAL_ comparison: SBEND with field index and default field map
 image:figures/Benchmarks/FI_SBEND_FMDef_Env_T2.png[width=340]
 image:figures/Benchmarks/FI_SBEND_FMDef_Emi_T2.png[width=340]
@@ -638,11 +638,11 @@ Concerning the emittances and vertical beam size, a perfect agreement
 has been found, instead a defocusing effect appears in the horizontal
 plane. These results have been obtained with the default field map
 provided by _OPAL_. However, a better result, only in the beam size as
-shown in Figure <<fig.SBEND_FI_test,13>>, is achieved using a test field map in
+shown in Figure <<fig_SBEND_FI_test,13>>, is achieved using a test field map in
 which the fringe field extension has been changed in the thin lens
 approximation.
 +
-[#fig.SBEND_FI_test]
+[#fig_SBEND_FI_test]
 .Figure 13: TRACE 3D and _OPAL_ comparison: SBEND with field index and test field map
 image:figures/Benchmarks/FI_SBEND_FMTest_Env_T2.png[width=340]
 image:figures/Benchmarks/FI_SBEND_FMTest_Emit_T2.png[width=340]
@@ -690,7 +690,7 @@ sector bending magnet with and without edge angles; +
 - the default magnetic field map seems not working properly if the field
 index is not zero +
 - an improvement of the test map used is needed in order to match the
-TRACE 3D emittance see Figure <<fig.SBEND_FI_test,13>>.
+TRACE 3D emittance see Figure <<fig_SBEND_FI_test,13>>.
 
 [[hard-edge-dipole-comparison-with-elegant]]
 Hard Edge Dipole Comparison with ELEGANT
@@ -755,7 +755,7 @@ field region has no latexmath:[B_z] component and its
 latexmath:[B_y] component is just like the field in the middle of the
 dipole.
 
-[#fig.plot-compare-default]
+[#fig_plot-compare-default]
 .Figure 14: Compare emittances and beam sizes obtained by using the hard edge map (_OPAL_), the default map (_OPAL_), and the ELEGANT
 image:figures/Benchmarks/report-compare-default.png[]
 
@@ -781,7 +781,7 @@ that _OPAL_ emittance is calculated at an instant time. Once the beam or
 part of the beam gets into the dipole, its latexmath:[P_x] gets a kick
 which will result in a sudden emittance change.
 
-[#fig.plot-emit-dt]
+[#fig_plot-emit-dt]
 .Figure 15: Horizontal and vertical normalized emittances for different integration time steps
 image:figures/Benchmarks/report-emit-dt.png[]
 

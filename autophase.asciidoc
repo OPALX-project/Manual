@@ -8,12 +8,10 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.autophasing]]
-Auto-phasing Algorithm
-----------------------
+== Auto-phasing Algorithm
 
-[[standing-wave-cavity]]
-Standing Wave Cavity
-~~~~~~~~~~~~~~~~~~~~
+[[sec.autophasing.standing-wave-cavity]]
+=== Standing Wave Cavity
 
 In _OPAL-t_ the elements are implemented as external fields that are
 read in from a file. The fields are described by a 1D, 2D or 3D sampling
@@ -117,9 +115,8 @@ latexmath:[\varphi], that comes closer to the actual maximal kinetic
 energy, can be obtained. One can iterate a few times through this cycle
 until the value of latexmath:[\varphi] has converged.
 
-[[traveling-wave-structure]]
-Traveling Wave Structure
-~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.autophasing.traveling-wave-structure]]
+=== Traveling Wave Structure
 
 .Figure 1: Field map ’FINLB02-RAC.T7’ of type 1DDynamic
 image:figures/autophase/field_crop.png[]
@@ -142,9 +139,8 @@ where latexmath:[s] is the cell length. Instead of one sum as in
 Equation [Gamma1,Gamma2] there are four sums with different numbers of
 summands.
 
-[[example]]
-Example
-^^^^^^^
+[[sec.autophasing.example]]
+==== Example
 
 ....
 FINLB02_RAC: TravelingWave, L=2.80, VOLT=14.750*30/31,
@@ -165,9 +161,8 @@ For this example we find
 ++++
 
 
-[[alternative-approach-for-traveling-wave-structures]]
-Alternative Approach for Traveling Wave Structures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.autophasing.alternative-approach-for-traveling-wave-structures]]
+==== Alternative Approach for Traveling Wave Structures
 
 If latexmath:[\beta] doesn’t change much along the traveling wave
 structure (ultra relativistic case) then latexmath:[t(z,\varphi)] can

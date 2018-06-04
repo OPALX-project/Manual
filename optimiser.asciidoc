@@ -8,8 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.moo]]
-Multi Objective Optimisation
-----------------------------
+== Multi Objective Optimisation
 
 Optimization methods deal with finding a feasible set of solutions
 corresponding to extreme values of some specific criteria. Problems
@@ -27,17 +26,13 @@ algorithms.
 NOTE: For multi-objective optimization OPAL uses https://gitlab.psi.ch/OPAL/opt-pilot/[`opt-pilot`] developed by Y. Ineichen. `opt-pilot` has been fully integrated into OPAL. Instructions can be found on the https://gitlab.psi.ch/OPAL/opt-pilot/wikis/home[`opt-pilot` wiki page].
 
 [[definition]]
-Definition
-~~~~~~~~~~
+=== Definition
 
 As with single-objective optimization problems, multi-object
 optimization problems consist of a solution vector and optionally a
 number of equality and inequality constraints. Formally, a general
 multi-objective optimization problem has the form
 
-[[eq.moop:obj]]
-[[eq.moop:constr]]
-[[eq.moop:dvar]]
 [latexmath]
 ++++
 \begin{aligned}
@@ -47,25 +42,24 @@ multi-objective optimization problem has the form
 \end{aligned}
 ++++
 
-The latexmath:[M]
-objectives ([eq.moop:obj]) are minimized, subject to latexmath:[J]
-inequality constraints ([eq.moop:constr]). An latexmath:[n]-vector
-([eq.moop:dvar]) contains all the design variables with appropriate
-lower and upper bounds, constraining the design space.
+The latexmath:[M] objectives are minimized, subject to latexmath:[J]
+inequality constraints. An latexmath:[n]-vector contains all the
+design variables with appropriate lower and upper bounds, constraining
+the design space.
 
 In contrast to single-objective optimization the objective functions
 span a multi-dimensional space in addition to the design variable space
 – for each point in design space there exists a point in objective
 space. The mapping from the latexmath:[n] dimensional design space to
 the latexmath:[M] dimensional objective space visualized in
-Figure <<fig.des_to_obj,1>> is often non-linear. This impedes the search for
+Figure <<fig_des_to_obj,1>> is often non-linear. This impedes the search for
 optimal solutions and increases the computational cost as a result of
 expensive objective function evaluation. Additionally, depending in
 which of the two spaces the algorithm uses to determine the next step,
 it can be difficult to assure an even sampling of both spaces
 simultaneously.
 
-[#fig.des_to_obj]
+[#fig_des_to_obj]
 .Figure 1: The (often non-linear) mapping latexmath:[f : \mathbb{R}^n \rightarrow \mathbb{R}^M] from design to objective space. The dashed lines represent the constraints in design space and the set of solutions (Pareto front) in objective space.
 image:figures/optimiser/design_objective_space.png[]
 
@@ -78,8 +72,7 @@ objectives. No general convergence proofs are readily available for
 these cases.
 
 [[pareto-optimality]]
-Pareto Optimality
-~~~~~~~~~~~~~~~~~
+=== Pareto Optimality
 
 In most multi-objective optimization problems we have to deal with
 conflicting objectives. Two objectives are conflicting if they possess
@@ -111,21 +104,20 @@ solution points can be approximated iteratively as the set of
 non-dominated solutions.
 
 The problem of deciding if a point truly belongs to the Pareto set is
-NP-hard. As shown in Figure <<fig.pareto-def,2>> there exist "weaker"
+NP-hard. As shown in Figure <<fig_pareto-def>> there exist "weaker"
 formulations of Pareto optimality. Of special interest is the result
 shown in [paya:01], where the authors present a polynomial (in the input
 size of the problem and latexmath:[1/\varepsilon]) algorithm for
 finding an approximation, with accuracy latexmath:[\varepsilon], of
 the Pareto set for database queries.
 
-[fig.pareto-def]
-.Figure 2: Various definitions regarding Pareto optimality.
-image:figures/optimiser/pareto-defs.png[]
+[#fig_pareto-def]
+.Various definitions regarding Pareto optimality.
+image::figures/optimiser/pareto-defs.png[]
 
 
 [[opt-MOGA-theory]]
-MOGA Theory
-~~~~~~~~~~~
+=== MOGA Theory
 
 Here some facts on “What is the tradeoff between population size and the number of generations in genetic algorithms":
 
@@ -138,11 +130,9 @@ Here some facts on “What is the tradeoff between population size and the numbe
 
 
 [[opt-pilot-commands]]
-OPAL Commands
-~~~~~~~~~~~~~
+=== OPAL Commands
 
-Basic Syntax
-^^^^^^^^^^^^
+==== Basic Syntax
 
 One needs to define the design variables, objectives and constraints one by one:
 
@@ -182,8 +172,8 @@ The first constraint consists of only design variables and will be evaluated bef
 The second constraint will be evaluated after the simulation.
 ////
 
-OPTIMIZE Command
-^^^^^^^^^^^^^^^^^
+==== OPTIMIZE Command
+
 The OPTIMIZE command initiates optimization.
 
 [#optcommandattributes]
@@ -219,8 +209,8 @@ The OPTIMIZE command initiates optimization.
 | FIELDMAPDIR |  Directory where field maps are stored.
 |=======================================================================
 
-DVAR Command
-^^^^^^^^^^^^
+==== DVAR Command
+
 The DVAR command defines a variable for optimization.
 
 [#dvarcommandattributes]
@@ -233,8 +223,8 @@ The DVAR command defines a variable for optimization.
 | UPPERBOUND | Upper limit of the range of values that the variable should assume.
 |=======================================================================
 
-OBJECTIVE Command
-^^^^^^^^^^^^^^^^^
+==== OBJECTIVE Command
+
 The OBJECTIVE command defines an objective for optimization.
 
 [#objectivecommandattributes]
@@ -245,8 +235,8 @@ The OBJECTIVE command defines an objective for optimization.
 | EXPR | Expression to minimize during optimization.
 |=======================================================================
 
-CONSTRAINT Command
-^^^^^^^^^^^^^^^^^
+==== CONSTRAINT Command
+
 The CONSTRAINT command defines a constraint for optimization.
 
 [#constraintcommandattributes]
@@ -258,8 +248,8 @@ The CONSTRAINT command defines a constraint for optimization.
 |=======================================================================
 
 
-Available Expressions
-^^^^^^^^^^^^^^^^^^^^^
+==== Available Expressions
+
 [#availableexpressions]
 .Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
 [cols="<3,<5",options="header",]
@@ -276,8 +266,8 @@ latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^{end} (measurement_i - va
 | probVariableWithID(<var>, <id>, <probe_file>)  | Returns the value of the variable (first argument) with a certain ID (second argument) from link:elements#probe-opal-cycl[probe] loss file (third argument).
 |=======================================================================
 
-Example Input File
-^^^^^^^^^^^^^^^^^^
+==== Example Input File
+
 Example input file for the optimization using the template _05-DL_QN3.tmpl_:
 ....
 OPTION, ECHO=FALSE;

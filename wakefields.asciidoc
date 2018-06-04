@@ -8,15 +8,13 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.wakefields]]
-Wakefields
-----------
+== Wakefields
 
 _OPAL-t_ provides methods to compute CSR and short-range geometric
 wakefields.
 
-[[sec.wakefields:shortrange]]
-Geometric Wakefields
-~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefields.shortrange]]
+=== Geometric Wakefields
 
 Basically there are two different kind of wakefields that can be used.
 The first one is the wakefield of a round, metallic beam pipe that can
@@ -105,9 +103,8 @@ efficiency. Since we calculate the wakefield usually just once in the
 initialization phase the overall performance will not be affected from
 this.
 
-[[csr-wakefields]]
-CSR Wakefields
-~~~~~~~~~~~~~~
+[[sec.wakefield.csr-wakefields]]
+=== CSR Wakefields
 
 The electromagnetic field due to a particle moving on a circle in free
 space can be calculated exactly with the Liénard-Wiechert potentials.
@@ -139,9 +136,8 @@ due to CSR in short time.
 In addition to the `1D-CSR` model also one that makes use of an
 integrated Green function <<bib.mitchell2013>>, `1D-CSR-IGF`.
 
-[[sec.wakecmd]]
-The `WAKE` Command
-~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.wakecmd]]
+=== The `WAKE` Command
 
 The general input format is
 
@@ -190,80 +186,69 @@ constant
 |`FILTER` |The names of the filters that should be applied
 |=======================================================================
 
-[[sec.wakefield]]
-Define the Wakefield to be used
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.wakefield_to_be_used]]
+=== Define the Wakefield to be used
 
 The `WAKE` command defines data for a wake function on an element
 see Section link:elements#sec:Element:common[Common Attributes for all Elements].
 
-[[sec.WTYPE]]
-Define the wakefield type
-~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.WTYPE]]
+=== Define the wakefield type
 
 A string value see Section link:format#sec:astring[String Attributes] to specify the wake function,
 either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`
 or `LONG-TRANSV-SHORT-RANGE`.
 
-[[sec.NBIN]]
-Define the number of bins
-~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.NBIN]]
+=== Define the number of bins
 
 The number of bins used in the calculation of the line density.
 
-[[sec.CONSTLEN]]
-Define the bunch length to be constant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.CONSTLEN]]
+=== Define the bunch length to be constant
 
 With the `CONST_LENGTH` flag the bunch length can be set to be constant.
 This has no effect on CSR wakefunctions.
 
-[[sec.CONDUCT]]
-Define the conductivity
-~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefunctions.CONDUCT]]
+=== Define the conductivity
 
 The conductivity of the bunch which can be set to either `AC` or `DC`.
 This has no effect on CSR wakefunctions.
 
-[[sec.Z]]
-Define the impedance
-~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefunctions.Z]]
+=== Define the impedance
 
 The impedance latexmath:[Z_0] of the beam pipe in
 [latexmath:[\Omega]]. This has no effect on CSR wakefunctions.
 
-[[sec.FORM]]
-Define the form of the beam pipe
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefunctions.FORM]]
+=== Define the form of the beam pipe
 
 The form of the beam pipe can be set to `ROUND`. This has no effect on
 CSR wakefunctions.
 
-[[sec.RADIUS]]
-Define the radius of the beam pipe
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefunctions.RADIUS]]
+=== Define the radius of the beam pipe
 
 The radius of the beam pipe in [m]. This has no effect on CSR
 wakefunctions.
 
-[[sec.SIGMA]]
-Define the sigma of the beam pipe
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefunctions.SIGMA]]
+=== Define the sigma of the beam pipe
 
 The latexmath:[\sigma] of the beam pipe (material constant), see
 Equation [dc_cond]. This has no effect on CSR wakefunctions.
 
-[[sec.TAU]]
-Define the relaxation time (tau) of the beam pipe
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.TAU]]
+=== Define the relaxation time (tau) of the beam pipe
 
 The latexmath:[\tau] defines the relaxation time and is needed to
 calculate the impedance of the beam pipe see Equation [dc_cond]. This
 has no effect on CSR wakefunctions.
 
-[[sec.WFNAME]]
-Import a wakefield from a file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.WFNAME]]
+=== Import a wakefield from a file
 
 Since we only need values of the wake function at several discreet
 points to calculate the force on the particle it is also possible to
@@ -275,9 +260,8 @@ values. The files are specified in the SDDS format
 Whenever a file is specified _OPAL_ will use the wakefield found in the
 file and ignore all other commands related to round beam pipes.
 
-[[sec.FILTER]]
-List of Filters
-~~~~~~~~~~~~~~~
+[[sec.wakefield.FILTER]]
+=== List of Filters
 
 Array of names of filters to be applied to the longitudinal histogram of
 the bunch to get rid of the noise and to calculate derivatives. All the
@@ -285,9 +269,8 @@ filters are applied to the line density in the order they appear in the
 array. The last filter is also used for calculating the derivatives. The
 actual filters have to be defined elsewhere.
 
-[[the-filter-command]]
-The `FILTER` Command
-~~~~~~~~~~~~~~~~~~~~
+[[sec.wakefield.the-filter-command]]
+=== The `FILTER` Command
 
 Filters can be defined which then are applied to the line density of the
 bunch. The following smoothing filters are implemented:
@@ -374,8 +357,7 @@ coefficients/sampling points and latexmath:[L] is the length of the
 bunch.
 
 [bibliography]
-References
-~~~~~~~~~~
+=== References
 
 * [[[bib.schott]]] G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).
 * [[[bib.schwinger1949]]] J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912. and http://puhep1.princeton.edu/~kirkmcd/accel/schwinger.pdf

@@ -38,7 +38,7 @@ _OPAL_ comes in the following flavors:
 _OPAL-cycl_ tracks particles with 3D space charge including neighboring
 turns in cyclotrons with time as the independent variable.
 
-_OPAL-t_ is a super-set of _Impact-t_ <<bib.qiang2005>> and can be used to model guns,
+_OPAL-t_ is a super-set of _Impact-t_ <<bib.qiang2005_intro>> and can be used to model guns,
 injectors, ERLs and complete XFELs excluding the undulator.
 
 It should be noted that not all features of _OPAL_ are available in both
@@ -105,8 +105,8 @@ image::figures/Gun/GunComp.png[width=18cm]
 [[output]]
 === Output
 
-The phase space is stored in the H5hut file-format <<bib.howison2010>> and can be analyzed
-using e.g. H5root <<bib.schietinger>>. The frequency of the data output (phase space and
+The phase space is stored in the H5hut file-format <<bib.howison2010_intro>> and can be analyzed
+using e.g. H5root <<bib.schietinger_intro>>. The frequency of the data output (phase space and
 some statistical quantities) can be controlled using the `OPTION`
 statement see Section link:control#sec.option[Option Statement], with the flag `PSDUMPFREQ`. The file is
 named like in input file but with the extension .h5.
@@ -172,7 +172,7 @@ year = {(2008-2018)}
 [bibliography]
 === References
 * [[[bib.classic]]] F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
-* [[[bib.qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
-* [[[bib.howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
-* [[[bib.schietinger]]] T. Schietinger, http://amas.web.psi.ch/tools/H5root/index.html[_H5root_], 2006.
+* [[[bib.qiang2005_intro,bib.qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+* [[[bib.howison2010_intro,bib.howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+* [[[bib.schietinger_intro,bib.schietinger]]] T. Schietinger, http://amas.web.psi.ch/tools/H5root/index.html[_H5root_], 2006.
 * [[[bib.pooma]]] http://www.nongnu.org/freepooma/

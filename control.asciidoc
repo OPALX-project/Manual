@@ -8,16 +8,13 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.control]]
-Control Statements
-------------------
+== Control Statements
 
 [[getting-help]]
-Getting Help
-~~~~~~~~~~~~
+=== Getting Help
 
-[[sec.help]]
-HELP Command
-^^^^^^^^^^^^
+[[sec.control.help]]
+==== HELP Command
 
 A user who is uncertain about the attributes of a command should try the
 command `HELP`, which has three formats:
@@ -41,9 +38,8 @@ HELP,NAME=TWISS;
 HELP,TWISS;
 ....
 
-[[sec.show]]
-SHOW Command
-^^^^^^^^^^^^
+[[sec.control.show]]
+==== SHOW Command
 
 The `SHOW` statement displays the current attribute values of an object.
 It has three formats:
@@ -66,9 +62,8 @@ SHOW,NAME="QD.*\.L*";
 SHOW,"QD.*\.L*";
 ....
 
-[[sec.what]]
-WHAT Command
-^^^^^^^^^^^^
+[[sec.control.what]]
+==== WHAT Command
 
 The `WHAT` statement displays all object names matching a given regular
 expression. It has three formats:
@@ -90,9 +85,8 @@ WHAT,NAME=QD;
 WHAT,QD;
 ....
 
-[[sec.stop]]
-STOP / QUIT Statement
-~~~~~~~~~~~~~~~~~~~~~
+[[sec.control.stop]]
+=== STOP / QUIT Statement
 
 The statement
 
@@ -104,9 +98,8 @@ terminates execution of the _OPAL_ program, or, when the statement
 occurs in a `CALL` file see Section_<<sec.call>>, returns to the calling file.
 Any statement following the `STOP` or `QUIT` statement is ignored.
 
-[[sec.option]]
-OPTION Statement
-~~~~~~~~~~~~~~~~
+[[sec.control.option]]
+=== OPTION Statement
 
 The `OPTION` command controls global command execution and sets a few
 global quantities. Starting with version 1.6.0 of _OPAL_ the option
@@ -344,19 +337,16 @@ OPTION,SEED=987456321
 |`MEMORYDUMP`        |= `FALSE`
 |=======================================================================
 
-[[SEC:parameter]]
-Parameter Statements
-~~~~~~~~~~~~~~~~~~~~
+[[sec.consumption.parameter]]
+=== Parameter Statements
 
-[[sec.variable]]
-Variable Definitions
-^^^^^^^^^^^^^^^^^^^^
+[[sec.control.variable]]
+==== Variable Definitions
 
 _OPAL_ recognizes several types of variables.
 
-[[real-scalar-variables]]
-Real Scalar Variables
-+++++++++++++++++++++
+[[sec.control.real-scalar-variables]]
+===== Real Scalar Variables
 
 ....
 REAL variable-name=real-expression;
@@ -401,9 +391,8 @@ However, redefinitions by assignment are allowed:
 X=EVAL(X+1);
 ....
 
-[[real-vector-variables]]
-Real Vector Variables
-+++++++++++++++++++++
+[[sec.control.real-vector-variables]]
+===== Real Vector Variables
 
 ....
 REAL VECTOR variable-name=vector-expression;
@@ -430,9 +419,8 @@ REAL VECTOR B = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 Circular definitions are not allowed, but redefinitions by assignment
 are allowed.
 
-[[logical-variables]]
-Logical Variables
-+++++++++++++++++
+[[sec.control.logical-variables]]
+===== Logical Variables
 
 ....
 BOOL variable-name=logical-expression;
@@ -456,8 +444,7 @@ Circular definitions are not allowed, but redefinitions by assignment
 are allowed.
 
 [[sec.constant]]
-Symbolic Constants
-^^^^^^^^^^^^^^^^^^
+==== Symbolic Constants
 
 _OPAL_ recognizes a few build-in built-in mathematical and physical
 constants see Table link:format#constant[Predefined Symbolic Constants].
@@ -480,8 +467,7 @@ CONST IN=0.0254; // conversion of inches to meters
 ....
 
 [[sec.vector]]
-Vector Values
-^^^^^^^^^^^^^
+==== Vector Values
 
 A vector of expressions is established by a statement
 
@@ -507,8 +493,7 @@ VECTOR A_ON=TABLE(10,1);
 Circular definitions are not allowed.
 
 [[sec.eval]]
-Assignment to Variables
-^^^^^^^^^^^^^^^^^^^^^^^
+==== Assignment to Variables
 
 A value is assigned to a variable or vector by using the function
 `EVAL(real- expression)`. When seen, this function is immediately
@@ -542,9 +527,8 @@ WHILE (X <= 0.10) {
 }
 ....
 
-[[sec.value]]
-VALUE: Output of Expressions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.control.value]]
+==== VALUE: Output of Expressions
 
 The statement
 
@@ -576,13 +560,11 @@ This commands serves mainly for printing one or more quantities which
 depend on matched attributes. It also allows use of _OPAL_ as a
 programmable calculator. One may also tabulate functions.
 
-[[miscellaneous-commands]]
-Miscellaneous Commands
-~~~~~~~~~~~~~~~~~~~~~~
+[[sec.control.miscellaneous-commands]]
+=== Miscellaneous Commands
 
-[[sec.echo]]
-ECHO Statement
-^^^^^^^^^^^^^^
+[[sec.control.echo]]
+==== ECHO Statement
 
 The `ECHO` statement has two formats:
 
@@ -594,9 +576,8 @@ ECHO,message;           // shortcut
 `message` is a string value see Section link:format#sec:astring[String Attributes]. It is immediately
 transmitted to the `ECHO` stream.
 
-[[sec.system]]
-SYSTEM: Execute System Command
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.control.system]]
+==== SYSTEM: Execute System Command
 
 During an interactive _OPAL_ session the command `SYSTEM` allows to
 execute operating system commands. After execution of the system
@@ -612,9 +593,8 @@ SYSTEM,string;         // shortcut
 The string see Section link:format#sec:astring[String Attributes] `string` must be a valid operating
 system command.
 
-[[system-command-under-unix]]
-SYSTEM Command under UNIX
-^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.control.system-command-under-unix]]
+==== SYSTEM Command under UNIX
 
 Most UNIX commands can be issued directly.
 
@@ -626,9 +606,8 @@ SYSTEM,"ls -l"
 
 causes a listing of the current directory in long form on the terminal.
 
-[[sec.title]]
-TITLE Statement
-~~~~~~~~~~~~~~~
+[[sec.control.title]]
+=== TITLE Statement
 
 The `TITLE` statement has three formats:
 
@@ -643,13 +622,11 @@ page header which will be used as a title for subsequent output pages.
 Before the first `TITLE` statement is encountered, the page header is
 empty. It can be redefined at any time.
 
-[[file-handling]]
-File Handling
-~~~~~~~~~~~~~
+[[sec.control.file-handling]]
+=== File Handling
 
-[[sec.call]]
-CALL Statement
-^^^^^^^^^^^^^^
+[[sec.control.call]]
+==== CALL Statement
 
 The `CALL` command has two formats:
 
@@ -667,9 +644,8 @@ CALL,FILE="structure";
 CALL,"structure";
 ....
 
-[[sec.save]]
-SAVE Statement
-^^^^^^^^^^^^^^
+[[sec.control.save]]
+==== SAVE Statement
 
 The `SAVE` command has two formats:
 
@@ -688,9 +664,8 @@ SAVE,FILE="structure";
 SAVE,"structure";
 ....
 
-[[sec.if]]
-IF: Conditional Execution
-~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.control.if]]
+=== IF: Conditional Execution
 
 Conditional execution can be requested by an `IF` statement. It allows
 usages similar to the C language `if` statement:
@@ -709,9 +684,8 @@ statements following the `IF` is executed if the condition is satisfied.
 If the condition is false, and there is an `ELSE`, the statement or
 group following the `ELSE` is executed.
 
-[[sec.while]]
-WHILE: Repeated Execution
-~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.control.while]]
+=== WHILE: Repeated Execution
 
 Repeated execution can be requested by a `WHILE` statement. It allows
 usages similar to the C language `while` statement:
@@ -728,9 +702,8 @@ following the `WHILE` is repeated as long as the condition is satisfied.
 Of course some variable(s) must be changed within the `WHILE` group to
 allow the loop to terminate.
 
-[[sec.macro]]
-MACRO: Macro Statements (Subroutines)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.control.macro]]
+=== MACRO: Macro Statements (Subroutines)
 
 Subroutine-like commands can be defined by a `MACRO` statement. It
 allows usages similar to C language function call statements. A macro is
