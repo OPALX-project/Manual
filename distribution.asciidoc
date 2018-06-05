@@ -1006,7 +1006,7 @@ attributes needed by this emission model are listed in
 Table <<distattremitmodelnonequil,19>>.
 
 [#distattremitmodelnonequil]
-.Attributes for the `NONE` and `ASTRA` emission models.
+.Attributes for the `NONEQUIL` emission models.
 [cols="<1,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
