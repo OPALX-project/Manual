@@ -10,7 +10,7 @@ toc::[]
 [[chp.conventions]]
 == Conventions
 
-[[sec.units]]
+[[sec.conventions.units]]
 === Physical Units
 
 Throughout the computations _OPAL_ uses international units, as defined by SI (Système International).
@@ -52,7 +52,7 @@ latexmath:[\mathrm{eV}]
 |RF power |latexmath:[\mathrm{MW}] (Megawatts)
 |=======================================================================
 
-[[opal-cycl]]
+[[sec.conventions.opal-cycl]]
 === _OPAL_-cycl
 
 The _OPAL_-cycl flavor see Section link:elements#sec:cyclotron[Cyclotron] is using the so called
@@ -60,11 +60,11 @@ Cyclotron units. Lengths are defined in (mm), frequencies in (MHz), momenta
 in (latexmath:[\beta\gamma]) and angles in (deg), except `RFPHI` which
 is in (rad).
 
-[[symbols-used]]
+[[sec.conventions.symbols-used]]
 === Symbols used
 
 .List of Symbols used and their definition.
-[cols="<,<",options="header",]
+[cols="<1,<8",options="header",]
 |=======================================================================
 |Symbol |Definition
 |latexmath:[X] |Ellipse axis along the latexmath:[x] dimension [m].

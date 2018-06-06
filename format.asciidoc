@@ -8,8 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.format]]
-Command Format
---------------
+== Command Format
 
 All flavors of _OPAL_ using the same input language the _MAD_ language.
 The language dialect here is ajar to _MAD9_, for hard core __MAD__eight
@@ -20,8 +19,7 @@ electron linacs can be described within the same language in the same
 simulation framework.
 
 [[sec.statements]]
-Statements and Comments
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Statements and Comments
 
 Input for _OPAL_ is free format, and the line length is not limited.
 During reading, input lines are normally printed on the echo file, but
@@ -53,9 +51,9 @@ label:keyword,attribute,...,attribute;
 It has three parts:
 
 1.  The `label` is required for a definition statement. Its must be an
-identifier see Section <<sec.label>> and gives a name to the stored command.
+identifier see Section <<sec.format.label>> and gives a name to the stored command.
 2.  The `keyword` identifies the action desired. It must be an
-identifier see Section <<sec.label>>.
+identifier see Section <<sec.format.label>>.
 3.  Each `attribute` is entered in one of the forms
 +
 ....
@@ -67,15 +65,15 @@ attribute-name:=attribute-value
 and serves to define data for the command, where:
 
 * The `attribute-name` selects the attribute, it must be an identifier
-see Section <<sec.label>>.
-* The `attribute-value` gives it a value see Section <<sec.attribute>>. When
+see Section <<sec.format.label>>.
+* The `attribute-value` gives it a value see Section <<sec.format.attribute>>. When
 the attribute value is a constant or an expression preceded by the
 delimiter `=` it is evaluated immediately and the result is assigned to
 the attribute as a constant. When the attribute value is an expression
 preceded by the delimiter `:=` the expression is retained and
 re-evaluated whenever one of its operands changes.
 +
-Each attribute has a fixed attribute type see Section <<sec.attribute>>. +
+Each attribute has a fixed attribute type see Section <<sec.format.attribute>>. +
 The `attribute-value` can only be left out for logical attributes, this
 implies a `true` value.
 
@@ -111,9 +109,8 @@ LMD,CALLS=100,TOLERANCE=1E-5; // re-execute LMD with
 ENDMATCH;
 ....
 
-[[sec.label]]
-Identifiers or Labels
-~~~~~~~~~~~~~~~~~~~~~
+[[sec.format.label]]
+=== Identifiers or Labels
 
 An identifier refers to a keyword, an element, a beam line, a variable,
 an array, etc.
@@ -129,11 +126,11 @@ _OPAL_ output with another program.
 
 When a name is not quoted, it is converted to upper case; the resulting
 name must be unique. An identifier can also be generated from a string
-expression see Section <<sec.astring>>.
+expression see Section <<sec.format.astring>>.
 
-[[sec.attribute]]
-Command Attribute Types
-~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.format.attribute]]
+=== Command Attribute Types
+
 
 An object attribute is referred to by the syntax
 
@@ -141,7 +138,7 @@ An object attribute is referred to by the syntax
 object-name->attribute-name
 ....
 
-If the attribute is an array see Section <<sec.anarray>>, one of its
+If the attribute is an array see Section <<sec.format.anarray>>, one of its
 components is found by the syntax
 
 ....
@@ -150,21 +147,20 @@ object-name->attribute-name[index]
 
 The following types of command attributes are available in _OPAL_:
 
-* String see Section <<sec.astring>>,
-* Logical see Section <<sec.alogical>>,
-* Real expression see Section <<sec.areal>>,
-* Deferred expression see Section <<sec.adefer>>,
-* Place see Section <<sec.aplace>>,
-* Range see Section <<sec.arange>>,
-* Constraint see Section <<sec.aconstraint>>,
-* Variable Reference see Section <<sec.areference>>
-* Regular expression see Section <<sec.wildcard>>
-* Token list see Section <<sec.toklist>>.
-* Array see Section <<sec.anarray>> of
-** Logical see Section <<sec.logarray>>,
-** Real see Section <<sec.realarray>>,
-** String see Section <<sec.strarray>>,
-** Token lists see Section <<sec.tokarray>>,
+* String see Section <<sec.format.astring>>,
+* Logical see Section <<sec.format.alogical>>,
+* Real expression see Section <<sec.format.areal>>,
+* Deferred expression see Section <<sec.format.adefer>>,
+* Place see Section <<sec.format.aplace>>,
+* Range see Section <<sec.format.arange>>,
+* Constraint see Section <<sec.format.aconstraint>>,
+* Variable Reference see Section <<sec.format.areference>>
+* Regular expression see Section <<sec.format.wildcard>>
+* Array see Section <<sec.format.anarray>> of
+** Logical see Section <<sec.format.logarray>>,
+** Real see Section <<sec.format.realarray>>,
+** String see Section <<sec.format.strarray>>,
+** Token lists see Section <<sec.format.tokarray>>,
 
 See also:
 
@@ -172,12 +168,11 @@ See also:
 * Functions see Table [realfun],
 * Array functions see Table [arrayfun],
 * Real functions of arrays see Table [compfun],
-* Operand see Section <<sec.operand>>,
-* Random generators see Section <<sec.adefer>>.
+* Operand see Section <<sec.format.operand>>,
+* Random generators see Section <<sec.format.adefer>>.
 
-[[sec.astring]]
-String Attributes
-~~~~~~~~~~~~~~~~~
+[[sec.format.astring]]
+=== String Attributes
 
 A string attribute makes alphanumeric information available, e.g. a
 title, file name, element class name, or an option. It can contain any
@@ -185,7 +180,7 @@ characters, enclosed in single (`’`) or double (`"`) quotes. However, if
 it contains a quote, this character must be doubled. Strings can be
 concatenated using the `&` operator see Table <<stroperator,1>>. An operand
 in a string can also use the function `STRING` see Table <<stringfun,2>>.
-String values can occur in string arrays see Section <<sec.anarray>>.
+String values can occur in string arrays see Section <<sec.format.anarray>>.
 
 [#stroperator]
 .String Operator in __OPAL__
@@ -218,14 +213,13 @@ TWISS,LINE=LEP&STRING(X+1);
 The second example converts the value of the expression `X+1` to a
 string and appends it to `LEP`, giving the string `LEP2`.
 
-[[sec.alogical]]
-Logical Expressions
-~~~~~~~~~~~~~~~~~~~
+[[sec.format.alogical]]
+=== Logical Expressions
 
 Many commands in _OPAL_ require the setting of logical values (flags) to
 represent the on/off state of an option. A logical value is represented
 by one of the values `TRUE` or `FALSE`, or by a logical expression. A
-logical expression can occur in logical arrays see Section <<sec.logarray>>.
+logical expression can occur in logical arrays see Section <<sec.format.logarray>>.
 
 A logical expression has the same format and operator precedence as a
 logical expression in C. It is built from logical operators
@@ -285,9 +279,8 @@ Example of a logical expression:
 X>10 && Y<20 || Z==15
 ....
 
-[[sec.areal]]
-Real Expressions
-~~~~~~~~~~~~~~~~
+[[sec.format.areal]]
+=== Real Expressions
 
 To facilitate the definition of interdependent quantities, any real
 value can be entered as an arithmetic expression. When a value used in
@@ -296,10 +289,10 @@ the expression is re-evaluated. Expression definitions may be entered in
 any order. _OPAL_ evaluates them in the correct order before it performs
 any computation. At evaluation time all operands used must have values
 assigned. A real expression can occur in real arrays
-see Section <<sec.realarray>>.
+see Section <<sec.format.realarray>>.
 
 A real expression is built from operators see Table <<operator,4>> and
-operands see Section <<sec.operand>>:
+operands see Section <<sec.format.operand>>:
 
 ....
 real-ref  ::= real-variable |
@@ -335,12 +328,11 @@ It may contain functions see Table [realfun], Parentheses indicate
 operator precedence if required. Constant sub-expressions are evaluated
 immediately, and the result is stored as a constant.
 
-[[operators]]
-Operators
-~~~~~~~~~
+[[sec.format.operators]]
+=== Operators
 
 An expression can be formed using operators see Table <<operator,4>> and
-functions see Table <<realfun,5>> acting on operands see Section <<sec.operand>>.
+functions see Table <<realfun,5>> acting on operands see Section <<sec.format.operand>>.
 
 [#operator]
 .Real Operators in __OPAL__
@@ -468,16 +460,14 @@ D:DRIFT,L=0.01*RANF();    // a drift space with rand. length,
 REAL P=EVAL(0.001*TGAUSS(X));  // Evaluated once and stored as a constant.
 ....
 
-[[sec.operand]]
-Operands in Expressions
-~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.format.operand]]
+=== Operands in Expressions
 
 A real expression may contain the operands listed in the following
 subsections.
 
-[[literal-constants]]
-Literal Constants
-^^^^^^^^^^^^^^^^^
+[[sec.format.literal-constants]]
+==== Literal Constants
 
 Numerical values are entered like FORTRAN constants. Real values are
 accepted in INTEGER or REAL format. The use of a decimal exponent,
@@ -489,15 +479,13 @@ Examples:
 1, 10.35, 5E3, 314.1592E-2
 ....
 
-[[symbolic-constants]]
-Symbolic constants
-^^^^^^^^^^^^^^^^^^
+[[sec.format.symbolic-constants]]
+==== Symbolic constants
 
 _OPAL_ recognizes a few built-in mathematical and physical constants
-see Table <<constant,7>>. Their names must not be used for user-defined
-labels. Additional symbolic constants may be defined
-see Section <<sec.constant>> to simplify their repeated use in statements and
-expressions.
+see Table <<constant,7>>. Their names must not be used for
+user-defined labels. Additional symbolic constants may be defined to
+simplify their repeated use in statements and expressions.
 
 [#constant]
 .Predefined Symbolic Constants
@@ -525,13 +513,11 @@ expressions.
 Here the `RANK` represents the MPI-Rank of the process and
 latexmath:[N_{p}] the total number of MPI processes.
 
-[[sec.avariable]]
-Variable labels
-^^^^^^^^^^^^^^^
+[[sec.format.avariable]]
+==== Variable labels
 
 Often a set of numerical values depends on a common variable parameter.
-Such a variable must be defined as a global variable
-see Section <<sec.variable>> defined by one of
+Such a variable must be defined as a global variable by one of
 
 ....
 REAL X=expression;
@@ -558,9 +544,8 @@ D2:DRIFT,L:=2.0-X;
 When the value of `X` is changed, the lengths of the drift spaces are
 recalculated as `X` and `2-X` respectively.
 
-[[element-or-command-attributes]]
-Element or command attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.format.element-or-command-attributes]]
+==== Element or command attributes
 
 In arithmetic expressions the attributes of physical elements or
 commands can occur as operands. They are named respectively by
@@ -588,9 +573,8 @@ D2:DRIFT,L=2.0-D1->L;
 
 `D1->L` refers to the length `L` of the drift space `D1`.
 
-[[sec.adefer]]
-Deferred Expressions and Random Values
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.format.adefer]]
+==== Deferred Expressions and Random Values
 
 Definition of random machine imperfections requires evaluation of
 expressions containing random functions. These are not evaluated like
@@ -599,17 +583,15 @@ required from the distributions indicated when errors are generated.
 Such an expression is known as a *deferred expression*. Its value cannot
 occur as an operand in another expression.
 
-[[element-selection]]
-Element Selection
-~~~~~~~~~~~~~~~~~
+[[sec.format.element-selection]]
+=== Element Selection
 
 Many _OPAL_ commands allow for the possibility to process or display a
 subset of the elements occurring in a beam line or sequence. This is not
 yet available in: `DOPAL-t` and `DOPAL-cycl`.
 
-[[sec.aplace]]
-Element Selection
-^^^^^^^^^^^^^^^^^
+[[sec.format.aplace]]
+==== Element Selection
 
 A `place` denotes a single element, or the position *following* that
 element. It can be specified by one of the choices
@@ -666,9 +648,8 @@ M[2]::
 S[1]::M[1]::
   The marker `M` nested in the first occurrence of `S`.
 
-[[sec.arange]]
-Range Selection
-^^^^^^^^^^^^^^^
+[[sec.format.arange]]
+==== Range Selection
 
 A `range` in a beam line see Chapter link:lines[Beam Lines] is selected by the following
 syntax:
@@ -717,9 +698,8 @@ S[1]/S[2]::
   Entrance of first occurrence of `S` through exit of second occurrence
   of `S`.
 
-[[sec.aconstraint]]
-Constraints
-~~~~~~~~~~~
+[[sec.format.aconstraint]]
+=== Constraints
 
 Please note this is not yet available in: `DOPAL-t` and `DOPAL-cycl`.
 
@@ -733,9 +713,8 @@ constraint          ::= array-expr constraint-operator array-expr
 constraint-operator ::= "==" | "<" | ">"
 ....
 
-[[sec.areference]]
-Variable Names
-~~~~~~~~~~~~~~
+[[sec.format.areference]]
+=== Variable Names
 
 A variable name can have one of the formats:
 
@@ -745,12 +724,11 @@ A variable name can have one of the formats:
 ....
 
 The first format refers to the value of the global variable
-see Section <<sec.variable>>, the second format refers to a named `attribute`
+see Section <<sec.format.avariable>>, the second format refers to a named `attribute`
 of the named `object`. `object` can refer to an element or a command
 
-[[sec.wildcard]]
-Regular Expressions
-~~~~~~~~~~~~~~~~~~~
+[[sec.format.wildcard]]
+=== Regular Expressions
 
 Some commands allow selection of items via a `regular-expression`. Such
 a pattern string *must* be enclosed in single or double quotes; and the
@@ -779,7 +757,7 @@ All other characters stand for themselves. The pattern
 ....
 
 illustrates all possible unquoted identifier formats
-see Section <<sec.label>>. Since identifiers are converted to lower case,
+see Section <<sec.format.label>>. Since identifiers are converted to lower case,
 after reading they will match the pattern
 
 ....
@@ -800,12 +778,11 @@ and ending with the string `.R1`. The two occurrences of `.*` each stand
 for an arbitrary number (including zero) of any character, and the
 occurrence `\.` stands for a literal period.
 
-[[sec.anarray]]
-Arrays
-~~~~~~
+[[sec.format.anarray]]
+=== Arrays
 
 An attribute array is a set of values of the same attribute type
-see Section <<sec.attribute>>. Normally an array is entered as a list in
+see Section <<sec.format.attribute>>. Normally an array is entered as a list in
 braces:
 
 ....
@@ -819,9 +796,8 @@ has only one value, the braces (``) can be omitted:
 value
 ....
 
-[[sec.logarray]]
-Logical Arrays
-^^^^^^^^^^^^^^
+[[sec.format.logarray]]
+==== Logical Arrays
 
 For the time being, logical arrays can only be given as a list. The
 formal syntax is:
@@ -839,9 +815,8 @@ Example:
 {true,true,a==b,false,x>y && y>z,true,false}
 ....
 
-[[sec.realarray]]
-Real Arrays
-^^^^^^^^^^^
+[[sec.format.realarray]]
+==== Real Arrays
 
 Real arrays have the following syntax:
 
@@ -1003,12 +978,11 @@ COLUMN(table,column,range)
 This generates an array containing the selected (or all) rows of the
 named column.
 
-[[sec.strarray]]
-String Arrays
-^^^^^^^^^^^^^
+[[sec.format.strarray]]
+==== String Arrays
 
 String arrays can only be given as lists of single values. For
-permissible values String values see Section <<sec.astring>>.
+permissible values String values see Section <<sec.format.astring>>.
 
 Example:
 
@@ -1016,9 +990,8 @@ Example:
 {A, "xyz", A & STRING(X)}
 ....
 
-[[sec.tokarray]]
-Token List Arrays
-^^^^^^^^^^^^^^^^^
+[[sec.format.tokarray]]
+==== Token List Arrays
 
 Token list arrays are always lists of single token lists.
 

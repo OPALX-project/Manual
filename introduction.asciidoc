@@ -10,7 +10,7 @@ toc::[]
 [[chp.Introduction]]
 == Introduction
 
-[[aim-of-opal-and-history]]
+[[sec.introduction.aim-of-opal-and-history]]
 === Aim of _OPAL_ and History
 
 _OPAL_ is a tool for charged-particle optics in accelerator structures
@@ -46,7 +46,7 @@ flavors. +
 The following icon `DOPAL-t` means that a feature is not yet available
 in _OPAL-t_. A similar icon is used for _OPAL-cycl_.
 
-[[parallel-processing-capabilities]]
+[[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities
 
 _OPAL_ is built to harness the power of parallel processing for an
@@ -75,7 +75,7 @@ Computing.
 .Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
 image::figures/drift2c1.png[width=10cm]
 
-[[quality-management]]
+[[sec.introduction.quality-management]]
 === Quality Management
 
 Documentation and quality assurance are given our highest attention
@@ -102,7 +102,7 @@ most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelman
 .Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
 image::figures/Gun/GunComp.png[width=18cm]
 
-[[output]]
+[[sec.introduction.output]]
 === Output
 
 The phase space is stored in the H5hut file-format <<bib.howison2010_intro>> and can be analyzed
@@ -123,20 +123,20 @@ Very important information is displayed on the _stdout_ i.e. the _terminal_. The
 the stdout frequently.  
 
 
-[[change-history]]
+[[sec.introduction.change-history]]
 === Change History
 
 See https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes/OPAL-2.0[Release Notes]
 for a detailed list of changes in _OPAL_.
 
-[[known-issues-and-limitations]]
+[[sec.introduction.known-issues-and-limitations]]
 === Known Issues and Limitations
 
 See the https://gitlab.psi.ch/OPAL/src/issues[issue list] in the repository.
 
 See also link:pitfalls#pitfalls-and-limitations[pitfalls and limitations].
 
-[[acknowledgments]]
+[[sec.introduction.acknowledgments]]
 === Acknowledgments
 
 The contributions of various individuals and groups are acknowledged in
@@ -150,7 +150,7 @@ The following individuals are acknowledged for past contributions:
 Yuanjie Bi, Jianjun Yang, Colwyn Gulliford, Hao Zha, Christopher Mayes
 and Tulin Kaman.
 
-[[citation]]
+[[sec.introduction.citation]]
 === Citation
 
 Please cite _OPAL_ in the following way:

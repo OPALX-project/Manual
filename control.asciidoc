@@ -95,7 +95,7 @@ STOP or QUIT;
 ....
 
 terminates execution of the _OPAL_ program, or, when the statement
-occurs in a `CALL` file see Section_<<sec.call>>, returns to the calling file.
+occurs in a `CALL` file see Section_<<sec.control.call>>, returns to the calling file.
 Any statement following the `STOP` or `QUIT` statement is ignored.
 
 [[sec.control.option]]
@@ -366,7 +366,7 @@ definition may be thought of as a mathematical equation. However, _OPAL_
 is not able to solve the equation for a quantity on the right-hand side.
 
 An assignment in the sense of the FORTRAN or C languages can be achieved
-by using the `EVAL` function see Section <<sec.eval>>.
+by using the `EVAL` function see Section <<sec.control.eval>>.
 
 A reserved variable is the value `P0` which is used as the global
 reference momentum for normalizing all magnetic field coefficients.
@@ -492,7 +492,7 @@ VECTOR A_ON=TABLE(10,1);
 
 Circular definitions are not allowed.
 
-[[sec.eval]]
+[[sec.control.eval]]
 ==== Assignment to Variables
 
 A value is assigned to a variable or vector by using the function

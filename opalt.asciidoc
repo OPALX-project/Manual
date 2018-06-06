@@ -10,7 +10,7 @@ toc::[]
 [[chp.opalt]]
 == _OPAL-t_
 
-[[introduction]]
+[[sec.opalt.introduction]]
 === Introduction
 
 _OPAL-t_ is a fully three-dimensional program to track in time,
@@ -34,7 +34,7 @@ calculation to model beams with large energy spread. In the very near
 future a parallel Multigrid solver taking into account the exact
 geometry will be implemented.
 
-[[sec.variablesopalt]]
+[[sec.opalt.variablesopalt]]
 === Variables in _OPAL-t_
 
 _OPAL-t_ uses the following canonical variables to
@@ -59,7 +59,7 @@ PZ::
 
 The independent variable is *t* [s].
 
-[[integration-of-the-equation-of-motion]]
+[[sec.opalt.integration-of-the-equation-of-motion]]
 === Integration of the Equation of Motion
 
 _OPAL-t_ integrates the relativistic Lorentz equation
@@ -75,7 +75,7 @@ magnetic field latexmath:[\mathbf{B}(\mathbf{x},t)]. To update the
 positions and momenta _OPAL-t_ uses the Boris-Buneman algorithm
 <<bib.langdon>>.
 
-[[positioning-of-elements]]
+[[sec.opalt.positioning-of-elements]]
 === Positioning of Elements
 
 Since _OPAL_ version 2.0 of _OPAL_ elements can be placed in space using
@@ -101,7 +101,7 @@ freely in three-dimensional space.
 See Section link:element#sec:Element:common[Common Attributes for all Elements]
 for how to define an aperture.
 
-[[sec.CoordinateSystems]]
+[[sec.opalt.CoordinateSystems]]
 === Coordinate Systems
 
 The motion of a charged particle in an accelerator can be described by
@@ -118,27 +118,27 @@ relation between them can be expressed as
 \frac{\mathrm{d}}{\mathrm{d} t} = \frac{\mathrm{d}}{\mathrm{d}\mathbf{s}}\frac{\mathrm{d}\mathbf{s}}{\mathrm{d} t} = \mathbf{\beta}c\frac{\mathrm{d}}{\mathrm{d}\mathbf{s}}.
 ++++
 
-[[global-cartesian-coordinate-system]]
+[[sec.opalt.global-cartesian-coordinate-system]]
 ==== Global Cartesian Coordinate System
 
 We define the global cartesian coordinate system, also known as floor
 coordinate system with latexmath:[K], a point in this coordinate
-system is denoted by latexmath:[(X, Y, Z) \in K]. In Figure <<KS1,1>> of
+system is denoted by latexmath:[(X, Y, Z) \in K]. In <<fig_KS1>> of
 the accelerator is uniquely defined by the sequence of physical elements
 in latexmath:[K]. The beam elements are numbered
 latexmath:[e_0, \ldots , e_i, \ldots e_n].
 
-[#KS1]
-.Figure 1 : Illustration of local and global coordinates.
-image:figures/opalt/coords.png[]
+[#fig_KS1]
+.Illustration of local and global coordinates.
+image::figures/opalt/coords.png[width=12cm]
 
-[[local-cartesian-coordinate-system]]
+[[sec.opalt.local-cartesian-coordinate-system]]
 ==== Local Cartesian Coordinate System
 
 A local coordinate system latexmath:[K'_i] is attached to each element
 latexmath:[e_i]. This is simply a frame in which latexmath:[(0,0,0)]
 is at the entrance of each element. For an illustration see
-Figure <<KS1,1>>. The local reference system
+<<fig_KS1>>. The local reference system
 latexmath:[(x, y, z) \in K'_n] may thus be referred to a global
 Cartesian coordinate system latexmath:[(X, Y, Z) \in K].
 
@@ -213,7 +213,7 @@ latexmath:[\mathcal{W}_0] to its orientation. In _OPAL-t_ they can be
 defined using either `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI` or `ORIGIN`
 and `ORIENTATION`, see Section link:lines#sec:simple-beam-lines[Simple Beam Lines].
 
-[[space-charge-coordinate-system]]
+[[sec.opalt.space-charge-coordinate-system]]
 ==== Space Charge Coordinate System
 
 In order to calculate space charge in the electrostatic approximation,
@@ -221,7 +221,7 @@ we introduce a co-moving coordinate system latexmath:[K_{\text{sc}}],
 in which the origin coincides with the mean position of the particles
 and the mean momentum is parallel to the z-axis.
 
-[[curvilinear-coordinate-system]]
+[[sec.opalt.curvilinear-coordinate-system]]
 ==== Curvilinear Coordinate System
 
 In order to compute statistics of the particle ensemble,
@@ -232,19 +232,20 @@ the reference orbit. The two other axes are perpendicular to the
 reference orbit and are labelled latexmath:[x] (in the bend plane)
 and latexmath:[y] (perpendicular to the bend plane).
 
-.Figure 2 : Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
-image:figures/opalt/curvcoords.png[]
+.Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
+[#fig_KS2]
+image::figures/opalt/curvcoords.png[width=12cm]
 
-Both coordinate systems are described in Figure <<KS2,2>>.
+Both coordinate systems are described in <<fig_KS2>>.
 
-[[design-or-reference-orbit]]
+[[sec.opalt.design-or-reference-orbit]]
 ==== Design or Reference Orbit
 
 The reference orbit consists of a series of straight sections and
 circular arcs and is *computed* by the Orbit Threader i.e. deduced from
 the element placement in the floor coordinate system.
 
-[[compatibility-mode]]
+[[sec.opalt.compatibility-mode]]
 ==== Compatibility Mode
 
 To facilitate the change for users we will provide a compatibility mode.
@@ -269,7 +270,7 @@ and orientations of all other elements.
 The accuracy of this method is good for all elements except for those
 that overlap with the field of a dipole.
 
-[[sec.orbitthreader]]
+[[sec.opalt.sec.orbitthreader]]
 ==== Orbit Threader and Autophasing
 
 The `OrbitThreader` integrates a design particle through the lattice and
@@ -281,18 +282,18 @@ at a given position in 3D space by minimizing the looping over elements
 when integrating an ensemble of particles. For each time step,
 `IndexMap` returns a set of elements
 latexmath:[\mathcal{S}_{\text{e}} \subset {e_0 \ldots e_n}] in case of
-the example given in Figure <<KS1,1>>. An implicit drift is modelled as an
+the example given in <<fig_KS1>>. An implicit drift is modelled as an
 empty set latexmath:[\emptyset].
 
-[[flow-diagram-of-opal-t]]
+[[sec.opalt.flow-diagram-of-opal-t]]
 === Flow Diagram of _OPAL-t_
 
-[#OPALTSchemeSimple]
-.Figure 3 : Schematic workflow of _OPAL-t_’s execute method.
-image:figures/opalt/flowdiagram.png[]
+.Schematic workflow of _OPAL-t_’s execute method.
+[#fig_OPALTSchemeSimple]
+image::figures/opalt/flowdiagram.png[width=12cm]
 
 A regular time step in _OPAL-t_ is sketched in
-Figure <<OPALTSchemeSimple,3>>. In order to compute the coordinate system
+<<fig_OPALTSchemeSimple>>. In order to compute the coordinate system
 transformation from the reference coordinate system latexmath:[K_s] to
 the local coordinate systems latexmath:[K'_n] we join the
 transformation from floor coordinate system latexmath:[K] to
@@ -303,18 +304,18 @@ quaternions. The resulting quaternions are then converted to the
 appropriate matrix representation before applying the rotation operation
 onto the particle positions and momenta.
 
-As can be seen from Figure <<OPALTSchemeSimple,3>> the integration of the
+As can be seen from <<fig_OPALTSchemeSimple>> the integration of the
 trajectories of the particles are integrated and the computation of the
 statistics of the six-dimensional phase space are performed in the
 reference coordinate system.
 
-[[sec.opalt-output]]
+[[sec.opalt.opalt-output]]
 === Output
 
 In addition to the progress report that _OPAL-t_ writes to the standard
 output (stdout) it also writes different files for various purposes.
 
-[[input_file_name-.stat]]
+[[sec.opalt.input_file_name-.stat]]
 ==== _<input_file_name >.stat_
 
 This file is used to log the statistical properties of the bunch in the
@@ -324,7 +325,7 @@ which the statistics are computed and written to file can be controlled
 With the option `STATDUMPFREQ`. The information that is stored are found
 in the following table.
 
-[cols="<,<,<,<",options="header",]
+[cols="<1,<1,<1,<5",options="header",]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |t |ns |Time
@@ -444,14 +445,14 @@ run serial)
 run serial)
 |=======================================================================
 
-[[datainput_file_name-_monitors.stat]]
+[[sec.opalt.datainput_file_name-_monitors.stat]]
 ==== _data/<input_file_name >_Monitors.stat_
 
 _OPAL-t_ computes the statistics of the bunch for every `MONITOR` that
 it passes. The information that is written can be found in the following
 table.
 
-[cols="<,<,<,<",options="header",]
+[cols="<1,<1,<1,<5",options="header",]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |name |a string |Name of the monitor
@@ -531,14 +532,14 @@ in floor coordinate system
 |40 |zpz |1 |Correlation between s-components of positions and momenta
 |=======================================================================
 
-[[datainput_file_name-_3d.opal]]
+[[sec.opalt.datainput_file_name-_3d.opal]]
 ==== _data/<input_file_name >_3D.opal_
 
 _OPAL-t_ copies the input file into this file and replaces all
 occurrences of `ELEMEDGE` with the corresponding position using `X`,
 `Y`, `Z`, `THETA`, `PHI` and `PSI`.
 
-[[datainput_file_name-_elementpositions.txt]]
+[[sec.opalt.datainput_file_name-_elementpositions.txt]]
 ==== _data/<input_file_name >_ElementPositions.txt_
 
 _OPAL-t_ stores for every element the position of the entrance and the
@@ -548,7 +549,7 @@ the first column the name of the element is written prefixed with
 store the z-component then the x-component and finally the y-component
 of the position in floor coordinates.
 
-[[datainput_file_name-_elementpositions.py]]
+[[sec.opalt.datainput_file_name-_elementpositions.py]]
 ==== _data/<input_file_name >_ElementPositions.py_
 
 This Python script can be used to generate visualizations of the beam
@@ -576,14 +577,14 @@ The following arguments can be passed
 * `--project-to-plane` to project the beam line to the plane (default zx plane)
 * `--normal x y z` specify the normal for projection with the components `x`, `y` and `z`
 
-[[datainput_file_name-_elementpositions.stat]]
+[[sec.opalt.datainput_file_name-_elementpositions.stat]]
 ==== _data/<input_file_name >_ElementPositions.stat_
 
 This file can be used when plotting the statistics of the bunch to
 indicate the positions of the magnets. It is written in the SDDS format.
 The information that is written can be found in the following table.
 
-[cols="<,<,<,<",options="header",]
+[cols="<1,<1,<1,<5",options="header",]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |s |m |The position in path length
@@ -610,33 +611,33 @@ present
 |11 |element_names |a string |The names of the elements that are present
 |=======================================================================
 
-[[datainput_file_name-_designpath.dat]]
+[[sec.opalt.datainput_file_name-_designpath.dat]]
 ==== _data/<input_file_name >_DesignPath.dat_
 
 The trajectory of the reference particle is stored in this ASCII file.
 The content of the columns are listed in the following table.
 
-[cols="<,<,<,<",options="header",]
+[cols="<1,<1,<1,<5",options="header",]
 |========================================================
-|Column Nr. |Units |Meaning |
-|1 |m |Position in path length |
-|2 |m |X-component of position in floor coordinates |
-|3 |m |Y-component of position in floor coordinates |
-|4 |m |Z-component of position in floor coordinates |
-|5 |1 |X-component of momentum in floor coordinates |
-|6 |1 |Y-component of momentum in floor coordinates |
-|7 |1 |Z-component of momentum in floor coordinates |
-|8 |MV m^-1 |X-component of electric field at position |
-|9 |MV m^-1 |Y-component of electric field at position |
-|10 |MV m^-1 |Z-component of electric field at position |
-|11 |T |X-component of magnetic field at position |
-|12 |T |Y-component of magnetic field at position |
-|13 |T |Z-component of magnetic field at position |
-|14 |MeV |Kinetic energy |
-|15 |s |Time |
+|Column Nr. |Name |Units |Meaning |
+|1  | |m |Position in path length |
+|2  | |m |X-component of position in floor coordinates |
+|3  | |m |Y-component of position in floor coordinates |
+|4  | |m |Z-component of position in floor coordinates |
+|5  | |1 |X-component of momentum in floor coordinates |
+|6  | |1 |Y-component of momentum in floor coordinates |
+|7  | |1 |Z-component of momentum in floor coordinates |
+|8  | |MV m^-1 |X-component of electric field at position |
+|9  | |MV m^-1 |Y-component of electric field at position |
+|10 | |MV m^-1 |Z-component of electric field at position |
+|11 | |T |X-component of magnetic field at position |
+|12 | |T |Y-component of magnetic field at position |
+|13 | |T |Z-component of magnetic field at position |
+|14 | |MeV |Kinetic energy |
+|15 | |s |Time |
 |========================================================
 
-[[multiple-species]]
+[[sec.opalt.multiple-species]]
 === Multiple Species
 
 In the present version only one particle species can be defined
@@ -644,7 +645,7 @@ see Chapter link:beam[Beam Command], however due to the underlying general stru
 implementation of a true multi species version of _OPAL_ should be
 simple to accomplish.
 
-[[multipoles-in-different-coordinate-systems]]
+[[sec.opalt.multipoles-in-different-coordinate-systems]]
 === Multipoles in different Coordinate systems
 
 In the following sections there are three models presented for the
@@ -654,7 +655,7 @@ with a power expansion for the magnetic field. The last model tries to
 be different by starting with a more compact functional form of the
 field which is then adapted to straight and curved geometries.
 
-[[fringe-field-models]]
+[[sec.opalt.fringe-field-models]]
 ==== Fringe field models
 
 _(for a straight multipole)_
@@ -850,7 +851,7 @@ where latexmath:[d(z)] is the distance to the
 field boundary and latexmath:[\lambda] characterizes the fringe field
 length.
 
-[[fringe-field-of-a-curved-multipole]]
+[[sec.opalt.fringe-field-of-a-curved-multipole]]
 ==== Fringe field of a curved multipole
 
 _(fixed radius)_
@@ -879,8 +880,8 @@ b_z (z) = B_z (-z) \qquad B_x (z) = - B_x (-z) \qquad B_s (z) = - B_s (-z)
 
 The most general form of the expansion is
 
-.Equation 1
 [#eq-01]
+.General form
 [latexmath]
 ++++
 \begin{aligned}
@@ -911,7 +912,7 @@ yield
         \end{aligned}
 ++++
 
-The substitution of (<<eq-01, 1>>)
+The substitution of (<<eq-01>>)
 into Maxwell’s equations allows for the derivation of
 recursion relations. ([eq.23]) gives
 
@@ -988,7 +989,7 @@ can model the fringe field for each multipole term latexmath:[x^n]. As
 an example, for a dipole magnet, the latexmath:[B_{1,0}] function can
 be model as an Enge function or latexmath:[tanh].
 
-[[fringe-field-of-a-curved-multipole-1]]
+[[sec.opalt.fringe-field-of-a-curved-multipole-1]]
 ==== Fringe field of a curved multipole
 
 _(variable radius of curvature)_
@@ -996,7 +997,7 @@ _(variable radius of curvature)_
 The difference between this case and the above is that
 latexmath:[\rho] is now a function of latexmath:[s],
 latexmath:[\rho(s)]. We can obtain the same result starting with the
-same functional forms for the field (<<eq-01, 1>>). The
+same functional forms for the field (<<eq-01>>). The
 result of the previous section also holds in this case since no
 derivative latexmath:[\frac{\partial}{\partial s}] is applied to the
 scale factor latexmath:[h_s]. If the radius of curvature is set to be
@@ -1007,7 +1008,7 @@ that stays in the centre of the dipole
 rho (s) \propto B(z=0, x=0, s) = B_x (z=0,x=0) = b_{0,0}(s)
 ++++
 
-[[fringe-field-of-a-multipole]]
+[[sec.opalt.fringe-field-of-a-multipole]]
 ==== Fringe field of a multipole
 
 _This is a different, more compact treatment_ The derivation is more

@@ -8,8 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.tutorial]]
-Tutorial
---------
+== Tutorial
 
 This chapter will provide a jump start describing some of the most
 common used features of _OPAL_. The complete set of examples can be
@@ -20,14 +19,14 @@ scales in the weak sense, hence for a higher concurrency one has to
 increase the problem size i.e. number of macro particles and the grid
 size, which is beyond this tutorial.
 
-The Simulation Cycle
-~~~~~~~~~~~~~~~~~~~~
+[[sec.tutorial.simulation-cycle]]
+=== The Simulation Cycle
 
-image:figures/tutorial/gen-str.png[width=375]
+.The simulation cycle
+image::figures/tutorial/gen-str.png[width=6cm]
 
-[[starting-opal]]
-Starting OPAL
-~~~~~~~~~~~~~
+[[sec.tutorial.starting-opal]]
+=== Starting OPAL
 
 The name of the application is `opal`. When called without any argument
 an interactive session is started.
@@ -59,7 +58,7 @@ semicolon).
 
 For batch runs _OPAL_ accepts the following command line arguments: +
 
-[cols="<,<,<",options="header",]
+[cols="<1,<1,<4",options="header",]
 |=======================================================================
 |Argument |Values |Function
 |--input |<file > |the input file. Using "--input" is optional.
@@ -93,9 +92,8 @@ Example:
 opal input.in --restartfn input.h5 --restart -1 --info 3
 ....
 
-[[sec.trackautoph]]
-Auto-phase Example
-~~~~~~~~~~~~~~~~~~
+[[sec.tutorial.trackautoph]]
+=== Auto-phase Example
 
 This is a partial complete example. First we have to set _OPAL_ in
 `AUTOPHASE` mode, as described in Section link:control#sec:option[Option Statement] and for example set
@@ -129,21 +127,18 @@ FINSS_RGUN
 
 with the first entry defining the number of cavities in the simulation.
 
-[[sec.examplesbeamlines]]
-Examples of Particle Accelerators and Beamlines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.tutorial.examplesbeamlines]]
+=== Examples of Particle Accelerators and Beamlines
 
-link:examples/OBLA-Gun/OBLA-Gun.in[]
+https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/OBLA-Gun/OBLA-Gun.in[OBLA-Gun.in]
 
-[[sec.felinj]]
-PSI XFEL 250 MeV Injector
-^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.tutorial.felinj]]
+==== PSI XFEL 250 MeV Injector
 
-link:examples/diagnostic.in[]
+https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/diagnostic.in[diagnostic.in]
 
-[[sec.inj2]]
-PSI Injector II Cyclotron
-^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.tutorial.inj2]]
+==== PSI Injector II Cyclotron
 
 Injector II is a separated sector cyclotron specially designed for
 pre-acceleration (inject: 870 keV, extract: 72 MeV) of high intensity
@@ -154,7 +149,7 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron.
 
-link:examples/opal-cycl.in[]
+https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl.in[opal-cycl.in]
 
 To run opal on a single node, just use this command:
 
@@ -165,15 +160,14 @@ To run opal on a single node, just use this command:
 Here shows some pictures using the resulting data from single particle
 tracking using _OPAL-cycl_.
 
-Left plot of Figure <<Inj2ref,1>> shows the
+Left plot of <<fig_Inj2ref>> shows the
 accelerating orbit of reference particle. After 106 turns, the energy
 increases from 870 keV at the injection point to 72.16 MeV at the
 deflection point.
 
-[#Inj2ref]
-.Figure 1 : Reference orbit(left) and tune diagram(right) in Injector II 
-image:figures/cyclotron/AEO_Injector2.png[width=375]
-image:figures/cyclotron/nurnuz_Inj2.png[width=375]
+[#fig_Inj2ref]
+.Reference orbit(left) and tune diagram(right) in Injector II 
+image::figures/cyclotron/injector2_orbit_and_tune.png[width=18cm]
 
 From theoretic view, there should be an eigen ellipse for any given
 energy in stable area of a fixed accelerator structure. Only when the
@@ -183,15 +177,14 @@ get maximal. We can calculate the eigen ellipse by single particle
 tracking using betatron oscillation property of off-centered particle as
 following: track an off-centered particle and record its coordinates and
 momenta at the same azimuthal position for each revolution.
-Figure <<eigen,2>> shows the eigen ellipse at symmetric line of sector
+Figure <<fig_eigen>> shows the eigen ellipse at symmetric line of sector
 magnet for energy of 2 MeV in Injector II.
 
-[#eigen]
-.Figure 2 : Radial and vertical eigenellipse at 2 MeV of Injector II
-image:figures/cyclotron/RadialEigen_Inj2.png[width=375]
-image:figures/cyclotron/VertEigen_Inj2.png[width=375]
+[#fig_eigen]
+.Radial and vertical eigenellipse at 2 MeV of Injector II
+image::figures/cyclotron/injector2_eigenellipse.png[width=18cm]
 
-Right plot of Figure <<Inj2ref,1>> shows very good
+Right plot of <<fig_Inj2ref>> shows very good
 agreement of the tune diagram by _OPAL-cycl_ and FIXPO. The trivial
 discrepancy should come from the methods they used. In FIXPO, the tune
 values are obtained according to the crossing points of the initially
@@ -203,7 +196,7 @@ the biggest amplitude is the betatron tune value at the given energy.
 Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
-link:examples/opal-cycl-sc.in[]
+https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl-sc.in[opal-cycl-sc.in]
 
 To run opal on single node, just use this command:
 
@@ -225,23 +218,19 @@ argument like this:
  # mpirun -np N opal testinj2-2.in --restart -1
 ....
 
-Figure <<cyclParameters,3>> and <<cyclphasespace,4>> are simulation results, shown by
-H5ROOT code.
+<<fig_cyclParameters>> and <<fig_cyclPhasespace>> are simulation results, shown by
+H5root code.
 
-[#cyclParameters]
-.Figure 3 : Energy Vs. time (left) and external B field vs. track step (Right, only show for about 2 turns)
-image:figures/cyclotron/Inj2-ENERGY-TIME.png[width=375]
-image:figures/cyclotron/Inj2-B-ref-z-TrackStep.png[width=375]
+[#fig_cyclParameters]
+.Energy vs. time (left) and external B field vs. track step (Right, only show for about 2 turns)
+image::figures/cyclotron/Inj2-cyclParameters.png[width=18cm]
 
-[#cyclphasespace]
-.Figure 4 : Vertical phase at different energy from left to right: 0.87 MeV, 15 MeV and 35 MeV
-image:figures/cyclotron/Inj2-z-pz-step-870KeV.png[width=250]
-image:figures/cyclotron/Inj2-z-pz-step-15MeV.png[width=250]
-image:figures/cyclotron/Inj2-z-pz-step-30MeV.png[width=250]
+[#fig_cyclPhasespace]
+.Vertical phase at different energy from left to right: 0.87 MeV, 15 MeV and 35 MeV
+image::figures/cyclotron/Inj2-cyclPhasespace.png[width=18cm]
 
-[[sec.Ring]]
-PSI Ring Cyclotron
-^^^^^^^^^^^^^^^^^^
+[[sec.tutorial.Ring]]
+==== PSI Ring Cyclotron
 
 From the view of numerical simulation, the difference between Injector
 II and Ring cyclotron comes from two aspects:
@@ -255,19 +244,17 @@ RF Cavity::
   parallel displacement from its radial position._OPAL-cycl_ have an
   argument `PDIS` to manipulate this issue.
 
-[#Ringref]
-.Figure 5 : Reference orbit(left) and tune diagram(right) in Ring cyclotron 
-image:figures/cyclotron/AEO_Ring.png[width=375]
-image:figures/cyclotron/nurnuz_Ring.png[width=375]
+[#fig_Ringref]
+.Reference orbit(left) and tune diagram(right) in Ring cyclotron 
+image::figures/cyclotron/ReferenceOrbit.png[width=18cm]
 
-Figure <<Ringref,5>> shows a single particle tracking
+Figure <<fig_Ringref>> shows a single particle tracking
 result and tune calculation result in the PSI Ring cyclotron. Limited by
 size of the user guide, we don’t plan to show too much details as in
 Injector II.
 
-[[sec.oldtonewdist]]
-Translate Old to New Distribution Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.tutorial.oldtonewdist]]
+=== Translate Old to New Distribution Commands
 
 As of _OPAL_ 1.2, the distribution command see Chapter link:distribution[Distribution]
 was changed significantly. Many of the changes were internal to the
@@ -295,9 +282,8 @@ same as before. These changes are only due to _OPAL_ using a different
 sequence of numbers to create your distribution, and not because of
 errors in the calculation. (Or at least we hope not.)
 
-[[sec.oldtonewdistgungaussandastra]]
-`GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` Distribution Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.tutorial.oldtonewdistgungaussandastra]]
+==== `GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` Distribution Types
 
 The link:distribution#sec:gungaussflattopthdisttype[`GUNGAUSSFLATTOPTH`] and
 link:distribution#sec:astraflattopthdisttype[`ASTRAFLATTOPTH`] 
@@ -320,9 +306,8 @@ value that is 10 latexmath:[\times] the value of the distribution
 attribute link:distribution#distattruniversal[`NBIN`] in order for your
 simulation to behave the same as before.
 
-[[fromfile-gauss-and-binomial-distribution-types]]
-`FROMFILE`, `GAUSS` and `BINOMIAL` Distribution Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.tutorial.fromfile-gauss-and-binomial-distribution-types]]
+==== `FROMFILE`, `GAUSS` and `BINOMIAL` Distribution Types
 
 The link:distribution#sec:fromfiledisttype[`FROMFILE`],
 link:distribution#sec:gaussdisttype[`GAUSS`] and
