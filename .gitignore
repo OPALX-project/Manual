@@ -6,6 +6,7 @@
 *.glo
 *.html
 *.idx
+*.lof
 *.log
 *.lot
 *.out
