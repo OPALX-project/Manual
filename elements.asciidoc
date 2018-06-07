@@ -292,7 +292,7 @@ FMAPFN::
 
 [#fig_sbend]
 .Illustration of a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]
-image::figures/Elements/sbend.png[]
+image::figures/Elements/sbend.png[width=10cm]
 
 [[sec.elements.SBend]]
 ==== SBend (_OPAL-t_)
@@ -890,7 +890,7 @@ the same as the hard edge magnet described by the reference trajectory.
 
 [#fig_rbend_enge_fringe]
 .Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see Equation [enge_func] with the parameters from the default `1DProfile1` field map described in <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
-image:figures/Elements/Enge-func-plot.png[]
+image::figures/Elements/Enge-func-plot.png[width=10cm]
 
 So far we have described how to setup an `RBEND` or `SBEND` element, but
 have not explained how _OPAL-t_ uses this information to calculate the
@@ -1164,8 +1164,7 @@ This is a restricted feature: _OPAL-cycl_.
 
 [#fig_sbend3d1]
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
-image:figures/Elements/sbend3d-1.png[width=375]
-image:figures/Elements/sbend3d-2.png[width=375]
+image::figures/Elements/sbend3d.png[width=18cm]
 
 [[sec.elements.quadrupole]]
 === Quadrupole
@@ -1771,12 +1770,12 @@ rf0: RFCavity, VOLT=0.25796, FMAPFN="Cav1.dat",
      GAPWIDTH = 0.0, PHI0=phi01;
 ....
 
-<<Cyclotron_cavity>> shows the simplified geometry of a cavity gap
+<<fig_Cyclotron_cavity>> shows the simplified geometry of a cavity gap
 and its parameters.
 
-[#Cyclotron_cavity]
+[#fig_Cyclotron_cavity]
 .Schematic of the simplified geometry of a cavity gap and parameters
-image:./figures/cyclotron/Cavity.png[]
+image::./figures/cyclotron/Cavity.png[width=10cm]
 
 [[sec.elements.variable-rf-cavity-cycl]]
 === RF Cavities with Time Dependent Parameters
@@ -1853,12 +1852,12 @@ RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLI
 [[sec.elements.travelingwave]]
 === Traveling Wave Structure
 
-[#FINSB-RAC-field]
+[#fig_FINSB-RAC-field]
 .The on-axis field of an S-band (2997.924 MHz) `TRAVELINGWAVE` structure. The field of a single cavity is shown between its entrance and exit fringe fields. The fringe fields extend one half wavelength (latexmath:[\lambda/2]) to either side.
-image:./figures/traveling-wave-structure/FINSB-RAC-field.png[]
+image::./figures/traveling-wave-structure/FINSB-RAC-field.png[width=10cm]
 
 An example of a 1D `TRAVELINGWAVE` structure field map is shown in
-<<FINSB-RAC-field>>. This map is a standing wave solution generated
+<<fig_FINSB-RAC-field>>. This map is a standing wave solution generated
 by Superfish and shows the field on axis for a single accelerating
 cavity with the fringe fields of the structure extending to either side.
 _OPAL-t_ reads in this field map and constructs the total field of the
@@ -1886,7 +1885,7 @@ internally by _OPAL-t_.
 
 The field of the main accelerating structure is reconstructed from the
 center section of the standing wave solution shown in
-<<FINSB-RAC-field>> using
+<<fig_FINSB-RAC-field>> using
 
 [latexmath]
 ++++
@@ -2100,7 +2099,9 @@ repeat( // repeat it in y-direction
       )
 ....
 The latter example will produce a holes as in the following picture
-image:figures/Elements/pepperpot.png[]
+
+.Pepper-pot with rectangle holes
+image::figures/Elements/pepperpot.png[width=10cm]
 
 In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separat file (using `FNAME`; comments and newlines are allowed).
 
@@ -2142,7 +2143,8 @@ PARTICLEMATTERINTERACTION::
   particle hitting collimator will be recorded and directly deleted from
   the simulation.
 
-image:figures/Elements/collimator.png[]
+.Collimator
+image::figures/Elements/collimator.png[width=10cm]
 
 Example:
 
@@ -2183,7 +2185,8 @@ YEND::
 WIDTH::
   The width of the septum. [mm]
 
-image:figures/Elements/septum.png[]
+.Septum
+image::figures/Elements/septum.png[width=10cm]
 
 Example:
 
@@ -2212,7 +2215,8 @@ YEND::
 WIDTH::
   The width of the probe, NOT used yet.
 
-image:figures/Elements/probe.png[]
+.Probe
+image::figures/Elements/probe.png[width=10cm]
 
 Example:
 

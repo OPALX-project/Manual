@@ -300,9 +300,11 @@ OPTION,SEED=987456321
 |`ECHO`              |= `FALSE`
 |`INFO`              |= `TRUE`
 |`TRACE`             |= `FALSE`
+
 |`WARN`              |= `TRUE`
 |`TELL`              |= `FALSE`
 |`SEED`              |= `123456789`
+
 |`PSDUMPFREQ`        |= `10`
 |`STATDUMPFREQ`      |= `10`
 |`PSDUMPEACHTURN`    |= `FALSE`

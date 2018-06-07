@@ -8,8 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.lines]]
-Beam Lines
-----------
+== Beam Lines
 
 The accelerator to be studied is known to _OPAL_ as a sequence of
 physical elements called a *beam line*. A beam line is built from
@@ -33,8 +32,7 @@ Each `member` may be one of the following:
 Beam lines can be nested to any level.
 
 [[sec.lines.simple-beam-lines]]
-Simple Beam Lines
-~~~~~~~~~~~~~~~~~
+=== Simple Beam Lines
 
 The simplest beam line consists of single elements:
 
@@ -55,9 +53,8 @@ ORIENTATION::
   Vector of Tait-Bryan angles [bib.tait-bryan] of the orientation of the
   line at the origin.
 
-[[sub-lines]]
-Sub-lines
-~~~~~~~~~
+[[sec.lines.sub-lines]]
+=== Sub-lines
 
 Instead of referring to an element, a beam line member can refer to
 another beam line defined in a separate command. This provides a
