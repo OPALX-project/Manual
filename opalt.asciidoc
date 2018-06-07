@@ -234,7 +234,7 @@ and latexmath:[y] (perpendicular to the bend plane).
 
 .Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
 [#fig_KS2]
-image::figures/opalt/curvcoords.png[width=12cm]
+image::figures/opalt/curvcoords.png[width=10cm]
 
 Both coordinate systems are described in <<fig_KS2>>.
 
@@ -619,22 +619,22 @@ The content of the columns are listed in the following table.
 
 [cols="<1,<1,<1,<5",options="header",]
 |========================================================
-|Column Nr. |Name |Units |Meaning |
-|1  | |m |Position in path length |
-|2  | |m |X-component of position in floor coordinates |
-|3  | |m |Y-component of position in floor coordinates |
-|4  | |m |Z-component of position in floor coordinates |
-|5  | |1 |X-component of momentum in floor coordinates |
-|6  | |1 |Y-component of momentum in floor coordinates |
-|7  | |1 |Z-component of momentum in floor coordinates |
-|8  | |MV m^-1 |X-component of electric field at position |
-|9  | |MV m^-1 |Y-component of electric field at position |
-|10 | |MV m^-1 |Z-component of electric field at position |
-|11 | |T |X-component of magnetic field at position |
-|12 | |T |Y-component of magnetic field at position |
-|13 | |T |Z-component of magnetic field at position |
-|14 | |MeV |Kinetic energy |
-|15 | |s |Time |
+|Column Nr. |Name |Units |Meaning 
+|1  | |m |Position in path length 
+|2  | |m |X-component of position in floor coordinates
+|3  | |m |Y-component of position in floor coordinates
+|4  | |m |Z-component of position in floor coordinates
+|5  | |1 |X-component of momentum in floor coordinates
+|6  | |1 |Y-component of momentum in floor coordinates
+|7  | |1 |Z-component of momentum in floor coordinates
+|8  | |MV m^-1 |X-component of electric field at position
+|9  | |MV m^-1 |Y-component of electric field at position
+|10 | |MV m^-1 |Z-component of electric field at position
+|11 | |T |X-component of magnetic field at position
+|12 | |T |Y-component of magnetic field at position
+|13 | |T |Z-component of magnetic field at position
+|14 | |MeV |Kinetic energy
+|15 | |s |Time
 |========================================================
 
 [[sec.opalt.multiple-species]]
