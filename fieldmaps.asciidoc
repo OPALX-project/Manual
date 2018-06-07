@@ -400,7 +400,7 @@ each longitudinal grid point.
 |=======================================================================
 
 A `1DMagnetoStatic` field map has the general form shown in
-Table <<tab_1DMagnetoStatic>>. The first three lines form the file header and
+<<tab_1DMagnetoStatic>>. The first three lines form the file header and
 tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -475,7 +475,7 @@ not provide a `FAST` version of this map type.)
 |======================================================================
 
 An `AstraMagnetoStatic` field map has the general form shown in
-Table <<AstraMagnetoStatic>>. The first line forms the file header and
+<<AstraMagnetoStatic>>. The first line forms the file header and
 tells _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -551,7 +551,7 @@ longitudinal grid point.
 |latexmath:[E_{z,\,N_{z} + 1}] (MV/m) | |
 |=======================================================================
 
-A `1DDynamic` field map has the general form shown in Table <<tab_1DDynamic>>.
+A `1DDynamic` field map has the general form shown in <<tab_1DDynamic>>.
 The first four lines form the file header and tell _OPAL-t_ how the
 field map data is being presented:
 
@@ -627,7 +627,7 @@ of this map type.)
 |======================================================================
 
 An `AstraDynamic` field map has the general form shown in
-Table <<AstraDynamic>>. The first line forms the file header and tells
+<<AstraDynamic>>. The first line forms the file header and tells
 _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -686,7 +686,7 @@ Currently, `1DProfile1` field maps are only implemented for `RBEND` and
 image:./figures/Fieldmaps/profile-1.png[width=700]
 
 A `1DProfile1` field map has the general form shown in
-Table <<tab_1DProfile1>>. The first three lines form the file header and tell
+<<tab_1DProfile1>>. The first three lines form the file header and tell
 _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -775,7 +775,7 @@ A `1DProfile1 Type 1` field map is the same `1DProfile1` field map found
 in versions of _OPAL_ previous to _OPAL_ __OPAL__version1.2.0 .
 <<fig_rbendengetype1>> and <<fig_sbendengetype1>> illustrate the fringe field
 regions for an `RBEND` and an `SBEND` element. Referring to the general
-field map file shown in Table <<tab_1DProfile1>>, the values on lines 2 and 3
+field map file shown in <<tab_1DProfile1>>, the values on lines 2 and 3
 are given by:
 
 
@@ -855,7 +855,7 @@ Enge functions for the entrance and exit fringe fields. Specifically, a
 length of the magnet. Instead, that value is set using the element’s `L`
 attribute. In turn, this allows us the freedom to make slight changes to
 how the parameters on lines 2 and 3 of the field map file shown in
-Table <<tab_1DProfile1>> are defined. Now
+<<tab_1DProfile1>> are defined. Now
 
 
 [latexmath]
@@ -995,7 +995,7 @@ latexmath:[\max(|E_{z, \text{ on axis}}|) = 1\mathrm{MV/m}].
 |=======================================================================
 
 A `2DElectroStatic` field map has the general form shown in
-Table <<tab_2DElectroStatic>>. The first three lines form the file header and
+<<tab_2DElectroStatic>>. The first three lines form the file header and
 tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -1082,7 +1082,7 @@ latexmath:[\max(|B_{z,\text{ on axis}}|) = {1}{T}].
 |=======================================================================
 
 A `2MagnetoStatic` field map has the general form shown in
-Table <<tab_2DMagnetoStatic>>. The first three lines form the file header and
+<<tab_2DMagnetoStatic>>. The first three lines form the file header and
 tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -1179,7 +1179,7 @@ latexmath:[\max(|E_{z,\text{ on axis}}|) = 1\mathrm{MV/m}].
 |latexmath:[|E_N|] (MV/m) |latexmath:[H_{\phi,\,N}] (A/m)
 |=======================================================================
 
-A `2DDynamic` field map has the general form shown in Table <<tab_2DDynamic>>.
+A `2DDynamic` field map has the general form shown in <<tab_2DDynamic>>.
 The first four lines form the file header and tell _OPAL-t_ how the
 field map data is being presented:
 
@@ -1276,7 +1276,7 @@ latexmath:[B_y] and latexmath:[B_z].
 |=======================================================================
 
 A `3DMagnetoStatic` field map has the general form shown in
-Table <<tab_3DMagnetoStatic>>. The first five lines form the file header and
+<<tab_3DMagnetoStatic>>. The first five lines form the file header and
 tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -1359,7 +1359,7 @@ can then be derived from the latexmath:[R(x,\;y,\;z)].
 |=======================================================================
 
 A `3DMagnetoStatic_Extended` field map has the general form shown in
-Table <<tab_3DMagnetoStatic_Extended>>. The first four lines form the file
+<<tab_3DMagnetoStatic_Extended>>. The first four lines form the file
 header and tell _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -1379,7 +1379,7 @@ The lines following the header give the 3D field map grid values from
 latexmath:[1] to latexmath:[N= (N_{z} + 1) \times (N_{x} + 1)]. The
 order of these depend on the field orientation
 see <<sec.fieldmaps.fieldorientation>> and can currently only be the format
-shown in Table <<tab_3DMagnetoStatic_Extended>>.
+shown in <<tab_3DMagnetoStatic_Extended>>.
 
 [[sec.fieldmaps.3DDynamic]]
 === 3DDynamic
@@ -1453,7 +1453,7 @@ latexmath:[\max(|E_{z,\text{ on axis}}|) = 1\mathrm{MV/m}].
 |latexmath:[H_{y,\,N}] (A/m) |latexmath:[H_{z,\,N}] (A/m)
 |=======================================================================
 
-A `3DDynamic` field map has the general form shown in Table <<tab_3DDynamic>>.
+A `3DDynamic` field map has the general form shown in <<tab_3DDynamic>>.
 The first five lines form the file header and tell _OPAL-t_ how the
 field map data is being presented:
 
