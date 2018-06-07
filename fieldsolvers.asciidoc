@@ -451,7 +451,7 @@ evident*. A short description is given in the
 Table below.
 
 .Preconditioner behavior command summary
-[cols="1<,4<",options="header",]
+[cols="<1,<4",options="header",]
 |=======================================================================
 |Value |Behavior
 |`STD` |The preconditioner is rebuilt in every time step (enabled by
@@ -493,7 +493,7 @@ tagging scheme, further keywords can be used. A summary is given in
 the Table below.
 
 .Mesh refinement strategies
-[cols="<,<",options="header",]
+[cols="<1,<4",options="header",]
 |=======================================================================
 |Value |Behavior
 |`POTENTIAL` |Mark each cell if
