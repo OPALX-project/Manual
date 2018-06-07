@@ -7,9 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.beam]]
-Beam Command
-------------
+[[chp.beam-command]]
+== Beam Command
 
 All _OPAL_ commands working on a beam require the setting of various
 quantities related to this beam. These are entered by a `BEAM` command:
@@ -22,8 +21,8 @@ label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
 
 The `label` is optional, it defaults to `UNNAMED_BEAM`.
 
-Particle Definition
-~~~~~~~~~~~~~~~~~~~
+[[sec.beam-command.particle-definition]]
+=== Particle Definition
 
 The particle mass and charge are defined by:
 
@@ -68,8 +67,8 @@ MASS::
 CHARGE::
   The particle charge expressed in elementary charges.
 
-Beam Energy
-~~~~~~~~~~~
+[[sec.beam-command.beam-energy]]
+=== Beam Energy
 
 To specify the energy there are three attributes (in order of priority):
 
@@ -80,8 +79,8 @@ ENERGY::
 PC::
   The particle momentum in GeV/c.
 
-Twiss Parameters
-~~~~~~~~~~~~~~~~
+[[sec.beam-command.twiss-parameters]]
+=== Twiss Parameters
 
 The twiss parameters are only used in the twiss calculation.
 The beam shape and size is in general defined by the distribution command,
@@ -94,8 +93,8 @@ EY::
 ET::
   Longitudinal emittance
 
-Other Attributes
-~~~~~~~~~~~~~~~~
+[[sec.beam-command.other-attributes]]
+=== Other Attributes
 
 The other attributes are:
 

@@ -95,7 +95,7 @@ STOP or QUIT;
 ....
 
 terminates execution of the _OPAL_ program, or, when the statement
-occurs in a `CALL` file see Section_<<sec.control.call>>, returns to the calling file.
+occurs in a `CALL` file see <<sec.control.call>>, returns to the calling file.
 Any statement following the `STOP` or `QUIT` statement is ignored.
 
 [[sec.control.option]]
@@ -300,9 +300,11 @@ OPTION,SEED=987456321
 |`ECHO`              |= `FALSE`
 |`INFO`              |= `TRUE`
 |`TRACE`             |= `FALSE`
+
 |`WARN`              |= `TRUE`
 |`TELL`              |= `FALSE`
 |`SEED`              |= `123456789`
+
 |`PSDUMPFREQ`        |= `10`
 |`STATDUMPFREQ`      |= `10`
 |`PSDUMPEACHTURN`    |= `FALSE`
@@ -366,7 +368,7 @@ definition may be thought of as a mathematical equation. However, _OPAL_
 is not able to solve the equation for a quantity on the right-hand side.
 
 An assignment in the sense of the FORTRAN or C languages can be achieved
-by using the `EVAL` function see Section <<sec.control.eval>>.
+by using the `EVAL` function see <<sec.control.eval>>.
 
 A reserved variable is the value `P0` which is used as the global
 reference momentum for normalizing all magnetic field coefficients.
