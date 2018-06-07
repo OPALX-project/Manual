@@ -53,10 +53,10 @@ T_{max}=\frac{2m_ec^2\beta^2\gamma^2}{1+2\gamma m_e/M+(m_e/M)^2},
 where latexmath:[M] is the incident particle mass.
 
 The stopping power is compared with PSTAR program of NIST in
-Figure <<fig_PSTAR,1>>.
+<<fig_PSTAR>>.
 
 [#fig_PSTAR]
-.Figure 1 : The comparison of stopping power with PSTAR.
+.The comparison of stopping power with PSTAR.
 image:figures/partmatter/dEdx.png[width=500]
 
 Energy straggling: For relatively thick absorbers such that the number
@@ -180,21 +180,24 @@ _else_
 
 
 The angle distribution after Coulomb scattering is shown in
-Figure 2. The line is from Jackson’s formula, and the points are
+<<fig_Jackson>>. The line is from Jackson’s formula, and the points are
 simulations with Matlab. For a thickness of latexmath:[\Delta s=1e-4]
 latexmath:[m], latexmath:[\theta=0.5349 \alpha] (in degree).
 
-.Figure 2: The comparison of Coulomb scattering with Jackson’s book.
+[#fig_Jackson]
+.The comparison of Coulomb scattering with Jackson’s book.
 image:figures/partmatter/10steps.png[]
 
 [[the-flow-diagram-of-collimatorphysics-class-in-opal]]
 The Flow Diagram of _CollimatorPhysics_ Class in OPAL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.Figure 3: The diagram of CollimatorPhysics in _OPAL_.
+[#fig_CollPhysics]
+.The diagram of CollimatorPhysics in _OPAL_.
 image:figures/partmatter/diagram.png[]
 
-.Figure 4: The diagram of CollimatorPhysics in _OPAL_ (continued). 
+[#fig_CollPhysics2]
+.The diagram of CollimatorPhysics in _OPAL_ (continued). 
 image:figures/partmatter/Diagram2.png[]
 
 [[the-substeps]]
@@ -207,7 +210,7 @@ If a large step is given in the main input file, in the file
 _CollimatorPhysics.cpp_, it is divided by a integer number
 latexmath:[n] to make the step size using for the calculation of
 collimator physics less than 1.01e-12 s. As shown by
-Figures 3 and 4 in the previous section, first we track one
+<<fig_CollPhysics>> and <<fig_CollPhysics2>> in the previous section, first we track one
 step for the particles already in the collimator and the newcomers, then
 another (n-1) steps to make sure the particles in the collimator
 experience the same time as the ones in the main bunch.
@@ -280,14 +283,16 @@ A Simple Test
 
 A cold Gaussian beam with latexmath:[\sigma_x=\sigma_y=5] mm. The
 position of the collimator is from 0.01 m to 0.1 m, the half aperture in
-y direction is latexmath:[3] mm. Figure 5 shows the
+y direction is latexmath:[3] mm. <<fig_protonscoll>> shows the
 trajectory of particles which are either absorbed or deflected by a
 copper slit. As a benchmark of the collimator model in _OPAL_,
-Figure 6 shows the energy spectrum and angle deviation at
+<<fig_spectrum>> shows the energy spectrum and angle deviation at
 z=0.1 m after an elliptic collimator.
 
-.Figure 5: The passage of protons through the collimator.
+[#fig_protonscoll]
+.The passage of protons through the collimator.
 image:figures/partmatter/longcoll6.png[]
 
-.Figure 6: The energy spectrum and scattering angle at z=0.1 m
+[#fig_spectrum]
+.The energy spectrum and scattering angle at z=0.1 m
 image:figures/partmatter/spectandscatter.png[]
