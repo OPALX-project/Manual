@@ -55,7 +55,7 @@ latexmath:[\mathrm{eV}]
 [[sec.conventions.opal-cycl]]
 === _OPAL_-cycl
 
-The _OPAL_-cycl flavor see Section link:elements#sec:cyclotron[Cyclotron] is using the so called
+The _OPAL_-cycl flavor see Section link:elements#sec.elements.cyclotron[Cyclotron] is using the so called
 Cyclotron units. Lengths are defined in (mm), frequencies in (MHz), momenta
 in (latexmath:[\beta\gamma]) and angles in (deg), except `RFPHI` which
 is in (rad).

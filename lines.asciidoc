@@ -32,7 +32,7 @@ Each `member` may be one of the following:
 
 Beam lines can be nested to any level.
 
-[[sec.simple-beam-lines]]
+[[sec.lines.simple-beam-lines]]
 Simple Beam Lines
 ~~~~~~~~~~~~~~~~~
 
