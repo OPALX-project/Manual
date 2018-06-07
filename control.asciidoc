@@ -445,7 +445,7 @@ BOOL FLAG = X != 0;
 Circular definitions are not allowed, but redefinitions by assignment
 are allowed.
 
-[[sec.constant]]
+[[sec.control.constant]]
 ==== Symbolic Constants
 
 _OPAL_ recognizes a few build-in built-in mathematical and physical
@@ -468,7 +468,7 @@ Example:
 CONST IN=0.0254; // conversion of inches to meters
 ....
 
-[[sec.vector]]
+[[sec.control.vector]]
 ==== Vector Values
 
 A vector of expressions is established by a statement

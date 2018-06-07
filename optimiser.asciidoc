@@ -263,7 +263,7 @@ latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2
 | radialPeak(<file>, <turn>)                     | A simple expression to get the n-th peak of a radial probe https://gitlab.psi.ch/AMAS-BDModels/PSI-Ring/blob/master/RawData/RRI2-0038Y17.peaks[file].
 | sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>) | A simple expression computing the sum of all peak errors (given as first and second argument) for a range of peaks (third argument and fourth argument)
 latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^{end} (measurement_i - value_i)^2}]
-| probVariableWithID(<var>, <id>, <probe_file>)  | Returns the value of the variable (first argument) with a certain ID (second argument) from link:elements#probe-opal-cycl[probe] loss file (third argument).
+| probVariableWithID(<var>, <id>, <probe_file>)  | Returns the value of the variable (first argument) with a certain ID (second argument) from link:elements#sec.elements.probe-opal-cycl[probe] loss file (third argument).
 |=======================================================================
 
 ==== Example Input File
