@@ -1,4 +1,5 @@
 *.adoc
+!home.adoc
 *.aux
 *.bbl
 *.cb
