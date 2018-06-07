@@ -309,7 +309,7 @@ given in Version 2.0.0.
 [[sec.fieldsolvers.fieldsolvercmd]]
 === The `FIELDSOLVER` Command
 
-See Table <<fieldsolvercmd,1>> for a summary of the Fieldsolver command.
+See <<fieldsolvercmd,1>> for a summary of the Fieldsolver command.
 
 [#fieldsolvercmd]
 .Fieldsolver command summary

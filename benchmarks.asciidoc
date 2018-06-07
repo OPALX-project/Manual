@@ -349,7 +349,7 @@ The bending magnet definition in TRANSPORT requires:
 As for TRACE 3D, the edge angles are described with another card and
 parameters. In TRANSPORT, however, the fringe field is not automatically
 included with the edge angle, but it is described by a own card as
-reported in the Table <<Edge_Trans,4>>.
+reported in the <<Edge_Trans,4>>.
 
 [#Edge_Trans]
 .Edge angle and fringe field description in TRANSPORT and values used in the simulation
@@ -411,7 +411,7 @@ longitudinal emittance, both expressed in latexmath:[\pi]-mm-mrad.
 While the vertical emittance remains constant and equal to the initial
 value (latexmath:[\epsilon_y = ] 0.730 latexmath:[\pi]-mm-mrad) ,
 the horizontal and longitudinal emittances are expected growing after
-the bending magnet. The results are reported in Table <<Emittance,6>> and in
+the bending magnet. The results are reported in <<Emittance,6>> and in
 <<fig_T3D_Tra_emi>>.
 
 [#Emittance]
@@ -473,7 +473,7 @@ In _OPAL_, the beam dynamics approach (time integration) is hence
 completely different from the envelope-like supported by TRACE 3D and
 TRANSPORT. The three codes support different units and require diverse
 parameters for the input beam. A summary of their main features is
-reported in Table <<Features,8>>.
+reported in <<Features,8>>.
 
 [#Features]
 .Main features of the three beam dynamics codes: TRACE 3D, TRANSPORT and __OPAL__
@@ -550,7 +550,7 @@ In this section, the comparison between TRACE 3D and _OPAL-t_ is
 discussed starting from `SBEND` definition in _OPAL-t_. The transport
 line described in <<sec.T3D_TRAN>> has been simulated in _OPAL_ using
 10.000 particles and latexmath:[10^{-11}] s time step. The bending
-magnet features of Tables <<Bend_Trace,1>> and <<Edge_Trace,2>> have been transformed
+magnet features of <<Bend_Trace,1>> and <<Edge_Trace,2>> have been transformed
 in _OPAL_ language as:
 
 ....
