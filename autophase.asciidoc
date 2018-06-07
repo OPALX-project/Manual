@@ -118,13 +118,14 @@ until the value of latexmath:[\varphi] has converged.
 [[sec.autophasing.traveling-wave-structure]]
 === Traveling Wave Structure
 
-.Figure 1: Field map ’FINLB02-RAC.T7’ of type 1DDynamic
+[#fig_FINLB]
+.Field map ’FINLB02-RAC.T7’ of type 1DDynamic
 image:figures/autophase/field_crop.png[]
 
 Auto phasing in a traveling wave structure is just slightly more
 complicated. The field of this element is composed of a standing wave
 entry and exit fringe field and two standing waves in between, see
-Figure 1.
+<<fig_FINLB>>.
 
 [latexmath]
 ++++

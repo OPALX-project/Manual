@@ -13,12 +13,12 @@ toc::[]
 _OPAL-t_ provides methods to compute CSR and short-range geometric
 wakefields.
 
-[[sec.wakefields.shortrange]]
+[[sec.wakefield.shortrange]]
 === Geometric Wakefields
 
 Basically there are two different kind of wakefields that can be used.
 The first one is the wakefield of a round, metallic beam pipe that can
-be calculated numerically (see Sections <<sec.wakefield>> - <<sec.TAU>>).
+be calculated numerically (see <<sec.wakefield.wakefield_to_be_used>> - <<sec.wakefield.TAU>>).
 Since this also limits the applications of wakefields we also provide a
 way to import a discretized wakefield from a file The wakefield of a
 round, metallic beam pipe with radius latexmath:[a] can be calculated
@@ -190,12 +190,12 @@ constant
 === Define the Wakefield to be used
 
 The `WAKE` command defines data for a wake function on an element
-see Section link:elements#sec:Element:common[Common Attributes for all Elements].
+see link:elements#sec.elements.common[Common Attributes for all Elements].
 
 [[sec.wakefield.WTYPE]]
 === Define the wakefield type
 
-A string value see Section link:format#sec:astring[String Attributes] to specify the wake function,
+A string value see link:format#sec.format.astring[String Attributes] to specify the wake function,
 either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`
 or `LONG-TRANSV-SHORT-RANGE`.
 

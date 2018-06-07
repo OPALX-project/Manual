@@ -96,7 +96,7 @@ opal input.in --restartfn input.h5 --restart -1 --info 3
 === Auto-phase Example
 
 This is a partial complete example. First we have to set _OPAL_ in
-`AUTOPHASE` mode, as described in Section link:control#sec:option[Option Statement] and for example set
+`AUTOPHASE` mode, as described in link:control#sec.control.option[Option Statement] and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
 computing the phases is explained in Appendix link:autophase[Auto-phasing Algorithm].
 
@@ -177,7 +177,7 @@ get maximal. We can calculate the eigen ellipse by single particle
 tracking using betatron oscillation property of off-centered particle as
 following: track an off-centered particle and record its coordinates and
 momenta at the same azimuthal position for each revolution.
-Figure <<fig_eigen>> shows the eigen ellipse at symmetric line of sector
+<<fig_eigen>> shows the eigen ellipse at symmetric line of sector
 magnet for energy of 2 MeV in Injector II.
 
 [#fig_eigen]
@@ -248,7 +248,7 @@ RF Cavity::
 .Reference orbit(left) and tune diagram(right) in Ring cyclotron 
 image::figures/cyclotron/ReferenceOrbit.png[width=18cm]
 
-Figure <<fig_Ringref>> shows a single particle tracking
+<<fig_Ringref>> shows a single particle tracking
 result and tune calculation result in the PSI Ring cyclotron. Limited by
 size of the user guide, we don’t plan to show too much details as in
 Injector II.
@@ -285,8 +285,8 @@ errors in the calculation. (Or at least we hope not.)
 [[sec.tutorial.oldtonewdistgungaussandastra]]
 ==== `GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` Distribution Types
 
-The link:distribution#sec:gungaussflattopthdisttype[`GUNGAUSSFLATTOPTH`] and
-link:distribution#sec:astraflattopthdisttype[`ASTRAFLATTOPTH`] 
+The link:distribution#sec.distribution.gungaussflattopthdisttype[`GUNGAUSSFLATTOPTH`] and
+link:distribution#sec.distribution.astraflattopthdisttype[`ASTRAFLATTOPTH`] 
 distribution types are two
 common types previously implemented to simulate electron beams emitted
 from photocathodes in an electron photoinjector. These are no longer
@@ -309,15 +309,15 @@ simulation to behave the same as before.
 [[sec.tutorial.fromfile-gauss-and-binomial-distribution-types]]
 ==== `FROMFILE`, `GAUSS` and `BINOMIAL` Distribution Types
 
-The link:distribution#sec:fromfiledisttype[`FROMFILE`],
-link:distribution#sec:gaussdisttype[`GAUSS`] and
-link:distribution#sec:binomialdisttype[`BINOMIAL`]
+The link:distribution#sec.distribution.fromfiledisttype[`FROMFILE`],
+link:distribution#sec.distribution.gaussdisttype[`GAUSS`] and
+link:distribution#sec.distribution.binomialdisttype[`BINOMIAL`]
 distribution types have changed from
 previous versions of _OPAL_. However, legacy distribution commands
 should work as before with one exception. If you are using _OPAL-cycl_
 then your old input files will work just fine. However, if you are using
 _OPAL-t_ then you will need to set the distribution attribute
-link:distribution#sec:unitsdistattributes[`INPUTMOUNITS`] to:
+link:distribution#sec.distribution.unitsdistattributes[`INPUTMOUNITS`] to:
 
 ....
 INPUTMOUNITS = EV

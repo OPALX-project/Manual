@@ -306,7 +306,7 @@ used so that within each Lorentz frame the energy spread is small and
 hence the electrostatic approximation is valid. More details will be
 given in Version 2.0.0.
 
-[[sec.fieldsolvercmd]]
+[[sec.fieldsolvers.fieldsolvercmd]]
 === The `FIELDSOLVER` Command
 
 See Table <<fieldsolvercmd,1>> for a summary of the Fieldsolver command.
@@ -370,14 +370,14 @@ grid
 |`AMR_TAGGING` |Mesh-refinement strategy
 |=======================================================================
 
-[[sec.FSFSTYPE]]
+[[sec.fieldsolvers.FSFSTYPE]]
 === Define the Fieldsolver to be used
 
 At present only a FFT based solver is available. Future solvers will
 include Finite Element solvers and a Multigrid solver with
 Shortley-Weller boundary conditions for irregular domains.
 
-[[sec.FSDomDEC]]
+[[sec.fieldsolvers.FSDomDEC]]
 === Define Domain Decomposition
 
 The dimensions in latexmath:[x], latexmath:[y] and latexmath:[z]
@@ -385,13 +385,13 @@ can be parallel (`TRUE`) or serial `FALSE`. The default settings are:
 parallel in latexmath:[z] and serial in latexmath:[x] and
 latexmath:[y].
 
-[[sec.FSMX]]
+[[sec.fieldsolvers.FSMX]]
 === Define Number of Grid Points
 
 Number of grid points in latexmath:[x], latexmath:[y] and
 latexmath:[z] for a rectangular grid.
 
-[[sec.FSBC]]
+[[sec.fieldsolvers.FSBC]]
 === Define Boundary Conditions
 
 Two boundary conditions can be selected independently among
@@ -399,49 +399,49 @@ latexmath:[x], latexmath:[y] namely: `OPEN` and for latexmath:[z]
 `OPEN` & `PERIODIC`. In the case you select for latexmath:[z] periodic
 you are about to model a DC-beam.
 
-[[sec.FSGREEN]]
+[[sec.fieldsolvers.FSGREEN]]
 === Define Greens Function
 
 Two Greens functions can be selected: `INTEGRATED`, `STANDARD`. The
 integrated Green’s function is described in <<bib.qiang2005_fieldsolver>>, <<bib.qiang2006-1_fieldsolver>>,
 <<bib.qiang2006-2_fieldsolver>>. Default setting is `INTEGRATED`.
 
-[[sec.FSBBOX]]
+[[sec.fieldsolvers.FSBBOX]]
 === Define Bounding Box Enlargement
 
 The bounding box defines a minimal rectangular domain including all
 particles. With `BBOXINCR` the bounding box can be enlarged by a factor
 given in percent of the minimal rectangular domain.
 
-[[sec.GEOMETRY]]
+[[sec.fieldsolvers.GEOMETRY]]
 === Define Geometry
 
 The list of geometries defining the beam line boundary. For further
 details see Chapter link:geometry[Geometry].
 
-[[sec.ITSOLVER]]
+[[sec.fieldsolvers.ITSOLVER]]
 === Define Iterative Solver
 
 The iterative solver for solving the preconditioned system: `CG`,
 `BiCGSTAB` or `GMRES`.
 
-[[sec.INTERPL]]
+[[sec.fieldsolvers.INTERPL]]
 === Define Interpolation for Boundary Points
 
 The interpolation method for grid points near the boundary: `CONSTANT`,
 `LINEAR` or `QUADRATIC`.
 
-[[sec.TOL]]
+[[sec.fieldsolvers.TOL]]
 === Define Tolerance
 
 The tolerance for the iterative solver used by the `MG` solver.
 
-[[sec.MAXITERS]]
+[[sec.fieldsolvers.MAXITERS]]
 === Define Maximal Iterations
 
 The maximal number of iterations the iterative solver performs.
 
-[[sec.PRECMODE]]
+[[sec.fieldsolvers.PRECMODE]]
 === Define Preconditioner Behavior
 
 The behavior of the preconditioner can be: `STD`, `HIERARCHY` or
@@ -462,7 +462,7 @@ default)
 |`REUSE` |The preconditioner is reused
 |=======================================================================
 
-[[sec.FSENBINS]]
+[[sec.fieldsolvers.FSENBINS]]
 === Define the number of Energy Bins to use
 
 Suppose latexmath:[\mathrm{d} E] the energy spread in the particle
@@ -470,7 +470,7 @@ bunch is to large, the electrostatic approximation is no longer valid.
 One solution to that problem is to introduce latexmath:[k] energy bins
 and perform latexmath:[k] separate field solves in which
 latexmath:[\mathrm{d} E] is again small and hence the electrostatic
-approximation valid. In case of a cyclotron see Section link:elements#sec:cyclotron[Cyclotron] the
+approximation valid. In case of a cyclotron see link:elements#sec.elements.cyclotron[Cyclotron] the
 number of energy bins must be at minimum the number of neighboring
 bunches (`NNEIGHBB`) i.e.
 latexmath:[\mathrm{ENBINS} \le \mathrm{NNEIGHBB}].
@@ -478,7 +478,7 @@ latexmath:[\mathrm{ENBINS} \le \mathrm{NNEIGHBB}].
 The variable `MINSTEPFORREBIN` defines the number of integration step
 that have to pass until all energy bins are merged into one.
 
-[[sec.AMR]]
+[[sec.fieldsolvers.AMR]]
 === Define AMR Solver
 
 The option `AMR=TRUE` enables further commands to be used in the
