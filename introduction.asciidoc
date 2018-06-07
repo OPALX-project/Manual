@@ -92,7 +92,7 @@ One example of an non trivial test-example is the PSI DC GUN. In
 <<guncomp1>> the comparison between _Impact-t_ and _OPAL-t_ is
 shown. This example is part of the regression test suite that is run
 every night. The input file is found in
-Section link:tutorial#sec.examplesbeamlines[Examples of Particle Accelerators and Beamlines].
+<<sec.tutorial.examplesbeamlines>>.
 
 Misprints and obscurity are almost inevitable in a document of this
 size. Comments and _active contributions_ from readers are therefore
@@ -108,13 +108,13 @@ image::figures/Gun/GunComp.png[width=18cm]
 The phase space is stored in the H5hut file-format <<bib.howison2010_intro>> and can be analyzed
 using e.g. H5root <<bib.schietinger_intro>>. The frequency of the data output (phase space and
 some statistical quantities) can be controlled using the `OPTION`
-statement see Section link:control#sec.option[Option Statement], with the flag `PSDUMPFREQ`. The file is
+statement see <<sec.control.option>>, with the flag `PSDUMPFREQ`. The file is
 named like in input file but with the extension .h5.
 
 A SDDS compatible ASCII file with statistical beam parameters is written
 to a file with extension .stat. The frequency with which this data is
 written can be controlled with the `OPTION` statement
-see Section link:control#sec.option[Option Statement] with the flag `STATDUMPFREQ`.
+see <<sec.control.option>> with the flag `STATDUMPFREQ`.
 
 .H5root enables a variety of data analysis and post processing task on _OPAL_ data
 image::figures/H5rootPicture.png[width=18cm]
@@ -134,7 +134,7 @@ for a detailed list of changes in _OPAL_.
 
 See the https://gitlab.psi.ch/OPAL/src/issues[issue list] in the repository.
 
-See also link:pitfalls#pitfalls-and-limitations[pitfalls and limitations].
+See also <<chp.pitfalls>>.
 
 [[sec.introduction.acknowledgments]]
 === Acknowledgments

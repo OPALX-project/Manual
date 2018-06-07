@@ -691,12 +691,11 @@ the `SPTDUMPFREQ` option of `OPTION` statement see Section link:control#sec:opt
 
 [[matched-distribution]]
 ==== Matched Distribution
-~~~~~~~~~~~~~~~~~~~~
 
 In order to run matched distribution simulation one has to specify a
 periodic accelerator. The function call also needs the symmetry of the
 machine as well as a field map. The user then specifies the emittance
-latexmath:[\pi{mmmrad}].
+latexmath:[\pi mm mrad].
 
 ....
 /*
