@@ -1,4 +1,5 @@
 :stem: latexmath
+:eqnums:
 :sectnums:
 :toc: macro
 :toclevels: 3
@@ -1005,7 +1006,7 @@ proportional to the dipole filed observed by some reference particle
 that stays in the centre of the dipole
 [latexmath]
 ++++
-rho (s) \propto B(z=0, x=0, s) = B_x (z=0,x=0) = b_{0,0}(s)
+\rho (s) \propto B(z=0, x=0, s) = B_x (z=0,x=0) = b_{0,0}(s)
 ++++
 
 [[sec.opalt.fringe-field-of-a-multipole]]

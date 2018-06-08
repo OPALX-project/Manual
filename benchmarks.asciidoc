@@ -173,7 +173,7 @@ explained before, with the *card 15*, it is possible to transform the
 TRANSPORT standard units in TRACE-like units. In this way, the TRACE 3D
 sigma-matrix for the input beam, printed out by _command Z_, can be
 directly used as input beam in TRANSPORT. An example of TRACE 3D
-sigma-matrix structure is shown in <<trace_z>>.
+sigma-matrix structure is shown in <<fig_trace_z>>.
 
 [#fig_trace_z]
 .Sigma-matrix structure in TRACE 3D <<bib.TraceMan>>
