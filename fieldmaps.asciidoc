@@ -455,7 +455,7 @@ the first line is needed since the information on the longitudinal
 dimension is contained in the first column of the data. (_OPAL-t_ does
 not provide a `FAST` version of this map type.)
 
-[#AstraMagnetoStatic]
+[#tab_AstraMagnetoStatic]
 .Layout of an `AstraMagnetoStatic` field map file.
 [grid=none]
 [frame=topbot]
@@ -472,7 +472,7 @@ not provide a `FAST` version of this map type.)
 |======================================================================
 
 An `AstraMagnetoStatic` field map has the general form shown in
-<<AstraMagnetoStatic>>. The first line forms the file header and
+<<tab_AstraMagnetoStatic>>. The first line forms the file header and
 tells _OPAL-t_ how the field map data is being presented:
 
 Line 1::
@@ -606,7 +606,7 @@ latexmath:[\max(|E_{\text{on axis}}|) = 1\mathrm{MV/m}]. The frequency of
 this field is 2997.924MHz. (_OPAL-t_ does not provide a `FAST` version
 of this map type.)
 
-[#AstraDynamic]
+[#tab_AstraDynamic]
 .Layout of an `AstraDynamic` field map file.
 [grid=none]
 [frame=topbot]
@@ -624,7 +624,7 @@ of this map type.)
 |======================================================================
 
 An `AstraDynamic` field map has the general form shown in
-<<AstraDynamic>>. The first line forms the file header and tells
+<<tab_AstraDynamic>>. The first line forms the file header and tells
 _OPAL-t_ how the field map data is being presented:
 
 Line 1::

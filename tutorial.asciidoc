@@ -98,7 +98,7 @@ opal input.in --restartfn input.h5 --restart -1 --info 3
 This is a partial complete example. First we have to set _OPAL_ in
 `AUTOPHASE` mode, as described in link:control#sec.control.option[Option Statement] and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
-computing the phases is explained in Appendix link:autophase[Auto-phasing Algorithm].
+computing the phases is explained in Appendix link:autophase#chp.autophase[Auto-phasing Algorithm].
 
 ....
 Option, AUTOPHASE=4;
@@ -256,7 +256,7 @@ Injector II.
 [[sec.tutorial.oldtonewdist]]
 === Translate Old to New Distribution Commands
 
-As of _OPAL_ 1.2, the distribution command see Chapter link:distribution[Distribution]
+As of _OPAL_ 1.2, the distribution command see Chapter link:distribution#chp.distribution[Distribution]
 was changed significantly. Many of the changes were internal to the
 code, allowing us to more easily add new distribution command options.
 However, other changes were made to make creating a distribution easier,
