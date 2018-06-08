@@ -7,30 +7,30 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.sample]]
-Sampler
---------
+[[chp.sampler]]
+== Sampler
+
 This is a modification of the https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
 
 **Be aware of the fact, this is an experimental feature in V2.0.0**
 
-[[sample-commands]]
-OPAL Commands
-~~~~~~~~~~~~~
+[[sec.sampler.sample-commands]]
+=== OPAL Commands
+
 It uses almost the same syntax as the optimiser.
 
-Basic Syntax
-^^^^^^^^^^^^
+==== Basic Syntax
+
 One needs to define the design variables and their sampling method. The syntax for
 design variables is described in the section https://gitlab.psi.ch/OPAL/src/wikis/Manual/optimiser[DVAR Command].
 
-SAMPLE Command
-^^^^^^^^^^^^^^
+==== SAMPLE Command
+
 It allows *random* (SEQUENCE=false) and *sequence* mode.
 
 [#samplecommandattributes]
 .Attributes for the command SAMPLE.
-[cols="<1,<5",options="header",]
+[cols="<2,<5",options="header,breakable",]
 |=======================================================================
 | Attribute     | Description
 | SEQUENCE      | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
@@ -46,15 +46,16 @@ It allows *random* (SEQUENCE=false) and *sequence* mode.
 |=======================================================================
 
 The difference between `SEQUENCE = TRUE` and `SEQUENCE = FALSE` can be depicted in the following figure.
-image:figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
+
+image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
 The two sampling methods differ in the number of samples since with `SEQUENCE = TRUE` every combination of individual sampling is computed. Thus the total number is latexmath:[N = N_1 \times N_2 \times \ldots \times N_n] where latexmath:[n] is the number of `DVARS`. If for some `DVAR` a random sampling is chosen then for every sampling point a new random number is computed. With `SEQUENCE = FALSE` the number of sampling points is latexmath:[N = \min(N_1, N_2,\ldots, N_n)], each item of a sequence is used only once. 
 
-SAMPLING Command
-^^^^^^^^^^^^^^^^
+==== SAMPLING Command
+
 [#samplingcommandattributes]
 .Attributes for the command SAMPLING.
-[cols="<1,<5",options="header",]
+[cols="<2,<5",options="header,breakable",]
 |=======================================================================
 | Attribute | Description
 | VARIABLE  | Name of the design variable.
@@ -65,11 +66,11 @@ SAMPLING Command
 minimum value over all design variables is used.
 |=======================================================================
 
-Available Sampling Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+==== Available Sampling Methods
+
 [#samplemethods]
 .Available sampling methods.
-[cols="<1,<5",options="header",]
+[cols="<2,<5",options="header,breakable"]
 |=======================================================================
 | Method            | Description
 | FROMFILE          | The samples are provided by a file. A column represents the
@@ -91,10 +92,10 @@ Available Sampling Methods
                       are the latexmath:[\pm 5\; \sigma] limits of the distribution.
 |=======================================================================
 
-Example Input File
-^^^^^^^^^^^^^^^^^^
+=== Example Input File
 
-....
+[source]
+----
 OPTION, INFO=TRUE;
 
 // Design variables
@@ -117,10 +118,10 @@ SAMPLE,
     NUM_MASTERS     = 1,
     NUM_COWORKERS   = 1;
 QUIT;
-....
+----
 
 The samples of ```nstep``` are provided by ```samples.dat``` that could look like this:
-....
+----
 MX    nstep
 16    10
 17    11
@@ -132,10 +133,10 @@ MX    nstep
 23    17
 24    18
 25    19
-....
+----
 Although the file contains samples for ```MX```, too, they are not considered. The
 corresponding template file ```Ring.tmpl``` reads:
-....
+----
 Option, ECHO=FALSE;
 Option, PSDUMPFREQ=100000;
 Option, SPTDUMPFREQ = 10;
@@ -224,4 +225,4 @@ TRACK,LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=360,TIMEINTEGRATOR
 endtrack;
 
 Stop;
-....
+----

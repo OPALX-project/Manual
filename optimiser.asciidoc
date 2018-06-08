@@ -52,7 +52,7 @@ span a multi-dimensional space in addition to the design variable space
 – for each point in design space there exists a point in objective
 space. The mapping from the latexmath:[n] dimensional design space to
 the latexmath:[M] dimensional objective space visualized in
-<<fig_des_to_obj,1>> is often non-linear. This impedes the search for
+<<fig_des_to_obj>> is often non-linear. This impedes the search for
 optimal solutions and increases the computational cost as a result of
 expensive objective function evaluation. Additionally, depending in
 which of the two spaces the algorithm uses to determine the next step,
@@ -249,12 +249,10 @@ The CONSTRAINT command defines a constraint for optimization.
 
 
 ==== Available Expressions
-
 The following expressions are available:
-
 [#availableexpressions]
 .Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
-[cols="<3,<5",options="header",]
+[cols="<3,<5",options="header,breakable",]
 |=======================================================================
 | Function         | Description
 
@@ -295,7 +293,7 @@ The following expressions are available:
 
 ==== Example Input File
 
-Example input file for the optimization using the template _05-DL_QN3.tmpl_:
+.Example input file for the optimization using the template _05-DL_QN3.tmpl_:
 ....
 OPTION, ECHO=FALSE;
 OPTION, INFO=TRUE;
@@ -322,7 +320,8 @@ OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
 QUIT;
 ....
 
-Template file _05-DL_QN3.tmpl_:
+.Template file _05-DL_QN3.tmpl_:
+
 ....
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;

@@ -309,7 +309,7 @@ given in Version 2.0.0.
 [[sec.fieldsolvers.fieldsolvercmd]]
 === The `FIELDSOLVER` Command
 
-See <<fieldsolvercmd,1>> for a summary of the Fieldsolver command.
+See <<fieldsolvercmd>> for a summary of the Fieldsolver command.
 
 [#fieldsolvercmd]
 .Fieldsolver command summary
@@ -525,6 +525,7 @@ refined. The bound is specified with `AMR_MAX_NUM_PART`
 |=======================================================================
 
 [[sec.fieldsolvers.bibliography]]
+[bibliography]
 === References
 * [[[bib.hockney]]] R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136–210 (1970).
 * [[[bib.eastwoodandbrownrigg]]] J. W. Eastwood and D. R. K. Brownrigg, _Remarks on the solution of poisson’s equation for isolated systems_, J. Comput. Phys. 32, 24–38 (1979).

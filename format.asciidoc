@@ -297,7 +297,7 @@ any computation. At evaluation time all operands used must have values
 assigned. A real expression can occur in real arrays
 see <<sec.format.realarray>>.
 
-A real expression is built from operators see <<tab_operator,4>> and
+A real expression is built from operators see <<tab_operator>> and
 operands see <<sec.format.operand>>:
 
 ....

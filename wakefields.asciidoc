@@ -357,6 +357,7 @@ coefficients/sampling points and latexmath:[L] is the length of the
 bunch.
 
 [[sec.wakefield.bibliography]]
+[bibliography]
 === References
 
 * [[[bib.schott]]] G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).

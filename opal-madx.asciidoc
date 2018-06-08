@@ -7,9 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[opal---madx-conversion-guide]]
-_OPAL_ - MADX Conversion Guide
-------------------------------
+[[chp.opal---madx-conversion-guide]]
+== _OPAL_ - MADX Conversion Guide
 
 We note with latexmath:[\alpha],latexmath:[\beta] and
 latexmath:[\gamma] the Twiss parameters. 
@@ -41,7 +40,7 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 \end{aligned}
 ++++
 
-[cols="<,^,>,<,^,<,^,>",options="header",]
+[cols="<2,^1,>2,<2,^1,<8,^4,>2",options="header",]
 |=======================================================================
 |Quantity
 |`MADX`
@@ -62,63 +61,119 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 |[latexmath:[\beta\gamma]]
 
 |Correlation of latexmath:[\bar{x}],latexmath:[\bar{p}_{x}]
-|latexmath:[\delta] |[1] |latexmath:[\delta] |=
+|latexmath:[\delta]
+|[1]
+|latexmath:[\delta]
+|=
 |latexmath:[\left(\sigma_{x p_{x}}\left[\text{m }\text{rad}\right\]\right)/\left(\left(\bar{p}_{x}\left[\text{rad}\right\]\right)\cdot\left(
-\bar{x}\left[\text{m}\right\]\right)\right)] |latexmath:[\delta] |[1]
+\bar{x}\left[\text{m}\right\]\right)\right)]
+|latexmath:[\delta]
+|[1]
 
-| | | | |=
+|
+|
+|
+|
+|=
 |latexmath:[\left(\sigma_{x p_{x}}\left[\text{m }\text{rad}\right\]\right)/\sqrt{\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)\cdot\left(\sigma_{ p_{x}}\left[\text{rad}^{2}\right\]\right)}]
-| |
+|
+|
 
-|Emittance |latexmath:[\epsilon_{x}] |[m rad]
-|latexmath:[\epsilon_{x}][m latexmath:[\beta\gamma]] |=
+|Emittance
+|latexmath:[\epsilon_{x}]
+|[m rad]
+|latexmath:[\epsilon_{x}][m latexmath:[\beta\gamma]]
+|=
 |latexmath:[\sqrt{\left( \bar{p}_{x}\left[ \beta\gamma \right\] \right) ^{2} \cdot \left(\bar{x}\left[\text{m}\right\]\right)^{2} - \left(\delta \cdot \left(\bar{x}\left[\text{m}\right\]\right) \cdot \left(\bar{p}_{x}\left[\beta\gamma\right\]\right)\right)^{2}} ]
-|latexmath:[\epsilon_{x}] |[m latexmath:[\beta\gamma]]
+|latexmath:[\epsilon_{x}]
+|[m latexmath:[\beta\gamma]]
 
-| | | | |=
+|
+|
+|
+|
+|=
 |latexmath:[\sqrt{\left( \sigma_{{p}_{x}}\left[ \left(\beta\gamma\right)^{2} \right\] \right)\cdot
  \left(\sigma_{x}\left[\text{m}^{2}\right\]\right) - \left(\delta \cdot
  \sqrt{\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)\cdot\left(\sigma_{p_{x}}
- \left[\left(\beta\gamma\right)^{2}\right\]\right)}\right)^{2}} ] | |
+ \left[\left(\beta\gamma\right)^{2}\right\]\right)}\right)^{2}} ]
+|
+|
 
-| | | | |=
+|
+|
+|
+|
+|=
 |latexmath:[\sqrt{\left( \sigma_{{p}_{x}}\left[ \left(\beta\gamma\right)^{2} \right\] \right)\cdot
  \left(\sigma_{x}\left[\text{m}^{2}\right\]\right) - \left(\sigma_{x p_{x}}\left[\text{m} ~\beta\gamma\right\]\right)^{2}} ]
-| |
+|
+|
 
-|Twiss Parameter latexmath:[\alpha] |latexmath:[\alpha] |[1]
-|latexmath:[\alpha\left[1\right\]] |=
+|Twiss Parameter latexmath:[\alpha] |latexmath:[\alpha]
+|[1]
+|latexmath:[\alpha\left[1\right\]]
+|=
 |latexmath:[-\delta\cdot\left(\bar{x}\left[\text{m}\right\]\right)\cdot\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
-|latexmath:[\alpha_{T}] |[1]
+|latexmath:[\alpha_{T}]
+|[1]
 
-| | | | |=
+|
+|
+|
+|
+|=
 |latexmath:[-\delta\cdot\sqrt{\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)\cdot\left(\sigma_{ p_{x}}\left[\left(\beta\gamma\right)^{2}\right\]\right)}/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
-| |
+|
+|
 
 |Twiss Parameter latexmath:[\beta_{T}] |latexmath:[\beta_{T}]
-|[m/rad] |latexmath:[\beta_{T}\left[\text{m}/\beta\gamma\right\]] |=
+|[m/rad]
+|latexmath:[\beta_{T}\left[\text{m}/\beta\gamma\right\]]
+|=
 |latexmath:[\left(\bar{x}\left[\text{m}\right\]\right)^{2}/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]
-\right)] |latexmath:[\beta_{T}] |[m/latexmath:[\beta\gamma]]
+\right)]
+|latexmath:[\beta_{T}]
+|[m/latexmath:[\beta\gamma]]
 
-| | | | |=
+|
+|
+|
+|
+|=
 |latexmath:[\left(\sigma_{x}\left[\text{m}^{2}\right\]\right)/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]
-\right)] | |
+\right)]
+|
+|
 
 |Twiss Parameter latexmath:[\gamma_{T}] |latexmath:[\gamma_{T}]
-|[rad/m] |latexmath:[\gamma_{T}\left[\beta\gamma/\text{m}\right\]] |=
+|[rad/m]
+|latexmath:[\gamma_{T}\left[\beta\gamma/\text{m}\right\]]
+|=
 |latexmath:[\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)^{2}/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
-|latexmath:[\gamma_{T}] |[latexmath:[\beta\gamma]/m]
+|latexmath:[\gamma_{T}]
+|[latexmath:[\beta\gamma]/m]
 
-| | | | |=
+|
+|
+|
+|
+|=
 |latexmath:[\left(\sigma_{p_{x}}\left[\left(\beta\gamma\right)^{2}\right\]\right)/\left(\epsilon_{x}\left[\text{m}~\beta\gamma\right\]\right)]
-| |
+|
+|
 
 |Focusing strength |latexmath:[k_{1}]
 |latexmath:[\left[\text{m}^{-2}\right\]]
-|latexmath:[k_{1}\left[\text{T}/\text{m}\right\]] |=
+|latexmath:[k_{1}\left[\text{T}/\text{m}\right\]]
+|=
 |latexmath:[\left(k_{1}\left[\text{m}^{-2}\right\]\right)\cdot\left(\text{B}\rho\left[\text{T m}\right\]\right)]
-|latexmath:[k_{1}] |latexmath:[\left[\text{T}/\text{m}\right\]]
+|latexmath:[k_{1}]
+|latexmath:[\left[\text{T}/\text{m}\right\]]
+|=======================================================================
 
+[cols="<2,^1,>2,<2,^1,<8,^4,>2",options="header",]
+|=======================================================================
 |Quantity 
 |`MADX`
 |
@@ -128,12 +183,27 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 |`OPAL-Input`
 |
 
-|Element Position |`at :=` |latexmath:[\left[\text{m}\right\]]
-|`ELEMEDGE` |= |(Center of the element) - (Length of the element)/2
-|`ELEMEDGE =` |latexmath:[\left[\text{m}\right\]]
+|Element Position
+|`at :=`
+|latexmath:[\left[\text{m}\right\]]
+|`ELEMEDGE`
+|=
+|(Center of the element) - (Length of the element)/2
+|`ELEMEDGE =`
+|latexmath:[\left[\text{m}\right\]]
 
-| |Center of the element | | | | |Begin of the element |
+|
+|Center of the element
+|
+|
+|
+|
+|Begin of the element
+|
+|=======================================================================
 
+[cols="<2,^1,>2,<2,^1,<8,^4,>2",options="header",]
+|=======================================================================
 |Quantity
 |`OPAL-Output`
 |
@@ -143,9 +213,12 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 |`OPAL-Input`
 |
 
-|Momenta |latexmath:[\bar{p}_{x}]
-|latexmath:[\left[\beta\gamma\right\]]
-|latexmath:[p_{x}\left[\text{eV}\right\]] |=
-|latexmath:[m_{p}\cdot10^{9}\cdot\left(\sqrt{\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)^{2} +1}-1\right)]
-|latexmath:[\bar{p}_{x}] |[eV]
+| Momenta
+| latexmath:[\bar{p}_{x}]
+| latexmath:[\left[\beta\gamma\right\]]
+| latexmath:[p_{x}\left[\text{eV}\right\]]
+| =
+| latexmath:[m_{p}\cdot10^{9}\cdot\left(\sqrt{\left(\bar{p}_{x}\left[\beta\gamma\right\]\right)^{2} +1}-1\right)]
+| latexmath:[\bar{p}_{x}]
+| [eV]
 |=======================================================================

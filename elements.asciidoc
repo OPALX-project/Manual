@@ -2360,6 +2360,7 @@ The reference system for an orbit corrector is a Cartesian coordinate
 system.
 
 [[sec.elements.bibliography]]
+[bibliography]
 === References
 
 * [[[bib.tait-bryan_elements,bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
