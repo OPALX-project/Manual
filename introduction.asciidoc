@@ -59,19 +59,19 @@ emittance, slice emittance, halo extension etc.
 The following example is exemplifying this fact:
 
 .Table Parameters Parallel Performance Example
-[#pex1]
+[#tab_pex1]
 |===
 |Distribution | Particles | Mesh | Greens Function | Time steps
 
 |Gauss 3D | latexmath:[10^8] | latexmath:[1024^3] | Integrated | 10
 |===
 
-<<walldrift>> shows the parallel efficiency time as a function of
-used cores for a test example with parameters given in <<pex1>>. The
+<<fig_walldrift>> shows the parallel efficiency time as a function of
+used cores for a test example with parameters given in <<tab_pex1>>. The
 data were obtained on a Cray XT5 at the Swiss Center for Scientific
 Computing.
 
-[#walldrift]
+[#fig_walldrift]
 .Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
 image::figures/drift2c1.png[scaledwidth=10cm]
 
@@ -89,7 +89,7 @@ providing users as well as co-developers with state-of-the-art
 documentation to _OPAL_.
 
 One example of an non trivial test-example is the PSI DC GUN. In
-<<guncomp1>> the comparison between _Impact-t_ and _OPAL-t_ is
+<<fig_guncomp1>> the comparison between _Impact-t_ and _OPAL-t_ is
 shown. This example is part of the regression test suite that is run
 every night. The input file is found in
 link:tutorial#sec.tutorial.examplesbeamlines[Examples of Particle Accelerators and Beamlines].
@@ -98,7 +98,7 @@ Misprints and obscurity are almost inevitable in a document of this
 size. Comments and _active contributions_ from readers are therefore
 most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelmann].
 
-[#guncomp1]
+[#fig_guncomp1]
 .Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
 image::figures/Gun/GunComp.png[scaledwidth=18cm]
 

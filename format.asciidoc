@@ -657,7 +657,7 @@ S[1]::M[1]::
 [[sec.format.arange]]
 ==== Range Selection
 
-A `range` in a beam line see Chapter link:lines[Beam Lines] is selected by the following
+A `range` in a beam line see Chapter link:lines#chp.lines[Beam Lines] is selected by the following
 syntax:
 
 ....
@@ -669,13 +669,13 @@ This denotes the range of elements from the first`place` to the second
 `place`. Both positions are included. A few special cases are worth
 noting:
 
-* When `place1` refers to a `LINE` see Chapter link:lines[Beam Lines]. the range starts
+* When `place1` refers to a `LINE` see Chapter link:lines#chp.lines[Beam Lines]. the range starts
 at the *beginning* of this line.
-* When `place2` refers to a `LINE` see Chapter link:lines[Beam Lines]. the range ends at
+* When `place2` refers to a `LINE` see Chapter link:lines#chp.lines[Beam Lines]. the range ends at
 the *ending* of this line.
 * When both `place` specifications refer to the same object, then the
 second can be omitted. In this case, and if `place` refers to a `LINE`
-see Chapter link:lines[Beam Lines] the range contains the whole of the line.
+see Chapter link:lines#chp.lines[Beam Lines] the range contains the whole of the line.
 
 Examples: Assume the following definitions:
 

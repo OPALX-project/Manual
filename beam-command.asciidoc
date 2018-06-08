@@ -84,7 +84,7 @@ PC::
 
 The twiss parameters are only used in the twiss calculation.
 The beam shape and size is in general defined by the distribution command,
-see Chapter link:distribution[Distribution].
+see Chapter link:distribution#chp.distribution[Distribution].
 
 EX::
   Horizontal emittance

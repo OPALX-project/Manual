@@ -277,7 +277,7 @@ that overlap with the field of a dipole.
 The `OrbitThreader` integrates a design particle through the lattice and
 setups up a multi map structure (`IndexMap`). Furthermore when the
 reference particle hits an rf-structure for the first time then it
-auto-phases the rf-structure, see Appendix link:autophase[Auto-phasing Algorithm]. The multi map
+auto-phases the rf-structure, see Appendix link:autophase#chp.appendix[Auto-phasing Algorithm]. The multi map
 structure speeds up the search for elements that influence the particles
 at a given position in 3D space by minimizing the looping over elements
 when integrating an ensemble of particles. For each time step,
@@ -642,7 +642,7 @@ The content of the columns are listed in the following table.
 === Multiple Species
 
 In the present version only one particle species can be defined
-see Chapter link:beam[Beam Command], however due to the underlying general structure, the
+see Chapter link:beam-command#chp.beam-command[Beam Command], however due to the underlying general structure, the
 implementation of a true multi species version of _OPAL_ should be
 simple to accomplish.
 

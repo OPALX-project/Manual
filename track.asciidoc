@@ -10,7 +10,7 @@ toc::[]
 [[chp.track]]
 == Tracking
 
-[#trackcmd]
+[#tab_trackcmd]
 .Commands accepted in Tracking Mode
 [cols="<1,<3",options="header",]
 |=======================================================================
@@ -52,7 +52,7 @@ Before starting to track, a link:lines[beam line] and a
 link:beam[beam] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
-only the track commands see Table <<trackcmd>>. In order to perform
+only the track commands see Table <<tab_trackcmd>>. In order to perform
 several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 `ZSTOP`. This can be used to change the time step manually.
 
@@ -186,18 +186,18 @@ METHOD::
   be used. For the time being the following methods are known:
 +
   * `PARALLEL-T`
-    This method puts _OPAL_ in _OPAL-t_ mode see Chapter link:opalt[_OPAL-t_].
+    This method puts _OPAL_ in _OPAL-t_ mode see Chapter link:opalt#chp.opalt[_OPAL-t_].
   * `CYCLOTRON-T`
-    This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter link:opalcycl[_OPAL-cycl_].
+    This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter link:opalcycl#chp.opalcycl[_OPAL-cycl_].
   * `STATISTICAL-ERRORS`
     This is a method to let _OPAL_ run multiple times in parallel while
     adding imperfections to alignment and other physical quantities.
 FIELDSOLVER::
-  The field solver to be used see Chapter link:fieldsolvers[Field Solver].
+  The field solver to be used see Chapter link:fieldsolvers#chp.fieldsolvers[Field Solver].
 DISTRIBUTION::
-  The particle distribution to be used see Chapter link:distribution[Distribution].
+  The particle distribution to be used see Chapter link:distribution#chp.distribution[Distribution].
 BEAM::
-  The particle beam see Chapter link:beam[Beam Command] to be used is specified.
+  The particle beam see Chapter link:beam-command#chp:beam-command[Beam Command] to be used is specified.
 FILE::
   The name of the file to be written (default="`track`").
 TURNS::

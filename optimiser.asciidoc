@@ -176,7 +176,7 @@ The second constraint will be evaluated after the simulation.
 
 The OPTIMIZE command initiates optimization.
 
-[#optcommandattributes]
+[#tab_optcommandattributes]
 .Attributes for the command OPTIMIZE.
 [cols="<1,<2",options="header",]
 |=======================================================================
@@ -213,7 +213,7 @@ The OPTIMIZE command initiates optimization.
 
 The DVAR command defines a variable for optimization.
 
-[#dvarcommandattributes]
+[#tab_dvarcommandattributes]
 .Attributes for the command DVAR.
 [cols="<2,<5",options="header",]
 |=======================================================================
@@ -227,7 +227,7 @@ The DVAR command defines a variable for optimization.
 
 The OBJECTIVE command defines an objective for optimization.
 
-[#objectivecommandattributes]
+[#tab_objectivecommandattributes]
 .Attributes for the command OBJECTIVE.
 [cols="<2,<5",options="header",]
 |=======================================================================
@@ -239,7 +239,7 @@ The OBJECTIVE command defines an objective for optimization.
 
 The CONSTRAINT command defines a constraint for optimization.
 
-[#constraintcommandattributes]
+[#tab_constraintcommandattributes]
 .Attributes for the command CONSTRAINT.
 [cols="<2,<5",options="header",]
 |=======================================================================
@@ -250,7 +250,8 @@ The CONSTRAINT command defines a constraint for optimization.
 
 ==== Available Expressions
 The following expressions are available:
-[#availableexpressions]
+
+[#tab_availableexpressions]
 .Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
 [cols="<3,<5",options="header,breakable",]
 |=======================================================================

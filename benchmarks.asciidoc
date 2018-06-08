@@ -280,7 +280,7 @@ exactly the TRACE 3D R-matrix formalism:
 
 The bending magnet definition in TRACE 3D requires:
 
-[#Bend_Trace]
+[#tab_Bend_Trace]
 .Bending magnet description in TRACE 3D and values used in the simulation
 [cols="<1,<1,<2",options="header",]
 |=======================================================================
@@ -298,7 +298,7 @@ the bending magnet if entrance and exit edge angles are present and if
 the fringe field has to be taken into account. In particular for the
 entrance edge angle:
 
-[#Edge_Trace]
+[#tab_Edge_Trace]
 .Edge angle description in TRACE 3D and values used in the simulation
 [cols="<1,<1,<2",options="header",]
 |=======================================================================
@@ -337,9 +337,9 @@ The bending magnet definition in TRANSPORT requires:
 As for TRACE 3D, the edge angles are described with another card and
 parameters. In TRANSPORT, however, the fringe field is not automatically
 included with the edge angle, but it is described by a own card as
-reported in the <<Edge_Trans>>.
+reported in the <<tab_Edge_Trans>>.
 
-[#Edge_Trans]
+[#tab_Edge_Trans]
 .Edge angle and fringe field description in TRANSPORT and values used in the simulation
 [cols="<1,<1,<2",options="header",]
 |=================================================
@@ -398,10 +398,10 @@ longitudinal emittance, both expressed in latexmath:[\pi]-mm-mrad.
 While the vertical emittance remains constant and equal to the initial
 value (latexmath:[\epsilon_y = ] 0.730 latexmath:[\pi]-mm-mrad) ,
 the horizontal and longitudinal emittances are expected growing after
-the bending magnet. The results are reported in <<Emittance>> and in
+the bending magnet. The results are reported in <<tab_Emittance>> and in
 <<fig_T3D_Tra_emi>>.
 
-[#Emittance]
+[#tab_Emittance]
 .Horizontal and longitudinal emittance comparison between TRACE 3D and TRANSPORT, both expressed in latexmath:[\pi]-mm-mrad
 [cols="<,<,<,<,<,<",]
 |=======================================================================
@@ -532,7 +532,7 @@ In this section, the comparison between TRACE 3D and _OPAL-t_ is
 discussed starting from `SBEND` definition in _OPAL-t_. The transport
 line described in <<sec.benchmarks.T3D_TRAN>> has been simulated in _OPAL_ using
 10.000 particles and latexmath:[10^{-11}] s time step. The bending
-magnet features of <<Bend_Trace>> and <<Edge_Trace>> have been transformed
+magnet features of <<tab_Bend_Trace>> and <<tab_Edge_Trace>> have been transformed
 in _OPAL_ language as:
 
 ....
@@ -757,19 +757,19 @@ which will result in a sudden emittance change.
 .Horizontal and vertical normalized emittances for different integration time steps
 image::figures/Benchmarks/report-emit-dt.png[scaledwidth=12cm]
 
-<<plot-fringe-size>> and <<plot-fringe-size-zoom>> examine the effects of
+<<fig_plot-fringe-size>> and <<fig_plot-fringe-size-zoom>> examine the effects of
 the fringe field range and the integration time step on the simulation
-accuracy. <<plot-fringe-size-zoom>> is a zoom-in plot of
-<<plot-fringe-size>>. We can conclude that the size of the
+accuracy. <<fig_plot-fringe-size-zoom>> is a zoom-in plot of
+<<fig_plot-fringe-size>>. We can conclude that the size of the
 integration time step has more influence on the accuracy of the
 simulation.
 
-[#plot-fringe-size]
+[#fig_plot-fringe-size]
 .Normalized horizontal emittance for different fringe field ranges and integration time steps
 image::figures/Benchmarks/report-fringe-size.png[scaledwidth=12cm]
 
-[#plot-fringe-size-zoom]
-.Zoom in on the final emittance in <<plot-fringe-size>>
+[#fig_plot-fringe-size-zoom]
+.Zoom in on the final emittance in <<fig_plot-fringe-size>>
 image::figures/Benchmarks/report-fringe-size-zoom.png[scaledwidth=12cm]
 
 [[sec.benchmarks.1d-csr-comparison-with-elegant]]
@@ -820,21 +820,21 @@ P_x &=& x'\beta\gamma, \\ P_y &=& y'\beta\gamma, \\ s &=& (\bar t-t)\beta c .\en
 
 To benchmark the CSR effect, we set up a simple beamline with 0.1 m drift,
  30 degree sbend and a 0.4 m drift. When the CSR
-effect is turn off, <<plot-emit-csr-off>> shows that the normalized
+effect is turn off, <<fig_plot-emit-csr-off>> shows that the normalized
 emittances calculated using both _OPAL_ and ELEGANT agree. The emittance
 values from _OPAL_ are obtained from the _.stat_ file, while for
 ELEGANT, the transverse emittances are obtained from the sigma output
 file (enx, and eny), the longitudinal emittance is calculated using the
 watch point beam distribution output.
 
-[#plot-emit-csr-off]
+[#fig_plot-emit-csr-off]
 .Comparison of the trace space using ELEGANT and __OPAL__
 image::figures/Benchmarks/emit-csr-off.png[scaledwidth=12cm]
 
 When CSR calculations are enabled for both the bending magnet and the
-following drift, <<plot-dpp-csr-on>> shows the average
+following drift, <<fig_plot-dpp-csr-on>> shows the average
 latexmath:[\delta] or latexmath:[\frac{\Delta p}{p}] change along
-the beam line, and <<plot-emit-csr-on>> compares the normalized
+the beam line, and <<fig_plot-emit-csr-on>> compares the normalized
 transverse and longitudinal emittances obtained by these two codes. The
 average latexmath:[\frac{\Delta p}{p}] can be found in the centroid
 output file (Cdelta) from ELEGANT, while in _OPAL_, one can calculate it
@@ -843,7 +843,7 @@ latexmath:[\frac{\Delta p}{p} = \frac{1}{\beta^2}\frac{\Delta \overline{E}}{\ove
 where latexmath:[\Delta \overline{E}] is the average kinetic energy
 from the _.stat_ output file.
 
-[#plot-dpp-csr-on]
+[#fig_plot-dpp-csr-on]
 .latexmath:[\frac{\Delta p}{p}] in Elegant and __OPAL__
 image::figures/Benchmarks/dpp-csr-on.png[scaledwidth=12cm]
 
@@ -852,9 +852,9 @@ calculated using Stupakov’s algorithm with the same setting in both
 codes. The average fractional momentum change
 latexmath:[\frac{\Delta p}{p}] and the longitudinal emittance show
 good agreements between these codes. However, they produce different
-horizontal emittances as indicated in <<plot-emit-csr-on>>.
+horizontal emittances as indicated in <<fig_plot-emit-csr-on>>.
 
-[#plot-emit-csr-on]
+[#fig_plot-emit-csr-on]
 .Transverse emittances in ELEGANT and __OPAL__
 image::figures/Benchmarks/emit-csr-on.png[scaledwidth=12cm]
 
@@ -872,7 +872,7 @@ latexmath:[\epsilon_x(x, P_x) = \sqrt{\langle x^2 \rangle \langle P_x^2\rangle -
 where latexmath:[P_x = \beta\gamma x'], not the trace-like emittance
 which is calculated as
 latexmath:[\epsilon_x (x, x') = \beta \gamma \sqrt{\langle x^2 \rangle \langle x' {}^{2} \rangle - \langle xx' \rangle^2}]
-[prstab2003]. In <<plot-emit-csr-on>>, a trace-like horizontal
+[prstab2003]. In <<fig_plot-emit-csr-on>>, a trace-like horizontal
 emittance is also calcualted for the _OPAL_ output beam distributions.
 Like the ELEGANT result, this trace-like emittance doesn’t grow in the
 drift. However, their differences come from the ELEGANT’s lack of CSR
@@ -1000,14 +1000,14 @@ STOP;
 ==== Results
 
 A good agreement is shown in the
-<<plot-opal-impact1>> and <<plot-opal-impact2>>. This proves to some extend
+<<fig_plot-opal-impact1>> and <<fig_plot-opal-impact2>>. This proves to some extend
 the compatibility of the space charge solvers of _OPAL_ and `Impact-t`.
 
-[#plot-opal-impact1]
+[#fig_plot-opal-impact1]
 .Transverse beam sizes and emittances in `Impact-t` and __OPAL__
 image::figures/Benchmarks/opal-impact-1MHz.png[scaledwidth=18cm,width=700]
 
-[#plot-opal-impact2]
+[#fig_plot-opal-impact2]
 .Longitudinal beam size and emittance in `Impact-t` and __OPAL__
 image::figures/Benchmarks/opal-impact-1MHz-z.png[scaledwidth=10cm]
 
