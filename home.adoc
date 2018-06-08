@@ -53,8 +53,6 @@ include::partmatter.adoc[]
 include::optimiser.adoc[]
 include::sampler.adoc[]
 
-.Appendices
-//[upperalpha]
 include::syntax.adoc[]
 include::fieldmaps.adoc[]
 include::opal-madx.adoc[]
