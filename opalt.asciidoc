@@ -868,7 +868,7 @@ coordinates implies that
 \begin{aligned}
         \nabla \cdot \mathbf{B} & = \frac{1}{h_s} \left[ \frac{\partial (h_s B_x )}{\partial x} + \frac{\partial B_s}{\partial s} + \frac{\partial (h_s B_z )}{\partial z} \right] \\ \\
         \nabla \times \mathbf{B} & = \frac{1}{h_s} \left[ \frac{\partial B_z}{\partial s} -  \frac{\partial (h_s B_s )}{\partial z} \right] \hat{\mathbf{x}} + \left[ \frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x} \right] \hat{\mathbf{s}} + \frac{1}{h_s} \left[ \frac{\partial (h_s B_s)}{\partial x} - \frac{\partial B_x}{\partial s} \right] \hat{\mathbf{z}}
-    \end{aligned}
+\end{aligned}
 ++++
 
 To simplify the problem, consider multipoles with
@@ -881,15 +881,14 @@ b_z (z) = B_z (-z) \qquad B_x (z) = - B_x (-z) \qquad B_s (z) = - B_s (-z)
 
 The most general form of the expansion is
 
-[#eq-01]
 .General form
-[latexmath]
+[latexmath#eq-01]
 ++++
 \begin{aligned}
          B_z & = \sum_{i,k=0}^{\infty} b_{i,k} x^i z^{2k}  \\
          B_x & = z \sum_{i,k=0}^{\infty} a_{i,k} x^i z^{2k} \\
          B_s & = z \sum_{i,k=0}^{\infty} c_{i,k} x^i z^{2k}
-    \end{aligned}
+\end{aligned}
 ++++
 
 Maxwell’s equations
