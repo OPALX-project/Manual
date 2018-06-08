@@ -1017,7 +1017,7 @@ image::figures/Benchmarks/opal-impact-1MHz-y.png[scaledwidth=8cm]
 image::figures/Benchmarks/opal-impact-1MHz-z.png[scaledwidth=18cm]
 
 [[sec.benchmarks.bibliography]]
-References
+=== References
 
 * [[[bib.TraceMan]]] K. Crandall and D. Rusthoi, _Documentation for trace: an interactive beam-transport code_, tech. rep. (Los Alamos National Laboratory).
 * [[[bib.transport]]] K. L. Brown et al., _TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems_, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
