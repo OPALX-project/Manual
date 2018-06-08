@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.moo]]
+[[chp.optimiser]]
 == Multi Objective Optimisation
 
 Optimization methods deal with finding a feasible set of solutions
@@ -25,7 +25,7 @@ algorithms.
 
 NOTE: For multi-objective optimization OPAL uses https://gitlab.psi.ch/OPAL/opt-pilot/[`opt-pilot`] developed by Y. Ineichen. `opt-pilot` has been fully integrated into OPAL. Instructions can be found on the https://gitlab.psi.ch/OPAL/opt-pilot/wikis/home[`opt-pilot` wiki page].
 
-[[definition]]
+[[sec.optimiser.definition]]
 === Definition
 
 As with single-objective optimization problems, multi-object
@@ -61,7 +61,7 @@ simultaneously.
 
 [#fig_des_to_obj]
 .The (often non-linear) mapping latexmath:[f : \mathbb{R}^n \rightarrow \mathbb{R}^M] from design to objective space. The dashed lines represent the constraints in design space and the set of solutions (Pareto front) in objective space.
-image:figures/optimiser/design_objective_space.png[]
+image::figures/optimiser/design_objective_space.png[scaledwidth=10cm]
 
 A special subset of multi-objective optimization problems where all
 objectives and constraints are linear, called _Multi-objective linear
@@ -71,7 +71,7 @@ multi-objective optimization problems with non-linear constraints and
 objectives. No general convergence proofs are readily available for
 these cases.
 
-[[pareto-optimality]]
+[[sec.optimiser.pareto-optimality]]
 === Pareto Optimality
 
 In most multi-objective optimization problems we have to deal with
@@ -113,10 +113,10 @@ the Pareto set for database queries.
 
 [#fig_pareto-def]
 .Various definitions regarding Pareto optimality.
-image::figures/optimiser/pareto-defs.png[]
+image::figures/optimiser/pareto-defs.png[scaledwidth=18cm]
 
 
-[[opt-MOGA-theory]]
+[[sec.optimiser.opt-MOGA-theory]]
 === MOGA Theory
 
 Here some facts on “What is the tradeoff between population size and the number of generations in genetic algorithms":
@@ -178,35 +178,35 @@ The OPTIMIZE command initiates optimization.
 
 [#optcommandattributes]
 .Attributes for the command OPTIMIZE.
-[cols="<1,<5",options="header",]
+[cols="<1,<2",options="header",]
 |=======================================================================
-|Attribute |Description
-| INPUT |  Path to input file.
-| OUTPUT |  Name used in output file generation.
-| OUTDIR |  Name of directory used to store generation output files.
-| OBJECTIVES |  List of objectives to be used.
-| DVARS |  List of optimization variables to be used.
-| CONSTRAINTS |  List of constraints to be used.
-| INITIALPOPULATION |  Size of the initial population.
-| NUM_MASTERS |  Number of master nodes.
-| NUM_COWORKERS |  Number processors per worker.
-| SELECTOR |  Path of the selector.
-| DUMP_DAT |  Dump old generation data format with frequency.
-| DUMP_FREQ |  Dump old generation data format with frequency.
-| NUM_IND_GEN |  Number of individuals in a generation.
-| MAXGENERATIONS |  Number of generations to run.
-| EPSILON |  Tolerance of hypervolume criteria.
-| EXPECTED_HYPERVOL |  The reference hypervolume.
-| CONV_HVOL_PROG |  converge if change in hypervolume is smaller.
-| ONE_PILOT_CONVERGE | 
-| SOL_SYNCH |  Solution exchange frequency.
-| GENE_MUTATION_PROBABILITY |  Mutation probability of individual gene, default: 0.5.
-| MUTATION_PROBABILITY |  Mutation probability of genom, default: 0.5.
-| RECOMBINATION_PROBABILITY |  Probability for genes to recombine, default: 0.5.
-| SIMBIN_CROSSOVER_NU |  Simulated binary crossover.
-| SIMTMPDIR |  Directory where simulations are run.
-| TEMPLATEDIR |  Directory where templates are stored.
-| FIELDMAPDIR |  Directory where field maps are stored.
+| Attribute                 | Description
+| INPUT                     | Path to input file.
+| OUTPUT                    | Name used in output file generation.
+| OUTDIR                    | Name of directory used to store generation output files.
+| OBJECTIVES                | List of objectives to be used.
+| DVARS                     | List of optimization variables to be used.
+| CONSTRAINTS               | List of constraints to be used.
+| INITIALPOPULATION         | Size of the initial population.
+| NUM_MASTERS               | Number of master nodes.
+| NUM_COWORKERS             | Number processors per worker.
+| SELECTOR                  | Path of the selector.
+| DUMP_DAT                  | Dump old generation data format with frequency.
+| DUMP_FREQ                 | Dump old generation data format with frequency.
+| NUM_IND_GEN               | Number of individuals in a generation.
+| MAXGENERATIONS            | Number of generations to run.
+| EPSILON                   | Tolerance of hypervolume criteria.
+| EXPECTED_HYPERVOL         | The reference hypervolume.
+| CONV_HVOL_PROG            | converge if change in hypervolume is smaller.
+| ONE_PILOT_CONVERGE        | 
+| SOL_SYNCH                 | Solution exchange frequency.
+| GENE_MUTATION_PROBABILITY | Mutation probability of individual gene, default: 0.5.
+| MUTATION_PROBABILITY      | Mutation probability of genom, default: 0.5.
+| RECOMBINATION_PROBABILITY | Probability for genes to recombine, default: 0.5.
+| SIMBIN_CROSSOVER_NU       | Simulated binary crossover.
+| SIMTMPDIR                 | Directory where simulations are run.
+| TEMPLATEDIR               | Directory where templates are stored.
+| FIELDMAPDIR               | Directory where field maps are stored.
 |=======================================================================
 
 ==== DVAR Command
@@ -215,7 +215,7 @@ The DVAR command defines a variable for optimization.
 
 [#dvarcommandattributes]
 .Attributes for the command DVAR.
-[cols="<1,<5",options="header",]
+[cols="<2,<5",options="header",]
 |=======================================================================
 |Attribute   | Description
 | VARIABLE   | Variable name that should be varied during optimization.
@@ -229,7 +229,7 @@ The OBJECTIVE command defines an objective for optimization.
 
 [#objectivecommandattributes]
 .Attributes for the command OBJECTIVE.
-[cols="<1,<5",options="header",]
+[cols="<2,<5",options="header",]
 |=======================================================================
 |Attribute |Description
 | EXPR | Expression to minimize during optimization.
@@ -241,7 +241,7 @@ The CONSTRAINT command defines a constraint for optimization.
 
 [#constraintcommandattributes]
 .Attributes for the command CONSTRAINT.
-[cols="<1,<5",options="header",]
+[cols="<2,<5",options="header",]
 |=======================================================================
 |Attribute |Description
 | EXPR | Expression that should be fulfilled during optimization.
@@ -250,20 +250,47 @@ The CONSTRAINT command defines a constraint for optimization.
 
 ==== Available Expressions
 
+The following expressions are available:
+
 [#availableexpressions]
 .Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
 [cols="<3,<5",options="header",]
 |=======================================================================
 | Function         | Description
-| fromFile(<file>) | Simple functor that reads vector data from a file. If the file contains more than one value the sum is returned.
-| sddsVariableAt(<var>, <spos>, <sdds_file>)     | A simple expression to get SDDS value near a specific spos for a variable.
-| statVariableAt(<var>, <spos>)              | The same as `sddsVariableAt`, uses OPALs statistics file.
-| sumErrSq(<meas_file>, <var_name>, <sdds_file>) | A simple expression computing the sum of all measurement errors (given as first and third argument) for a variable (second argument) according to
-latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n (measurement_i - value_i)^2}]
-| radialPeak(<file>, <turn>)                     | A simple expression to get the n-th peak of a radial probe https://gitlab.psi.ch/AMAS-BDModels/PSI-Ring/blob/master/RawData/RRI2-0038Y17.peaks[file].
-| sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>) | A simple expression computing the sum of all peak errors (given as first and second argument) for a range of peaks (third argument and fourth argument)
-latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=start}^{end} (measurement_i - value_i)^2}]
-| probVariableWithID(<var>, <id>, <probe_file>)  | Returns the value of the variable (first argument) with a certain ID (second argument) from link:elements#sec.elements.probe-opal-cycl[probe] loss file (third argument).
+
+| fromFile(<file>)
+| Simple functor that reads vector data from a file. If the file
+  contains more than one value the sum is returned.
+
+| sddsVariableAt(<var>, <spos>, <sdds_file>)
+| A simple expression to get SDDS value near a specific spos for a variable.
+
+| statVariableAt(<var>, <spos>)
+| The same as `sddsVariableAt`, uses OPALs statistics file.
+
+| sumErrSq(<meas_file>, <var_name>, <sdds_file>)
+| A simple expression computing the sum of all measurement errors
+  (given as first and third argument) for a variable (second argument)
+  according to latexmath:[result = \frac{1}{n} * \sqrt{\sum_{i=0}^n
+  (measurement_i - value_i)^2}]
+
+| radialPeak(<file>, <turn>)
+| A simple expression to get the n-th peak of a radial probe
+  https://gitlab.psi.ch/AMAS-BDModels/PSI-Ring/blob/master/RawData/RRI2-0038Y17.peaks[file].
+
+| sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>)
+| A simple expression computing the sum of all peak errors (given as
+  first and second argument) for a range of peaks (third argument and
+  fourth argument) latexmath:[result = \frac{1}{n} *
+  \sqrt{\sum_{i=start}^{end} (measurement_i - value_i)^2}]
+
+| probVariableWithID(<var>, <id>, <probe_file>)
+
+| Returns the value of the variable (first argument) with a certain ID
+  (second argument) from
+  link:elements#sec.elements.probe-opal-cycl[probe] loss file (third
+  argument).
+
 |=======================================================================
 
 ==== Example Input File
