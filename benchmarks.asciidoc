@@ -1010,8 +1010,8 @@ image::figures/Benchmarks/opal-impact-1MHz.png[scaledwidth=18cm,width=700]
 .Longitudinal beam size and emittance in `Impact-t` and __OPAL__
 image::figures/Benchmarks/opal-impact-1MHz-z.png[scaledwidth=10cm]
 
-[bibliography]
 [[sec.benchmarks.bibliography]]
+[bibliography]
 === References
 
 * [[[bib.TraceMan]]] K. Crandall and D. Rusthoi, _Documentation for trace: an interactive beam-transport code_, tech. rep. (Los Alamos National Laboratory).
