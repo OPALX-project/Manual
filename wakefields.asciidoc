@@ -27,7 +27,7 @@ beam pipes with `DC` and `AC` conductivity. The `DC` conductivity of a
 metal is given by
 
 .DC conductivity
-[latexmath#eq.dc_cond]
+[latexmath#eq-dc_cond]
 ++++
 \sigma_{DC} = \frac{ne^2\tau}{m}
 ++++
@@ -39,7 +39,7 @@ latexmath:[m] the electron mass. The `AC` conductivity, a response to
 applied oscillation fields, is given by
 
 . AC conductivity
-[latexmath#eq.ac_cond]
+[latexmath#eq-ac_cond]
 ++++
 \sigma_{AC} = \frac{\sigma_{DC}}{1-i\omega\tau}
 ++++
@@ -49,7 +49,7 @@ with latexmath:[\omega] denoting the frequency of the fields.
 The longitudinal impedance with `DC` conductivity is given by
 
 .Longitudinal impedance
-[latexmath#eq.Z2]
+[latexmath#eq-Z2]
 ++++
  Z_{Ldc}(k) = \dfrac{1}{ca} \dfrac{2}{\frac{\lambda}{k}-\frac{ika}{2}}
 ++++
@@ -95,7 +95,7 @@ W_T(s)= 10^{-12} \dfrac{2c}{\pi}Re\left(\int_0^\infty Re( \frac{c}{k}Z_L(k))\cos
 ++++
 
 
-To calculate the integrals in <<Calc_Wl>> and <<Calc_Wt>> numerically the
+To calculate the integrals in <<eq-Calc_Wl>> and <<eq-Calc_Wt>> numerically the
 Simpson integration schema with equidistant mesh spacing is applied.
 This leads to an integration with small latexmath:[\Delta k] with a
 big latexmath:[N] which is computational not optimal with respect to
