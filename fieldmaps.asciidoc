@@ -1475,7 +1475,7 @@ The lines following the header give the 3D field map grid values from
 latexmath:[1] to
 latexmath:[N= (N_{z} + 1) \times (N_{y} + 1) \times (N_{x} + 1)].
 
-[bibliography]
+[[sec.fieldmaps.bibliography]]
 === References
 
 * [[[bib.enge_fieldmaps,bib.enge]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).

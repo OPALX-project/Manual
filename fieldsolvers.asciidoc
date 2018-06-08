@@ -26,7 +26,7 @@ than one Lorentz frame is defined, the total space charge forces are
 then the summation of contributions from all Lorentz frames. More
 details will be given in Version 2.0.0.
 
-[[sec.fieldsolver.fftbased]]
+[[sec.fieldsolvers.fftbased]]
 === FFT Based Particle-Mesh (PM) Solver
 
 The Particle-Mesh (PM) solver is one of the oldest improvements over the
@@ -524,7 +524,7 @@ refined. The bound is specified with `AMR_MIN_NUM_PART`
 refined. The bound is specified with `AMR_MAX_NUM_PART`
 |=======================================================================
 
-[bibliography]
+[[sec.fieldsolvers.bibliography]]
 === References
 * [[[bib.hockney]]] R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136–210 (1970).
 * [[[bib.eastwoodandbrownrigg]]] J. W. Eastwood and D. R. K. Brownrigg, _Remarks on the solution of poisson’s equation for isolated systems_, J. Comput. Phys. 32, 24–38 (1979).

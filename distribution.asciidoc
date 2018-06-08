@@ -1069,7 +1069,7 @@ ignored. The number of particles in any `FROMFILE` distribution type is
 defined by the text file containing the distribution particle
 coordinates. (<<sec.distribution.fromfiledisttype>>).
 
-[bibliography]
+[[sec.distribution.bibliography]]
 === References
 
 * [[[bib.JohoDist]]] W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
