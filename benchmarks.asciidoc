@@ -737,8 +737,7 @@ One can see that the results produced by the hard edge map match the
 ELEGANT results when FINT is set to zero.
 
 [[sec.benchmarks.integration-time-step]]
-Integration Time Step
-^^^^^^^^^^^^^^^^^^^^^
+==== Integration Time Step
 
 When the hard edge map is used for a dipole, finer integration time step
 is needed to ensure the accurate of the calculation.

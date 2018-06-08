@@ -455,14 +455,14 @@ the first line is needed since the information on the longitudinal
 dimension is contained in the first column of the data. (_OPAL-t_ does
 not provide a `FAST` version of this map type.)
 
-[#AstraMagnetostatic]
+[#AstraMagnetoStatic]
 .Layout of an `AstraMagnetoStatic` field map file.
 [grid=none]
 [frame=topbot]
 [options=noheader]
 [cols="<,<,<",]
 |======================================================================
-|AstraMagnetoStatic |latexmath:[N_{Fourier}] |TRUE \| FALSE (optional)
+|AstraDynamic |latexmath:[N_{Fourier}] |TRUE \| FALSE (optional)
 |latexmath:[z_{1}] (in meters) |latexmath:[B_{z,\,1}] (T) |
 |latexmath:[z_{2}] (in meters) |latexmath:[B_{z,\,s}] (T) |
 |. | |
@@ -759,11 +759,11 @@ Parameter 3 |Place Holder
 
 [#fig_rbendengetype1]
 .Illustration of a rectangular bend (`RBEND`, see link:elements#sec.elements.RBend[RBend (_OPAL-t_)] showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}] 
-image::./figures/Fieldmaps/RBendType1.png[scaledwidth=10cm]
+image::./figures/Fieldmaps/RBendType1.png[scaledwidth=12cm]
 
 [#fig_sbendengetype1]
 .Illustration of a sector bend (`SBEND`, see link:elements#sec.elements.SBend[SBend (_OPAL-t_)]) showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}].
-image::./figures/Fieldmaps/SBendType1.png[scaledwidth=10cm]
+image::./figures/Fieldmaps/SBendType1.png[scaledwidth=12cm]
 
 [[sec.fieldmaps.1DProfile1Type1]]
 ==== 1DProfile1 Type 1 for Bend Magnet

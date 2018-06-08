@@ -84,25 +84,24 @@ an observation location latexmath:[(x,y,z)].
 
 For an isolated distribution of charge this reduces to
 
-[[eq.convolutionsolution]]
-[latexmath]
+.Convolution solution
+[latexmath#eq-convolutionsolution]
 ++++
 \phi(x,y,z)=\int\int\int{\mathrm{d}x' \,\mathrm{d}y' \,\mathrm{d}z'}\rho(x',y',z') G(x-x',y-y',z-z'),
 ++++
 
 where
 
-[[eq.isolatedgreenfunction]]
-[latexmath]
+[latexmath#eq-isolatedgreenfunction]
 ++++
 G(u,v,w)={\frac{1}{\sqrt{u^2+v^2+w^2}}}.
 ++++
 
-A simple discretization of Equation [convolutionsolution] on a Cartesian
+A simple discretization of <<eq-convolutionsolution>> on a Cartesian
 grid with cell size latexmath:[(h_x,h_y,h_z)] leads to,
 
-[[eq.openbruteforceconvolution]]
-[latexmath]
+.Open brute force convolution
+[latexmath#eq-openbruteforceconvolution]
 ++++
 \phi_{i,j,k}=h_x h_y h_z \sum_{i'=1}^{M_x}\sum_{j'=1}^{M_y}\sum_{k'=1}^{M_t}  \rho_{i',j',k'}G_{i-i',j-j',k-k'},
 ++++
@@ -118,8 +117,8 @@ FFTs can be used to compute convolutions by appropriate zero-padding of
 the sequences. Discrete convolutions arise in solving the Poisson
 equation, and one is typically interested in the following,
 
-[[eq.bruteforceconvolution]]
-[latexmath]
+.Brute force convolution
+[latexmath#eq-bruteforceconvolution]
 ++++
 \bar{\phi}_j=\sum_{k=0}^{K-1}\bar{\rho}_k \bar{G}_{j-k}\quad,
 \begin{array}{l}
@@ -153,8 +152,8 @@ latexmath:[\rho],
 Define a periodic Green function,
 latexmath:[G_m], as follows, 
 
-[[eq.periodicgreenfunction]]
-[latexmath]
+.Periodic Green function
+[latexmath#eq-periodicgreenfunction]
 ++++
 G_m=\left\{
 \begin{array}{l l}
@@ -166,8 +165,8 @@ G_{m+iN}=G_{m} & \quad \text{for } i \text{ integer }.
 
 Now consider the sum
 
-[[eq.fftconvolution]]
-[latexmath]
+.FFT convolution
+[latexmath#eq-fftconvolution]
 ++++
 {\phi}_j=\frac{1}{N}\sum_{k=0}^{N-1} W^{-jk}
                     \left(\sum_{n=0}^{N-1} \rho_n W^{nk}\right)
@@ -206,8 +205,8 @@ It follows that
 But latexmath:[G] is periodic with period
 latexmath:[N]. Hence,
 
-[[eq.finaleqn]]
-[latexmath]
+.Final equation
+[latexmath#eq-finaleqn]
 ++++
 {\phi}_j=\sum_{n=0}^{K-1}~\bar{\rho}_n G_{j-n}
 ~~~~~~0 \le j \le N-1.
@@ -215,11 +214,11 @@ latexmath:[N]. Hence,
 
 In the physical (unpadded) region,
 latexmath:[j\in \left[0,J-1\right\]], so the quantity latexmath:[j-n]
-in Equation [finaleqn] satisfies latexmath:[-(K-1)\le j-n \le J-1]. In
+in <<eq-finaleqn>> satisfies latexmath:[-(K-1)\le j-n \le J-1]. In
 other words the values of latexmath:[G_{j-n}] are identical to
 latexmath:[\bar{G}_{j-n}]. Hence, in the physical region the FFT-based
-convolution, Equation [fftconvolution], matches the convolution in
-Equation [bruteforceconvolution].
+convolution, <<eq-fftconvolution>>, matches the convolution in
+<<eq-bruteforceconvolution>>.
 
 As stated above, the zero-padded sequences need to have a length
 latexmath:[N \ge M], where latexmath:[M] is the number of elements
@@ -232,22 +231,22 @@ latexmath:[k=K,\ldots,M-1] corresponding to the zero-padded region.
 
 The above FFT-based approach – zero-padding the charge density array,
 and circular-shifting the Green function in accordance with
-Equation [periodicgreenfunction] – will work in general. In addition, if
+<<eq-periodicgreenfunction>> – will work in general. In addition, if
 the Green function is a symmetric function of its arguments, the value
 at the end of the Green function array (at grid point latexmath:[J-1])
 can be dropped, since it will be recovered implicitly through the
-symmetry of Equation [periodicgreenfunction]. In that case the approach
+symmetry of <<eq-periodicgreenfunction>>. In that case the approach
 is identical to the Hockney method <<bib.hockney>>, <<bib.eastwoodandbrownrigg>>
 and <<bib.hockneyandeastwood>>. Lastly, note that the above
-proof that the convolution, Equation [fftconvolution], is identical to
-Equation [bruteforceconvolution] in the unpadded region, works even when
+proof that the convolution, <<eq-fftconvolution>>, is identical to
+<<eq-bruteforceconvolution>> in the unpadded region, works even when
 latexmath:[W^{-j k}] and latexmath:[W^{m k}] are replaced by
 latexmath:[W^{j k}] and latexmath:[W^{-m k}], respectively, in
-Equation [fftconvolution]. In other words, the FFT-based approach can be
+<<eq-fftconvolution>>. In other words, the FFT-based approach can be
 used to compute
 
-[[eq.bruteforcecorrelation]]
-[latexmath]
+.Brute force correlation
+[latexmath#eq-bruteforcecorrelation]
 ++++
 \bar{\phi}_j=\sum_{k=0}^{K-1}\bar{\rho}_k \bar{G}_{j+k}\quad,
 \begin{array}{l}
@@ -264,11 +263,11 @@ of the final Fourier transform.
 [[algorithm-used-in-opal]]
 ==== Algorithm used in _OPAL_
 
-As a result, the solution of Equation [openbruteforceconvolution] is
+As a result, the solution of <<eq-openbruteforceconvolution>> is
 then given by
 
-[[eq.oneterm]]
-[latexmath]
+.Solution of brute force convolution
+[latexmath#eq-oneterm]
 ++++
 \phi_{i,j,k}=h_x h_y h_z \text{FFT}^{-1} \{ ( \text{FFT}\{\rho_{i,j,k}\}) ( \text{FFT}\{G_{i,j,k}\}) \}
 ++++
