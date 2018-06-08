@@ -131,7 +131,7 @@ latexmath:[e_0, \ldots , e_i, \ldots e_n].
 
 [#fig_KS1]
 .Illustration of local and global coordinates.
-image::figures/opalt/coords.png[pdfwidth=12cm]
+image::figures/opalt/coords.png[scaledwidth=12cm]
 
 [[sec.opalt.local-cartesian-coordinate-system]]
 ==== Local Cartesian Coordinate System
@@ -235,7 +235,7 @@ and latexmath:[y] (perpendicular to the bend plane).
 
 .Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
 [#fig_KS2]
-image::figures/opalt/curvcoords.png[pdfwidth=10cm]
+image::figures/opalt/curvcoords.png[scaledwidth=10cm]
 
 Both coordinate systems are described in <<fig_KS2>>.
 
@@ -291,7 +291,7 @@ empty set latexmath:[\emptyset].
 
 .Schematic workflow of _OPAL-t_’s execute method.
 [#fig_OPALTSchemeSimple]
-image::figures/opalt/flowdiagram.png[pdfwidth=12cm]
+image::figures/opalt/flowdiagram.png[scaledwidth=12cm]
 
 A regular time step in _OPAL-t_ is sketched in
 <<fig_OPALTSchemeSimple>>. In order to compute the coordinate system
