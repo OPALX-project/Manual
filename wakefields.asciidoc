@@ -210,31 +210,31 @@ The number of bins used in the calculation of the line density.
 With the `CONST_LENGTH` flag the bunch length can be set to be constant.
 This has no effect on CSR wakefunctions.
 
-[[sec.wakefunctions.CONDUCT]]
+[[sec.wakefield.CONDUCT]]
 === Define the conductivity
 
 The conductivity of the bunch which can be set to either `AC` or `DC`.
 This has no effect on CSR wakefunctions.
 
-[[sec.wakefunctions.Z]]
+[[sec.wakefield.Z]]
 === Define the impedance
 
 The impedance latexmath:[Z_0] of the beam pipe in
 [latexmath:[\Omega]]. This has no effect on CSR wakefunctions.
 
-[[sec.wakefunctions.FORM]]
+[[sec.wakefield.FORM]]
 === Define the form of the beam pipe
 
 The form of the beam pipe can be set to `ROUND`. This has no effect on
 CSR wakefunctions.
 
-[[sec.wakefunctions.RADIUS]]
+[[sec.wakefield.RADIUS]]
 === Define the radius of the beam pipe
 
 The radius of the beam pipe in [m]. This has no effect on CSR
 wakefunctions.
 
-[[sec.wakefunctions.SIGMA]]
+[[sec.wakefield.SIGMA]]
 === Define the sigma of the beam pipe
 
 The latexmath:[\sigma] of the beam pipe (material constant), see
@@ -356,7 +356,7 @@ where latexmath:[N] is the total number of
 coefficients/sampling points and latexmath:[L] is the length of the
 bunch.
 
-[bibliography]
+[[sec.wakefield.bibliography]]
 === References
 
 * [[[bib.schott]]] G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).

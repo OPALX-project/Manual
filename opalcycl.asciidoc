@@ -10,7 +10,7 @@ toc::[]
 [[chp.opalcycl]]
 == _OPAL-cycl_
 
-[[opalcycl.introduction]]
+[[sec.opalcycl.introduction]]
 === Introduction
 
 _OPAL-cycl_, as one of the flavors of the _OPAL_ framework, is a fully
@@ -39,14 +39,14 @@ currently implemented in _OPAL-cycl_. These functionalities are very
 useful for designing, commissioning and upgrading of cyclotrons and
 FFAGs.
 
-[[tracking-modes]]
+[[sec.opalcycl.tracking-modes]]
 === Tracking modes
 
 According to the number of particles defined by the argument `npart` in
 `beam` see Chapter link:beam[Beam Command], _OPAL-cycl_ works in one of the following
 three operation modes automatically.
 
-[[single-particle-tracking-mode]]
+[[sec.opalcycl.single-particle-tracking-mode]]
 ==== Single Particle Tracking mode
 
 In this mode, only one particle is tracked, either with acceleration or
@@ -79,7 +79,7 @@ Please don’t try to run this mode in parallel environment. You should
 believe that a single processor of the latexmath:[21^{st}] century is capable of doing
 the single particle tracking.
 
-[[tune-calculation-mode]]
+[[sec.opalcycl.tune-calculation-mode]]
 ==== Tune Calculation mode
 
 In this mode, two particles are tracked, one with all data is set to
@@ -106,7 +106,7 @@ other elements are omitted if any exists.
 
 Please don’t try to run this mode in parallel environment, either.
 
-[[multi-particle-tracking-mode]]
+[[sec.opalcycl.multi-particle-tracking-mode]]
 ==== Multi-particle tracking mode
 
 In this mode, large scale particles can be tracked simultaneously,
@@ -143,7 +143,7 @@ PZ::
 
 The independent variable is: *t* [s].
 
-[[note-unit-conversion-of-momentum-in-opal-t-and-opal-cycl]]
+[[sec.opalcycl.note-unit-conversion-of-momentum-in-opal-t-and-opal-cycl]]
 NOTE: unit conversion of momentum in _OPAL-t_ and _OPAL-cycl_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -467,7 +467,7 @@ The header parameters are ignored - user supplied parameters
 in a grid in latexmath:[(r, y, \phi)]. Positions and field elements
 are specified by Cartesian coordinates latexmath:[(x, y, z)].
 
-[[users-own-field-map]]
+[[sec.opalcycl.users-own-field-map]]
 ==== User’s own field-map
 
 You should revise the function or write your own function according to
@@ -478,7 +478,7 @@ different to above types. For more detail about the parameters of
 [[sec.opalcycl.rffieldmap]]
 === RF field
 
-[[read-rf-voltage-profile]]
+[[sec.opalcycl.read-rf-voltage-profile]]
 ==== Read RF voltage profile
 
 The RF cavities are treated as straight lines with infinitely narrow
@@ -506,7 +506,7 @@ lines the three values represent the normalized distance to the inner
 edge of the cavity, the normalized voltage and its derivative
 respectively.
 
-[[read-3d-rf-field-map]]
+[[sec.opalcycl.read-3d-rf-field-map]]
 ==== Read 3D RF field-map
 
 The 3D RF field-map can be read from H5hut type file. This is useful for
@@ -516,7 +516,7 @@ shapes. For the detail about its usage, please see  link:elements#sec.elements.c
 Please note that in this case, the E field is treated as a part of
 `CYCLOTRON` element, rather than a independent `RFCAVITY` element.
 
-[[particle-tracking-and-acceleration]]
+[[sec.opalcycl.particle-tracking-and-acceleration]]
 === Particle Tracking and Acceleration
 
 The precision of the tracking methods is vital for the entire simulation
@@ -638,7 +638,7 @@ the tune diagram.
 [[sec.opalcycl.output]]
 === Output
 
-[[single-particle-tracking-mode-1]]
+[[sec.opalcycl.single-particle-tracking-mode-1]]
 ==== Single Particle Tracking mode
 
 The intermediate phase space data is stored in an ASCII file which can
@@ -664,13 +664,13 @@ and _-Angle0.dat_, _-Angle1.dat_ and _-Angle2.dat_ respectively. The
 data is stored in the global cylindrical coordinate system, which can be
 used to check the property of the closed orbit.
 
-[[tune-calculation-mode-1]]
+[[sec.opalcycl.tune-calculation-mode-1]]
 ==== Tune calculation mode
 
 The tunes latexmath:[\nu_r] and latexmath:[\nu_z] of each energy are
 stored in a ASCII file with name _tuningresult_.
 
-[[multi-particle-tracking-mode-1]]
+[[sec.opalcycl.multi-particle-tracking-mode-1]]
 ==== Multi-particle tracking mode
 
 The intermediate phase space data of all particles and some interesting
@@ -689,7 +689,7 @@ The file’s name is combined by the input file name (without extension)
 and _-trackOrbit.dat_. The frequency of the data output can be set using
 the `SPTDUMPFREQ` option of `OPTION` statement see link:control#sec.control.option[Option Statement].
 
-[[matched-distribution]]
+[[sec.opalcycl.matched-distribution]]
 ==== Matched Distribution
 
 In order to run matched distribution simulation one has to specify a
@@ -710,7 +710,7 @@ Dist1:DISTRIBUTION, TYPE=GAUSSMATCHED, LINE=l1, FMAPFN=...,
                     MAGSYM=..., EX = ..., EY = ..., ET = ...;
 ....
 
-[[example]]
+[[sec.opalcycl.example]]
 ==== Example
 
 Simulation of the PSI Ring Cyclotron at 580 MeV and current 2.2 mA. The
@@ -726,19 +726,17 @@ represented in the latter coordinate system, the corresponding
 transformation has to be applied to obtain the rms emittances that are
 given in the output.
 
-[[input-file]]
-Input file
-++++++++++
+[[sec.opalcycl.input-file]]
+===== Input file
 
 https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/matchedDistribution.in[matchedDistribution.in]
 
-[[output-1]]
-Output
-++++++
+[[sec.opalcycl.output-1]]
+===== Output
 
 https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/matchedDistribution.output[matchedDistribution.output]
 
-[bibliography]
+[[sec.opalcycl.bibliography]]
 References
 ~~~~~~~~~~
 * [[[bib.howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.

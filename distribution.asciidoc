@@ -688,23 +688,23 @@ elliptical cross section.)
 `SIGMAX` and `SIGMAY`.
 
 |`SIGMAT` |0.0 |s |RMS rise and fall of half Gaussian in flat top
-defined in in <<flattop>>.
+defined in in <<fig_flattop>>.
 
-|`TPULSEFWHM` |0.0 |s |Flat top time. See <<flattop>>.
+|`TPULSEFWHM` |0.0 |s |Flat top time. See <<fig_flattop>>.
 
-|`TRISE` |0.0 |s |Rise time. See <<flattop>>. If defined will
+|`TRISE` |0.0 |s |Rise time. See <<fig_flattop>>. If defined will
 override `SIGMAT`.
 
-|`TFALL` |0.0 |s |Fall time. See <<flattop>>. If defined will
+|`TFALL` |0.0 |s |Fall time. See <<fig_flattop>>. If defined will
 override `SIGMAT`.
 
 |`FTOSCAMPLITUDE` |0 |None |Sinusoidal oscillations can imposed on the
-flat top in <<flattop>>. This defines the amplitude of those
+flat top in <<fig_flattop>>. This defines the amplitude of those
 oscillations in percent of the average flat top amplitude.
 
 |`FTOSCPERIODS` |0 |None |Defines the number of oscillation periods
 imposed on the flat top, latexmath:[t_\mathrm{flattop}], in
-<<flattop>>.
+<<fig_flattop>>.
 
 |`LASERPROFFN` | |None |File name containing measured laser image.
 
@@ -737,7 +737,7 @@ longitudinal (time) distribution with a Gaussian rise and fall time as
 described in <<sec.distribution.gaussdisttypephotoinjector>>. Below we show an
 example of a `FLATTOP` distribution command with an elliptical cross
 section of 1 mm by 2 mm and a flat top, in time, 10 ps long with a 0.5 ps
-rise and fall time as defined in <<flattop>>.
+rise and fall time as defined in <<fig_flattop>>.
 
 ....
 Dist:DISTRIBUTION, TYPE = FLATTOP,
@@ -1069,7 +1069,7 @@ ignored. The number of particles in any `FROMFILE` distribution type is
 defined by the text file containing the distribution particle
 coordinates. (<<sec.distribution.fromfiledisttype>>).
 
-[bibliography]
+[[sec.distribution.bibliography]]
 === References
 
 * [[[bib.JohoDist]]] W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
