@@ -882,7 +882,7 @@ b_z (z) = B_z (-z) \qquad B_x (z) = - B_x (-z) \qquad B_s (z) = - B_s (-z)
 The most general form of the expansion is
 
 .General form
-[latexmath#eq-01]
+[latexmath%1#eq-01]
 ++++
 \begin{aligned}
          B_z & = \sum_{i,k=0}^{\infty} b_{i,k} x^i z^{2k}  \\
