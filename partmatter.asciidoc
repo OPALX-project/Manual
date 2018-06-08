@@ -7,9 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.partmatt]]
-Physics Models Used in the Particle Matter Interaction Model
-------------------------------------------------------------
+[[chp.partmatter]]
+== Physics Models Used in the Particle Matter Interaction Model
 
 The command to define the particle matter interacton is
 PARTICLEMATTERINTERACTION.
@@ -22,9 +21,8 @@ ENABLERUTHERFORD::
 The so defined instance has then to be added to an element using the
 attribute
 
-[[the-energy-loss]]
-The Energy Loss
-~~~~~~~~~~~~~~~
+[[sec.partmatter.the-energy-loss]]
+=== The Energy Loss
 
 The energy loss is simulated using the Bethe-Bloch equation.
 
@@ -57,7 +55,7 @@ The stopping power is compared with PSTAR program of NIST in
 
 [#fig_PSTAR]
 .The comparison of stopping power with PSTAR.
-image:figures/partmatter/dEdx.png[width=500]
+image::figures/partmatter/dEdx.png[pdfwidth=12cm]
 
 Energy straggling: For relatively thick absorbers such that the number
 of collisions is large, the energy loss distribution is shown to be
@@ -72,9 +70,8 @@ latexmath:[\sigma_0] of the Gaussian distribution is calculated by:
 where latexmath:[\rho] is the density, latexmath:[\Delta s] is the
 thickness.
 
-[[the-coulomb-scattering]]
-The Coulomb Scattering
-~~~~~~~~~~~~~~~~~~~~~~
+[[sec.partmatter.the-coulomb-scattering]]
+=== The Coulomb Scattering
 
 The Coulomb scattering is treated as two independent events: the
 multiple Coulomb scattering and the large angle Rutherford scattering. +
@@ -106,9 +103,8 @@ latexmath:[\theta=2.5 \sqrt 2 \theta_0\approx3.5 \theta_0],
 where latexmath:[p] is the momentum, latexmath:[\Delta s] is the
 step size, and latexmath:[X_0] is the radiation length.
 
-[[multiple-coulomb-scattering]]
-Multiple Coulomb Scattering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.partmatter.multiple-coulomb-scattering]]
+==== Multiple Coulomb Scattering
 
 Generate two independent Gaussian random variables with mean zero and
 variance one: latexmath:[z_1] and latexmath:[z_2]. If
@@ -140,9 +136,8 @@ y=y+\Delta s p_y+z_3 \Delta s \theta_0/\sqrt{12}+z_4 \Delta s \theta_0/2,
 p_y=p_y+z_4 \theta_0.
 ++++
 
-[[large-angle-rutherford-scattering]]
-Large Angle Rutherford Scattering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[sec.partmatter.large-angle-rutherford-scattering]]
+==== Large Angle Rutherford Scattering
 
 Generate a random number latexmath:[\xi_1], _if_
 latexmath:[\xi_1 < \frac{\int_{2.5}^\infty P_S(\alpha)d\alpha}{\int_{0}^{2.5} P_M(\alpha)\;\mathrm{d}\alpha+\int_{2.5}^\infty P_S(\alpha)\;\mathrm{d}\alpha}=0.0047],
@@ -186,23 +181,21 @@ latexmath:[m], latexmath:[\theta=0.5349 \alpha] (in degree).
 
 [#fig_Jackson]
 .The comparison of Coulomb scattering with Jackson’s book.
-image:figures/partmatter/10steps.png[]
+image::figures/partmatter/10steps.png[pdfwidth=12cm]
 
-[[the-flow-diagram-of-collimatorphysics-class-in-opal]]
-The Flow Diagram of _CollimatorPhysics_ Class in OPAL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.partmatter.the-flow-diagram-of-collimatorphysics-class-in-opal]]
+=== The Flow Diagram of _CollimatorPhysics_ Class in OPAL
 
 [#fig_CollPhysics]
 .The diagram of CollimatorPhysics in _OPAL_.
-image:figures/partmatter/diagram.png[]
+image::figures/partmatter/diagram.png[pdfwidth=16cm]
 
 [#fig_CollPhysics2]
 .The diagram of CollimatorPhysics in _OPAL_ (continued). 
-image:figures/partmatter/Diagram2.png[]
+image::figures/partmatter/Diagram2.png[pdfwidth=12cm]
 
-[[the-substeps]]
-The Substeps
-^^^^^^^^^^^^
+[[sec.partmatter.the-substeps]]
+==== The Substeps
 
 Small step is needed in the routine of CollimatorPhysics.
 
@@ -219,12 +212,11 @@ Now, if the particle leave the collimator during the (n-1) steps, we
 track it as in a drift and put it back to the main bunch when finishing
 (n-1) steps.
 
-[[available-materials-in-opal]]
-Available Materials in _OPAL_
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.partmatter.available-materials-in-opal]]
+=== Available Materials in _OPAL_
 
 .List of materials with their parameters implemented in _OPAL_.
-[cols="^,^,^,^,^,^,^,^,^,^",options="header",]
+[cols="^2,^1,^1,^1,^1,^1,^1,^1,^1,^2",options="header",]
 |=======================================================================
 |Material |Z |A |latexmath:[\rho] [latexmath:[g/cm^3]] |X0
 [latexmath:[g/cm^2]] |A2 |A3 |A4 |A5 |_OPAL_ Name
@@ -265,9 +257,8 @@ Available Materials in _OPAL_
 |`Molybdenum`
 |=======================================================================
 
-[[example-of-an-input-file]]
-Example of an Input File
-~~~~~~~~~~~~~~~~~~~~~~~~
+[[sec.partmatter.example-of-an-input-file]]
+=== Example of an Input File
 
 https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/particlematterinteraction.in[particlematterinteraction.in]
 
@@ -277,9 +268,8 @@ part. FX16 is a slit in y direction, the `APERTURE` is *NEGATIVE*, the
 first value in `APERTURE` is the down part, the second value is the up
 part.
 
-[[a-simple-test]]
-A Simple Test
-~~~~~~~~~~~~~
+[[sec.partmatter.a-simple-test]]
+=== A Simple Test
 
 A cold Gaussian beam with latexmath:[\sigma_x=\sigma_y=5] mm. The
 position of the collimator is from 0.01 m to 0.1 m, the half aperture in
@@ -291,8 +281,8 @@ z=0.1 m after an elliptic collimator.
 
 [#fig_protonscoll]
 .The passage of protons through the collimator.
-image:figures/partmatter/longcoll6.png[]
+image::figures/partmatter/longcoll6.png[pdfwidth=12cm]
 
 [#fig_spectrum]
 .The energy spectrum and scattering angle at z=0.1 m
-image:figures/partmatter/spectandscatter.png[]
+image::figures/partmatter/spectandscatter.png[pdfwidth=12cm]
