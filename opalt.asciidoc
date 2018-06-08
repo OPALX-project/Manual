@@ -882,10 +882,10 @@ b_z (z) = B_z (-z) \qquad B_x (z) = - B_x (-z) \qquad B_s (z) = - B_s (-z)
 The most general form of the expansion is
 
 .General form
-[latexmath%1#eq-01]
+[latexmath%number#eq-generalform]
 ++++
 \begin{aligned}
-         B_z & = \sum_{i,k=0}^{\infty} b_{i,k} x^i z^{2k}  \\
+         B_z & =   \sum_{i,k=0}^{\infty} b_{i,k} x^i z^{2k} \\
          B_x & = z \sum_{i,k=0}^{\infty} a_{i,k} x^i z^{2k} \\
          B_s & = z \sum_{i,k=0}^{\infty} c_{i,k} x^i z^{2k}
 \end{aligned}
@@ -896,25 +896,24 @@ latexmath:[ \nabla \cdot \mathbf{B} = 0 ] and
 latexmath:[ \nabla \times \mathbf{B} = 0 ] in the above coordinates
 yield
 
-[#eq-21]
 [latexmath]
 ++++
 \frac{\partial}{\partial x} \left( (1+x/ \rho) B_x \right) + \frac{\partial B_s}{\partial s} + (1+x/ \rho) \frac{\partial B_z}{\partial z} = 0
 ++++
 
-[#eq-22-23-24]
-[latexmath]
+.Maxwell equations
+[latexmath%number#eq-Maxwell]
 ++++
 \begin{aligned}
             \frac{\partial B_z}{\partial s} & = (1+x/ \rho) \frac{\partial B_s}{\partial z}  \\ \\
             \frac{\partial B_x}{\partial z} & = \frac{\partial B_z}{\partial s}   \\ \\
             \frac{\partial B_x}{\partial s} & = \frac{\partial}{\partial x} \left( (1+x/ \rho) B_s \right)
-        \end{aligned}
+\end{aligned}
 ++++
 
-The substitution of (<<eq-01>>)
+The substitution of <<eq-generalform>>
 into Maxwell’s equations allows for the derivation of
-recursion relations. ([eq.23]) gives
+recursion relations. <<eq-Maxwell>> gives
 
 [latexmath]
 ++++
@@ -923,16 +922,16 @@ recursion relations. ([eq.23]) gives
 
 Equating the powers in latexmath:[x^i z^{2k}]
 
-[#eq-11]
-[latexmath]
+.a factors
+[latexmath%number#eq-a-factors]
 ++++
 a_{i,k} = \frac{i+1}{2k+1} b_{i+1,k}
 ++++
 
-A similar result is obtained from ([eq.24])
+A similar result is obtained from <<eq-Maxwell>>
 
-[#eq-12]
-[latexmath]
+.c factors
+[latexmath%number#eq-c-factors]
 ++++
 \begin{aligned}
         \sum_{i,k=0}^{\infty} \partial_s b_{i,k} x^i z^{2k} & = \left( 1+ \frac{x}{\rho} \right) \sum_{i,k=0}^{\infty} c_{i,k} (2k+1) x^i z^{2k} \\
@@ -942,7 +941,7 @@ A similar result is obtained from ([eq.24])
 
 The last equation from
 latexmath:[\nabla \times \mathbf{B} = 0] should be consistent with the
-two recursion relations obtained. ([eq.22]) implies
+two recursion relations obtained. <<eq-Maxwell>> implies
 
 [latexmath]
 ++++
@@ -954,7 +953,7 @@ two recursion relations obtained. ([eq.22]) implies
 \Rightarrow \frac{\partial_s a_{i,k}}{i+1} = \frac{1}{\rho} c_{i,k} + c_{i+1,k}
 ++++
 
-This results follows directly from ([eq.11]) and ([eq.12]); therefore
+This results follows directly from <<eq-a-factors>> and <<eq-c-factors>>; therefore
 the relations are consistent. Furthermore, the last required relations
 is obtained from the divergence of *B*
 
@@ -968,7 +967,7 @@ is obtained from the divergence of *B*
 \Rightarrow \partial_s c_{i,k} + \frac{2(k+1)}{\rho} b_{i-1,k+1} + 2(k+1) b_{i,k+1} + \frac{1}{\rho} a_{i,k} + (i+1) a_{i+1,k} + \frac{1}{\rho} a_{i,k} = 0
 ++++
 
-Using the relation ([eq.11]) to replace the latexmath:[a] coefficients
+Using the relation (<<eq-a-factors>>) to replace the latexmath:[a] coefficients
 with latexmath:[b]’s we arrive at
 
 [latexmath]
@@ -997,7 +996,7 @@ _(variable radius of curvature)_
 The difference between this case and the above is that
 latexmath:[\rho] is now a function of latexmath:[s],
 latexmath:[\rho(s)]. We can obtain the same result starting with the
-same functional forms for the field (<<eq-01>>). The
+same functional forms for the field (<<eq-generalform>>). The
 result of the previous section also holds in this case since no
 derivative latexmath:[\frac{\partial}{\partial s}] is applied to the
 scale factor latexmath:[h_s]. If the radius of curvature is set to be
@@ -1099,7 +1098,6 @@ latexmath:[\rho = \rho (s)]. Laplace’s equation is
 
 The last step is again the substitution to get
 
-[#eq-40]
 [latexmath]
 ++++
 \begin{aligned}
