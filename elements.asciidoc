@@ -889,7 +889,7 @@ the same as the hard edge magnet described by the reference trajectory.
 ==== Bend Fields from 1D Field Maps (_OPAL-t_)
 
 [#fig_rbend_enge_fringe]
-.Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see Equation [enge_func] with the parameters from the default `1DProfile1` field map described in <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
+.Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see <<eq-enge_func>> with the parameters from the default `1DProfile1` field map described in <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
 image::figures/Elements/Enge-func-plot.png[scaledwidth=10cm]
 
 So far we have described how to setup an `RBEND` or `SBEND` element, but
@@ -905,13 +905,13 @@ This can be seen clearly in link:fieldmaps#fig_rbend_field_profile[Figure 3 of C
 
 The purpose of the `1DProfile1` field map see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]
 associated with the element is to define the Enge functions
-(Equation [enge_func]) that model the entrance and exit fringe fields.
+(<<eq-enge_func>>) that model the entrance and exit fringe fields.
 To model a particular bend magnet, one must fit the field profile along
 the mid-plane of the magnet perpendicular to its face for the entrance
 and exit fringe fields to the Enge function:
 
-[#eq.enge_func]
-[latexmath]
+.Enge function
+[latexmath#eq-enge_func]
 ++++
   F(z) = \frac{1}{1 + e^{\sum\limits_{n=0}^{N_{order}} c_{n} (z/D)^{n}}}
 ++++
@@ -948,7 +948,7 @@ F(z) &= \left\{
 
 Here, we have defined an overall Enge function, latexmath:[F(z)], with
 three parts: entrance, center and exit. The exit and entrance fringe
-field regions have the form of Equation [enge_func] with parameters
+field regions have the form of <<eq-enge_func>> with parameters
 defined by the `1DProfile1` field map file given by the element
 parameter `FMAPFN`. Defining the coordinates:
 

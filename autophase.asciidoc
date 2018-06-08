@@ -40,7 +40,7 @@ to the lag, latexmath:[\varphi] and set the result to zero:
 
 Thus to get the maximum energy the lag has to fulfill
 
-.{nbsp}
+.Lag rule
 [latexmath#eq-rulelag]
 ++++
   \tan(\varphi) = -\frac{\Gamma_1}{\Gamma_2},
@@ -48,6 +48,7 @@ Thus to get the maximum energy the lag has to fulfill
 
 where
 
+.Gamma 1
 [latexmath#eq-Gamma1]
 ++++
   \Gamma_1 = \sum_{i=1}^{N-1} (1 + \omega \frac{\partial t}{\partial \varphi}) \int_{z_{i-1}}^{z_{i}} \sin\left(\omega (t_{i-1} + \Delta t_{i}\frac{z-z_{i-1}}{\Delta z_{i}})\right)\left(E_{z,i-1} + \Delta E_{z,i} \frac{z-z_{i-1}}{\Delta z_{i}}\right) dz
@@ -55,6 +56,7 @@ where
 
 and 
 
+.Gamma 2
 [latexmath#eq-Gamma2]
 ++++
   \Gamma_2 = \sum_{i=1}^{N-1} (1 + \omega \frac{\partial t}{\partial \varphi}) \int_{z_{i-1}}^{z_{i}} \cos\left(\omega (t_{i-1} + \Delta t_{i}\frac{z-z_{i-1}}{\Delta z_{i}})\right)\left(E_{z,i-1} + \Delta E_{z,i} \frac{z-z_{i-1}}{\Delta z_{i}}\right) dz.
@@ -135,7 +137,7 @@ entry and exit fringe field and two standing waves in between, see
 ++++
 
 where latexmath:[s] is the cell length. Instead of one sum as in
-Equation <<eq-Gamma1,eq-Gamma2>> there are four sums with different numbers of
+<<eq-Gamma1>> and <<eq-Gamma2>> there are four sums with different numbers of
 summands.
 
 [[sec.autophasing.example]]

@@ -222,8 +222,8 @@ using a magnetic potential and measured latexmath:[B_z] on the median
 plane, at the point latexmath:[(r,\theta, z)] in cylindrical polar
 coordinates, the third order field can be written as
 
-[#Bfield]
-[latexmath]
+.Third order field
+[latexmath#eq-Bfield]
 ++++
 \begin{aligned}
   B_r(r,\theta, z) & = & z\frac{\partial B_z}{\partial r}-\frac{1}{6}z^3 C_r, \\ \\
@@ -527,7 +527,7 @@ magnetic field evaluation in each time step latexmath:[\tau]. During
 the field interpolation process, for an arbitrary given point the code
 first interpolates Formula latexmath:[B_z] for its counterpart on the
 median plane and then expands to this given point using
-Equation <<Bfield,1>>.
+<<eq-Bfield>>.
 
 After each time step latexmath:[i], the code detects whether the
 particle crosses any one of the RF cavities during this step. If it

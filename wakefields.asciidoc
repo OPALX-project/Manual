@@ -26,8 +26,8 @@ by inverse FFT of the beam pipe impedance. There are known models for
 beam pipes with `DC` and `AC` conductivity. The `DC` conductivity of a
 metal is given by
 
-[[eq.dc_cond]]
-[latexmath]
+.DC conductivity
+[latexmath#eq.dc_cond]
 ++++
 \sigma_{DC} = \frac{ne^2\tau}{m}
 ++++
@@ -38,8 +38,8 @@ latexmath:[e], latexmath:[\tau] the relaxation time, and
 latexmath:[m] the electron mass. The `AC` conductivity, a response to
 applied oscillation fields, is given by
 
-[[eq.ac_cond]]
-[latexmath]
+. AC conductivity
+[latexmath#eq.ac_cond]
 ++++
 \sigma_{AC} = \frac{\sigma_{DC}}{1-i\omega\tau}
 ++++
@@ -48,8 +48,8 @@ with latexmath:[\omega] denoting the frequency of the fields.
 
 The longitudinal impedance with `DC` conductivity is given by
 
-[[eq.Z2]]
-[latexmath]
+.Longitudinal impedance
+[latexmath#eq.Z2]
 ++++
  Z_{Ldc}(k) = \dfrac{1}{ca} \dfrac{2}{\frac{\lambda}{k}-\frac{ika}{2}}
 ++++
@@ -70,8 +70,8 @@ high frequencies faster than latexmath:[Im(Z_L(k))] the cosine
 transformation can be used to calculate the wake. The following equation
 holds in both, the `DC` and `AC`, case 
 
-[[eq.Calc_Wl]]
-[latexmath]
+.Longitudinal wakefield
+[latexmath#eq-Calc_Wl]
 ++++
 W_L(s)=10^{-12} \dfrac{2c}{\pi}Re\left(\int_0^\infty Re(Z_L(k))\cos (ks)dk\right)
 ++++
@@ -86,16 +86,16 @@ Z_L(k) = \frac{k}{c}Z_T(k).
 ++++
 
 we can deduce the transverse
-wakefield from Equation [Calc_Wl]: 
+wakefield from <<eq-Calc_Wl>>:
 
-[[eq.Calc_Wt]]
-[latexmath]
+.Transverse wakefield
+[latexmath#eq-Calc_Wt]
 ++++
 W_T(s)= 10^{-12} \dfrac{2c}{\pi}Re\left(\int_0^\infty Re( \frac{c}{k}Z_L(k))\cos (ks)dk\right).
 ++++
 
 
-To calculate the integrals in Equation [Calc_Wl,Calc_Wt] numerically the
+To calculate the integrals in <<Calc_Wl>> and <<Calc_Wt>> numerically the
 Simpson integration schema with equidistant mesh spacing is applied.
 This leads to an integration with small latexmath:[\Delta k] with a
 big latexmath:[N] which is computational not optimal with respect to
@@ -238,13 +238,13 @@ wakefunctions.
 === Define the sigma of the beam pipe
 
 The latexmath:[\sigma] of the beam pipe (material constant), see
-Equation [dc_cond]. This has no effect on CSR wakefunctions.
+<<eq-dc_cond>>. This has no effect on CSR wakefunctions.
 
 [[sec.wakefield.TAU]]
 === Define the relaxation time (tau) of the beam pipe
 
 The latexmath:[\tau] defines the relaxation time and is needed to
-calculate the impedance of the beam pipe see Equation [dc_cond]. This
+calculate the impedance of the beam pipe see <<eq-dc_cond>>. This
 has no effect on CSR wakefunctions.
 
 [[sec.wakefield.WFNAME]]
