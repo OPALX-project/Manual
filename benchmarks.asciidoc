@@ -768,7 +768,7 @@ simulation.
 image::figures/Benchmarks/report-fringe-size.png[scaledwidth=12cm]
 
 [#fig_plot-fringe-size-zoom]
-.Zoom in on the final emittance in <<plot-fringe-size>>
+.Zoom in on the final emittance in <<fig_plot-fringe-size>>
 image::figures/Benchmarks/report-fringe-size-zoom.png[scaledwidth=12cm]
 
 [[sec.benchmarks.1d-csr-comparison-with-elegant]]
