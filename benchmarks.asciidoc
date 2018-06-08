@@ -101,7 +101,7 @@ An example of TRACE 3D graphic interface is shown in <<fig_trace>>.
 
 [#fig_trace]
 .TRACE 3D graphic interface where: (1) input beam in transverse plane (above) and longitudinal plane (below); (2) output beam in transverse plane (above) and longitudinal plane (below); (3) summary of beam parameters such as input and output emittances and desired value for matching function; (4) line lattice with different elements and beam envelope. The color legend is: blue line for horizontal plane, red line for vertical plane, green line for longitudinal plane and yellow line for dispersion.
-image::figures/Benchmarks/Trace.png[scalewidth=18cm]
+image::figures/Benchmarks/Trace.png[scaledwidth=18cm]
 
 [[sec.benchmarks.TRAN]]
 ==== TRANSPORT
@@ -194,7 +194,7 @@ interface <<bib.Transport_GUI>> is shown in <<fig_TRANSPORT>>.
 
 [#fig_TRANSPORT]
 .GUI TRANSPORT graphic interface <<bib.Tran_ex>>. The continuous lines describe the beam envelope in the vertical plane (above) and horizontal plane (below). The dashed line displays the dispersion. The elements in the beam line are drawn as blue and red rectangles
-image::figures/Benchmarks/TRANSPORT.png[scalewidth=18cm]
+image::figures/Benchmarks/TRANSPORT.png[scaledwidth=18cm]
 
 [[sec.benchmarks.T3D_TRAN]]
 ==== Comparison TRACE 3D and TRANSPORT
@@ -316,7 +316,7 @@ phase planes for this simulation are shown in <<fig_Trace_env>>.
 
 [#fig_Trace_env]
 .Beam envelopes in TRACE 3D for a SBEND with entrance and exit edge angles. The blue line describes the beam envelope in the horizontal plane, the red line in the vertical plane, the green line in the longitudinal plane. The yellow line displays the dispersion
-image::figures/Benchmarks/Trace_SBEND_edge.png[scalewidth=18cm]
+image::figures/Benchmarks/Trace_SBEND_edge.png[scaledwidth=18cm]
 
 [[sec.benchmarks.sbend-in-transport]]
 ===== SBEND in TRANSPORT
@@ -357,7 +357,7 @@ transverse phase planes for this simulation are shown in
 
 [#fig_Tran_env]
 .Beam envelopes in TRANSPORT for a SBEND with entrance and exit edge angles. The continuous lines describe the beam envelope in the vertical plane (above) and horizontal plane (below). The dashed line displays the dispersion.
-image::figures/Benchmarks/TRANS_SBEND_edge.png[scalewidth=18cm]
+image::figures/Benchmarks/TRANS_SBEND_edge.png[scaledwidth=18cm]
 
 [[sec.benchmarks.beam-size-and-emittance-comparison]]
 ===== Beam size and emittance comparison
@@ -390,7 +390,7 @@ at <<fig_T3D_Tra_env>>.
 
 [#fig_T3D_Tra_env]
 .Transversal beam size comparison between TRACE 3D and TRANSPORT
-image::figures/Benchmarks/T3D_Tra_SBEND_edge_env.png[scalewidth=18cm]
+image::figures/Benchmarks/T3D_Tra_SBEND_edge_env.png[scaledwidth=18cm]
 
 The same comparison has been performed in terms of horizontal and
 longitudinal emittance, both expressed in latexmath:[\pi]-mm-mrad.
@@ -422,7 +422,7 @@ the bending magnet. The results are reported in <<Emittance,6>> and in
 
 [#fig_T3D_Tra_emi]
 .Emittance comparison between TRACE and TRANSPORT
-image::figures/Benchmarks/T3D_Tra_SBEND_edge_emi.png[scalewidth=18cm]
+image::figures/Benchmarks/T3D_Tra_SBEND_edge_emi.png[scaledwidth=18cm]
 
 [[sec.benchmarks.T3DtoTRAN]]
 ===== From TRACE 3D to TRANSPORT
@@ -554,8 +554,8 @@ E1=0, E2=0,
 ....
 +
 .TRACE 3D and _OPAL_ comparison: SBEND without edge angles,
-image::figures/Benchmarks/SBEND_noEdge_Env.png[scalewidth=8cm]
-image::figures/Benchmarks/SBEND_noEdge_Emi.png[scalewidth=8cm]
+image::figures/Benchmarks/SBEND_noEdge_Env.png[scaledwidth=8cm]
+image::figures/Benchmarks/SBEND_noEdge_Emi.png[scaledwidth=8cm]
 +
 A good overall agreement has been found between the two codes in term of
 beam size and emittance. The different behavior inside the bending
@@ -570,8 +570,8 @@ E1=10*Pi/180.0, E2=5* Pi/180.0,
 ....
 +
 .TRACE 3D and _OPAL_ comparison: SBEND with edge angles
-image::figures/Benchmarks/SBEND_Edges_Env.png[scalewidth=8cm]
-image::figures/Benchmarks/SBEND_Edges_Emi.png[scalewidth=8cm]
+image::figures/Benchmarks/SBEND_Edges_Env.png[scaledwidth=8cm]
+image::figures/Benchmarks/SBEND_Edges_Emi.png[scaledwidth=8cm]
 +
 Even in this case, a good overall agreement has been found between the
 two codes in term of beam size and emittance.
@@ -612,8 +612,8 @@ E1=0, E2=0,
 +
 [#fig_SBEND_FI]
 .TRACE 3D and _OPAL_ comparison: SBEND with field index and default field map
-image::figures/Benchmarks/FI_SBEND_FMDef_Env_T2.png[scalewidth=8cm]
-image::figures/Benchmarks/FI_SBEND_FMDef_Emi_T2.png[scalewidth=8cm]
+image::figures/Benchmarks/FI_SBEND_FMDef_Env_T2.png[scaledwidth=8cm]
+image::figures/Benchmarks/FI_SBEND_FMDef_Emi_T2.png[scaledwidth=8cm]
 +
 Concerning the emittances and vertical beam size, a perfect agreement
 has been found, instead a defocusing effect appears in the horizontal
@@ -625,8 +625,8 @@ approximation.
 +
 [#fig_SBEND_FI_test]
 .TRACE 3D and _OPAL_ comparison: SBEND with field index and test field map
-image::figures/Benchmarks/FI_SBEND_FMTest_Env_T2.png[scalewidth=8cm]
-image::figures/Benchmarks/FI_SBEND_FMTest_Emit_T2.png[scalewidth=8cm]
+image::figures/Benchmarks/FI_SBEND_FMTest_Env_T2.png[scaledwidth=8cm]
+image::figures/Benchmarks/FI_SBEND_FMTest_Emit_T2.png[scaledwidth=8cm]
 
 [[sec.benchmarks.T3DtoOPAL]]
 ===== From TRACE 3D to _OPAL-t_
@@ -733,7 +733,7 @@ dipole.
 
 [#fig_plot-compare-default]
 .Compare emittances and beam sizes obtained by using the hard edge map (_OPAL_), the default map (_OPAL_), and the ELEGANT
-image::figures/Benchmarks/report-compare-default.png[scalewidth=18cm]
+image::figures/Benchmarks/report-compare-default.png[scaledwidth=18cm]
 
 <<fig_plot-compare-default>> compares the emittances and beam sizes
 obtained by using the hard edge map, the default map and the ELEGANT.
@@ -759,7 +759,7 @@ which will result in a sudden emittance change.
 
 [#fig_plot-emit-dt]
 .Horizontal and vertical normalized emittances for different integration time steps
-image::figures/Benchmarks/report-emit-dt.png[scalewidth=18cm]
+image::figures/Benchmarks/report-emit-dt.png[scaledwidth=18cm]
 
 <<plot-fringe-size>> and <<plot-fringe-size-zoom>> examine the effects of
 the fringe field range and the integration time step on the simulation
@@ -770,11 +770,11 @@ simulation.
 
 [#plot-fringe-size]
 .Normalized horizontal emittance for different fringe field ranges and integration time steps
-image::figures/Benchmarks/report-fringe-size.png[scalewidth=18cm]
+image::figures/Benchmarks/report-fringe-size.png[scaledwidth=18cm]
 
 [#plot-fringe-size-zoom]
 .Zoom in on the final emittance in <<plot-fringe-size>>
-image::figures/Benchmarks/report-fringe-size-zoom.png[scalewidth=18cm]
+image::figures/Benchmarks/report-fringe-size-zoom.png[scaledwidth=18cm]
 
 [[sec.benchmarks.1d-csr-comparison-with-elegant]]
 === 1D CSR comparison with ELEGANT
@@ -833,7 +833,7 @@ watch point beam distribution output.
 
 [#plot-emit-csr-off]
 .Comparison of the trace space using ELEGANT and __OPAL__
-image::figures/Benchmarks/emit-csr-off.png[scalewidth=18cm]
+image::figures/Benchmarks/emit-csr-off.png[scaledwidth=18cm]
 
 When CSR calculations are enabled for both the bending magnet and the
 following drift, <<plot-dpp-csr-on>> shows the average
@@ -849,7 +849,7 @@ from the _.stat_ output file.
 
 [#plot-dpp-csr-on]
 .latexmath:[\frac{\Delta p}{p}] in Elegant and __OPAL__
-image::figures/Benchmarks/dpp-csr-on.png[scalewidth=18cm]
+image::figures/Benchmarks/dpp-csr-on.png[scaledwidth=18cm]
 
 In the drift space following the bending magnet, the CSR effects are
 calculated using Stupakov’s algorithm with the same setting in both
@@ -860,7 +860,7 @@ horizontal emittances as indicated in <<plot-emit-csr-on>>.
 
 [#plot-emit-csr-on]
 .Transverse emittances in ELEGANT and __OPAL__
-image::figures/Benchmarks/emit-csr-on.png[scalewidth=18cm]
+image::figures/Benchmarks/emit-csr-on.png[scaledwidth=18cm]
 
 One important effect to notice is that in the drift space following the
 bending magnet, the normalized emittance
@@ -1009,12 +1009,12 @@ the compatibility of the space charge solvers of _OPAL_ and `Impact-t`.
 
 [#plot-opal-impact1]
 .Transverse beam sizes and emittances in `Impact-t` and __OPAL__
-image::figures/Benchmarks/opal-impact-1MHz-x.png[scalewidth=8cm]
-image::figures/Benchmarks/opal-impact-1MHz-y.png[scalewidth=8cm]
+image::figures/Benchmarks/opal-impact-1MHz-x.png[scaledwidth=8cm]
+image::figures/Benchmarks/opal-impact-1MHz-y.png[scaledwidth=8cm]
 
 [#plot-opal-impact2]
 .Longitudinal beam size and emittance in `Impact-t` and __OPAL__
-image::figures/Benchmarks/opal-impact-1MHz-z.png[scalewidth=18cm]
+image::figures/Benchmarks/opal-impact-1MHz-z.png[scaledwidth=18cm]
 
 [[sec.benchmarks.bibliography]]
 References
