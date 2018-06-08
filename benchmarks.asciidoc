@@ -7,7 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.benchmarks]]
+[appendix]
+[[appendix.benchmarks]]
 == Benchmarks
 
 [[sec.benchmarks.T3D]]

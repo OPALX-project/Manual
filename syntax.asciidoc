@@ -7,7 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.syntax]]
+[appendix]
+[[appendix.syntax]]
 == OPAL Language Syntax
 
 Words in _italic font_ are syntactic entities, and characters in

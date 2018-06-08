@@ -192,7 +192,7 @@ image::figures/partmatter/diagram.png[scaledwidth=16cm]
 
 [#fig_CollPhysics2]
 .The diagram of CollimatorPhysics in _OPAL_ (continued). 
-image::figures/partmatter/Diagram2.png[scaledwidth=12cm]
+image::figures/partmatter/Diagram2.png[scaledwidth=8cm]
 
 [[sec.partmatter.the-substeps]]
 ==== The Substeps

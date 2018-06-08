@@ -7,7 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.autophasing]]
+[appendix]
+[[appendix.autophasing]]
 == Auto-phasing Algorithm
 
 [[sec.autophasing.standing-wave-cavity]]

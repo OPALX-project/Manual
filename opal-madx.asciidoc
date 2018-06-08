@@ -7,7 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.opal---madx-conversion-guide]]
+[appendix]
+[[appendix.opal-madx-conversion-guide]]
 == _OPAL_ - MADX Conversion Guide
 
 We note with latexmath:[\alpha],latexmath:[\beta] and

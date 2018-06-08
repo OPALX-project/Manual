@@ -7,7 +7,8 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.opalt-fieldmaps]]
+[appendix]
+[[appendix.opalt-fieldmaps]]
 == _OPAL-t_ Field Maps
 
 [[sec.fieldmaps.introduction]]
