@@ -40,24 +40,22 @@ to the lag, latexmath:[\varphi] and set the result to zero:
 
 Thus to get the maximum energy the lag has to fulfill
 
-[[rulelag]]
-[latexmath]
+.{nbsp}
+[latexmath#eq-rulelag]
 ++++
   \tan(\varphi) = -\frac{\Gamma_1}{\Gamma_2},
 ++++
 
 where
 
-[[Gamma1]]
-[latexmath]
+[latexmath#eq-Gamma1]
 ++++
   \Gamma_1 = \sum_{i=1}^{N-1} (1 + \omega \frac{\partial t}{\partial \varphi}) \int_{z_{i-1}}^{z_{i}} \sin\left(\omega (t_{i-1} + \Delta t_{i}\frac{z-z_{i-1}}{\Delta z_{i}})\right)\left(E_{z,i-1} + \Delta E_{z,i} \frac{z-z_{i-1}}{\Delta z_{i}}\right) dz
 ++++
 
 and 
 
-[[Gamma2]]
-[latexmath]
+[latexmath#eq-Gamma2]
 ++++
   \Gamma_2 = \sum_{i=1}^{N-1} (1 + \omega \frac{\partial t}{\partial \varphi}) \int_{z_{i-1}}^{z_{i}} \cos\left(\omega (t_{i-1} + \Delta t_{i}\frac{z-z_{i-1}}{\Delta z_{i}})\right)\left(E_{z,i-1} + \Delta E_{z,i} \frac{z-z_{i-1}}{\Delta z_{i}}\right) dz.
 ++++
@@ -103,7 +101,7 @@ t[i] = t[0] + (z[i] - z[0]) / (c * b[i])
 By doing so we assume that the kinetic energy, K, increases linearly and
 proportional to the maximal voltage. With this model for the progress of
 time we can calculate latexmath:[\varphi] according to
-Equation [rulelag]. Next a better model for the kinetic Energy can be
+<<eq-rulelag>>. Next a better model for the kinetic Energy can be
 calculated using
 
 `K[i] = K[i-1] + q `latexmath:[\Delta]`z[i](cos(`latexmath:[\varphi]`)(Ez[i-1](`latexmath:[\Gamma_{21}]`[i] - `latexmath:[\Gamma_{22}]`[i]) + Ez[i]`latexmath:[\Gamma_{22}]`[i])`
@@ -137,7 +135,7 @@ entry and exit fringe field and two standing waves in between, see
 ++++
 
 where latexmath:[s] is the cell length. Instead of one sum as in
-Equation [Gamma1,Gamma2] there are four sums with different numbers of
+Equation <<eq-Gamma1,eq-Gamma2>> there are four sums with different numbers of
 summands.
 
 [[sec.autophasing.example]]
