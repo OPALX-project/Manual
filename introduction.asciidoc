@@ -73,7 +73,7 @@ Computing.
 
 [#walldrift]
 .Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
-image::figures/drift2c1.png[width=10cm]
+image::figures/drift2c1.png[pdfwidth=10cm]
 
 [[sec.introduction.quality-management]]
 === Quality Management
@@ -100,7 +100,7 @@ most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelman
 
 [#guncomp1]
 .Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
-image::figures/Gun/GunComp.png[width=18cm]
+image::figures/Gun/GunComp.png[pdfwidth=18cm]
 
 [[sec.introduction.output]]
 === Output

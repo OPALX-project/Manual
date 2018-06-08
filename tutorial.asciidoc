@@ -23,7 +23,7 @@ size, which is beyond this tutorial.
 === The Simulation Cycle
 
 .The simulation cycle
-image::figures/tutorial/gen-str.png[width=6cm]
+image::figures/tutorial/gen-str.png[pdfwidth=6cm]
 
 [[sec.tutorial.starting-opal]]
 === Starting OPAL
@@ -167,7 +167,7 @@ deflection point.
 
 [#fig_Inj2ref]
 .Reference orbit(left) and tune diagram(right) in Injector II 
-image::figures/cyclotron/injector2_orbit_and_tune.png[width=18cm]
+image::figures/cyclotron/injector2_orbit_and_tune.png[pdfwidth=18cm]
 
 From theoretic view, there should be an eigen ellipse for any given
 energy in stable area of a fixed accelerator structure. Only when the
@@ -182,7 +182,7 @@ magnet for energy of 2 MeV in Injector II.
 
 [#fig_eigen]
 .Radial and vertical eigenellipse at 2 MeV of Injector II
-image::figures/cyclotron/injector2_eigenellipse.png[width=18cm]
+image::figures/cyclotron/injector2_eigenellipse.png[pdfwidth=18cm]
 
 Right plot of <<fig_Inj2ref>> shows very good
 agreement of the tune diagram by _OPAL-cycl_ and FIXPO. The trivial
@@ -223,11 +223,11 @@ H5root code.
 
 [#fig_cyclParameters]
 .Energy vs. time (left) and external B field vs. track step (Right, only show for about 2 turns)
-image::figures/cyclotron/Inj2-cyclParameters.png[width=18cm]
+image::figures/cyclotron/Inj2-cyclParameters.png[pdfwidth=18cm]
 
 [#fig_cyclPhasespace]
 .Vertical phase at different energy from left to right: 0.87 MeV, 15 MeV and 35 MeV
-image::figures/cyclotron/Inj2-cyclPhasespace.png[width=18cm]
+image::figures/cyclotron/Inj2-cyclPhasespace.png[pdfwidth=18cm]
 
 [[sec.tutorial.Ring]]
 ==== PSI Ring Cyclotron
@@ -246,7 +246,7 @@ RF Cavity::
 
 [#fig_Ringref]
 .Reference orbit(left) and tune diagram(right) in Ring cyclotron 
-image::figures/cyclotron/ReferenceOrbit.png[width=18cm]
+image::figures/cyclotron/ReferenceOrbit.png[pdfwidth=18cm]
 
 <<fig_Ringref>> shows a single particle tracking
 result and tune calculation result in the PSI Ring cyclotron. Limited by
