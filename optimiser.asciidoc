@@ -61,7 +61,8 @@ simultaneously.
 
 [#fig_des_to_obj]
 .The (often non-linear) mapping latexmath:[f : \mathbb{R}^n \rightarrow \mathbb{R}^M] from design to objective space. The dashed lines represent the constraints in design space and the set of solutions (Pareto front) in objective space.
-image::figures/optimiser/design_objective_space.png[scaledwidth=10cm]
+image::figures/optimiser/design_objective_space.png[scaledwidth=10cm
+image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
 A special subset of multi-objective optimization problems where all
 objectives and constraints are linear, called _Multi-objective linear
@@ -143,7 +144,7 @@ d3: DVAR, VARIABLE="x3", LOWERBOUND=-1.0, UPPERBOUND=1.0;
 ```
 
 This defines three design variables named `d1`, `d2` and `d3`.
-For every variable name e.g. `x1` a corresponding variable `_x1_` has to exist in the input file. 
+For every variable name e.g. `x1` a corresponding variable `_x1_` has to exist in the input file.
 ////
 The variables `d1`, `d2` and `d3` can be used in objectives and constraints.
 ////
@@ -198,7 +199,7 @@ The OPTIMIZE command initiates optimization.
 | EPSILON                   | Tolerance of hypervolume criteria.
 | EXPECTED_HYPERVOL         | The reference hypervolume.
 | CONV_HVOL_PROG            | converge if change in hypervolume is smaller.
-| ONE_PILOT_CONVERGE        | 
+| ONE_PILOT_CONVERGE        |
 | SOL_SYNCH                 | Solution exchange frequency.
 | GENE_MUTATION_PROBABILITY | Mutation probability of individual gene, default: 0.5.
 | MUTATION_PROBABILITY      | Mutation probability of genom, default: 0.5.
@@ -312,10 +313,10 @@ drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x',${loc}) - ${up})";
 drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y',${loc}) - 0.0001833)";
 goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
 
-OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun}, 
-          DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50, 
-          NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0, 
-          NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir", TEMPLATEDIR="tmpl", 
+OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
+          DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50,
+          NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0,
+          NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir", TEMPLATEDIR="tmpl",
           FIELDMAPDIR="fieldmaps", OUTPUT="optLinac", OUTDIR="results";
 
 QUIT;
@@ -334,9 +335,9 @@ OPTION, VERSION=10900;
 
 TITLE, STRING="OPAL Test MAB, 2016-10-13";
 
-//////////////////////////////                                                                                                                                                                                                                 
-// Begin Content                                                                                                                                                                                                                               
-//////////////////////////////                                                                                                                                                                                                                 
+//////////////////////////////
+// Begin Content
+//////////////////////////////
 
 REAL SOL  = 2.9979246E8;
 REAL Pcen = 100.0E6;
@@ -345,24 +346,24 @@ REAL QK1  = 6.2519;
 REAL QSTR = QK1*BRho/2.0;
 
 QDX1: QUADRUPOLE, ELEMEDGE=0.0, L=0.10, APERTURE="circle(0.1)", K1=_QDX1_K1_ * BRho / 2;
-QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)", 
+QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)",
                   K1=_QFX1_K1_ * BRho / 2;
-QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)", 
+QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)",
                   K1=_QDX2_K1_ * BRho / 2;
 
 FODO: LINE = (QDX1, QFX1, QDX2);
 
-//////////////////////////////                                                                                                                                                                                                                 
-// Begin Summary                                                                                                                                                                                                                               
-//////////////////////////////                                                                                                                                                                                                                 
+//////////////////////////////
+// Begin Summary
+//////////////////////////////
 
 FODO_Full: LINE = (FODO), ORIGIN={0,0,0}, ORIENTATION={0.0, 0.0, 0.0};
 
-//////////////////////////////                                                                                                                                                                                                                 
-// End Summary                                                                                                                                                                                                                                 
-//////////////////////////////                                                                                                                                                                                                                 
+//////////////////////////////
+// End Summary
+//////////////////////////////
 
-// SC calculations on:                                                                                                                                                                                                                         
+// SC calculations on:
 Fs1:FIELDSOLVER, FSTYPE = FFT, MX = 16, MY = 16, MT = 16,
                   PARFFTX = true, PARFFTY = true, PARFFTT = true,
                   BCFFTX = open, BCFFTY = open, BCFFTT = open,
