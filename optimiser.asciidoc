@@ -62,7 +62,6 @@ simultaneously.
 [#fig_des_to_obj]
 .The (often non-linear) mapping latexmath:[f : \mathbb{R}^n \rightarrow \mathbb{R}^M] from design to objective space. The dashed lines represent the constraints in design space and the set of solutions (Pareto front) in objective space.
 image::figures/optimiser/design_objective_space.png[scaledwidth=10cm]
-image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
 A special subset of multi-objective optimization problems where all
 objectives and constraints are linear, called _Multi-objective linear
