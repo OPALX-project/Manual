@@ -38,7 +38,7 @@ latexmath:[e], latexmath:[\tau] the relaxation time, and
 latexmath:[m] the electron mass. The `AC` conductivity, a response to
 applied oscillation fields, is given by
 
-. AC conductivity
+.AC conductivity
 [latexmath#eq-ac_cond]
 ++++
 \sigma_{AC} = \frac{\sigma_{DC}}{1-i\omega\tau}
