@@ -129,7 +129,7 @@ Here some facts on “What is the tradeoff between population size and the numbe
 
 
 
-[[opt-pilot-commands]]
+[[sec.optimiser.opt-pilot-commands]]
 === OPAL Commands
 
 ==== Basic Syntax
@@ -209,6 +209,7 @@ The OPTIMIZE command initiates optimization.
 | FIELDMAPDIR               | Directory where field maps are stored.
 |=======================================================================
 
+[[sec.optimiser.dvar-command]]
 ==== DVAR Command
 
 The DVAR command defines a variable for optimization.
