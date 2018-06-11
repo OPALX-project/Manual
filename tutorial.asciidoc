@@ -98,7 +98,7 @@ opal input.in --restartfn input.h5 --restart -1 --info 3
 This is a partial complete example. First we have to set _OPAL_ in
 `AUTOPHASE` mode, as described in link:control#sec.control.option[Option Statement] and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
-computing the phases is explained in Appendix link:autophase#chp.autophase[Auto-phasing Algorithm].
+computing the phases is explained in Appendix link:autophase#chp.autophasing[Auto-phasing Algorithm].
 
 ....
 Option, AUTOPHASE=4;

@@ -46,6 +46,7 @@ It allows *random* (RASTER=false) and *raster* mode.
 |=======================================================================
 
 The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
+
 [#fig_des_to_sampl]
 image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
