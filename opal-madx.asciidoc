@@ -41,14 +41,12 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 \end{aligned}
 ++++
 
-[cols="<2,^1,>2,<2,^1,<8,^4,>2",options="header",]
+[cols="<4,^2,>2,<4,^1,<16,^3,>3",options="header",orientation="landscape"]
 |=======================================================================
 |Quantity
 |`MADX`
 |
-|Conversion
-|
-|
+3+|Conversion
 |_OPAL-Output_
 |
 
@@ -173,14 +171,12 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 |latexmath:[\left[\text{T}/\text{m}\right\]]
 |=======================================================================
 
-[cols="<2,^1,>2,<2,^1,<8,^4,>2",options="header",]
+[cols="<4,^2,>2,<4,^1,<16,^3,>3",options="header",orientation="landscape"]
 |=======================================================================
 |Quantity 
 |`MADX`
 |
-|Conversion
-|
-|
+3+|Conversion
 |`OPAL-Input`
 |
 
@@ -203,14 +199,12 @@ m_{p} & = & 0.939277 [GeV] & & & & c & = & 299792458 [m/s]
 |
 |=======================================================================
 
-[cols="<2,^1,>2,<2,^1,<8,^4,>2",options="header",]
+[cols="<4,^2,>2,<4,^1,<16,^3,>3",options="header",orientation="landscape"]
 |=======================================================================
 |Quantity
 |`OPAL-Output`
 |
-|Conversion
-|
-|
+3+|Conversion
 |`OPAL-Input`
 |
 
