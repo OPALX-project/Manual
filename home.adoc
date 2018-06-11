@@ -34,28 +34,50 @@ flavours. The icon `DOPAL-t` means that a feature is not yet available
 in _OPAL-t_. Similar icons are used for the other flavours.
 
 include::introduction.adoc[]
+
 include::conventions.adoc[]
+
 include::pitfalls.adoc[]
+
 include::tutorial.adoc[]
+
 include::opalt.adoc[]
+
 include::opalcycl.adoc[]
+
 include::format.adoc[]
+
 include::control.adoc[]
+
 include::elements.adoc[]
+
 include::lines.adoc[]
+
 include::beam-command.adoc[]
+
 include::distribution.adoc[]
+
 include::fieldsolvers.adoc[]
+
 include::track.adoc[]
+
 include::wakefields.adoc[]
+
 include::geometry.adoc[]
+
 include::partmatter.adoc[]
+
 include::optimiser.adoc[]
+
 include::sampler.adoc[]
 
 include::syntax.adoc[]
+
 include::fieldmaps.adoc[]
+
 include::opal-madx.adoc[]
+
 include::autophase.adoc[]
+
 include::benchmarks.adoc[]
 
