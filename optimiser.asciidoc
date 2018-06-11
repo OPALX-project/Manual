@@ -316,8 +316,9 @@ goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50,
           NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0,
-          NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir", TEMPLATEDIR="tmpl",
-          FIELDMAPDIR="fieldmaps", OUTPUT="optLinac", OUTDIR="results";
+          NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir",
+          TEMPLATEDIR="tmpl", FIELDMAPDIR="fieldmaps", OUTPUT="optLinac",
+          OUTDIR="results";
 
 QUIT;
 ....
@@ -345,7 +346,8 @@ REAL BRho = Pcen/SOL;
 REAL QK1  = 6.2519;
 REAL QSTR = QK1*BRho/2.0;
 
-QDX1: QUADRUPOLE, ELEMEDGE=0.0, L=0.10, APERTURE="circle(0.1)", K1=_QDX1_K1_ * BRho / 2;
+QDX1: QUADRUPOLE, ELEMEDGE=0.0,  L=0.10, APERTURE="circle(0.1)",
+                  K1=_QDX1_K1_ * BRho / 2;
 QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)",
                   K1=_QFX1_K1_ * BRho / 2;
 QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)",
@@ -383,7 +385,8 @@ REAL qb=77.0e-12;
 REAL bfreq=1300.0E6;
 REAL bcurrent=qb*bfreq;
 
-beam1: BEAM, PARTICLE = ELECTRON, pc = P0, NPART = 5000, BFREQ = bfreq, BCURRENT = bcurrent, CHARGE = -1;
+beam1: BEAM, PARTICLE = ELECTRON, pc = P0, NPART = 5000, BFREQ = bfreq,
+             BCURRENT = bcurrent, CHARGE = -1;
 
 SELECT, LINE=FODO_Full;
 
