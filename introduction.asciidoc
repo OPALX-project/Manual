@@ -83,7 +83,7 @@ since we are convinced that adequate documentation is a key factor in
 the usefulness of a code like _OPAL_ to study present and future
 particle accelerators. Using tools such as a source code version control
 system (https://git-scm.com[git]), source code documentation using
-Doxygen (found http://amas.web.psi.ch/docs/opal/html/[here]) and the
+Doxygen (found http://amas.web.psi.ch/docs/opal/master-doxygen/[here]) and the
 extensive user manual you are now enjoying, we are committed to
 providing users as well as co-developers with state-of-the-art
 documentation to _OPAL_.
