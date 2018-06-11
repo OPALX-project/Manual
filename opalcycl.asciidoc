@@ -544,7 +544,7 @@ latexmath:[t_2 = \tau - t_1].
 === Space Charge
 
 _OPAL-cycl_ uses the same solvers as _OPAL-t_ to calculate the space
-charge effects see Chapter link:fieldsolvers#chp.fieldsolver[Field Solver].
+charge effects see Chapter link:fieldsolvers#chp.fieldsolvers[Field Solver].
 
 Typically, the space charge field is calculated once per time step. This
 is no surprise for the second order Boris-Buneman time integrator

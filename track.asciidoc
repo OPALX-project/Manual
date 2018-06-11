@@ -197,7 +197,7 @@ FIELDSOLVER::
 DISTRIBUTION::
   The particle distribution to be used see Chapter link:distribution#chp.distribution[Distribution].
 BEAM::
-  The particle beam see Chapter link:beam-command#chp:beam-command[Beam Command] to be used is specified.
+  The particle beam see Chapter link:beam-command#chp.beam-command[Beam Command] to be used is specified.
 FILE::
   The name of the file to be written (default="`track`").
 TURNS::

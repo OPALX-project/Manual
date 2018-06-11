@@ -449,7 +449,7 @@ are allowed.
 ==== Symbolic Constants
 
 _OPAL_ recognizes a few build-in built-in mathematical and physical
-constants see Table link:format#constant[Predefined Symbolic Constants].
+constants see Table link:format#tab_constant[Predefined Symbolic Constants].
 Additional constants can be defined by the command
 
 ....
