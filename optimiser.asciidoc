@@ -8,7 +8,7 @@ link:home[Back to Main Page]
 toc::[]
 
 [[chp.optimizer]]
-== Multi Objective Optimisation
+== Multi Objective Optimization
 
 Optimization methods deal with finding a feasible set of solutions
 corresponding to extreme values of some specific criteria. Problems
