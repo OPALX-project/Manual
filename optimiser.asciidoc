@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.optimizer]]
+[[chp.optimiser]]
 == Multi Objective Optimization
 
 Optimization methods deal with finding a feasible set of solutions
