@@ -53,7 +53,7 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 . link:wakefields[Wakefields]
 . link:geometry[Geometry]
 . link:partmatter[Physics Models Used in the Particle Matter Interaction Model]
-. link:optimiser[Multi Objective Optimisation]
+. link:optimiser[Multi Objective Optimization]
 . link:sampler[Sampler]
 
 .Appendices
