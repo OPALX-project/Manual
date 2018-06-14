@@ -7,7 +7,7 @@ link:home[Back to Main Page]
 
 toc::[]
 
-[[chp.Introduction]]
+[[chp.introduction]]
 == Introduction
 
 [[sec.introduction.aim-of-opal-and-history]]
