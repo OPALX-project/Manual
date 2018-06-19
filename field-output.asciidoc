@@ -31,12 +31,14 @@ The `DUMPFIELDS` statement causes _opal-cycl_ to write out static magnetic field
 ....
 
 The `DUMPFIELDS` statement takes a number of parameters:
-....
-X_START;                // Start point in the grid in x [m]
-"DX";                   // Grid step size in x [m]
+X_START::
+  Start point in the grid in x [m]
+DX::
+  Grid step size in x [m]
+
+
 X_STEPS;                // Number of steps in x
 FILE_NAME;              // Name of the file to which field data is dumped
-....
 
 `label` is an identifier see link:format#sec.format.label[Identifiers or Labels]. If it is non-blank, _OPAL_
 displays the object `label` in a format similar to the input statement
