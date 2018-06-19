@@ -101,7 +101,7 @@ In Cartesian mode the format of the field output is:
 The following attributes are enabled on the `DUMPEMFIELDS` statement when operating in Cartesian mode:
 
 FILE_NAME::
-  Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
+  Name of the file to which field data is dumped. It is an error if the location referenced by `FILE_NAME` cannot be opened. Any existing file is overwritten.
 COORDINATE_SYSTEM::
   Either 'Cartesian' or 'Cylindrical'. The string is not case sensitive. It is an error if the string is not one of 'cartesian' or 'cylindrical'.
 X_START::
@@ -155,7 +155,7 @@ In Cylindrical mode the format of the field output is:
 The following attributes are enabled on the `DUMPEMFIELDS` statement when operating in Cylindrical mode:
 
 FILE_NAME::
-  Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
+  Name of the file to which field data is dumped. It is an error if the location referenced by `FILE_NAME` cannot be opened. Any existing file is overwritten.
 COORDINATE_SYSTEM::
   Either 'Cartesian' or 'Cylindrical'. The string is not case sensitive. It is an error if the string is not one of 'cartesian' or 'cylindrical'.
 R_START::
