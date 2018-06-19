@@ -8,6 +8,7 @@ link:home[Back to Main Page]
 
 [[sec.control.field_output]]
 
+[.lead]
 There are two routines that can be used to write out the field used in _opal-cycl_. 
 
 DUMPFIELDS::
