@@ -96,8 +96,6 @@ In Cartesian mode the format of the field output is:
 ....
 
 In Cylindrical mode the format of the field output is:
-
-In Cartesian mode the format of the field output is:
 ....
 <number of rows>
 1 r [m]
