@@ -20,12 +20,12 @@ The `DUMPFIELDS` statement causes _opal-cycl_ to write out static magnetic field
 
 ....
 <number of rows>
-<column 1> <units>
-<column 2> <units>
-<column 3> <units>
-<column 4> <units>
-<column 5> <units>
-<column 6> <units>
+1 x [m]
+2 y [m]
+3 z [m]
+4 Bx [kGauss]
+5 By [kGauss]
+6 Bz [kGauss]
 0
 <field map data>
 ....
@@ -63,5 +63,7 @@ DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
 ....
 
 
+==== DUMPEMFIELDS Command
 
 
+The `DUMPEMFIELDS` statement causes _opal-cycl_ to write out electromagnetic field data on a 4D cartesian grid. The format of field output is:
