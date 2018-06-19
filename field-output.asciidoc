@@ -31,6 +31,7 @@ The `DUMPFIELDS` statement causes _opal-cycl_ to write out static magnetic field
 ....
 
 The `DUMPFIELDS` statement takes a number of parameters:
+
 X_START::
   Start point in the grid in x [m]
 DX::
