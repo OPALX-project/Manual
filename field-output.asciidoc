@@ -68,7 +68,7 @@ DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
 ==== DUMPEMFIELDS Command
 
 
-The `DUMPEMFIELDS` statement causes _opal-cycl_ to write out electromagnetic field data on a 4D grid. Grids in a Cartesian coordinate system $(x,y,z,t)$ and a cylindrical coordinate system about the z-axis in latexmath:[(r,\phi,z,t)] are supported. 
+The `DUMPEMFIELDS` statement causes _opal-cycl_ to write out electromagnetic field data on a 4D grid. Grids in a Cartesian coordinate system latexmath:[(x,y,z,t)] and a cylindrical coordinate system about the z-axis in latexmath:[(r,\phi,z,t)] are supported. 
 
 In Cartesian mode the format of the field output is:
 ....
@@ -76,11 +76,17 @@ In Cartesian mode the format of the field output is:
 1 x [m]
 2 y [m]
 3 z [m]
-4 Bx [kGauss]
-5 By [kGauss]
-6 Bz [kGauss]
+4 t [ns]
+5 Bx [kGauss]
+6 By [kGauss]
+7 Bz [kGauss]
+8 Ex [?]
+9 Ey [?]
+10 Ez [?]
 0
-<field map data>
+<x0> <y0> <z0> <t0> <Bx0> <By0> <Bz0> <Ex0> <Ey0> <Ez0>
+<x1> <y1> <z1> <t1> <Bx1> <By1> <Bz1> <Ex1> <Ey1> <Ez1>
+...
 ....
 
     // would be nice if "steps" could be integer
