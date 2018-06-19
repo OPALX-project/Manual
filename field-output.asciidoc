@@ -68,6 +68,8 @@ DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
 
 ....
 
+{nbsp} +
+{nbsp} +
 
 == DUMPEMFIELDS Command
 
