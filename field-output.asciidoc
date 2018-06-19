@@ -38,11 +38,11 @@ The `DUMPFIELDS` statement causes _opal-cycl_ to write out static magnetic field
 
 The following attributes are enabled on the `DUMPFIELDS` statement:
 
-FILE_NAME::
+- FILE_NAME::
   Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
-X_START::
+- X_START::
   Start point in the grid in x
-DX::
+- DX::
   Grid step size in x
 X_STEPS::
   Number of steps in x. It is an error if `X_STEPS` is non-integer or less than 1.
