@@ -68,7 +68,7 @@ DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
 ==== DUMPEMFIELDS Command
 
 
-The `DUMPEMFIELDS` statement causes _opal-cycl_ to write out electromagnetic field data on a 4D grid. Grids in a Cartesian coordinate system _(x,y,z,t)_ and a cylindrical coordinate system about the z-axis in _(r,\phi,z,t)_ are supported. 
+The `DUMPEMFIELDS` statement causes _opal-cycl_ to write out electromagnetic field data on a 4D grid. Grids in a Cartesian coordinate system $(x,y,z,t)$ and a cylindrical coordinate system about the z-axis in $(r,\phi$,z,t)$ are supported. 
 
 In Cartesian mode the format of the field output is:
 ....
