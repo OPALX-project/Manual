@@ -35,25 +35,25 @@ The `DUMPFIELDS` statement causes _opal-cycl_ to write out static magnetic field
 The following attributes are enabled on the `DUMPFIELDS` statement:
 
 FILE_NAME::
-  Name of the file to which field data is dumped
+  Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
 X_START::
   Start point in the grid in x
 DX::
   Grid step size in x
 X_STEPS::
-  Number of steps in x
+  Number of steps in x. It is an error if `X_STEPS` is non-integer or less than 1.
 Y_START::
   Start point in the grid in y
 DY::
   Grid step size in y
 Y_STEPS::
-  Number of steps in y
+  Number of steps in y. It is an error if `Y_STEPS` is non-integer or less than 1.
 Z_START::
   Start point in the grid in z
 DZ::
-  Grid step size in z
+  Grid step size in z.
 Z_STEPS::
-  Number of steps in z
+  Number of steps in z. It is an error if `Z_STEPS` is non-integer or less than 1.
 
 This example makes a field map in the midplane (x-y plane) only, starting at _(x,y)_ = (0,0)_ m, with 101 steps in each direction and a stride of 0.1 m. _z_ is always 0.
 ....
@@ -89,45 +89,89 @@ In Cartesian mode the format of the field output is:
 ...
 ....
 
-    // would be nice if "steps" could be integer
-    itsAttr[0] = Attributes::makeReal
-                 ("X_START", "(Cartesian) Start point in the grid in x [mm]");
-    itsAttr[1] = Attributes::makeReal
-                 ("DX", "(Cartesian) Grid step size in x [mm]");
-    itsAttr[2] = Attributes::makeReal
-                 ("X_STEPS", "(Cartesian) Number of steps in x");
-    itsAttr[3] = Attributes::makeReal
-                 ("Y_START", "(Cartesian) Start point in the grid in y [mm]");
-    itsAttr[4] = Attributes::makeReal
-                 ("DY", "(Cartesian) Grid step size in y [mm]");
-    itsAttr[5] = Attributes::makeReal
-                 ("Y_STEPS", "(Cartesian) Number of steps in y");
-    itsAttr[6] = Attributes::makeReal
-                 ("Z_START", "Start point in the grid in z [mm]");
-    itsAttr[7] = Attributes::makeReal
-                 ("DZ", "Grid step size in z [mm]");
-    itsAttr[8] = Attributes::makeReal
-                 ("Z_STEPS", "Number of steps in z");
-    itsAttr[9] = Attributes::makeReal
-                 ("T_START", "Start point in the grid in time [ns]");
-    itsAttr[10] = Attributes::makeReal
-                 ("DT", "Grid step size in time [ns]");
-    itsAttr[11] = Attributes::makeReal
-                 ("T_STEPS", "Number of steps in time");
-    itsAttr[12] = Attributes::makeString
-                 ("FILE_NAME", "Name of the file to which field data is dumped");
-    itsAttr[13] = Attributes::makeString("COORDINATE_SYSTEM",
-                "Choose to use 'Cartesian' or 'Cylindrical' coordinates");
-    itsAttr[14] = Attributes::makeReal
-                 ("R_START", "(Cylindrical) Start point in the grid in radius [mm]");
-    itsAttr[15] = Attributes::makeReal
-                 ("DR", "(Cylindrical) Grid step size in radius [mm]");
-    itsAttr[16] = Attributes::makeReal
-                 ("R_STEPS", "(Cylindrical) Number of steps in radius");
-    itsAttr[17] = Attributes::makeReal
-                 ("PHI_START", "(Cylindrical) Start point in the grid in phi [degree]");
-    itsAttr[18] = Attributes::makeReal
-                 ("DPHI", "(Cylindrical) Grid step size in phi [degree]");
-    itsAttr[19] = Attributes::makeReal
-                 ("PHI_STEPS", "(Cylindrical) Number of steps in phi");
+In Cylindrical mode the format of the field output is:
 
+In Cartesian mode the format of the field output is:
+....
+<number of rows>
+1 r [m]
+2 phi [degree]
+3 z [m]
+4 t [ns]
+5 Br [kGauss]
+6 Bphi [kGauss]
+7 Bz [kGauss]
+8 Er [?]
+9 Ephi [?]
+10 Ez [?]
+0
+<r0> <phi0> <z0> <t0> <Br0> <Bphi0> <Bz0> <Er0> <Ephi0> <Ez0>
+<r1> <phi1> <z1> <t1> <Br1> <Bphi1> <Bz1> <Er1> <Ephi1> <Ez1>
+...
+....
+
+
+The following attributes are enabled on the `DUMPEMFIELDS` statement when operating in Cartesian mode:
+
+FILE_NAME::
+  Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
+COORDINATE_SYSTEM::
+  Either 'Cartesian' or 'Cylindrical'. The string is not case sensitive. It is an error if the string is not one of 'cartesian' or 'cylindrical'.
+X_START::
+  Start point in the grid in x
+DX::
+  Grid step size in x
+X_STEPS::
+  Number of steps in x. It is an error if `X_STEPS` is non-integer or less than 1.
+Y_START::
+  Start point in the grid in y
+DY::
+  Grid step size in y
+Y_STEPS::
+  Number of steps in y. It is an error if `Y_STEPS` is non-integer or less than 1.
+Z_START::
+  Start point in the grid in z
+DZ::
+  Grid step size in z.
+Z_STEPS::
+  Number of steps in z. It is an error if `Z_STEPS` is non-integer or less than 1.
+T_START::
+  Start point in the grid in time
+DT::
+  Grid step size in time.
+T_STEPS::
+  Number of steps in time. It is an error if `T_STEPS` is non-integer or less than 1.
+
+    
+The following attributes are enabled on the `DUMPEMFIELDS` statement when operating in Cylindrical mode:
+
+FILE_NAME::
+  Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
+COORDINATE_SYSTEM::
+  Either 'Cartesian' or 'Cylindrical'. The string is not case sensitive. It is an error if the string is not one of 'cartesian' or 'cylindrical'.
+R_START::
+  Start point in the grid in r
+DR::
+  Grid step size in r
+R_STEPS::
+  Number of steps in r. It is an error if `R_STEPS` is non-integer or less than 1.
+PHI_START::
+  Start point in the grid in phi
+DPHI::
+  Grid step size in phi
+PHI_STEPS::
+  Number of steps in phi. It is an error if `Y_STEPS` is non-integer or less than 1.
+Z_START::
+  Start point in the grid in z
+DZ::
+  Grid step size in z.
+Z_STEPS::
+  Number of steps in z. It is an error if `Z_STEPS` is non-integer or less than 1.
+T_START::
+  Start point in the grid in time
+DT::
+  Grid step size in time.
+T_STEPS::
+  Number of steps in time. It is an error if `T_STEPS` is non-integer or less than 1.
+
+    
