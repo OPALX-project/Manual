@@ -55,7 +55,6 @@ FILE_NAME::
 
 This example makes a field map in the midplane (x-y plane) only, starting at _(x,y)_ = (0,0)_ m, with 101 steps in each direction and a stride of 0.1 m. _z_ is always 0.
 ....
-REAL R0 = 3.0;
 DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
             Y_START=0., Y_STEPS=101, DY=0.100, 
             Z_START=0., Z_STEPS=1, DZ=0.100, 
