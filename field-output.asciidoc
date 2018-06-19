@@ -114,6 +114,7 @@ In Cylindrical mode the format of the field output is:
 ...
 ....
 
+{nbsp} +
 
 The following attributes are enabled on the `DUMPEMFIELDS` statement when operating in Cartesian mode:
 
@@ -146,7 +147,8 @@ DT::
 T_STEPS::
   Number of steps in time. It is an error if `T_STEPS` is non-integer or less than 1.
 
-    
+{nbsp} +
+
 The following attributes are enabled on the `DUMPEMFIELDS` statement when operating in Cylindrical mode:
 
 FILE_NAME::
