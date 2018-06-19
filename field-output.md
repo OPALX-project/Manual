@@ -1,3 +1,10 @@
+:stem: latexmath
+:sectnums:
+:toc: macro
+:toclevels: 3
+
+link:home[Back to Main Page]
+
 
 [[sec.control.field_output]]
 
