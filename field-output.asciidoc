@@ -10,7 +10,7 @@ toc::[]
 [[chp.field_output]]
 == Field Output
 
-There are two routines that can be used to write out the field used in _OPAL-cycl_.
+There are two routines that can be used to write out the external field used in _OPAL-cycl_.
 
 DUMPFIELDS::
   write out static magnetic field map on a Cartesian grid
