@@ -171,7 +171,7 @@ PHI_START::
 DPHI::
   Grid step size in phi
 PHI_STEPS::
-  Number of steps in phi. It is an error if `Y_STEPS` is non-integer or less than 1.
+  Number of steps in phi. It is an error if `PHI_STEPS` is non-integer or less than 1.
 Z_START::
   Start point in the grid in z
 DZ::
