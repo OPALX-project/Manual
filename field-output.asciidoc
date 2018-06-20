@@ -5,11 +5,12 @@
 
 link:home[Back to Main Page]
 
+toc::[]
 
-[[sec.control.field_output]]
+[[chp.field_output]]
+== Field Output
 
-[.lead]
-There are two routines that can be used to write out the field used in _opal-cycl_. 
+There are two routines that can be used to write out the field used in _OPAL-cycl_.
 
 DUMPFIELDS::
   write out static magnetic field map on a Cartesian grid
@@ -17,9 +18,10 @@ DUMPEMFIELDS:: write out electromagnetic field map on a 4D grid in space-time. C
 
 {nbsp} +
 
-== DUMPFIELDS Command
+[[sec.field_output.dumpfields]]
+=== DUMPFIELDS Command
 
-The `DUMPFIELDS` statement causes _opal-cycl_ to write out static magnetic field data on a 3D cartesian grid. The format of field output is:
+The `DUMPFIELDS` statement causes _OPAL-cycl_ to write out static magnetic field data on a 3D cartesian grid. The format of field output is:
 
 ....
 <number of rows>
@@ -70,13 +72,14 @@ DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
 {nbsp} +
 {nbsp} +
 
-== DUMPEMFIELDS Command
+[[sec.field_output.dumpemfields]]
+=== DUMPEMFIELDS Command
 
-The `DUMPEMFIELDS` statement causes _opal-cycl_ to write out electromagnetic field data on a 4D grid. Grids in a Cartesian coordinate system latexmath:[(x,y,z,t)] and a cylindrical coordinate system about the z-axis in latexmath:[(r,\phi,z,t)] are supported. 
+The `DUMPEMFIELDS` statement causes _OPAL-cycl_ to write out electromagnetic field data on a 4D grid. Grids in a Cartesian coordinate system latexmath:[(x,y,z,t)] and a cylindrical coordinate system about the z-axis in latexmath:[(r,\phi,z,t)] are supported.
 
 {nbsp} +
 
-=== Cartesian Mode
+==== Cartesian Mode
 
 In Cartesian mode the format of the field output is:
 ....
@@ -130,7 +133,7 @@ T_STEPS::
 
 {nbsp} +
 
-=== Cylindrical Mode
+==== Cylindrical Mode
 
 In Cylindrical mode the format of the field output is:
 ....
