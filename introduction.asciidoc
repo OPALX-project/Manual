@@ -1,3 +1,4 @@
+ifdef::env-gitlab[]
 :stem: latexmath
 :sectnums:
 :toc: macro
@@ -5,7 +6,9 @@
 
 link:home[Back to Main Page]
 
+:section-number: 7
 toc::[]
+endif::[]
 
 [[chp.introduction]]
 == Introduction
