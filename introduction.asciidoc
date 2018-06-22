@@ -1,6 +1,6 @@
 ifdef::env-gitlab[]
 :stem: latexmath
-:secnums:
+:sectnums:
 :toc: macro
 :toclevels: 3
 
