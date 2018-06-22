@@ -2,8 +2,9 @@
 Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
 
 
-  +++<br>+++ (Object Oriented Parallel Accelerator Library) +++<br>+++ _OPAL_ 2.0.0 +++<br>+++ *User’s Reference Manual*
-=== Abstract
++++<br>+++ (Object Oriented Parallel Accelerator Library) +++<br>+++ _OPAL_ 2.0.0 +++<br>+++ *User’s Reference Manual*
+
+== Abstract
 
 _OPAL_ is a tool for charged-particle optics in accelerator structures
 and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
