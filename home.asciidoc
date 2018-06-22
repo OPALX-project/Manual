@@ -5,13 +5,13 @@ Version 2.0, June 2018: 1. revision
 ifdef::env-gitlab[]
 *Object Oriented Parallel Accelerator Library*
 
-*_OPAL_ 2.0.0 User's Reference Manual
+*_OPAL_ 2.0.0 User's Reference Manual*
 endif::[]
 
 ifdef::backend-docbook5[]
 :numbered:
 :toc:                                                               
-:description: _OPAL_ User Manualocument                             
+:description: _OPAL_ User Manual                             
 :keywords: _OPAL_
 endif::[]
 
