@@ -1,9 +1,20 @@
 = The OPAL Framework
 Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
+Version 2.0, June 2018: 1. revision
 
 ifdef::env-gitlab[]
-+++<br>+++ (Object Oriented Parallel Accelerator Library) +++<br>+++ _OPAL_ 2.0.0 +++<br>+++ *User’s Reference Manual*
+*Object Oriented Parallel Accelerator Library*
+
+*_OPAL_ 2.0.0 User's Reference Manual
 endif::[]
+
+ifdef::backend-docbook5[]
+:numbered:
+:toc:                                                               
+:description: _OPAL_ User Manualocument                             
+:keywords: _OPAL_
+endif::[]
+
 
 == Abstract
 
@@ -35,6 +46,7 @@ It should be noted that not all features of _OPAL_ are available in all
 flavours. The icon `DOPAL-t` means that a feature is not yet available
 in _OPAL-t_. Similar icons are used for the other flavours.
 
+ifdef::env-gitlab[]
 == Table of Contents
 
 . link:introduction[Introduction]
@@ -66,3 +78,57 @@ in _OPAL-t_. Similar icons are used for the other flavours.
 . link:autophase[Auto-phasing Algorithm]
 . link:benchmarks[Benchmarks]
 . link:opaldks[Dynamic Kernel Scheduler (DKS)]
+endif::[]
+
+ifdef::backend-docbook5[]
+include::introduction.adoc[]
+
+include::conventions.adoc[]
+
+include::pitfalls.adoc[]
+
+include::tutorial.adoc[]
+
+include::opalt.adoc[]
+
+include::opalcycl.adoc[]
+
+include::format.adoc[]
+
+include::control.adoc[]
+
+include::elements.adoc[]
+
+include::field-output.adoc[]
+
+include::lines.adoc[]
+
+include::beam-command.adoc[]
+
+include::distribution.adoc[]
+
+include::fieldsolvers.adoc[]
+
+include::track.adoc[]
+
+include::wakefields.adoc[]
+
+include::geometry.adoc[]
+
+include::partmatter.adoc[]
+
+include::optimiser.adoc[]
+
+include::sampler.adoc[]
+
+include::syntax.adoc[]
+
+include::fieldmaps.adoc[]
+
+include::opal-madx.adoc[]
+
+include::autophase.adoc[]
+
+include::benchmarks.adoc[]
+endif::[]
+

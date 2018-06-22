@@ -10,7 +10,6 @@ toc::[]
 endif::[]
 
 [[chp.introduction]]
-:section-number: 7
 == Introduction
 
 [[sec.introduction.aim-of-opal-and-history]]
