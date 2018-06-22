@@ -1,12 +1,13 @@
 ifdef::env-gitlab[]
 :stem: latexmath
 :sectnums:
+:section-number: 7
 :toc: macro
 :toclevels: 3
 
 link:home[Back to Main Page]
 
-:section-number: 7
+
 toc::[]
 endif::[]
 
