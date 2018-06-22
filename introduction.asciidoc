@@ -1,6 +1,6 @@
 ifdef::env-gitlab[]
 :stem: latexmath
-:section-number: 7
+:secnums:
 :toc: macro
 :toclevels: 3
 
@@ -10,6 +10,7 @@ toc::[]
 endif::[]
 
 [[chp.introduction]]
+:section-number: 7
 == Introduction
 
 [[sec.introduction.aim-of-opal-and-history]]
