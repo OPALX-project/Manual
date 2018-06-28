@@ -254,6 +254,29 @@ The CONSTRAINT command defines a constraint for optimization.
 ==== Available Expressions
 The following expressions are available:
 
+The `EXPR` The optimiser parser knows the following mathematical functions (which are mapped directly to the STL <cmath> functions with the same name):
+
+* `sqrt(x)`  : square root of x
+* `pow(x,k)` : x to the power k
+* `exp(x)`   : _e_ to the power x
+* `log(x)`   : natural logarithm of x
+* `ceil(x)`  : round x upward to the smallest integral value that is not less than x
+* `floor(x)` : round x downward to smallest integral value that is not greater than x
+* `fabs(x)`  : absolute value of x
+* `fmod(x,y)`: floating point remainder of x/y
+* `sin(x)`   : sine of angle x (in radians)
+* `asin(x)`  : the arcsin of x (return value in radians)
+* `cos(x)`   : cosine of angle x (in radians)
+* `acos(x)`  : the arc cosine of x (return value in radians)
+* `tan(x)`   : tangent of angle x (in radians)
+* `atan(x)`  : the arc tangent of x (return value in radians)
+
+In addition the optimiser parser has one non-STL function:
+
+* `sq(x)`    : square of x
+
+There are several methods to access output data:
+
 [#tab_availableexpressions]
 .Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
 [cols="<3,<5",options="header,breakable",]
