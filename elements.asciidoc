@@ -2067,9 +2067,9 @@ Rotates the holes that are defined by the command about the origin of the 2D coo
 union(command1, command2 [, command3 [, command4 [...]]])::
 Collects the holes that are defined the by the commands.
 repeat(command, N, shiftx, shifty)::
-Repeates the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction.
+Repeats the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction.
 repeat(command, N, angle)::
-Repeates the holes that are defined by the command rotating each copy successively.
+Repeats the holes that are defined by the command rotating each copy successively.
 
 A simple elliptic collimator with major and minor axis of 4 cm and 3 cm respectively can be defined using
 ....
@@ -2105,7 +2105,7 @@ The latter example will produce a holes as in the following picture
 .Pepper-pot with rectangle holes
 image::figures/Elements/pepperpot.png[scaledwidth=10cm]
 
-In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separat file (using `FNAME`; comments and newlines are allowed).
+In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separate file (using `FNAME`; comments and newlines are allowed).
 
 [[sec.elements.opal-cycl-mode]]
 ==== _OPAL-cycl_ mode
@@ -2335,7 +2335,7 @@ VKICK::
   (default: 0 rad).
 DESIGNENERGY::
   Fix the magnitude of the magnetic field using the given `DESIGNENERGY`
-  and the angle (`KICK`, `HKICK` or `VKICK`). If the designenergy isn’t
+  and the angle (`KICK`, `HKICK` or `VKICK`). If the design energy isn’t
   set then the actual energy of the reference particle at the position
   of the corrector is used. The `DESIGNENERGY` is expected in MeV.
 
