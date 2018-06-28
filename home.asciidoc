@@ -37,7 +37,7 @@ new _C++_ classes. It comes in the following flavours:
 
 * _OPAL-cycl_:
   tracks particles with 3D space charge including neighbouring turns in
-  cyclotrons and FFAGs with time as the independent variable.
+  cyclotrons and FFAs with time as the independent variable.
 * _OPAL-t_:
   can be used to model beam lines, linacs, rf-photo injectors and
   complete XFELs excluding the undulator.

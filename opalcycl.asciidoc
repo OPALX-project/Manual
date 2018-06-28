@@ -17,7 +17,7 @@ endif::[]
 
 _OPAL-cycl_, as one of the flavors of the _OPAL_ framework, is a fully
 three-dimensional parallel beam dynamics simulation program dedicated to
-future high intensity cyclotrons and FFAG. it tracks multiple particles
+future high intensity cyclotrons and FFAs. It tracks multiple particles
 which takes into account the space charge effects. For the first time in
 the cyclotron community, _OPAL-cycl_ has the capability of tracking
 multiple bunches simultaneously and take into account the beam-beam
@@ -39,7 +39,7 @@ In addition, the widely used plugin elements, including collimator,
 radial profile probe, septum, trim-coil field and charge stripper, are
 currently implemented in _OPAL-cycl_. These functionalities are very
 useful for designing, commissioning and upgrading of cyclotrons and
-FFAGs.
+FFAs.
 
 [[sec.opalcycl.tracking-modes]]
 === Tracking modes
