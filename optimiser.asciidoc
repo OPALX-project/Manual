@@ -348,7 +348,7 @@ OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
 QUIT;
 ....
 
-.Template file _05-DL_QN3.tmpl_:
+.Template file _tmpl/05-DL_QN3.tmpl_:
 
 ....
 OPTION, ECHO=FALSE;
