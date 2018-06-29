@@ -339,8 +339,8 @@ drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y',${loc}) - 0.0001833)";
 goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
-          DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=50, MAXGENERATIONS=50,
-          NUM_IND_GEN=50, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0,
+          DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=5, MAXGENERATIONS=3,
+          NUM_IND_GEN=3, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0,
           NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir",
           TEMPLATEDIR="tmpl", FIELDMAPDIR="fieldmaps", OUTPUT="optLinac",
           OUTDIR="results";
@@ -423,3 +423,9 @@ ENDTRACK;
 
 QUIT;
 ....
+
+Run OPAL with:
+
+```
+mpirun /path/to/opal --info 5 05-DL_QN3.in
+```
