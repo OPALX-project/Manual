@@ -151,7 +151,7 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron and other data files.
 
-[opal-cycl.in](/uploads/9aae79ce006976c04942459fb8363c56/opal-cycl.in)
+/uploads/9aae79ce006976c04942459fb8363c56/opal-cycl.in[opal-cycl.in]
 (https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl.in[opal-cycl.in])
 [av1.dat](/uploads/c0a15f75d42f67c945a253a0c591ddcb/av1.dat)
 [av3.dat](/uploads/cc9fb555c2e9e4f49a2d8557b821c1a6/av3.dat)
