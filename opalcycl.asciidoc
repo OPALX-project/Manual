@@ -644,7 +644,7 @@ the tune diagram.
 ==== Single Particle Tracking mode
 
 The intermediate phase space data is stored in an ASCII file which can
-be used to the plot the orbit. The file’s name is combined by input file
+be used to plot the orbit. The file’s name is combined by input file
 name (without extension) and _-trackOrbit.dat_. The data are stored in
 the global Cartesian coordinates. The frequency of the data output can
 be set using the option `SPTDUMPFREQ` of `OPTION` statement
