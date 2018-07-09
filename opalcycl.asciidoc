@@ -306,7 +306,7 @@ format:
 
 If `TYPE=CYCIAE`, the program requires data format given by ANSYS10.0.
 This function is originally for the 100 MeV cyclotron of CIAE, whose
-isochronous fields is numerically computed by by ANSYS. The median plane
+isochronous fields is numerically computed by ANSYS. The median plane
 fields data is output by reading the APDL (ANSYS Parametric Design
 Language) script during the post-processing phase (you may need to do
 minor changes to adapt your own cyclotron model):
@@ -485,8 +485,8 @@ different to above types. For more detail about the parameters of
 
 The RF cavities are treated as straight lines with infinitely narrow
 gaps and the electric field is a latexmath:[\delta] function plus a
-transit time correction. the two-gap cavity is treated as two
-independent single-gap cavities. the spiral gap cavity is not
+transit time correction. The two-gap cavity is treated as two
+independent single-gap cavities. The spiral gap cavity is not
 implemented yet. For more detail about the parameters of cyclotron
 cavities, see  link:elements#sec.elements.cyclotron[Cyclotron].
 
@@ -525,7 +525,7 @@ The precision of the tracking methods is vital for the entire simulation
 process, especially for long distance tracking jobs. _OPAL-cycl_ uses a
 fourth order Runge-Kutta algorithm and the second order Leap-Frog
 scheme. The fourth order Runge-Kutta algorithm needs four external
-magnetic field evaluation in each time step latexmath:[\tau]. During
+magnetic field evaluations in each time step latexmath:[\tau]. During
 the field interpolation process, for an arbitrary given point the code
 first interpolates Formula latexmath:[B_z] for its counterpart on the
 median plane and then expands to this given point using
