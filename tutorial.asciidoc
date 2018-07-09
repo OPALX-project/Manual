@@ -97,7 +97,7 @@ opal input.in --restartfn input.h5 --restart -1 --info 3
 [[sec.tutorial.trackautoph]]
 === Auto-phase Example
 
-This is a partial complete example. First we have to set _OPAL_ in
+This is a partially complete example. First we have to set _OPAL_ in
 `AUTOPHASE` mode, as described in link:control#sec.control.option[Option Statement] and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
 computing the phases is explained in Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm].
@@ -149,9 +149,12 @@ acceleration cavities (represented by 2 single-gap cavities here) and
 two single-gap flat-top cavities.
 
 Following is an input file of *Single Particle Tracking mode* for PSI
-Injector II cyclotron.
+Injector II cyclotron and other data files.
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl.in[opal-cycl.in]
+[opal-cycl.in](/uploads/83f7a938641c11ebd22c7fed86cc22c2/opal-cycl.in (https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl.in[opal-cycl.in])
+[av1.dat](/uploads/c0a15f75d42f67c945a253a0c591ddcb/av1.dat)
+[av3.dat](/uploads/cc9fb555c2e9e4f49a2d8557b821c1a6/av3.dat)
+[PartDatabase.dat](/uploads/532c3bb88a7097b0d101019a39677891/PartDatabase.dat)
 
 To run opal on a single node, just use this command:
 
