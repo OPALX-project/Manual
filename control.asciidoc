@@ -135,7 +135,7 @@ INFO::
   messages. It also affects the _gnu.out_ and _eb.out_ files in case of
   _OPAL-cycl_ simulations.
 TRACE::
-  ??
+  If true, print execution trace. Default false.
 WARN::
   If this option is turned off, _OPAL_ suppresses all warning messages.
 TELL::
@@ -226,9 +226,9 @@ AUTOPHASE::
   will be. If it is set to -1 then the auto-phasing algorithm isn't
   run. Default: 6.
 PPDEBUG::
-  ??
+  If true, use special initial velocity distribution for parallel plate and print special debug output
 SURFDUMPFREQ::
-  ??
+  The frequency to dump surface-partcle interaction data. Default: -1 (no dump).
 NUMBLOCKS::
   Maximum number of vectors in the Krylov space (for RCGSolMgr). Default
   value is 0 and BlockCGSolMgr will be used.
@@ -261,9 +261,9 @@ BOUNDPDESTROYFQ::
   The frequency to do `boundp_destroy` to delete lost particles. Default
   10
 BEAMHALOBOUNDARY::
-  ??
+  Defines in terms of sigma where the halo starts. Default: 0.0
 CLOTUNEONLY::
-  ??
+  If set to true stop after CLO and tune calculation.
 IDEALIZED::
   Instructs to use the hard edge model for the calculation of the path
   length in _OPAL-t_. The path length is computed to place the elements
@@ -283,7 +283,7 @@ VERSION::
 AMR::
   Enable adaptive mesh refinement. Default: FALSE
 AMR_YT_DUMP_FREQ::
-  ??
+  The frequency to dump grid and particle data for AMR. Default: 10
 MEMORYDUMP::
   If true, it writes the memory consumption of every core to a SDDS file
   (*.mem). The write frequency corresponds to STATDUMPFREQ. Default:
