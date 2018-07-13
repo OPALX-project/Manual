@@ -84,4 +84,4 @@ This example produces the following expansion steps:
 A,B,C,D,E,B,A,C,D,E,A,B
 ....
 
-valuated to constants immediately.
+evaluated to constants immediately.
