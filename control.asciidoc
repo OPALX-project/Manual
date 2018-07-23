@@ -263,7 +263,7 @@ BOUNDPDESTROYFQ::
 BEAMHALOBOUNDARY::
   Defines in terms of sigma where the halo starts. Default: 0.0
 CLOTUNEONLY::
-  If set to true stop after CLO and tune calculation.
+  If set to true stop after CLO and tune calculation (not implemented, work in progress).
 IDEALIZED::
   Instructs to use the hard edge model for the calculation of the path
   length in _OPAL-t_. The path length is computed to place the elements
