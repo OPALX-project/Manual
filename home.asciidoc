@@ -77,7 +77,7 @@ ifdef::env-gitlab[]
 . link:opal-madx[OPAL-MADX Conversion Guide]
 . link:autophase[Auto-phasing Algorithm]
 . link:benchmarks[Benchmarks]
-. link:opaldks[Dynamic Kernel Scheduler (DKS)]
+. https://gitlab.psi.ch/OPAL/src/wikis/opaldks[Dynamic Kernel Scheduler (DKS)]
 endif::[]
 
 ifdef::backend-docbook5[]
