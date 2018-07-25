@@ -1,0 +1,27 @@
+ifdef::env-gitlab[]
+:stem: latexmath
+:sectnums:
+:toc: macro
+:toclevels: 3
+
+link:home[Back to Main Page]
+
+[[chp.opalmap]]
+== _OPAL-map_
+
+_OPAL-map_ is work in progress.
+
+[[sec.opalmap.introduction]]
+=== Introduction
+
+[[sec.opalmap.example]]
+=== Example
+
+FODO lattice: https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/FODOmap.in[FODO.in]
+
+....
+RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
+....
+
+[[sec.opalmap.output]]
+=== Output
