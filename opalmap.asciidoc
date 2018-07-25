@@ -12,10 +12,19 @@ link:home[Back to Main Page]
 **_OPAL-map_ is work in progress.**
 
 
-OPAL-map is an map tracking beam optics code. This type of code compute maps of each beam line element. These maps 
-
 [[sec.opalmap.introduction]]
 === Introduction
+
+OPAL-map is an map tracking beam optics code. This type computes maps for each beam line element to describe the action of the system.  
+
+Creation of map
+The map creation is done by applying the Lie Operator on the element Hamiltonian and calculated in the Truncated Power Series Algebra (TPSA). The TPSA uses the Taylor expansion as the equivalent function.
+
+Contrast
+In contrast to time latexmath:[$t$] dependent tracking codes, as OPAL-T, map tracking codes use the longitudinal bunch position latexmath:[$s$] as independent variable.
+
+Advantages
+Map tracking algorithms not only provide a fast calculation times, but also provide due to its maps the possibility for beam line analysis.
 
 [[sec.opalmap.example]]
 === Example
