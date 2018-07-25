@@ -31,7 +31,9 @@ The main advantage in map tracking codes lies in the ''map'' itself. These do no
 
 FODO lattice: https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/FODOmap.in[FODO.in]
 
+To activate OPAL-maps, the `METHOD` attribute gets set to `THICK`. 
 ....
+
 RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
 ....
 
