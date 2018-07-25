@@ -26,6 +26,34 @@ In contrast to time latexmath:[t] dependent tracking codes, as OPAL-t, map track
 
 The main advantage in map tracking codes lies in the ''map'' itself. These do not only contain valuable information about the beam line, but also can be accumulated to reduce the computational effort in the particle tracking.
 
+[[sec.opalt.variablesopalt]]
+=== Variables in _OPAL-map
+
+_OPAL-map_ uses the following canonical variables to
+describe the motion of particles. The physical units are listed in
+square brackets.
+
+X::
+  Horizontal position latexmath:[x] of a particle relative to the axis
+  of the element [m].
+PX::
+  latexmath:[\frac{p_x}{P_0}] Normalized horizontal canonical momentum [1].
+Y::
+  Horizontal position latexmath:[y] of a particle relative to the axis
+  of the element [m].
+PY::
+  latexmath:[\frac{p_y}{P_0}] Normalized horizontal canonical momentum [1].
+Z::
+  Longitudinal position latexmath:[z] of a particle in floor
+  co-ordinates [m].
+DELTA::
+  latexmath:[\frac{E}{P_0 c}-\frac{1}{\beta_0}] Energy derviation [1].
+
+The independent variable is *t* [s].
+
+
+
+
 [[sec.opalmap.example]]
 === Example
 
