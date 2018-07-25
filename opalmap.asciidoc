@@ -18,7 +18,7 @@ link:home[Back to Main Page]
 OPAL-map is an map tracking beam optics code. This type computes maps for each beam line element to describe the action of the system.  
 
 
-The map creation is done by applying the Lie Operator on the element Hamiltonian and calculated in the Truncated Power Series Algebra (<<TPSA>>). The TPSA is a Differential Algebra (DA), which uses the Taylor expansion as the equivalent function. In OPAL-map the TPSA gets provided from the own OPAL DA-package. 
+The map creation is done by applying the Lie Operator on the element Hamiltonian and calculated in the Truncated Power Series Algebra (TPSA)<<bib.Berz1999>>. The TPSA is a Differential Algebra (DA), which uses the Taylor expansion as the equivalent function. In OPAL-map the TPSA gets provided from the own OPAL DA-package. 
 
 
 In contrast to time latexmath:[t] dependent tracking codes, as OPAL-T, map tracking codes use the longitudinal bunch position latexmath:[s] as independent variable. Furthermore, map tracking codes do not use numerical integrators for the determination of the particle trajectory, which can be a computationally very expensive.
@@ -31,10 +31,21 @@ The main advantage in map tracking codes lies in the ''map'' itself. These do no
 
 FODO lattice: https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/FODOmap.in[FODO.in]
 
-To activate OPAL-maps, the `METHOD` attribute gets set to `THICK`. 
+To `RUN` OPAL-map, the `METHOD` attribute gets set to `THICK`. 
+....
+RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
 ....
 
-RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
+The maximal order of the beam line maps get defined with the `MAP_ORDER` attribute.
+....
+TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
+....
+
+As an optional parameter for the beam line elements `NSlices` provides the opportunity to split one element in smaller steps.
+
+....
+D1:  DRIFT, 		L=1., 				 ELEMEDGE=0.000, NSLICES=10;
+QP1: QUADRUPOLE, 	L=0.3, 	K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 ....
 
 [[sec.opalmap.output]]
@@ -44,4 +55,4 @@ RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
 
 [bibliography]
 .References
-- [[[TPSA]]] Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.
+- [[[bib.Berz1999]]] Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.
