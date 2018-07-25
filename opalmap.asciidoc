@@ -41,7 +41,7 @@ The maximal order of the beam line maps get defined with the `MAP_ORDER` attribu
 TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
 ....
 
-As an optional parameter for the beam line elements `NSlices=<x>` provides the opportunity to split one element in `<x>` smaller steps.
+As an optional parameter for the beam line elements `NSlices=<x>` provides the opportunity to split one element in `<x>` smaller steps. Otherwise, the default value is defined with `1`.
 
 ....
 D1:  DRIFT, 		L=1., 		     ELEMEDGE=0.000, NSLICES=10;
