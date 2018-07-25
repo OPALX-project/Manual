@@ -209,6 +209,7 @@ The OPTIMIZE command initiates optimization.
 | SIMTMPDIR                 | Directory where simulations are run.
 | TEMPLATEDIR               | Directory where templates are stored.
 | FIELDMAPDIR               | Directory where field maps are stored.
+| DISTDIR                   | Directory where distributions are stored.
 |=======================================================================
 
 [[sec.optimiser.dvar-command]]

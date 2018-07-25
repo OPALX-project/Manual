@@ -45,6 +45,7 @@ It allows *random* (RASTER=false) and *raster* mode.
 | NUM_COWORKERS | Number processors per worker.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
+| DISTDIR       | Directory where distributions are stored.
 |=======================================================================
 
 The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
