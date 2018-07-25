@@ -37,7 +37,8 @@ X::
   Horizontal position latexmath:[x] of a particle relative to the axis
   of the element [m].
 PX::
-  latexmath:[\frac{p_x}{P_0}] Normalized horizontal canonical momentum [1].
+  latexmath:[\frac{p_x}{P_0}] Normalized horizontal canonical momentum [1].(Where latexmath:[p_x] is the momentum of the particle and latexmath:[P_0] is the momentum of the reference particle)
+
 Y::
   Horizontal position latexmath:[y] of a particle relative to the axis
   of the element [m].
@@ -47,9 +48,9 @@ Z::
   Longitudinal position latexmath:[z] of a particle in floor
   co-ordinates [m].
 DELTA::
-  latexmath:[\frac{E}{P_0 c}-\frac{1}{\beta_0}] Energy derviation [1].
+  latexmath:[\frac{E}{P_0 c}-\frac{1}{\beta_0}] Energy derviation [1]. (Where latexmath:[E] is the total energy of the particle and latexmath:[\beta_0 = \frac{v}{c}] the speed relative to the speed of light latexmath:[c] of the reference particle)
 
-The independent variable is *t* [s].
+The independent variable is position of the reference particle *s* [m].
 
 
 
