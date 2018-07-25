@@ -9,7 +9,10 @@ link:home[Back to Main Page]
 [[chp.opalmap]]
 == _OPAL-map_
 
-_OPAL-map_ is work in progress.
+**_OPAL-map_ is work in progress.**
+
+
+OPAL-map is an map tracking beam optics code. This type of code compute maps of each beam line element. These maps 
 
 [[sec.opalmap.introduction]]
 === Introduction
