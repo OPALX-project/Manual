@@ -116,6 +116,8 @@ The integral over the independent variable:
 
 Where latexmath:[e^{-:\!H\!: s}] is the Lie expansion. 
 
+
+
 [[sec.opalmap.Implementation]]
 === Implementaion of map tracking
 For the derivative of the Hamiltonian, a Differential Algebra (DA) was used, in particular the Truncated Power Series Algebra (TPSA).
@@ -127,11 +129,6 @@ Just form the definition of the Taylor expansion, it can be seen that a finite e
      f = \mathbf{\mathcal{M}} = \underbrace{\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \vec{v}_{\left( \Delta s\right)} \right)^n}_{\text{Taylor series}} + \underbrace{\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) }_{\text{error term}}
 \end{aligned}
 ++++
-
-
-
-
-
 
 
 
