@@ -26,12 +26,11 @@ The map creation is done by applying the Lie Operator on the element Hamiltonian
 
 In contrast to time latexmath:[t] dependent tracking codes, as OPAL-t, map tracking codes use the longitudinal bunch position latexmath:[s] as independent variable. Furthermore, map tracking codes do not use numerical integrators for the determination of the particle trajectory, which can be a computationally very expensive.
 
-
 The main advantage in map tracking codes lies in the ''map'' itself. These do not only contain valuable information about the beam line, but also can be accumulated to reduce the computational effort in the particle tracking.
 
 [[sec.opalmap.variablesopalmap]]
 === Variables in _OPAL-map
-For in and outputs, the standard `link:opalt#chp.variablesopalt[Variables in OPAL-t]` units as in are used.
+For in and outputs, the units as in `link:opalt#sec.opalt.variablesopalt[Variables in OPAL-t]` are used.
 
 _OPAL-map_ uses an Frenet-Serret coordinate system, referring on a reference particle. This particle has the ideal properties, ergo follows the design path. The following canonical variables to describe the motion of particles. The physical units are listed in square brackets.
 
@@ -77,6 +76,14 @@ As an optional parameter for the beam line elements `NSlices=<x>` provides the o
 D1:  DRIFT, 		L=1., 		     ELEMEDGE=0.000, NSLICES=10;
 QP1: QUADRUPOLE, 	L=0.3, 	K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 ....
+
+[[sec.opalmap.mapTracking]]
+=== Map Tracking
+The particle motion gets calculated by applying the map on the particle parameter.
+
+
+
+
 
 [[sec.opalmap.output]]
 === Output
