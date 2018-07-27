@@ -55,6 +55,7 @@ The independent variable is position of the reference particle *s* [m].
 
 [[sec.opalmap.mapTracking]]
 === Principle of Map Tracking
+
 The particle motion gets calculated by applying the map on the particle parameter. <<fig_MapTracking>>
 [#fig_MapTracking]
 .Flow chart of map tracking.
@@ -66,7 +67,6 @@ image::figures/opalmap/mapTracking.png[scaledwidth=8cm]
 v^f = \mathbf{\mathcal{M}} \circ v^i
 ++++
 Where latexmath:[v] denotes the final (latexmath:[v^f]) and initial (latexmath:[v^i]) six dimensional phase space vector of each particle.
- 
 latexmath:[\mathbf{\mathcal{M}}] is the map. This map can represent either a beam element slice, the whole element, a beam line section or the whole system.
 
 [[sec.opalmap.creationOfMap]]
@@ -106,6 +106,7 @@ As an optional parameter for the beam line elements `NSlices=<x>` provides the o
 D1:  DRIFT, 		L=1., 		     ELEMEDGE=0.000, NSLICES=10;
 QP1: QUADRUPOLE, 	L=0.3, 	K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 ....
+
 
 [[sec.opalmap.output]]
 === Output
