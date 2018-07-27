@@ -29,28 +29,24 @@ In contrast to time latexmath:[t] dependent tracking codes, as OPAL-t, map track
 
 The main advantage in map tracking codes lies in the ''map'' itself. These do not only contain valuable information about the beam line, but also can be accumulated to reduce the computational effort in the particle tracking.
 
-[[sec.opalt.variablesopalt]]
+[[sec.opalmap.variablesopalmap]]
 === Variables in _OPAL-map
+For in and outputs, the standard `link:fieldsolvers#sec.opalmap.variablesopalmap[Variables in OPAL-t]` units as in are used.
 
-_OPAL-map_ uses the following canonical variables to
-describe the motion of particles. The physical units are listed in
-square brackets.
+_OPAL-map_ uses an Frenet-Serret coordinate system, referring on a reference particle. This particle has the ideal properties, ergo follows the design path. The following canonical variables to describe the motion of particles. The physical units are listed in square brackets.
 
 X::
-  Horizontal position latexmath:[x] of a particle relative to the axis
-  of the element [m].
+  Horizontal position latexmath:[x] of a particle relative to the reference particle [m].
 PX::
   latexmath:[\frac{p_x}{P_0}] Normalized horizontal canonical momentum [1].
 (Where latexmath:[p_x] is the momentum of the particle and latexmath:[P_0] is the momentum of the reference particle)
 
 Y::
-  Horizontal position latexmath:[y] of a particle relative to the axis
-  of the element [m].
+  Horizontal position latexmath:[y] of a particle relative to the reference particle [m].
 PY::
   latexmath:[\frac{p_y}{P_0}] Normalized horizontal canonical momentum [1].
 Z::
-  Longitudinal position latexmath:[z] of a particle in floor
-  co-ordinates [m].
+  Longitudinal position latexmath:[z] of a particle relatice to the reference particle [m].
 DELTA::
   latexmath:[\frac{E}{P_0 c}-\frac{1}{\beta_0}] Energy derviation [1]. 
 (Where latexmath:[E] is the total energy of the particle and latexmath:[\beta_0 = \frac{v}{c}] the speed relative to the speed of light latexmath:[c] of the reference particle)
