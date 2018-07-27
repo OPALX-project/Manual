@@ -337,30 +337,27 @@ in the following table.
 
 |3 |numParticles |1 |Number of macro particles
 
-|4 |charge |C |Charge of bunch
+|4 |charge |C |Bunch charge
 
-|5 |energy |MeV |Mean energy of bunch
+|5 |energy |MeV |Mean bunch energy
 
-|6 |rms_x |m |Standard deviation of x-component of particles positions
+|6 |rms_x |m |RMS beamsize in x
 
-|7 |rms_y |m |Standard deviation of y-component of particles positions
+|7 |rms_y |m |RMS beamsize in y
 
-|8 |rms_s |m |Standard deviation of s-component of particles positions
+|8 |rms_s |m |RMS beamsize in s
 
-|9 |rms_px |1 |Standard deviation of x-component of particles normalized
-momenta
+|9 |rms_px |1 |RMS beamsize normalised momentum in x
 
-|10 |rms_py |1 |Standard deviation of y-component of particles
-normalized momenta
+|10 |rms_py |1 |RMS beamsize normalised momentum in y
 
-|11 |rms_ps |1 |Standard deviation of s-component of particles
-normalized momenta
+|11 |rms_ps |1 |RMS beamsize normalised momentum in s
 
-|12 |emit_x |mrad |X-component of normalized emittance
+|12 |emit_x |mrad |Normalized emittance in x
 
-|13 |emit_y |mrad |Y-component of normalized emittance
+|13 |emit_y |mrad |Normalized emittance in y
 
-|14 |emit_s |mrad |S-component of normalized emittance
+|14 |emit_s |mrad |Normalized emittance in s
 
 |15 |mean_x |m |X-component of mean position relative to reference
 particle

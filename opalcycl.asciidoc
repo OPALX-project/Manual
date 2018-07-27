@@ -659,9 +659,8 @@ be set using the option `SPTDUMPFREQ` of `OPTION` statement
 see  link:control#sec.control.option[Option Statement].
 
 The phase space data per `STEPSPERTURN` (a parameter in the `TRACK`
-command) steps is stored in an ASCII file. The file’s name is a
-combination of input file name (without extension) and
-_-afterEachTurn.dat_. The data is stored in the global cylindrical
+command) steps is stored in an ASCII file. The file's is named
+_<input_file_name >-afterEachTurn.dat_. The data is stored in the global cylindrical
 coordinate system. Please note that if the field map is ideally
 isochronous, the reference particle of a given energy take exactly one
 revolution in `STEPPERTURN` steps; Otherwise, the particle may not go
@@ -678,7 +677,7 @@ used to check the property of the closed orbit.
 ==== Tune calculation mode
 
 The tunes latexmath:[\nu_r] and latexmath:[\nu_z] of each energy are
-stored in a ASCII file with name _tuningresult_.
+stored in a ASCII file named _tuningresult_.
 
 [[sec.opalcycl.multi-particle-tracking-mode-1]]
 ==== Multi-particle tracking mode
@@ -687,16 +686,16 @@ The intermediate phase space data of all particles and some interesting
 parameters, including RMS envelop size, RMS emittance, external field,
 time, energy, length of path, number of bunches and tracking step, are
 stored in the H5hut file-format <<bib.howison2010>> and can be analyzed
-using the H5root <<bib.schietinger>>. The frequency of the data output can
+using H5root <<bib.schietinger>>. The frequency of the data output can
 be set using the `PSDUMPFREQ` option of `OPTION` statement
 see link:control#sec.control.option[Option Statement].
-The file is named like the input file but the
-extension is _.h5_.
+The file is named _<input_file_name >.h5_.
+This output can be switched on or off with the option `ENABLEHDF5`.
 
 The intermediate phase space data of central particle (with ID of 0) and
 an off-centering particle (with ID of 1) are stored in an ASCII file.
-The file's name is combined by the input file name (without extension)
-and _-trackOrbit.dat_. The frequency of the data output can be set using
+The file is named _<input_file_name >-trackOrbit.dat_.
+The frequency of the data output can be set using
 the `SPTDUMPFREQ` option of `OPTION` statement see link:control#sec.control.option[Option Statement].
 
 [[sec.opalcycl.matched-distribution]]
