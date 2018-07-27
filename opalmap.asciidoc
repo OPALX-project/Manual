@@ -126,7 +126,7 @@ Just form the definition of the Taylor expansion, it can be seen that a finite e
 \begin{aligned}
      f &= \mathcal{M} \eqrel \underbrace{\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \vec{v}_{\left( \Delta s\right)} \right)^n}_{\text{Taylor series}} + \underbrace{\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) }_{\text{error therm}}
 \end{aligned}
-
+++++
 
 
 
