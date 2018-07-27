@@ -6,6 +6,9 @@ ifdef::env-gitlab[]
 
 link:home[Back to Main Page]
 
+toc::[]
+endif::[]
+
 [[chp.opalmap]]
 == _OPAL-map_
 
