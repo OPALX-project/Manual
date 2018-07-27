@@ -141,13 +141,13 @@ TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_OR
 === Additional Definitnions in _OPAL-map_
 
 .Additional Parameter.
-[cols="<2,^1,^1,<4",options="header",]
+[cols="<2,^1,^1,^1,<3",options="header",]
 |=======================================================================
-| Attribute Name | Default Value | Units | Description
+| Attribute Name | set in | Default Value | Units | Description
 
-|`MAP_ORDER` |`1` | [ ] | set in `TRACK`, defines the map order.
+|`MAP_ORDER` |`TRACK`|`1` | [ ] | defines the map order ( = order TPSA - 1).
 
-|`NSlices` |`1` |[ ] | set in beam line element deffinition, defines the number of steps inide the element.
+|`NSlices` |beam line element| `1` |[ ] | defines the number of steps inide the element.
 
 |=======================================================================
 
