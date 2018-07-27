@@ -622,8 +622,8 @@ The content of the columns are listed in the following table.
 
 [cols="<1,<1,<1,<5",options="header",]
 |========================================================
-|Column Nr. |Name |Units |Meaning 
-|1  | |m |Position in path length 
+|Column Nr. |Name |Units |Meaning
+|1  | |m |Position in path length
 |2  | |m |X-component of position in floor coordinates
 |3  | |m |Y-component of position in floor coordinates
 |4  | |m |Z-component of position in floor coordinates

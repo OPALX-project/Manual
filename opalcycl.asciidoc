@@ -640,6 +640,14 @@ the tune diagram.
 [[sec.opalcycl.output]]
 === Output
 
+_OPAL-cycl_ writes out several output files, some specific to the Tracking mode
+(see following sections).
+
+[[sec.opalcycl.input_file_name-.stat]]
+==== _<input_file_name >.stat_
+
+See link:opalt#sec.opalt.input_file_name-.stat[_OPAL-t_ stat file].
+
 [[sec.opalcycl.single-particle-tracking-mode-1]]
 ==== Single Particle Tracking mode
 
@@ -657,7 +665,7 @@ _-afterEachTurn.dat_. The data is stored in the global cylindrical
 coordinate system. Please note that if the field map is ideally
 isochronous, the reference particle of a given energy take exactly one
 revolution in `STEPPERTURN` steps; Otherwise, the particle may not go
-through a full 360^ in `STEPPERTURN` steps.
+through a full 360 degrees in `STEPPERTURN` steps.
 
 There are 3 ASCII files which store the phase space data around
 latexmath:[0], latexmath:[\pi/8] and latexmath:[\pi/4] azimuths.
@@ -687,7 +695,7 @@ extension is _.h5_.
 
 The intermediate phase space data of central particle (with ID of 0) and
 an off-centering particle (with ID of 1) are stored in an ASCII file.
-The file’s name is combined by the input file name (without extension)
+The file's name is combined by the input file name (without extension)
 and _-trackOrbit.dat_. The frequency of the data output can be set using
 the `SPTDUMPFREQ` option of `OPTION` statement see link:control#sec.control.option[Option Statement].
 
