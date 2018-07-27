@@ -76,14 +76,6 @@ The creation of the element map is based on the Hamiltonian Mechanic, more speci
 [latexmath]
 ++++
 \begin{aligned}
-        \nabla \cdot \mathbf{B} & = 0 \Rightarrow \exists \quad \mathbf{A} \quad \text{with} \quad \mathbf{B} = \nabla \times \mathbf{A} \\
-        \nabla \times \mathbf{B} & = 0 \Rightarrow \exists \quad V \quad \text{with} \quad \mathbf{B} = - \nabla V
-    \end{aligned}
-++++
-
-[latexmath]
-++++
-\begin{aligned}
     H &= T + V\\
     \frac{d\vec{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
 \end{aligned}
@@ -116,10 +108,10 @@ The integral over the independent variable:
 
 [latexmath]
 ++++
-\begin{align}
+\begin{aligned}
     f_{(s)}&= e^{-\lieoperator{H} s} f_{(s_0)}\\
 	\mathcal{M} &= e^{-:\!H\!: s}
-\end{align}
+\end{aligned}
 ++++
 
 Where latexmath:[e^{-:\!H\!: s}] is the Lie expansion. 
