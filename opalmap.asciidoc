@@ -123,6 +123,7 @@ Where latexmath:[e^{-:\!H\!: s}] is the Lie expansion.
 For the derivative of the Hamiltonian, a Differential Algebra (DA) was used, in particular the Truncated Power Series Algebra (TPSA).
 This algebra uses the Taylor expansion as the equivalent function, which also is responsible for its name by creating truncated power series.
 Just form the definition of the Taylor expansion, it can be seen that a finite expansion is an approximaion of the acutal function, due to the error term latexmath:[\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) ].
+
 [latexmath]
 ++++
 \begin{aligned}
