@@ -78,9 +78,11 @@ QP1: QUADRUPOLE, 	L=0.3, 	K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 ....
 
 [[sec.opalmap.mapTracking]]
-=== Map Tracking
-The particle motion gets calculated by applying the map on the particle parameter.
-
+=== Map Tracking 
+The particle motion gets calculated by applying the map on the particle parameter. <<fig_MapTracking>>
+[#fig_MapTracking]
+.Flow chart of map tracking.
+image::figures/opalmap/mapTracking.png[scaledwidth=12cm]
 
 
 
