@@ -31,7 +31,7 @@ The main advantage in map tracking codes lies in the ''map'' itself. These do no
 
 [[sec.opalmap.variablesopalmap]]
 === Variables in _OPAL-map
-For in and outputs, the standard `link:opalt#sec.opalt.variablesopalt[Variables in OPAL-t]` units as in are used.
+For in and outputs, the standard `link:opalt#chp.variablesopalt[Variables in OPAL-t]` units as in are used.
 
 _OPAL-map_ uses an Frenet-Serret coordinate system, referring on a reference particle. This particle has the ideal properties, ergo follows the design path. The following canonical variables to describe the motion of particles. The physical units are listed in square brackets.
 
