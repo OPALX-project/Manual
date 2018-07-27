@@ -98,7 +98,7 @@ Introducing the Lie operator, which acts similar to a "waiting" Poissant Bracket
 [latexmath]
 ++++
 \begin{aligned}
-:\!f\!:  = \left[ f, \circ \right] = \sum_{i=1}^{n} \left( \frac{\partial f}{\partial q_i}\frac{\partial \circ}{\partial p_i} - \frac{\partial f}{\partial p_i}\frac{\partial \circ}{\partial q_i} \right)
+    :\!f\!:  = \left[ f, \circ \right] = \sum_{i=1}^{n} \left( \frac{\partial f}{\partial q_i}\frac{\partial \circ}{\partial p_i} - \frac{\partial f}{\partial p_i}\frac{\partial \circ}{\partial q_i} \right)
 \end{aligned}
 ++++
 
@@ -107,12 +107,13 @@ If a function latexmath:[f:= f_{\left( \vec{q_{(s)}},\vec{p_{(s)}}\right) }] des
 [latexmath]
 ++++
 \begin{aligned}
-\frac{df}{ds}&= \sum_{i=1}^{n} \left( \frac{dq_i}{ds}\frac{\partial f}{\partial q_i} +\frac{dp_i}{ds}\frac{\partial f}{\partial p_i} \right) \\
-\frac{df}{ds}&= \sum_{i=1}^{n} \left( \frac{\partial H}{\partial p_i}\frac{\partial f}{\partial q_i} -\frac{\partial H}{\partial q_i}\frac{\partial f}{\partial p_i} \right)  \equiv -:\!H\!: f
+    \frac{df}{ds}&= \sum_{i=1}^{n} \left( \frac{dq_i}{ds}\frac{\partial f}{\partial q_i} +\frac{dp_i}{ds}\frac{\partial f}{\partial p_i} \right) \\
+    \frac{df}{ds}&= \sum_{i=1}^{n} \left( \frac{\partial H}{\partial p_i}\frac{\partial f}{\partial q_i} -\frac{\partial H}{\partial q_i}\frac{\partial f}{\partial p_i} \right)  \equiv -:\!H\!: f
 \end{aligned}
 ++++
 
 The integral over the independent variable:
+
 [latexmath]
 ++++
 \begin{align}
