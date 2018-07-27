@@ -83,14 +83,42 @@ The creation of the element map is based on the Hamiltonian Mechanic, more speci
 
 [latexmath]
 ++++
-\begin{gather}
-    H = T + V
-\end{gather}
+\begin{aligned}
+    H &= T + V\\
+    \frac{d\vec{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
+\end{aligned}
 ++++
-\\
 \frac{d\vec{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
 Here latexmath:[H], the time dependent Hamiltonian represents the total energy, consisting of the kinetic latexmath:[T] and potential latexmath:[V] energy.
 The lower equations are the Hamiltonian equations of motion, where the momenta latexmath:[p_i] and the positons latexmath:[q_i] form the cannonical paris.
+Using cannonical transformations, the Hamiltonian can be adjusted to use the pathlength latexmath:[s] as independent and the particle parameters as depenedent variable(s).
+
+
+Introducing the Lie operator, which acts similar to a "waiting" Poissant Bracket:
+[latexmath]
+++++
+:\!f\!:  = \left[ f, \circ \right] = \sum_{i=1}^{n} \left( \frac{\partial f}{\partial q_i}\frac{\partial \circ}{\partial p_i} - \frac{\partial f}{\partial p_i}\frac{\partial \circ}{\partial q_i} \right)\
+++++
+
+If a function latexmath:[f:= f_{\left( \vec{q_{(s)}},\vec{p_{(s)}}\right) }] describes one of the phase space variables latexmath:[v] its total derivative to the independent variable, combined with the Hamiltonian equations of motions, is similar to the Lie operator times the independ variable, i. e. latexmath:[s].
+
+[latexmath]
+++++
+\begin{align}
+\frac{df}{ds}&= \sum_{i=1}^{n} \left( \frac{dq_i}{ds}\frac{\partial f}{\partial q_i} +\frac{dp_i}{ds}\frac{\partial f}{\partial p_i} \right) \\
+\frac{df}{ds}&= \sum_{i=1}^{n} \left( \frac{\partial H}{\partial p_i}\frac{\partial f}{\partial q_i} -\frac{\partial H}{\partial q_i}\frac{\partial f}{\partial p_i} \right)  \equiv -\lieoperator{H} f
+\end{align}
+++++
+
+The integral over the independent variable:
+++++
+\begin{align}
+    f_{(s)}&= e^{-\lieoperator{H} s} f_{(s_0)}\\
+	\mathcal{M} &= e^{-\lieoperator{H} s}
+\end{align}
+++++
+
+Where latexmath:[e^{-\lieoperator{H} s}] is the Lie expansion. 
 
 
 [[sec.opalmap.example]]
