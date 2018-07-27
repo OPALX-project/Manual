@@ -116,6 +116,35 @@ The integral over the independent variable:
 
 Where latexmath:[e^{-:\!H\!: s}] is the Lie expansion. 
 
+[[sec.opalmap.Implementation]]
+=== Implementaion of map tracking
+For the derivative of the Hamiltonian, a Differential Algebra (DA) was used, in particular the Truncated Power Series Algebra (TPSA).
+This algebra uses the Taylor expansion as the equivalent function, which also is responsible for its name by creating truncated power series.
+Just form the definition of the Taylor expansion, it can be seen that a finite expansion is an approximaion of the acutal function, due to the error term latexmath:[\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) ].
+[latexmath]
+++++
+\begin{aligned}
+     f &= \mathcal{M} \eqrel \underbrace{\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \vec{v}_{\left( \Delta s\right)} \right)^n}_{\text{Taylor series}} + \underbrace{\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) }_{\text{error therm}}
+\end{aligned}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [[sec.opalmap.example]]
 === Example
@@ -138,6 +167,7 @@ As an optional parameter for the beam line elements `NSlices=<x>` provides the o
 D1:  DRIFT, 		L=1., 		     ELEMEDGE=0.000, NSLICES=10;
 QP1: QUADRUPOLE, 	L=0.3, 	K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 ....
+
 
 
 [[sec.opalmap.output]]
