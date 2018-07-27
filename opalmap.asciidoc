@@ -83,9 +83,9 @@ The creation of the element map is based on the Hamiltonian Mechanic, more speci
 
 [latexmath]
 ++++
-\begin{aligned}
-    H &= T + V
-\end{aligned}
+\begin{gather}
+    H = T + V
+\end{gather}
 ++++
 \\
 \frac{d\vec{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
