@@ -157,10 +157,11 @@ TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_OR
 _OPAL-map_ is the new flavour of _OPAL_ and currently just contains the fundamental beam line elements:
 
 +
-* Drift (`link:opalt#sec.elements.drift[Drift]`)
-* Dipole (`link:opalt#sec.elements.SBend[Sbend]`)
-* Quadrupole (`link:opalt#sec.elements.quadrupole[Quadrupole]`)
+  * Drift (`link:opalt#sec.elements.drift[Drift]`),
+  * Dipole (`link:opalt#sec.elements.SBend[Sbend]`),
+  * Quadrupole (`link:opalt#sec.elements.quadrupole[Quadrupole]`)
 +
+
 other elements will follow soon. 
 
 
