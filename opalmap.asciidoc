@@ -83,7 +83,6 @@ QP1: QUADRUPOLE, 	L=0.3, 	K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 === Output
 
 
-
 [bibliography]
-.References
-- [[[bib.berz1999_opalmap]]] Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.
+=== References
+* [[[bib.berz1999_opalmap]]] Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.

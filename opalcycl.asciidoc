@@ -713,7 +713,7 @@ Dist1:DISTRIBUTION, TYPE=GAUSSMATCHED, LINE=l1, FMAPFN=...,
 ....
 
 [[sec.opalcycl.example]]
-==== Example
+===== Example
 
 Simulation of the PSI Ring Cyclotron at 580 MeV and current 2.2 mA. The
 program finds a matched distribution followed by a bunch initialization
@@ -729,12 +729,12 @@ transformation has to be applied to obtain the rms emittances that are
 given in the output.
 
 [[sec.opalcycl.input-file]]
-===== Input file
+====== Input file
 
 https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/matchedDistribution.in[matchedDistribution.in]
 
 [[sec.opalcycl.output-1]]
-===== Output
+====== Output
 
 https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/matchedDistribution.output[matchedDistribution.output]
 
