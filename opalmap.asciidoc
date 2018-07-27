@@ -75,11 +75,11 @@ latexmath:[\mathbf{\mathcal{M}}] is the map. This map can represent either a bea
 The creation of the element map is based on the Hamiltonian Mechanic, more specificly on the Lie Operator.
 [latexmath]
 ++++
-\begin{gather}
-H = T + V\\
+\begin{aligned}
+H &= T + V\\
 \frac{d\vec{q_i}}{ds} = \frac{\partial H}{\partial p_i} \; , \; 
-	\frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
-\end{gather}
+	\frac{d\vec{p_i}}{ds} &= - \frac{\partial H}{\partial q_i}
+\begin{aligned}
 ++++
 Here latexmath:[H], the time dependent Hamiltonian represents the total energy, consisting of the kinetic latexmath:[T] and potential latexmath:[V] energy.
 The lower equations are the Hamiltonian equations of motion, where the momenta latexmath:[p_i] and the positons latexmath:[q_i] form the cannonical paris.
