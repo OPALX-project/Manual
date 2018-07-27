@@ -18,10 +18,10 @@ endif::[]
 [[sec.opalmap.introduction]]
 === Introduction
 
-OPAL-map is an map tracking beam optics code. This type computes maps for each beam line element to describe the action of the system.  
+_OPAL-map_ is an map tracking beam optics code. This type computes maps for each beam line element to describe the action of the system.  
 
 
-The map creation is done by applying the Lie Operator on the element Hamiltonian and calculated in the Truncated Power Series Algebra (TPSA)<<bib.berz1999_opalmap>>. The TPSA is a Differential Algebra (DA), which uses the Taylor expansion as the equivalent function. In OPAL-map the TPSA gets provided from the own OPAL DA-package. 
+The map creation is done by applying the Lie Operator on the element Hamiltonian and calculated in the Truncated Power Series Algebra (TPSA)<<bib.berz1999_opalmap>>. The TPSA is a Differential Algebra (DA), which uses the Taylor expansion as the equivalent function. In _OPAL-map_ the TPSA gets provided from the own _OPAL_ DA package. 
 
 
 In contrast to time latexmath:[t] dependent tracking codes, as OPAL-t, map tracking codes use the longitudinal bunch position latexmath:[s] as independent variable. Furthermore, map tracking codes do not use numerical integrators for the determination of the particle trajectory, which can be a computationally very expensive.
@@ -29,7 +29,7 @@ In contrast to time latexmath:[t] dependent tracking codes, as OPAL-t, map track
 The main advantage in map tracking codes lies in the ''map'' itself. These do not only contain valuable information about the beam line, but also can be accumulated to reduce the computational effort in the particle tracking.
 
 [[sec.opalmap.variablesopalmap]]
-=== Variables in _OPAL-map
+=== Variables in _OPAL-map_
 For in and outputs, the units as in `link:opalt#sec.opalt.variablesopalt[Variables in OPAL-t]` are used.
 
 _OPAL-map_ uses an Frenet-Serret coordinate system, referring on a reference particle. This particle has the ideal properties, ergo follows the design path. The following canonical variables to describe the motion of particles. The physical units are listed in square brackets.
@@ -69,7 +69,7 @@ Where latexmath:[v] denotes the final (latexmath:[v^f]) and initial (latexmath:[
 latexmath:[\mathbf{\mathcal{M}}] is the map. This map can represent either a beam element slice, the whole element, a beam line section or the whole system.
 
 [[sec.opalmap.creationOfMap]]
-=== Creation of map
+==== Creation of map
 
 The creation of the element map is based on the Hamiltonian Mechanic, more specificly on the Lie Operator.
 
@@ -77,10 +77,10 @@ The creation of the element map is based on the Hamiltonian Mechanic, more speci
 ++++
 \begin{aligned}
     H &= T + V\\
-    \frac{d\vec{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
+    \frac{d\mathbf{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\mathbf{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
 \end{aligned}
 ++++
-\frac{d\vec{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\vec{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
+\frac{d\mathbf{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\mathbf{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
 Here latexmath:[H], the time dependent Hamiltonian represents the total energy, consisting of the kinetic latexmath:[T] and potential latexmath:[V] energy.
 The lower equations are the Hamiltonian equations of motion, where the momenta latexmath:[p_i] and the positons latexmath:[q_i] form the cannonical paris.
 Using cannonical transformations, the Hamiltonian can be adjusted to use the pathlength latexmath:[s] as independent and the particle parameters as depenedent variable(s).
@@ -94,7 +94,7 @@ Introducing the Lie operator, which acts similar to a "waiting" Poissant Bracket
 \end{aligned}
 ++++
 
-If a function latexmath:[f:= f_{\left( \vec{q_{(s)}},\vec{p_{(s)}}\right) }] describes one of the phase space variables latexmath:[v] its total derivative to the independent variable, combined with the Hamiltonian equations of motions, is similar to the Lie operator times the independ variable, i. e. latexmath:[s].
+If a function latexmath:[f:= f_{\left( \mathbf{q_{(s)}},\mathbf{p_{(s)}}\right) }] describes one of the phase space variables latexmath:[v] its total derivative to the independent variable, combined with the Hamiltonian equations of motions, is similar to the Lie operator times the independ variable, i. e. latexmath:[s].
 
 [latexmath]
 ++++
@@ -119,22 +119,37 @@ Where latexmath:[e^{-:\!H\!: s}] is the Lie expansion.
 
 
 [[sec.opalmap.Implementation]]
-=== Implementaion of map tracking
+==== Implementaion of map tracking
 For the derivative of the Hamiltonian, a Differential Algebra (DA) was used, in particular the Truncated Power Series Algebra (TPSA).
 This algebra uses the Taylor expansion as the equivalent function, which also is responsible for its name by creating truncated power series.
-Just form the definition of the Taylor expansion, it can be seen that a finite, to the order latexmath:[\Omega], expansion is an approximaion of the acutal function, due to the error term latexmath:[\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) ].
+Just form the definition of the Taylor expansion, it can be seen that a finite, to the order latexmath:[\Omega], expansion is an approximaion of the acutal function, due to the error term latexmath:[\mathcal{O}\left( \mathbf{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) ].
 
 [latexmath]
 ++++
 \begin{aligned}
-     f = \mathcal{M} = {\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \vec{v}_{\left( \Delta s\right)} \right)^n} + {\mathcal{O}\left( \vec{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) }
+     f = \mathbf{\mathcal{M}} = {\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \mathbf{v}_{\left( \Delta s\right)} \right)^n} + {\mathcal{O}\left( \mathbf{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) }
 \end{aligned}
 ++++
 
-In _OPAL-map_ the Hamiltonian gets Taylor expanded and its map derived (`link:opalmap#sec.opalmap.creationOfMap[Creation of Map]`) in the TPSA using the _OPAL-DA_ package. The truncation length gets definded in `TRACK` setting the `MAP_ORDER` attribute.
+In _OPAL-map_ the Hamiltonian gets Taylor expanded and its map derived (`link:opalmap#sec.opalmap.creationOfMap[Creation of Map]`) in the TPSA using the _OPAL_ DA package. The truncation length gets definded in `TRACK` setting the `MAP_ORDER` attribute.
 ....
 TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
 .... 
+
+
+[[sec.opalmap.newParams]]
+=== Additional Definitnions in _OPAL-map_
+
+.Additional Parameter.
+[cols="<2,^1,^1,<4",options="header",]
+|=======================================================================
+| Attribute Name | Default Value | Units | Description
+
+|`MAP_ORDER` |`1` | [ ] | set in `TRACK`, defines the map order.
+
+|`NSlices` |`1` |[ ] | set in beam line element deffinition, defines the number of steps inide the element.
+
+|=======================================================================
 
 
 [[sec.opalmap.example]]
@@ -142,7 +157,7 @@ TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_OR
 
 FODO lattice: https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/FODOmap.in[FODO.in]
 
-To `RUN` OPAL-map, the `METHOD` attribute gets set to `THICK`. 
+To `RUN` _OPAL-map_, the `METHOD` attribute gets set to `THICK`. 
 ....
 RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
 ....
