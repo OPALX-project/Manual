@@ -145,7 +145,6 @@ Just form the definition of the Taylor expansion, it can be seen that a finite e
 
 
 
-
 [[sec.opalmap.example]]
 === Example
 
