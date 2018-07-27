@@ -109,7 +109,7 @@ The integral over the independent variable:
 [latexmath]
 ++++
 \begin{aligned}
-    f_{(s)}&= e^{-\lieoperator{H} s} f_{(s_0)}\\
+    f_{(s)}&= e^{-:\!H\!: s} f_{(s_0)} \\
 	\mathcal{M} &= e^{-:\!H\!: s}
 \end{aligned}
 ++++
