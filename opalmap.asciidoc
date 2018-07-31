@@ -18,7 +18,7 @@ endif::[]
 [[sec.opalmap.introduction]]
 === Introduction
 
-_OPAL-map_ is an map tracking beam optics code. This type computes maps for each beam line element to describe the action of the system.  
+_OPAL-map_ is an map tracking beam optics code. This type computes maps for each beam line element to describe the action of the system.
 
 
 The map creation is done by applying the Lie Operator on the element Hamiltonian and calculated in the Truncated Power Series Algebra (TPSA)<<bib.berz1999_opalmap>>. The TPSA is a Differential Algebra (DA), which uses the Taylor expansion as the equivalent function. In _OPAL-map_ the TPSA gets provided from the own _OPAL_ DA package. 
@@ -156,13 +156,9 @@ TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_OR
 ==== Limitations
 _OPAL-map_ is the new flavour of _OPAL_ and currently just contains the fundamental beam line elements:
 
-+
-  * Drift (`link:opalt#sec.elements.drift[Drift]`),
-  * Dipole (`link:opalt#sec.elements.SBend[Sbend]`),
-  * Quadrupole (`link:opalt#sec.elements.quadrupole[Quadrupole]`)
-+
-
-other elements will follow soon. 
+* Drift (`link:opalt#sec.elements.drift[Drift]`),
+* Dipole (`link:opalt#sec.elements.SBend[Sbend]`),
+* Quadrupole (`link:opalt#sec.elements.quadrupole[Quadrupole]`)
 
 
 [[sec.opalmap.example]]
