@@ -80,7 +80,7 @@ The creation of the element map is based on the Hamiltonian Mechanic, more speci
     \frac{d\mathbf{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\mathbf{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
 \end{aligned}
 ++++
-\frac{d\mathbf{q_i}}{ds} &= \frac{\partial H}{\partial p_i} \; , \;  \frac{d\mathbf{p_i}}{ds} = - \frac{\partial H}{\partial q_i}
+
 Here latexmath:[H], the time dependent Hamiltonian represents the total energy, consisting of the kinetic latexmath:[T] and potential latexmath:[V] energy.
 The lower equations are the Hamiltonian equations of motion, where the momenta latexmath:[p_i] and the positons latexmath:[q_i] form the cannonical paris.
 Using cannonical transformations, the Hamiltonian can be adjusted to use the pathlength latexmath:[s] as independent and the particle parameters as depenedent variable(s).
