@@ -199,6 +199,7 @@ The OPTIMIZE command initiates optimization.
 | MAXGENERATIONS            | Number of generations to run.
 | EPSILON                   | Tolerance of hypervolume criteria, default: 0.001.
 | EXPECTED_HYPERVOL         | The reference hypervolume, default: 0.
+| HYPERVOLREFERENCE         | The reference point (real array) for the hypervolume, default: origin.
 | CONV_HVOL_PROG            | Converge if change in hypervolume is smaller, default: 0.
 | ONE_PILOT_CONVERGE        | default: false
 | SOL_SYNCH                 | Solution exchange frequency, default: 0.
