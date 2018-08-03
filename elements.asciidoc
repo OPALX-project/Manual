@@ -2216,6 +2216,8 @@ YEND::
   The y coordinate of the end point. [mm]
 WIDTH::
   The width of the probe, NOT used yet.
+STEP::
+  The step size of the probe (for histogram and peak finder output). Default: 1 [mm]
 
 .Probe
 image::figures/Elements/probe.png[scaledwidth=10cm]
@@ -2232,6 +2234,10 @@ _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] i
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
+The particles recorded in the PROBE are also recorded in the histogram ".hist" and peak ".peaks" file.
+The histogram file contains data as recorded in actual probe measurements.
+The corresponding peaks file contains the peaks found in the probe histogram by the same peak finder used for the PSI measurements.
+
 [[sec.elements.stripper-opal-cycl]]
 === Stripper (_OPAL-cycl_)
 
@@ -2239,7 +2245,7 @@ A stripper element strip the electron(s) from a particle. The particle
 hitting the stripper is recorded in the file, which contains the time,
 coordinates and momentum of the particle at the moment it hit the
 stripper. The charge and mass are changed. Its has the same geometry as
-the PROBE element. Please note that the stripping physics in not
+the PROBE element. Please note that the stripping physics is not
 included yet.
 
 There are 9 parameters to describe a stripper.
@@ -2253,7 +2259,7 @@ YSTART::
 YEND::
   The y coordinate of the end point. [mm]
 WIDTH::
-  The width of the probe, NOT used yet.
+  The width of the stripper, NOT used yet.
 OPCHARGE::
   Charge number of the out-coming particle. Negative value represents
   negative charge.
