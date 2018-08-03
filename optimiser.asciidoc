@@ -207,6 +207,7 @@ The OPTIMIZE command initiates optimization.
 | MUTATION_PROBABILITY      | Mutation probability of genom, default: 0.5.
 | RECOMBINATION_PROBABILITY | Probability for genes to recombine, default: 0.5.
 | SIMBIN_CROSSOVER_NU       | Simulated binary crossover, default: 2.0
+| INITIAL_OPTIMIZATION      | Optimize speed of first generation creation (useful when number of infeasible solutions large), default: false
 | SIMTMPDIR                 | Directory where simulations are run.
 | TEMPLATEDIR               | Directory where templates are stored.
 | FIELDMAPDIR               | Directory where field maps are stored.
