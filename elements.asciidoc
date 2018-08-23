@@ -1559,7 +1559,7 @@ A `TRIMCOIL` object can be defined in two ways:
 TYPE::
   Type specifies PSI-RING or PSI-RING-OLD trim coil descriptions.
   The general PSI-RING description is based on a rational function with polynomials in the nominator and the denominator.
-  The function describes the magnetic field [T] as function of the radius [mm].   
+  The function describes the magnetic field [T] as function of the radius [mm].
   The PSI-RING-OLD type is described in http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf
 RMIN::
   Inner radius of the trim coil [mm]
@@ -2070,10 +2070,19 @@ union(command1, command2 [, command3 [, command4 [...]]])::
 Collects the holes that are defined the by the commands.
 difference(command1, command2)::
 All particles that pass command1 and not command2 pass the difference.
+[#fig_difference]
+Illustration of a difference between to circles
+image::figures/Elements/difference.png[scaledwidth=10cm]
 symmetric_difference(command1, command2)::
 All particles that pass either command but not both at the same time.
+[#fig_symmetric_difference]
+Illustration of a symmetric difference between to circles
+image::figures/Elements/symmetric_difference.png[scaledwidth=10cm]
 intersection(command1, command2)::
 All particles that pass both commands at the same time.
+[#fig_intersection]
+Illustration of a intersection between to circles
+image::figures/Elements/intersection.png[scaledwidth=10cm]
 repeat(command, N, shiftx, shifty)::
 Repeats the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction.
 repeat(command, N, angle)::
