@@ -18,16 +18,12 @@ other stuff. These lines have to be removed for the rendering into *one* PDF doc
 The script `asciidoc2pdf` can be used to render the Wiki Manual into PDF. The script
 requires `asciidoctor`, TeX and `dblatex`.
 
-For the time being we use another master document named `home.adoc` for PDF rendering.
-In the futuer we may adapt the master document of the Wiki (`home.asciidoc`) and
-`asciidoc2pdf` in a way which makes `home.adoc`obsolete`.
-
 ## Usage
 
 Assuming `asciidoc2pdf` is in your `PATH`:
 ```
 git clone git@gitlab.psi.ch:OPAL/Manual-2.1.wiki.git
-cd Manual-2.0.wiki
+cd Manual-2.1.wiki
 asciidoc2pdf home.asciidoc
 ```
 
