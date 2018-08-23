@@ -1,10 +1,10 @@
-# OPAL User Manual for Version 2.0
+# OPAL User Manual for Version 2.1
 
 ## Introduction
 
 Since _OPAL_ version 2 the manual is maintained in the Wiki of this project:
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home
+https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/home
 
 The Wiki pages are written in Asciidoc and thus can be converted to other formats 
 like PDF or HTML. The Aciidoc support in Gitlab is a bit limited. One main issue
