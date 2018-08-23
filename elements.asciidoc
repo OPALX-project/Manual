@@ -2060,12 +2060,20 @@ rectangle(width, height)::
 A rectangle that is centered at the origin of the 2D coordinate system.
 ellipse(width, height)::
 An ellipse that is centered at the origin of the 2D coordinate system.
+polygon(x_0, y_0; x_1, y_1; x_2, y_2[; x_3, y_3[;... x_N, y_N]])::
+A polygon with with vertices (x_0, y_0), (x_1, y_1), (x_2, y_2), ..., (x_N, y_N). The first vertex doens't have to be repeated, instead (x_N, y_N) is connected with (x_0, y_0). The polygon is then triangulized for a fast detection of stopped particles. In order for the triangulization to work the edges of the polygon may not cross each other.
 translate(command, shiftx, shifty)::
 Translates the holes that are define by the command by shiftx in the x-direction and shifty in the y-direction.
 rotate(command, angle)::
 Rotates the holes that are defined by the command about the origin of the 2D coordinate system.
 union(command1, command2 [, command3 [, command4 [...]]])::
 Collects the holes that are defined the by the commands.
+difference(command1, command2)::
+All particles that pass command1 and not command2 pass the difference.
+symmetric_difference(command1, command2)::
+All particles that pass either command but not both at the same time.
+intersection(command1, command2)::
+All particles that pass both commands at the same time.
 repeat(command, N, shiftx, shifty)::
 Repeats the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction.
 repeat(command, N, angle)::
