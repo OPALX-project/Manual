@@ -26,7 +26,7 @@ In the futuer we may adapt the master document of the Wiki (`home.asciidoc`) and
 
 Assuming `asciidoc2pdf` is in your `PATH`:
 ```
-git clone git@gitlab.psi.ch:OPAL/Manual-2.0.wiki.git
+git clone git@gitlab.psi.ch:OPAL/Manual-2.1.wiki.git
 cd Manual-2.0.wiki
 asciidoc2pdf home.asciidoc
 ```
