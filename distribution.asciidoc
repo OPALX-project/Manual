@@ -874,6 +874,7 @@ Dist:DISTRIBUTION, TYPE    = BINOMIAL,
 === `MATCHEDGAUSS` Matched Gauss Distribution type
 
 The attributes of a `MATCHEDGAUSS` distribution are defined in <<tab_distattrmatchedgauss>>.
+`Limitation:` Does not consider Trimcoil field maps!
 
 [#tab_distattrmatchedgauss]
 .Definition of the basic distribution attributes for a `MATCHEDGAUSS` distribution type.
@@ -883,14 +884,13 @@ The attributes of a `MATCHEDGAUSS` distribution are defined in <<tab_distattrmat
 |`EX`        |1E-6 | m rad | Projected normalized emittance in latexmath:[x]
 |`EY`        |1E-6 | m rad | Projected normalized emittance in latexmath:[y]
 |`ET`        |1E-6 | m rad | Projected normalized emittance in latexmath:[t]
-|`MAGSYM`    |0    |       | Number of sector magnets
-|`FMAPFN`    |     |       | File for reading fieldmap used to create matched distribution
-|`FMTYPE`    |     |       | File format for reading fieldmap used to create matched distribution
+|`NSTEPS`    |720  |       | Number of integration steps of closed orbit finder
+|`SECTOR`    |TRUE |       | Match using single sector (true) or all sectors (false)
 |`ORDERMAPS` |7    |       | Order used in the field expansion
 |`RGUESS`    |-1   |       | Guess value of radius (m) for closed orbit finder
 |`RESIDUUM`  |1E-8 |       | Residuum for the closed orbit finder and sigma matrix generator
 |`MAXSTEPSCO`|100  |       | Maximum steps used to find closed orbit
-|`MAXSTEPSSI`|2000 |       | Maximum steps used to find matched distribution
+|`MAXSTEPSSI`|500  |       | Maximum steps used to find matched distribution
 |=======================================================================
 
 [[sec.distribution.emissionmodel]]
