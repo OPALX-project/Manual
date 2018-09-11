@@ -2101,9 +2101,9 @@ Repeats the holes that are defined by the command translating each copy successi
 repeat(command, N, angle)::
 Repeats the holes that are defined by the command rotating each copy successively. The argument angle can be a mathematical expression.
 
-The supporte mathematical constants and functions are listed in the following table.
+The supported mathematical constants and functions are listed in the following table.
 
-.Mathematical constansts and functions
+.Mathematical constants and functions
 [cols="<",]
 |===================
 |e
