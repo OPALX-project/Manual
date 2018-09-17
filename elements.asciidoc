@@ -2104,7 +2104,7 @@ Repeats the holes that are defined by the command rotating each copy successivel
 The supported mathematical constants and functions are listed in the following table.
 
 .Mathematical constants and functions
-[cols="<",]
+[cols="2*<",]
 |===================
 |e
 |pi
