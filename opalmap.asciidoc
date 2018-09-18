@@ -198,7 +198,7 @@ The file structure is analogous to link:opalt#sec.opalt.input_file_name-.stat[OP
 
 
 [[sec.opalmap.datainput_file_name.dispersion]]
-==== _data/<input_file_name >_Monitors.stat_
+==== _data/<input_file_name >_.dispersion_
 
 _OPAL-map_ computes the dispersion of the beam line according to:
 
@@ -233,16 +233,16 @@ positions
 
 
 [[sec.opalmap.datainput_file_name.map]]
-==== _data/<input_file_name >_Monitors.stat_
+==== _data/<input_file_name >.map_
 
 Here the transfer map of the whole beamline gets printed.
-Its format is analogous to a DA-FVPs, where the polynomials (DA-FTPs) get represented in an 6 dimensional vector.
+Its format is analogous to a DA- `FVPs` (src/Classic/FixedAlgebra), where the polynomials (DA- `FTPs`) get represented in an 6 dimensional vector.
 The first number describes the coefficient and the following 6 the variables of the monomial.
 
 [cols="<1,<1,<1,<5",options="header",]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
-|1 |coefficient |m |coefficient of monomial
+|1 |coefficient |1 |coefficient of monomial
 
 |2 |latexmath:[x] |1 |latexmath:[x] in monomial
 
