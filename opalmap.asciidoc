@@ -104,7 +104,7 @@ If a function latexmath:[f:= f_{\left( \mathbf{q_{(s)}},\mathbf{p_{(s)}}\right) 
 \end{aligned}
 ++++
 
-The integral over the independent variable latexmath:[\int \, \cdot \, ds]:
+The integral over the independent variable latexmath:[\int \cdot ds]:
 
 [latexmath]
 ++++
@@ -187,6 +187,75 @@ QP1: QUADRUPOLE,        L=0.3,  K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
 
 [[sec.opalmap.output]]
 === Output
+
+In addition to the progress report that _OPAL-map_ writes to the standard
+output (stdout) it also writes different files for various purposes.
+
+[[sec.opalmap.input_file_name-.stat]]
+==== _<input_file_name >.stat_
+
+The file structure is analogous to link:opalt#sec.opalt.input_file_name-.stat[OPAL-t] .stat file.
+
+
+[[sec.opalmap.datainput_file_name.dispersion]]
+==== _data/<input_file_name >_Monitors.stat_
+
+_OPAL-map_ computes the dispersion of the beam line according to:
+
+[latexmath]
+++++
+\begin{aligned}
+  \begin{pmatrix} \eta_{i} \\ \eta_{p_i} \end{pmatrix}_{s_1}  
+  =
+  \begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
+  \cdot
+  \begin{pmatrix} \eta_{i} \\ \eta_{p_i} \end{pmatrix}_{s_0}
+  +
+  \begin{pmatrix} R_{16} \\ R_{26} \end{pmatrix}
+\end{aligned}
+++++
+where latexmath:[R] is the Transfermatrix and latexmath:[\eta] is the dispersion.
+
+[cols="<1,<1,<1,<5",options="header",]
+|=======================================================================
+|Column Nr. |Name |Units |Meaning
+|1 |position |m |Longitudinal position
+
+|2 |latexmath:[\eta_x] |m |Spatial dispersion in x
+
+|3 |latexmath:[\eta_{px}] |1 |Momentum dispersion in x
+
+|4 |latexmath:[\eta_y] |m |Spatial dispersion in x
+
+|5 |latexmath:[\eta_{py} |1 |Momentum dispersion in y
+positions
+|=======================================================================
+
+
+[[sec.opalmap.datainput_file_name.map]]
+==== _data/<input_file_name >_Monitors.stat_
+
+Here the transfer map of the whole beamline gets printed.
+Its format is analogous to a DA-FVPs, where the polynomials (DA-FTPs) get represented in an 6 dimensional vector.
+The first number describes the coefficient and the following 6 the variables of the monomial.
+
+[cols="<1,<1,<1,<5",options="header",]
+|=======================================================================
+|Column Nr. |Name |Units |Meaning
+|1 |coefficient |m |coefficient of monomial
+
+|2 |latexmath:[x] |1 |latexmath:[x] in monomial
+
+|3 |latexmath:[p_x] |1 |latexmath:[p_x] in monomial
+
+|4 |latexmath:[y] |1 |latexmath:[y] in monomial
+
+|5 |latexmath:[p_y] |1 |latexmath:[p_y] in monomial
+
+|6 |latexmath:[z] |1 |latexmath:[z] in monomial
+
+|7 |latexmath:[\delta] |1 |latexmath:[\delta] in monomial
+|=======================================================================
 
 
 [bibliography]
