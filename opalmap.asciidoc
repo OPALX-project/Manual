@@ -198,7 +198,7 @@ The file structure is analogous to link:opalt#sec.opalt.input_file_name-.stat[OP
 
 
 [[sec.opalmap.datainput_file_name.dispersion]]
-==== _data/<input_file_name >_.dispersion_
+==== _data/<input_file_name >.dispersion_
 
 _OPAL-map_ computes the dispersion of the beam line according to:
 
