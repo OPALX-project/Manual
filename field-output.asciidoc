@@ -44,21 +44,21 @@ The following attributes are enabled on the `DUMPFIELDS` statement:
 FILE_NAME::
   Name of the file to which field data is dumped. It is an error if the location reference by `FILE_NAME` cannot be opened. Any existing file is overwritten.
 X_START::
-  Start point in the grid in x
+  Start point in the grid in x [m]
 DX::
-  Grid step size in x
+  Grid step size in x [m]
 X_STEPS::
   Number of steps in x. It is an error if `X_STEPS` is non-integer or less than 1.
 Y_START::
-  Start point in the grid in y
+  Start point in the grid in y [m]
 DY::
-  Grid step size in y
+  Grid step size in y [m]
 Y_STEPS::
   Number of steps in y. It is an error if `Y_STEPS` is non-integer or less than 1.
 Z_START::
-  Start point in the grid in z
+  Start point in the grid in z [m]
 DZ::
-  Grid step size in z.
+  Grid step size in z [m]
 Z_STEPS::
   Number of steps in z. It is an error if `Z_STEPS` is non-integer or less than 1.
 
@@ -147,9 +147,9 @@ In Cylindrical mode the format of the field output is:
 5 Br [kGauss]
 6 Bphi [kGauss]
 7 Bz [kGauss]
-8 Er [?]
-9 Ephi [?]
-10 Ez [?]
+8 Er [MV/m]
+9 Ephi [MV/m]
+10 Ez [MV/m]
 0
 <r0> <phi0> <z0> <t0> <Br0> <Bphi0> <Bz0> <Er0> <Ephi0> <Ez0>
 <r1> <phi1> <z1> <t1> <Br1> <Bphi1> <Bz1> <Er1> <Ephi1> <Ez1>
@@ -163,27 +163,27 @@ FILE_NAME::
 COORDINATE_SYSTEM::
   Either 'Cartesian' or 'Cylindrical'. The string is not case sensitive. It is an error if the string is not one of 'cartesian' or 'cylindrical'.
 R_START::
-  Start point in the grid in r
+  Start point in the grid in r [m]
 DR::
-  Grid step size in r
+  Grid step size in r [m]
 R_STEPS::
   Number of steps in r. It is an error if `R_STEPS` is non-integer or less than 1.
 PHI_START::
-  Start point in the grid in phi
+  Start point in the grid in phi [rad]
 DPHI::
-  Grid step size in phi
+  Grid step size in phi [rad]
 PHI_STEPS::
   Number of steps in phi. It is an error if `PHI_STEPS` is non-integer or less than 1.
 Z_START::
-  Start point in the grid in z
+  Start point in the grid in z [m]
 DZ::
-  Grid step size in z.
+  Grid step size in z [m]
 Z_STEPS::
   Number of steps in z. It is an error if `Z_STEPS` is non-integer or less than 1.
 T_START::
-  Start point in the grid in time
+  Start point in the grid in time [ns]
 DT::
-  Grid step size in time.
+  Grid step size in time [ns]
 T_STEPS::
   Number of steps in time. It is an error if `T_STEPS` is non-integer or less than 1.
 

@@ -1652,16 +1652,30 @@ This enables drift spaces and placement of overlapping elements.
 
 END_POSITION_X::
   x position of the next element start in the coordinate system of the
-  preceding element [mm].
+  preceding element [m].
 END_POSITION_Y::
   y position of the next element start in the coordinate system of the
-  preceding element [mm].
+  preceding element [m].
 END_NORMAL_X::
   x component of the normal vector defining the placement of the next
-  element in the coordinate system of the preceding element.
+  element in the coordinate system of the preceding element [m].
 END_NORMAL_Y::
   y component of the normal vector defining the placement of the next
-  element in the coordinate system of the preceding element.
+  element in the coordinate system of the preceding element [m].
+
+[[sec.elements.local-cylindrical-offset]]
+==== Local Cylindrical Offset
+
+The `LOCAL_CYLINDRICAL_OFFSET` enables the user to place an object at an
+arbitrary position in the coordinate system of the preceding element in cylindrical coordinates.
+This enables drift spaces and placement of overlapping elements.
+
+THETA_IN::
+  Angle between the previous element and the displacement vector [rad].
+THETA_OUT::
+  Angle between the displacement vector and the next element [rad].
+LENGTH::
+  Length of the offset [m].
 
 [[sec.elements.source]]
 === Source
@@ -1794,13 +1808,13 @@ AMPLITUDE_MODEL::
   latexmath:[E_0] [MV/m].
 PHASE_MODEL::
   String naming the time dependence model of the cavity phase offset,
-  latexmath:[\phi].
+  latexmath:[\phi] [rad].
 WIDTH::
-  Full width of the cavity [mm].
+  Full width of the cavity [m].
 HEIGHT::
-  Full height of the cavity [mm].
+  Full height of the cavity [m].
 L::
-  Full length of the cavity [mm].
+  Full length of the cavity [m].
 
 The field inside the cavity is given by
 [latexmath]
