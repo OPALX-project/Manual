@@ -573,7 +573,7 @@ notation.)
 
 To generate Gaussian initial distribution with dispersion, first we
 generate the uncorrelated Gaussian inputs matrix
-latexmath:[R=(R1,...,R_n)]. The mean of latexmath:[R_i] is
+latexmath:[R=(R_1,...,R_n)]. The mean of latexmath:[R_i] is
 latexmath:[0] and the standard deviation squared is 1. Then we
 correlate latexmath:[R]. The correlation coefficient matrix
 latexmath:[\sigma] in latexmath:[x], latexmath:[p_x],
@@ -583,10 +583,10 @@ latexmath:[z], latexmath:[p_z] phase space reads:
 ++++
 \sigma= \left[
 \begin{array}{cccc}
-1    &c_x  &r51    &r61\\
-c_x  &1    &r52    &r62\\
-r51  &r52  &1      &c_t\\
-r61  &r62  &c_t    &1
+1    &c_x  &R51    &R61\\
+c_x  &1    &R52    &R62\\
+R51  &R52  &1      &c_t\\
+R61  &R62  &c_t    &1
 \end{array}
 \right]
 ++++
