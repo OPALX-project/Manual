@@ -1852,7 +1852,7 @@ polynomial time dependence of parameters is given below:
 
 [[sec.elements.variable-rf-cavity-fringe-field]]
 ==== Fringe Field
-It is possible to model a soft-edged RF cavity with time dependent parameters using the `VARIABLE_RF_CAVITY_FRINGE_FIELD` element.  `VARIABLE_RF_CAVITY_FRINGE_FIELD` must be placed using the `RingDefinition` element.
+It is possible to model a soft-edged RF cavity with time dependent parameters using the `VARIABLE_RF_CAVITY_FRINGE_FIELD` element. This will place a full cavity including the field body and fringe fields.  `VARIABLE_RF_CAVITY_FRINGE_FIELD` must be placed using the `RingDefinition` element.
 
 FREQUENCY_MODEL::
   String naming the time dependence model of the cavity frequency,
