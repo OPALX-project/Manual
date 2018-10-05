@@ -1794,13 +1794,13 @@ AMPLITUDE_MODEL::
   latexmath:[E_0] [MV/m].
 PHASE_MODEL::
   String naming the time dependence model of the cavity phase offset,
-  latexmath:[\phi].
+  latexmath:[\phi] [rad].
 WIDTH::
-  Full width of the cavity [mm].
+  Full width of the cavity [m].
 HEIGHT::
-  Full height of the cavity [mm].
+  Full height of the cavity [m].
 L::
-  Full length of the cavity [mm].
+  Full length of the cavity [m].
 
 The field inside the cavity is given by
 [latexmath]
@@ -1835,6 +1835,34 @@ g(t) = p_0 + p_1 t + p_2 t^2 + p_3 t^3.
 An example of a Variable Frequency RF cavity of cyclotron with
 polynomial time dependence of parameters is given below:
 
+[[sec.elements.variable-rf-cavity-fringe-field]]
+==== Fringe Field
+It is possible to model a soft-edged RF cavity with time dependent parameters using the `VARIABLE_RF_CAVITY_FRINGE_FIELD` element.  `VARIABLE_RF_CAVITY_FRINGE_FIELD` must be placed using the `RingDefinition` element.
+
+FREQUENCY_MODEL::
+  String naming the time dependence model of the cavity frequency,
+  latexmath:[f] [MHz].
+AMPLITUDE_MODEL::
+  String naming the time dependence model of the cavity amplitude,
+  latexmath:[E_0] [MV/m].
+PHASE_MODEL::
+  String naming the time dependence model of the cavity phase offset,
+  latexmath:[\phi] [rad].
+WIDTH::
+  Full width of the cavity [m].
+HEIGHT::
+  Full height of the cavity [m].
+L::
+  Full length of the cavity bounding box [m].
+CENTRE_LENGTH::
+  Length of the cavity field flat top [m].
+END_LENGTH::
+  E-fold Length of the cavity field ends [m].
+CAVITY_CENTRE::
+  Position of the centre of the cavity relative to the start [m].
+MAX_ORDER::
+  Maximum power in vertical coordinate z to which the field will be evaluated.
+
 ....
 REAL phi=2.*PI*0.25;
 
@@ -1843,12 +1871,16 @@ REAL rf_p1=9.02542e-10;
 REAL rf_p2=-1.96663e-16;
 REAL rf_p3=2.45909e-23;
 
-RF_FREQUENCY: POLYNOMIAL_TIME_DEPENDENCE, P0=rf_p0, P1=rf_p1, P2=rf_p2, P3=rf_p3;
+RF_FREQUENCY: POLYNOMIAL_TIME_DEPENDENCE, P0=rf_p0, P1=rf_p1,   P2=rf_p2, P3=rf_p3;
 RF_AMPLITUDE: POLYNOMIAL_TIME_DEPENDENCE, P0=1.0;
 RF_PHASE: POLYNOMIAL_TIME_DEPENDENCE, P0=phi;
 
-RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
-           FREQUENCY_MODEL="RF_FREQUENCY", L=100., HEIGHT=200., WIDTH=2000.;
+HARD_RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
+           FREQUENCY_MODEL="RF_FREQUENCY", L=0.100, HEIGHT=0.200, WIDTH=2.000;
+
+SOFT_RF_CAVITY: VARIABLE_RF_CAVITY_FRINGE_FIELD, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
+           FREQUENCY_MODEL="RF_FREQUENCY", L=0.200, HEIGHT=0.200, WIDTH=2.000
+           CENTRE_LENGTH=0.1, END_LENGTH=0.01, CAVITY_CENTRE=0.1, MAX_ORDER=4;
 ....
 
 [[sec.elements.travelingwave]]
