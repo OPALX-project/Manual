@@ -1457,6 +1457,8 @@ RFFREQ::
   latexmath:[f_{rf}] / latexmath:[h].
 FMAPFN::
   File name for the magnetic field map.
+BSCALE:
+  Scale factor for the magnetic field map.
 SYMMETRY::
   Defines symmetrical fold number of the B field map data.
 RINIT::
@@ -1498,18 +1500,18 @@ ring: Cyclotron, TYPE="RING", CYHARMON=6, PHIINIT=0.0,
 ....
 
 If TYPE is set to BANDRF, the 3D electric field map of RF cavity will be
-read from external h5part file and 4 extra arguments need to specified:
+read from external h5part file and the following extra arguments need to specified:
 
 RFMAPFN::
-  The file name for the electric field map in h5part binary format.
+  The file name(s) for the electric field map(s) in h5part binary format.
 RFPHI::
-  The Initial phase of the electric field map (rad)
+  The initial phase(s) of the electric field map(s) (rad)
+RFFREQ::
+  The frequencies of the electric field maps. 0 indicates a constant field.
 ESCALE::
-  The maximal value of the electric field map (MV/m)
+  The scale factor(s) for the electric field map(s)
 SUPERPOSE::
-  An option whether all of the electric field maps are superposed, The
-  is valid when more than one electric field map is read. (default:
-  true)
+  An option whether the electric field map(s) is superposed (see also below).
 
 Example for single electric field map:
 
@@ -1529,14 +1531,14 @@ COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT=-71.0,
 PRINIT=pr0, RINIT=r0 , SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
 RFPHI= {Pi,0,Pi,0}, RFFREQ={72.0,72.0,72.0,72.0},
 RFMAPFN={"e1.h5part","e2.h5part","e3.h5part","e4.h5part"},
-ESCALE={1.06E-6, 3.96E-6,1.3E-6,1.E-6}, SUPERPOSE=true;
+ESCALE={1.06E-6, 3.96E-6,1.3E-6,1.E-6}, SUPERPOSE={true,false,false,true};
 ....
 
-In this example SUPERPOSE is set to true. Therefore, if a particle
-locates in multiple field regions, all the field maps are superposed. if
-SUPERPOSE is set to false, then only one field map, which has highest
-priority, is used to do interpolation for the particle tracking. The
-priority ranking is decided by their sequence in the list of RFMAPFN
+If SUPERPOSE is set to true and if a particle is located in the field region,
+the field is always applied.
+If SUPERPOSE is set to false, then only one field map with SUPERPOSE false is applied,
+the one which has highest priority, is used to do interpolation for the particle tracking.
+The priority ranking is decided by their sequence in the list of RFMAPFN
 argument, i.e., "e1.h5part" has the highest priority and "e4.h5part"
 has the lowest priority.
 
