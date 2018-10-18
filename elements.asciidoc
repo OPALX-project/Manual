@@ -2341,8 +2341,6 @@ YSTART::
   The y coordinate of the start point. [mm]
 YEND::
   The y coordinate of the end point. [mm]
-WIDTH::
-  The width of the probe, NOT used yet.
 STEP::
   The step size of the probe (for histogram and peak finder output). Default: 1 [mm]
 
@@ -2371,7 +2369,7 @@ The corresponding peaks file contains the peaks found in the probe histogram by 
 A stripper element strip the electron(s) from a particle. The particle
 hitting the stripper is recorded in the file, which contains the time,
 coordinates and momentum of the particle at the moment it hit the
-stripper. The charge and mass are changed. Its has the same geometry as
+stripper. The charge and mass are changed. It has the same geometry as
 the PROBE element. Please note that the stripping physics is not
 included yet.
 
@@ -2385,8 +2383,6 @@ YSTART::
   The y coordinate of the start point. [mm]
 YEND::
   The y coordinate of the end point. [mm]
-WIDTH::
-  The width of the stripper, NOT used yet.
 OPCHARGE::
   Charge number of the out-coming particle. Negative value represents
   negative charge.
