@@ -37,9 +37,10 @@ It allows *random* (RASTER=false) and *raster* mode.
 | Attribute     | Description
 | RASTER        | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
 | INPUT         | Path to input file.
-| OUTPUT        | Name used in output file generation.
-| OUTDIR        | Name of directory used to run and store generation output files.
+| OUTPUT        | Name used for the output of the result.
+| OUTDIR        | Name of directory where the simulations are run and the result file is stored.
 | DVARS         | List of design variables to be used.
+| OBJECTIVES    | List of objectives which are evaluated for each simulation. The results are stored to the result file
 | SAMPLINGS     | List of sample methods to be used.
 | NUM_MASTERS   | Number of master nodes (currently only 1 master supported).
 | NUM_COWORKERS | Number processors per worker.
