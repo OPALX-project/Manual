@@ -2239,8 +2239,8 @@ In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided
 
 Only `CCOLLIMATOR` is available for _OPAL-cycl_. This element is radial
 rectangular collimator which can be used to collimate the radial tail
-particles. So when a particle hits this collimator, it will be absorbed
-or scattered, the algorithm is based on the Monte Carlo method. Please
+particles. When a particle hits this collimator, it will be absorbed
+or scattered. The algorithm is based on the Monte Carlo method. Please
 note when a particle is scattered, it will not be recorded as the lost
 particle. If this particle leaves the bunch, it will be removed during
 the integration afterwards, so as to maintain the accuracy of space
@@ -2255,10 +2255,10 @@ YSTART::
 YEND::
   The y coordinate of the end point. [mm]
 ZSTART::
-  The vertical coordinate of the start point [mm]. Default value is
+  The minimum vertical coordinate [mm]. Default value is
   -100mm.
 ZEND::
-  The vertical coordinate of the end point. [mm]. Default value is
+  The maximum vertical coordinate. [mm]. Default value is
   -100mm.
 WIDTH::
   The width of the collimator. [mm]
