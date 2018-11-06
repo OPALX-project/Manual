@@ -12,9 +12,6 @@ endif::[]
 [[chp.opalmap]]
 == _OPAL-map_
 
-**_OPAL-map_ is work in progress.**
-
-
 [[sec.opalmap.introduction]]
 === Introduction
 
