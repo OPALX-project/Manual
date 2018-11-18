@@ -196,7 +196,7 @@ smooth numerically, but can be inaccurate far from the field axis.) Only
 a few (user specified) terms from the Fourier series are used.
 3.  Enge function <<bib.enge_fieldmaps>> field map. This type of field map uses Enge
 functions to describe the fringe fields of a magnet. Currently, this is
-only used for `RBEND` and `SBEND` elements see 
+only used for `RBEND` and `SBEND` elements see
 link:elements#sec.elements.RBend[RBend (_OPAL-t_)] and link:elements#sec.elements.SBend[SBend (_OPAL-t_)].
 
 It is important to note that in all cases, the input field map will be
@@ -678,6 +678,18 @@ field between _zbegin_exit_ and _zend_exit_ using the indicated exit
 origin. The parameters for these two Enge functions are subsequently
 entered into a `1DProfile1` field map, as described below.
 
+When selecting the Enge coefficients, care must be taken to ensure that
+the polynomial degree is odd and that the coefficient for the highest
+degree is positive. This ensures that the value of the function inside
+the dipole is 1 and converges to 0 far outside the dipole. If these two
+conditions are not met, then the value of the function increases again
+from some point onwards. In the Figure <<fig_Enge_poly>> the effect of
+a negative coefficient for the highest degree in the original data.
+
+[#fig_Enge_poly]
+.Effect of a negative coefficient for the highest degree in the original data.
+image::./figures/Fieldmaps/Enge_poly.png[scaledwidth=16cm,width=700]
+
 Currently, `1DProfile1` field maps are only implemented for `RBEND` and
 `SBEND` elements sees link:elements#sec.elements.RBend[RBend (_OPAL-t_)], link:elements#sec.elements.SBend[SBend (_OPAL-t_)] and link:elements#sec.elements.opaltrbendsbendfields[Bend Fields from 1D Field Maps (_OPAL-t_)].
 
@@ -761,7 +773,7 @@ Parameter 3 |Place Holder
 |=======================================================================
 
 [#fig_rbendengetype1]
-.Illustration of a rectangular bend (`RBEND`, see link:elements#sec.elements.RBend[RBend (_OPAL-t_)] showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}] 
+.Illustration of a rectangular bend (`RBEND`, see link:elements#sec.elements.RBend[RBend (_OPAL-t_)] showing the entrance and exit fringe field regions. latexmath:[\Delta_{1}] is the perpendicular distance in front of the entrance edge of the magnet where the magnet fringe fields are non-negligible. latexmath:[\Delta_{2}] is the perpendicular distance behind the entrance edge of the magnet where the entrance Enge function stops being used to calculate the magnet field. The reference trajectory entrance point is indicated by latexmath:[O_{entrance}]. latexmath:[\Delta_{3}] is the perpendicular distance in front of the exit edge of the magnet where the exit Enge function starts being used to calculate the magnet field. (In the region between latexmath:[\Delta_{2}] and latexmath:[\Delta_{3}] the field of the magnet is a constant value.) latexmath:[\Delta_{4}] is the perpendicular distance after the exit edge of the magnet where the magnet fringe fields are non-negligible. The reference trajectory exit point is indicated by latexmath:[O_{exit}]
 image::./figures/Fieldmaps/RBendType1.png[scaledwidth=12cm]
 
 [#fig_sbendengetype1]
