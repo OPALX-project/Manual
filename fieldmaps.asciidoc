@@ -678,6 +678,8 @@ field between _zbegin_exit_ and _zend_exit_ using the indicated exit
 origin. The parameters for these two Enge functions are subsequently
 entered into a `1DProfile1` field map, as described below.
 
+When selecting the Enge coefficients, care must be taken to ensure that the polynomial degree is odd and that the coefficient for the highest degree is positive. This ensures that the value of the function inside the dipole is 1 and converges to 0 far outside the dipole. If these two conditions are not met, then the value of the function increases again from some point onwards. 
+
 Currently, `1DProfile1` field maps are only implemented for `RBEND` and
 `SBEND` elements sees link:elements#sec.elements.RBend[RBend (_OPAL-t_)], link:elements#sec.elements.SBend[SBend (_OPAL-t_)] and link:elements#sec.elements.opaltrbendsbendfields[Bend Fields from 1D Field Maps (_OPAL-t_)].
 
