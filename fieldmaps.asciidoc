@@ -684,7 +684,7 @@ degree is positive. This ensures that the value of the function inside
 the dipole is 1 and converges to 0 far outside the dipole. If these two
 conditions are not met, then the value of the function increases again
 from some point onwards. In the Figure <<fig_Enge_poly>> the effect of
-a negative coefficient for the highest degree in the original data.
+a negative coefficient for the highest degree in the original data is shown. To improve the fieldmap it was chosen some point from which on the polynomial was replaced by a polynomial of the same degree but all coefficients except for the highest order and the constant value are zero. The two remaining coefficients were chosen such that the values of the two polynomials and their derivatives are equal at the connection.
 
 [#fig_Enge_poly]
 .Effect of a negative coefficient for the highest degree in the original data.
