@@ -65,7 +65,7 @@ The two sampling methods differ in the number of samples since with `RASTER = TR
 | Attribute | Description
 | VARIABLE  | Name of the design variable.
 | TYPE      | Sampling method (see next section).
-| RANDOM    | Boolean to control whether sampling mode is random or sequential. 
+| RANDOM    | Boolean to control whether sampling mode is random or sequential. Default is sequential. 
 | SEED      | Seed for random sampling (default: 42).
 | FNAME     | File to read the samples from.
 | N         | Number of samples per this design variable. In case of random mode, the
