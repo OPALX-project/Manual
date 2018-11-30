@@ -96,7 +96,10 @@ minimum value over all design variables is used.
                       variable as latexmath:[10\;\sigma].
                       In random mode: Gaussian random sampling of floats. The upper and lower bound
                       are the latexmath:[\pm 5\; \sigma] limits of the distribution.
-| LATIN_HYPERCUBE   | In random mode only.
+| LATIN_HYPERCUBE   | In random mode only. Each dimension is discretized into N
+                      (i.e. number of samples) equally distant bins. In order to sample a bin
+                      in every dimension is randomly selected where the same bin in a dimension
+                      occurs only once (exclusive sampling).
 |=======================================================================
 
 === Example Input File
