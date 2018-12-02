@@ -47,6 +47,8 @@ It allows *random* (RASTER=false) and *raster* mode.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
 | DISTDIR       | Directory where distributions are stored (optional).
+| KEEP          | List of file extensions (e.g. STAT, H5) that shouldn't be deleted.
+                  If nothing is specified, all files are kept.
 |=======================================================================
 
 The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
