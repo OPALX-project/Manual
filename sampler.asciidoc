@@ -42,7 +42,7 @@ It allows *random* (RASTER=false) and *raster* mode.
 | DVARS         | List of design variables to be used.
 | OBJECTIVES    | List of objectives which are evaluated for each simulation. The results are stored to the result file
 | SAMPLINGS     | List of sample methods to be used.
-| NUM_MASTERS   | Number of master nodes (currently only 1 master supported).
+| NUM_MASTERS   | Number of master nodes.
 | NUM_COWORKERS | Number processors per worker.
 | TEMPLATEDIR   | Directory where templates are stored.
 | FIELDMAPDIR   | Directory where field maps are stored.
