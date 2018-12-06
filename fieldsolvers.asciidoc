@@ -337,7 +337,7 @@ grid
 |`MY` |Number of grid points in latexmath:[y] specifying rectangular
 grid
 
-|`MZ` |Number of grid points in latexmath:[z] specifying rectangular
+|`MT` |Number of grid points in latexmath:[z] specifying rectangular
 grid
 
 |`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]
@@ -366,7 +366,7 @@ grid
 `AMR_MAXLEVEL` is zero)
 
 |`AMR_MAXGRID` |Maximum grid size. It has to be smaller than `MX`, `MY`,
-`MZ` when running in parallel
+`MT` when running in parallel
 
 |`AMR_TAGGING` |Mesh-refinement strategy
 |=======================================================================
