@@ -337,7 +337,7 @@ grid
 |`MY` |Number of grid points in latexmath:[y] specifying rectangular
 grid
 
-|`MZ` |Number of grid points in latexmath:[z] specifying rectangular
+|`MT` |Number of grid points in latexmath:[z] specifying rectangular
 grid
 
 |`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]
