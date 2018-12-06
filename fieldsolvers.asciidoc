@@ -366,7 +366,7 @@ grid
 `AMR_MAXLEVEL` is zero)
 
 |`AMR_MAXGRID` |Maximum grid size. It has to be smaller than `MX`, `MY`,
-`MZ` when running in parallel
+`MT` when running in parallel
 
 |`AMR_TAGGING` |Mesh-refinement strategy
 |=======================================================================
