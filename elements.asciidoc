@@ -2262,6 +2262,8 @@ ZEND::
   -100mm.
 WIDTH::
   The width of the collimator. [mm]
+OUTFN::
+  The file name into which the collimator should write the collected data.
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element. Collimator
   physics is only a kind of particlematterinteraction. It can be applied
@@ -2313,6 +2315,8 @@ YEND::
   The y coordinate of the end point. [mm]
 WIDTH::
   The width of the septum. [mm]
+OUTFN::
+  The file name into which the septum should write the collected data.
 
 .Septum
 image::figures/Elements/septum.png[scaledwidth=10cm]
@@ -2343,6 +2347,8 @@ YEND::
   The y coordinate of the end point. [mm]
 STEP::
   The step size of the probe (for histogram and peak finder output). Default: 1 [mm]
+OUTFN::
+  The file name into which the probe should write the collected data.
 
 .Probe
 image::figures/Elements/probe.png[scaledwidth=10cm]
@@ -2395,6 +2401,8 @@ STOP::
   If STOP is true, the particle is stopped and deleted from the
   simulation; Otherwise, the out-coming particle continues to be tracked
   along the extraction path.
+OUTFN::
+  The file name into which the stripper should write the collected data.
 
 Example: latexmath:[H_2^+] particle stripping
 
