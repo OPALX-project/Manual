@@ -1117,36 +1117,16 @@ a grid in (latexmath:[r, z, \theta]) with the primary direction
 corresponding to the azimuthal direction, secondary to the vertical
 direction and tertiary to the radial direction.
 
-Below two examples of a `SBEND3D` which loads a field map file named “90degree_Dipole_Magnet.out” defining a hard edge model of 90 degree dipole magnet with homogenous magnetic field. The first 8 lines are presumed to be header material and are ignored. The first 8 lines in the field map are ignored. Positions have units of m and fields units of Tesla. The corresponding 3D magnetic field map is shown in the following figure <<id_sbend3d1>>. It is shown in Cartesian coordinate system (x, y, z). A horizontal cross section of the 3D magnetic field map when z = 0 is also shown.
+Below two examples of a `SBEND3D` which loads a field map file named “90degree_Dipole_Magnet.out” defining a hard edge model of 90 degree dipole magnet with homogenous magnetic field. The first 8 lines are presumed to be header material and are ignored. The first 8 lines in the field map are ignored. Positions have units of m and fields units of Tesla. The corresponding 3D magnetic field map is shown in the following figure in the Cartesian coordinate system (x, y, z). A horizontal cross section of the 3D magnetic field map when z = 0 is also shown.
 
 ....
 Dipole: SBEND3D, FMAPFN="90degree_Dipole_Magnet.out", LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;
 ....
 
-The first few links of the field map _fdf-tosca-field-map.table_:
+The first few lines of the field map file are as follows:
 
 ....
-      422280      422280      422280           1
- 1 X [LENGU]
- 2 Y [LENGU]
- 3 Z [LENGU]
- 4 BX [FLUXU]
- 5 BY [FLUXU]
- 6 BZ [FLUXU]
- 0
- 194.01470 0.0000000 80.363520 0.68275932346E-07 -5.3752492577 0.28280706805E-07
- 194.36351 0.0000000 79.516210 0.42525693524E-07 -5.3827955117 0.17681348191E-07
- 194.70861 0.0000000 78.667380 0.19766168358E-07 -5.4350026348 0.82540823165E-08
-....
-
-....
-Dipole:SBEND3D,FMAPFN="90degree_Dipole_Magnet.out",LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;
-....
-
-The first few links of the field map _90degree_Dipole_Magnet.out_:
-
-....
-    4550000 4550000 4550000 1
+	4550000	4550000	4550000	1
 X [LENGTH_UNITS]
 Z [LENGTH_UNITS]
 Y [LENGTH_UNITS]
@@ -1157,12 +1137,11 @@ BY [FIELD_UNITS]
 4.3586435e-01   5.0000000e-02   1.2803431e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
 4.2691532e-01   5.0000000e-02   1.2833548e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
 4.1794548e-01   5.0000000e-02   1.2863039e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
-....
+...
 
 This is a restricted feature: _OPAL-cycl_.
 
 [#fig_sbend3d1]
-[[id_sbend3d1]] 
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
 image::figures/Elements/sbend3d.png[scaledwidth=18cm]
 
