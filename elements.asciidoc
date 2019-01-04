@@ -1105,25 +1105,22 @@ FIELD_UNITS::
   etc).
 
 Field maps are defined using Cartesian coordinates but in a polar
-geometry with the following restrictions/conventions:
+geometry. The following conventions have to be fulfilled:
 
 1.  3D Field maps have to be generated in the vertical direction (z
-coordinate in _OPAL-cycl_) from z = 0 upwards. It cannot be generated
+coordinate in _OPAL-cycl_) from z = 0 upwards. Maps cannot be generated
 symmetrically about z = 0 towards negative z values.
-2.  Field map file must be in the form with columns ordered as follows:
+2.  The field map file must be in the form with columns ordered as follows:
 [latexmath:[x, z, y, B_{x}, B_{z}, B_{y}]].
 3.  Grid points of the position and field strength have to be written on
 a grid in (latexmath:[r, z, \theta]) with the primary direction
 corresponding to the azimuthal direction, secondary to the vertical
 direction and tertiary to the radial direction.
 
-Below two examples of a `SBEND3D` which loads a field maps with
-different units. The `triplet` example has units of cm and fields units
-of Gauss, where the `Dipole` example (<<fig_sbend3d1>>) uses meter and
-Tesla. The first 8 lines in the field map are ignored.
+Below two examples of a `SBEND3D` which loads a field map file named “90degree_Dipole_Magnet.out” defining a hard edge model of 90 degree dipole magnet with homogenous magnetic field. The first 8 lines are presumed to be header material and are ignored. The first 8 lines in the field map are ignored. Positions have units of m and fields units of Tesla. The corresponding 3D magnetic field map is shown in the following figure <<id_sbend3d1>>. It is shown in Cartesian coordinate system (x, y, z). A horizontal cross section of the 3D magnetic field map when z = 0 is also shown.
 
 ....
-triplet: SBEND3D, FMAPFN="fdf-tosca-field-map.table", LENGTH_UNITS=10., FIELD_UNITS=-1e-4;
+Dipole: SBEND3D, FMAPFN="90degree_Dipole_Magnet.out", LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;
 ....
 
 The first few links of the field map _fdf-tosca-field-map.table_:
@@ -1165,6 +1162,7 @@ BY [FIELD_UNITS]
 This is a restricted feature: _OPAL-cycl_.
 
 [#fig_sbend3d1]
+[[id_sbend3d1]] 
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
 image::figures/Elements/sbend3d.png[scaledwidth=18cm]
 
