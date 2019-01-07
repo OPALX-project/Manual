@@ -121,7 +121,7 @@ image::figures/optimiser/pareto-defs.png[scaledwidth=18cm]
 [[sec.optimiser.opt-MOGA-theory]]
 === MOGA Theory
 
-Here some facts on “What is the tradeoff between population size and the number of generations in genetic algorithms":
+Some links to "What is the tradeoff between population size and the number of generations in genetic algorithms":
 
 1. https://cstheory.stackexchange.com/questions/5156/what-is-the-tradeoff-between-population-size-and-the-number-of-generations-in-ge
 
@@ -194,7 +194,8 @@ The OPTIMIZE command initiates optimization.
 | NUM_COWORKERS             | Number processors per worker.
 | SELECTOR                  | Path of the selector.
 | DUMP_DAT                  | Dump old generation data format with frequency.
-| DUMP_FREQ                 | Dump old generation data format with frequency.
+| DUMP_FREQ                 | Dump generation data format with frequency.
+| DUMP_OFFSPRING            | Dump offspring (instead of parent population), default: true.
 | NUM_IND_GEN               | Number of individuals in a generation.
 | MAXGENERATIONS            | Number of generations to run.
 | EPSILON                   | Tolerance of hypervolume criteria, default: 0.001.
