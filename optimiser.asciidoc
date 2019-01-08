@@ -193,8 +193,8 @@ The OPTIMIZE command initiates optimization.
 | NUM_MASTERS               | Number of master nodes.
 | NUM_COWORKERS             | Number processors per worker.
 | SELECTOR                  | Path of the selector.
-| DUMP_DAT                  | Dump old generation data format with frequency.
-| DUMP_FREQ                 | Dump generation data format with frequency.
+| DUMP_DAT                  | Dump old generation data format with frequency, default: false.
+| DUMP_FREQ                 | Dump generation data format with frequency, default: 1
 | DUMP_OFFSPRING            | Dump offspring (instead of parent population), default: true.
 | NUM_IND_GEN               | Number of individuals in a generation.
 | MAXGENERATIONS            | Number of generations to run.
@@ -207,10 +207,10 @@ The OPTIMIZE command initiates optimization.
 | GENE_MUTATION_PROBABILITY | Mutation probability of individual gene, default: 0.5.
 | MUTATION_PROBABILITY      | Mutation probability of genome, default: 0.5.
 | RECOMBINATION_PROBABILITY | Probability for genes to recombine, default: 0.5.
-| SIMBIN_CROSSOVER_NU       | Simulated binary crossover, default: 2.0
 | INITIAL_OPTIMIZATION      | Optimize speed of first generation creation (useful when number of infeasible solutions large), default: false
 | MUTATION                  | Mutation of an individual ("OneBit" (single gene), "IndependentBit" (default, multiple genes))
 | CROSSOVER                 | Method of child generation based on two individuals ("Blend" (default), "NaiveOnePoint", "NaiveUniform" or "SimulatedBinary")
+| SIMBIN_CROSSOVER_NU       | Simulated binary crossover parameter latexmath:[\nu], default: 2.0
 | SIMTMPDIR                 | Directory where simulations are run.
 | TEMPLATEDIR               | Directory where templates are stored.
 | FIELDMAPDIR               | Directory where field maps are stored.
