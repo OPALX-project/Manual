@@ -1471,7 +1471,7 @@ Example:
 
 ....
 ring: Cyclotron, TYPE="RING", CYHARMON=6, PHIINIT=0.0,
-      PRINIT=-0.000240, RINIT=2131.4 , SYMMETRY=8.0,
+      PRINIT=-0.000240, RINIT=2131.4, SYMMETRY=8.0,
       RFFREQ=50.650, FMAPFN="s03av.nar",
       MAXZ=10, MINZ=-10, MINR=0, MAXR=2500;
 ....
@@ -1493,8 +1493,8 @@ SUPERPOSE::
 Example for single electric field map:
 
 ....
-COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT= -71.0,
-PRINIT=pr0, RINIT= r0 , SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
+COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT=-71.0,
+PRINIT=pr0, RINIT=r0, SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
 RFPHI=Pi, RFFREQ=72.0,  RFMAPFN="efield.h5part",
 ESCALE=1.06E-6;
 ....
@@ -1505,8 +1505,8 @@ Example for multiple RF field maps:
 
 ....
 COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT=-71.0,
-PRINIT=pr0, RINIT=r0 , SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
-RFPHI= {Pi,0,Pi,0}, RFFREQ={72.0,72.0,72.0,72.0},
+PRINIT=pr0, RINIT=r0, SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
+RFPHI={Pi,0,Pi,0}, RFFREQ={72.0,72.0,72.0,72.0},
 RFMAPFN={"e1.h5part","e2.h5part","e3.h5part","e4.h5part"},
 ESCALE={1.06E-6, 3.96E-6,1.3E-6,1.E-6}, SUPERPOSE={true,false,false,true};
 ....
@@ -2367,16 +2367,16 @@ YSTART::
 YEND::
   The y coordinate of the end point. [mm]
 OPCHARGE::
-  Charge number of the out-coming particle. Negative value represents
+  Charge number of the outcoming particle. Negative value represents
   negative charge.
 OPMASS::
-  Mass of the out-coming particles. [latexmath:[\mathrm{GeV/c^2}]]
+  Mass of the outcoming particles. [latexmath:[\mathrm{GeV/c^2}]]
 OPYIELD::
-  Yield of the out-coming particle (the outcome particle number per
-  income particle) , the default value is 1.
+  Yield of the outcoming particle (the number of outcoming particles per
+  incoming particle), the default value is 1.
 STOP::
   If STOP is true, the particle is stopped and deleted from the
-  simulation; Otherwise, the out-coming particle continues to be tracked
+  simulation; Otherwise, the outcoming particle continues to be tracked
   along the extraction path.
 OUTFN::
   The file name into which the stripper should write the collected data.

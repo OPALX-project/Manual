@@ -192,7 +192,6 @@ The OPTIMIZE command initiates optimization.
 | INITIALPOPULATION         | Size of the initial population.
 | NUM_MASTERS               | Number of master nodes.
 | NUM_COWORKERS             | Number processors per worker.
-| SELECTOR                  | Path of the selector.
 | DUMP_DAT                  | Dump old generation data format with frequency, default: false.
 | DUMP_FREQ                 | Dump generation data format with frequency, default: 1
 | DUMP_OFFSPRING            | Dump offspring (instead of parent population), default: true.
@@ -346,7 +345,7 @@ goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=5, MAXGENERATIONS=3,
-          NUM_IND_GEN=3, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0,
+          NUM_IND_GEN=3, MUTATION_PROBABILITY=0.43,
           NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir",
           TEMPLATEDIR="tmpl", FIELDMAPDIR="fieldmaps", OUTPUT="optLinac",
           OUTDIR="results";
