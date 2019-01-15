@@ -1732,25 +1732,24 @@ Using a RF Cavity (standing wave) in _OPAL-cycl_ mode, the following
 parameters are defined:
 
 FMAPFN::
-  Defines name of file which stores normalized voltage amplitude curve
+  Name of file which stores normalized voltage amplitude curve
   of cavity gap in ASCII format. (See data format in
   link:opalcycl#sec.opalcycl.rffieldmap[RF field])
 VOLT::
-  Sets peak value of voltage amplitude curve in MV.
+  Peak value of voltage amplitude curve in MV.
 TYPE::
   Defines Cavity type, SINGLEGAP represents cyclotron type cavity.
 FREQ::
-  Sets the frequency of the RF Cavity in units of MHz.
+  Frequency of the RF Cavity in units of MHz.
 RMIN::
-  Sets the radius of the cavity inner edge in mm.
+  Radius of the cavity inner edge in mm.
 RMAX::
-  Sets the radius of the cavity outer edge in mm.
+  Radius of the cavity outer edge in mm.
 ANGLE::
-  Sets the azimuthal position of the cavity in global frame in degree.
+  Azimuthal position of the cavity in global frame in degree.
 PDIS::
-  Set shift distance of cavity gap from center of cyclotron in mm. If
-  its value is positive, the shift direction is clockwise, namely, shift
-  towards the smaller azimuthal angle.
+  Perpendicular distance (impact parameter) of cavity from center of cyclotron in mm.
+  If its value is positive, the radius increases clockwise (larger radius has smaller azimuthal angle).
 GAPWIDTH::
   Set gap width of cavity in mm.
 PHI0::
