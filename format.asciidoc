@@ -596,7 +596,7 @@ occur as an operand in another expression.
 
 Many _OPAL_ commands allow for the possibility to process or display a
 subset of the elements occurring in a beam line or sequence. This is not
-yet available in: `DOPAL-t` and `DOPAL-cycl`.
+yet available in _OPAL-t_ and _OPAL-cycl_.
 
 [[sec.format.aplace]]
 ==== Element Selection
@@ -709,7 +709,7 @@ S[1]/S[2]::
 [[sec.format.aconstraint]]
 === Constraints
 
-Please note this is not yet available in: `DOPAL-t` and `DOPAL-cycl`.
+Please note this is not yet available in _OPAL-t_ and _OPAL-cycl_.
 
 In matching it is desired to specify equality constraints, as well as
 lower and upper limits for a quantity. _OPAL_ accepts the following form

@@ -168,8 +168,8 @@ DR2:DRIFT, L=DR1->L, TYPE=DRF;
 ....
 
 The length of `DR2` will always be equal to the length of `DR1`. The
-reference system for a drift space is a Cartesian coordinate system This
-is a restricted feature: `DOPAL-cycl`. In _OPAL-t_ drifts are implicitly
+reference system for a drift space is a Cartesian coordinate system. This
+is a restricted feature of _OPAL-t_. In _OPAL-t_ drifts are implicitly
 given, if no field is present.
 
 [[sec.elements.bend]]
@@ -227,7 +227,7 @@ K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
   where latexmath:[R] is the bend radius as defined in <<fig_rbend>>.
-  Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
+  Not supported in _OPAL-t_ any more. Superimpose a `Quadrupole`
   instead.
 E1::
   Entrance edge angle (radians). <<fig_rbend>> shows the definition of
@@ -273,7 +273,7 @@ K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
   where latexmath:[R] is the bend radius as defined in <<fig_rbend>>.
-  Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
+  Not supported in _OPAL-t_ any more. Superimpose a `Quadrupole`
   instead.
 E1::
   Entrance edge angle (radians). <<fig_rbend>> shows the definition of
@@ -330,7 +330,7 @@ K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
   where latexmath:[R] is the bend radius as defined in <<fig_sbend>>.
-  Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
+  Not supported in _OPAL-t_ any more. Superimpose a `Quadrupole`
   instead.
 E1::
   Entrance edge angle (rad). <<fig_sbend>> shows the definition of a
@@ -1139,7 +1139,7 @@ BY [FIELD_UNITS]
 4.1794548e-01   5.0000000e-02   1.2863039e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
 ....
 
-This is a restricted feature: _OPAL-cycl_.
+This is a restricted feature for _OPAL-cycl_.
 
 [#fig_sbend3d1]
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
@@ -1154,7 +1154,7 @@ label:QUADRUPOLE, TYPE=string, APERTURE=real-vector,
 ....
 
 The reference system for a quadrupole is a Cartesian coordinate system
-This is a restricted feature: `DOPAL-cycl`.
+This is a restricted feature for _OPAL-t_.
 
 A `QUADRUPOLE` has the following real attributes:
 
@@ -2019,7 +2019,7 @@ If the attribute `TYPE` is set to `TEMPORAL` then the data of all
 particles are written to the H5hut file when the reference particle hits
 the monitor.
 
-This is a restricted feature: `DOPAL-cycl`.
+This is a restricted feature for _OPAL-t_.
 
 [[sec.elements.collimators]]
 === Collimators
@@ -2277,7 +2277,7 @@ _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] i
 [[sec.elements.septum-opal-cycl]]
 === Septum (_OPAL-cycl_)
 
-This is a restricted feature: `DOPAL-t`. The particles hitting on the
+This is a restricted feature for _OPAL-cycl_. The particles hitting on the
 septum is removed from the bunch. There are 5 parameters to describe a
 septum.
 
