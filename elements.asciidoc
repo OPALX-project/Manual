@@ -1505,7 +1505,7 @@ RFMAPFN::
 RFPHI::
   The Initial phase of the electric field map (rad)
 ESCALE::
-  The maximal value of the electric field map (MV/m)
+  The scale factor(s) for the electric field map(s)
 SUPERPOSE::
   An option whether all of the electric field maps are superposed, The
   is valid when more than one electric field map is read. (default:
