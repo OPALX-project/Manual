@@ -203,11 +203,11 @@ The OPTIMIZE command initiates optimization.
 | CONV_HVOL_PROG            | Converge if change in hypervolume is smaller, default: 0.
 | ONE_PILOT_CONVERGE        | default: false
 | SOL_SYNCH                 | Solution exchange frequency, default: 0.
-| GENE_MUTATION_PROBABILITY | Mutation probability of individual gene, default: 0.5.
-| MUTATION_PROBABILITY      | Mutation probability of genome, default: 0.5.
-| RECOMBINATION_PROBABILITY | Probability for genes to recombine, default: 0.5.
 | INITIAL_OPTIMIZATION      | Optimize speed of first generation creation (useful when number of infeasible solutions large), default: false
-| MUTATION                  | Mutation of an individual ("OneBit" (single gene), "IndependentBit" (default, multiple genes))
+| MUTATION_PROBABILITY      | Mutation probability of individual, default: 0.5.
+| MUTATION                  | Mutation type of an individual ("OneBit" (single gene), "IndependentBit" (default, multiple genes))
+| GENE_MUTATION_PROBABILITY | Mutation probability of single gene (used in "IndependentBit" mutation only), default: 0.5.
+| RECOMBINATION_PROBABILITY | Probability for individuals to combine (crossover), default: 0.5.
 | CROSSOVER                 | Method of child generation based on two individuals ("Blend" (default), "NaiveOnePoint", "NaiveUniform" or "SimulatedBinary")
 | SIMBIN_CROSSOVER_NU       | Simulated binary crossover parameter latexmath:[\nu], default: 2.0
 | SIMTMPDIR                 | Directory where simulations are run.
