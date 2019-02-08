@@ -190,7 +190,7 @@ The OPTIMIZE command initiates optimization.
 | DVARS                     | List of optimization variables to be used.
 | CONSTRAINTS               | List of constraints to be used.
 | INITIALPOPULATION         | Size of the initial population.
-| STARTPOPULATION           | A generation file (JSON format) to be started from (optional). In case the number of individuals of the provided file is lower than INITIALPOPULATION, it creates the remaining individuals randomly within the bounds of the DVARS.\ In case
+| STARTPOPULATION           | A generation file (JSON format) to be started from (optional). In case the number of individuals of the provided file is lower than INITIALPOPULATION, it creates the remaining individuals randomly within the bounds of the DVARS. In case
 the number of individuals is greater it takes the first INITIALPOPULATION individuals.
 | NUM_MASTERS               | Number of master nodes.
 | NUM_COWORKERS             | Number processors per worker.
