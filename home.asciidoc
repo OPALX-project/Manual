@@ -79,8 +79,6 @@ ifdef::env-gitlab[]
 . link:benchmarks[Benchmarks]
 . https://gitlab.psi.ch/OPAL/src/wikis/opaldks[Dynamic Kernel Scheduler (DKS)]
 
-link:fieldsolvers#chp.fieldsolvers[Field Solver]
-
 endif::[]
 
 ifdef::backend-docbook5[]
