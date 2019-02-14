@@ -78,6 +78,9 @@ ifdef::env-gitlab[]
 . link:autophase[Auto-phasing Algorithm]
 . link:benchmarks[Benchmarks]
 . https://gitlab.psi.ch/OPAL/src/wikis/opaldks[Dynamic Kernel Scheduler (DKS)]
+
+link:fieldsolvers#chp.fieldsolvers[Field Solver]
+
 endif::[]
 
 ifdef::backend-docbook5[]
@@ -131,4 +134,3 @@ include::autophase.adoc[]
 
 include::benchmarks.adoc[]
 endif::[]
-
