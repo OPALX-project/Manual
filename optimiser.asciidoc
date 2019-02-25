@@ -216,6 +216,11 @@ the number of individuals is greater it takes the first INITIALPOPULATION indivi
 | TEMPLATEDIR               | Directory where templates are stored.
 | FIELDMAPDIR               | Directory where field maps are stored.
 | DISTDIR                   | Directory where distributions are stored (optional).
+| RESTART_FILE              | H5 file to restart the OPAL simulations from (optional).
+                              Each individual copies the H5 to its simulation directory in
+                              order to avoid overwriting of the original file. This attributes
+                              is used together with RESTART_STEP.
+| RESTART_STEP              | Restart from given H5 step (optional). Used together with RESTART_FILE.
 |=======================================================================
 
 [[sec.optimiser.dvar-command]]

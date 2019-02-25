@@ -50,6 +50,12 @@ It allows *random* (RASTER=false) and *raster* mode.
 | KEEP          | List of file extensions (e.g. STAT, H5) that shouldn't be deleted.
                   If nothing is specified, all files are kept. If objectives are
                   defined and list is empty all files are deleted.
+| RESTART_FILE  | H5 file to restart the OPAL simulations from (optional).
+                  Each individual copies the H5 to its simulation directory
+                  in order to avoid overwriting of the original file. This
+                  attributes is used together with RESTART_STEP.
+| RESTART_STEP  | Restart from given H5 step (optional). Used together
+                  with RESTART_FILE.
 |=======================================================================
 
 The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
