@@ -76,6 +76,7 @@ The two sampling methods differ in the number of samples since with `RASTER = TR
 | TYPE      | Sampling method (see next section).
 | RANDOM    | Boolean to control whether sampling mode is random or sequential. Default is sequential. 
 | SEED      | Seed for random sampling (default: 42).
+| STEP      | Increment for randomized sequences (default: 1)
 | FNAME     | File to read the samples from.
 | N         | Number of samples per this design variable. In case of random mode, the
 minimum value over all design variables is used.
@@ -109,6 +110,12 @@ minimum value over all design variables is used.
                       (i.e. number of samples) equally distant bins. In order to sample a bin
                       in every dimension is randomly selected where the same bin in a dimension
                       occurs only once (exclusive sampling).
+| RANDOM_SEQUENCE_UNIFORM_INT | In random mode only. Similar to UNIFORM_INT in sequence mode but
+                                the values are returned randomly and a value may occur several times
+                                or never. Together with the STEP attribute.
+| RANDOM_SEQUENCE_UNIFORM     | In random mode only. Similar to UNIFORM in sequence mode but
+                                the values are returned randomly and a value may occur several times
+                                or never. Together with the STEP attribute.
 |=======================================================================
 
 === Example Input File
