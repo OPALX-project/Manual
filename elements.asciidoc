@@ -1537,20 +1537,41 @@ A `TRIMCOIL` object can be defined in two ways:
 
 TYPE::
   Type specifies PSI-BFIELD, PSI-PHASE or PSI-BFIELD-MIRRORED trim coil descriptions.
-  The general PSI-BFIELD and PSI-PHASE descriptions are based on a rational function with polynomials in the nominator and the denominator.
+  The general PSI-BFIELD and PSI-PHASE descriptions are based on rational functions with polynomials in the nominator and the denominator.
   The function describes the magnetic field [T] resp. the phase shift as function of the radius [mm].
+  Separate functions can be given for the radial and azimuthal direction.
+  These functions are multiplied together for the function.
+  If a function in a direction is not specified it is the identity 1.
   The PSI-BFIELD-MIRRORED type is described in http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf
 RMIN::
   Inner radius of the trim coil [mm]
 RMAX::
   Outer radius of the trim coil [mm]
+PHIMIN::
+  Minimal azimuth [deg] (default 0) (not for PSI-BFIELD-MIRRORED)
+PHIMAX::
+  Maximal azimuth [deg] (default 360) (not for PSI-BFIELD-MIRRORED)
 BMAX::
-  Maximal B field of the trim coils [T] or maximal phase shift (for PSI-PHASE)
+  Maximal B field of the trim coils [T] (for PSI-BFIELD) or maximal phase shift (for PSI-PHASE)
 COEFNUM::
-  Coefficients of the numerator, first coefficient is zeroth order (not for PSI-BFIELD-MIRRORED)
+  Coefficients of the numerator for the radial direction,
+  first coefficient is zeroth order.
+  If COEFNUMPHI is not specified, the numerator is 1
+  (not for PSI-BFIELD-MIRRORED).
 COEFDENOM::
-  Coefficients of the denominator, first coefficient is zeroth order.
-  If COEFDENOM is not specified, the denominator is 1, and the description will be a normal polynom.
+  Coefficients of the denominator for the radial direction,
+  first coefficient is zeroth order.
+  If COEFDENOM is not specified, the denominator is 1, and the description will be a normal polynom
+  (not for PSI-BFIELD-MIRRORED).
+COEFNUMPHI::
+  Coefficients of the numerator for the azimuthal direction,
+  first coefficient is zeroth order.
+  If COEFNUMPHI is not specified, the numerator is 1.
+  (not for PSI-BFIELD-MIRRORED).
+COEFDENOMPHI::
+  Coefficients of the denominator for the azimuthal direction,
+  first coefficient is zeroth order.
+  If COEFDENOMPHI is not specified, the denominator is 1, and the description will be a normal polynom
   (not for PSI-BFIELD-MIRRORED).
 SLPTC::
   Slopes of the rising edge [1/mm] (for PSI-BFIELD-MIRRORED type only)
