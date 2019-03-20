@@ -1423,7 +1423,7 @@ reference particle, and it has currently the following attributes:
 
 TYPE::
   The data format of field map, Currently the following formats are implemented:
-  CARBONCYCL, CYCIAE, AVFEQ, FFAG, BANDRF and default PSI format. For
+  CARBONCYCL, CYCIAE, AVFEQ, FFA, BANDRF and default PSI format. For
   the details of their data format, please read
   link:opalcycl#sec.opalcycl.fieldmap[Field Maps].
 CYHARMON::
