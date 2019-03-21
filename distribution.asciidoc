@@ -27,7 +27,7 @@ user.
 |<<sec.distribution.binomialdisttype,`BINOMIAL`>> |Initial distribution generated using binomial
 distribution(s).
 
-|<<sec.distribution.matchedgausstype,`MATCHEDGAUSS`>> | Initial distribution generated using matched Gaussian distribution(s).
+|<<sec.distribution.gaussmatchedtype,`GAUSSMATCHED`>> | Initial distribution generated using matched Gaussian distribution(s).
 
 |<<sec.distribution.gungaussflattopthdisttype,`GUNGAUSSFLATTOPTH`>> |Legacy. Special case of `FLATTOP` distribution.
 
@@ -870,14 +870,14 @@ Dist:DISTRIBUTION, TYPE    = BINOMIAL,
                    MT      = 2.0,
 ....
 
-[[sec.distribution.matchedgausstype]]
-=== `MATCHEDGAUSS` Matched Gauss Distribution type
+[[sec.distribution.gaussmatchedtype]]
+=== `GAUSSMATCHED` Matched Gauss Distribution type
 
-The attributes of a `MATCHEDGAUSS` distribution are defined in <<tab_distattrmatchedgauss>>.
+The attributes of a `GAUSSMATCHED` distribution are defined in <<tab_distattrgaussmatched>>.
 `Limitation:` Does not consider Trimcoil field maps!
 
-[#tab_distattrmatchedgauss]
-.Definition of the basic distribution attributes for a `MATCHEDGAUSS` distribution type.
+[#tab_distattrgaussmatched]
+.Definition of the basic distribution attributes for a `GAUSSMATCHED` distribution type.
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
