@@ -881,10 +881,12 @@ The attributes of a `GAUSSMATCHED` distribution are defined in <<tab_distattrgau
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
+|`DENERGY`   |1E-3 | GeV   | Energy step size for closed orbit finder
 |`EX`        |1E-6 | m rad | Projected normalized emittance in latexmath:[x]
 |`EY`        |1E-6 | m rad | Projected normalized emittance in latexmath:[y]
 |`ET`        |1E-6 | m rad | Projected normalized emittance in latexmath:[t]
 |`NSTEPS`    |720  |       | Number of integration steps of closed orbit finder
+|`NSECTORS`  |1    |       | Number of sectors to average field for closed orbit finder
 |`SECTOR`    |TRUE |       | Match using single sector (true) or all sectors (false)
 |`ORDERMAPS` |7    |       | Order used in the field expansion
 |`RGUESS`    |-1   |       | Guess value of radius (m) for closed orbit finder
