@@ -10,8 +10,8 @@ endif::[]
 
 ifdef::backend-docbook5[]
 :numbered:
-:toc:                                                               
-:description: _OPAL_ User Manual                             
+:toc:
+:description: _OPAL_ User Manual
 :keywords: _OPAL_
 endif::[]
 
@@ -19,26 +19,17 @@ endif::[]
 
 This is the manual for _OPAL_ 2.1. Odd minor version numbers identify
 development versions. Use these versions only if you know what you are
-doing! 
+doing!
 
 New feature might not yet be documented or something is already documented
 but not yet implemented.
 
 == Abstract
 
-_OPAL_ is a tool for charged-particle optics in accelerator structures
-and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
-derived from _MAD9P_ and is based on the _CLASSIC_ class library, which
-was started in 1995 by an international collaboration. IPPL (Independent
-Parallel Particle Layer) is the framework which provides parallel
-particles and fields using data parallel ansatz. IPPL was inspired by the POOMA. _OPAL_ is built from
-the ground up as a parallel application exemplifying the fact that HPC
-(High Performance Computing) is the third leg of science, complementing
-theory and the experiment. HPC is made possible now through the
-increasingly sophisticated mathematical models and evolving computer
-power available on the desktop and in super computer centres. _OPAL_
-runs on your laptop as well as on the largest HPC clusters available
-today.
+_OPAL_ is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
+Using the MAD language with extensions, OPAL can run on a laptop as well as on the largest high performance computing systems.
+OPAL is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
+The OPAL framework makes it easy to add new features in the form of new C++ classes. OPAL comes in two flavours:
 
 The _OPAL_ framework makes it easy to add new features in the form of
 new _C++_ classes. It comes in the following flavours:
