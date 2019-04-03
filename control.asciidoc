@@ -178,6 +178,13 @@ REPARTFREQ::
   Defines after how many time steps we do particles repartition to
   balance the computational load of the computer nodes. Its default
   value is 10.
+MINBINEMITTED::
+  The number of bins that have to be emitted before the bin are squashed 
+  into a single bin. Its default value is 10.
+MINSTEPFORREBIN::
+  The number of steps into the simulation before the bins are squashed 
+  into a single bin. This should be used instead of the global variable 
+  of the same name. Its default value is 200.
 REBINFREQ::
   Defines after how many time steps we update the energy Bin ID of each
   particle. For the time being. Only available for multi-bunch
