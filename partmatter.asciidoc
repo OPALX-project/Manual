@@ -252,8 +252,8 @@ track it as in a drift and put it back to the main bunch when finishing
 
 |Mylar |6.702 |12.88 |1.4 |39.95 |3.35 |1683 |1900 |2.513E-02 |`Mylar`
 
-|Berilium |4 |9.012 |1.848 |65.19 |2.590 |966.0 |153.8 |3.475E-02
-|`Berilium`
+|Beryllium |4 |9.012 |1.848 |65.19 |2.590 |966.0 |153.8 |3.475E-02
+|`Beryllium`
 
 |Molybdenum |42 |95.94 |10.22 |9.8 |7.248 |9545 |480.2 |5.376E-03
 |`Molybdenum`
