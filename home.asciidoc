@@ -1,0 +1,133 @@
+= The OPAL Framework
+Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
+Version 2.0, June 2018: 1. revision
+
+ifdef::env-gitlab[]
+*Object Oriented Parallel Accelerator Library*
+
+*_OPAL_ 2.1 User's Reference Manual*
+endif::[]
+
+ifdef::backend-docbook5[]
+:numbered:
+:toc:
+:description: _OPAL_ User Manual
+:keywords: _OPAL_
+endif::[]
+
+== Preliminary note
+
+This is the manual for _OPAL_ 2.1. Odd minor version numbers identify
+development versions. Use these versions only if you know what you are
+doing!
+
+New feature might not yet be documented or something is already documented
+but not yet implemented.
+
+== Abstract
+
+_OPAL_ is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
+Using the MAD language with extensions, OPAL can run on a laptop as well as on the largest high performance computing systems.
+OPAL is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
+The OPAL framework makes it easy to add new features in the form of new C++ classes. OPAL comes in two flavours:
+
+The _OPAL_ framework makes it easy to add new features in the form of
+new _C++_ classes. It comes in the following flavours:
+
+* _OPAL-cycl_:
+  tracks particles with 3D space charge including neighbouring turns in
+  cyclotrons and FFAs with time as the independent variable.
+* _OPAL-t_:
+  can be used to model beam lines, linacs, rf-photo injectors and
+  complete XFELs excluding the undulator.
+
+It should be noted that not all features of _OPAL_ are available in all
+flavours.
+
+ifdef::env-gitlab[]
+== Table of Contents
+
+. link:introduction[Introduction]
+. link:conventions[Conventions]
+. link:pitfalls[Pitfalls and Limitations]
+. link:tutorial[Tutorial]
+. link:opalt[OPAL-T]
+. link:opalcycl[OPAL-CYCL]
+. link:opalmap[OPAL-MAP]
+. link:format[Command Format]
+. link:control[Control Statements]
+. link:elements[Elements]
+. link:field-output[Field Output Commands]
+. link:lines[Beam Lines]
+. link:beam-command[Beam Command]
+. link:distribution[Distribution Command]
+. link:fieldsolvers[Field Solver]
+. link:track[Tracking]
+. link:wakefields[Wakefields]
+. link:geometry[Geometry]
+. link:partmatter[Physics Models Used in the Particle Matter Interaction Model]
+. link:optimiser[Multi Objective Optimization]
+. link:sampler[Sampler]
+
+.Appendices
+[upperalpha]
+. link:syntax[OPAL Language Syntax]
+. link:fieldmaps[OPAL-T Field Maps]
+. link:opal-madx[OPAL-MADX Conversion Guide]
+. link:autophase[Auto-phasing Algorithm]
+. link:benchmarks[Benchmarks]
+. https://gitlab.psi.ch/OPAL/src/wikis/opaldks[Dynamic Kernel Scheduler (DKS)]
+endif::[]
+
+ifdef::backend-docbook5[]
+include::introduction.adoc[]
+
+include::conventions.adoc[]
+
+include::pitfalls.adoc[]
+
+include::tutorial.adoc[]
+
+include::opalt.adoc[]
+
+include::opalcycl.adoc[]
+
+include::format.adoc[]
+
+include::control.adoc[]
+
+include::elements.adoc[]
+
+include::field-output.adoc[]
+
+include::lines.adoc[]
+
+include::beam-command.adoc[]
+
+include::distribution.adoc[]
+
+include::fieldsolvers.adoc[]
+
+include::track.adoc[]
+
+include::wakefields.adoc[]
+
+include::geometry.adoc[]
+
+include::partmatter.adoc[]
+
+include::optimiser.adoc[]
+
+include::sampler.adoc[]
+
+include::syntax.adoc[]
+
+include::fieldmaps.adoc[]
+
+include::opal-madx.adoc[]
+
+include::autophase.adoc[]
+
+include::benchmarks.adoc[]
+endif::[]
+

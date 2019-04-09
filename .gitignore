@@ -1,0 +1,16 @@
+*.adoc
+*.aux
+*.bbl
+*.cb
+*.cb2
+*.glo
+*.html
+*.idx
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.tex
+*.toc
+*.xml
