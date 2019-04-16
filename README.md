@@ -27,9 +27,9 @@ cd Manual-2.1.wiki
 asciidoc2pdf home.asciidoc
 ```
 
-## Guidlines
+## Guidelines
 
-To get good results for PDF ouput, you should follow some simple rules.
+To get good results for PDF output, you should follow some simple rules.
 
 
 ### Chapters and section
