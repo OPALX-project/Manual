@@ -110,7 +110,7 @@ TIMEINTEGRATOR::
     to be rewritten in the units of the outer step. For example,
     extracts of the input file suited for `LF-2` or `RK-4` read
 +
-....
+----
 Option, PSDUMPFREQ=100;
 Option, REPARTFREQ=20;
 Option, SPTDUMPFREQ=50;
@@ -121,11 +121,11 @@ TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,
 TIMEINTEGRATOR="LF-2";
     RUN, METHOD = "CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
 ENDTRACK;
-....
+----
 +
 and should be transformed to
 +
-....
+----
 Option, MTSSUBSTEPS=10;
 Option, PSDUMPFREQ=10;
 Option, REPARTFREQ=2;
@@ -137,7 +137,7 @@ TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,
 TIMEINTEGRATOR="MTS";
     RUN, METHOD = "CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
 ENDTRACK;
-....
+----
 +
 In general all step quantities should be divided by MTSSUBSTEPS.
 +
@@ -153,29 +153,29 @@ STEPSPERTURN::
 In _OPAL-cycl_, instead of setting time step, the time steps per-turn
 should be set. The command format is:
 
-....
+----
 TRACK, LINE=name, BEAM=name, MAXSTEPS=value,  STEPSPERTURN=value;
-....
+----
 
 Particles are tracked in parallel i.e. the coordinates of all particles
 are transformed at each beam element as it is reached.
 
 _OPAL_ leaves *track mode* when it sees the command
 
-....
-  ENDTRACK;
-....
+----
+ENDTRACK;
+----
 
 [[sec.track.particles]]
 === Track Particles
 
 This command starts or continues the actual tracking:
 
-....
+----
 RUN, METHOD=string, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
 FILE=string, TURNS=integer, MBMODE=string, PARAMB=float,
 BOUNDARYGEOMETRY=string, MULTIPACTING=logical, OBJECTIVES=string-vector;
-....
+----
 
 The `RUN` command initialises tracking and uses the most recent particle
 bunch for initial conditions. The particle positions may be the result
@@ -237,11 +237,11 @@ OBJECTIVES::
 
 Example:
 
-....
+----
 run, file="table", turns=5, mbmode="AUTO", paramb=10.0,
      method="CYCLOTRON-T", beam=beam1, fieldsolver=Fs1,
      distribution=Dist1;
-....
+----
 
 This command tracks 5 bunches in cyclotron and writes the results on
 file `table`.
@@ -283,3 +283,5 @@ or set the option `PSDUMPFREQ` to a big number.*
 In the end the method `STATISTICAL-ERRORS` computes the mean and the
 standard deviation for each variable in the array `OBJECTIVES` along the
 machine and stores this information in to the _.stat_ file.
+
+// EOF

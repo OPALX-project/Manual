@@ -33,7 +33,7 @@ image::figures/tutorial/gen-str.png[scaledwidth=6cm]
 The name of the application is `opal`. When called without any argument
 an interactive session is started.
 
-....
+----
 \$ opal
 Ippl> CommMPI: Parent process waiting for children ...
 Ippl> CommMPI: Initialization complete.
@@ -53,7 +53,7 @@ OPAL > Time: 16.43.23 date: 30/05/2017
 OPAL > Reading startup file "/Users/adelmann/init.opal".
 OPAL > Finished reading startup file.
 ==>
-....
+----
 
 One can exit from this session with the command `QUIT;` (including the
 semicolon).
@@ -90,9 +90,9 @@ quits.
 
 Example:
 
-....
+----
 opal input.in --restartfn input.h5 --restart -1 --info 3
-....
+----
 
 [[sec.tutorial.trackautoph]]
 === Auto-phase Example
@@ -102,30 +102,30 @@ This is a partially complete example. First we have to set _OPAL_ in
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
 computing the phases is explained in Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm].
 
-....
+----
 Option, AUTOPHASE=4;
 
 REAL FINSS_RGUN_phi= (-3.5/180*Pi);
-....
+----
 
 The cavity would be defined like
 
-....
+----
 FINSS_RGUN: RFCavity, L = 0.17493, VOLT = 100.0,
     FMAPFN = "FINSS-RGUN.dat",
     ELEMEDGE =0.0, TYPE = "STANDING", FREQ = 2998.0,
     LAG = FINSS_RGUN_phi;
-....
+----
 
 with `FINSS_RGUN_phi` defining the off crest phase. Now a normal `TRACK`
 command can be executed. A file containing the values of maximum phases
 is created, and has the format like:
 
-....
+----
 1
 FINSS_RGUN
 2.22793
-....
+----
 
 with the first entry defining the number of cavities in the simulation.
 
@@ -155,9 +155,9 @@ https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl.in[opal-cycl.in]
 
 To run opal on a single node, just use this command:
 
-....
+----
  opal testinj2-1.in
-....
+----
 
 Here shows some pictures using the resulting data from single particle
 tracking using _OPAL-cycl_.
@@ -202,23 +202,23 @@ https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl-sc.in[opal-cycl-s
 
 To run opal on single node, just use this command:
 
-....
+----
  # opal testinj2-2.in
-....
+----
 
 To run opal on N nodes in parallel environment interactively, use this
 command instead:
 
-....
+----
  # mpirun -np N opal testinj2-2.in
-....
+----
 
 If restart a job from the last step of an existing _.h5_ file, add a new
 argument like this:
 
-....
+----
  # mpirun -np N opal testinj2-2.in --restart -1
-....
+----
 
 <<fig_cyclParameters>> and <<fig_cyclPhasespace>> are simulation results, shown by
 H5root code.
@@ -321,6 +321,8 @@ then your old input files will work just fine. However, if you are using
 _OPAL-t_ then you will need to set the distribution attribute
 link:distribution#sec.distribution.unitsdistattributes[`INPUTMOUNITS`] to:
 
-....
+----
 INPUTMOUNITS = EV
-....
+----
+
+// EOF

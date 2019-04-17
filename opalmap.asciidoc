@@ -129,9 +129,9 @@ Just form the definition of the Taylor expansion, it can be seen that a finite, 
 ++++
 
 In _OPAL-map_ the Hamiltonian gets Taylor expanded and its map derived (`link:opalmap#sec.opalmap.creationOfMap[Creation of Map]`) in the TPSA using the _OPAL_ DA package. The truncation length gets defined in `TRACK` setting the `MAP_ORDER` attribute.
-....
+----
 TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
-.... 
+---- 
 
 
 [[sec.opalmap.newParams]]
@@ -164,21 +164,21 @@ _OPAL-map_ is the new flavour of _OPAL_ and currently just contains the fundamen
 FODO lattice: https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/FODOmap.in[FODO.in]
 
 To `RUN` _OPAL-map_, the `METHOD` attribute gets set to `THICK`.
-....
+----
 RUN, METHOD = "THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
-....
+----
 
 The maximal order of the beam line maps get defined with the `MAP_ORDER` attribute.
-....
+----
 TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
-....
+----
 
 As an optional parameter for the beam line elements `NSlices=<x>` provides the opportunity to split one element in `<x>` smaller steps. Otherwise, the default value is defined with `1`.
 
-....
+----
 D1:  DRIFT,             L=1.,                ELEMEDGE=0.000, NSLICES=10;
 QP1: QUADRUPOLE,        L=0.3,  K1= 8.64195, ELEMEDGE=1.000, NSLICES=15;
-....
+----
 
 
 
@@ -258,3 +258,5 @@ The first number describes the coefficient and the following 6 the variables of 
 [bibliography]
 === References
 * [[[bib.berz1999_opalmap]]] Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.
+
+// EOF
