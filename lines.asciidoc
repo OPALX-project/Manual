@@ -18,9 +18,9 @@ simpler beam lines whose definitions can be nested to any level. A
 powerful syntax allows to repeat or to reflect pieces of beam lines.
 Formally a beam line is defined by a `LINE` command:
 
-....
-label:LINE=(member,...,member);
-....
+----
+ label:LINE=(member,...,member);
+----
 
 link:format#sec.format.label[label] gives a name to the beam line for later
 reference.
@@ -38,15 +38,15 @@ Beam lines can be nested to any level.
 
 The simplest beam line consists of single elements:
 
-....
-label:LINE=(member,...,member);
-....
+----
+ label:LINE=(member,...,member);
+----
 
 Example:
 
-....
-L:LINE=(A,B,C,D,A,D);
-....
+----
+ L:LINE=(A,B,C,D,A,D);
+----
 
 ORIGIN::
   Position vector of the origin of the line. All elements in this line
@@ -66,22 +66,24 @@ is used, all its sub-lines must be known.
 
 Example:
 
-....
-L:LINE=(A,B,S,B,A,S,A,B);
-S:LINE=(C,D,E);
-....
+----
+ L:LINE=(A,B,S,B,A,S,A,B);
+ S:LINE=(C,D,E);
+----
 
 This example produces the following expansion steps:
 
 1.  Replace sub-line `S`:
 +
-....
-(A,B,(C,D,E),B,A,(C,D,E),A,B)
-....
+----
+ (A,B,(C,D,E),B,A,(C,D,E),A,B)
+----
 2.  Omit parentheses:
 +
-....
-A,B,C,D,E,B,A,C,D,E,A,B
-....
+----
+ A,B,C,D,E,B,A,C,D,E,A,B
+----
 
 evaluated to constants immediately.
+
+// EOF

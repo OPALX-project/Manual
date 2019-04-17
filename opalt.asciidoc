@@ -564,9 +564,9 @@ beam line is projected.
 The script is not directly executable. Instead one has to pass it as
 argument to `python`:
 
-....
+----
 python myinput_ElementPositions.py --export-web
-....
+----
 
 The following arguments can be passed
 
@@ -1131,3 +1131,5 @@ replaced in ([eq.40]) to obtain a more explicit equation.
 * [[[bib.paraview]]] A. Henderson, _ParaView guide: a parallel visualization application_ (Kitware Inc, 2007).
 * [[[bib.paraview2]]] http://www.paraview.org[_ParaView_].
 * [[[bib.visit]]] https://wci.llnl.gov/simulation/computer-codes/visit/[VisIt].
+
+// EOF

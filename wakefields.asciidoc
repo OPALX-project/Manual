@@ -143,17 +143,17 @@ integrated Green function <<bib.mitchell2013>>, `1D-CSR-IGF`.
 
 The general input format is
 
-....
+----
 label:WAKE, TYPE=string, NBIN=real, CONST_LENGTH=bool,
       CONDUCT=string, Z0=real, FORM=string, RADIUS=real,
       SIGMA=real, TAU=real, FILTERS=string-array;
-....
+----
 
 The format for a CSR wake is
 
-....
+----
 label:WAKE, TYPE=string, NBIN=real, FILTERS=string-array;
-....
+----
 
 .Wakefield command summary
 [cols="<1,<4",options="header",]
@@ -279,11 +279,11 @@ bunch. The following smoothing filters are implemented:
 `Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`, `RelativFFTLowPass`. The
 input format for them is
 
-....
+----
 label:FILTER, TYPE=string, NFREQ=real, THRESHOLD=real,
       NPOINTS=real, NLEFT=real, NRIGHT=real,
       POLYORDER=real
-....
+----
 
 TYPE::
   The type of filter: `Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`,
@@ -372,3 +372,5 @@ bunch.
 * [[[bib.mitchell2013]]] C. E. Mitchell, J. Qiang, and R. D. Ryne, _A fast method for computing 1-d wakefields due to coherent synchrotron radiation_, Nucl. Instrum. Methods Phys. Res. Sect. A 715, 119–125 (2013).
 * [[[bib.borland1995]]] M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
 * [[[bib.borland1998]]] M. Borland, http://www.slac.stanford.edu/econf/C980914/papers/F-Tu10.pdf[_A universal postprocessing toolkit for accelerator simulation and data analysis_], in Proc. 1998 ICAP conference (1998), FTU10.
+
+// EOF

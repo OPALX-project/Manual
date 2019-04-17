@@ -231,13 +231,13 @@ The starting simulation has been performed with TRACE 3D code. According
 to <<sec.benchmarks.T3D_input>>, the simulated input beam is described by the
 following parameters:
 
-....
+----
 ER = 938.27
 W = 7
 FREQ = 700
 BEAMI = 0.0, 4.0,0.0, 4.0, 0.0, 0.0756
 EMITI = 0.730, 0.730, 7.56
-....
+----
 
 Thanks to the TRACE 3D graphic interface, the input beam can immediately
 be visualized in the three phase plane as shown in <<fig_Input_TRACE>>.
@@ -257,25 +257,25 @@ Before entering the TRACE 3D sigma-matrix coefficients in TRANSPORT, a
 changing in the units is required using the *card 15* in the following
 way:
 
-....
+----
 15. 1. 'MM' 0.1 ; //express in mm the horizontal and vertical beam size
 15. 5. 'MM' 0.1 ; //express in mm the beam length
-....
+----
 
 At this point, the TRANSPORT input beam is defined by *card 1*:
 
-....
+----
 1.0 1.709 0.427 1.709 0.427 0.11 0.0717 0.1148 /BEAM/ ;
-....
+----
 
 using exactly the same sigma-matrix coefficients of
 <<fig_TRACE_z_Input>>. Other two cards must be added in order to use
 exactly the TRACE 3D R-matrix formalism:
 
-....
+----
 16. 3. 1863.153; //proton mass, as ratio of electron mass
 22. 0.05 0.0 700 0.0 /SPAC/ ; //space charge card
-....
+----
 
 [[sec.benchmarks.sbend-in-trace-3d]]
 ===== SBEND in TRACE 3D
@@ -506,26 +506,26 @@ latexmath:[\beta\gamma ={0.1224}] for 7 MeV protons;
 In case of the modified sigma-matrix in <<fig_TRACE_z_Input>>, the
 corresponding _OPAL_ parameters for the `GAUSS` distributions are:
 
-....
+----
  T3D SIGMA                        OPAL -T
--------------------------------------------------------
-1.7088 mm             SIGMAX  = 1.7088/sqrt(5)e-3         m
-0.4272 mrad           SIGMAPX = 0.4272/sqrt(5)*0.1224e-3
-1.7088 mm             SIGMAY  = 1.7088/sqrt(5)e-3        m
-0.4272 mrad           SIGMAPY = 0.4272/sqrt(5)*0.1224e-3
-0.1092 mm             SIGMAZ  = 0.1092/sqrt(5)e-3        m
-0.0717 %              SIGMAPZ = (0.0717*10)/sqrt(5)*0.1224e-3
-....
+ -------------------------------------------------------
+ 1.7088 mm             SIGMAX  = 1.7088/sqrt(5)e-3         m
+ 0.4272 mrad           SIGMAPX = 0.4272/sqrt(5)*0.1224e-3
+ 1.7088 mm             SIGMAY  = 1.7088/sqrt(5)e-3        m
+ 0.4272 mrad           SIGMAPY = 0.4272/sqrt(5)*0.1224e-3
+ 0.1092 mm             SIGMAZ  = 0.1092/sqrt(5)e-3        m
+ 0.0717 %              SIGMAPZ = (0.0717*10)/sqrt(5)*0.1224e-3
+----
 
 At the end of this calculation, the input beam in _OPAL_ is:
 
-....
+----
 D1: DISTRIBUTION, TYPE=GAUSS,
 SIGMAX = 0.7642e-03,  SIGMAPX= 0.0234e-03,  CORRX= 0.0,
 SIGMAY = 0.7642e-03,  SIGMAPY= 0.0234e-03,  CORRY= 0.0,
 SIGMAZ = 0.0488e-03,  SIGMAPZ= 0.0392e-03,  CORRZ= 0.0, R61= 0.0,
 INPUTMOUNITS=NONE;
-....
+----
 
 [[sec.benchmarks.T3D_OPAL]]
 ==== Comparison TRACE 3D and _OPAL-t_
@@ -537,7 +537,7 @@ line described in <<sec.benchmarks.T3D_TRAN>> has been simulated in _OPAL_ using
 magnet features of <<tab_Bend_Trace>> and <<tab_Edge_Trace>> have been transformed
 in _OPAL_ language as:
 
-....
+----
 Bend: SBEND, ANGLE = 30.0 * Pi/180.0,
              K1=0.0,
              E1=0, E2=0,
@@ -546,15 +546,15 @@ Bend: SBEND, ANGLE = 30.0 * Pi/180.0,
              DESIGNENERGY = 7E+06,  // ref energy eV
              L = 0.1294,
              GAP = 0.02;
-....
+----
 
 * *SBEND without edge angles:*
 +
-....
+----
 // Bending magnet configuration:
 K1=0.0,
 E1=0, E2=0,
-....
+----
 +
 .TRACE 3D and _OPAL_ comparison: SBEND without edge angles,
 image::figures/Benchmarks/SBEND_noEdge.png[scaledwidth=18cm,width=700]
@@ -565,11 +565,11 @@ magnet for the horizontal emittance is still undergoing study and it’s
 probably due to a diverse coordinate system in the two codes.
 * *SBEND with edge angles:*
 +
-....
+----
 // Bending magnet configuration:
 K1=0.0,
 E1=10*Pi/180.0, E2=5* Pi/180.0,
-....
+----
 +
 .TRACE 3D and _OPAL_ comparison: SBEND with edge angles
 image::figures/Benchmarks/SBEND_Edges.png[scaledwidth=18cm,width=700]
@@ -605,11 +605,11 @@ _OPAL_ language has been done with the following tests:
 Only the TEST 2 reports a reasonable behavior on the beam size and
 emittance, as shown in <<fig_SBEND_FI>> using:
 +
-....
+----
 // Bending magnet configuration:
 K1=1.5
 E1=0, E2=0,
-....
+----
 +
 [#fig_SBEND_FI]
 .TRACE 3D and _OPAL_ comparison: SBEND with field index and default field map
@@ -681,7 +681,7 @@ map which defines the range of the field and the Enge coefficients is
 required. If no map is provided, the code uses a default map. Here is a
 dipole definition using the default map:
 
-....
+----
       bend1: SBEND, ANGLE = bend_angle,
       E1 = 0, E2 = 0,
       FMAPFN = "1DPROFILE1-DEFAULT",
@@ -690,7 +690,7 @@ dipole definition using the default map:
       L = bend_length,
       WAKEF = FS_CSR_WAKE;
       
-....
+----
 
 Please refer to link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] for the definition of the field map
 and the default map `1DPROFILE1-DEFAULT`. It defines a fringe field that
@@ -708,13 +708,13 @@ default map for the hard edge dipole in _OPAL_.
 
 The proposed default map for a hard edge dipole can be:
 
-....
+----
 1DProfile1  0  0  2
 -0.00000001 0.0 0.00000001 3
 -0.00000001 0.0 0.00000001 3
 -99.9
 -99.9
-....
+----
 
 On the first line, the two zeros following `1DProfile1` are the orders
 of the Enge coefficient for the entrance and exit edge of the dipole.
@@ -782,7 +782,7 @@ its attribute `WAKEF = FS_CSR_WAKE`. In order to calculate the CSR
 effect correctly, the drift has to follow a bending magnet whose CSR
 calculation is also turned on.
 
-....
+----
       bend1: SBEND, ANGLE = bend_angle,
       E1 = 0, E2 = 0,
       FMAPFN = "1DPROFILE1-DEFAULT",
@@ -791,13 +791,13 @@ calculation is also turned on.
       L = bend_length,
       WAKEF = FS_CSR_WAKE;
       
-....
+----
 
-....
+----
        drift1: DRIFT, L=0.4, ELEMEDGE = drift_before_bend +
        bend_length, WAKEF = FS_CSR_WAKE;
        
-....
+----
 
 [[sec.benchmarks.benchmark]]
 ==== Benchmark
@@ -896,7 +896,7 @@ latexmath:[N_{\text{p}} = 10^{5}].
 [[sec.benchmarks.opal-input]]
 ==== _OPAL_ Input
 
-....
+----
 OPTION, ECHO = FALSE, PSDUMPFREQ = 10,
 STATDUMPFREQ = 10, REPARTFREQ = 1000,
 PSDUMPFRAME = GLOBAL, VERSION=10600;
@@ -934,12 +934,12 @@ TRACK, LINE = L1, BEAM = Beam1, MAXSTEPS = 1000, ZSTOP = 1.0, DT = 1.0e-10;
  RUN, METHOD = "PARALLEL-T", BEAM = Beam1, FIELDSOLVER = Fs1, DISTRIBUTION = Dist1;
 ENDTRACK;
 STOP;
-....
+----
 
 [[sec.benchmarks.impact-t-input]]
 ==== `Impact-t` Input
 
-....
+----
 !Welcome to Impact-t input file.
 !All comment lines start with "!" as the first character of the line.
 ! col row
@@ -996,7 +996,7 @@ STOP;
 !                             rotation error x, y, z
 ! L/m  N/A N/A  type  location of starting edge  v1  <B0><B0><B0>  v23 /
 1.0    0   0    0    0.0                           0.5            /
-....
+----
 
 [[sec.benchmarks.results]]
 ==== Results
@@ -1022,3 +1022,5 @@ image::figures/Benchmarks/opal-impact-1MHz-z.png[scaledwidth=10cm]
 * [[[bib.Transport_GUI]]] U. Rohrer, _PSI graphic transport framework based on a cern-slac-fermilab version by K.L. Brown et al_, tech. rep. (PSI).
 * [[[bib.Tran_ex]]] U. Rohrer, http://aea.web.psi.ch/Urs_Rohrer/MyWeb/moregifs/gantryb.gif.
 * [[[bib.elegant]]] M. Borland, https://www1.aps.anl.gov/icms_files/lsnotes/files/APS_1418218.pdf[_Elegant: a flexible SDDS-compliant code for accelerator simulation_], tech. rep. LS-287 (Advanced Photon Source, Sept. 2000).
+
+// EOF

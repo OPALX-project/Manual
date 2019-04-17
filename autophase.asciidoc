@@ -97,11 +97,11 @@ where
 It remains to find the progress of time with respect to the position. In
 _OPAL_ this is done iteratively starting with
 
-....
+----
 K[i] = K[i-1] + (z[i] - z[0]) * q * V;
 b[i] = sqrt(1. - 1. / ((K[i] - K[i-1]) / (2.*m*c^2) + 1)^2);
 t[i] = t[0] + (z[i] - z[0]) / (c * b[i])
-....
+----
 
 By doing so we assume that the kinetic energy, K, increases linearly and
 proportional to the maximal voltage. With this model for the progress of
@@ -146,12 +146,12 @@ summands.
 [[sec.autophasing.example]]
 ==== Example
 
-....
+----
 FINLB02_RAC: TravelingWave, L=2.80, VOLT=14.750*30/31,
              NUMCELLS=40, FMAPFN="FINLB02-RAC.T7",
              ELEMEDGE=2.67066, MODE=1/3,
              FREQ=1498.956, LAG=FINLB02_RAC_lag;
-....
+----
 
 For this example we find 
 [latexmath]
@@ -284,3 +284,4 @@ Here we also used some trigonometric identities:
 \end{aligned}
 ++++
 
+// EOF
