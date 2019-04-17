@@ -136,3 +136,5 @@ latexmath:[I_0= e/4\pi\epsilon_0mc^3] [A].
 |latexmath:[g(\zeta)] |Form factor used in slice analysis of bunched
 beams.
 |=======================================================================
+
+// EOF
