@@ -39,7 +39,7 @@ multi-objective optimization problem has the form
 ++++
 \begin{aligned}
   \mathrm{min}  \quad & \quad f_m(\mathbf{x}),        & m &= \{1, \ldots, M\} \\
-  \mathrm{subject to} \quad & \quad g_j(\mathbf{x}) \geq 0, & j &= \{1, \ldots, J\} \\
+  \mathrm{subject\, to} \quad & \quad g_j(\mathbf{x}) \geq 0, & j &= \{1, \ldots, J\} \\
   \quad & \quad  -\infty \leq x_i^L \leq \mathbf{x}=x_i \leq x_i^U \leq \infty,& i &= \{0, \ldots, n \}.
 \end{aligned}
 ++++
