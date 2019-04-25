@@ -169,7 +169,7 @@ deflection point.
 
 [#fig_Inj2ref]
 .Reference orbit(left) and tune diagram(right) in Injector II 
-image::figures/cyclotron/injector2_orbit_and_tune.png[scaledwidth=18cm]
+image::figures/cyclotron/injector2_orbit_and_tune.png[640,scaledwidth=18cm]
 
 From theoretic view, there should be an eigen ellipse for any given
 energy in stable area of a fixed accelerator structure. Only when the
