@@ -655,6 +655,18 @@ CALL,FILE="structure";
 CALL,"structure";
 ----
 
+[[sec.control.initopal]]
+==== init.opal
+
+Before entering the main input file, the file `$HOME/init.opal` is executed (if present).
+It can be thought of as a `CALL, FILE=$HOME/init.opal` statement at the start of the input file.
+This init file can be used to avoid writing the same lines in every input file.
+For example one can set some link:control#sec.control.option[`OPTION`],
+define a link:control#sec.control.macro[`MACRO`], or define some physics constants.
+
+Note that one should be well aware of the contents of the `init.opal` file as otherwise it might lead to confusion when switching to a different computer where the file is not present.
+Therefore, it might be advisable to use an explicit link:control#sec.control.call[`CALL`] statement instead.
+
 [[sec.control.save]]
 ==== SAVE Statement
 
