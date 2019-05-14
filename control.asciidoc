@@ -667,6 +667,20 @@ define a link:control#sec.control.macro[`MACRO`], or define some physics constan
 Note that one should be well aware of the contents of the `init.opal` file as otherwise it might lead to confusion when switching to a different computer where the file is not present.
 Therefore, it might be advisable to use an explicit link:control#sec.control.call[`CALL`] statement instead.
 
+Example:
+
+----
+// this is a init.opal file
+// all OPAL runs will use the same OPTIONs
+OPTION, ECHO=FALSE;
+OPTION, INFO=FALSE;             //psdump and statdump are in time steps
+OPTION, PSDUMPFREQ = 10000000;  //How often 6d info is dumped to .h5
+OPTION, STATDUMPFREQ = 10;      //How often beam stats dumped to .stat.
+OPTION, BOUNDPDESTROYFQ=10;     //Delete lost particles, if any
+OPTION, AUTOPHASE=4;            //Always leave this on, unless doing a phase scan
+OPTION, VERSION=20000;
+----
+
 [[sec.control.save]]
 ==== SAVE Statement
 
