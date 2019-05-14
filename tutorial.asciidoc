@@ -156,7 +156,7 @@ https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/examples/opal-cycl.in[opal-cycl.in]
 To run opal on a single node, just use this command:
 
 ----
- opal testinj2-1.in
+ opal opal-cycl.in
 ----
 
 Here shows some pictures using the resulting data from single particle

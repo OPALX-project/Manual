@@ -13,7 +13,7 @@ endif::[]
 == Command Format
 
 All flavors of _OPAL_ using the same input language the _MAD_ language.
-The language dialect here is ajar to _MAD9_, for hard core __MAD__eight
+The language dialect here is ajar to _MAD9_, for hard core __MAD8__
 users there is a conversion guide.
 
 It is the first time that machines such as cyclotrons, proton and
