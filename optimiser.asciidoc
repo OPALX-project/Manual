@@ -446,3 +446,20 @@ mpirun /path/to/opal --info 5 05-DL_QN3.in
 ```
 
 // EOF
+
+==== Output
+
+The solutions for each generation will be saved in either a plain ASCII (if `DUMP_DAT` true) and JSON format.
+The Pareto front of all individuals is in a JSON file, `ParetoFront_.json`.
+There are three log files `opt.trace.0`, `opt-progress.0` and `pilot.trace.0` that log the job management.
+E.g. to count the total number of dispatched simulations:
+
+```
+cat opt.trace.0 | grep dispatched | wc -l
+```
+
+or to count all invalid simulations:
+
+```
+cat opt.trace.0 | grep invalid | wc -l
+```
