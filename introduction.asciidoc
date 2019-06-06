@@ -13,40 +13,16 @@ endif::[]
 == Introduction
 
 [[sec.introduction.aim-of-opal-and-history]]
-=== Aim of _OPAL_ and History
+=== History
 
-_OPAL_ is a tool for charged-particle optics in accelerator structures
-and beam lines. Using the _MAD_ language with extensions, _OPAL_ is
+Using the _MAD_ language with extensions, _OPAL_ is
 derived from _MAD9P_ and is based on the _CLASSIC_ <<bib.classic>> class library, which
 was started in 1995 by an international collaboration. IPPL (Independent
 Parallel Particle Layer) is the framework which provides parallel
-particles and fields using data parallel approach. IPPL was inspired by the POOMA <<bib.pooma>>. _OPAL_ is built from
-the ground up as a parallel application exemplifying the fact that HPC
-(High Performance Computing) is the third leg of science, complementing
-theory and the experiment. HPC is made possible now through the
-increasingly sophisticated mathematical models and evolving computer
-power available on the desktop and in super computer centers. _OPAL_
-runs on your laptop as well as on the largest HPC clusters available
-today.
-
-The _OPAL_ framework makes it easy to add new features in the form of
-new _C++_ classes.
-
-_OPAL_ comes in the following flavors:
-
-* _OPAL-cycl_
-* _OPAL-t_
-
-_OPAL-cycl_ tracks particles with 3D space charge including neighboring
-turns in cyclotrons with time as the independent variable.
+particles and fields using data parallel approach. IPPL was inspired by the POOMA <<bib.pooma>>.
 
 _OPAL-t_ is a super-set of _Impact-t_ <<bib.qiang2005_intro>> and can be used to model guns,
 injectors, ERLs and complete XFELs excluding the undulator.
-
-It should be noted that not all features of _OPAL_ are available in both
-flavors. +
-The following icon `DOPAL-t` means that a feature is not yet available
-in _OPAL-t_. A similar icon is used for _OPAL-cycl_.
 
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities
