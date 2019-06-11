@@ -149,8 +149,8 @@ Adam. For the `H5root`  visualization tool credits go to Thomas
 Schietinger.
 
 The following individuals are acknowledged for past contributions:
-Yuanjie Bi, Jianjun Yang, Colwyn Gulliford, Hao Zha, Christopher Mayes
-and Tulin Kaman.
+Yuanjie Bi, Jianjun Yang, Colwyn Gulliford, Hao Zha, Christopher Mayes,
+Tulin Kaman, Chuan Wang, Yves Ineichen, Valeria Rizzoglio and Christian Baumgarten.
 
 [[sec.introduction.citation]]
 === Citation
