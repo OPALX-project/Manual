@@ -134,17 +134,25 @@ and Tulin Kaman.
 Please cite _OPAL_ in the following way:
 
 ....
-@techreport{opal:1,
-title = {The OPAL (Object Oriented Parallel Accelerator Library) Framework},
-author = {Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, 
-Jochem Snuverink (PSI) and Christof Metzger-Kraus and Yves Ineichen and 
-Steve Russell (LANL) and Chuan Wang (CIAE) and 
-Suzanne Sheehy and Chris Rogers (RAL) and
-Daniel Winklehner (MIT)},
-institution = {Paul Scherrer Institut},
-number = {PSI-PR-08-02},
-year = {(2008-2018)}
+@ARTICLE{2019arXiv190506654A,
+       author = {{Adelmann}, Andreas and {Calvo}, Pedro and {Frey}, Matthias and
+         {Gsell}, Achim and {Locans}, Uldis and {Metzger-Kraus}, Christof and
+         {Neveu}, Nicole and {Rogers}, Chris and {Russell}, Steve and
+         {Sheehy}, Suzanne and {Snuverink}, Jochem and {Winklehner}, Daniel},
+        title = "{OPAL a Versatile Tool for Charged Particle Accelerator Simulations}",
+      journal = {arXiv e-prints},
+     keywords = {Physics - Accelerator Physics},
+         year = "2019",
+        month = "May",
+          eid = {arXiv:1905.06654},
+        pages = {arXiv:1905.06654},
+archivePrefix = {arXiv},
+       eprint = {1905.06654},
+ primaryClass = {physics.acc-ph},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv190506654A},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
+
 ....
 
 [[sec.introduction.bibliography]]
