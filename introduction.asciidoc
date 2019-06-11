@@ -162,7 +162,7 @@ Please cite _OPAL_ in the following way:
        author = {{Adelmann}, Andreas and {Calvo}, Pedro and {Frey}, Matthias and
          {Gsell}, Achim and {Locans}, Uldis and {Metzger-Kraus}, Christof and
          {Neveu}, Nicole and {Rogers}, Chris and {Russell}, Steve and
-         {Sheehy}, Suzanne},
+         {Sheehy}, Suzanne and {Snuverink}, Jochem and {Winklehner}, Daniel},
         title = "{OPAL a Versatile Tool for Charged Particle Accelerator Simulations}",
       journal = {arXiv e-prints},
      keywords = {Physics - Accelerator Physics},
