@@ -349,9 +349,9 @@ dv0: DVAR, VARIABLE="QDX1_K1", LOWERBOUND=0, UPPERBOUND=35;
 dv1: DVAR, VARIABLE="QDX2_K1", LOWERBOUND=0, UPPERBOUND=34;
 dv2: DVAR, VARIABLE="QFX1_K1", LOWERBOUND=-35, UPPERBOUND=0;
 
-drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x',${loc}) - ${up})";
-drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y',${loc}) - 0.0001833)";
-goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
+drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x', 's', ${loc}) - ${up})";
+drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y', 's', ${loc}) - 0.0001833)";
+goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x', 's', 2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=5, MAXGENERATIONS=3,
