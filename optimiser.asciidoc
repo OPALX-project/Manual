@@ -302,11 +302,12 @@ There are several methods to access output data:
 | Simple functor that reads vector data from a file. If the file
   contains more than one value the sum is returned.
 
-| sddsVariableAt(<var>, <refvar>, <refpos>, <sdds_file>)
-| A simple expression to get SDDS value near a specific position <refpos> of <refvar> for a variable <var>.
-  The values of <refvar> should be monotonically increasing.
+| sddsVariableAt(<var>, <refpos>, <sdds_file>, optional: <refvar>)
+| A simple expression to get SDDS value near a specific position <refpos> of <refvar>
+  (default: spos) for a variable <var>.
+  If another <refvar> is provided, the values should be monotonically increasing.
 
-| statVariableAt(<var>, <refvar>, <refpos>)
+| statVariableAt(<var>, <refvar>, optional: <refpos>)
 | The same as `sddsVariableAt`, uses OPALs statistics file.
 
 | sumErrSq(<meas_file>, <var_name>, <sdds_file>)
@@ -350,9 +351,9 @@ dv0: DVAR, VARIABLE="QDX1_K1", LOWERBOUND=0, UPPERBOUND=35;
 dv1: DVAR, VARIABLE="QDX2_K1", LOWERBOUND=0, UPPERBOUND=34;
 dv2: DVAR, VARIABLE="QFX1_K1", LOWERBOUND=-35, UPPERBOUND=0;
 
-drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x', 's', ${loc}) - ${up})";
-drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y', 's', ${loc}) - 0.0001833)";
-goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x', 's', 2.00)";
+drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x', ${loc}) - ${up})";
+drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y', ${loc}) - 0.0001833)";
+goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x', 2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=5, MAXGENERATIONS=3,
