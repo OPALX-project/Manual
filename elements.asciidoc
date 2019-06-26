@@ -2366,9 +2366,10 @@ _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] i
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
-The particles recorded in the PROBE are also recorded in the histogram ".hist" and peak ".peaks" file.
+The radius of the particles recorded in the PROBE is recorded in the histogram ".hist" and peak ".peaks" file.
 The histogram file contains data as recorded in actual probe measurements.
 The corresponding peaks file contains the peaks found in the probe histogram by the same peak finder used for the PSI measurements.
+Note that for probes in multiple quadrants the histogram and peaks file is often not meaningful since the absolute radius is stored.
 
 [[sec.elements.stripper-opal-cycl]]
 === Stripper (_OPAL-cycl_)

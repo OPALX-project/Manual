@@ -301,6 +301,8 @@ format:
                         ...
 ----
 
+The number of values per column is arbitrary.
+
 [[sec.opalcycl.cyciae-type]]
 ==== CYCIAE type
 
