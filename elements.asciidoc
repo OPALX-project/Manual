@@ -1481,10 +1481,10 @@ ring: Cyclotron, TYPE="RING", CYHARMON=6, PHIINIT=0.0,
 ----
 
 If TYPE is set to BANDRF, the 3D electric field map of RF cavity will be
-read from external h5part file and the following extra arguments need to specified:
+read from external https://gitlab.psi.ch/H5hut/src/wikis/home[H5Hut] file and the following extra arguments need to specified:
 
 RFMAPFN::
-  The file name(s) for the electric field map(s) in h5part binary format.
+  The file name(s) for the electric field map(s) in H5Hut binary format.
 RFPHI::
   The initial phase(s) of the electric field map(s) (rad)
 RFFREQ::
