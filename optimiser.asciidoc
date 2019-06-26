@@ -309,9 +309,9 @@ There are several methods to access output data:
   (default: spos) for a variable <var>.
   If another <refvar> is provided, the values should be monotonically increasing.
 
-| statVariableAt(<var>, <refvar>)
+| statVariableAt(<var>, <refpos>)
 
-  statVariableAt(<var>, <refpos>, <refvar>)
+  statVariableAt(<var>, <refvar>, <refpos>)
 | The same as `sddsVariableAt`, uses OPALs statistics file.
 
 | sumErrSq(<meas_file>, <var_name>, <sdds_file>)
