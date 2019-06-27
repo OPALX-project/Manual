@@ -34,28 +34,31 @@ It allows *random* (RASTER=false) and *raster* mode.
 .Attributes for the command SAMPLE.
 [cols="<2,<5",options="header,breakable",]
 |=======================================================================
-| Attribute     | Description
-| RASTER        | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
-| INPUT         | Path to input file.
-| OUTPUT        | Name used for the output of the result.
-| OUTDIR        | Name of directory where the simulations are run and the result file is stored.
-| DVARS         | List of design variables to be used.
-| OBJECTIVES    | List of objectives which are evaluated for each simulation. The results are stored to the result file
-| SAMPLINGS     | List of sample methods to be used.
-| NUM_MASTERS   | Number of master nodes.
-| NUM_COWORKERS | Number processors per worker.
-| TEMPLATEDIR   | Directory where templates are stored.
-| FIELDMAPDIR   | Directory where field maps are stored.
-| DISTDIR       | Directory where distributions are stored (optional).
-| KEEP          | List of file extensions (e.g. STAT, H5) that shouldn't be deleted.
-                  If nothing is specified, all files are kept. If objectives are
-                  defined and list is empty all files are deleted.
-| RESTART_FILE  | H5 file to restart the OPAL simulations from (optional).
-                  Each individual copies the H5 to its simulation directory
-                  in order to avoid overwriting of the original file. This
-                  attributes is used together with RESTART_STEP.
-| RESTART_STEP  | Restart from given H5 step (optional). Used together
-                  with RESTART_FILE.
+| Attribute      | Description
+| RASTER         | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
+| INPUT          | Path to input file.
+| OUTPUT         | Name used for the output of the result.
+| OUTDIR         | Name of directory where the simulations are run and the result file is stored.
+| DVARS          | List of design variables to be used.
+| OBJECTIVES     | List of objectives which are evaluated for each simulation. The results are stored to the result file
+| SAMPLINGS      | List of sample methods to be used.
+| NUM_MASTERS    | Number of master nodes.
+| NUM_COWORKERS  | Number processors per worker.
+| TEMPLATEDIR    | Directory where templates are stored.
+| FIELDMAPDIR    | Directory where field maps are stored.
+| DISTDIR        | Directory where distributions are stored (optional).
+| KEEP           | List of file extensions (e.g. STAT, H5) that shouldn't be deleted.
+                   If nothing is specified, all files are kept. If objectives are
+                   defined and list is empty all files are deleted.
+| RESTART_FILE   | H5 file to restart the OPAL simulations from (optional).
+                   Each individual copies the H5 to its simulation directory
+                   in order to avoid overwriting of the original file. This
+                   attributes is used together with RESTART_STEP.
+| RESTART_STEP   |  Restart from given H5 step (optional). Used together
+                   with RESTART_FILE.
+| JSON_DUMP_FREQ | Defines how often new individuals are appended to the final JSON file
+                   i.e. every time JSON_DUMP_FREQ samples finished they are written.
+                   (default: All individuals are written at the end)
 |=======================================================================
 
 The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
