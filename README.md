@@ -42,7 +42,7 @@ Changes to the Wiki follows the same rules as for code changes:
 1. file an issue, document what you want to change
 2. create a merge-request, set target branch to `master`
 3. edit inside the branch created for this merge-request
-4. resolve the merge-request and add at least two aprovers
+4. resolve the merge-request and select at least two aprovers
 5. wait till the merge-request has been aproved, if more changes are required, go back to 3.
 6. merge your changes into the `master`branch and delete the branch of the merge-request
 
