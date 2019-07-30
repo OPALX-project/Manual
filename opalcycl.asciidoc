@@ -212,16 +212,16 @@ ASCII type file. The field data should be stored in the cylinder
 coordinates frame (because the field map on the median plane of the
 cyclotron is usually measured in this frame).
 
-There are two possible situations. One is the real field map on median
-plane of the exist cyclotron machine using measurement equipment.
-Limited by the narrow gaps of magnets, in most cases with cyclotrons,
-only vertical field latexmath:[B_z] on the median plane
-(latexmath:[z=0]) is measured. Since the magnetic field data off the
-median plane field components is necessary for those particles with
-latexmath:[z \neq 0], the field need to be expanded in latexmath:[Z]
-direction. According to the approach given by Gordon and Taivassalo, by
+With respect to the external magnetic field map two possible situations
+can be considered: in the first situation, the measured field map data
+is loaded by the tracker. In most cases, only the vertical field,
+latexmath:[B_z], can be measured on the median plane (latexmath:[z=0]).
+by using measurement equipment. Since the magnetic field outside the
+median plane is required to compute trajectories with latexmath:[z \neq 0],
+the field needs to be expanded in the latexmath:[z] direction.
+According to the approach given by Gordon and Taivassalo by
 using a magnetic potential and measured latexmath:[B_z] on the median
-plane, at the point latexmath:[(r,\theta, z)] in cylindrical polar
+plane at the point latexmath:[(r,\theta, z)] in cylindrical polar
 coordinates, the third order field can be written as
 
 .Third order field
@@ -242,27 +242,25 @@ where latexmath:[B_z\equiv B_z(r, \theta, 0)] and
         + \frac{1}{r^2}\frac{\partial^{3}{B_z}}{{\partial r}{\partial \theta^2}} - 2\frac{1}{r^3}\frac{\partial^{2}{B_z}}{\partial \theta^{2}},  \\ \\
   C_{\theta} & = & \frac{1}{r}\frac{\partial^{2}{B_z}}{{\partial r}{\partial \theta}} + \frac{\partial^{3}{B_z}}{{\partial r^2}{\partial \theta}}
         + \frac{1}{r^2}\frac{\partial^{3}{B_z}}{\partial \theta^{3}},  \\ \\
-  C_z & = & \frac{1}{r}\frac{\partial{B_z}}{\partial r} + \frac{\partial^{2}{B_z}}{\partial r^{2}} + \frac{1}{r^2}\frac{\partial^{2}{B_z}}{\partial \theta^{2}}. 
+  C_z & = & \frac{1}{r}\frac{\partial{B_z}}{\partial r} + \frac{\partial^{2}{B_z}}{\partial r^{2}} + \frac{1}{r^2}\frac{\partial^{2}{B_z}}{\partial \theta^{2}}.
 \end{aligned}
 ++++
 
-All the partial differential coefficients are on the median plane and
-can be calculated by interpolation. _OPAL-cycl_ uses Lagrange’s 5-point
+All the partial differential coefficients are computed from the median
+plane data by interpolation using Lagrange's 5-point
 formula.
 
-The other situation is to calculate the field on the median plane or the
-3D fields of the working gap for interesting region numerically by
-creating 3D model using commercial software, such as TOSCA, ANSOFT and
-ANSYS during the design phase of a new machine. If the field on the
-median plane is calculated, the field off the median plane can be
+In the other situation, 3D magnetic field data for the region of interest
+is calculated numerically by building a 3D model using commercial software,
+such as TOSCA, ANSOFT and ANSYS during the design phase of a new cyclotron.
+If the field on the median plane is calculated, the field off the median plane can be
 obtained using the same expansion approach as the measured field map as
-described above. However, the 3D fields of the entire working gap should
-be more accurate than the expansion approach especially at the region
-not so close to the median plane in latexmath:[Z] direction.
+described above. In this case the calculated field will be more accurate, especially
+at large distances from the median plane i.e. a full 3D field map can be calculated.
 
-In the current version, we implemented the three specific type
+In the current version, we implemented three specific type
 field-read functions _Cyclotron::getFieldFromFile()_ of the median plane
-fields. That which function is used is controlled by the parameters
+fields. Which function is used is controlled by the parameters
 `TYPE` of `CYCLOTRON` see  link:elements#sec.elements.cyclotron[Cyclotron] in the input file.
 
 [[sec.opalcycl.carboncycl-type]]
