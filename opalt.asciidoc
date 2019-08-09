@@ -48,17 +48,17 @@ X::
   Horizontal position latexmath:[x] of a particle relative to the axis
   of the element [m].
 PX::
-  latexmath:[\beta_x\gamma] Horizontal canonical momentum [1].
+  latexmath:[\beta_x\gamma] Horizontal canonical momentum [link:distribution#sec.distribution.unitsdistattributes[Units]].
 Y::
   Horizontal position latexmath:[y] of a particle relative to the axis
   of the element [m].
 PY::
-  latexmath:[\beta_y\gamma] Horizontal canonical momentum [1].
+  latexmath:[\beta_y\gamma] Horizontal canonical momentum [link:distribution#sec.distribution.unitsdistattributes[Units]].
 Z::
   Longitudinal position latexmath:[z] of a particle in floor
   co-ordinates [m].
 PZ::
-  latexmath:[\beta_z\gamma] Longitudinal canonical momentum [1].
+  latexmath:[\beta_z\gamma] Longitudinal canonical momentum [link:distribution#sec.distribution.unitsdistattributes[Units]].
 
 The independent variable is *t* [s].
 
