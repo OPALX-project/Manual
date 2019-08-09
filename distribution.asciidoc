@@ -67,7 +67,7 @@ link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec.op
 When defining a
 distribution, both _OPAL-t_ and _OPAL-cycl_ use meters for length and
 seconds for time. However, there are different options for the units
-used to input the momentum. This is controlled with the 
+used to input the momentum. This is controlled with the
 <<tab_distattrinputmounits,`INPUTMOUNITS`>> attribute.
 
 [#tab_distattrinputmounits]
@@ -77,15 +77,41 @@ used to input the momentum. This is controlled with the
 | Attribute Name | Value | Description
 
 | `INPUTMOUNITS` |`NONE` (default for _OPAL-t_) |Use no units for the
-input momentum (e.g. latexmath:[p_{x}], latexmath:[p_{y}],
+input momentum (latexmath:[p_{x}], latexmath:[p_{y}],
 latexmath:[p_{z}]). Momentum is given as
 latexmath:[\beta_{x} \gamma], latexmath:[\beta_{y} \gamma] and
 latexmath:[\beta_{z} \gamma], as in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables].
 
 |`INPUTMOUNITS` |`EV` (default for _OPAL-cycl_) |Use the units eV for
-the input momentum (e.g. latexmath:[p_{x}], latexmath:[p_{y}],
+the input momentum (latexmath:[p_{x}], latexmath:[p_{y}],
 latexmath:[p_{z}]).
 |=======================================================================
+
+[[sec.distribution.note-unit-conversion-of-momentum-in-opal-t-and-opal-cycl]]
+NOTE: unit conversion of momentum in _OPAL-t_ and _OPAL-cycl_
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Convert latexmath:[\beta_x \gamma] [dimensionless] to [mrad],
+
+[latexmath]
+++++
+(\beta\gamma)_{\text{ref}}=\frac{P}{m_0c}=\frac{Pc}{m_0c^2}
+++++
+
+[latexmath]
+++++
+P_x[{mrad}]=1000\times\frac{(\beta_x\gamma)}{(\beta\gamma)_{\text{ref}}}
+++++
+
+Convert from [eV/c] to latexmath:[\beta_x\gamma] [dimensionless],
+
+[latexmath]
+++++
+(\beta_x\gamma)=\sqrt{(\frac{P_x[{eV/c}]}{m_0c}+1)^2-1}.
+++++
+
+This may be deduced by analogy for the latexmath:[y] and
+latexmath:[z] directions.
 
 [[sec.distribution.gendistattributes]]
 === General Distribution Attributes
