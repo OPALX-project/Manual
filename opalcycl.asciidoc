@@ -156,6 +156,7 @@ run, the 6 phase space variables latexmath:[(x, y, z, p_x, p_y, p_z)]
 are transformed to the global Cartesian coordinates latexmath:[(X, Y, Z, PX, PY, PZ)] using the starting
 coordinates latexmath:[r_0] (`RINIT`), latexmath:[\phi_0]
 (`PHIINIT`), and latexmath:[z_0] (`ZINIT`), and the starting momenta
+latexmath:[p_{total}] (defined by the beam energy specified in the link:beam-command#sec.beam-command.beam-energy[Beam Command]),
 latexmath:[p_{r0}] (`PRINIT`), and latexmath:[p_{z0}] (`PZINIT`) of
 the reference particle, defined in the `CYCLOTRON` element
 see link:elements#sec.elements.cyclotron[Cyclotron]. Note that latexmath:[p_{\phi 0}] is
