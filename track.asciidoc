@@ -230,10 +230,9 @@ PARAMB::
 +
 This argument is only available for `AUTO` mode multi-bunch run in
 _OPAL-cycl_.
-OBJECTIVES::
-  An array of column names from the _.stat_ file used in
-  `STATISTICAL-ERRORS` to compute mean value and standard deviation
-  across all runs.
+TRACKBACK::
+  The particles are tracked backward in time if `TRUE`. 
+  Only available in _OPAL-t_. Default is `FALSE`.
 
 Example:
 
@@ -246,42 +245,5 @@ run, file="table", turns=5, mbmode="AUTO", paramb=10.0,
 This command tracks 5 bunches in cyclotron and writes the results on
 file `table`.
 
-[[sec.track.statistical-errors]]
-=== `STATISTICAL-ERRORS`
-
-This method can be used to quantify the effects of imperfections to
-alignment or other physical quantities such as e.g. the phase or the
-amplitude. It doesn’t propagate the particles directly. Instead it scans
-through the input file and replaces all occurrences of and with randomly
-generated values of appropriate distribution. Then one of the other
-methods, e.g. `PARALLEL-T` is called. These two steps are then repeated
-many times.
-
-To use this method one has to specify the `METHOD` using the following
-form:
-
-`STATISTICAL-ERRORS(<trackmethod>, <ncores>, <nruns>)`,
-
-where `<trackmethod>` is the method that should track the particles,
-`<ncores>` is the number of cores used for a run and `<nruns>` is the
-number of individual runs that should be performed. *It should be noted
-that the total number of cores available has to be greater or equal to
-`ncores` + 1.* One core is needed to manage the distribution of tasks
-and to collect the results. The other cores are used to perform the
-simulations. If in total latexmath:[N \times \mathrm{ncores} + 1]
-cores are available then latexmath:[N] individual runs are processed
-in parallel each using `ncores`.
-
-For each run of the method `STATISTICAL-ERRORS` a unique base name is
-generated of the form _foo_. Each individual run is then performed in a
-directory _foo_run_ddddd_. The files that are produced by the
-`<trackmethod>` are kept. *This can lead to a large amount of data
-especially when snapshots of the phase space are stored frequently. The
-user should make sure that the file system can handle the amount of data
-or set the option `PSDUMPFREQ` to a big number.*
-
-In the end the method `STATISTICAL-ERRORS` computes the mean and the
-standard deviation for each variable in the array `OBJECTIVES` along the
-machine and stores this information in to the _.stat_ file.
 
 // EOF
