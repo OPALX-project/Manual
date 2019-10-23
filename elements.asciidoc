@@ -2500,6 +2500,53 @@ KHV:KICKER, HKICK=0.001, VKICK=0.0005;
 The reference system for an orbit corrector is a Cartesian coordinate
 system.
 
+[[sec.elements.beamstripping-opal-cycl]]
+=== Beam Stripping (_OPAL-cycl_)
+
+Beam stripping represents an abstract element that includes the necessary
+parameters to consider the interactions with the residual gas and
+the magnetic field of the cyclotron. When the particle interacts,
+it is recorded in the file, which contains the time,
+coordinates and momentum of the particle at this moment.
+The particle could produce a new particle, changing
+the charge and mass.
+
+There are 7 parameters to describe beam stripping.
+
+PRESSURE::
+  The average pressure of the residual gas in the cyclotron. [mbar]
+TEMPERATURE::
+  Temperature of residual gas. [K]
+PMAPFN::
+  File name of the mid-plane pressure map.
+  The pressure data is stored in a sequence shown in 2D field map on the median
+  plane with primary direction corresponding to the azimuthal direction,
+  secondary direction to the radial direction
+  (same file structure as `Cyclotron` `TYPE=CARBONCYCL`).
+  If `PMAPFN` is specified, the `PRESSURE` parameter is ignored.
+PSCALE::
+  Scale factor for the pressure field map (default: 1.0).
+GAS::
+  Type of gas for residual vacuum: `H2` or `AIR`
+STOP::
+  If STOP is true, the particle is stopped and deleted from the
+  simulation. Otherwise, the outcoming particle continues to be tracked
+  as `SECONDARY` particle (default: true).
+PARTICLEMATTERINTERACTION::
+  `PARTICLEMATTERINTERACTION` is an attribute of the element. Beam stripping
+  physics is only a kind of particlematterinteraction.
+
+Example: Beam stripping by latexmath:[H_2] residual gas.
+
+----
+bstp_phys:particlematterinteraction, TYPE="BEAMSTRIPPING";
+bstp: BEAMSTRIPPING, PRESSURE=1E-8, TEMPERATURE=300, 
+      GAS="H2", STOP=true, PARTICLEMATTERINTERACTION=bstp_phys;
+----
+
+No matter what the value of STOP is, the particles stripped are recorded in the HDF5 file
+_<elementname>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+
 [[sec.elements.bibliography]]
 [bibliography]
 === References
