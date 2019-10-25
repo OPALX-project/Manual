@@ -206,21 +206,21 @@ TURNS::
   The number of turns (integer) to be tracked (default: 1, namely single
   bunch).
 +
-In _OPAL-cycl_, this parameter represents the number of bunches those
+In _OPAL-cycl_, this parameter represents the number of bunches that
 will be injected into the cyclotron. In restart mode, the code firstly
-read an attribute latexmath:[NumBunch] from latexmath:[.h5] file
+reads an attribute `NumBunch` from _.h5_ file
 which records how many bunches have already been injected. If
-latexmath:[NumBunch] latexmath:[<] latexmath:[TURNS], the last
-latexmath:[TURNS]latexmath:[ -] latexmath:[NumBunch] bunches
+`NumBunch` latexmath:[<] `TURNS`, the last
+`TURNS` latexmath:[-] `NumBunch` bunches
 will be injected in sequence by reading the initial distribution from
-latexmath:[.h5] file.
+the _.h5_ file.
 MBMODE::
   This defines which mode of multi-bunch runs. There are two options for
   it, namely, `AUTO` and `FORCE`. See link:opalcycl#sec.opalcycl.MultiBunch[Multi-bunch Mode] for
   their explanations in detail.
 +
 For restarting run with `TURNS` larger than one, if the existing
-bunches of the read-in step is large than one, the mode is forcedly
+bunches of the read-in step is larger than one, the mode is forcedly
 set to `FORCE`. Otherwise, it is forcedly set to `AUTO`.
 +
 This argument is available for _OPAL-cycl_.
