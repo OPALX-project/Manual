@@ -267,7 +267,7 @@ ASCIIDUMP::
 BOUNDPDESTROYFQ::
   The frequency to do `boundp_destroy` to delete lost particles. Default
   10
-DELFREQPART::
+DELPARTFREQ::
   The frequency to delete particles in _OPAL-cycl_. Default: 1
 BEAMHALOBOUNDARY::
   Defines in terms of sigma where the halo starts. Default: 0.0
