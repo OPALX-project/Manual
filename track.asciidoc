@@ -173,8 +173,8 @@ This command starts or continues the actual tracking:
 
 ----
 RUN, METHOD=string, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
-FILE=string, TURNS=integer, MBMODE=string, PARAMB=float,
-BOUNDARYGEOMETRY=string, MULTIPACTING=logical, OBJECTIVES=string-vector;
+TURNS=integer, MBMODE=string, PARAMB=float,
+BOUNDARYGEOMETRY=string, TRACKBACK=logical;
 ----
 
 The `RUN` command initialises tracking and uses the most recent particle
@@ -200,8 +200,6 @@ DISTRIBUTION::
   The particle distribution to be used see Chapter link:distribution#chp.distribution[Distribution].
 BEAM::
   The particle beam see Chapter link:beam-command#chp.beam-command[Beam Command] to be used is specified.
-FILE::
-  The name of the file to be written (default="`track`").
 TURNS::
   The number of turns (integer) to be tracked (default: 1, namely single
   bunch).
@@ -231,15 +229,15 @@ PARAMB::
 This argument is only available for `AUTO` mode multi-bunch run in
 _OPAL-cycl_.
 TRACKBACK::
-  The particles are tracked backward in time if `TRUE`. 
+  The particles are tracked backward in time if `TRUE`.
   Only available in _OPAL-t_. Default is `FALSE`.
 
 Example:
 
 ----
-run, file="table", turns=5, mbmode="AUTO", paramb=10.0,
-     method="CYCLOTRON-T", beam=beam1, fieldsolver=Fs1,
-     distribution=Dist1;
+RUN, FILE="table", TURNS=5, MBMODE="AUTO", PARAMB=10.0,
+     METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1,
+     DISTRIBUTION=Dist1;
 ----
 
 This command tracks 5 bunches in cyclotron and writes the results on
