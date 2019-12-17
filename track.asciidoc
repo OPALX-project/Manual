@@ -223,6 +223,7 @@ This argument is available for _OPAL-cycl_.
 PARAMB::
   This is a control parameter to define when to start to transfer from
   single bunch to multi-bunches for `AUTO` mode (default: 5.0).
+  This argument is only available for `AUTO` mode multi-bunch run in _OPAL-cycl_.
 +
 MB_BINNING::
   Type of energy binning in multi-bunch mode: `GAMMA` or `BUNCH` (default: `GAMMA`).
@@ -234,8 +235,6 @@ MB_ETA::
   The scale parameter for binning in multi-bunch mode (default: 0.01). Only
   used in `MB_BINNING=GAMMA`. Only available in _OPAL-cycl_.
 +
-This argument is only available for `AUTO` mode multi-bunch run in
-_OPAL-cycl_.
 TRACKBACK::
   The particles are tracked backward in time if `TRUE`.
   Only available in _OPAL-t_. Default is `FALSE`.
