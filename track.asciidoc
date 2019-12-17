@@ -38,8 +38,6 @@ to the next set of `DT`, `MAXSTEPS` and `ZSTOP`
 
 |`TIMEINTEGRATOR` | Defines the time integrator used in _OPAL-cycl_
 
-|`NNB`            | Number of neighbouring bunches in _OPAL-cycl_
-
 |`name=expression` | Parameter relation
 
 |`RUN`            | Run particles for specified number of turns or steps
@@ -225,6 +223,16 @@ This argument is available for _OPAL-cycl_.
 PARAMB::
   This is a control parameter to define when to start to transfer from
   single bunch to multi-bunches for `AUTO` mode (default: 5.0).
++
+MB_BINNING::
+  Type of energy binning in multi-bunch mode: GAMMA or BUNCH (default: GAMMA).
+  When BUNCH binning, then all particles of a bunch are in the same energy bin.
+  When GAMMA binning, then the bin depends on the momentum of the particle.
+  Only available in _OPAL-cycl_.
++
+MB_ETA::
+  The scale parameter for binning in multi-bunch mode (default: 0.01). Only
+  used in `MB_BINNING=GAMMA`. Only available in _OPAL-cycl_.
 +
 This argument is only available for `AUTO` mode multi-bunch run in
 _OPAL-cycl_.
