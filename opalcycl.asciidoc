@@ -122,7 +122,7 @@ Because this is the main mode as well as the key part of _OPAL-cycl_, we
 will describe this in detail in <<sec.opalcycl.MultiBunch>>.
 
 [[sec.opalcycl.variables]]
-==== Variables in _OPAL-cycl_
+=== Variables in _OPAL-cycl_
 
 _OPAL-cycl_ uses the following canonical variables to describe the
 motion of particles:
@@ -578,7 +578,7 @@ separately. Then add the field data together. Each particle has a ID
 number to identify which energy bin it belongs to.
 
 [[sec.opalcycl.input]]
-==== Input
+=== Input
 
 All the three working modes of _OPAL-cycl_ use an input file written in
 `mad` language which will be described in detail in the following
@@ -611,53 +611,6 @@ To start execution, just run
 _tuning.sh_ which uses the input file _testcycl.in_ and the auxiliary
 file _FIXPO_ SEO_. The output file is _plotdata_ from which one can plot
 the tune diagram.
-
-[[sec.opalcycl.matched-distribution]]
-=== Matched Distribution
-
-In order to run matched distribution simulation one has to specify a
-periodic accelerator. The function call also needs the symmetry of the
-machine as well as a field map. The user then specifies the emittance
-latexmath:[\pi] latexmath:[mm] latexmath:[mrad].
-
-----
-/*
- * specify periodic accelerator
- */
-l1 = ...
-
-/*
- * try finding a matched distribution
- */
-Dist1:DISTRIBUTION, TYPE=GAUSSMATCHED, LINE=l1, FMAPFN=...,
-                    MAGSYM=..., EX = ..., EY = ..., ET = ...;
-----
-
-[[sec.opalcycl.example]]
-==== Example
-
-Simulation of the PSI Ring Cyclotron at 580 MeV and current 2.2 mA. The
-program finds a matched distribution followed by a bunch initialization
-according to the matched covariance matrix. +
-The matched distribution algorithm works with normalized emittances,
-i.e. normalized by the lowest energy of the machine. The printed
-emittances, however, are the geometric emittances. In addition, it has
-to be paid attention that the computation is based on
-latexmath:[(x,x',y,y',z,\delta)] instead of
-latexmath:[(x,p_{x},y,p_{y},z,p_{z})]. Since the particles are
-represented in the latter coordinate system, the corresponding
-transformation has to be applied to obtain the rms emittances that are
-given in the output.
-
-[[sec.opalcycl.input-file]]
-===== Input file
-
-https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/examples/matchedDistribution.in[matchedDistribution.in]
-
-[[sec.opalcycl.output-1]]
-===== Output
-
-https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/examples/matchedDistribution.output[matchedDistribution.output]
 
 [[sec.opalcycl.output]]
 === Output
@@ -719,6 +672,55 @@ an off-centering particle (with ID of 1) are stored in an ASCII file.
 The file is named _<input_file_name >-trackOrbit.dat_.
 The frequency of the data output can be set using
 the `SPTDUMPFREQ` option of `OPTION` statement see link:control#sec.control.option[Option Statement].
+
+[[sec.opalcycl.matched-distribution]]
+=== Matched Distribution
+
+In order to run matched distribution simulation one has to specify a
+periodic accelerator. The function call also needs the symmetry of the
+machine as well as a field map. The user then specifies the emittance
+latexmath:[\pi] latexmath:[mm] latexmath:[mrad].
+
+----
+/*
+ * specify periodic accelerator
+ */
+l1 = ...
+
+/*
+ * try finding a matched distribution
+ */
+Dist1:DISTRIBUTION, TYPE=GAUSSMATCHED, LINE=l1, FMAPFN=...,
+                    MAGSYM=..., EX = ..., EY = ..., ET = ...;
+----
+
+[[sec.opalcycl.example]]
+==== Example
+
+Simulation of the PSI Ring Cyclotron at 580 MeV and current 2.2 mA. The
+program finds a matched distribution followed by a bunch initialization
+according to the matched covariance matrix. +
+The matched distribution algorithm works with normalized emittances,
+i.e. normalized by the lowest energy of the machine. The printed
+emittances, however, are the geometric emittances. In addition, it has
+to be paid attention that the computation is based on
+latexmath:[(x,x',y,y',z,\delta)] instead of
+latexmath:[(x,p_{x},y,p_{y},z,p_{z})]. Since the particles are
+represented in the latter coordinate system, the corresponding
+transformation has to be applied to obtain the rms emittances that are
+given in the output.
+
+[[sec.opalcycl.input-file]]
+===== Input file
+
+https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/RingCyclotronMatched.in[matchedDistribution.in]
+
+All supplementary files can be found in https://gitlab.psi.ch/OPAL/regression-tests/tree/master/RegressionTests/RingCyclotronMatched[the matched distribution regression test].
+
+[[sec.opalcycl.output-1]]
+===== Output
+
+https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/reference/RingCyclotronMatched.out[matchedDistribution.output]
 
 [[sec.opalcycl.bibliography]]
 [bibliography]

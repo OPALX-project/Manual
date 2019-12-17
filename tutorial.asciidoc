@@ -132,12 +132,12 @@ with the first entry defining the number of cavities in the simulation.
 [[sec.tutorial.examplesbeamlines]]
 === Examples of Particle Accelerators and Beamlines
 
-https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/examples/OBLA-Gun/OBLA-Gun.in[OBLA-Gun.in]
+[[sec.tutorial.obla]]
+==== Laser emission, OBLA (SwissFEL test facility) 4 MeV Gun and Beamline
 
-[[sec.tutorial.felinj]]
-==== PSI XFEL 250 MeV Injector
+https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/LaserEmission-1/LaserEmission-1.in[LaserEmission-1.in]
 
-https://gitlab.psi.ch/OPAL/Manual-2.1/wikis/examples/diagnostic.in[diagnostic.in]
+All supplementary files can be found in https://gitlab.psi.ch/OPAL/regression-tests/tree/master/RegressionTests/LaserEmission-1[the laser emission regression test].
 
 [[sec.tutorial.inj2]]
 ==== PSI Injector II Cyclotron
