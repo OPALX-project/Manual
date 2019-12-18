@@ -1170,6 +1170,10 @@ K1S::
   latexmath:[K_{1s}=-\frac{\partial B_x}{\partial x}]. The default is 0
   latexmath:[\mathrm{Tm^{-1}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
+DK1::
+  The normalised quadrupole coefficient error.
+DK1S::
+  The normalised skew quadrupole coefficient error.
 
 Example:
 
@@ -1198,6 +1202,10 @@ K2S::
   latexmath:[K_{2s}=-\frac{\partial{^2}B_x}{\partial x^{2}}]. The
   default is 0 latexmath:[\mathrm{T m^{-2}}]. The component is negative, if
   latexmath:[B_x] is positive on the latexmath:[x]-axis.
+DK2::
+  The normalised sextupole coefficient error.
+DK2S::
+  The normalised skew sextupole coefficient error.
 
 Example:
 
@@ -1227,6 +1235,10 @@ K3S::
   latexmath:[K_{3s}=-\frac{\partial{^3}B_x}{\partial x^{3}}]. The
   default is 0 latexmath:[\mathrm{Tm^{-3}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
+DK3::
+  The normalised octupole coefficient error.
+DK3S::
+  The normalised skew octupole coefficient error.
 
 Example:
 
@@ -1238,6 +1250,12 @@ The reference system for an octupole is a Cartesian coordinate system
 
 [[sec.elements.multipole]]
 === General Multipole
+
+The `MULTIPOLE` element defines a thick multipole.
+If the length is non-zero, the strengths are per unit
+length. If the length is zero, the strengths are the
+values integrated over the length.
+With zero length no synchrotron radiation can be calculated.
 
 A `MULTIPOLE` in _OPAL-t_ is of arbitrary order.
 
@@ -1257,10 +1275,14 @@ KS::
   latexmath:[K_{n~s}=-\frac{\partial{^n}B_x}{\partial x^{n}}].
   (default is 0 latexmath:[\mathrm{Tm^{-n}}]). A component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
+DKN::
+  A real vector see link:format#sec.format.anarray[Arrays], containing the normal
+  normalised multipole strength errors. (default is 0 latexmath:[\mathrm{Tm^{-n}}]).
+DKS::
+  A real vector see link:format#sec.format.anarray[Arrays], containing the skew
+  normalised multipole strength errors. (default is 0 latexmath:[\mathrm{Tm^{-n}}]).
 
-The order latexmath:[n] is unlimited, but all components up to the
-maximum must be given, even if they are zero. The number of poles of
-each component is (latexmath:[2 n + 2]).
+The number of poles of each component is (latexmath:[2 n + 2]).
 
 Superposition of many multipole components is permitted. The reference
 system for a multipole is a Cartesian coordinate system
@@ -1710,6 +1732,8 @@ LAG::
   energy. This phase is determined using an auto-phasing algorithm
   (see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
+DLAG::
+  The phase lag error [rad] (default: 0).
 
 [[sec.elements.cavity-t]]
 ==== _OPAL-t_ mode
@@ -1720,7 +1744,7 @@ are defined:
 FMAPFN::
   Field maps in the _T7_ format can be specified.
 TYPE::
-  Type specifies STANDING [default] or SINGLE GAP structures.
+  Type specifies `STANDING` [default] or `SINGLEGAP` structures.
 FREQ::
   Defines the frequency of the RF Cavity in units of MHz. A warning is
   issued when the frequency of the cavity card does not correspond to
@@ -1763,7 +1787,7 @@ FMAPFN::
 VOLT::
   Peak value of voltage amplitude curve in MV.
 TYPE::
-  Defines Cavity type, SINGLEGAP represents cyclotron type cavity.
+  Defines Cavity type, `SINGLEGAP` represents cyclotron type cavity.
 FREQ::
   Frequency of the RF Cavity in units of MHz.
 RMIN::
@@ -1985,6 +2009,8 @@ LAG::
   energy. This phase is determined using an auto-phasing algorithm
   (see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
+DLAG::
+  The phase lag error [rad] (default: 0).
 FMAPFN::
   Field maps in the _T7_ format can be specified.
 FREQ::
