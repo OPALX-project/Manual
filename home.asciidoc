@@ -1,11 +1,11 @@
 = The OPAL Framework
 Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
-Version 2.0, June 2018: 1. revision
+Version 2.2, December 2019
 
 ifdef::env-gitlab[]
 *Object Oriented Parallel Accelerator Library*
 
-*_OPAL_ 2.1 User's Reference Manual*
+*_OPAL_ 2.2 User's Reference Manual*
 endif::[]
 
 ifdef::backend-docbook5[]
@@ -17,7 +17,7 @@ endif::[]
 
 == Preliminary note
 
-This is the manual for _OPAL_ 2.1. Odd minor version numbers identify
+This is the manual for _OPAL_ 2.2. Odd minor version numbers identify
 development versions. Use these versions only if you know what you are
 doing!
 
