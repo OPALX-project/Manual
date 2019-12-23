@@ -423,7 +423,7 @@ image::figures/partmatter/longcoll6.png[scaledwidth=12cm]
 .The energy spectrum and scattering angle at z=0.1 m
 image::figures/partmatter/spectandscatter.png[scaledwidth=12cm]
 
-[[sec.elements.bibliography]]
+[[sec.partmatter.bibliography]]
 [bibliography]
 === References
 

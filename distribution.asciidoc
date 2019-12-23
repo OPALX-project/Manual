@@ -88,8 +88,7 @@ latexmath:[p_{z}]).
 |=======================================================================
 
 [[sec.distribution.note-unit-conversion-of-momentum-in-opal-t-and-opal-cycl]]
-NOTE: unit conversion of momentum in _OPAL-t_ and _OPAL-cycl_
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=== note: unit conversion of momentum in _OPAL-t_ and _OPAL-cycl_
 
 Convert latexmath:[\beta_x \gamma] [dimensionless] to [mrad],
 
