@@ -605,7 +605,7 @@ mrad.
 A bash script _tuning.sh_ is shown on the next page, to execute
 _OPAL-cycl_ for tune calculations.
 
-https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/examples/tuning.sh[tuning.sh]
+https://gitlab.psi.ch/OPAL/Manual-master/wikis/examples/tuning.sh[tuning.sh]
 
 To start execution, just run
 _tuning.sh_ which uses the input file _testcycl.in_ and the auxiliary
