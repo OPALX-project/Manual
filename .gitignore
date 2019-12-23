@@ -14,3 +14,7 @@
 *.tex
 *.toc
 *.xml
+*.4tc
+*.dvi
+*.tmp
+*.xref
