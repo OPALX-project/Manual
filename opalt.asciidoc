@@ -615,12 +615,12 @@ In the example below this file is used to indicate the positions of dipoles and 
 
 ----
 plot '70MeV_Gantry2.stat' u 2:6 w l t 'rms x'
-gnuplot> repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$2/0.45 + 1.6) w l axis x1y2 lc 2 t 'Dipole'
-gnuplot> repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$2/0.45 - 1.6) w l axis x1y2 lc 2 notitle
-gnuplot> repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$3 + 1.6) w l axis x1y2 lc 3 t 'Quadrupole'
-gnuplot> repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$3 - 1.6) w l axis x1y2 lc 3 notitle
-gnuplot> set xrange[32:]
-gnuplot> set y2range[-1.2:1.2]
+repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$2/0.45 + 1.6) w l axis x1y2 lc 2 t 'Dipole'
+repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$2/0.45 - 1.6) w l axis x1y2 lc 2 notitle
+repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$3 + 1.6) w l axis x1y2 lc 3 t 'Quadrupole'
+repl 'data/70MeV_Gantry2_ElementPositions.sdds' u 1:(-$3 - 1.6) w l axis x1y2 lc 3 notitle
+set xrange[32:]
+set y2range[-1.2:1.2]
 ----
 
 This produces a plot as found in <<fig_elementIndicator>>
