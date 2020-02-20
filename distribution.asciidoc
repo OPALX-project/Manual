@@ -385,11 +385,13 @@ latexmath:[y] direction.
 |`SIGMAR` |0.0 |m |RMS radius, latexmath:[\sigma_{r}], in radial
 direction. If nonzero `SIGMAR` overrides `SIGMAX` and `SIGMAY`.
 
-|`SIGMAZ` |0.0 |m |RMS length, latexmath:[\sigma_{z}], in longitudinal
-(z) direction. `SIGMAZ` is used for an _injected_ distribution.
+|`SIGMAZ` |0.0 |m or s |RMS length, latexmath:[\sigma_{z}], of the Gaussian
+in longitudinal (z) direction. `SIGMAZ` overrides `SIGMAT`.
+Use seconds for an emitted bunch, and meters for an injected one.
 
-|`SIGMAT` |0.0 |s |RMS width, latexmath:[\sigma_{t}], in time (t).
-`SIGMAT` is used for an _emitted_ distribution.
+|`SIGMAT` |0.0 |m or s |RMS length, latexmath:[\sigma_{t}], of the Gaussian
+in longitudinal (z) direction. `SIGMAZ` overrides `SIGMAT`.
+Use seconds for an emitted bunch, and meters for an injected one.
 
 |`SIGMAPX` |0.0 |<<sec.distribution.unitsdistattributes>> |Parameter
 latexmath:[\sigma_{px}] for defining distribution.
@@ -1010,9 +1012,9 @@ Dist: DISTRIBUTION, TYPE = MULTIGAUSS,
                     SIGMAPX = 1e-2, SIGMAPY = 1e-2, SIGMAPZ = 1e-2,  // In units of betaGamma
                     CUTOFFPX = 4.0, CUTOFFPY = 4.0, CUTOFFPZ = 4.0,  // In units of SIGMAP
                     SIGMAR = 340e-6,
-                    SIGMAZ = .9e-3 / 2.355, // FWHM  = 2.355 * sigma
+                    SIGMAZ = 90e-6 / 2.355, // FWHM  = 2.355 * sigma
                     CUTOFFLONG = 4.0,  // In units of SIGMAZ
-                    SEPPEAKS = 1.26e-3,
+                    SEPPEAKS = 126e-6,
                     NPEAKS = 4,
                     EMITTED = FALSE;
 ----
