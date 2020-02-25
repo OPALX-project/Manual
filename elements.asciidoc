@@ -1178,8 +1178,7 @@ DK1S::
 Example:
 
 ----
-QP1: Quadrupole, L=1.20, ELEMEDGE=-0.5265,
-     FMAPFN="1T1.T7", K1=0.11;
+QP1: Quadrupole, L=1.20, ELEMEDGE=-0.5265, K1=0.11;
 ----
 
 [[sec.elements.sextupole]]
