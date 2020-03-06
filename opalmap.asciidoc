@@ -204,7 +204,7 @@ _OPAL-map_ computes the dispersion of the beam line according to:
 [latexmath]
 ++++
 \begin{aligned}
-  \begin{pmatrix} \eta_{i} \\ \eta_{p_i} \end{pmatrix}_{s_1}  
+  \begin{pmatrix} \eta_{i} \\ \eta_{p_i} \end{pmatrix}_{s_1}
   =
   \begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
   \cdot
@@ -226,7 +226,7 @@ where latexmath:[R] is the Transfermatrix and latexmath:[\eta] is the dispersion
 
 |4 |latexmath:[\eta_y] |m |Spatial dispersion in x
 
-|5 |latexmath:[\eta_{py} |1 |Momentum dispersion in y
+|5 |latexmath:[\eta_{py}] |1 |Momentum dispersion in y
 positions
 |=======================================================================
 
@@ -235,7 +235,7 @@ positions
 ==== _data/<input_file_name >.map_
 
 Here the transfer map of the whole beamline gets printed.
-Its format is analogous to a DA- `FVPs` (src/Classic/FixedAlgebra), where the polynomials (DA- `FTPs`) get represented in an 6 dimensional vector.
+Its format is analogous to a DA- `FVPs` (src/Classic/FixedAlgebra), where the polynomials (DA- `FTPs`) get represented in a 6 dimensional vector.
 The first number describes the coefficient and the following 6 the variables of the monomial.
 
 [cols="<1,<1,<1,<5",options="header",]

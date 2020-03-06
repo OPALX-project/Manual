@@ -1705,7 +1705,7 @@ LENGTH::
 [[sec.elements.source]]
 === Source
 
-This element only works in _OPAL-t_. It’s only purpose in _OPAL-t_ is to
+The `SOURCE` element only works in _OPAL-t_. Its only purpose in _OPAL-t_ is to
 indicate that the particle source is contained in the beamline. This is
 needed to place the elements in three-dimensional space when using
 `ELEMEDGE`. Otherwise it has no effect on the particles.
