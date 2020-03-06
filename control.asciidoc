@@ -565,8 +565,8 @@ VALUE,VALUE={P1,P2,P1*P2-3};
 These commands give the results:
 
 ----
-value: {0*A,1*A,2*A,3*A,4*A} = {0,4,8,12,16}
-value: {P1,P2,P1*P2-3} = {5,7,32}
+value: TABLE(1:5:1,(#*A)) = {4, 8, 12, 16, 20}
+value: {P1,P2,P1*P2-3} = {5, 7, 32}
 ----
 
 This commands serves mainly for printing one or more quantities which

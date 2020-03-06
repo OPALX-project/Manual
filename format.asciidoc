@@ -363,8 +363,7 @@ functions see <<tab_realfun>> acting on operands see <<sec.format.operand>>.
 
 |`X / Y` |divide `X` by `Y` |real |real,real
 
-|`X  Y` |power, return `X` raised to the power `Y`
-(latexmath:[\mathtt{Y} > 0]) |real |real,real
+|`X ^ Y` |power, return `X` raised to the power `Y` |real |real,real
 |=======================================================================
 
 [#tab_realfun]
