@@ -1,6 +1,5 @@
-= The OPAL Framework
-Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
-Version 2.2, December 2019
+= The _OPAL_ Framwork: Version 2.2
+Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Matthias Frey (PSI); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Nicole Neveu (SLAC); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Chuan Wang (CIAE); Daniel Winklehner (MIT)
 
 ifdef::env-gitlab[]
 *Object Oriented Parallel Accelerator Library*
