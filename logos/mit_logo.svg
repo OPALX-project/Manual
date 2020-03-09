@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="mit_logo.svg"
+   width="72"
+   height="38"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:export-filename="/Users/gsell/src/OPAL/Manual-2.2/mit_logo.png"
+   inkscape:export-xdpi="252.63158"
+   inkscape:export-ydpi="252.63158">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="870"
+     inkscape:window-height="708"
+     id="namedview20"
+     showgrid="false"
+     inkscape:zoom="2.36"
+     inkscape:cx="49.215"
+     inkscape:cy="-11.937"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg18" />
+  <style
+     type="text/css"
+     id="style2">
+        .logo-color--primary{fill: RGBA(0, 0, 0, 1);}
+        .logo-color--secondary{fill: RGBA(82, 84, 87, 1);}
+    </style>
+  <polygon
+     points="72.785,0.063 52.785,0.063 52.785,8.063 72.785,8.063 "
+     id="polygon4"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+  <polygon
+     points="21.785,0.063 13.785,0.063 13.785,26.063 21.785,26.063 "
+     id="polygon6"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+  <polygon
+     points="34.785,0.063 26.785,0.063 26.785,38.063 34.785,38.063 "
+     id="polygon8"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+  <polygon
+     points="8.785,0.063 0.785,0.063 0.785,38.063 8.785,38.063 "
+     id="polygon10"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+  <polygon
+     points="60.785,13.063 52.785,13.063 52.785,38.063 60.785,38.063 "
+     id="polygon12"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+  <polygon
+     points="47.785,0.063 39.785,0.063 39.785,8.063 47.785,8.063 "
+     id="polygon14"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+  <polygon
+     class="logo-color--secondary"
+     points="48,13 40,13 40,38 48,38 "
+     id="polygon16"
+     transform="translate(-0.785,-0.063)"
+     inkscape:export-xdpi="252.63158"
+     inkscape:export-ydpi="252.63158" />
+</svg>
