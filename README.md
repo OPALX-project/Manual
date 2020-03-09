@@ -1,4 +1,4 @@
-# OPAL User Manual for Version 2.1
+# OPAL User Manual for master-branch
 
 ## Introduction
 
