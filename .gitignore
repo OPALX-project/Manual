@@ -1,5 +1,6 @@
 *.adoc
 *.aux
+*.bak
 *.bbl
 *.cb
 *.cb2
