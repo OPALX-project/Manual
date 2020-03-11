@@ -121,14 +121,32 @@ See also link:pitfalls#chp.pitfalls[pitfalls and limitations].
 
 The contributions of various individuals and groups are acknowledged in
 the relevant chapters, however a few individuals have or had
-considerable influence on the development of _OPAL_, namely Chris
-Iselin, John Jowett, Julian Cummings, Ji Qiang, Robert Ryne and Stefan
-Adam. For the `H5root`  visualization tool credits go to Thomas
-Schietinger.
+considerable influence on the development of _OPAL_, namely
+Chris Iselin,
+John Jowett,
+Julian Cummings,
+Ji Qiang,
+Robert Ryne
+and Stefan Adam.
+For the `H5root` visualization tool credits go to Thomas Schietinger.
 
 The following individuals are acknowledged for past contributions:
-Yuanjie Bi, Jianjun Yang, Colwyn Gulliford, Hao Zha, Christopher Mayes,
-Tulin Kaman, Chuan Wang, Yves Ineichen, Valeria Rizzoglio and Christian Baumgarten.
+Christian Baumgarten,
+J. Scott Berg,
+Yuanjie Bi,
+David Bruhwiler,
+Chris Cortes,
+Martin Duy Tat,
+Philippe Ganz,
+Colwyn Gulliford,
+Yves Ineichen,
+Tulin Kaman,
+Christopher Mayes,
+Xiaoying Pang,
+Valeria Rizzoglio,
+Chuan Wang,
+Jianjun Yang,
+Hao Zha.
 
 [[sec.introduction.citation]]
 === Citation
