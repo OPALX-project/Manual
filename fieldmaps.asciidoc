@@ -36,22 +36,22 @@ two values are shown on one line then they have to be on the same line.
 They should not be separated by a comment and, consequently, be on
 different lines. Three examples of valid comments:
 
-....
+----
 # This is valid a comment
 1DMagnetoStatic 40 # This is another valid comment
 -60.0 60.0 9999
   # and this is also a valid comment
 0.0 2.0 199
-....
+----
 
 The following examples will break the parsing of the field maps:
 
-....
+----
 1DMagnetoStatic # This is an invalid comment
 40
 -60.0 60.0 # This is another invalid comment # 9999
 0.0 2.0 199
-....
+----
 
 [[sec.fieldmaps.normalization]]
 === Normalization
@@ -68,40 +68,40 @@ If _OPAL-t_ encounters an error while parsing a field map it disables
 the corresponding element, outputs a warning message and continues the
 simulation. The following messages may be output:
 
-....
+----
 ************ W A R N I N G ***********************************
 THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELD MAP file.t7.
 There are only 10003 lines in the file, expecting more.
 Please check the section about field maps in the user manual.
 **************************************************************
-....
+----
 
 In this example there is something wrong with the number of grid
 spacings provided in the header of the file. Make sure that you provide
 the number of grid *spacings* and not the number of grid *points*! The
 two numbers always differ by 1.
 
-....
+----
 ************ W A R N I N G ***********************************
 THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELD MAP file.t7.
 There are too many lines in the file, expecting only 10003 lines.
 Please check the section about field maps in the user manual.
 **************************************************************
-....
+----
 
 Again there seems to be something wrong with the number of grid spacings
 provided in the header. In this example _OPAL-t_ found more lines than
 it expected. Note that comments and empty lines at the end of a file are
 ignored such that *they don’t cause* this warning.
 
-....
+----
 ************ W A R N I N G ***********************************
 THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELD MAP file.t7.
 _error_msg_
 expecting: '_expecting_' on line 3,
 found instead: '_found_'.
 **************************************************************
-....
+----
 
 Where `"`_error_msg_`"` is either
 
@@ -124,29 +124,29 @@ comment possibly following the values. If line 3 of a file consists of
 `-60.0 60.0 # This is an other invalid comment # 9999` _OPAL-t_ will
 output `-60.0 60.0`.
 
-....
+----
 ************** W A R N I N G *********************************
 DISABLING FIELD MAP file.t7 SINCE FILE COULDN'T BE FOUND!
 **************************************************************
-....
+----
 
 This warning could be issued if the file name is mistyped or otherwise
 if the file couldn’t be read.
 
-....
+----
 ************ W A R N I N G **********************************
 THERE SEEMS TO BE SOMETHING WRONG WITH YOUR FIELDMAP file.t7.
 Could not determine the file type.
 Please check the section about field maps in the user manual.
 *************************************************************
-....
+----
 
 In this case _OPAL-t_ didn’t recognize the string of characters which
 identify the type of field map stored in the file.
 
 For one-dimensional field maps an other warning may be issued:
 
-....
+----
 * ************ W A R N I N G ***************************************************
 * IT SEEMS THAT YOU USE TOO FEW FOURIER COMPONENTS TO SUFFICIENTLY WELL        *
 * RESOLVE THE FIELD MAP 'file.T7'.                                             *
@@ -157,7 +157,7 @@ For one-dimensional field maps an other warning may be issued:
 * field.                                                                       *
 * The lower limit for the two ratios is 1e-2                                   *
 * ******************************************************************************
-....
+----
 
 This warning is issued when the low pass filter that is applied to the
 field sampling uses too few Fourier coefficients. In this case increase
@@ -349,7 +349,7 @@ image::./figures/Fieldmaps/fieldnoise_example.png[scaledwidth=18cm,width=750]
 [[sec.fieldmaps.1DMagnetoStatic]]
 === 1DMagnetoStatic
 
-....
+----
 1DMagnetoStatic 40
 -60.0 60.0 9999
   0.0  2.0 199
@@ -360,7 +360,7 @@ image::./figures/Fieldmaps/fieldnoise_example.png[scaledwidth=18cm,width=750]
   1.32490e-05
   1.73710e-05
   2.18598e-05
-....
+----
 
 A 1D field map describing a magnetostatic field using 10000 grid points
 (9999 grid spacings) in the longitudinal direction. The field is
@@ -426,7 +426,7 @@ during the simulation.
 [[sec.fieldmaps.AstraMagnetostatic]]
 === AstraMagnetostatic
 
-....
+----
 AstraMagnetostatic 40
   -3.0000000e-01   0.0000000e+00
   -2.9800000e-01   2.9075045e-05
@@ -441,7 +441,7 @@ AstraMagnetostatic 40
    2.9600000e-01   5.9367702e-05
    2.9800000e-01   2.9075045e-05
    3.0000000e-01   0.0000000e+00
-....
+----
 
 A 1D field map describing a magnetostatic field using latexmath:[N]
 non-equidistant grid points in the longitudinal direction. From these
@@ -495,7 +495,7 @@ values during the simulation.
 [[sec.fieldmaps.1DDynamic]]
 === 1DDynamic
 
-....
+----
 1DDynamic 40
 -3.0 57.0 4999
 1498.953425154
@@ -507,7 +507,7 @@ values during the simulation.
   1.32490e-05
   1.73710e-05
   2.18598e-05
-....
+----
 
 A 1D field map describing a dynamic field using 5000 grid points (4999
 grid spacings) in the longitudinal direction. The field is
@@ -580,7 +580,7 @@ during the simulation.
 [[sec.fieldmaps.AstraDynamic]]
 === AstraDynamic
 
-....
+----
 AstraDynamic 40
 2997.924
    0.0000000e+00   0.0000000e+00
@@ -594,7 +594,7 @@ AstraDynamic 40
    1.9891525e-01   5.6553000e-04
    1.9942016e-01   2.8090000e-04
    1.9991554e-01   0.0000000e+00
-....
+----
 
 A 1D field map describing a dynamic field using latexmath:[N]
 non-equidistant grid points in longitudinal direction. From these
@@ -832,7 +832,7 @@ always places the entrance Enge function origin at the entrance point of
 the reference trajectory and the exit Enge function origin at the exit
 point of the reference trajectory.)
 
-....
+----
 1DProfile1 6 7 3.0
 -6.0 -2.0 2.0  1000
 24.0 28.0 32.0 0
@@ -843,7 +843,7 @@ point of the reference trajectory.)
   1.32490e-05
   1.73710e-05
   2.18598e-05
-....
+----
 
 A 1D field map describing the fringe field of an element using 7 Enge
 coefficients for the entrance fringe field and 8 Enge coefficients for
@@ -919,7 +919,7 @@ exit points of the reference trajectory.
 be modeled with a single `1DProfile Type 2` field map file rather than
 two separate files.
 
-....
+----
 1DProfile1 6 7 3.0
 -6.0 -2.0 2.0 0
 -2.0  2.0 6.0 0
@@ -930,7 +930,7 @@ two separate files.
   1.32490e-05
   1.73710e-05
   2.18598e-05
-....
+----
 
 A 1D field map describing the fringe field of an element using 7 Enge
 coefficients for the entrance fringe field and 8 Enge coefficients for
@@ -948,7 +948,7 @@ origin is 2.0 cm behind (downstream of) the exit edge of the magnet.
 [[sec.fieldmaps.2DElectroStatic]]
 === 2DElectroStatic
 
-....
+----
 2DElectroStatic XZ
 -3.0 51.0 4999
 0.0 2.0 199
@@ -959,7 +959,7 @@ origin is 2.0 cm behind (downstream of) the exit edge of the magnet.
   1.32490e-05  0.00000e+00
   1.73710e-05  0.00000e+00
   2.18598e-05  0.00000e+00
-....
+----
 
 A 2D field map describing an electrostatic field using 5000 grid points
 in the longitudinal direction times 200 grid points in the radial
@@ -1035,7 +1035,7 @@ If Orientation = ZX:::
 [[sec.fieldmaps.2DMagnetoStatic]]
 === 2DMagnetoStatic
 
-....
+----
 2DMagnetoStatic ZX
 0.0 2.0 199
 -3.0 51.0 4999
@@ -1046,7 +1046,7 @@ If Orientation = ZX:::
   0.00000e+00  1.32490e-05
   0.00000e+00  1.73710e-05
   0.00000e+00  2.18598e-05
-....
+----
 
 A 2D field map describing a magnetostatic field using 5000 grid points
 in the longitudinal direction times 200 grid points in the radial
@@ -1122,7 +1122,7 @@ If Orientation = ZX:::
 [[sec.fieldmaps.2DDynamic]]
 === 2DDynamic
 
-....
+----
 2DDynamic XZ
 -3.0 51.0 4121
 1498.953425154
@@ -1134,7 +1134,7 @@ If Orientation = ZX:::
   1.32490e-05  0.00000e+00  0.00000e+00  1.32490e-05
   1.73710e-05  0.00000e+00  0.00000e+00  1.73710e-05
   2.18598e-05  0.00000e+00  0.00000e+00  2.18598e-05
-....
+----
 
 A 2D field map describing a dynamic field oscillating with a frequency
 of 1498.953425154MHz. The field map provides 4122 grid points in the
@@ -1227,7 +1227,7 @@ _OPAL-t_, but must be there.
 [[sec.fieldmaps.3DMagnetoStatic]]
 === 3DMagnetoStatic
 
-....
+----
 3DMagnetoStatic
 -1.5 1.5 227
 -1.0 1.0 151
@@ -1239,7 +1239,7 @@ _OPAL-t_, but must be there.
 0.00e+00 1.32e-05 0.00e+00
 0.00e+00 1.73e-05 0.00e+00
 0.00e+00 2.18e-05 0.00e+00
-....
+----
 
 A 3D field map describing a magnetostatic field. The field map provides
 4122 grid points in z-direction times 228 grid points in x-direction and
@@ -1310,7 +1310,7 @@ latexmath:[N= (N_{z} + 1) \times (N_{y} + 1) \times (N_{x} + 1)].
 [[sec.fieldmaps.3DMagnetoStatic_Extended]]
 === 3DMagnetoStatic_Extended
 
-....
+----
 3DMagnetoStatic_Extended
 -9.9254 9.9254 133
 -2.0 1.0 15
@@ -1322,7 +1322,7 @@ latexmath:[N= (N_{z} + 1) \times (N_{y} + 1) \times (N_{x} + 1)].
  -8.64960000e-05
  -8.38540000e-05
  -8.10970000e-05
-....
+----
 
 A 3D field map describing a magnetostatic field on the mid-plane. The
 field map provides 466 grid points in z-direction times 134 grid points
@@ -1396,7 +1396,7 @@ shown in <<tab_3DMagnetoStatic_Extended>>.
 [[sec.fieldmaps.3DDynamic]]
 === 3DDynamic
 
-....
+----
 3DDynamic
 1498.9534
 -1.5 1.5 227
@@ -1409,7 +1409,7 @@ shown in <<tab_3DMagnetoStatic_Extended>>.
 1.32e-05 0.00e+00 1.32e-05 0.00e+00 1.32e-05 0.00e+00
 1.73e-05 0.00e+00 1.73e-05 0.00e+00 1.73e-05 0.00e+00
 2.18e-05 0.00e+00 2.18e-05 0.00e+00 2.18e-05 0.00e+00
-....
+----
 
 A 3D field map describing a dynamic field oscillating with 1.4989534.
 The field map provides 4122 grid points in z-direction times 228 grid

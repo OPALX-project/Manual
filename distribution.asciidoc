@@ -38,7 +38,7 @@ The distribution command is used to introduce particles into an _OPAL_
 simulation. Like other _OPAL_ commands see Chapter link:format#chp.format[Command Format], the
 distribution command is of the form:
 
-....
+----
 Name:DISTRIBUTION, TYPE = DISTRIBUTION_TYPE,
                    ATTRIBUTE #1 =,
                    ATTRIBUTE #2 =,
@@ -46,7 +46,7 @@ Name:DISTRIBUTION, TYPE = DISTRIBUTION_TYPE,
                    .
                    .
                    ATTRIBUTE #N =;
-....
+----
 
 The distribution is given a name (which is used to reference the
 distribution in the _OPAL_ input file), a distribution type, and a list
@@ -258,19 +258,19 @@ particle coordinates.
 
 An example of an _injected_ `FROMFILE` distribution definition is:
 
-....
+----
 Name:DISTRIBUTION, TYPE = FROMFILE,
                    FNAME = "text file name";
-....
+----
 
 an example of an _emitted_ `FROMFILE` distribution definition is:
 
-....
+----
 Name:DISTRIBUTION, TYPE = FROMFILE,
                    FNAME = "text file name",
                    EMITTED = TRUE,
                    EMISSIONMODEL = None;
-....
+----
 
 The text input file for the `FROMFILE` distribution type has slightly a
 slightly different format, depending on whether the distribution is to
@@ -414,7 +414,7 @@ In <<tab_distattrgauss>> we list the basic attributes available for a
 `GAUSS` distribution. We can use these to create a very simple `GAUSS`
 distribution:
 
-....
+----
 Name:DISTRIBUTION, TYPE       = GAUSS,
                    SIGMAX     = 0.001,
                    SIGMAY     = 0.003,
@@ -429,7 +429,7 @@ Name:DISTRIBUTION, TYPE       = GAUSS,
                    OFFSETY    = -0.002,
                    OFFSETZ    = 0.01,
                    OFFSETPZ   = 1200.0;
-....
+----
 
 This creates a Gaussian shaped distribution with zero transverse
 emittance, zero energy spread, latexmath:[\sigma_{x} = {1.0} \mathrm{mm}],
@@ -619,7 +619,7 @@ coefficient matrix be:
 
 then the corresponding distribution command will read:
 
-....
+----
 Dist:DISTRIBUTION, TYPE = GAUSS,
                    SIGMAX = 4.796e-03,
                    SIGMAPX = 231.0585,
@@ -636,7 +636,7 @@ Dist:DISTRIBUTION, TYPE = GAUSS,
                    R62 = -0.042,
                    R51 = 0.023,
                    R52 = 0.385;
-....
+----
 
 [[sec.distribution.flattopdisttype]]
 === `FLATTOP` Distribution Type
@@ -741,7 +741,7 @@ example of a `FLATTOP` distribution command with an elliptical cross
 section of 1 mm by 2 mm and a flat top, in time, 10 ps long with a 0.5 ps
 rise and fall time as defined in <<fig_flattop>>.
 
-....
+----
 Dist:DISTRIBUTION, TYPE = FLATTOP,
                    SIGMAX = 0.001,
                    SIGMAY = 0.002,
@@ -754,7 +754,7 @@ Dist:DISTRIBUTION, TYPE = FLATTOP,
                    EMISSIONMODEL = ASTRA,
                    EKIN = 0.5,
                    EMITTED = TRUE;
-....
+----
 
 [[transverse-distribution-from-laser-profile-under-development]]
 ==== Transverse Distribution from Laser Profile (Under Development)
@@ -854,7 +854,7 @@ and defined as follows (similarly for the other dimensions):
 
 Example:
 
-....
+----
 Dist:DISTRIBUTION, TYPE    = BINOMIAL,
                    SIGMAX  = 2.15e-03,
                    SIGMAPX = 1E-6,
@@ -868,7 +868,7 @@ Dist:DISTRIBUTION, TYPE    = BINOMIAL,
                    SIGMAPT = 11.96,
                    CORRT   = -0.5,
                    MT      = 2.0,
-....
+----
 
 [[sec.distribution.matchedgausstype]]
 === `MATCHEDGAUSS` Matched Gauss Distribution type
@@ -928,7 +928,7 @@ the particles would not move off the cathode, causing all of the emitted
 charge to pile up at latexmath:[z = 0] in the first half time step
 before the beam space charge is calculated.
 
-....
+----
 Dist:DISTRIBUTION, TYPE = FLATTOP,
                    SIGMAX = 0.001,
                    SIGMAY = 0.002,
@@ -941,7 +941,7 @@ Dist:DISTRIBUTION, TYPE = FLATTOP,
                    EMISSIONMODEL = NONE,
                    EKIN = 0.5,
                    EMITTED = TRUE;
-....
+----
 
 One thing to note, it may be that if you are emitting your own
 distribution using the `TYPE = FROMFILE` option, you may want to set
@@ -1005,7 +1005,7 @@ clean copper.)
 An example of using the `NONEQUIL` emission model is given below. This
 model is relevant for metal cathodes and cathodes such as `CsTe`.
 
-....
+----
 Dist:DISTRIBUTION, TYPE = GAUSS,
                    SIGMAX = 0.001,
                    SIGMAY = 0.002,
@@ -1021,7 +1021,7 @@ Dist:DISTRIBUTION, TYPE = GAUSS,
                    FE = 7.0,
                    CATHTEMP = 325,
                    EMITTED = TRUE;
-....
+----
 
 [[sec.distribution.distlist]]
 ==== Distribution List
@@ -1033,22 +1033,22 @@ see Chapter link:track#chp.track[Tracking]. Assume we have defined several dist
 distributions in a simulation, we would use the following `RUN` command
 to start the simulation:
 
-....
+----
 RUN, METHOD = "PARALLEL-T",
      BEAM = beam_name,
      FIELDSOLVER = field_solver_name,
      DISTRIBUTION = DIST1;
-....
+----
 
 If we want to use all the distributions at the same time, then the
 command would instead be:
 
-....
+----
 RUN, METHOD = "PARALLEL-T",
      BEAM = beam_name,
      FIELDSOLVER = field_solver_name,
      DISTRIBUTION = {DIST1, DIST2, DIST3};
-....
+----
 
 In this second case, the first distribution (`DIST1`) is the master
 distribution. The main consequence of this is that all distributions in
