@@ -1,4 +1,4 @@
-= The _OPAL_ Framwork: Version 2.2
+= The _OPAL_ Framework: Version 2.2
 Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Matthias Frey (PSI); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Nicole Neveu (SLAC); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
@@ -6,6 +6,7 @@ ifdef::backend-docbook5,backend-html5[]
 :numbered:
 :description: _OPAL_ User Manual
 :keywords: _OPAL_
+:tab-reflabel: Table {counter:tab-cnt}
 endif::[]
 
 ifdef::env-gitlab[]
