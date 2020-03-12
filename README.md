@@ -1,4 +1,4 @@
-# OPAL User Manual for Version 2
+# OPAL User Manual for Version 2.2
 
 ## Introduction
 

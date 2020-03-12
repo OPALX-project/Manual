@@ -46,6 +46,7 @@ ifdef::env-gitlab[]
 . link:tutorial[Tutorial]
 . link:opalt[OPAL-T]
 . link:opalcycl[OPAL-CYCL]
+. link:opalmap[OPAL-MAP]
 . link:format[Command Format]
 . link:control[Control Statements]
 . link:elements[Elements]
@@ -69,7 +70,6 @@ ifdef::env-gitlab[]
 . link:autophase[Auto-phasing Algorithm]
 . link:benchmarks[Benchmarks]
 . https://gitlab.psi.ch/OPAL/src/wikis/opaldks[Dynamic Kernel Scheduler (DKS)]
-
 endif::[]
 
 ifdef::backend-docbook5,backend-html5[]
@@ -84,6 +84,8 @@ include::tutorial.adoc[]
 include::opalt.adoc[]
 
 include::opalcycl.adoc[]
+
+include::opalmap.adoc[]
 
 include::format.adoc[]
 
