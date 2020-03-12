@@ -1,3 +1,5 @@
+home.html
+OPAL_Manual.html
 *.adoc
 *.aux
 *.bak
@@ -5,7 +7,6 @@
 *.cb
 *.cb2
 *.glo
-*.html
 *.idx
 *.lof
 *.log
