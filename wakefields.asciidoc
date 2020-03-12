@@ -143,17 +143,17 @@ integrated Green function <<bib.mitchell2013>>, `1D-CSR-IGF`.
 
 The general input format is
 
-....
+----
 label:WAKE, TYPE=string, NBIN=real, CONST_LENGTH=bool,
       CONDUCT=string, Z0=real, FORM=string, RADIUS=real,
       SIGMA=real, TAU=real, FILTERS=string-array;
-....
+----
 
 The format for a CSR wake is
 
-....
+----
 label:WAKE, TYPE=string, NBIN=real, FILTERS=string-array;
-....
+----
 
 .Wakefield command summary
 [cols="<1,<4",options="header",]
@@ -279,11 +279,11 @@ bunch. The following smoothing filters are implemented:
 `Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`, `RelativFFTLowPass`. The
 input format for them is
 
-....
+----
 label:FILTER, TYPE=string, NFREQ=real, THRESHOLD=real,
       NPOINTS=real, NLEFT=real, NRIGHT=real,
       POLYORDER=real
-....
+----
 
 TYPE::
   The type of filter: `Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`,

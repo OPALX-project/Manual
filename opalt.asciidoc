@@ -564,9 +564,9 @@ beam line is projected.
 The script is not directly executable. Instead one has to pass it as
 argument to `python`:
 
-....
+----
 python myinput_ElementPositions.py --export-web
-....
+----
 
 The following arguments can be passed
 

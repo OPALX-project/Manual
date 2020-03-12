@@ -21,12 +21,12 @@ endif::[]
 A user who is uncertain about the attributes of a command should try the
 command `HELP`, which has three formats:
 
-....
+----
 HELP;                 // Give help on the "HELP" command
 HELP,NAME=label;      // List funct. and attr. types of
                       // "label"
 HELP,label;           // Shortcut for the second format
-....
+----
 
 `label` is an identifier see link:format#sec.format.label[Identifiers or Labels]. If it is non-blank, _OPAL_
 prints the function of the object `label` and lists its attribute types.
@@ -34,11 +34,11 @@ Entering `HELP` alone displays help on the `HELP` command.
 
 Examples:
 
-....
+----
 HELP;
 HELP,NAME=TWISS;
 HELP,TWISS;
-....
+----
 
 [[sec.control.show]]
 ==== SHOW Command
@@ -46,11 +46,11 @@ HELP,TWISS;
 The `SHOW` statement displays the current attribute values of an object.
 It has three formats:
 
-....
+----
 SHOW;                 // Give help on the "SHOW" command
 SHOW,NAME=pattern;    // Show names matching of "pattern"
 SHOW,pattern;         // Shortcut for the second format
-....
+----
 
 `pattern` is an regular expression see link:format#sec.format.wildcard[Regular Expressions]. If it is
 non-blank, _OPAL_ displays all object names matching the `pattern`.
@@ -58,11 +58,11 @@ Entering `SHOW` alone displays help on the `SHOW` command.
 
 Examples:
 
-....
+----
 SHOW;
 SHOW,NAME="QD.*\.L*";
 SHOW,"QD.*\.L*";
-....
+----
 
 [[sec.control.what]]
 ==== WHAT Command
@@ -70,31 +70,31 @@ SHOW,"QD.*\.L*";
 The `WHAT` statement displays all object names matching a given regular
 expression. It has three formats:
 
-....
+----
 WHAT;                   // Give help on the "WHAT" command
 WHAT,NAME=label;        // Show definition of "label"
 WHAT,label;             // Shortcut for the second format
-....
+----
 
 `label` is an identifier see link:format#sec.format.label[Identifiers or Labels]. If it is non-blank, _OPAL_
 displays the object `label` in a format similar to the input statement
 that created the object. Entering `WHAT` alone displays help on the
 `WHAT` command. Examples:
 
-....
+----
 WHAT;
 WHAT,NAME=QD;
 WHAT,QD;
-....
+----
 
 [[sec.control.stop]]
 === STOP / QUIT Statement
 
 The statement
 
-....
+----
 STOP or QUIT;
-....
+----
 
 terminates execution of the _OPAL_ program, or, when the statement
 occurs in a `CALL` file see_<<sec.control.call>>, returns to the calling file.
@@ -107,13 +107,13 @@ The `OPTION` command controls global command execution and sets a few
 global quantities. Starting with version 1.6.0 of _OPAL_ the option
 `VERSION` is mandatory in the _OPAL_ input file. Example:
 
-....
+----
 OPTION,ECHO=logical,INFO=logical,TRACE=logical,
        WARN=logical,
        SEED=real,PSDUMPFREQ=integer,
        STATDUMPFREQ=integer, SPTDUMFREQ=integer,
        REPARTFREQ=integer, REBINFREQ=integer, TELL=logical, VERSION=integer;
-....
+----
 
 VERSION::
   Used to indicate for which version of _OPAL_ the input file is
@@ -291,10 +291,10 @@ MEMORYDUMP::
 
 Examples:
 
-....
+----
 OPTION,ECHO=FALSE,TELL;
 OPTION,SEED=987456321
-....
+----
 
 .Default Settings for Options
 [cols="<,<,<,<,<,<",options="header",]
@@ -352,15 +352,15 @@ _OPAL_ recognizes several types of variables.
 [[sec.control.real-scalar-variables]]
 ===== Real Scalar Variables
 
-....
+----
 REAL variable-name=real-expression;
-....
+----
 
 For backward compatibility the program also accepts the form
 
-....
+----
 REAL variable-name:=real-expression;
-....
+----
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
@@ -376,31 +376,31 @@ A reserved variable is the value `P0` which is used as the global
 reference momentum for normalizing all magnetic field coefficients.
 Example:
 
-....
+----
 REAL GEV=100;
 P0=GEV;
-....
+----
 
 Circular definitions are not allowed:
 
-....
+----
 X=X+1;    // X cannot be equal to X+1
 REAL A=B;
 REAL B=A;      // A and B are equal, but of unknown value
-....
+----
 
 However, redefinitions by assignment are allowed:
 
-....
+----
 X=EVAL(X+1);
-....
+----
 
 [[sec.control.real-vector-variables]]
 ===== Real Vector Variables
 
-....
+----
 REAL VECTOR variable-name=vector-expression;
-....
+----
 
 In old version of _OPAL_ (before 1.6.0) the keyword `REAL` was optional,
 now it is mandatory!
@@ -415,10 +415,10 @@ for a quantity on the right-hand side.
 
 Example:
 
-....
+----
 REAL VECTOR A = TABLE(10, #);
 REAL VECTOR B = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-....
+----
 
 Circular definitions are not allowed, but redefinitions by assignment
 are allowed.
@@ -426,9 +426,9 @@ are allowed.
 [[sec.control.logical-variables]]
 ===== Logical Variables
 
-....
+----
 BOOL variable-name=logical-expression;
-....
+----
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
@@ -440,9 +440,9 @@ right-hand side.
 
 Example:
 
-....
+----
 BOOL FLAG = X != 0;
-....
+----
 
 Circular definitions are not allowed, but redefinitions by assignment
 are allowed.
@@ -454,9 +454,9 @@ _OPAL_ recognizes a few build-in built-in mathematical and physical
 constants see Table link:format#tab_constant[Predefined Symbolic Constants].
 Additional constants can be defined by the command
 
-....
+----
 REAL CONST label:CONSTANT=<real-expression>;
-....
+----
 
 which defines a constant with the name `label`. The keyword `REAL` is
 optional, and `label` must be unique. An existing symbolic constant can
@@ -466,18 +466,18 @@ constant.
 
 Example:
 
-....
+----
 CONST IN=0.0254; // conversion of inches to meters
-....
+----
 
 [[sec.control.vector]]
 ==== Vector Values
 
 A vector of expressions is established by a statement
 
-....
+----
 REAL VECTOR vector-name=vector-expression;
-....
+----
 
 The keyword `REAL` is optional. It creates a new global vector
 `vector-name` and discards any old vector with the same name. Its value
@@ -489,10 +489,10 @@ solve the equation for a quantity on the right-hand side.
 
 Example:
 
-....
+----
 VECTOR A_AMPL={2.5e-3,3.4e-2,0,4.5e-8};
 VECTOR A_ON=TABLE(10,1);
-....
+----
 
 Circular definitions are not allowed.
 
@@ -503,9 +503,9 @@ A value is assigned to a variable or vector by using the function
 `EVAL(real- expression)`. When seen, this function is immediately
 evaluated and replaced by the result treated like a constant.
 
-....
+----
 variable-name=EVAL(real-expression);
-....
+----
 
 This statement acts like a FORTRAN or C assignment. The
 `real-expression` or `vector-expression` is *evaluated*, and the result
@@ -513,14 +513,14 @@ is assigned as a constant to the variable or vector on the left-hand
 side. Finally the expression is discarded. The `EVAL` function can also
 be used within an expression, e. g.:
 
-....
+----
 vector-name=TABLE(range,EVAL(real-expression));
 vector-name={...,EVAL(real-expression),...);
-....
+----
 
 A sequence like the following is permitted:
 
-....
+----
 ...                 // some definitions
 X=0;                // create variable X with value
                     // zero
@@ -529,36 +529,36 @@ WHILE (X <= 0.10) {
   X=EVAL(X+.01);    // increment variable X by 0.01
                     // CANNOT use: X=X+.01;
 }
-....
+----
 
 [[sec.control.value]]
 ==== VALUE: Output of Expressions
 
 The statement
 
-....
+----
 VALUE,VALUE=expression-vector;
-....
+----
 
 evaluates a set of expressions using the most recent values of any
 operands and prints the results on the standard error file.
 
 Example:
 
-....
+----
 REAL A=4;
 VALUE,VALUE=TABLE(5,#*A);
 REAL P1=5;
 REAL P2=7;
 VALUE,VALUE={P1,P2,P1*P2-3};
-....
+----
 
 These commands give the results:
 
-....
+----
 value: {0*A,1*A,2*A,3*A,4*A} = {0,4,8,12,16}
 value: {P1,P2,P1*P2-3} = {5,7,32}
-....
+----
 
 This commands serves mainly for printing one or more quantities which
 depend on matched attributes. It also allows use of _OPAL_ as a
@@ -572,10 +572,10 @@ programmable calculator. One may also tabulate functions.
 
 The `ECHO` statement has two formats:
 
-....
+----
 ECHO,MESSAGE=message;
 ECHO,message;           // shortcut
-....
+----
 
 `message` is a string value see link:format#sec.format.astring[String Attributes]. It is immediately
 transmitted to the `ECHO` stream.
@@ -589,10 +589,10 @@ command, successful or not, control returns to _OPAL_. At present this
 command is only available under UNIX-like OSes (including Linux and
 macOS). It has two formats:
 
-....
+----
 SYSTEM,CMD=string;
 SYSTEM,string;         // shortcut
-....
+----
 
 The string see link:format#sec.format.astring[String Attributes] `string` must be a valid operating
 system command.
@@ -604,9 +604,9 @@ Most UNIX commands can be issued directly.
 
 Example:
 
-....
+----
 SYSTEM,"ls -l"
-....
+----
 
 causes a listing of the current directory in long form on the terminal.
 
@@ -615,11 +615,11 @@ causes a listing of the current directory in long form on the terminal.
 
 The `TITLE` statement has three formats:
 
-....
+----
 TITLE,STRING=page-header;   // define new page header
 TITLE,page-header;          // shortcut for first format
 TITLE,STRING="";            // clear page header
-....
+----
 
 `page-header` is a string value see link:format#sec.format.astring[String Attributes]. It defines the
 page header which will be used as a title for subsequent output pages.
@@ -634,28 +634,28 @@ empty. It can be redefined at any time.
 
 The `CALL` command has two formats:
 
-....
+----
 CALL,FILE=file-name;
 CALL,file-name;
-....
+----
 
 `file-name` is a string see link:format#sec.format.astring[String Attributes]. The statement causes the
 input to switch to the named file. Input continues on that file until a
 `STOP` or an end of file is encountered. Example:
 
-....
+----
 CALL,FILE="structure";
 CALL,"structure";
-....
+----
 
 [[sec.control.save]]
 ==== SAVE Statement
 
 The `SAVE` command has two formats:
 
-....
+----
 SAVE,FILE=file-name
-....
+----
 
 `file-name` is a string see link:format#sec.format.astring[String Attributes]. The command causes all
 beam element, beam line, and parameter definitions to be written on the
@@ -663,10 +663,10 @@ named file.
 
 Examples:
 
-....
+----
 SAVE,FILE="structure";
 SAVE,"structure";
-....
+----
 
 [[sec.control.if]]
 === IF: Conditional Execution
@@ -674,13 +674,13 @@ SAVE,"structure";
 Conditional execution can be requested by an `IF` statement. It allows
 usages similar to the C language `if` statement:
 
-....
+----
 IF (logical) statement;
 IF (logical) statement; ELSE statement;
 IF (logical) { statement-group; }
 IF (logical) { statement-group; }
   ELSE { statement-group; }
-....
+----
 
 Note that all statements must be terminated with semicolons (`;`), but
 there is no semicolon after a closing brace. The statement or group of
@@ -694,10 +694,10 @@ group following the `ELSE` is executed.
 Repeated execution can be requested by a `WHILE` statement. It allows
 usages similar to the C language `while` statement:
 
-....
+----
 WHILE (logical) statement;
 WHILE (logical) { statement-group; }
-....
+----
 
 Note that all statements must be terminated with semicolons (`;`), but
 there is no semicolon after a closing brace. The condition is
@@ -713,10 +713,10 @@ Subroutine-like commands can be defined by a `MACRO` statement. It
 allows usages similar to C language function call statements. A macro is
 defined by one of the following statements:
 
-....
+----
 name(formals): MACRO { token-list }
 name(): MACRO { token-list }
-....
+----
 
 A macro may have formal arguments, which will be replaced by actual
 arguments at execution time. An empty formals list is denoted by `()`.
@@ -726,16 +726,16 @@ numbers, delimiters etc.) and is stored unchanged in the definition.
 
 A macro is executed by one of the statements:
 
-....
+----
 name(actuals);
 name();
-....
+----
 
 Each actual consists of a set of tokens which replaces all occurrences
 of the corresponding formal name. The actuals are separated by commas.
 Example:
 
-....
+----
 // macro definitions:
 SHOWIT(X): MACRO {
    SHOW, NAME = X;
@@ -747,5 +747,6 @@ DOIT(): MACRO {
 // macro calls:
 SHOWIT(PI);
 DOIT();
-....
+----
 
+// EOF

@@ -60,16 +60,16 @@ be read from a file. To do this, in the _OPAL_ input file, the command
 line `DISTRIBUTION` see Chapter link:distribution#chp.distribution[Distribution] should be defined like
 this:
 
-....
+----
   Dist1: DISTRIBUTION, TYPE=fromfile, FNAME="PartDatabase.dat";
-....
+----
 
 where the file _PartDatabase.dat_ should have two lines:
 
-....
+----
  1
  0.001 0.001   0.001   0.001   0.001  0.001
-....
+----
 
 The number in the first line is the total number of particles. In the
 second line the data represents
@@ -96,11 +96,11 @@ Like the single particle tracking mode, the initial 6D parameters of the
 two particles in the local reference frame must be read from a file,
 too. In the file should has three lines:
 
-....
+----
  2
  0.0   0.0   0.0   0.0   0.0   0.0
  0.001 0.0   0.0   0.0   0.001  0.0
-....
+----
 
 When the total particle number equals 2, this mode is triggered
 automatically. Only the element `CYCLOTRON` in the beam line is used and
@@ -287,7 +287,7 @@ latexmath:[\Delta \theta = \frac{1}{3}{^{\circ}}], the fourth line of
 the header should be set to -3.0. Example showing the above explained
 format:
 
-....
+----
 3.0e+03
 10.0
 0.0
@@ -299,7 +299,7 @@ format:
 1.779e-01  2.090e-01  2.392e-01  2.682e-01  2.964e-01
 3.245e-01  3.534e-01  3.843e-01  4.184e-01  4.573e-01
                         ......
-....
+----
 
 [[sec.opalcycl.cyciae-type]]
 ==== CYCIAE type
@@ -311,7 +311,7 @@ fields data is output by reading the APDL (ANSYS Parametric Design
 Language) script during the post-processing phase (you may need to do
 minor changes to adapt your own cyclotron model):
 
-....
+----
 /post1
 resume,solu,db
 csys,1
@@ -342,7 +342,7 @@ rsys,1
    *endif
 *enddo
 finish
-....
+----
 
 By running this in ANSYS, you can get a fields file with the name
 _cyc100_ANSYS.data_. You need to put 6 parameters at the header of the
@@ -357,7 +357,7 @@ latexmath:[\Delta \theta = \frac{1}{3} {^{\circ}}], the fourth line of
 the header should be -3.0. In a word, the fields are stored in the
 following format:
 
-....
+----
 0.0
 10.0
 0.0e+00
@@ -384,7 +384,7 @@ following format:
         2       5       1   0.705050993
         3       5       1   0.705341275
                   ......
-....
+----
 
 [[sec.opalcycl.bandrf-type]]
 ==== BANDRF type
@@ -408,7 +408,7 @@ number. This is useful is the decimal is unlimited. For instance,if
 latexmath:[\Delta \theta = \frac{1}{3}{^{\circ}}], the fourth line of
 the header should be -3.0.
 
-....
+----
 1900.0
 20.0
 0.0
@@ -424,7 +424,7 @@ the header should be -3.0.
  0.282477260E+01 0.340503168E+01 0.419502926E+01 0.505867147E+01 0.550443363E+01
  0.570645094E+01 0.579413509E+01 0.583940887E+01 0.586580372E+01 0.588523722E+01
                         ......
-....
+----
 
 [[sec.opalcycl.3d-field-map]]
 ==== 3D field-map
@@ -436,7 +436,7 @@ cavities while operating in this mode. In order to define ring
 parameters such as initial ring radius a `RINGDEFINITION` type is loaded
 into the line, followed by one or more `SBEND3D` elements.
 
-....
+----
 ringdef: RINGDEFINITION, HARMONIC_NUMBER=6, LAT_RINIT=2350.0, LAT_PHIINIT=0.0,
          LAT_THETAINIT=0.0, BEAM_PHIINIT=0.0, BEAM_PRINIT=0.0,
          BEAM_RINIT=2266.0, SYMMETRY=4.0, RFFREQ=0.2;
@@ -444,12 +444,12 @@ ringdef: RINGDEFINITION, HARMONIC_NUMBER=6, LAT_RINIT=2350.0, LAT_PHIINIT=0.0,
 triplet: SBEND3D, FMAPFN="fdf-tosca-field-map.table", LENGTH_UNITS=10., FIELD_UNITS=-1e-4;
 
 l1: Line = (ringdef, triplet, triplet);
-....
+----
 
 The field-map with file name _fdf-tosca-field-map.table_ is loaded,
 which is a file like
 
-....
+----
       422280      422280      422280           1
  1 X [LENGU]
  2 Y [LENGU]
@@ -462,7 +462,7 @@ which is a file like
  194.36351 0.0000000 79.516210 0.42525693524E-07 -5.3827955117 0.17681348191E-07
  194.70861 0.0000000 78.667380 0.19766168358E-07 -5.4350026348 0.82540823165E-08
 <continues>
-....
+----
 
 The header parameters are ignored - user supplied parameters
 `LENGTH_UNITS` and `FIELD_UNITS` are used. Fields are supplied on points
@@ -493,7 +493,7 @@ cavities, see  link:elements#sec.elements.cyclotron[Cyclotron].
 The voltage profile of a cavity gap is read from ASCII file. Here is an
 example:
 
-....
+----
 6
 0.00      0.15      2.40
 0.20      0.65      2.41
@@ -501,7 +501,7 @@ example:
 0.60      0.88     -1.59
 0.80      0.43     -2.65
 1.00     -0.05     -1.71
-....
+----
 
 The number in the first line means 6 sample points and in the following
 lines the three values represent the normalized distance to the inner
@@ -612,7 +612,7 @@ chapters.
 For the *Tune Calculation mode*, one additional auxiliary file with the
 following format is needed.
 
-....
+----
    72.000 2131.4   -0.240
    74.000 2155.1   -0.296
    76.000 2179.7   -0.319
@@ -620,7 +620,7 @@ following format is needed.
    80.000 2229.6   -0.264
    82.000 2254.0   -0.166
    84.000 2278.0    0.025
-....
+----
 
 In each line the three values represent energy latexmath:[E], radius
 latexmath:[r] and latexmath:[P_r] for the SEO (Static Equilibrium
@@ -706,7 +706,7 @@ periodic accelerator. The function call also needs the symmetry of the
 machine as well as a field map. The user then specifies the emittance
 latexmath:[\pi] latexmath:[mm] latexmath:[mrad].
 
-....
+----
 /*
  * specify periodic accelerator
  */
@@ -717,7 +717,7 @@ l1 = ...
  */
 Dist1:DISTRIBUTION, TYPE=GAUSSMATCHED, LINE=l1, FMAPFN=...,
                     MAGSYM=..., EX = ..., EY = ..., ET = ...;
-....
+----
 
 [[sec.opalcycl.example]]
 ===== Example

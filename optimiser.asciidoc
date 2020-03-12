@@ -324,7 +324,7 @@ There are several methods to access output data:
 ==== Example Input File
 
 .Example input file _05-DL_QN3.in_ for the optimization using the template file _tmpl/05-DL_QN3.tmpl_:
-....
+----
 OPTION, ECHO=FALSE;
 OPTION, INFO=TRUE;
 
@@ -349,11 +349,10 @@ OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
           OUTDIR="results";
 
 QUIT;
-....
+----
 
 .Template file _tmpl/05-DL_QN3.tmpl_:
-
-....
+----
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;
 OPTION, PSDUMPFREQ=1000000;
@@ -425,10 +424,11 @@ RUN, METHOD = "PARALLEL-T", BEAM = beam1, FIELDSOLVER = Fs2, DISTRIBUTION = Dist
 ENDTRACK;
 
 QUIT;
-....
+----
 
 Run OPAL with:
 
 ```
 mpirun /path/to/opal --info 5 05-DL_QN3.in
 ```
+// EOF

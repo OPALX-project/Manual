@@ -1,20 +1,20 @@
-= The OPAL Framework
+= The OPAL Framework: Version 2.0
 Andreas Adelmann, Christian Baumgarten, Matthias Frey, Achim Gsell, Valeria Rizzoglio, Jochem Snuverink (PSI) Christof Metzger-Kraus, Yves Ineichen, Xiaoying Pang, Steve Russell (LANL), Chuan Wang (CIAE), Suzanne Sheehy, Chris Rogers (RAL) and Daniel Winklehner (MIT)
 Version 2.0, June 2018: 1. revision
+ifdef::backend-docbook5,backend-html5[]
+:docinfo1:
+:toc: left
+:numbered:
+:description: _OPAL_ User Manual
+:keywords: _OPAL_
+:tab-reflabel: Table {counter:tab-cnt}
+endif::[]
 
 ifdef::env-gitlab[]
 *Object Oriented Parallel Accelerator Library*
 
 *_OPAL_ 2.0 User's Reference Manual*
 endif::[]
-
-ifdef::backend-docbook5[]
-:numbered:
-:toc:                                                               
-:description: _OPAL_ User Manual                             
-:keywords: _OPAL_
-endif::[]
-
 
 == Abstract
 
@@ -81,7 +81,7 @@ ifdef::env-gitlab[]
 
 endif::[]
 
-ifdef::backend-docbook5[]
+ifdef::backend-docbook5,backend-html5[]
 include::introduction.adoc[]
 
 include::conventions.adoc[]
@@ -132,3 +132,4 @@ include::autophase.adoc[]
 
 include::benchmarks.adoc[]
 endif::[]
+

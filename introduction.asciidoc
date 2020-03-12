@@ -157,7 +157,7 @@ Tulin Kaman, Chuan Wang, Yves Ineichen, Valeria Rizzoglio and Christian Baumgart
 
 Please cite _OPAL_ in the following way:
 
-....
+----
 @ARTICLE{2019arXiv190506654A,
        author = {{Adelmann}, Andreas and {Calvo}, Pedro and {Frey}, Matthias and
          {Gsell}, Achim and {Locans}, Uldis and {Metzger-Kraus}, Christof and
@@ -177,7 +177,7 @@ archivePrefix = {arXiv},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-....
+----
 
 [[sec.introduction.bibliography]]
 [bibliography]
