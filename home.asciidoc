@@ -1,4 +1,4 @@
-= The _OPAL_ Framework: Version 2.2
+= The _OPAL_ Framework: Version 2.3
 Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Matthias Frey (PSI); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Nicole Neveu (SLAC); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
@@ -12,24 +12,28 @@ endif::[]
 ifdef::env-gitlab[]
 *Object Oriented Parallel Accelerator Library*
 
-*_OPAL_ 2.2 User's Reference Manual*
+*_OPAL_ 2.3 User's Reference Manual*
 endif::[]
+
+== Preliminary note
+
+This is the manual for _OPAL_ 2.3. Odd minor version numbers identify
+development versions. Use these versions only if you know what you are
 
 == Abstract
 
 _OPAL_ is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
-Using the MAD language with extensions, OPAL can run on a laptop as well as on the largest high performance computing systems.
-OPAL is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
-The OPAL framework makes it easy to add new features in the form of new C++ classes. OPAL comes in two flavours:
+Using the _MAD_ language with extensions, _OPAL_ can run on a laptop as well as on the largest high performance computing systems.
+_OPAL_ is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
 
-The _OPAL_ framework makes it easy to add new features in the form of
-new _C++_ classes. It comes in the following flavours:
+The _OPAL_ framework makes it easy to add new features in the form of new _C++_ classes.
+_OPAL_ comes in the following flavours:
 
 * _OPAL-cycl_:
   tracks particles with 3D space charge including neighbouring turns in
   cyclotrons and FFAs with time as the independent variable.
 * _OPAL-t_:
-  can be used to model beam lines, linacs, rf-photo injectors and
+  models beam lines, linacs, rf-photo injectors and
   complete XFELs excluding the undulator.
 * _OPAL-map_:
   map tracking

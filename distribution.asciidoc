@@ -385,11 +385,13 @@ latexmath:[y] direction.
 |`SIGMAR` |0.0 |m |RMS radius, latexmath:[\sigma_{r}], in radial
 direction. If nonzero `SIGMAR` overrides `SIGMAX` and `SIGMAY`.
 
-|`SIGMAZ` |0.0 |m |RMS length, latexmath:[\sigma_{z}], in longitudinal
-(z) direction. `SIGMAZ` is used for an _injected_ distribution.
+|`SIGMAZ` |0.0 |m or s |RMS length, latexmath:[\sigma_{z}], of the Gaussian
+in longitudinal (z) direction. `SIGMAZ` overrides `SIGMAT`.
+Use seconds for an emitted bunch, and meters for an injected one.
 
-|`SIGMAT` |0.0 |s |RMS width, latexmath:[\sigma_{t}], in time (t).
-`SIGMAT` is used for an _emitted_ distribution.
+|`SIGMAT` |0.0 |m or s |RMS length, latexmath:[\sigma_{t}], of the Gaussian
+in longitudinal (z) direction. `SIGMAZ` overrides `SIGMAT`.
+Use seconds for an emitted bunch, and meters for an injected one.
 
 |`SIGMAPX` |0.0 |<<sec.distribution.unitsdistattributes>> |Parameter
 latexmath:[\sigma_{px}] for defining distribution.
@@ -920,6 +922,103 @@ The attributes of a `GAUSSMATCHED` distribution are defined in <<tab_distattrgau
 |`MAXSTEPSSI`|500  |       | Maximum steps used to find matched distribution
 |=======================================================================
 
+[[sec.distribution.multigausstype]]
+=== `MULTIGAUSS` Distribution type
+The purpose of this distribution is to mimic photoinjectors in which the laser beam consists of a train of Gaussian pulses <<bib.laserPulseShaping>>. 
+Therefore this distribution has a uniform elliptical transverse distribution, and a train of equally spaced normal distributions along the z or t axis.
+
+This distribution can be emitted or injected. 
+When emitted, each particle acquires momentum according to the emission model.
+When injected, the momentum follows a normal distribution, and the user can specify latexmath:[ (\sigma_{px}, \sigma_{py}, \sigma_{pz})].
+
+[#tab_distattrmultigauss]
+.Definition of the basic distribution attributes for a `MULTIGAUSS` distribution type.
+[cols="<2,^1,^1,<4",options="header",]
+|=======================================================================
+|Attribute Name |Default Value |Units |Description
+|`SIGMAX` |0.0 |m |Laser radius in transverse
+latexmath:[x] direction.
+
+|`SIGMAY` |0.0 |m |Laser radius in transverse
+latexmath:[y] direction.
+
+|`SIGMAR` |0.0 |m |Laser radius, latexmath:[\sigma_{r}], in radial
+direction. If nonzero `SIGMAR` overrides `SIGMAX` and `SIGMAY`.
+
+|`SIGMAZ` |0.0 |m or s |RMS length of each Gaussian pulse 
+in longitudinal (z) direction. `SIGMAZ` overrides `SIGMAT`. 
+Use seconds for an emitted bunch, and meters for an injected one.
+
+|`SIGMAT` |0.0 |m or s |RMS length of each Gaussian pulse
+in longitudinal (z) direction. `SIGMAZ` overrides `SIGMAT`.
+Use seconds for an emitted bunch, and meters for an injected one.
+
+|`SEPPEAKS` |0.0 |m or s |Peak-to-peak distance between the 
+Gaussian pulses in longitudinal (z) direction.
+Use seconds for an emitted bunch, and meters for an injected one.
+
+|`NPEAKS` |1 |None |Number of pulses along the longitudinal 
+(z) direction.
+
+|`CUTOFFLONG` |3.0 |None |Cutoff distance from the center of the 
+first and last Gaussian pulses in the latexmath:[z] or
+latexmath:[t] direction (_injected_ or _emitted_) in units of 
+latexmath:[\sigma_{z}] or latexmath:[\sigma_{t}]. `CUTOFFLONG` is different from other
+dimensions in that a value of 0.0 does not imply a cutoff value of
+infinity.
+
+|`SIGMAPX` |0.0 |<<sec.distribution.unitsdistattributes>> |Parameter
+latexmath:[\sigma_{px}] for the normal distribution of the momentum.
+This parameter is ignored for an emitted bunch.
+
+|`SIGMAPY` |0.0 |<<sec.distribution.unitsdistattributes>> |Parameter
+latexmath:[\sigma_{py}] for the normal distribution of the momentum.
+This parameter is ignored for an emitted bunch.
+
+|`SIGMAPZ` |0.0 |<<sec.distribution.unitsdistattributes>> |Parameter
+latexmath:[\sigma_{pz}] for the normal distribution of the momentum.
+This parameter is ignored for an emitted bunch.
+
+|`CUTOFFPX` |3.0 |None |Defines cutoff in latexmath:[p_{x}] dimension
+in units of latexmath:[\sigma_{px}]. If `CUTOFFPX` latexmath:[= 0]
+then actual cutoff in latexmath:[p_{x}] is set to infinity.
+This parameter is ignored for an emitted bunch.
+
+|`CUTOFFPY` |3.0 |None |Defines cutoff in latexmath:[p_{y}] dimension
+in units of latexmath:[\sigma_{py}]. If `CUTOFFPY` latexmath:[= 0]
+then actual cutoff in latexmath:[p_{y}] is set to infinity.
+This parameter is ignored for an emitted bunch.
+
+|`CUTOFFPZ` |3.0 |None |Defines cutoff in latexmath:[p_{z}] dimension
+in units of latexmath:[\sigma_{pz}]. If `CUTOFFPZ` latexmath:[= 0]
+then actual cutoff is latexmath:[p_{z}] is set to infinity.
+This parameter is ignored for an emitted bunch.
+|=======================================================================
+
+In <<tab_distattrmultigauss>> the basic attributes available for a
+`MULTIGAUSS` distribution are listed. 
+
+
+[#fig_multiGaussInjected]
+.Example of an injected `MULTIGAUSS` distribution.
+image::./figures/distribution/MultiGaussInjected.png[scaledwidth=8cm]
+
+
+
+An example (fig. <<fig_multiGaussInjected>>) of a `MULTIGAUSS` injected bunch could be:
+
+----
+Dist: DISTRIBUTION, TYPE = MULTIGAUSS,
+                    SIGMAPX = 1e-2, SIGMAPY = 1e-2, SIGMAPZ = 1e-2,  // In units of betaGamma
+                    CUTOFFPX = 4.0, CUTOFFPY = 4.0, CUTOFFPZ = 4.0,  // In units of SIGMAP
+                    SIGMAR = 340e-6,
+                    SIGMAZ = 90e-6 / 2.355, // FWHM  = 2.355 * sigma
+                    CUTOFFLONG = 4.0,  // In units of SIGMAZ
+                    SEPPEAKS = 126e-6,
+                    NPEAKS = 4,
+                    EMITTED = FALSE;
+----
+
 [[sec.distribution.emissionmodel]]
 === Emission Models
 
@@ -1103,6 +1202,7 @@ coordinates. (<<sec.distribution.fromfiledisttype>>).
 === References
 
 * [[[bib.JohoDist]]] W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
+* [[[bib.laserPulseShaping]]] J. G. Power and C. Jing, Temporal Laser Pulse Shaping for RF Photocathode Guns: The Cheap and Easy way using UV Birefringent Crystals, AIP Conference Proceedings 1086, 689 (2009); https://doi.org/10.1063/1.3080991
 * [[[bib.flo97]]] K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, tech. rep. TESLA FEL-Report (DESY, Jan. 1997).
 * [[[bib.clen2000]]] J. E. Clendenin et al., _Reduction of thermal emittance of rf guns_, Nucl. Instrum. Methods Phys. Res. Sect. A 455, 198–201 (2000).
 * [[[bib.dowe2009]]] D. H. Dowell and J. F. Schmerge, _Quantum efficiency and thermal emittance of metal photocathodes_, Phys. Rev. ST Accel. Beams 12, 074201 (2009).

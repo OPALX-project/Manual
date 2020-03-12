@@ -1,10 +1,10 @@
-# OPAL User Manual for Version 2
+# OPAL User Manual for master-branch
 
 ## Introduction
 
 Since _OPAL_ version 2 the manual is maintained in the Wiki of this project:
 
-https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/home
+https://gitlab.psi.ch/OPAL/Manual-master/wikis/home
 
 The Wiki pages are written in Asciidoc and thus can be converted to other formats 
 like PDF or HTML. The Asciidoc support in Gitlab is a bit limited. One main issue
@@ -24,8 +24,8 @@ requires `asciidoctor`, TeX and `dblatex`.
 
 Assuming `asciidoc2pdf` is in your `PATH`:
 ```
-git clone git@gitlab.psi.ch:OPAL/Manual-2.1.wiki.git
-cd Manual-2.1.wiki
+git clone git@gitlab.psi.ch:OPAL/Manual-master.wiki.git
+cd Manual-master.wiki
 asciidoc2pdf home.asciidoc
 ```
 

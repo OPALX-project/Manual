@@ -252,7 +252,7 @@ has no effect on CSR wakefunctions.
 [[sec.wakefield.WFNAME]]
 === Import a wakefield from a file
 
-Since we only need values of the wake function at several discreet
+Since we only need values of the wake function at several discrete
 points to calculate the force on the particle it is also possible to
 specify these in a file.To get required data points of the wakefield not
 provide in the file we linearly interpolate the available function
