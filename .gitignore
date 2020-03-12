@@ -1,5 +1,6 @@
 *.adoc
 *.aux
+*.bak
 *.bbl
 *.cb
 *.cb2
@@ -14,3 +15,7 @@
 *.tex
 *.toc
 *.xml
+*.4tc
+*.dvi
+*.tmp
+*.xref

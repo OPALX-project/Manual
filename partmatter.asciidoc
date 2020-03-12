@@ -185,6 +185,140 @@ latexmath:[m], latexmath:[\theta=0.5349 \alpha] (in degree).
 .The comparison of Coulomb scattering with Jackson’s book.
 image::figures/partmatter/10steps.png[scaledwidth=12cm]
 
+
+[[sec.partmatter.beam-stripping-physics]]
+=== Beam Stripping physics
+
+Beam stripping physics takes into account two different physical
+processes: interaction with residual gas and electromagnetic stripping
+(also called Lorentz stripping). Given the stochastic nature of
+such interactions, the processes are modeled as a Monte Carlo method.
+
+Both processes are described in the same way:
+Assuming that particles are normally incident on a homogeneous medium
+and that they are subjected to a process with a mean free path
+latexmath:[\lambda] between interactions, the probability of suffering
+an interaction before reaching a path length latexmath:[x] is:
+
+[latexmath]
+++++
+P(x) = 1 - e^{-x/\lambda}
+++++
+
+where latexmath:[P(x)] is the statistic cumulative interaction
+probability of the process.
+
+[[sec.partmatter.residual-gas-interaction]]
+==== Residual gas interaction
+
+The mean free path of the interaction is related with the density of
+interaction centers and the cross section: latexmath:[\lambda=1/N\sigma].
+Assuming a beam flux incident in an ideal gas with density latexmath:[N]
+(number of gas molecules per unit volume under the vacuum condition),
+the number of particles interacting depends on the gas composition and
+the different reactions to be considered. Thus, in agreement with
+Dalton's law of partial pressures:
+
+[latexmath]
+++++
+\frac{1}{\lambda_{total}}=\sum \frac{1}{\lambda_k}=N_{total}\cdot\sigma_{total}=\sum_jN_j\,\sigma^{j}_{total}=\sum_j\left(\sum_iN_j\,\sigma^{j}_{i}\right)
+++++
+
+where the first summation is over all gas components and the second
+summation is over all processes for each component.
+
+The fraction loss of the beam for unit of travelled length is:
+latexmath:[f_g=1-e^{-\delta _s /\lambda_{total}}]. For a individual
+particle, latexmath:[f_g] represents the interaction probability
+and it is evaluated through an independent random variable
+each step latexmath:[\delta _s].
+
+Gas stripping could be applied for four different types of incoming
+particles: negative hydrogen ions (latexmath:[H^-]), protons
+(latexmath:[p]), neutral hydrogen atoms (latexmath:[H]) and hydrogen
+molecule ions (latexmath:[H_2^+]). Single / Double - electron detachment
+or capture reactions are considered for each of them.
+
+Cross sections are calculated according to energy of the particle
+employing analytic expressions fitted to cross section experimental data.
+There are three different fitting expressions:
+
+ *** Nakai function <<bib.nakai>>
+
+[latexmath]
+++++
+\sigma_{qq'} = \sigma_0 \left[ f(E_1) + a_7\!\cdot\!f(E_1/a_8) \right]
+++++
+
+[latexmath]
+++++
+f(E) = \frac{ a_1\!\cdot\!\left(\!\displaystyle\frac{E}{E_R}\!\right)^{\!a_2} }{ 1+\left(\!\displaystyle\frac{E}{a_3}\!\right)^{\!a_2+a_4}\!\!+\left(\!\displaystyle\frac{E}{a_5}\!\right)^{\!a_2+a_6} }
+++++
+
+[latexmath]
+++++
+E_R = hcR_{\infty}\!\cdot\!\frac{m_H}{m_e}
+++++
+
+[latexmath]
+++++
+E_1 = E_0 - E_{th}
+++++
+
+where latexmath:[\sigma_0] is a convenient cross section unit
+(latexmath:[\sigma_0 = 1\cdot 10^{-16}\,\text{cm}^2]), latexmath:[E_0] is the
+incident projectile energy in keV, latexmath:[E_{th}] is the threshold energy
+of reaction in keV, and the symbols latexmath:[a_i] denote adjustable parameters.
+
+ *** Tabata function <<bib.tabata>>: A linear combination of the Nakai function,
+improved and fitted with a greater number of experimental data.
+
+ *** Barnett function <<bib.barnett>>:
+
+[latexmath]
+++++
+\ln{[\sigma(E)]}=\frac{1}{2}a_0 + \sum_{i=1}^{k} a_i \cdot T_i(X)
+++++
+
+[latexmath]
+++++
+X=\frac{(\ln{E}-\ln{E_{min}})-(\ln{E_{max}}-\ln{E})}{\ln{E_{max}}-\ln{E_{min}}}
+++++
+
+where latexmath:[T_i] are the Chebyshev orthogonal polynomials.
+
+
+[[sec.partmatter.electromagnetic-stripping]]
+==== Electromagnetic stripping
+
+In case of latexmath:[H^-], the second electron is slightly bounded, so
+it is relevant to consider the detachement by the magnetic field. The
+orthogonal component of the magnetic field to the median plane (read
+from `Cyclotron` element), produces an electric field according to
+Lorentz transformation, latexmath:[E\!=\!\gamma\beta cB]. The fraction
+of particles dissociated by the electromagnetic field during a time
+step latexmath:[\delta _t] is:
+
+[latexmath]
+++++
+f_{em}=1-e^{\,-\,\delta _t/\gamma\tau}
+++++
+
+where latexmath:[\tau] is the particle lifetime in the rest frame, determined
+theoretically <<bib.scherk>>:
+
+[latexmath]
+++++
+\tau= \frac{4mz_T}{S_0N^2\hslash\,(1+p)^2\left(1-\displaystyle\frac{1}{2k_0z_t}\right)}\cdot\exp\!{\left(\frac{4k_0z_T}{3}\right)}
+++++
+where latexmath:[z_T\!=\!-\varepsilon_0/eE] is the outer classical turning radius,
+latexmath:[\varepsilon_0] is the binding energy, latexmath:[p] is a polarization factor
+of the ionic wave function, latexmath:[k_0^2\!=\!2m(-\varepsilon_0)/\hslash^2],
+latexmath:[S_{\!0}] is a spectroscopy coefficient, and the normalization constant
+is latexmath:[N=(2k_0(k_0+\alpha)(2k_0+\alpha))^{1/2} / \alpha], where
+latexmath:[\alpha] is a parameter for the ionic potential function.
+
+
 [[sec.partmatter.the-flow-diagram-of-collimatorphysics-class-in-opal]]
 === The Flow Diagram of _CollimatorPhysics_ Class in OPAL
 
@@ -252,8 +386,8 @@ track it as in a drift and put it back to the main bunch when finishing
 
 |Mylar |6.702 |12.88 |1.4 |39.95 |3.35 |1683 |1900 |2.513E-02 |`Mylar`
 
-|Berilium |4 |9.012 |1.848 |65.19 |2.590 |966.0 |153.8 |3.475E-02
-|`Berilium`
+|Beryllium |4 |9.012 |1.848 |65.19 |2.590 |966.0 |153.8 |3.475E-02
+|`Beryllium`
 
 |Molybdenum |42 |95.94 |10.22 |9.8 |7.248 |9545 |480.2 |5.376E-03
 |`Molybdenum`
@@ -262,7 +396,7 @@ track it as in a drift and put it back to the main bunch when finishing
 [[sec.partmatter.example-of-an-input-file]]
 === Example of an Input File
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/particlematterinteraction.in[particlematterinteraction.in]
+https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/examples/particlematterinteraction.in[particlematterinteraction.in]
 
 FX5 is a slit in x direction, the `APERTURE` is *POSITIVE*, the first
 value in `APERTURE` is the left part, the second value is the right
@@ -288,3 +422,16 @@ image::figures/partmatter/longcoll6.png[scaledwidth=12cm]
 [#fig_spectrum]
 .The energy spectrum and scattering angle at z=0.1 m
 image::figures/partmatter/spectandscatter.png[scaledwidth=12cm]
+
+[[sec.partmatter.bibliography]]
+[bibliography]
+=== References
+
+* [[[bib.nakai]]] Y. Nakai, T. Shirai, T. Tabata, and R. Ito, Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and
+molecules, At. Dat. Nucl. Dat. Tabl., 37, 69-101 (1987).
+* [[[bib.tabata]]] T. Tabata and T. Shirai, Anayltic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules, At. Dat. Nucl. Dat. Tabl., 76, 1-25 (2000).
+* [[[bib.barnett]]] C. F. Barnett, Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules, ORNL-6086/V1 (1990).
+* [[[bib.scherk]]] L. R. Scherk. An improved value for the electron affinity of the negative hydrogen ion, Can. J. Phys., 57, 558–563 (1979).
+
+
+// EOF

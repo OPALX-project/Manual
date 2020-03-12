@@ -17,9 +17,9 @@ endif::[]
 
 All physical elements are defined by statements of the form
 
-....
+----
 label:keyword, attribute,..., attribute
-....
+----
 
 where
 
@@ -32,9 +32,9 @@ keyword::
 attribute::
   normally has the form
 +
-....
+----
 attribute-name=attribute-value
-....
+----
 attribute-name::
   selects the attribute from the list defined for the element type
   `keyword` (in the example `L` and `K1`). It must be an identifier
@@ -47,9 +47,9 @@ Omitted attributes are assigned a default value, normally zero.
 
 Example:
 
-....
+----
 QF: QUADRUPOLE, L=1.8, K1=0.015832;
-....
+----
 
 [[sec.elements.common]]
 === Common Attributes for all Elements
@@ -156,20 +156,20 @@ in the respective section.
 [[sec.elements.drift]]
 === Drift Spaces
 
-....
+----
 label:DRIFT, TYPE=string, APERTURE=string, L=real;
-....
+----
 
 A DRIFT space has no additional attributes. Examples:
 
-....
+----
 DR1:DRIFT, L=1.5;
 DR2:DRIFT, L=DR1->L, TYPE=DRF;
-....
+----
 
 The length of `DR2` will always be equal to the length of `DR1`. The
-reference system for a drift space is a Cartesian coordinate system This
-is a restricted feature: `DOPAL-cycl`. In _OPAL-t_ drifts are implicitly
+reference system for a drift space is a Cartesian coordinate system. This
+is a restricted feature of _OPAL-t_. In _OPAL-t_ drifts are implicitly
 given, if no field is present.
 
 [[sec.elements.bend]]
@@ -227,7 +227,7 @@ K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
   where latexmath:[R] is the bend radius as defined in <<fig_rbend>>.
-  Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
+  Not supported in _OPAL-t_ any more. Superimpose a `Quadrupole`
   instead.
 E1::
   Entrance edge angle (radians). <<fig_rbend>> shows the definition of
@@ -273,7 +273,7 @@ K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
   where latexmath:[R] is the bend radius as defined in <<fig_rbend>>.
-  Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
+  Not supported in _OPAL-t_ any more. Superimpose a `Quadrupole`
   instead.
 E1::
   Entrance edge angle (radians). <<fig_rbend>> shows the definition of
@@ -330,7 +330,7 @@ K1::
   Field gradient index of the magnet,
   latexmath:[K_1=-\frac{R}{B_{y}}\frac{\partial B_y}{\partial x}],
   where latexmath:[R] is the bend radius as defined in <<fig_sbend>>.
-  Not supported in `DOPAL-t` any more. Superimpose a `Quadrupole`
+  Not supported in _OPAL-t_ any more. Superimpose a `Quadrupole`
   instead.
 E1::
   Entrance edge angle (rad). <<fig_sbend>> shows the definition of a
@@ -386,14 +386,14 @@ example using the `ANGLE` attribute to set the bend strength and using
 the default field map see <<sec.elements.benddefaultfieldmapopalt>> for
 describing the magnet fringe fields see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]:
 
-....
+----
 Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
          FMAPFN = "1DPROFILE1-DEFAULT",
          ELEMEDGE = 0.25,
          DESIGNENERGY = 10.0,
          L = 0.5,
          GAP = 0.02;
-....
+----
 
 This is a definition of a simple `RBEND` that bends the beam in a
 positive direction 30 degrees (towards the negative x axis as if
@@ -406,7 +406,7 @@ fields see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]. When _OPAL_ is
 following output (assuming an electron beam) for this `RBEND`
 definition:
 
-....
+----
 RBend > Reference Trajectory Properties
 RBend > ===============================
 RBend >
@@ -430,7 +430,7 @@ RBend > ======================================================================
 RBend >
 RBend > Reference particle is bent: 0.523599 rad (30 degrees) in x plane
 RBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 The first section of this output gives the properties of the reference
 trajectory like that described in <<fig_rbend>>. From the value of
@@ -468,18 +468,18 @@ In this next example, we merely rewrite the first example, but use `K0`
 to set the field strength of the `RBEND`, rather than the `ANGLE`
 attribute:
 
-....
+----
 Bend: RBend, K0 = -0.0350195,
          FMAPFN = "1DPROFILE1-DEFAULT",
          ELEMEDGE = 0.25,
          DESIGNENERGY = 10.0E6,
          L = 0.5,
          GAP = 0.02;
-....
+----
 
 The output from _OPAL_ now reads as follows:
 
-....
+----
 RBend > Reference Trajectory Properties
 RBend > ===============================
 RBend >
@@ -503,7 +503,7 @@ RBend > ======================================================================
 RBend >
 RBend > Reference particle is bent: 0.5236 rad (30.0001 degrees) in x plane
 RBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 The output is effectively identical, to within a small numerical error.
 
@@ -511,16 +511,16 @@ Now, let us modify this first example so that we bend instead in the
 negative x direction. There are several ways to do this:
 
 1.
-....
+----
 Bend: RBend, ANGLE = -30.0 * Pi / 180.0,
          FMAPFN = "1DPROFILE1-DEFAULT",
          ELEMEDGE = 0.25,
          DESIGNENERGY = 10.0E6,
          L = 0.5,
          GAP = 0.02;
-....
+----
 2.
-....
+----
 Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
          FMAPFN = "1DPROFILE1-DEFAULT",
          ELEMEDGE = 0.25,
@@ -528,18 +528,18 @@ Bend: RBend, ANGLE = 30.0 * Pi / 180.0,
          L = 0.5,
          GAP = 0.02,
          ROTATION = Pi;
-....
+----
 3.
-....
+----
 Bend: RBend, K0 = 0.0350195,
          FMAPFN = "1DPROFILE1-DEFAULT",
          ELEMEDGE = 0.25,
          DESIGNENERGY = 10.0E6,
          L = 0.5,
          GAP = 0.02;
-....
+----
 4.
-....
+----
 Bend: RBend, K0 = -0.0350195,
          FMAPFN = "1DPROFILE1-DEFAULT",
          ELEMEDGE = 0.25,
@@ -547,12 +547,12 @@ Bend: RBend, K0 = -0.0350195,
          L = 0.5,
          GAP = 0.02,
          ROTATION = Pi;
-....
+----
 
 In each of these cases, we get the following output for the bend (to
 within small numerical errors).
 
-....
+----
 RBend > Reference Trajectory Properties
 RBend > ===============================
 RBend >
@@ -576,7 +576,7 @@ RBend > ======================================================================
 RBend >
 RBend > Reference particle is bent: -0.523599 rad (-30 degrees) in x plane
 RBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 In general, we suggest to always define a bend in the positive x
 direction (as in <<fig_rbend>>) and then use the `ROTATION` attribute
@@ -586,7 +586,7 @@ above).
 As a final `RBEND` example, here is a suggested format for the four bend
 definitions if one where implementing a four dipole chicane:
 
-....
+----
 Bend1: RBend, ANGLE = 20.0 * Pi / 180.0,
               E1 = 0.0,
               FMAPFN = "1DPROFILE1-DEFAULT",
@@ -622,7 +622,7 @@ Bend4: RBend, ANGLE = 20.0 * Pi / 180.0,
               L = 0.25,
               GAP = 0.02,
               ROTATION = Pi;
-....
+----
 
 Up to now, we have only given examples of `RBEND` definitions. If we
 replaced "RBend" in the above examples with "SBend", we would still
@@ -660,7 +660,7 @@ We will now give examples of how to use a custom field map, starting
 with the first case where the field map describes the fringe fields and
 the magnet length. Assume we have the following `1DProfile1` field map:
 
-....
+----
 1DProfile1 1 1 2.0
  -10.0  0.0  10.0 1
   15.0  25.0 35.0 1
@@ -668,12 +668,12 @@ the magnet length. Assume we have the following `1DProfile1` field map:
   2.00000E+00
   0.00000E+00
   2.00000E+00
-....
+----
 
 We can use this field map to define the following bend (note we are now
 using the `SBEND` command):
 
-....
+----
 Bend: SBend, ANGLE = 60.0 * Pi / 180.0,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
@@ -681,14 +681,14 @@ Bend: SBend, ANGLE = 60.0 * Pi / 180.0,
              ELEMEDGE = 0.25,
              DESIGNENERGY = 10.0E6,
              GAP = 0.02;
-....
+----
 
 *Notice that we do not set the magnet length using the `L` attribute.*
 (In fact, we don’t even include it. If we did and set it to a non-zero
 value, the exit fringe fields of the magnet would not be correct.) This
 input gives the following output:
 
-....
+----
 SBend > Reference Trajectory Properties
 SBend > ===============================
 SBend >
@@ -712,7 +712,7 @@ SBend > ======================================================================
 SBend >
 SBend > Reference particle is bent: 1.0472 rad (60 degrees) in x plane
 SBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 Because we set the bend strength using the `ANGLE` attribute, the magnet
 field strength is automatically adjusted so that the reference particle
@@ -723,7 +723,7 @@ Now we will illustrate the case where the magnet length is set by the
 `L` attribute and only the fringe fields are described by the field map.
 We change the _TEST-MAP.T7_ file to:
 
-....
+----
 1DProfile1 1 1 2.0
  -10.0  0.0  10.0 1
  -10.0  0.0  10.0 1
@@ -731,11 +731,11 @@ We change the _TEST-MAP.T7_ file to:
   2.00000E+00
   0.00000E+00
   2.00000E+00
-....
+----
 
 and change the bend input to:
 
-....
+----
 Bend: SBend, ANGLE = 60.0 * Pi / 180.0,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
@@ -744,11 +744,11 @@ Bend: SBend, ANGLE = 60.0 * Pi / 180.0,
              DESIGNENERGY = 10.0E6,
              L = 0.25,
              GAP = 0.02;
-....
+----
 
 This results in the same output as the previous example, as we expect.
 
-....
+----
 SBend > Reference Trajectory Properties
 SBend > ===============================
 SBend >
@@ -772,12 +772,12 @@ SBend > ======================================================================
 SBend >
 SBend > Reference particle is bent: 1.0472 rad (60 degrees) in x plane
 SBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 As a final example, let us now use the previous field map with the
 following input:
 
-....
+----
 Bend: SBend, K0 = -0.1400778,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
@@ -786,12 +786,12 @@ Bend: SBend, K0 = -0.1400778,
              DESIGNENERGY = 10.0E6,
              L = 0.25,
              GAP = 0.02;
-....
+----
 
 Instead of setting the bend strength using `ANGLE`, we use `K0`. This
 results in the following output:
 
-....
+----
 SBend > Reference Trajectory Properties
 SBend > ===============================
 SBend >
@@ -815,7 +815,7 @@ SBend > ======================================================================
 SBend >
 SBend > Reference particle is bent: 1.04491 rad (59.8688 degrees) in x plane
 SBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 In this case, the bend angle for the reference trajectory in the first
 section of the output no longer matches the reference trajectory bend
@@ -828,7 +828,7 @@ edged magnet for the reference trajectory.)
 We can compensate for this by changing the field map file _TEST-MAP.T7_
 file to:
 
-....
+----
 1DProfile1 1 1 2.0
  -10.0  -0.03026  10.0 1
  -10.0  0.03026  10.0 1
@@ -836,14 +836,14 @@ file to:
   2.00000E+00
   0.00000E+00
   2.00000E+00
-....
+----
 
 We have moved the Enge function origins see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] outward
 from the entrance and exit faces of the magnet see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]
 by 0.3026 mm. This has the effect of making the effective length of the
 soft edge magnet longer. When we do this, the same input:
 
-....
+----
 Bend: SBend, K0 = -0.1400778,
              E1 = -10.0 * Pi / 180.0,
              E2 = 20.0  Pi / 180.0,
@@ -852,11 +852,11 @@ Bend: SBend, K0 = -0.1400778,
              DESIGNENERGY = 10.0E6,
              L = 0.25,
              GAP = 0.02;
-....
+----
 
 produces
 
-....
+----
 SBend > Reference Trajectory Properties
 SBend > ===============================
 SBend >
@@ -880,7 +880,7 @@ SBend > ======================================================================
 SBend >
 SBend > Reference particle is bent: 1.0472 rad (60 degrees) in x plane
 SBend > Reference particle is bent: 0 rad (0 degrees) in y plane
-....
+----
 
 Now we see that the bend angle for the ideal, hard edge magnet, matches
 the bend angle of the reference particle through the soft edge magnet.
@@ -1062,7 +1062,7 @@ The default field map is the equivalent of the following custom
 `1DProfile1` (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] for an explanation of the field
 map format) map:
 
-....
+----
 1DProfile1 5 5 2.0
  -10.0 0.0 10.0 1
  -10.0 0.0 10.0 1
@@ -1078,7 +1078,7 @@ map format) map:
   1.630554
  -1.082657
   0.318111
-....
+----
 
 As one can see, the default magnet gap for `1DPROFILE1-DEFAULT` is
 set to 2.0 cm. This value can be overridden by the `GAP` attribute of the
@@ -1091,9 +1091,9 @@ The SBend3D element enables definition of a bend from 3D field maps.
 This can be used in conjunction with the `RINGDEFINITION` element to
 make a ring for tracking through _OPAL-cycl_.
 
-....
+----
 label: SBEND3D, FMAPFN=string, LENGTH_UNITS=real, FIELD_UNITS=real;
-....
+----
 
 FMAPFN::
   The field map file name.
@@ -1105,51 +1105,28 @@ FIELD_UNITS::
   etc).
 
 Field maps are defined using Cartesian coordinates but in a polar
-geometry with the following restrictions/conventions:
+geometry. The following conventions have to be fulfilled:
 
 1.  3D Field maps have to be generated in the vertical direction (z
-coordinate in _OPAL-cycl_) from z = 0 upwards. It cannot be generated
+coordinate in _OPAL-cycl_) from z = 0 upwards. Maps cannot be generated
 symmetrically about z = 0 towards negative z values.
-2.  Field map file must be in the form with columns ordered as follows:
+2.  The field map file must be in the form with columns ordered as follows:
 [latexmath:[x, z, y, B_{x}, B_{z}, B_{y}]].
 3.  Grid points of the position and field strength have to be written on
 a grid in (latexmath:[r, z, \theta]) with the primary direction
 corresponding to the azimuthal direction, secondary to the vertical
 direction and tertiary to the radial direction.
 
-Below two examples of a `SBEND3D` which loads a field maps with
-different units. The `triplet` example has units of cm and fields units
-of Gauss, where the `Dipole` example (<<fig_sbend3d1>>) uses meter and
-Tesla. The first 8 lines in the field map are ignored.
+Below two examples of a `SBEND3D` which loads a field map file named “90degree_Dipole_Magnet.out” defining a hard edge model of 90 degree dipole magnet with homogenous magnetic field. The first 8 lines are presumed to be header material and are ignored. The first 8 lines in the field map are ignored. Positions have units of m and fields units of Tesla. The corresponding 3D magnetic field map is shown in the following figure in the Cartesian coordinate system (x, y, z). A horizontal cross section of the 3D magnetic field map when z = 0 is also shown.
 
-....
-triplet: SBEND3D, FMAPFN="fdf-tosca-field-map.table", LENGTH_UNITS=10., FIELD_UNITS=-1e-4;
-....
+----
+Dipole: SBEND3D, FMAPFN="90degree_Dipole_Magnet.out", LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;
+----
 
-The first few links of the field map _fdf-tosca-field-map.table_:
+The first few lines of the field map file are as follows:
 
-....
-      422280      422280      422280           1
- 1 X [LENGU]
- 2 Y [LENGU]
- 3 Z [LENGU]
- 4 BX [FLUXU]
- 5 BY [FLUXU]
- 6 BZ [FLUXU]
- 0
- 194.01470 0.0000000 80.363520 0.68275932346E-07 -5.3752492577 0.28280706805E-07
- 194.36351 0.0000000 79.516210 0.42525693524E-07 -5.3827955117 0.17681348191E-07
- 194.70861 0.0000000 78.667380 0.19766168358E-07 -5.4350026348 0.82540823165E-08
-....
-
-....
-Dipole:SBEND3D,FMAPFN="90degree_Dipole_Magnet.out",LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;
-....
-
-The first few links of the field map _90degree_Dipole_Magnet.out_:
-
-....
-    4550000 4550000 4550000 1
+----
+	4550000	4550000	4550000	1
 X [LENGTH_UNITS]
 Z [LENGTH_UNITS]
 Y [LENGTH_UNITS]
@@ -1160,9 +1137,9 @@ BY [FIELD_UNITS]
 4.3586435e-01   5.0000000e-02   1.2803431e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
 4.2691532e-01   5.0000000e-02   1.2833548e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
 4.1794548e-01   5.0000000e-02   1.2863039e+00   0.0000000e+00   1.6214000e+00   0.0000000e+00
-....
+----
 
-This is a restricted feature: _OPAL-cycl_.
+This is a restricted feature for _OPAL-cycl_.
 
 [#fig_sbend3d1]
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
@@ -1171,13 +1148,13 @@ image::figures/Elements/sbend3d.png[scaledwidth=18cm]
 [[sec.elements.quadrupole]]
 === Quadrupole
 
-....
+----
 label:QUADRUPOLE, TYPE=string, APERTURE=real-vector,
       L=real, K1=real, K1S=real;
-....
+----
 
 The reference system for a quadrupole is a Cartesian coordinate system
-This is a restricted feature: `DOPAL-cycl`.
+This is a restricted feature for _OPAL-t_.
 
 A `QUADRUPOLE` has the following real attributes:
 
@@ -1193,21 +1170,24 @@ K1S::
   latexmath:[K_{1s}=-\frac{\partial B_x}{\partial x}]. The default is 0
   latexmath:[\mathrm{Tm^{-1}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
+DK1::
+  The normalised quadrupole coefficient error.
+DK1S::
+  The normalised skew quadrupole coefficient error.
 
 Example:
 
-....
-QP1: Quadrupole, L=1.20, ELEMEDGE=-0.5265,
-     FMAPFN="1T1.T7", K1=0.11;
-....
+----
+QP1: Quadrupole, L=1.20, ELEMEDGE=-0.5265, K1=0.11;
+----
 
 [[sec.elements.sextupole]]
 === Sextupole
 
-....
+----
 label: SEXTUPOLE, TYPE=string, APERTURE=real-vector,
        L=real, K2=real, K2S=real;
-....
+----
 
 A `SEXTUPOLE` has the following real attributes:
 
@@ -1221,22 +1201,26 @@ K2S::
   latexmath:[K_{2s}=-\frac{\partial{^2}B_x}{\partial x^{2}}]. The
   default is 0 latexmath:[\mathrm{T m^{-2}}]. The component is negative, if
   latexmath:[B_x] is positive on the latexmath:[x]-axis.
+DK2::
+  The normalised sextupole coefficient error.
+DK2S::
+  The normalised skew sextupole coefficient error.
 
 Example:
 
-....
+----
 S:SEXTUPOLE, L=0.4, K2=0.00134;
-....
+----
 
 The reference system for a sextupole is a Cartesian coordinate system
 
 [[sec.elements.octupole]]
 === Octupole
 
-....
+----
 label:OCTUPOLE, TYPE=string, APERTURE=real-vector,
       L=real, K3=real, K3S=real;
-....
+----
 
 An `OCTUPOLE` has the following real attributes:
 
@@ -1250,24 +1234,34 @@ K3S::
   latexmath:[K_{3s}=-\frac{\partial{^3}B_x}{\partial x^{3}}]. The
   default is 0 latexmath:[\mathrm{Tm^{-3}}]. The component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
+DK3::
+  The normalised octupole coefficient error.
+DK3S::
+  The normalised skew octupole coefficient error.
 
 Example:
 
-....
+----
 O3:OCTUPOLE, L=0.3, K3=0.543;
-....
+----
 
 The reference system for an octupole is a Cartesian coordinate system
 
 [[sec.elements.multipole]]
 === General Multipole
 
+The `MULTIPOLE` element defines a thick multipole.
+If the length is non-zero, the strengths are per unit
+length. If the length is zero, the strengths are the
+values integrated over the length.
+With zero length no synchrotron radiation can be calculated.
+
 A `MULTIPOLE` in _OPAL-t_ is of arbitrary order.
 
-....
+----
 label:MULTIPOLE, TYPE=string, APERTURE=real-vector,
       L=real, KN=real-vector, KS=real-vector;
-....
+----
 
 KN::
   A real vector see link:format#sec.format.anarray[Arrays], containing the normal multipole
@@ -1280,10 +1274,14 @@ KS::
   latexmath:[K_{n~s}=-\frac{\partial{^n}B_x}{\partial x^{n}}].
   (default is 0 latexmath:[\mathrm{Tm^{-n}}]). A component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
+DKN::
+  A real vector see link:format#sec.format.anarray[Arrays], containing the normal
+  normalised multipole strength errors. (default is 0 latexmath:[\mathrm{Tm^{-n}}]).
+DKS::
+  A real vector see link:format#sec.format.anarray[Arrays], containing the skew
+  normalised multipole strength errors. (default is 0 latexmath:[\mathrm{Tm^{-n}}]).
 
-The order latexmath:[n] is unlimited, but all components up to the
-maximum must be given, even if they are zero. The number of poles of
-each component is (latexmath:[2 n + 2]).
+The number of poles of each component is (latexmath:[2 n + 2]).
 
 Superposition of many multipole components is permitted. The reference
 system for a multipole is a Cartesian coordinate system
@@ -1291,9 +1289,9 @@ system for a multipole is a Cartesian coordinate system
 The following example is equivalent to the quadruple example in
 <<sec.elements.quadrupole>>.
 
-....
+----
 M27:MULTIPOLE, L=1, ELEMEDGE=3.8, KN={0.0,0.11};
-....
+----
 
 A multipole has no effect on the reference orbit, i.e. the reference
 system at its exit is the same as at its entrance. Use the dipole
@@ -1308,10 +1306,10 @@ case, the user may choose between constant or variable radius. This
 model includes fringe fields. The detailed description can be found at:
 https://gitlab.psi.ch/OPAL/src/uploads/0d3fc561b57e8962ed79a57cd6115e37/8FBB32A4-7FA1-4084-A4A7-CDDB1F949CD3_psi.ch.pdf.
 
-....
+----
 label:MULTIPOLET, L=real, ANGLE=real, VAPERT=real, HAPERT=real,
       LFRINGE=real, RFRINGE=real, TP=real-vector, VARRADIUS=bool;
-....
+----
 
 L::
   Physical length of the magnet (meters), without end fields. (Default:
@@ -1376,9 +1374,9 @@ the central axis of the magnet.
 The following example shows a combined function magnet with a dipole component
 of 2 Tesla and a quadrupole gradient of 0.1 Tesla/m.
 
-....
+----
 M30:MULTIPOLET, L=1, RFRINGE=0.3, LFRINGE=0.2, ANGLE=PI/6, TP={2.0, 0.1}, VARRADIUS=TRUE;
-....
+----
 
 The field expansion used in this model is based on the following scalar potential:
 [latexmath]
@@ -1403,10 +1401,10 @@ Starting from Maxwell's laws, the functions latexmath:[f_n] are computed recursi
 [[sec.elements.solenoid]]
 === Solenoid
 
-....
+----
 label:SOLENOID, TYPE=string, APERTURE=real-vector,
       L=real, KS=real;
-....
+----
 
 A `SOLENOID` has two real attributes:
 
@@ -1426,19 +1424,19 @@ FMAPFN::
 
 Example:
 
-....
+----
 SP1: Solenoid, L=1.20, ELEMEDGE=-0.5265, KS=0.11,
      FMAPFN="1T1.T7";
-....
+----
 
 [[sec.elements.cyclotron]]
 === Cyclotron
 
-....
+----
 label:CYCLOTRON, TYPE=string, CYHARMON=int,
       PHIINIT=real, PRINIT=real, RINIT=real,
       SYMMETRY=real, RFFREQ=real, FMAPFN=string;
-....
+----
 
 A `CYCLOTRON` object includes the main characteristics of a cyclotron,
 the magnetic field, and also the initial condition of the injected
@@ -1446,7 +1444,7 @@ reference particle, and it has currently the following attributes:
 
 TYPE::
   The data format of field map, Currently the following formats are implemented:
-  CARBONCYCL, CYCIAE, AVFEQ, FFAG, BANDRF and default PSI format. For
+  CARBONCYCL, CYCIAE, AVFEQ, FFA, BANDRF and default PSI format. For
   the details of their data format, please read
   link:opalcycl#sec.opalcycl.fieldmap[Field Maps].
 CYHARMON::
@@ -1457,8 +1455,14 @@ RFFREQ::
   latexmath:[f_{rf}] / latexmath:[h].
 FMAPFN::
   File name for the magnetic field map.
+BSCALE:
+  Scale factor for the magnetic field map.
 SYMMETRY::
   Defines symmetrical fold number of the B field map data.
+FMLOWE::
+  Minimal energy [MeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
+FMHIGHE::
+  Maximal energy [MeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
 RINIT::
   The initial radius of the reference particle (unit: mm, default: 0)
 PHIINIT::
@@ -1490,53 +1494,53 @@ MAXR, and it will be recorded in the HDF5 file _<inputfilename>.h5_
 (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 Example:
 
-....
+----
 ring: Cyclotron, TYPE="RING", CYHARMON=6, PHIINIT=0.0,
-      PRINIT=-0.000240, RINIT=2131.4 , SYMMETRY=8.0,
+      PRINIT=-0.000240, RINIT=2131.4, SYMMETRY=8.0,
       RFFREQ=50.650, FMAPFN="s03av.nar",
       MAXZ=10, MINZ=-10, MINR=0, MAXR=2500;
-....
+----
 
 If TYPE is set to BANDRF, the 3D electric field map of RF cavity will be
-read from external h5part file and 4 extra arguments need to specified:
+read from external https://gitlab.psi.ch/H5hut/src/wikis/home[H5Hut] file and the following extra arguments need to specified:
 
 RFMAPFN::
-  The file name for the electric field map in h5part binary format.
+  The file name(s) for the electric field map(s) in H5Hut binary format.
 RFPHI::
-  The Initial phase of the electric field map (rad)
+  The initial phase(s) of the electric field map(s) (rad)
+RFFREQ::
+  The frequencies of the electric field maps. 0 indicates a constant field.
 ESCALE::
   The scale factor(s) for the electric field map(s)
 SUPERPOSE::
-  An option whether all of the electric field maps are superposed, The
-  is valid when more than one electric field map is read. (default:
-  true)
+  An option whether the electric field map(s) is superposed (see also below).
 
 Example for single electric field map:
 
-....
-COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT= -71.0,
-PRINIT=pr0, RINIT= r0 , SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
+----
+COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT=-71.0,
+PRINIT=pr0, RINIT=r0, SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
 RFPHI=Pi, RFFREQ=72.0,  RFMAPFN="efield.h5part",
 ESCALE=1.06E-6;
-....
+----
 
 We can have more than one RF field maps.
 
 Example for multiple RF field maps:
 
-....
+----
 COMET: Cyclotron, TYPE="BANDRF", CYHARMON=2, PHIINIT=-71.0,
-PRINIT=pr0, RINIT=r0 , SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
-RFPHI= {Pi,0,Pi,0}, RFFREQ={72.0,72.0,72.0,72.0},
+PRINIT=pr0, RINIT=r0, SYMMETRY=1.0, FMAPFN="Tosca_map.txt",
+RFPHI={Pi,0,Pi,0}, RFFREQ={72.0,72.0,72.0,72.0},
 RFMAPFN={"e1.h5part","e2.h5part","e3.h5part","e4.h5part"},
-ESCALE={1.06E-6, 3.96E-6,1.3E-6,1.E-6}, SUPERPOSE=true;
-....
+ESCALE={1.06E-6, 3.96E-6,1.3E-6,1.E-6}, SUPERPOSE={true,false,false,true};
+----
 
-In this example SUPERPOSE is set to true. Therefore, if a particle
-locates in multiple field regions, all the field maps are superposed. if
-SUPERPOSE is set to false, then only one field map, which has highest
-priority, is used to do interpolation for the particle tracking. The
-priority ranking is decided by their sequence in the list of RFMAPFN
+If SUPERPOSE is set to true and if a particle is located in the field region,
+the field is always applied.
+If SUPERPOSE is set to false, then only one field map with SUPERPOSE false is applied,
+the one which has highest priority, is used to do interpolation for the particle tracking.
+The priority ranking is decided by their sequence in the list of RFMAPFN
 argument, i.e., "e1.h5part" has the highest priority and "e4.h5part"
 has the lowest priority.
 
@@ -1557,49 +1561,70 @@ TRIMCOIL::
 A `TRIMCOIL` object can be defined in two ways:
 
 TYPE::
-  Type specifies PSI-RING or PSI-RING-OLD trim coil descriptions.
-  The general PSI-RING description is based on a rational function with polynomials in the nominator and the denominator.
-  The function describes the magnetic field [T] as function of the radius [mm].   
-  The PSI-RING-OLD type is described in http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf
+  Type specifies PSI-BFIELD, PSI-PHASE or PSI-BFIELD-MIRRORED trim coil descriptions.
+  The general PSI-BFIELD and PSI-PHASE descriptions are based on rational functions with polynomials in the nominator and the denominator.
+  The function describes the magnetic field [T] resp. the phase shift as function of the radius [mm].
+  Separate functions can be given for the radial and azimuthal direction.
+  These functions are multiplied together for the function.
+  If a function in a direction is not specified it is the identity 1.
+  The PSI-BFIELD-MIRRORED type is described in http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf
 RMIN::
   Inner radius of the trim coil [mm]
 RMAX::
   Outer radius of the trim coil [mm]
+PHIMIN::
+  Minimal azimuth [deg] (default 0) (not for PSI-BFIELD-MIRRORED)
+PHIMAX::
+  Maximal azimuth [deg] (default 360) (not for PSI-BFIELD-MIRRORED)
 BMAX::
-  Maximal B field of the trim coils [T]
+  Maximal B field of the trim coils [T] (for PSI-BFIELD) or maximal phase shift (for PSI-PHASE)
 COEFNUM::
-  Coefficients of the numerator, first coefficient is zeroth order (for PSI-RING type only)
+  Coefficients of the numerator for the radial direction,
+  first coefficient is zeroth order.
+  If COEFNUMPHI is not specified, the numerator is 1
+  (not for PSI-BFIELD-MIRRORED).
 COEFDENOM::
-  Coefficients of the denominator, first coefficient is zeroth order.
-  If COEFDENOM is not specified, the denominator is 1, and the description will be a normal polynom.
-  (for PSI-RING type only).
+  Coefficients of the denominator for the radial direction,
+  first coefficient is zeroth order.
+  If COEFDENOM is not specified, the denominator is 1, and the description will be a normal polynom
+  (not for PSI-BFIELD-MIRRORED).
+COEFNUMPHI::
+  Coefficients of the numerator for the azimuthal direction,
+  first coefficient is zeroth order.
+  If COEFNUMPHI is not specified, the numerator is 1.
+  (not for PSI-BFIELD-MIRRORED).
+COEFDENOMPHI::
+  Coefficients of the denominator for the azimuthal direction,
+  first coefficient is zeroth order.
+  If COEFDENOMPHI is not specified, the denominator is 1, and the description will be a normal polynom
+  (not for PSI-BFIELD-MIRRORED).
 SLPTC::
-  Slopes of the rising edge [1/mm] (for PSI-RING-OLD type only)
+  Slopes of the rising edge [1/mm] (for PSI-BFIELD-MIRRORED type only)
 
 Example:
 
-....
-tc1:  TRIMCOIL, TYPE="PSI-RING-OLD", RMIN = 2022.09, RMAX = 2132.09, BMAX=2.0e-4, SLPTC=1;
-tc15: TRIMCOIL, TYPE="PSI-RING",     RMIN = 3000,    RMAX = 4500,    BMAX=13e-4,
+----
+tc1:  TRIMCOIL, TYPE="PSI-BFIELD-MIRRORED", RMIN = 2022.09, RMAX = 2132.09, BMAX=2.0e-4, SLPTC=1;
+tc15: TRIMCOIL, TYPE="PSI-BFIELD",          RMIN = 3000,    RMAX = 4500,    BMAX=13e-4,
       COEFNUM   = {-0.426038643356, 0.311242287271, -0.0484487029431},
       COEFDENOM = {19.3541404562, -22.2057165548, 9.99489842329, -2.00909633025, 0.14942099903};
 
 Ring: CYCLOTRON, TYPE="RINGCYC", CYHARMON=6, PHIINIT=0.0, PRINIT=0.0,
       RINIT=2131, SYMMETRY=8.0, RFFREQ=50.65, BSCALE=1, FMAPFN="s03av.nar",
       TRIMCOIL={tc1, tc15};
-....
+----
 
 This is a restricted feature: _OPAL-cycl_.
 
 [[sec.elements.ringdefinition]]
 === Ring Definition
 
-....
+----
 label: RINGDEFINITION,
        RFFREQ=real, HARMONIC_NUMBER=real, IS_CLOSED=string, SYMMETRY=int,
        LAT_RINIT=real, LAT_PHIINIT=real, LAT_THETAINIT=real,
        BEAM_PHIINIT=real, BEAM_PRINIT=real, BEAM_RINIT=real;
-....
+----
 
 A `RingDefinition` object contains the main characteristics of a
 generalized ring. The `RingDefinition` lists characteristics of the
@@ -1637,11 +1662,11 @@ BEAM_PRINIT::
 In the following example, we define a ring with radius 2.35 m and 4
 cells.
 
-....
+----
 ringdef: RINGDEFINITION, HARMONIC_NUMBER=6, LAT_RINIT=2350.0, LAT_PHIINIT=0.0,
          LAT_THETAINIT=0.0, BEAM_PHIINIT=0.0, BEAM_PRINIT=0.0,
          BEAM_RINIT=2266.0, SYMMETRY=4.0, RFFREQ=0.2;
-....
+----
 
 [[sec.elements.local-cartesian-offset]]
 ==== Local Cartesian Offset
@@ -1652,16 +1677,30 @@ This enables drift spaces and placement of overlapping elements.
 
 END_POSITION_X::
   x position of the next element start in the coordinate system of the
-  preceding element [mm].
+  preceding element [m].
 END_POSITION_Y::
   y position of the next element start in the coordinate system of the
-  preceding element [mm].
+  preceding element [m].
 END_NORMAL_X::
   x component of the normal vector defining the placement of the next
-  element in the coordinate system of the preceding element.
+  element in the coordinate system of the preceding element [m].
 END_NORMAL_Y::
   y component of the normal vector defining the placement of the next
-  element in the coordinate system of the preceding element.
+  element in the coordinate system of the preceding element [m].
+
+[[sec.elements.local-cylindrical-offset]]
+==== Local Cylindrical Offset
+
+The `LOCAL_CYLINDRICAL_OFFSET` enables the user to place an object at an
+arbitrary position in the coordinate system of the preceding element in cylindrical coordinates.
+This enables drift spaces and placement of overlapping elements.
+
+THETA_IN::
+  Angle between the previous element and the displacement vector [rad].
+THETA_OUT::
+  Angle between the displacement vector and the next element [rad].
+LENGTH::
+  Length of the offset [m].
 
 [[sec.elements.source]]
 === Source
@@ -1676,10 +1715,10 @@ needed to place the elements in three-dimensional space when using
 
 For an `RFCAVITY` the three modes have four real attributes in common:
 
-....
+----
 label:RFCAVITY, APERTURE=real-vector, L=real,
       VOLT=real, LAG=real;
-....
+----
 
 L::
   The length of the cavity (default: 0 m)
@@ -1692,6 +1731,8 @@ LAG::
   energy. This phase is determined using an auto-phasing algorithm
   (see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
+DLAG::
+  The phase lag error [rad] (default: 0).
 
 [[sec.elements.cavity-t]]
 ==== _OPAL-t_ mode
@@ -1702,7 +1743,7 @@ are defined:
 FMAPFN::
   Field maps in the _T7_ format can be specified.
 TYPE::
-  Type specifies STANDING [default] or SINGLE GAP structures.
+  Type specifies `STANDING` [default] or `SINGLEGAP` structures.
 FREQ::
   Defines the frequency of the RF Cavity in units of MHz. A warning is
   issued when the frequency of the cavity card does not correspond to
@@ -1715,22 +1756,22 @@ APVETO::
 
 Example standing wave cavity which mimics a DC gun:
 
-....
+----
 gun: RFCavity, L=0.018, VOLT=-131/(1.052*2.658),
      FMAPFN="1T3.T7", ELEMEDGE=0.00,
      TYPE="STANDING", FREQ=1.0e-6;
-....
+----
 
 Example of a two frequency standing wave cavity:
 
-....
+----
 rf1: RFCavity, L=0.54, VOLT=19.961, LAG=193.0/360.0,
      FMAPFN="1T3.T7", ELEMEDGE=0.129, TYPE="STANDING",
      FREQ=1498.956;
 rf2: RFCavity, L=0.54, VOLT=6.250, LAG=136.0/360.0,
      FMAPFN="1T4.T7", ELEMEDGE=0.129, TYPE="STANDING",
      FREQ=4497.536;
-....
+----
 
 [[sec.elements.cavity-cycl]]
 ==== _OPAL-cycl_ mode
@@ -1739,25 +1780,24 @@ Using a RF Cavity (standing wave) in _OPAL-cycl_ mode, the following
 parameters are defined:
 
 FMAPFN::
-  Defines name of file which stores normalized voltage amplitude curve
+  Name of file which stores normalized voltage amplitude curve
   of cavity gap in ASCII format. (See data format in
   link:opalcycl#sec.opalcycl.rffieldmap[RF field])
 VOLT::
-  Sets peak value of voltage amplitude curve in MV.
+  Peak value of voltage amplitude curve in MV.
 TYPE::
-  Defines Cavity type, SINGLEGAP represents cyclotron type cavity.
+  Defines Cavity type, `SINGLEGAP` represents cyclotron type cavity.
 FREQ::
-  Sets the frequency of the RF Cavity in units of MHz.
+  Frequency of the RF Cavity in units of MHz.
 RMIN::
-  Sets the radius of the cavity inner edge in mm.
+  Radius of the cavity inner edge in mm.
 RMAX::
-  Sets the radius of the cavity outer edge in mm.
+  Radius of the cavity outer edge in mm.
 ANGLE::
-  Sets the azimuthal position of the cavity in global frame in degree.
+  Azimuthal position of the cavity in global frame in degree.
 PDIS::
-  Set shift distance of cavity gap from center of cyclotron in mm. If
-  its value is positive, the shift direction is clockwise, namely, shift
-  towards the smaller azimuthal angle.
+  Perpendicular distance (impact parameter) of cavity from center of cyclotron in mm.
+  If its value is positive, the radius increases clockwise (larger radius has smaller azimuthal angle).
 GAPWIDTH::
   Set gap width of cavity in mm.
 PHI0::
@@ -1765,12 +1805,12 @@ PHI0::
 
 Example of a RF cavity of cyclotron:
 
-....
+----
 rf0: RFCavity, VOLT=0.25796, FMAPFN="Cav1.dat",
      TYPE="SINGLEGAP", FREQ=50.637, RMIN = 350.0,
      RMAX = 3350.0, ANGLE=35.0,   PDIS = 0.0,
      GAPWIDTH = 0.0, PHI0=phi01;
-....
+----
 
 <<fig_Cyclotron_cavity>> shows the simplified geometry of a cavity gap
 and its parameters.
@@ -1778,6 +1818,7 @@ and its parameters.
 [#fig_Cyclotron_cavity]
 .Schematic of the simplified geometry of a cavity gap and parameters
 image::./figures/cyclotron/Cavity.png[scaledwidth=10cm]
+
 
 [[sec.elements.variable-rf-cavity-cycl]]
 === RF Cavities with Time Dependent Parameters
@@ -1794,13 +1835,13 @@ AMPLITUDE_MODEL::
   latexmath:[E_0] [MV/m].
 PHASE_MODEL::
   String naming the time dependence model of the cavity phase offset,
-  latexmath:[\phi].
+  latexmath:[\phi] [rad].
 WIDTH::
-  Full width of the cavity [mm].
+  Full width of the cavity [m].
 HEIGHT::
-  Full height of the cavity [mm].
+  Full height of the cavity [m].
 L::
-  Full length of the cavity [mm].
+  Full length of the cavity [m].
 
 The field inside the cavity is given by
 [latexmath]
@@ -1835,7 +1876,35 @@ g(t) = p_0 + p_1 t + p_2 t^2 + p_3 t^3.
 An example of a Variable Frequency RF cavity of cyclotron with
 polynomial time dependence of parameters is given below:
 
-....
+[[sec.elements.variable-rf-cavity-fringe-field]]
+==== Fringe Field
+It is possible to model a soft-edged RF cavity with time dependent parameters using the `VARIABLE_RF_CAVITY_FRINGE_FIELD` element. This will place a full cavity including the field body and fringe fields.  `VARIABLE_RF_CAVITY_FRINGE_FIELD` must be placed using the `RingDefinition` element.
+
+FREQUENCY_MODEL::
+  String naming the time dependence model of the cavity frequency,
+  latexmath:[f] [MHz].
+AMPLITUDE_MODEL::
+  String naming the time dependence model of the cavity amplitude,
+  latexmath:[E_0] [MV/m].
+PHASE_MODEL::
+  String naming the time dependence model of the cavity phase offset,
+  latexmath:[\phi] [rad].
+WIDTH::
+  Full width of the cavity [m].
+HEIGHT::
+  Full height of the cavity [m].
+L::
+  Full length of the cavity bounding box [m].
+CENTRE_LENGTH::
+  Length of the cavity field flat top [m].
+END_LENGTH::
+  E-fold Length of the cavity field ends [m].
+CAVITY_CENTRE::
+  Position of the centre of the cavity relative to the start [m].
+MAX_ORDER::
+  Maximum power in vertical coordinate z to which the field will be evaluated.
+
+----
 REAL phi=2.*PI*0.25;
 
 REAL rf_p0=0.00158279;
@@ -1843,13 +1912,20 @@ REAL rf_p1=9.02542e-10;
 REAL rf_p2=-1.96663e-16;
 REAL rf_p3=2.45909e-23;
 
-RF_FREQUENCY: POLYNOMIAL_TIME_DEPENDENCE, P0=rf_p0, P1=rf_p1, P2=rf_p2, P3=rf_p3;
+RF_FREQUENCY: POLYNOMIAL_TIME_DEPENDENCE, P0=rf_p0, P1=rf_p1,   P2=rf_p2, P3=rf_p3;
 RF_AMPLITUDE: POLYNOMIAL_TIME_DEPENDENCE, P0=1.0;
 RF_PHASE: POLYNOMIAL_TIME_DEPENDENCE, P0=phi;
 
-RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
-           FREQUENCY_MODEL="RF_FREQUENCY", L=100., HEIGHT=200., WIDTH=2000.;
-....
+HARD_RF_CAVITY: VARIABLE_RF_CAVITY,
+           PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
+           FREQUENCY_MODEL="RF_FREQUENCY", L=0.100, HEIGHT=0.200, WIDTH=2.000;
+
+SOFT_RF_CAVITY: VARIABLE_RF_CAVITY_FRINGE_FIELD, 
+           PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
+           FREQUENCY_MODEL="RF_FREQUENCY", L=0.200, HEIGHT=0.200, WIDTH=2.000
+           CENTRE_LENGTH=0.1, END_LENGTH=0.01, CAVITY_CENTRE=0.1, MAX_ORDER=4;
+----
+
 
 [[sec.elements.travelingwave]]
 === Traveling Wave Structure
@@ -1912,12 +1988,12 @@ from the position until it is back within the map’s longitudinal range.
 A `TRAVELINGWAVE` structure has seven real attributes, one integer
 attribute, one string attribute and one Boolean attribute:
 
-....
+----
 label:TRAVELINGWAVE, APERTURE=real-vector, L=real,
       VOLT=real, LAG=real, FMAPFN=string,
       ELEMEDGE=real, FREQ=real, NUMCELLS=integer,
       MODE=real;
-....
+----
 
 L::
   The length of the cavity (default: 0 m). In _OPAL-t_ this attribute is
@@ -1932,6 +2008,8 @@ LAG::
   energy. This phase is determined using an auto-phasing algorithm
   (see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]). This auto-phasing algorithm can be
   switched off, see `APVETO`.
+DLAG::
+  The phase lag error [rad] (default: 0).
 FMAPFN::
   Field maps in the _T7_ format can be specified.
 FREQ::
@@ -1964,12 +2042,12 @@ any calculations are performed.
 
 Example of a L-Band traveling wave structure:
 
-....
+----
 lrf0: TravelingWave, L=0.0253, VOLT=14.750,
       NUMCELLS=40, ELEMEDGE=2.73066,
       FMAPFN="INLB-02-RAC.Ez", MODE=1/3,
       FREQ=1498.956, LAG=248.0/360.0;
-....
+----
 
 [[sec.elements.monitor]]
 === Monitor
@@ -1991,7 +2069,7 @@ If the attribute `TYPE` is set to `TEMPORAL` then the data of all
 particles are written to the H5hut file when the reference particle hits
 the monitor.
 
-This is a restricted feature: `DOPAL-cycl`.
+This is a restricted feature for _OPAL-t_.
 
 [[sec.elements.collimators]]
 === Collimators
@@ -2007,14 +2085,14 @@ FLEXIBLECOLLIMATOR::
 CCOLLIMATOR::
   Radial rectangular collimator in cyclotrons
 
-....
+----
 label:ECOLLIMATOR, TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
 label:RCOLLIMATOR,TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
 label:FLEXIBLECOLLIMATOR, APERTURE=real-vector,
       L=real, DESCRIPTION=string, FNAME=string, OUTFN=string;
-....
+----
 
 Each type has the following attributes:
 
@@ -2049,35 +2127,110 @@ YSIZE::
 
 Example:
 
-....
+----
 Col:ECOLLIMATOR, L=1.0E-3, ELEMEDGE=3.0E-3, XSIZE=5.0E-4,
     YSIZE=5.0E-4, OUTFN="Coll.h5";
-....
+----
 
 The `FLEXIBLECOLLIMATOR` can be used to model both simple, rectangular or elliptic collimators and more complex devices like pepper-pots. The configuration of holes can be described with a special language. This language knows the following commands
 
 rectangle(width, height)::
-A rectangle that is centered at the origin of the 2D coordinate system.
+A rectangle that is centered at the origin of the 2D coordinate system. The arguments width and heigth can be mathematical expressions.
+
 ellipse(width, height)::
-An ellipse that is centered at the origin of the 2D coordinate system.
+An ellipse that is centered at the origin of the 2D coordinate system. The arguments width and heigth can be mathematical expressions.
+
+polygon(x_0, y_0; x_1, y_1; x_2, y_2[; x_3, y_3[;... x_N, y_N]])::
+A polygon with with vertices (x_0, y_0), (x_1, y_1), (x_2, y_2), ..., (x_N, y_N). The first vertex doens't have to be repeated, instead (x_N, y_N) is connected with (x_0, y_0). The polygon is then triangulized for a fast detection of stopped particles. In order for the triangulization to work the edges of the polygon may not cross each other. All arguments of the command polygon can be mathematical expressions.
+
+mask('filename.pbm', width, height)::
+A black and white bitmap file (Portable Bitmap format) can be provided to describe the collimator. White pixels stop particles. The first argument is the path to the pixmap file, the second and third are the width and height of the mask in meters. The arguments width and height can be mathematical expressions.
+
 translate(command, shiftx, shifty)::
-Translates the holes that are define by the command by shiftx in the x-direction and shifty in the y-direction.
+Translates the holes that are define by the command by shiftx in the x-direction and shifty in the y-direction. The arguments shiftx and shifty can be mathematical expressions.
+
 rotate(command, angle)::
-Rotates the holes that are defined by the command about the origin of the 2D coordinate system.
+Rotates the holes that are defined by the command about the origin of the 2D coordinate system. The argument angle can be a mathematical expression.
+
 union(command1, command2 [, command3 [, command4 [...]]])::
 Collects the holes that are defined the by the commands.
+
+difference(command1, command2)::
+All particles that pass command1 and not command2 pass the difference.
+[#fig_difference]
+.Illustration of a difference between to circles
+image::figures/Elements/difference.png[scaledwidth=10cm]
+
+symmetric_difference(command1, command2)::
+All particles that pass either command but not both at the same time.
+[#fig_symmetric_difference]
+.Illustration of a symmetric difference between to circles
+image::figures/Elements/symmetric_difference.png[scaledwidth=10cm]
+
+intersection(command1, command2)::
+All particles that pass both commands at the same time.
+[#fig_intersection]
+.Illustration of a intersection between to circles
+image::figures/Elements/intersection.png[scaledwidth=10cm]
+
 repeat(command, N, shiftx, shifty)::
-Repeats the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction.
+Repeats the holes that are defined by the command translating each copy successively by shiftx in x-direction and shifty in y-direction. The arguments shiftx and shifty can be mathematical expressions.
+
 repeat(command, N, angle)::
-Repeats the holes that are defined by the command rotating each copy successively.
+Repeats the holes that are defined by the command rotating each copy successively. The argument angle can be a mathematical expression.
+
+The supported mathematical constants and functions are listed in the following table.
+
+.Mathematical constants and functions
+[cols="4*<",]
+|===================
+|e
+|pi
+|abs(x)
+|acos(x)
+|acosh(x)
+|asin(x)
+|asinh(x)
+|atan(x)
+|atanh(x)
+|cbrt(x)
+|ceil(x)
+|cos(x)
+|cosh(x)
+|deg2rad(x)
+|erf(x)
+|erfc(x)
+|exp(x)
+|exp2(x)
+|floor(x)
+|isinf(x)
+|isnan(x)
+|log(x)
+|log2(x)
+|log10(x)
+|rad2deg(x)
+|round(x)
+|sgn(x)
+|sin(x)
+|sinh(x)
+|sqrt(x)
+|tan(x)
+|tanh(x)
+|tgamma(x)
+|atan2(y,x)
+|max(x,y)
+|min(x,y)
+|pow(x,n)
+|===================
+
 
 A simple elliptic collimator with major and minor axis of 4 cm and 3 cm respectively can be defined using
-....
+----
 ellipse(0.04, 0.03)
-....
+----
 
 A regular pepper-pot with rectangular holes can be define like this
-....
+----
 repeat( // repeat it in y-direction
        repeat( // repeat it in x-direction
               translate(
@@ -2099,7 +2252,7 @@ repeat( // repeat it in y-direction
        0.0,
        0.004
       )
-....
+----
 The latter example will produce a holes as in the following picture
 
 .Pepper-pot with rectangle holes
@@ -2112,8 +2265,8 @@ In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided
 
 Only `CCOLLIMATOR` is available for _OPAL-cycl_. This element is radial
 rectangular collimator which can be used to collimate the radial tail
-particles. So when a particle hits this collimator, it will be absorbed
-or scattered, the algorithm is based on the Monte Carlo method. Please
+particles. When a particle hits this collimator, it will be absorbed
+or scattered. The algorithm is based on the Monte Carlo method. Please
 note when a particle is scattered, it will not be recorded as the lost
 particle. If this particle leaves the bunch, it will be removed during
 the integration afterwards, so as to maintain the accuracy of space
@@ -2128,13 +2281,15 @@ YSTART::
 YEND::
   The y coordinate of the end point. [mm]
 ZSTART::
-  The vertical coordinate of the start point [mm]. Default value is
+  The minimum vertical coordinate [mm]. Default value is
   -100mm.
 ZEND::
-  The vertical coordinate of the end point. [mm]. Default value is
+  The maximum vertical coordinate. [mm]. Default value is
   -100mm.
 WIDTH::
   The width of the collimator. [mm]
+OUTFN::
+  The file name into which the collimator should write the collected data.
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element. Collimator
   physics is only a kind of particlematterinteraction. It can be applied
@@ -2150,7 +2305,7 @@ image::figures/Elements/collimator.png[scaledwidth=10cm]
 
 Example:
 
-....
+----
 REAL y1=-0.0;
 REAL y2=0.0;
 REAL y3=200.0;
@@ -2161,10 +2316,10 @@ REAL x3=0.0;
 REAL x4=0.0;
 cmphys:particlematterinteraction, TYPE="Collimator", MATERIAL="Cu";
 cma1: CCollimator, XSTART=x1, XEND=x2,YSTART=y1, YEND=y2,
-ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys ;
+      ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys ;
 cma2: CCollimator, XSTART=x3, XEND=x4,YSTART=y3, YEND=y4,
- ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
-....
+      ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
+----
 
 The particles lost on the CCOLLIMATOR are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
@@ -2172,7 +2327,7 @@ _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] i
 [[sec.elements.septum-opal-cycl]]
 === Septum (_OPAL-cycl_)
 
-This is a restricted feature: `DOPAL-t`. The particles hitting on the
+This is a restricted feature for _OPAL-cycl_. The particles hitting on the
 septum is removed from the bunch. There are 5 parameters to describe a
 septum.
 
@@ -2186,16 +2341,18 @@ YEND::
   The y coordinate of the end point. [mm]
 WIDTH::
   The width of the septum. [mm]
+OUTFN::
+  The file name into which the septum should write the collected data.
 
 .Septum
 image::figures/Elements/septum.png[scaledwidth=10cm]
 
 Example:
 
-....
+----
 eec2: Septum, xstart=4100.0, xend=4300.0,
 ystart=-1200.0, yend=-150.0, width=0.05;
-....
+----
 
 The particles lost on the SEPTUM are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
@@ -2214,29 +2371,30 @@ YSTART::
   The y coordinate of the start point. [mm]
 YEND::
   The y coordinate of the end point. [mm]
-WIDTH::
-  The width of the probe, NOT used yet.
 STEP::
   The step size of the probe (for histogram and peak finder output). Default: 1 [mm]
+OUTFN::
+  The file name into which the probe should write the collected data.
 
 .Probe
 image::figures/Elements/probe.png[scaledwidth=10cm]
 
 Example:
 
-....
+----
 prob1: Probe, xstart=4166.16, xend=4250.0,
 ystart=-1226.85, yend=-1241.3;
-....
+----
 
 The particles probed on the PROBE are recorded in the HDF5 file
 _<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
-The particles recorded in the PROBE are also recorded in the histogram ".hist" and peak ".peaks" file.
+The radius of the particles recorded in the PROBE is recorded in the histogram ".hist" and peak ".peaks" file.
 The histogram file contains data as recorded in actual probe measurements.
 The corresponding peaks file contains the peaks found in the probe histogram by the same peak finder used for the PSI measurements.
+Note that for probes in multiple quadrants the histogram and peaks file is often not meaningful since the absolute radius is stored.
 
 [[sec.elements.stripper-opal-cycl]]
 === Stripper (_OPAL-cycl_)
@@ -2244,7 +2402,7 @@ The corresponding peaks file contains the peaks found in the probe histogram by 
 A stripper element strip the electron(s) from a particle. The particle
 hitting the stripper is recorded in the file, which contains the time,
 coordinates and momentum of the particle at the moment it hit the
-stripper. The charge and mass are changed. Its has the same geometry as
+stripper. The charge and mass are changed. It has the same geometry as
 the PROBE element. Please note that the stripping physics is not
 included yet.
 
@@ -2258,28 +2416,28 @@ YSTART::
   The y coordinate of the start point. [mm]
 YEND::
   The y coordinate of the end point. [mm]
-WIDTH::
-  The width of the stripper, NOT used yet.
 OPCHARGE::
-  Charge number of the out-coming particle. Negative value represents
+  Charge number of the outcoming particle. Negative value represents
   negative charge.
 OPMASS::
-  Mass of the out-coming particles. [latexmath:[\mathrm{GeV/c^2}]]
+  Mass of the outcoming particles. [latexmath:[\mathrm{GeV/c^2}]]
 OPYIELD::
-  Yield of the out-coming particle (the outcome particle number per
-  income particle) , the default value is 1.
+  Yield of the outcoming particle (the number of outcoming particles per
+  incoming particle), the default value is 1.
 STOP::
   If STOP is true, the particle is stopped and deleted from the
-  simulation; Otherwise, the out-coming particle continues to be tracked
+  simulation; Otherwise, the outcoming particle continues to be tracked
   along the extraction path.
+OUTFN::
+  The file name into which the stripper should write the collected data.
 
 Example: latexmath:[H_2^+] particle stripping
 
-....
+----
 prob1: Stripper, xstart=4166.16, xend=4250.0,
 ystart=-1226.85, yend=-1241.3,
 opcharge=1, opmass=PMASS, opyield=2, stop=false;
-....
+----
 
 No matter what the value of STOP is, the particles hitting on the
 STRIPPER are recorded in the HDF5 file
@@ -2297,11 +2455,11 @@ YSIZE::
 
 Example: Graphite degrader of 15 cm thickness.
 
-....
+----
 DEGPHYS: PARTICLEMATTERINTERACTION, TYPE="DEGRADER", MATERIAL="Graphite";
 
 DEG1: DEGRADER, L=0.15, ELEMEDGE=0.02, PARTICLEMATTERINTERACTION=DEGPHYS;
-....
+----
 
 [[sec.elements.corrector]]
 === Correctors (_OPAL-t_)
@@ -2317,14 +2475,14 @@ KICKER::
 
 They act as
 
-....
+----
 label:HKICKER, TYPE=string, APERTURE=real-vector,
       L=real, KICK=real;
 label:VKICKER, TYPE=string, APERTURE=real-vector,
       L=real, KICK=real;
 label:KICKER, TYPE=string, APERTURE=real-vector,
       L=real, HKICK=real, VKICK=real;
-....
+----
 
 They have the following attributes:
 
@@ -2358,14 +2516,61 @@ a noticeable effect on the trajectory of a bunch at low energies.
 
 Examples:
 
-....
+----
 HK1:HKICKER, KICK=0.001;
 VK3:VKICKER, KICK=0.0005;
 KHV:KICKER, HKICK=0.001, VKICK=0.0005;
-....
+----
 
 The reference system for an orbit corrector is a Cartesian coordinate
 system.
+
+[[sec.elements.beamstripping-opal-cycl]]
+=== Beam Stripping (_OPAL-cycl_)
+
+Beam stripping represents an abstract element that includes the necessary
+parameters to consider the interactions with the residual gas and
+the magnetic field of the cyclotron. When the particle interacts,
+it is recorded in the file, which contains the time,
+coordinates and momentum of the particle at this moment.
+The particle could produce a new particle, changing
+the charge and mass.
+
+There are 7 parameters to describe beam stripping.
+
+PRESSURE::
+  The average pressure of the residual gas in the cyclotron. [mbar]
+TEMPERATURE::
+  Temperature of residual gas. [K]
+PMAPFN::
+  File name of the mid-plane pressure map.
+  The pressure data is stored in a sequence shown in 2D field map on the median
+  plane with primary direction corresponding to the azimuthal direction,
+  secondary direction to the radial direction
+  (same file structure as `Cyclotron` `TYPE=CARBONCYCL`).
+  If `PMAPFN` is specified, the `PRESSURE` parameter is ignored.
+PSCALE::
+  Scale factor for the pressure field map (default: 1.0).
+GAS::
+  Type of gas for residual vacuum: `H2` or `AIR`
+STOP::
+  If STOP is true, the particle is stopped and deleted from the
+  simulation. Otherwise, the outcoming particle continues to be tracked
+  as `SECONDARY` particle (default: true).
+PARTICLEMATTERINTERACTION::
+  `PARTICLEMATTERINTERACTION` is an attribute of the element. Beam stripping
+  physics is only a kind of particlematterinteraction.
+
+Example: Beam stripping by latexmath:[H_2] residual gas.
+
+----
+bstp_phys:particlematterinteraction, TYPE="BEAMSTRIPPING";
+bstp: BEAMSTRIPPING, PRESSURE=1E-8, TEMPERATURE=300, 
+      GAS="H2", STOP=true, PARTICLEMATTERINTERACTION=bstp_phys;
+----
+
+No matter what the value of STOP is, the particles stripped are recorded in the HDF5 file
+_<elementname>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 
 [[sec.elements.bibliography]]
 [bibliography]
@@ -2373,3 +2578,5 @@ system.
 
 * [[[bib.tait-bryan_elements,bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
 * [[[bib.enge_elements]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
+
+// EOF

@@ -39,7 +39,7 @@ multi-objective optimization problem has the form
 ++++
 \begin{aligned}
   \mathrm{min}  \quad & \quad f_m(\mathbf{x}),        & m &= \{1, \ldots, M\} \\
-  \mathrm{s.t.} \quad & \quad g_j(\mathbf{x}) \geq 0, & j &= \{1, \ldots, J\} \\
+  \mathrm{subject\, to} \quad & \quad g_j(\mathbf{x}) \geq 0, & j &= \{1, \ldots, J\} \\
   \quad & \quad  -\infty \leq x_i^L \leq \mathbf{x}=x_i \leq x_i^U \leq \infty,& i &= \{0, \ldots, n \}.
 \end{aligned}
 ++++
@@ -121,7 +121,7 @@ image::figures/optimiser/pareto-defs.png[scaledwidth=18cm]
 [[sec.optimiser.opt-MOGA-theory]]
 === MOGA Theory
 
-Here some facts on “What is the tradeoff between population size and the number of generations in genetic algorithms":
+Some links to "What is the tradeoff between population size and the number of generations in genetic algorithms":
 
 1. https://cstheory.stackexchange.com/questions/5156/what-is-the-tradeoff-between-population-size-and-the-number-of-generations-in-ge
 
@@ -190,11 +190,13 @@ The OPTIMIZE command initiates optimization.
 | DVARS                     | List of optimization variables to be used.
 | CONSTRAINTS               | List of constraints to be used.
 | INITIALPOPULATION         | Size of the initial population.
+| STARTPOPULATION           | A generation file (JSON format) to be started from (optional). In case the number of individuals of the provided file is lower than INITIALPOPULATION, it creates the remaining individuals randomly within the bounds of the DVARS. In case
+the number of individuals is greater it takes the first INITIALPOPULATION individuals.
 | NUM_MASTERS               | Number of master nodes.
 | NUM_COWORKERS             | Number processors per worker.
-| SELECTOR                  | Path of the selector.
-| DUMP_DAT                  | Dump old generation data format with frequency.
-| DUMP_FREQ                 | Dump old generation data format with frequency.
+| DUMP_DAT                  | Dump old generation data format with frequency, default: false.
+| DUMP_FREQ                 | Dump generation data format with frequency, default: 1
+| DUMP_OFFSPRING            | Dump offspring (instead of parent population), default: true.
 | NUM_IND_GEN               | Number of individuals in a generation.
 | MAXGENERATIONS            | Number of generations to run.
 | EPSILON                   | Tolerance of hypervolume criteria, default: 0.001.
@@ -203,15 +205,25 @@ The OPTIMIZE command initiates optimization.
 | CONV_HVOL_PROG            | Converge if change in hypervolume is smaller, default: 0.
 | ONE_PILOT_CONVERGE        | default: false
 | SOL_SYNCH                 | Solution exchange frequency, default: 0.
-| GENE_MUTATION_PROBABILITY | Mutation probability of individual gene, default: 0.5.
-| MUTATION_PROBABILITY      | Mutation probability of genome, default: 0.5.
-| RECOMBINATION_PROBABILITY | Probability for genes to recombine, default: 0.5.
-| SIMBIN_CROSSOVER_NU       | Simulated binary crossover, default: 2.0
 | INITIAL_OPTIMIZATION      | Optimize speed of first generation creation (useful when number of infeasible solutions large), default: false
+| BIRTH_CONTROL             | Enforce strict population sizes, default: false.
+                              If true, population sizes and generations are strictly as defined by `INITIALPOPULATION`, `NUM_IND_GEN` and the classic genetic algorithm.
+                              If false, optimisation is done to keep all workers busy at all times. This means that population sizes can be larger (in case `INITIAL_OPTIMIZATION` is true) and individuals might have been created in a previous generation.
+| MUTATION_PROBABILITY      | Mutation probability of individual, default: 0.5.
+| MUTATION                  | Mutation type of an individual ("OneBit" (single gene), "IndependentBit" (default, multiple genes))
+| GENE_MUTATION_PROBABILITY | Mutation probability of single gene (used in "IndependentBit" mutation only), default: 0.5.
+| RECOMBINATION_PROBABILITY | Probability for individuals to combine (crossover), default: 0.5.
+| CROSSOVER                 | Method of child generation based on two individuals ("Blend" (default), "NaiveOnePoint", "NaiveUniform" or "SimulatedBinary")
+| SIMBIN_CROSSOVER_NU       | Simulated binary crossover parameter latexmath:[\nu], default: 2.0
 | SIMTMPDIR                 | Directory where simulations are run.
 | TEMPLATEDIR               | Directory where templates are stored.
 | FIELDMAPDIR               | Directory where field maps are stored.
 | DISTDIR                   | Directory where distributions are stored (optional).
+| RESTART_FILE              | H5 file to restart the OPAL simulations from (optional).
+                              Each individual copies the H5 to its simulation directory in
+                              order to avoid overwriting of the original file. This attributes
+                              is used together with RESTART_STEP.
+| RESTART_STEP              | Restart from given H5 step (optional). Used together with RESTART_FILE.
 |=======================================================================
 
 [[sec.optimiser.dvar-command]]
@@ -290,10 +302,16 @@ There are several methods to access output data:
 | Simple functor that reads vector data from a file. If the file
   contains more than one value the sum is returned.
 
-| sddsVariableAt(<var>, <spos>, <sdds_file>)
-| A simple expression to get SDDS value near a specific spos for a variable.
+| sddsVariableAt(<var>, <refpos>, <sdds_file>)
 
-| statVariableAt(<var>, <spos>)
+  sddsVariableAt(<var>, <refvar>, <refpos>, <sdds_file>)
+| A simple expression to get SDDS value near a specific position <refpos> of <refvar>
+  (default: spos) for a variable <var>.
+  If another <refvar> is provided, the values should be monotonically increasing.
+
+| statVariableAt(<var>, <refpos>)
+
+  statVariableAt(<var>, <refvar>, <refpos>)
 | The same as `sddsVariableAt`, uses OPALs statistics file.
 
 | sumErrSq(<meas_file>, <var_name>, <sdds_file>)
@@ -324,7 +342,7 @@ There are several methods to access output data:
 ==== Example Input File
 
 .Example input file _05-DL_QN3.in_ for the optimization using the template file _tmpl/05-DL_QN3.tmpl_:
-....
+----
 OPTION, ECHO=FALSE;
 OPTION, INFO=TRUE;
 
@@ -337,23 +355,23 @@ dv0: DVAR, VARIABLE="QDX1_K1", LOWERBOUND=0, UPPERBOUND=35;
 dv1: DVAR, VARIABLE="QDX2_K1", LOWERBOUND=0, UPPERBOUND=34;
 dv2: DVAR, VARIABLE="QFX1_K1", LOWERBOUND=-35, UPPERBOUND=0;
 
-drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x',${loc}) - ${up})";
-drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y',${loc}) - 0.0001833)";
-goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x',2.00)";
+drmsx:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_x', ${loc}) - ${up})";
+drmsy:   OBJECTIVE, EXPR="fabs(statVariableAt('rms_y', ${loc}) - 0.0001833)";
+goalfun: OBJECTIVE, EXPR="statVariableAt('rms_x', 2.00)";
 
 OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
           DVARS = {dv0, dv1, dv2}, INITIALPOPULATION=5, MAXGENERATIONS=3,
-          NUM_IND_GEN=3, MUTATION_PROBABILITY=0.43, SIMBIN_CROSSOVER_NU=2.0,
+          NUM_IND_GEN=3, MUTATION_PROBABILITY=0.43,
           NUM_MASTERS=1, NUM_COWORKERS=1, SIMTMPDIR="simtmpdir",
           TEMPLATEDIR="tmpl", FIELDMAPDIR="fieldmaps", OUTPUT="optLinac",
           OUTDIR="results";
 
 QUIT;
-....
+----
 
 .Template file _tmpl/05-DL_QN3.tmpl_:
 
-....
+----
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;
 OPTION, PSDUMPFREQ=1000000;
@@ -375,11 +393,11 @@ REAL QK1  = 6.2519;
 REAL QSTR = QK1*BRho/2.0;
 
 QDX1: QUADRUPOLE, ELEMEDGE=0.0,  L=0.10, APERTURE="circle(0.1)",
-                  K1=_QDX1_K1_ * BRho / 2;
+                 K1=_QDX1_K1_ * BRho / 2;
 QFX1: QUADRUPOLE, ELEMEDGE=0.91, L=0.20, APERTURE="circle(0.1)",
-                  K1=_QFX1_K1_ * BRho / 2;
+                 K1=_QFX1_K1_ * BRho / 2;
 QDX2: QUADRUPOLE, ELEMEDGE=1.92, L=0.10, APERTURE="circle(0.1)",
-                  K1=_QDX2_K1_ * BRho / 2;
+                 K1=_QDX2_K1_ * BRho / 2;
 
 FODO: LINE = (QDX1, QFX1, QDX2);
 
@@ -425,10 +443,29 @@ RUN, METHOD = "PARALLEL-T", BEAM = beam1, FIELDSOLVER = Fs2, DISTRIBUTION = Dist
 ENDTRACK;
 
 QUIT;
-....
+----
 
 Run OPAL with:
 
 ```
 mpirun /path/to/opal --info 5 05-DL_QN3.in
+```
+
+// EOF
+
+==== Output
+
+The solutions for each generation will be saved in either a plain ASCII (if `DUMP_DAT` true) and JSON format.
+The Pareto front of all individuals is in a JSON file, `ParetoFront_.json`.
+There are three log files `opt.trace.0`, `opt-progress.0` and `pilot.trace.0` that log the job management.
+E.g. to count the total number of dispatched simulations:
+
+```
+cat opt.trace.0 | grep dispatched | wc -l
+```
+
+or to count all invalid simulations:
+
+```
+cat opt.trace.0 | grep invalid | wc -l
 ```

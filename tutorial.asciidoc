@@ -33,7 +33,7 @@ image::figures/tutorial/gen-str.png[scaledwidth=6cm]
 The name of the application is `opal`. When called without any argument
 an interactive session is started.
 
-....
+----
 \$ opal
 Ippl> CommMPI: Parent process waiting for children ...
 Ippl> CommMPI: Initialization complete.
@@ -53,7 +53,7 @@ OPAL > Time: 16.43.23 date: 30/05/2017
 OPAL > Reading startup file "/Users/adelmann/init.opal".
 OPAL > Finished reading startup file.
 ==>
-....
+----
 
 One can exit from this session with the command `QUIT;` (including the
 semicolon).
@@ -90,9 +90,9 @@ quits.
 
 Example:
 
-....
+----
 opal input.in --restartfn input.h5 --restart -1 --info 3
-....
+----
 
 [[sec.tutorial.trackautoph]]
 === Auto-phase Example
@@ -102,42 +102,42 @@ This is a partially complete example. First we have to set _OPAL_ in
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
 computing the phases is explained in Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm].
 
-....
+----
 Option, AUTOPHASE=4;
 
 REAL FINSS_RGUN_phi= (-3.5/180*Pi);
-....
+----
 
 The cavity would be defined like
 
-....
+----
 FINSS_RGUN: RFCavity, L = 0.17493, VOLT = 100.0,
     FMAPFN = "FINSS-RGUN.dat",
     ELEMEDGE =0.0, TYPE = "STANDING", FREQ = 2998.0,
     LAG = FINSS_RGUN_phi;
-....
+----
 
 with `FINSS_RGUN_phi` defining the off crest phase. Now a normal `TRACK`
 command can be executed. A file containing the values of maximum phases
 is created, and has the format like:
 
-....
+----
 1
 FINSS_RGUN
 2.22793
-....
+----
 
 with the first entry defining the number of cavities in the simulation.
 
 [[sec.tutorial.examplesbeamlines]]
 === Examples of Particle Accelerators and Beamlines
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/OBLA-Gun/OBLA-Gun.in[OBLA-Gun.in]
+[[sec.tutorial.obla]]
+==== Laser emission, OBLA (SwissFEL test facility) 4 MeV Gun and Beamline
 
-[[sec.tutorial.felinj]]
-==== PSI XFEL 250 MeV Injector
+https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/LaserEmission-1/LaserEmission-1.in[LaserEmission-1.in]
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/diagnostic.in[diagnostic.in]
+All supplementary files can be found in https://gitlab.psi.ch/OPAL/regression-tests/tree/master/RegressionTests/LaserEmission-1[the laser emission regression test].
 
 [[sec.tutorial.inj2]]
 ==== PSI Injector II Cyclotron
@@ -151,13 +151,13 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron and other data files.
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl.in[opal-cycl.in]
+https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/examples/Injector2.in[Injector2.in]
 
 To run opal on a single node, just use this command:
 
-....
- opal testinj2-1.in
-....
+----
+ opal Injector2.in
+----
 
 Here shows some pictures using the resulting data from single particle
 tracking using _OPAL-cycl_.
@@ -168,8 +168,8 @@ increases from 870 keV at the injection point to 72.16 MeV at the
 deflection point.
 
 [#fig_Inj2ref]
-.Reference orbit(left) and tune diagram(right) in Injector II 
-image::figures/cyclotron/injector2_orbit_and_tune.png[scaledwidth=18cm]
+.Reference orbit(left) and tune diagram(right) in Injector II
+image::figures/cyclotron/injector2_orbit_and_tune.png[width=640,scaledwidth=18cm]
 
 From theoretic view, there should be an eigen ellipse for any given
 energy in stable area of a fixed accelerator structure. Only when the
@@ -198,27 +198,27 @@ the biggest amplitude is the betatron tune value at the given energy.
 Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/examples/opal-cycl-sc.in[opal-cycl-sc.in]
+https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/examples/Injector2-sc.in[Injector2-sc.in]
 
 To run opal on single node, just use this command:
 
-....
- # opal testinj2-2.in
-....
+----
+ opal Injector2-sc.in
+----
 
 To run opal on N nodes in parallel environment interactively, use this
 command instead:
 
-....
- # mpirun -np N opal testinj2-2.in
-....
+----
+ mpirun -np N opal Injector2-sc.in
+----
 
 If restart a job from the last step of an existing _.h5_ file, add a new
 argument like this:
 
-....
- # mpirun -np N opal testinj2-2.in --restart -1
-....
+----
+ mpirun -np N opal Injector2-sc.in --restart -1
+----
 
 <<fig_cyclParameters>> and <<fig_cyclPhasespace>> are simulation results, shown by
 H5root code.
@@ -321,6 +321,8 @@ then your old input files will work just fine. However, if you are using
 _OPAL-t_ then you will need to set the distribution attribute
 link:distribution#sec.distribution.unitsdistattributes[`INPUTMOUNITS`] to:
 
-....
+----
 INPUTMOUNITS = EV
-....
+----
+
+// EOF

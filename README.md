@@ -1,15 +1,16 @@
-# OPAL User Manual for Version 2.0
+# OPAL User Manual for Version 2
 
 ## Introduction
 
 Since _OPAL_ version 2 the manual is maintained in the Wiki of this project:
 
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home
+https://gitlab.psi.ch/OPAL/Manual-2.2/wikis/home
 
 The Wiki pages are written in Asciidoc and thus can be converted to other formats 
-like PDF or HTML. The Aciidoc support in Gitlab is a bit limited. One main issue
-is, that links to anchors - i.e. most references - are not working. Another problem
-is that latexmath is not correctly implemented in Gitlab. 
+like PDF or HTML. The Asciidoc support in Gitlab is a bit limited. One main issue
+is, that links to anchors - i.e. most references - are not working. We hope that
+this issue will fixed in the near future. Another problem is that latexmath is not
+correctly implemented in Gitlab. 
 
 There are some "home-made" problems as well. In the Wiki each chapter is a separate 
 document with a header containing a table of content, a "back to home" link and some
@@ -18,30 +19,43 @@ other stuff. These lines have to be removed for the rendering into *one* PDF doc
 The script `asciidoc2pdf` can be used to render the Wiki Manual into PDF. The script
 requires `asciidoctor`, TeX and `dblatex`.
 
-For the time being we use another master document named `home.adoc` for PDF rendering.
-In the futuer we may adapt the master document of the Wiki (`home.asciidoc`) and
-`asciidoc2pdf` in a way which makes `home.adoc`obsolete`.
 
-## Usage
+## Converting to PDF
 
 Assuming `asciidoc2pdf` is in your `PATH`:
 ```
-git clone git@gitlab.psi.ch:OPAL/Manual-2.0.wiki.git
-cd Manual-2.0.wiki
+git clone git@gitlab.psi.ch:OPAL/Manual-2.1.wiki.git
+cd Manual-2.1.wiki
 asciidoc2pdf home.asciidoc
 ```
 
-## Guidlines
+## Editing the manual
 
-To get good results for PDF ouput, you should follow some simple rules.
+> *Attention:* Do not edit the files in the Wiki itself. Changes must be done to
+the files in the repository!
+
+The Wiki is a mirror of the repository in this project. The mirror process is 
+triggered by Gitlab after you commit changes to the repository. For this reason 
+you shouldn't change the Wiki itself.
+
+Changes to the Wiki follows the same rules as for code changes:
+1. file an issue, document what you want to change
+2. create a merge-request, set target branch to `master`
+3. edit inside the branch created for this merge-request
+4. resolve the merge-request and select at least two aprovers
+5. wait till the merge-request has been aproved, if more changes are required, go back to 3.
+6. merge your changes into the `master`branch and delete the branch of the merge-request
+
+## Writing guidelines
+
+To get good results for PDF output, you should follow some simple rules.
 
 
 ### Chapters and section
 
 * Use one-line titles
 * Include the base file name in the anchor name.
-* For cross-chapter references use the form `link:FILENAME#ANCHOR[TEXT]`. 
-  This is required for the Wiki where each chapter is a Wiki page.
+* For cross-chapter references use the form `link:FILENAME#ANCHOR[TEXT]`. This is required for the Wiki where chapter a standalone documents.
 
 Examples:
 ```
@@ -89,3 +103,4 @@ Example:
 ### LaTexMath
 
 * inline math must be written on one line! Otherwise `asciidoc2pdf` will fail.
+
