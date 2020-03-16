@@ -7,7 +7,6 @@ ifdef::backend-docbook5,backend-html5[]
 :numbered:
 :description: _OPAL_ User Manual
 :keywords: _OPAL_
-:tab-reflabel: Table {counter:tab-cnt}
 endif::[]
 
 ifdef::env-gitlab[]

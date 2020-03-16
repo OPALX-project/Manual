@@ -25,6 +25,7 @@ size, which is beyond this tutorial.
 === The Simulation Cycle
 
 .The simulation cycle
+[[fig_simulation_cycle,Figure {counter:fig-cnt}]]
 image::figures/tutorial/gen-str.png[scaledwidth=6cm]
 
 [[sec.tutorial.starting-opal]]
@@ -167,8 +168,8 @@ accelerating orbit of reference particle. After 106 turns, the energy
 increases from 870 keV at the injection point to 72.16 MeV at the
 deflection point.
 
-[#fig_Inj2ref]
 .Reference orbit(left) and tune diagram(right) in Injector II 
+[[fig_Inj2ref,Figure {counter:fig-cnt}]]
 image::figures/cyclotron/injector2_orbit_and_tune.png[scaledwidth=18cm]
 
 From theoretic view, there should be an eigen ellipse for any given
@@ -182,8 +183,8 @@ momenta at the same azimuthal position for each revolution.
 <<fig_eigen>> shows the eigen ellipse at symmetric line of sector
 magnet for energy of 2 MeV in Injector II.
 
-[#fig_eigen]
 .Radial and vertical eigenellipse at 2 MeV of Injector II
+[[fig_eigen,Figure {counter:fig-cnt}]]
 image::figures/cyclotron/injector2_eigenellipse.png[scaledwidth=18cm]
 
 Right plot of <<fig_Inj2ref>> shows very good
@@ -223,12 +224,12 @@ argument like this:
 <<fig_cyclParameters>> and <<fig_cyclPhasespace>> are simulation results, shown by
 H5root code.
 
-[#fig_cyclParameters]
 .Energy vs. time (left) and external B field vs. track step (Right, only show for about 2 turns)
+[[fig_cyclParameters,Figure {counter:fig-cnt}]]
 image::figures/cyclotron/Inj2-cyclParameters.png[scaledwidth=18cm]
 
-[#fig_cyclPhasespace]
 .Vertical phase at different energy from left to right: 0.87 MeV, 15 MeV and 35 MeV
+[[fig_cyclPhasespace,Figure {counter:fig-cnt}]]
 image::figures/cyclotron/Inj2-cyclPhasespace.png[scaledwidth=18cm]
 
 [[sec.tutorial.Ring]]
@@ -246,8 +247,8 @@ RF Cavity::
   parallel displacement from its radial position._OPAL-cycl_ have an
   argument `PDIS` to manipulate this issue.
 
-[#fig_Ringref]
 .Reference orbit(left) and tune diagram(right) in Ring cyclotron 
+[[fig_Ringref,Figure {counter:fig-cnt}]]
 image::figures/cyclotron/ReferenceOrbit.png[scaledwidth=18cm]
 
 <<fig_Ringref>> shows a single particle tracking

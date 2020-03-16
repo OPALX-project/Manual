@@ -12,8 +12,8 @@ endif::[]
 [[chp.distribution]]
 == Distribution Command
 
-[#tab_disttypes]
 .Possible distribution types.
+[[tab_disttypes,Table {counter:tab-cnt}]]
 [cols="<2,<4",options="header",]
 |=======================================================================
 |Distribution Type |Description
@@ -70,8 +70,8 @@ seconds for time. However, there are different options for the units
 used to input the momentum. This is controlled with the 
 <<tab_distattrinputmounits,`INPUTMOUNITS`>> attribute.
 
-[#tab_distattrinputmounits]
 .Definition of `INPUTMOUNITS` attribute.
+[[tab_distattrinputmounits,Table {counter:tab-cnt}]]
 [cols="<2,^2,<4",options="header",]
 |=======================================================================
 | Attribute Name | Value | Description
@@ -100,8 +100,8 @@ from a cathode in a photoinjector simulation). Currently, only _OPAL-t_
 supports _emitted_ distributions. The default is an _injected_
 distribution.
 
-[#tab_distattremitted]
 .Definition of `EMITTED` attribute.
+[[tab_distattremitted,Table {counter:tab-cnt}]]
 [cols="<2,^2,<4",options="header",]
 |=======================================================================
 | Attribute Name | Value | Description
@@ -128,8 +128,8 @@ defined in
 [[sec.distribution.universaldistattributes]]
 ==== Universal Attributes
 
-[#tab_distattruniversal]
 .Definition of universal distribution attributes. Any distribution type can use these and they are the same whether the beam is _injected_ or _emitted_.
+[[tab_distattruniversal,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 | Attribute Name | Default Value | Units | Description
@@ -202,6 +202,7 @@ written also into _data/track_orbit.dat_
 ==== Injected Distribution Attributes
 
 .Definition of distribution attributes that only affect _injected_ beams.
+[[tab_distribution_attributes_injected_beams,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -217,8 +218,8 @@ latexmath:[z] position, latexmath:[\bar{z}].
 [[sec.distribution.emitteddistattributes]]
 ==== Emitted Distribution Attributes
 
-[#tab_distattremitteddist]
 .Definition of distribution attributes that only affect _emitted_ beams.
+[[tab_distattremitteddist,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -247,8 +248,8 @@ have it either _injected_ or _emitted_ into the simulation. In
 <<tab_distattrfromfile>> we list the single attribute specific to this
 type of distribution type.
 
-[#tab_distattrfromfile]
 .Definition of distribution attributes for a `FROMFILE` distribution type.
+[[tab_distattrfromfile,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -279,8 +280,8 @@ be _injected_ or _emitted_. The _injected_ file format is defined in
 <<tab_fromfileemitfileformat>>. The particle coordinates are defined in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
 [cols="<,<,<,<,<,<",]
 
-[#tab_fromfileinjfileformat]
 .File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. 
+[[tab_fromfileinjfileformat,Table {counter:tab-cnt}]]
 [cols="<,<,<,<,<,<",]
 |=======================================================================
 |N | | | | |
@@ -294,8 +295,8 @@ be _injected_ or _emitted_. The _injected_ file format is defined in
 |latexmath:[p_{yN}] |latexmath:[z_{N}] |latexmath:[p_{zN}]
 |=======================================================================
 
-[#tab_fromfileemitfileformat]
 .File format for _emitted_ `FROMFILE` distribution type. N is the number of particles in the file. 
+[[tab_fromfileemitfileformat,Table {counter:tab-cnt}]]
 |=======================================================================
 |N | | | | |
 |latexmath:[x_{1}] |latexmath:[p_{x1}] |latexmath:[y_{1}]
@@ -346,8 +347,8 @@ We will begin by describing how to create a simple `GAUSS` distribution
 type. That is, a simple 6-dimensional distribution with a Gaussian
 distribution in all dimensions.
 
-[#tab_distattrgauss]
 .Definition of the basic distribution attributes for a `GAUSS` distribution type.
+[[tab_distattrgauss,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -451,8 +452,8 @@ latexmath:[(\bar{x},\bar{y},\bar{z})=({1.0} \mathrm{mm}, {-2.0} \mathrm{mm}, {10
 [[sec.distribution.gaussdisttypephotoinjector]]
 ==== `GAUSS` Distribution for Photoinjector
 
-[#tab_distattremittedgauss]
 .Definition of additional distribution attributes for an _emitted_ `GAUSS` distribution type. These are used to generate a distribution with a time profile as illustrated in <<fig_flattop>>.
+[[tab_distattremittedgauss,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -473,8 +474,8 @@ imposed on the flat top, latexmath:[t_\mathrm{flattop}], in
 <<fig_flattop>>.
 |=======================================================================
 
-[#fig_flattop]
 ._OPAL_ emitted `GAUSS` distribution with flat top.
+[[fig_flattop,Figure {counter:fig-cnt}]]
 image::./figures/distribution/flattop.png[scaledwidth=12cm]
 
 A useful feature of the `GAUSS` distribution type is the ability to
@@ -534,6 +535,7 @@ be latexmath:[0.05].
 ==== Correlations for `GAUSS` Distribution (Experimental)
 
 .Definition of additional distribution attributes for a `GAUSS` distribution type for generating correlations in the beam.
+[[tab_additional_distribution_attributes,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -659,8 +661,8 @@ will be a uniformly filled ellipse transversely with a uniform
 distribution in latexmath:[z]. (Basically a cylinder with an
 elliptical cross section.)
 
-[#tab_distattrflattopinj]
 .Definition of the basic distribution attributes for an _injected_ `FLATTOP` distribution type.
+[[tab_distattrflattopinj,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -677,8 +679,8 @@ elliptical cross section.)
 [[emitted-flattop]]
 ==== Emitted `FLATTOP`
 
-[#tab_distattrflattopemit]
 .Definition of the basic distribution attributes for an _emitted_ `FLATTOP` distribution type.
+[[tab_distattrflattopemit,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -792,8 +794,8 @@ By varying this single parameter one obtains the most commonly used
 distributions for our type of simulations, as listed in
 <<tab_binomdist>> and shown in <<fig_binomialproperties>>.
 
-[#tab_binomdist]
 .Different distributions specified by a single parameter latexmath:[m]
+[[tab_binomdist,Table {counter:tab-cnt}]]
 [cols="<1,<1,<3,<3",options="header",]
 |=======================================================================
 |latexmath:[m] |Distribution |Density |Profile
@@ -817,14 +819,14 @@ distributions for our type of simulations, as listed in
 |latexmath:[\frac{1}{\sqrt{2\pi} \sigma_x}exp(-\frac{x^2}{2\sigma_x^2}) ]
 |=======================================================================
 
-[#fig_binomialproperties]
 .Properties of binomial Phase Space Distributions (taken from  <<bib.JohoDist>>).
+[[fig_binomialproperties,Figure {counter:fig-cnt}]]
 image::./figures/distribution/BinomialProperties.png[scaledwidth=18cm]
 
 The attributes of a `BINOMIAL` distribution are defined in <<tab_distattrbinomial>>.
 
-[#tab_distattrbinomial]
 .Definition of the basic distribution attributes for a `BINOMIAL` distribution type.
+[[tab_distattrbinomial,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -875,8 +877,8 @@ Dist:DISTRIBUTION, TYPE    = BINOMIAL,
 
 The attributes of a `MATCHEDGAUSS` distribution are defined in <<tab_distattrmatchedgauss>>.
 
-[#tab_distattrmatchedgauss]
 .Definition of the basic distribution attributes for a `MATCHEDGAUSS` distribution type.
+[[tab_distattrmatchedgauss,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -911,8 +913,8 @@ simplistic. It merely adds the amount of energy defined by the attribute
 `EKIN` to the longitudinal momentum, latexmath:[p_{z}], for each
 particle in the distribution as it leaves the cathode.
 
-[#tab_distattremitmodelnoneastra]
 .Attributes for the `NONE` and `ASTRA` emission models.
+[[tab_distattremitmodelnoneastra,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |==============================================================
 |Attribute Name |Default Value |Units |Description
@@ -985,8 +987,8 @@ particle emission as described in <<bib.flo97>>, <<bib.clen2000>>, <<bib.dowe200
 attributes needed by this emission model are listed in
 <<tab_distattremitmodelnonequil>>.
 
-[#tab_distattremitmodelnonequil]
 .Attributes for the `NONEQUIL` emission models.
+[[tab_distattremitmodelnonequil,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -1072,10 +1074,12 @@ defined by the text file containing the distribution particle
 coordinates. (<<sec.distribution.fromfiledisttype>>).
 
 [[sec.distribution.bibliography]]
-[bibliography]
 === References
 
-* [[[bib.JohoDist]]] W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
-* [[[bib.flo97]]] K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, tech. rep. TESLA FEL-Report (DESY, Jan. 1997).
-* [[[bib.clen2000]]] J. E. Clendenin et al., _Reduction of thermal emittance of rf guns_, Nucl. Instrum. Methods Phys. Res. Sect. A 455, 198–201 (2000).
-* [[[bib.dowe2009]]] D. H. Dowell and J. F. Schmerge, _Quantum efficiency and thermal emittance of metal photocathodes_, Phys. Rev. ST Accel. Beams 12, 074201 (2009).
+[[bib.JohoDist,*[{counter:bib-cnt}]*]] <<bib.JohoDist>> W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
+
+[[bib.flo97,*[{counter:bib-cnt}]*]] <<bib.flo97>> K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, tech. rep. TESLA FEL-Report (DESY, Jan. 1997).
+
+[[bib.clen2000,*[{counter:bib-cnt}]*]] <<bib.clen2000>> J. E. Clendenin et al., _Reduction of thermal emittance of rf guns_, Nucl. Instrum. Methods Phys. Res. Sect. A 455, 198–201 (2000).
+
+[[bib.dowe2009,*[{counter:bib-cnt}]*]] <<bib.dowe2009>> D. H. Dowell and J. F. Schmerge, _Quantum efficiency and thermal emittance of metal photocathodes_, Phys. Rev. ST Accel. Beams 12, 074201 (2009).

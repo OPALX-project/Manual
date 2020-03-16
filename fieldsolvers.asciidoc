@@ -310,10 +310,10 @@ given in Version 2.0.0.
 [[sec.fieldsolvers.fieldsolvercmd]]
 === The `FIELDSOLVER` Command
 
-See <<tab_fieldsolvercmd>> for a summary of the Fieldsolver command.
+See <<tab_FIELDSOLVER_Commands>> for a summary of the Fieldsolver command.
 
-[#tab_fieldsolvercmd]
 .Fieldsolver command summary
+[[tab_FIELDSOLVER_Commands,Table {counter:tab-cnt}]]
 [cols="<1,<4",options="header",]
 |=======================================================================
 |Command |Purpose
@@ -453,6 +453,7 @@ Table below.
 
 .Preconditioner behavior command summary
 [cols="<1,<4",options="header",]
+[[tab_PRECMODE_Commands,Table {counter:tab-cnt}]]
 |=======================================================================
 |Value |Behavior
 |`STD` |The preconditioner is rebuilt in every time step (enabled by
@@ -495,6 +496,7 @@ the Table below.
 
 .Mesh refinement strategies
 [cols="<1,<4",options="header",]
+[[tab_Mesh_refinement_strategies,Table {counter:tab-cnt}]]
 |=======================================================================
 |Value |Behavior
 |`POTENTIAL` |Mark each cell if
@@ -526,14 +528,22 @@ refined. The bound is specified with `AMR_MAX_NUM_PART`
 |=======================================================================
 
 [[sec.fieldsolvers.bibliography]]
-[bibliography]
 === References
-* [[[bib.hockney]]] R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136–210 (1970).
-* [[[bib.eastwoodandbrownrigg]]] J. W. Eastwood and D. R. K. Brownrigg, _Remarks on the solution of poisson’s equation for isolated systems_, J. Comput. Phys. 32, 24–38 (1979).
-* [[[bib.hockneyandeastwood]]] R. W. Hockney and J. W. Eastwood, _Computer simulation using particles_ (Taylor & Francis Group, 1988).
-* [[[bib.qiangandryne]]] J. Qiang and R. Ryne, _Parallel 3d poisson solver for a charged beam in a conducting pipe_, Comput. Phys. Commun. 138, 18–28 (2001).
-* [[[bib.qiangandgluckstern]]] J. Qiang and R. L. Gluckstern, _Three-dimensional poisson solver for a charged beam with large aspect ratio in a conducting pipe_, Comput. Phys. Commun. 160, 120–128 (2004).
-* [[[bib.Adelmann2009p543]]] A. Adelmann, P. Arbenz, and Y. Ineichen, https://arxiv.org/abs/0907.4863[_A fast parallel poisson solver on irregular domains applied to beam dynamic simulations_], arXiv (2009).
-* [[[bib.qiang2005_fieldsolver,bib.qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
-* [[[bib.qiang2006-1_fieldsolver,bib.qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
-* [[[bib.qiang2006-2_fieldsolver,bib.qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+
+[[bib.hockney,*[{counter:bib-cnt}]*]] <<bib.hockney>> R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136–210 (1970).
+
+[[bib.eastwoodandbrownrigg,*[{counter:bib-cnt}]*]] <<bib.eastwoodandbrownrigg>> J. W. Eastwood and D. R. K. Brownrigg, _Remarks on the solution of poisson’s equation for isolated systems_, J. Comput. Phys. 32, 24–38 (1979).
+
+[[bib.hockneyandeastwood,*[{counter:bib-cnt}]*]] <<bib.hockneyandeastwood>> R. W. Hockney and J. W. Eastwood, _Computer simulation using particles_ (Taylor & Francis Group, 1988).
+
+[[bib.qiangandryne,*[{counter:bib-cnt}]*]] <<bib.qiangandryne>> J. Qiang and R. Ryne, _Parallel 3d poisson solver for a charged beam in a conducting pipe_, Comput. Phys. Commun. 138, 18–28 (2001).
+
+[[bib.qiangandgluckstern,*[{counter:bib-cnt}]*]] <<bib.qiangandgluckstern>> J. Qiang and R. L. Gluckstern, _Three-dimensional poisson solver for a charged beam with large aspect ratio in a conducting pipe_, Comput. Phys. Commun. 160, 120–128 (2004).
+
+[[bib.Adelmann2009p543,*[{counter:bib-cnt}]*]] <<bib.Adelmann2009p543>> A. Adelmann, P. Arbenz, and Y. Ineichen, https://arxiv.org/abs/0907.4863[_A fast parallel poisson solver on irregular domains applied to beam dynamic simulations_], arXiv (2009).
+
+[[bib.qiang2005_fieldsolver,*[{counter:bib-cnt}]*]] <<bib.qiang2005_fieldsolver>> J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+
+[[bib.qiang2006-1_fieldsolver,*[{counter:bib-cnt}]*]] <<bib.qiang2006-1_fieldsolver>> J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
+
+[[bib.qiang2006-2_fieldsolver,*[{counter:bib-cnt}]*]] <<bib.qiang2006-2_fieldsolver>> J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).

@@ -55,8 +55,8 @@ where latexmath:[M] is the incident particle mass.
 The stopping power is compared with PSTAR program of NIST in
 <<fig_PSTAR>>.
 
-[#fig_PSTAR]
 .The comparison of stopping power with PSTAR.
+[[fig_PSTAR,Figure {counter:fig-cnt}]]
 image::figures/partmatter/dEdx.png[scaledwidth=12cm]
 
 Energy straggling: For relatively thick absorbers such that the number
@@ -181,19 +181,19 @@ The angle distribution after Coulomb scattering is shown in
 simulations with Matlab. For a thickness of latexmath:[\Delta s=1e-4]
 latexmath:[m], latexmath:[\theta=0.5349 \alpha] (in degree).
 
-[#fig_Jackson]
 .The comparison of Coulomb scattering with Jackson’s book.
+[[fig_Jackson,Figure {counter:fig-cnt}]]
 image::figures/partmatter/10steps.png[scaledwidth=12cm]
 
 [[sec.partmatter.the-flow-diagram-of-collimatorphysics-class-in-opal]]
 === The Flow Diagram of _CollimatorPhysics_ Class in OPAL
 
-[#fig_CollPhysics]
 .The diagram of CollimatorPhysics in _OPAL_.
+[[fig_CollPhysics,Figure {counter:fig-cnt}]]
 image::figures/partmatter/diagram.png[scaledwidth=16cm]
 
-[#fig_CollPhysics2]
 .The diagram of CollimatorPhysics in _OPAL_ (continued). 
+[[fig_CollPhysics2,Figure {counter:fig-cnt}]]
 image::figures/partmatter/Diagram2.png[scaledwidth=8cm]
 
 [[sec.partmatter.the-substeps]]
@@ -218,6 +218,7 @@ track it as in a drift and put it back to the main bunch when finishing
 === Available Materials in _OPAL_
 
 .List of materials with their parameters implemented in _OPAL_.
+[[tab_List_of_Materials,Table {counter:tab-cnt}]]
 [cols="^2,^1,^1,^1,^1,^1,^1,^1,^1,^2",options="header",]
 |=======================================================================
 |Material |Z |A |latexmath:[\rho] [latexmath:[g/cm^3]] |X0
@@ -281,10 +282,12 @@ copper slit. As a benchmark of the collimator model in _OPAL_,
 <<fig_spectrum>> shows the energy spectrum and angle deviation at
 z=0.1 m after an elliptic collimator.
 
-[#fig_protonscoll]
 .The passage of protons through the collimator.
+[[fig_protonscoll,Figure {counter:fig-cnt}]]
 image::figures/partmatter/longcoll6.png[scaledwidth=12cm]
 
-[#fig_spectrum]
 .The energy spectrum and scattering angle at z=0.1 m
+[[fig_spectrum,Figure {counter:fig-cnt}]]
 image::figures/partmatter/spectandscatter.png[scaledwidth=12cm]
+
+// EOF

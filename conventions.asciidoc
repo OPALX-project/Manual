@@ -18,6 +18,7 @@ endif::[]
 Throughout the computations _OPAL_ uses international units, as defined by SI (Système International).
 
 .Physical Units
+[[tab_Physical_Units,Table {counter:tab-cnt}]]
 [cols="<,<",options="header",]
 |=======================================================================
 |Quantity |Dimension
@@ -66,6 +67,7 @@ is in (rad).
 === Symbols used
 
 .List of Symbols used and their definition.
+[[tab_List_of_Symbols,Table {counter:tab-cnt}]]
 [cols="<1,<8",options="header",]
 |=======================================================================
 |Symbol |Definition
