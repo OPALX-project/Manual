@@ -27,6 +27,7 @@ Geometry Command
 ~~~~~~~~~~~~~~~~
 
 .Geometry command summary
+[[tab_GEOMETRY_Commands,Table {counter:tab-cnt}]]
 [cols="<1,<4",options="header",]
 |==============================================================
 |Command |Purpose

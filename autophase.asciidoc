@@ -121,8 +121,8 @@ until the value of latexmath:[\varphi] has converged.
 [[sec.autophasing.traveling-wave-structure]]
 === Traveling Wave Structure
 
-[#fig_FINLB]
 .Field map ’FINLB02-RAC.T7’ of type 1DDynamic
+[[fig_FINLB,Figure {counter:fig-cnt}]]
 image::figures/autophase/field_crop.png[scaledwidth=12cm,width=400]
 
 Auto phasing in a traveling wave structure is just slightly more

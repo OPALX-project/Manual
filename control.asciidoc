@@ -297,6 +297,7 @@ OPTION,SEED=987456321
 ----
 
 .Default Settings for Options
+[[tab_Options_Defaults,Table {counter:tab-cnt}]]
 [cols="<,<,<,<,<,<",options="header",]
 |=======================================================================
 |`ECHO`              |= `FALSE`
@@ -451,7 +452,7 @@ are allowed.
 ==== Symbolic Constants
 
 _OPAL_ recognizes a few build-in built-in mathematical and physical
-constants see Table link:format#tab_constant[Predefined Symbolic Constants].
+constants see <<tab_constant>>.
 Additional constants can be defined by the command
 
 ----

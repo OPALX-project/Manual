@@ -30,8 +30,8 @@ design variables is described in the section link:optimiser#sec.optimiser.dvar-c
 
 It allows *random* (RASTER=false) and *raster* mode.
 
-[#samplecommandattributes]
 .Attributes for the command SAMPLE.
+[[tab_SAMPLE_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header,breakable",]
 |=======================================================================
 | Attribute     | Description
@@ -50,15 +50,16 @@ It allows *random* (RASTER=false) and *raster* mode.
 
 The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
 
-[#fig_des_to_sampl]
+.Sampling methods
+[[fig_des_to_sampl,Figure {counter:fig-cnt}]]
 image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
 
 The two sampling methods differ in the number of samples since with `RASTER = TRUE` every combination of individual sampling is computed. Thus the total number is latexmath:[N = N_1 \times N_2 \times \ldots \times N_n] where latexmath:[n] is the number of `DVARS`. If for some `DVAR` a random sampling is chosen then for every sampling point a new random number is computed. With `RASTER = FALSE` the number of sampling points is latexmath:[N = \min(N_1, N_2,\ldots, N_n)], each item of a sequence is used only once.
 
 ==== SAMPLING Command
 
-[#samplingcommandattributes]
 .Attributes for the command SAMPLING.
+[[tab_SAMPLING_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header,breakable",]
 |=======================================================================
 | Attribute | Description
@@ -73,8 +74,8 @@ minimum value over all design variables is used.
 
 ==== Available Sampling Methods
 
-[#samplemethods]
 .Available sampling methods.
+[[tab_SAMPLE_Methods,Table {counter:tab-cnt}]]]
 [cols="<2,<5",options="header,breakable"]
 |=======================================================================
 | Method            | Description

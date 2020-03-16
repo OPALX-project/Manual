@@ -12,8 +12,8 @@ endif::[]
 [[chp.track]]
 == Tracking
 
-[#tab_trackcmd]
 .Commands accepted in Tracking Mode
+[[tab_TRACK_Commands,Table {counter:tab-cnt}]]
 [cols="<1,<3",options="header",]
 |=======================================================================
 |Command          | Purpose
@@ -54,7 +54,7 @@ Before starting to track, a link:lines#chp.lines[beam line] and a
 link:beam#chp.beam[beam] must be selected. The time step (`DT`) and the
 maximal steps to track (`MAXSTEPS`) or `ZSTOP` should be set. This
 command causes _OPAL_ to enter "tracking mode", in which it accepts
-only the track commands see Table <<tab_trackcmd>>. In order to perform
+only the track commands see <<tab_TRACK_Commands>>. In order to perform
 several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 `ZSTOP`. This can be used to change the time step manually.
 

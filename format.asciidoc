@@ -190,8 +190,8 @@ concatenated using the `&` operator see <<tab_stroperator>>. An operand
 in a string can also use the function `STRING` see <<tab_stringfun>>.
 String values can occur in string arrays see <<sec.format.anarray>>.
 
-[#tab_stroperator]
 .String Operator in __OPAL__
+[[tab_stroperator,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Operator |Meaning |result type |operand types
@@ -199,8 +199,8 @@ String values can occur in string arrays see <<sec.format.anarray>>.
 always evaluated immediately when read. |string |string,string
 |=======================================================================
 
-[#tab_stringfun]
 .String Function in __OPAL__
+[[tab_stringfun,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Function |Meaning |result type |argument type
@@ -245,8 +245,8 @@ and-expr      ::= relation | and-expr "&&" relation
 logical-expr  ::= and-expr | logical-expr "||" and-expr
 ----
 
-[#tab_logoperator]
 .Logical Operators in __OPAL__
+[[tab_logoperator,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Operator |Meaning |result type |operand type
@@ -342,8 +342,8 @@ immediately, and the result is stored as a constant.
 An expression can be formed using operators see <<tab_operator>> and
 functions see <<tab_realfun>> acting on operands see <<sec.format.operand>>.
 
-[#tab_operator]
 .Real Operators in __OPAL__
+[[tab_operator,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Operator |Meaning |result type |operand type(s)
@@ -367,8 +367,8 @@ functions see <<tab_realfun>> acting on operands see <<sec.format.operand>>.
 (latexmath:[\mathtt{Y} > 0]) |real |real,real
 |=======================================================================
 
-[#tab_realfun]
 .Real Functions in __OPAL__
+[[tab_realfun,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Function |Meaning |result type |argument type(s)
@@ -444,6 +444,7 @@ parameters |real |real,real
 |=======================================================================
 
 .Real Functions of Arrays in __OPAL__
+[[tab_Array_Functions,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Function |Meaning |result type |operand type
@@ -495,8 +496,8 @@ see <<tab_constant>>. Their names must not be used for
 user-defined labels. Additional symbolic constants may be defined to
 simplify their repeated use in statements and expressions.
 
-[#tab_constant]
 .Predefined Symbolic Constants
+[[tab_constant,Table {counter:tab-cnt}]]
 [cols="<,^,^,^",options="header",]
 |==========================================================
 |_OPAL_ name |Mathematical symbol |Value |Unit
@@ -873,8 +874,8 @@ array-expr    ::= array-term |
                   array-expr "-" array-term |
 ----
 
-[#tab_compfun]
 .Real Array Functions in _OPAL_ (acting component-wise)
+[[tab_compfun,Table {counter:tab-cnt}]]
 [cols="<1,<3,<1,<1",options="header",]
 |=======================================================================
 |Function |Meaning |result type |argument type

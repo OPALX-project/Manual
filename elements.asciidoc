@@ -194,8 +194,8 @@ an `SBEND3D` element in an _OPAL-cycl_ simulation.
 
 <<fig_rbend>> illustrates a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha]. The entrance edge angle, latexmath:[E_{1}], is positive in this example. An `RBEND` has parallel entrance and exit pole faces, so the exit angle, latexmath:[E_{2}], is uniquely determined by the bend angle, latexmath:[\alpha], and latexmath:[E_{1}] (latexmath:[E_{2}=\alpha - E_{1}]). For a positively charge particle, the magnetic field is directed out of the page.
 
-[#fig_rbend]
 .Illustration of a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha].
+[[fig_rbend,Figure {counter:fig-cnt}]]
 image::figures/Elements/rbend.png[scaledwidth=10cm]
 
 [[sec.elements.RBend]]
@@ -292,8 +292,8 @@ FMAPFN::
 
 <<fig_sbend>> illustrates a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]. In this example the entrance and exit edge angles latexmath:[E_{1}] and latexmath:[E_{2}] have positive values. For a positively charge particle, the magnetic field is directed out of the page.
 
-[#fig_sbend]
 .Illustration of a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]
+[[fig_sbend,Figure {counter:fig-cnt}]]
 image::figures/Elements/sbend.png[scaledwidth=10cm]
 
 [[sec.elements.SBend]]
@@ -890,8 +890,8 @@ the same as the hard edge magnet described by the reference trajectory.
 [[sec.elements.opaltrbendsbendfields]]
 ==== Bend Fields from 1D Field Maps (_OPAL-t_)
 
-[#fig_rbend_enge_fringe]
 .Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see <<eq-enge_func>> with the parameters from the default `1DProfile1` field map described in <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
+[[fig_rbend_enge_fringe,Figure {counter:fig-cnt}]]
 image::figures/Elements/Enge-func-plot.png[scaledwidth=10cm]
 
 So far we have described how to setup an `RBEND` or `SBEND` element, but
@@ -1164,8 +1164,8 @@ BY [FIELD_UNITS]
 
 This is a restricted feature: _OPAL-cycl_.
 
-[#fig_sbend3d1]
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
+[[fig_sbend3d1,Figure {counter:fig-cnt}]]
 image::figures/Elements/sbend3d.png[scaledwidth=18cm]
 
 [[sec.elements.quadrupole]]
@@ -1775,8 +1775,8 @@ rf0: RFCavity, VOLT=0.25796, FMAPFN="Cav1.dat",
 <<fig_Cyclotron_cavity>> shows the simplified geometry of a cavity gap
 and its parameters.
 
-[#fig_Cyclotron_cavity]
 .Schematic of the simplified geometry of a cavity gap and parameters
+[[fig_Cyclotron_cavity,Figure {counter:fig-cnt}]]
 image::./figures/cyclotron/Cavity.png[scaledwidth=10cm]
 
 [[sec.elements.variable-rf-cavity-cycl]]
@@ -1854,8 +1854,8 @@ RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLI
 [[sec.elements.travelingwave]]
 === Traveling Wave Structure
 
-[#fig_FINSB-RAC-field]
 .The on-axis field of an S-band (2997.924 MHz) `TRAVELINGWAVE` structure. The field of a single cavity is shown between its entrance and exit fringe fields. The fringe fields extend one half wavelength (latexmath:[\lambda/2]) to either side.
+[[fig_FINSB-RAC-field,Figure {counter:fig-cnt}]]
 image::./figures/traveling-wave-structure/FINSB-RAC-field.png[scaledwidth=10cm]
 
 An example of a 1D `TRAVELINGWAVE` structure field map is shown in
@@ -2103,6 +2103,7 @@ repeat( // repeat it in y-direction
 The latter example will produce a holes as in the following picture
 
 .Pepper-pot with rectangle holes
+[[fig_pepperpot,Figure {counter:fig-cnt}]]
 image::figures/Elements/pepperpot.png[scaledwidth=10cm]
 
 In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separate file (using `FNAME`; comments and newlines are allowed).
@@ -2146,6 +2147,7 @@ PARTICLEMATTERINTERACTION::
   the simulation.
 
 .Collimator
+[[fig_collimator,Figure {counter:fig-cnt}]]
 image::figures/Elements/collimator.png[scaledwidth=10cm]
 
 Example:
@@ -2188,6 +2190,7 @@ WIDTH::
   The width of the septum. [mm]
 
 .Septum
+[[fig_septum,Figure {counter:fig-cnt}]]
 image::figures/Elements/septum.png[scaledwidth=10cm]
 
 Example:
@@ -2220,6 +2223,7 @@ STEP::
   The step size of the probe (for histogram and peak finder output). Default: 1 [mm]
 
 .Probe
+[[fig_probe,Figure {counter:fig-cnt}]]
 image::figures/Elements/probe.png[scaledwidth=10cm]
 
 Example:
@@ -2368,8 +2372,8 @@ The reference system for an orbit corrector is a Cartesian coordinate
 system.
 
 [[sec.elements.bibliography]]
-[bibliography]
 === References
 
-* [[[bib.tait-bryan_elements,bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
-* [[[bib.enge_elements]]] J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
+[[bib.tait-bryan_elements,*[{counter:bib-cnt}]*]] <<bib.tait-bryan_elements>> https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
+
+[[bib.enge_elements,*[{counter:bib-cnt}]*]] <<bib.enge_elements>> J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
