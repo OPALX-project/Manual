@@ -40,7 +40,7 @@ _OPAL_ comes in the following flavours:
   models beam lines, linacs, rf-photo injectors and
   complete XFELs excluding the undulator.
 * _OPAL-map_:
-  map tracking
+  map tracking (experimental, no space charge yet)
 
 It should be noted that not all features of _OPAL_ are available in all
 flavours.
