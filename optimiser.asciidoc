@@ -178,7 +178,6 @@ The second constraint will be evaluated after the simulation.
 
 The OPTIMIZE command initiates optimization.
 
-[#tab_optcommandattributes]
 .Attributes for the command OPTIMIZE.
 [[tab_OPTIMIZE_Attributes,Table {counter:tab-cnt}]]
 [cols="<1,<2",options="header",]
