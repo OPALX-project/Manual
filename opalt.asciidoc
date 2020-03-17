@@ -131,8 +131,8 @@ the accelerator is uniquely defined by the sequence of physical elements
 in latexmath:[K]. The beam elements are numbered
 latexmath:[e_0, \ldots , e_i, \ldots e_n].
 
-[#fig_KS1]
 .Illustration of local and global coordinates.
+[[fig_KS1,Figure {counter:fig-cnt}]]
 image::figures/opalt/coords.png[scaledwidth=12cm]
 
 [[sec.opalt.local-cartesian-coordinate-system]]
@@ -236,7 +236,7 @@ reference orbit and are labelled latexmath:[x] (in the bend plane)
 and latexmath:[y] (perpendicular to the bend plane).
 
 .Illustration of latexmath:[K_\text{sc}] and latexmath:[K_s]
-[#fig_KS2]
+[[fig_KS2,Figure {counter:fig-cnt}]]
 image::figures/opalt/curvcoords.png[scaledwidth=10cm]
 
 Both coordinate systems are described in <<fig_KS2>>.
@@ -292,7 +292,7 @@ empty set latexmath:[\emptyset].
 === Flow Diagram of _OPAL-t_
 
 .Schematic workflow of _OPAL-t_’s execute method.
-[#fig_OPALTSchemeSimple]
+[[fig_OPALTSchemeSimple,Figure {counter:fig-cnt}]]
 image::figures/opalt/flowdiagram.png[scaledwidth=12cm]
 
 A regular time step in _OPAL-t_ is sketched in
@@ -1118,18 +1118,28 @@ This expression can be
 replaced in ([eq.40]) to obtain a more explicit equation.
 
 [[sec.opalt.bibliography]]
-[bibliography]
 === References
-* [[[bib.qiang2005_opalt,bib.qiang2005]]] J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
-* [[[bib.qiang2006-1_opalt,bib.qiang2006-1]]] J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
-* [[[bib.qiang2006-2_opalt,bib.qiang2006-2]]] J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
-* [[[bib.fubiani2006]]] G. Fubaiani et al., _Space charge modeling of dense electron beams with large energy spreads_, Phys. Rev. ST Accel. Beams 9, 064402 (2006).
-* [[[bib.langdon]]] A. B. L. Ch. K. Birdsall, _Plasma physics via computer simulation_ (McGraw-Hill, New York, 1985).
-* [[[bib.tait-bryan_opalt,bib.tait-bryan]]] https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
-* [[[bib.borland1995_opalt,bib.borland1995]]] M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
-* [[[bib.borland2016]]] M. Borland et al., http://www.aps.anl.gov/Accelerator_Systems_Division/Accelerator_Operations_Physics/manuals/SDDStoolkit/SDDStoolkit.pdf[_User’s guide for SDDS toolkit version 2.8_].
-* [[[bib.paraview]]] A. Henderson, _ParaView guide: a parallel visualization application_ (Kitware Inc, 2007).
-* [[[bib.paraview2]]] http://www.paraview.org[_ParaView_].
-* [[[bib.visit]]] https://wci.llnl.gov/simulation/computer-codes/visit/[VisIt].
+
+[[bib.qiang2005_opalt,*[{counter:bib-cnt}]*]] <<bib.qiang2005_opalt>> J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+
+[[bib.qiang2006-1_opalt,*[{counter:bib-cnt}]*]] <<bib.qiang2006-1_opalt>> J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
+
+[[bib.qiang2006-2_opalt,*[{counter:bib-cnt}]*]] <<bib.qiang2006-2_opalt>> J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+
+[[bib.fubiani2006,*[{counter:bib-cnt}]*]] <<bib.fubiani2006>> G. Fubaiani et al., _Space charge modeling of dense electron beams with large energy spreads_, Phys. Rev. ST Accel. Beams 9, 064402 (2006).
+
+[[bib.langdon,*[{counter:bib-cnt}]*]] <<bib.langdon>> A. B. L. Ch. K. Birdsall, _Plasma physics via computer simulation_ (McGraw-Hill, New York, 1985).
+
+[[bib.tait-bryan_opalt,*[{counter:bib-cnt}]*]] <<bib.tait-bryan_opalt>> https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
+
+[[bib.borland1995_opalt,*[{counter:bib-cnt}]*]] <<bib.borland1995_opalt>> M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
+
+[[bib.borland2016,*[{counter:bib-cnt}]*]] <<bib.borland2016>> M. Borland et al., http://www.aps.anl.gov/Accelerator_Systems_Division/Accelerator_Operations_Physics/manuals/SDDStoolkit/SDDStoolkit.pdf[_User’s guide for SDDS toolkit version 2.8_].
+
+[[bib.paraview,*[{counter:bib-cnt}]*]] <<bib.paraview>> A. Henderson, _ParaView guide: a parallel visualization application_ (Kitware Inc, 2007).
+
+[[bib.paraview2,*[{counter:bib-cnt}]*]] <<bib.paraview2>> http://www.paraview.org[_ParaView_].
+
+[[bib.visit,*[{counter:bib-cnt}]*]] <<bib.visit>> https://wci.llnl.gov/simulation/computer-codes/visit/[VisIt].
 
 // EOF
