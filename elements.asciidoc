@@ -903,7 +903,7 @@ regions:
 2.  Central field.
 3.  Exit fringe field.
 
-This can be seen clearly in link:fieldmaps#fig_rbend_field_profile[Figure 3 of Chapter Fieldmaps].
+This can be seen clearly in <<fig_rbend_field_profile>>.
 
 The purpose of the `1DProfile1` field map see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]
 associated with the element is to define the Enge functions
