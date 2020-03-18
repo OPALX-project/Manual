@@ -55,8 +55,8 @@ where latexmath:[M] is the incident particle mass.
 The stopping power is compared with PSTAR program of NIST in
 <<fig_PSTAR>>.
 
-[#fig_PSTAR]
 .The comparison of stopping power with PSTAR.
+[[fig_PSTAR,Figure {counter:fig-cnt}]]
 image::figures/partmatter/dEdx.png[scaledwidth=12cm]
 
 Energy straggling: For relatively thick absorbers such that the number
@@ -181,8 +181,8 @@ The angle distribution after Coulomb scattering is shown in
 simulations with Matlab. For a thickness of latexmath:[\Delta s=1e-4]
 latexmath:[m], latexmath:[\theta=0.5349 \alpha] (in degree).
 
-[#fig_Jackson]
 .The comparison of Coulomb scattering with Jackson’s book.
+[[fig_Jackson,Figure {counter:fig-cnt}]]
 image::figures/partmatter/10steps.png[scaledwidth=12cm]
 
 
@@ -322,12 +322,12 @@ latexmath:[\alpha] is a parameter for the ionic potential function.
 [[sec.partmatter.the-flow-diagram-of-collimatorphysics-class-in-opal]]
 === The Flow Diagram of _CollimatorPhysics_ Class in OPAL
 
-[#fig_CollPhysics]
 .The diagram of CollimatorPhysics in _OPAL_.
+[[fig_CollPhysics,Figure {counter:fig-cnt}]]
 image::figures/partmatter/diagram.png[scaledwidth=16cm]
 
-[#fig_CollPhysics2]
 .The diagram of CollimatorPhysics in _OPAL_ (continued). 
+[[fig_CollPhysics2,Figure {counter:fig-cnt}]]
 image::figures/partmatter/Diagram2.png[scaledwidth=8cm]
 
 [[sec.partmatter.the-substeps]]
@@ -352,6 +352,7 @@ track it as in a drift and put it back to the main bunch when finishing
 === Available Materials in _OPAL_
 
 .List of materials with their parameters implemented in _OPAL_.
+[[tab_List_of_Materials,Table {counter:tab-cnt}]]
 [cols="^2,^1,^1,^1,^1,^1,^1,^1,^1,^2",options="header",]
 |=======================================================================
 |Material |Z |A |latexmath:[\rho] [latexmath:[g/cm^3]] |X0
@@ -415,23 +416,25 @@ copper slit. As a benchmark of the collimator model in _OPAL_,
 <<fig_spectrum>> shows the energy spectrum and angle deviation at
 z=0.1 m after an elliptic collimator.
 
-[#fig_protonscoll]
 .The passage of protons through the collimator.
+[[fig_protonscoll,Figure {counter:fig-cnt}]]
 image::figures/partmatter/longcoll6.png[scaledwidth=12cm]
 
-[#fig_spectrum]
 .The energy spectrum and scattering angle at z=0.1 m
+[[fig_spectrum,Figure {counter:fig-cnt}]]
 image::figures/partmatter/spectandscatter.png[scaledwidth=12cm]
 
 [[sec.partmatter.bibliography]]
-[bibliography]
 === References
 
-* [[[bib.nakai]]] Y. Nakai, T. Shirai, T. Tabata, and R. Ito, Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and
+[[bib.nakai,*[{counter:bib-cnt}]*]] <<bib.nakai>> Y. Nakai, T. Shirai, T. Tabata, and R. Ito, Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and
 molecules, At. Dat. Nucl. Dat. Tabl., 37, 69-101 (1987).
-* [[[bib.tabata]]] T. Tabata and T. Shirai, Anayltic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules, At. Dat. Nucl. Dat. Tabl., 76, 1-25 (2000).
-* [[[bib.barnett]]] C. F. Barnett, Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules, ORNL-6086/V1 (1990).
-* [[[bib.scherk]]] L. R. Scherk. An improved value for the electron affinity of the negative hydrogen ion, Can. J. Phys., 57, 558–563 (1979).
+
+[[bib.tabata,*[{counter:bib-cnt}]*]] <<bib.tabata>> T. Tabata and T. Shirai, Anayltic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules, At. Dat. Nucl. Dat. Tabl., 76, 1-25 (2000).
+
+[[bib.barnett,*[{counter:bib-cnt}]*]] <<bib.barnett>> C. F. Barnett, Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules, ORNL-6086/V1 (1990).
+
+[[bib.scherk,*[{counter:bib-cnt}]*]] <<bib.scherk>> L. R. Scherk. An improved value for the electron affinity of the negative hydrogen ion, Can. J. Phys., 57, 558–563 (1979).
 
 
 // EOF

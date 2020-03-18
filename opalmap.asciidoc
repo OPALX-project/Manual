@@ -53,9 +53,10 @@ The independent variable is position of the reference particle *s* [m].
 [[sec.opalmap.mapTracking]]
 === Principle of Map Tracking
 
-The particle motion gets calculated by applying the map on the particle parameter. <<fig_MapTracking>>
-[#fig_MapTracking]
+The particle motion gets calculated by applying the map on the particle parameter.
+
 .Flow chart of map tracking.
+[[fig_MapTracking,Figure {counter:fig-cnt}]]
 image::figures/opalmap/mapTracking.png[scaledwidth=8cm]
 
 [latexmath]
@@ -139,6 +140,7 @@ TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_OR
 
 .Additional Parameter.
 [cols="<2,^1,^1,^1,<3",options="header",]
+[[tab_opal_map_parameters,{counter:tab-cnt}]]
 |=======================================================================
 | Attribute Name | set in | Default Value | Units | Description
 
@@ -257,8 +259,8 @@ The first number describes the coefficient and the following 6 the variables of 
 |=======================================================================
 
 
-[bibliography]
+[[sec.opalmap.bibliography]]
 === References
-* [[[bib.berz1999_opalmap]]] Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.
+[[bib.berz1999_opalmap,*[{counter:bib-cnt}]*]] <<bib.berz1999_opalmap>> Martin Berz. Modern map methods in particle beam physics. eng. ISBN: 978-0-12-014750-2. San Diego: Academic Press, 1999.
 
 // EOF

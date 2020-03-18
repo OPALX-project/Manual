@@ -244,8 +244,8 @@ fields. Which function is used is controlled by the parameters
 If `TYPE=CARBONCYCL`, the program requires the latexmath:[B_z] data
 which is stored in a sequence shown in <<fig_CYCLField>>.
 
-[#fig_CYCLField]
 .2D field map on the median plane with primary direction corresponding to the azimuthal direction, secondary direction to the radial direction
+[[fig_CYCLField,Figure {counter:fig-cnt}]]
 image::./figures/cyclotron/CarbonFieldFormat.png[scaledwidth=6cm]
 
 We need to add 6 parameters at the header of a plain latexmath:[B_z]
@@ -723,10 +723,10 @@ All supplementary files can be found in https://gitlab.psi.ch/OPAL/regression-te
 https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/reference/RingCyclotronMatched.out[matchedDistribution.output]
 
 [[sec.opalcycl.bibliography]]
-[bibliography]
 === References
 
-* [[[bib.howison2010]]] M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
-* [[[bib.schietinger]]] T. Schietinger, https://gitlab.psi.ch/OPAL/src/wikis/h5root[_H5root_], 2006.
+[[bib.howison2010,*[{counter:bib-cnt}]*]] <<bib.howison2010>> M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+
+[[bib.schietinger,*[{counter:bib-cnt}]*]] <<bib.schietinger>> T. Schietinger, https://gitlab.psi.ch/OPAL/src/wikis/h5root[_H5root_], 2006.
 
 // EOF
