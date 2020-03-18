@@ -191,11 +191,11 @@ in latexmath:[p_{z}] by this amount after the distribution is
 generated (or read in). Same as the average latexmath:[p_{z}] value,
 latexmath:[\bar{p}_{z}].
 
-|`ID1` |0.0 |<<sec.distribution.unitsdistattributes>> |Tracer particle which is
-written also into _data/track_orbit.dat_
+|`ID1` |{0.0, 0.0, 0.0, 0.0, 0.0, 0.0} |<<sec.distribution.unitsdistattributes>> |Tracer particle which is
+written also into _data/track_orbit.dat_. Expects an array with 6 items, latexmath:[x,\; y,\; z,\; p_x,\; p_y,\; p_z]. Not supported in  _OPAL-t_.
 
-|`ID2` |0.0 |<<sec.distribution.unitsdistattributes>> |Tracer particle which is
-written also into _data/track_orbit.dat_
+|`ID2` |{0.0, 0.0, 0.0, 0.0, 0.0, 0.0} |<<sec.distribution.unitsdistattributes>> |Tracer particle which is
+written also into _data/track_orbit.dat_. Expects an array with 6 items, latexmath:[x,\; y,\; z,\; p_x,\; p_y,\; p_z]. Not supported in _OPAL-t_.
 |=======================================================================
 
 [[sec.distribution.injecteddistattributes]]
