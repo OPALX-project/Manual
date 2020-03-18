@@ -21,7 +21,7 @@ was started in 1995 by an international collaboration. IPPL (Independent
 Parallel Particle Layer) is the framework which provides parallel
 particles and fields using data parallel approach. IPPL was inspired by the POOMA <<bib.pooma>>.
 
-_OPAL-t_ is a super-set of _Impact-t_ <<bib.qiang2005_intro>> and can be used to model guns,
+_OPAL-t_ can be used to model guns,
 injectors, ERLs and complete XFELs excluding the undulator.
 
 [[sec.introduction.parallel-processing-capabilities]]
