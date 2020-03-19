@@ -627,7 +627,7 @@ This produces a plot as found in <<fig_elementIndicator>>
 
 .Plot of RMS x supplemented with an indicator of the element positions
 [[fig_elementIndicator,{counter:fig-cnt}]]
-image::./figures/opalt/elementIndicator.png[scaledwidth=6cm]
+image::./figures/opalt/elementIndicator.png[scaledwidth=6cm,width=33%]
 
 [[sec.opalt.datainput_file_name-_designpath.dat]]
 ==== _data/<input_file_name >_DesignPath.dat_
