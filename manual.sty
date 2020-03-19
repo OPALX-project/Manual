@@ -1,9 +1,19 @@
-%%
-%% Index table definitions
-%%
+%
+% style file to render the OPAL manual with dblatex
+%
+% purpose: 
+% - override cover page macro
+% - override 2. page with authors and revisions
+%
+
 
 \RequirePackageWithOptions{docbook}
 
+% enumerate figures and table from 1 to n, indeepending from the chapter
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% redefine cover page
 \def\DBKcover{
   \pagenumbering{gobble}
   \ifthenelse{\equal{\DBKedition}{}}{\def\edhead{}}{\def\edhead{Ed. \DBKedition}}
@@ -38,7 +48,7 @@
   \lfoot[]{}
 }
 
-% Whole bookinfo tables
+% second page with list of authors, date and logos
 \def\DBKdomitete{
   \pagenumbering{roman}
   \setcounter{page}{2}
