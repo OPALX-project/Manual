@@ -273,7 +273,7 @@ which is stored in a sequence shown in <<fig_CYCLField>>.
 
 .2D field map on the median plane with primary direction corresponding to the azimuthal direction, secondary direction to the radial direction
 [[fig_CYCLField,Figure {counter:fig-cnt}]]
-image::./figures/cyclotron/CarbonFieldFormat.png[scaledwidth=6cm]
+image::./figures/cyclotron/CarbonFieldFormat.png[scaledwidth=6cm,width=30%]
 
 We need to add 6 parameters at the header of a plain latexmath:[B_z]
 [kG] data file, namely, latexmath:[r_{min}] [mm],

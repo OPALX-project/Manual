@@ -26,7 +26,7 @@ size, which is beyond this tutorial.
 
 .The simulation cycle
 [[fig_simulation_cycle,Figure {counter:fig-cnt}]]
-image::figures/tutorial/gen-str.png[scaledwidth=6cm]
+image::figures/tutorial/gen-str.png[scaledwidth=6cm,width=30%]
 
 [[sec.tutorial.starting-opal]]
 === Starting OPAL
@@ -170,7 +170,7 @@ deflection point.
 
 .Reference orbit(left) and tune diagram(right) in Injector II 
 [[fig_Inj2ref,Figure {counter:fig-cnt}]]
-image::figures/cyclotron/injector2_orbit_and_tune.png[scaledwidth=18cm]
+image::figures/cyclotron/injector2_orbit_and_tune.png[scaledwidth=18cm,width=90%]
 
 From theoretic view, there should be an eigen ellipse for any given
 energy in stable area of a fixed accelerator structure. Only when the
@@ -185,7 +185,7 @@ magnet for energy of 2 MeV in Injector II.
 
 .Radial and vertical eigenellipse at 2 MeV of Injector II
 [[fig_eigen,Figure {counter:fig-cnt}]]
-image::figures/cyclotron/injector2_eigenellipse.png[scaledwidth=18cm]
+image::figures/cyclotron/injector2_eigenellipse.png[scaledwidth=18cm,width=90%]
 
 Right plot of <<fig_Inj2ref>> shows very good
 agreement of the tune diagram by _OPAL-cycl_ and FIXPO. The trivial
@@ -226,11 +226,11 @@ H5root code.
 
 .Energy vs. time (left) and external B field vs. track step (Right, only show for about 2 turns)
 [[fig_cyclParameters,Figure {counter:fig-cnt}]]
-image::figures/cyclotron/Inj2-cyclParameters.png[scaledwidth=18cm]
+image::figures/cyclotron/Inj2-cyclParameters.png[scaledwidth=18cm,width=90%]
 
 .Vertical phase at different energy from left to right: 0.87 MeV, 15 MeV and 35 MeV
 [[fig_cyclPhasespace,Figure {counter:fig-cnt}]]
-image::figures/cyclotron/Inj2-cyclPhasespace.png[scaledwidth=18cm]
+image::figures/cyclotron/Inj2-cyclPhasespace.png[scaledwidth=18cm,width=90%]
 
 [[sec.tutorial.Ring]]
 ==== PSI Ring Cyclotron
@@ -249,7 +249,7 @@ RF Cavity::
 
 .Reference orbit(left) and tune diagram(right) in Ring cyclotron 
 [[fig_Ringref,Figure {counter:fig-cnt}]]
-image::figures/cyclotron/ReferenceOrbit.png[scaledwidth=18cm]
+image::figures/cyclotron/ReferenceOrbit.png[scaledwidth=18cm,width=90%]
 
 <<fig_Ringref>> shows a single particle tracking
 result and tune calculation result in the PSI Ring cyclotron. Limited by

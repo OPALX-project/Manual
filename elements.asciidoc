@@ -9,6 +9,9 @@ link:home[Back to Main Page]
 toc::[]
 endif::[]
 
+ifdef::backend-docbook5[:fig-width-default: scaledwidth=10cm]
+ifdef::backend-html5,env-gitlab[:fig-width-default: width=50%]
+
 [[chp.elements]]
 == Elements
 
@@ -196,7 +199,7 @@ an `SBEND3D` element in an _OPAL-cycl_ simulation.
 
 .Illustration of a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha].
 [[fig_rbend,Figure {counter:fig-cnt}]]
-image::figures/Elements/rbend.png[scaledwidth=10cm]
+image::figures/Elements/rbend.png[{fig-width-default}]
 
 [[sec.elements.RBend]]
 ==== RBend (_OPAL-t_)
@@ -294,7 +297,7 @@ FMAPFN::
 
 .Illustration of a general sector bend(`SBEND`) with a positive bend angle latexmath:[\alpha]
 [[fig_sbend,Figure {counter:fig-cnt}]]
-image::figures/Elements/sbend.png[scaledwidth=10cm]
+image::figures/Elements/sbend.png[{fig-width-default}]
 
 [[sec.elements.SBend]]
 ==== SBend (_OPAL-t_)
@@ -892,7 +895,7 @@ the same as the hard edge magnet described by the reference trajectory.
 
 .Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see <<eq-enge_func>> with the parameters from the default `1DProfile1` field map described in <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
 [[fig_rbend_enge_fringe,Figure {counter:fig-cnt}]]
-image::figures/Elements/Enge-func-plot.png[scaledwidth=10cm]
+image::figures/Elements/Enge-func-plot.png[{fig-width-default}]
 
 So far we have described how to setup an `RBEND` or `SBEND` element, but
 have not explained how _OPAL-t_ uses this information to calculate the
@@ -1166,7 +1169,7 @@ This is a restricted feature: _OPAL-cycl_.
 
 .A hard edge model of latexmath:[90] degree dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
 [[fig_sbend3d1,Figure {counter:fig-cnt}]]
-image::figures/Elements/sbend3d.png[scaledwidth=18cm]
+image::figures/Elements/sbend3d.png[scaledwidth=18cm,width=80%]
 
 [[sec.elements.quadrupole]]
 === Quadrupole
@@ -1777,7 +1780,7 @@ and its parameters.
 
 .Schematic of the simplified geometry of a cavity gap and parameters
 [[fig_Cyclotron_cavity,Figure {counter:fig-cnt}]]
-image::./figures/cyclotron/Cavity.png[scaledwidth=10cm]
+image::./figures/cyclotron/Cavity.png[scaledwidth=12cm,width=70%]
 
 [[sec.elements.variable-rf-cavity-cycl]]
 === RF Cavities with Time Dependent Parameters
@@ -1856,7 +1859,7 @@ RF_CAVITY: VARIABLE_RF_CAVITY, PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLI
 
 .The on-axis field of an S-band (2997.924 MHz) `TRAVELINGWAVE` structure. The field of a single cavity is shown between its entrance and exit fringe fields. The fringe fields extend one half wavelength (latexmath:[\lambda/2]) to either side.
 [[fig_FINSB-RAC-field,Figure {counter:fig-cnt}]]
-image::./figures/traveling-wave-structure/FINSB-RAC-field.png[scaledwidth=10cm]
+image::./figures/traveling-wave-structure/FINSB-RAC-field.png[scaledwidth=10cm,width=60%]
 
 An example of a 1D `TRAVELINGWAVE` structure field map is shown in
 <<fig_FINSB-RAC-field>>. This map is a standing wave solution generated
@@ -2104,7 +2107,7 @@ The latter example will produce a holes as in the following picture
 
 .Pepper-pot with rectangle holes
 [[fig_pepperpot,Figure {counter:fig-cnt}]]
-image::figures/Elements/pepperpot.png[scaledwidth=10cm]
+image::figures/Elements/pepperpot.png[{fig-width-default}]
 
 In the `FLEXIBLECOLLIMATOR` command the description of the holes can be provided as a string (using `DESCRIPTION`; the string may not contain comments and newlines) or in a separate file (using `FNAME`; comments and newlines are allowed).
 
@@ -2148,7 +2151,7 @@ PARTICLEMATTERINTERACTION::
 
 .Collimator
 [[fig_collimator,Figure {counter:fig-cnt}]]
-image::figures/Elements/collimator.png[scaledwidth=10cm]
+image::figures/Elements/collimator.png[{fig-width-default}]
 
 Example:
 
@@ -2191,7 +2194,7 @@ WIDTH::
 
 .Septum
 [[fig_septum,Figure {counter:fig-cnt}]]
-image::figures/Elements/septum.png[scaledwidth=10cm]
+image::figures/Elements/septum.png[{fig-width-default}]
 
 Example:
 
@@ -2224,7 +2227,7 @@ STEP::
 
 .Probe
 [[fig_probe,Figure {counter:fig-cnt}]]
-image::figures/Elements/probe.png[scaledwidth=10cm]
+image::figures/Elements/probe.png[{fig-width-default}]
 
 Example:
 

@@ -57,7 +57,7 @@ The stopping power is compared with PSTAR program of NIST in
 
 .The comparison of stopping power with PSTAR.
 [[fig_PSTAR,Figure {counter:fig-cnt}]]
-image::figures/partmatter/dEdx.png[scaledwidth=12cm]
+image::figures/partmatter/dEdx.png[scaledwidth=12cm,width=70%]
 
 Energy straggling: For relatively thick absorbers such that the number
 of collisions is large, the energy loss distribution is shown to be
@@ -183,18 +183,18 @@ latexmath:[m], latexmath:[\theta=0.5349 \alpha] (in degree).
 
 .The comparison of Coulomb scattering with Jackson’s book.
 [[fig_Jackson,Figure {counter:fig-cnt}]]
-image::figures/partmatter/10steps.png[scaledwidth=12cm]
+image::figures/partmatter/10steps.png[scaledwidth=12cm,width=70%]
 
 [[sec.partmatter.the-flow-diagram-of-collimatorphysics-class-in-opal]]
 === The Flow Diagram of _CollimatorPhysics_ Class in OPAL
 
 .The diagram of CollimatorPhysics in _OPAL_.
 [[fig_CollPhysics,Figure {counter:fig-cnt}]]
-image::figures/partmatter/diagram.png[scaledwidth=16cm]
+image::figures/partmatter/diagram.png[scaledwidth=16cm,width=70%]
 
 .The diagram of CollimatorPhysics in _OPAL_ (continued). 
 [[fig_CollPhysics2,Figure {counter:fig-cnt}]]
-image::figures/partmatter/Diagram2.png[scaledwidth=8cm]
+image::figures/partmatter/Diagram2.png[scaledwidth=8cm,width=30%]
 
 [[sec.partmatter.the-substeps]]
 ==== The Substeps
@@ -284,10 +284,10 @@ z=0.1 m after an elliptic collimator.
 
 .The passage of protons through the collimator.
 [[fig_protonscoll,Figure {counter:fig-cnt}]]
-image::figures/partmatter/longcoll6.png[scaledwidth=12cm]
+image::figures/partmatter/longcoll6.png[scaledwidth=12cm,width=80%]
 
 .The energy spectrum and scattering angle at z=0.1 m
 [[fig_spectrum,Figure {counter:fig-cnt}]]
-image::figures/partmatter/spectandscatter.png[scaledwidth=12cm]
+image::figures/partmatter/spectandscatter.png[scaledwidth=12cm,width=80%]
 
 // EOF

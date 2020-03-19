@@ -10,8 +10,7 @@ toc::[]
 endif::[]
 
 [[chp.geometry]]
-Geometry
---------
+== Geometry
 
 At present the `GEOMETRY` command is still an *experimental feature*
 which is not to be used by the general user. It can only be used to
