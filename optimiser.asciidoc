@@ -63,7 +63,7 @@ simultaneously.
 
 .The (often non-linear) mapping latexmath:[f : \mathbb{R}^n \rightarrow \mathbb{R}^M] from design to objective space. The dashed lines represent the constraints in design space and the set of solutions (Pareto front) in objective space.
 [[fig_des_to_obj,Figure {counter:fig-cnt}]]
-image::figures/optimiser/design_objective_space.png[scaledwidth=10cm]
+image::figures/optimiser/design_objective_space.png[scaledwidth=10cm,width=70%]
 
 A special subset of multi-objective optimization problems where all
 objectives and constraints are linear, called _Multi-objective linear
@@ -115,7 +115,7 @@ the Pareto set for database queries.
 
 .Various definitions regarding Pareto optimality.
 [[fig_pareto-def,Figure {counter:fig-cnt}]]
-image::figures/optimiser/pareto-defs.png[scaledwidth=18cm]
+image::figures/optimiser/pareto-defs.png[scaledwidth=18cm,width=100%]
 
 
 [[sec.optimiser.opt-MOGA-theory]]

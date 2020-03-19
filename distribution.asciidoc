@@ -503,7 +503,7 @@ imposed on the flat top, latexmath:[t_\mathrm{flattop}], in
 
 ._OPAL_ emitted `GAUSS` distribution with flat top.
 [[fig_flattop,Figure {counter:fig-cnt}]]
-image::./figures/distribution/flattop.png[scaledwidth=12cm]
+image::./figures/distribution/flattop.png[scaledwidth=12cm,width=60%]
 
 A useful feature of the `GAUSS` distribution type is the ability to
 mimic the initial distribution from a photoinjector. For this purpose we
@@ -848,7 +848,7 @@ distributions for our type of simulations, as listed in
 
 .Properties of binomial Phase Space Distributions (taken from  <<bib.JohoDist>>).
 [[fig_binomialproperties,Figure {counter:fig-cnt}]]
-image::./figures/distribution/BinomialProperties.png[scaledwidth=18cm]
+image::./figures/distribution/BinomialProperties.png[scaledwidth=18cm,width=80%]
 
 The attributes of a `BINOMIAL` distribution are defined in <<tab_distattrbinomial>>.
 
