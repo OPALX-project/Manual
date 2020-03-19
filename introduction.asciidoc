@@ -51,7 +51,7 @@ Computing.
 
 .Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
 [[fig_walldrift,Figure {counter:fig-cnt}]]
-image::figures/drift2c1.png[scaledwidth=10cm]
+image::figures/drift2c1.png[scaledwidth=10cm,width=60%]
 
 [[sec.introduction.quality-management]]
 === Quality Management
@@ -78,7 +78,7 @@ most welcome. They may be sent to mailto:andreas.adelmann@psi.ch[Andreas Adelman
 
 .Comparison of energy and emittance in latexmath:[x] between _Impact-t_ and _OPAL-t_
 [[fig_guncomp1,Figure {counter:fig-cnt}]]
-image::figures/Gun/GunComp.png[scaledwidth=18cm]
+image::figures/Gun/GunComp.png[scaledwidth=10cm,width=80%]
 
 [[sec.introduction.output]]
 === Output
@@ -102,7 +102,7 @@ The user is advised to consult the stdout frequently.
 
 .H5root enables a variety of data analysis and post processing task on _OPAL_ data
 [[fig_H5root_analysis,Figure {counter:fig-cnt}]]
-image::figures/H5rootPicture.png[scaledwidth=18cm]
+image::figures/H5rootPicture.png[scaledwidth=18cm,width=90%]
 
 [[sec.introduction.change-history]]
 === Change History
