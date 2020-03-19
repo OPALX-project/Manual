@@ -1,0 +1,74 @@
+%%
+%% Index table definitions
+%%
+
+\RequirePackageWithOptions{docbook}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\def\DBKcover{
+  \pagenumbering{gobble}
+  \ifthenelse{\equal{\DBKedition}{}}{\def\edhead{}}{\def\edhead{Ed. \DBKedition}}
+
+  % interligne double
+  \setlength{\oldbaselineskip}{\baselineskip}
+  \setlength{\baselineskip}{2\oldbaselineskip}
+  \textsf{
+    \vfill
+    \vspace{2.5cm}
+    \begin{center}
+      \huge{\textbf{\DBKtitle}}\\ %
+      \ifx\DBKsubtitle\relax\else%
+        \underline{\ \ \ \ \ \ \ \ \ \ \ }\\ %
+        \ \\ %
+        \huge{\textbf{\DBKsubtitle}}\\ %
+      \fi
+    \end{center}
+    \vfill
+    \setlength{\baselineskip}{\oldbaselineskip}
+    \hspace{1cm}
+    \vspace{1cm}
+    \begin{center}
+      \begin{tabular}{p{7cm} p{7cm}}
+        \Large{\DBKreference{} \edhead} & \\
+      \end{tabular}
+   \end{center}
+  }
+  % Format for the other pages
+  \newpage
+  \setlength{\baselineskip}{\oldbaselineskip}
+  \lfoot[]{}
+}
+
+% Whole bookinfo tables
+\def\DBKdomitete{
+  \pagenumbering{roman}
+  \setcounter{page}{2}
+  \begin{sffamily}
+  \writtenby
+
+  \DBKauthor
+
+  \DBKrevdate
+
+  \DBKdate
+  \end{sffamily}
+
+  \vfill
+
+  \includegraphics[height=10mm]{logos/psi_logo.png}
+
+  \includegraphics[height=8.4mm]{logos/mit_logo.png}
+
+  \includegraphics[height=10.5mm]{logos/oxford_logo.png}
+
+  \includegraphics[height=10mm]{logos/UKRI_STF_logo.png}
+
+  \includegraphics[height=10mm]{logos/ciemat_logo.jpg}
+
+  \includegraphics[height=9mm]{logos/slac_logo.png}
+
+  \includegraphics[height=8.4mm]{logos/LANL_logo.png}
+}
+
