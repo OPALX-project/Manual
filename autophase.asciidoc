@@ -123,7 +123,7 @@ until the value of latexmath:[\varphi] has converged.
 
 .Field map ’FINLB02-RAC.T7’ of type 1DDynamic
 [[fig_FINLB,Figure {counter:fig-cnt}]]
-image::figures/autophase/field_crop.png[scaledwidth=12cm,width=400]
+image::figures/autophase/field_crop.png[scaledwidth=12cm,width=60%]
 
 Auto phasing in a traveling wave structure is just slightly more
 complicated. The field of this element is composed of a standing wave

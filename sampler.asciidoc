@@ -52,7 +52,7 @@ The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in t
 
 .Sampling methods
 [[fig_des_to_sampl,Figure {counter:fig-cnt}]]
-image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm]
+image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm,width=70%]
 
 The two sampling methods differ in the number of samples since with `RASTER = TRUE` every combination of individual sampling is computed. Thus the total number is latexmath:[N = N_1 \times N_2 \times \ldots \times N_n] where latexmath:[n] is the number of `DVARS`. If for some `DVAR` a random sampling is chosen then for every sampling point a new random number is computed. With `RASTER = FALSE` the number of sampling points is latexmath:[N = \min(N_1, N_2,\ldots, N_n)], each item of a sequence is used only once.
 
