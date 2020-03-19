@@ -774,7 +774,7 @@ simulation.
 
 .Normalized horizontal emittance for different fringe field ranges and integration time steps
 [[fig_plot-fringe-size,Figure {counter:fig-cnt}]]
-image::figures/Benchmarks/report-fringe-size.png[scaledwidth=12cm,with=66%]
+image::figures/Benchmarks/report-fringe-size.png[scaledwidth=12cm,width=66%]
 
 .Zoom in on the final emittance in <<fig_plot-fringe-size>>
 [[fig_plot-fringe-size-zoom,Figure {counter:fig-cnt}]]
