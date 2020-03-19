@@ -57,7 +57,7 @@ The particle motion gets calculated by applying the map on the particle paramete
 
 .Flow chart of map tracking.
 [[fig_MapTracking,Figure {counter:fig-cnt}]]
-image::figures/opalmap/mapTracking.png[scaledwidth=8cm]
+image::figures/opalmap/mapTracking.png[scaledwidth=8cm,width=30%]
 
 [latexmath]
 ++++
