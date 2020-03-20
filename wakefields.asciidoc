@@ -362,20 +362,28 @@ bunch.
 [[sec.wakefield.bibliography]]
 === References
 
-[[bib.schott,*[{counter:bib-cnt}]*]] <<bib.schott>> G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).
+anchor:bib.schott[[{counter:bib-cnt}\]]
+<<bib.schott>> G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).
 
-[[bib.schwinger1949,*[{counter:bib-cnt}]*]] <<bib.schwinger1949>> J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912. and http://puhep1.princeton.edu/~kirkmcd/accel/schwinger.pdf
+anchor:bib.schwinger1949[[{counter:bib-cnt}\]]
+<<bib.schwinger1949>> J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912. and http://puhep1.princeton.edu/~kirkmcd/accel/schwinger.pdf
 
-[[bib.murphy1997,*[{counter:bib-cnt}]*]] <<bib.murphy1997>> J. B. Murphy, S. Krinsky, and R. L. Gluckstern, _Longitudinal Wakefield for an Electron Moving on a Circular Orbit_, Particle Accelerators 57, 9–64 (1997).
+anchor:bib.murphy1997[[{counter:bib-cnt}\]]
+<<bib.murphy1997>> J. B. Murphy, S. Krinsky, and R. L. Gluckstern, _Longitudinal Wakefield for an Electron Moving on a Circular Orbit_, Particle Accelerators 57, 9–64 (1997).
 
-[[bib.nodvick1954,*[{counter:bib-cnt}]*]] <<bib.nodvick1954>> J. S. Nodvick and D. S. Saxon, http://dx.doi.org/10.1103/PhysRev.96.180[_Suppression of Coherent Radiation by Electrons in a Synchrotron_], Phys. Rev. 96, 180–184 (1954) 10.1103/PhysRev.96.180.
+anchor:bib.nodvick1954[[{counter:bib-cnt}\]]
+<<bib.nodvick1954>> J. S. Nodvick and D. S. Saxon, http://dx.doi.org/10.1103/PhysRev.96.180[_Suppression of Coherent Radiation by Electrons in a Synchrotron_], Phys. Rev. 96, 180–184 (1954) 10.1103/PhysRev.96.180.
 
-[[bib.saldin1997,*[{counter:bib-cnt}]*]] <<bib.saldin1997>> E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov, http://dx.doi.org/10.1016/S0168-9002(97)00822-X[_On the Coherent Radiation of an Electron Bunch Moving in an Arc of a Circle_], Nucl. Instrum. Methods Phys. Res. Sect. A 398, 373–394 (1997) 10.1016/S0168-9002(97)00822-X.
+anchor:bib.saldin1997[[{counter:bib-cnt}\]]
+<<bib.saldin1997>> E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov, http://dx.doi.org/10.1016/S0168-9002(97)00822-X[_On the Coherent Radiation of an Electron Bunch Moving in an Arc of a Circle_], Nucl. Instrum. Methods Phys. Res. Sect. A 398, 373–394 (1997) 10.1016/S0168-9002(97)00822-X.
 
-[[bib.mitchell2013,*[{counter:bib-cnt}]*]] <<bib.mitchell2013>> C. E. Mitchell, J. Qiang, and R. D. Ryne, _A fast method for computing 1-d wakefields due to coherent synchrotron radiation_, Nucl. Instrum. Methods Phys. Res. Sect. A 715, 119–125 (2013).
+anchor:bib.mitchell2013[[{counter:bib-cnt}\]]
+<<bib.mitchell2013>> C. E. Mitchell, J. Qiang, and R. D. Ryne, _A fast method for computing 1-d wakefields due to coherent synchrotron radiation_, Nucl. Instrum. Methods Phys. Res. Sect. A 715, 119–125 (2013).
 
-[[bib.borland1995,*[{counter:bib-cnt}]*]] <<bib.borland1995>> M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
+anchor:bib.borland1995[[{counter:bib-cnt}\]]
+<<bib.borland1995>> M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
 
-[[bib.borland1998,*[{counter:bib-cnt}]*]] <<bib.borland1998>> M. Borland, http://www.slac.stanford.edu/econf/C980914/papers/F-Tu10.pdf[_A universal postprocessing toolkit for accelerator simulation and data analysis_], in Proc. 1998 ICAP conference (1998), FTU10.
+anchor:bib.borland1998[[{counter:bib-cnt}\]]
+<<bib.borland1998>> M. Borland, http://www.slac.stanford.edu/econf/C980914/papers/F-Tu10.pdf[_A universal postprocessing toolkit for accelerator simulation and data analysis_], in Proc. 1998 ICAP conference (1998), FTU10.
 
 // EOF
