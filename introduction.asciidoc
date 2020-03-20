@@ -178,14 +178,20 @@ archivePrefix = {arXiv},
 
 [[sec.introduction.bibliography]]
 === References
-[[bib.classic,*[{counter:bib-cnt}]*]] <<bib.classic>> F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
 
-[[bib.qiang2005_intro,*[{counter:bib-cnt}]*]] <<bib.qiang2005_intro>> J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+anchor:bib.classic[[{counter:bib-cnt}\]]
+<<bib.classic>> F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
 
-[[bib.howison2010_intro,*[{counter:bib-cnt}]*]] <<bib.howison2010_intro>> M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+anchor:bib.qiang2005_intro[[{counter:bib-cnt}\]]
+<<bib.qiang2005_intro>> J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
 
-[[bib.schietinger_intro,*[{counter:bib-cnt}]*]] <<bib.schietinger_intro>> T. Schietinger, https://gitlab.psi.ch/OPAL/src/wikis/h5root[_H5root_], 2006.
+anchor:bib.howison2010_intro[[{counter:bib-cnt}\]]
+<<bib.howison2010_intro>> M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
 
-[[bib.pooma,*[{counter:bib-cnt}]*]] <<bib.pooma>> http://www.nongnu.org/freepooma/
+anchor:bib.schietinger_intro[[{counter:bib-cnt}\]]
+<<bib.schietinger_intro>> T. Schietinger, https://gitlab.psi.ch/OPAL/src/wikis/h5root[_H5root_], 2006.
+
+anchor:bib.pooma[[{counter:bib-cnt}\]]
+<<bib.pooma>> http://www.nongnu.org/freepooma/
 
 // EOF

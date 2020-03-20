@@ -427,14 +427,18 @@ image::figures/partmatter/spectandscatter.png[scaledwidth=12cm,width=80%]
 [[sec.partmatter.bibliography]]
 === References
 
-[[bib.nakai,*[{counter:bib-cnt}]*]] <<bib.nakai>> Y. Nakai, T. Shirai, T. Tabata, and R. Ito, Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and
+anchor:bib.nakai[[{counter:bib-cnt}\]]
+<<bib.nakai>> Y. Nakai, T. Shirai, T. Tabata, and R. Ito, Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and
 molecules, At. Dat. Nucl. Dat. Tabl., 37, 69-101 (1987).
 
-[[bib.tabata,*[{counter:bib-cnt}]*]] <<bib.tabata>> T. Tabata and T. Shirai, Anayltic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules, At. Dat. Nucl. Dat. Tabl., 76, 1-25 (2000).
+anchor:bib.tabata[[{counter:bib-cnt}\]]
+<<bib.tabata>> T. Tabata and T. Shirai, Anayltic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules, At. Dat. Nucl. Dat. Tabl., 76, 1-25 (2000).
 
-[[bib.barnett,*[{counter:bib-cnt}]*]] <<bib.barnett>> C. F. Barnett, Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules, ORNL-6086/V1 (1990).
+anchor:bib.barnett[[{counter:bib-cnt}\]]
+<<bib.barnett>> C. F. Barnett, Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules, ORNL-6086/V1 (1990).
 
-[[bib.scherk,*[{counter:bib-cnt}]*]] <<bib.scherk>> L. R. Scherk. An improved value for the electron affinity of the negative hydrogen ion, Can. J. Phys., 57, 558–563 (1979).
+anchor:bib.scherk[[{counter:bib-cnt}\]]
+<<bib.scherk>> L. R. Scherk. An improved value for the electron affinity of the negative hydrogen ion, Can. J. Phys., 57, 558–563 (1979).
 
 
 // EOF
