@@ -47,6 +47,8 @@ flavours.
 ifdef::env-gitlab[]
 == Table of Contents
 
+%{current_branch}
+
 . link:introduction[Introduction]
 . link:conventions[Conventions]
 . link:pitfalls[Pitfalls and Limitations]
