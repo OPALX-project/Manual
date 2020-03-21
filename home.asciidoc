@@ -47,6 +47,8 @@ flavours.
 ifdef::env-gitlab[]
 == Table of Contents
 
+[link to a repository file in the same directory](index.md)
+
 . link:introduction[Introduction]
 . link:conventions[Conventions]
 . link:pitfalls[Pitfalls and Limitations]
