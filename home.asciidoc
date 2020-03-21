@@ -32,13 +32,13 @@ _OPAL_ is built from the ground up as a parallel application exemplifying the fa
 The _OPAL_ framework makes it easy to add new features in the form of new _C++_ classes.
 _OPAL_ comes in the following flavours:
 
-* _OPAL-cycl_:
+_OPAL-cycl_::
   tracks particles with 3D space charge including neighbouring turns in
   cyclotrons and FFAs with time as the independent variable.
-* _OPAL-t_:
+_OPAL-t_::
   models beam lines, linacs, rf-photo injectors and
   complete XFELs excluding the undulator.
-* _OPAL-map_:
+_OPAL-map_::
   map tracking (experimental, no space charge yet)
 
 It should be noted that not all features of _OPAL_ are available in all
