@@ -2,28 +2,27 @@
 
 ## Introduction
 
-The Wiki pages are written in Asciidoc and thus can be converted to other formats 
+The _OPAL_ manual is written in Asciidoc and can be converted to other formats 
 like PDF or HTML.
 
-The script `asciidoc2pdf` can be used to render the Wiki Manual into PDF. The script
-requires `asciidoctor`, TeX and `dblatex`.
+The script `asciidoc2html` can be used to render the manual into HTML. The script
+requires `asciidoctor-katex` and `Node.js`.
 
-For the time being we use another master document named `home.adoc` for PDF rendering.
-In the futuer we may adapt the master document of the Wiki (`home.asciidoc`) and
-`asciidoc2pdf` in a way which makes `home.adoc`obsolete`.
+The script `asciidoc2pdf` can be used to render the manual into PDF. The script
+requires `asciidoctor`, TeX and `dblatex`.
 
 ## Usage
 
 Assuming `asciidoc2pdf` is in your `PATH`:
 ```
-git clone git@gitlab.psi.ch:OPAL/Manual-2.0.wiki.git
-cd Manual-2.0.wiki
-asciidoc2pdf home.asciidoc
+git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
+cd manual
+asciidoc2pdf
 ```
 
 ## Guidlines
 
-To get good results for PDF ouput, you should follow some simple rules.
+To get good results for HTML and PDF ouput, you should follow some simple rules.
 
 
 ### Chapters and section
