@@ -2,18 +2,8 @@
 
 ## Introduction
 
-Since _OPAL_ version 2 the manual is maintained in the Wiki of this project:
-
-https://gitlab.psi.ch/OPAL/Manual-2.0/wikis/home
-
 The Wiki pages are written in Asciidoc and thus can be converted to other formats 
-like PDF or HTML. The Aciidoc support in Gitlab is a bit limited. One main issue
-is, that links to anchors - i.e. most references - are not working. Another problem
-is that latexmath is not correctly implemented in Gitlab. 
-
-There are some "home-made" problems as well. In the Wiki each chapter is a separate 
-document with a header containing a table of content, a "back to home" link and some
-other stuff. These lines have to be removed for the rendering into *one* PDF document.
+like PDF or HTML.
 
 The script `asciidoc2pdf` can be used to render the Wiki Manual into PDF. The script
 requires `asciidoctor`, TeX and `dblatex`.
