@@ -190,8 +190,29 @@ as in the following example:
 ```
 This is an inline formula: latexmath:[$y=x^2$]!
 ```
+In Gitlab the formular must be written *without* surounding dollars:
+```
+This is an inline formula: latexmath:[y=x^2]!
+```
+A similiar issue we have with block formulars. According to the Asciidoc
+documentation, block-formulars must be written like:
+```
+[latexmath] 
+++++++++++++ 
+\[ 
+y = x^2 
+\] 
+++++++++++++ 
+```
+The same block-formular in Gitlab's flavoured Asciidoc:
+```
+[latexmath] 
+++++++++++++ 
+y = x^2 
+++++++++++++ 
+```
+To be able to preview LaTeX formulars in Gitlab, we write them in the Gitlab
+flavoured variant. In our toolchain to translate the manual, we pre-process all
+formulars to get them in the correct form.
 
-
-
-
-* inline math must be written on one line! Otherwise `asciidoc2pdf` will fail.
+> **Note** inline math must be written on one line! Otherwise our pre-processor fails!
