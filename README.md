@@ -2,10 +2,10 @@
 
 ## Introduction
 
-Since vesion 2 the _OPAL_ manual is written in Asciidoc. AsciiDoc is a 
+Since version 2 the _OPAL_ manual is written in Asciidoc. AsciiDoc is a 
 human-readable document format, semantically equivalent to DocBook XM. 
 Documents written in Asciidoc can be converted to other formats like HTML, PDF,
-EPUB and others.
+EPUB and others. 
 
 For more information about Asciidoc see
 
