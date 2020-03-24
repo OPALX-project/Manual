@@ -20,7 +20,7 @@ In _OPAL-t_ the elements are implemented as external fields that are
 read in from a file. The fields are described by a 1D, 2D or 3D sampling
 (equidistant or non-equidistant). To get the actual field at any
 position a linear interpolation multiplied by
-latexmath:[$\cos(\omega t + \varphi)$], where latexmath:[\omega] is
+latexmath:[\cos(\omega t + \varphi)], where latexmath:[\omega] is
 the frequency and latexmath:[\varphi] is the lag. The energy gain of a
 particle then is
 
