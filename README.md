@@ -2,7 +2,10 @@
 
 ## Introduction
 
-Since vesion 2 the _OPAL_ manual is written in Asciidoc. AsciiDoc is a human-readable document format, semantically equivalent to DocBook XM. Documents written in Asciidoc can be converted to other formats like HTML, PDF, EPUB and others.
+Since vesion 2 the _OPAL_ manual is written in Asciidoc. AsciiDoc is a 
+human-readable document format, semantically equivalent to DocBook XM. 
+Documents written in Asciidoc can be converted to other formats like HTML, PDF,
+EPUB and others.
 
 For more information about Asciidoc see
 
@@ -10,7 +13,20 @@ For more information about Asciidoc see
 * http://asciidoc.org
 * https://asciidoctor.org
 
-In the project OPAL/Documentation/manual2x> we provide scripts to translate the _OPAL_ manual to HTML and PDF. Instructions about how to install these scripts and their requirements are documented in the projects README.
+In the project OPAL/Documentation/manual2x> we provide scripts to translate the
+_OPAL_ manual to HTML and PDF. Instructions about how to install these scripts 
+and their requirements are documented in the projects README.
+
+HTML versions of the _OPAL_ manual are published here:
+
+* http://amas.web.psi.ch/opal/Documentation/master/OPAL_Manual.html
+* http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html
+* http://amas.web.psi.ch/opal/Documentation/2.0/OPAL_Manual.html
+
+Gitlab displays the translated content of Asciidoc files. You can use Gitlab
+to preview your changes. Unfortunatelly Gitlab does not support all features of
+Asciidoc, thus the preview in Gitlab is pretty useful but is not identical to
+the published version.
 
 ## Translating the manual to HTML and PDF
 
@@ -167,4 +183,5 @@ anchor:bib.classic[[{counter:bib-cnt}\]]
 
 ### LaTexMath
 
+ 
 * inline math must be written on one line! Otherwise `asciidoc2pdf` will fail.
