@@ -1,24 +1,35 @@
-# OPAL User Manual for Version 2.0
+# OPAL User Manual
 
 ## Introduction
 
-The _OPAL_ manual is written in Asciidoc and can be converted to other formats 
-like PDF or HTML.
+Since vesion 2 the _OPAL_ manual is written in Asciidoc. AsciiDoc is a human-readable document format, semantically equivalent to DocBook XM. Documents written in Asciidoc can be converted to other formats like HTML, PDF, EPUB and others.
 
-The script `asciidoc2html` can be used to render the manual into HTML. The script
-requires `asciidoctor-katex` and `Node.js`.
+For more information about Asciidoc see
 
-The script `asciidoc2pdf` can be used to render the manual into PDF. The script
-requires `asciidoctor`, TeX and `dblatex`.
+* https://en.wikipedia.org/wiki/AsciiDoc
+* http://asciidoc.org
+* https://asciidoctor.org
 
-## Usage
+In the project OPAL/Documentation/asciidoc2x> we provide scripts to translate the _OPAL_ manual to HTML and PDF. Instructions about how to install these scripts and their requirements are documented in the projects README.
 
-Assuming `asciidoc2pdf` is in your `PATH`:
+## Translating the manual to HTML and PDF
+
+Assuming the scripts of the project OPAL/Documentation/asciidoc2x> are installed and in you `PATH`, change directory to a clone of the manual and run.
 ```
-git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
-cd manual
+asciidoc2html
+```
+to convert to HTML and
+```
 asciidoc2pdf
 ```
+to convert to PDF.
+
+The hole procedure is something like
+* clone the _OPAL_ manual with
+```
+git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
+```
+* bla
 
 ## Guidlines
 
