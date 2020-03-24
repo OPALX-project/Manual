@@ -3,7 +3,7 @@
 ## Introduction
 
 Since version 2 the _OPAL_ manual is written in Asciidoc. AsciiDoc is a 
-human-readable document format, semantically equivalent to DocBook XM. 
+human-readable document format, semantically equivalent to DocBook XML. 
 Documents written in Asciidoc can be converted to other formats like HTML, PDF,
 EPUB and others. 
 
@@ -24,7 +24,7 @@ HTML versions of the _OPAL_ manual are published here:
 * http://amas.web.psi.ch/opal/Documentation/2.0/OPAL_Manual.html
 
 Gitlab displays the translated content of Asciidoc files. You can use Gitlab
-to preview your changes. Unfortunatelly Gitlab does not support all features of
+to preview your changes. Unfortunately Gitlab does not support all features of
 Asciidoc, thus the preview in Gitlab is pretty useful but is not identical to
 the published version.
 
@@ -49,9 +49,9 @@ Assuming the scripts of the project OPAL/Documentation/manual2x> are installed a
   manual2pdf
   ```
 
-## Guidlines
+## Guidelines
 
-To get good results for HTML and PDF ouput, you have to follow some simple rules.
+To get good results for HTML and PDF output, you have to follow some simple rules.
 
 ### Files
 
@@ -74,7 +74,7 @@ Each chapter is represented by one single file which is included by the master d
 * Use `==`, `===` etc. for titles of chapters, sections etc.
 
 Examples:
-The file `intoduction.asciidoc` contains the chapter "Introduction" of the manual. Anchor and title are defined as
+The file `introduction.asciidoc` contains the chapter "Introduction" of the manual. Anchor and title are defined as
 ```
 [[chp.introduction]]
 == Introduction
@@ -87,8 +87,8 @@ for section it must be like
 
 ### Figures and Tables
 
-The toolchain to create PDF's enumerates figures and tables chapter wise
-by default. Unfortunatelly the toolchain to create HTML does *not* support 
+The tool-chain to create PDF's enumerates figures and tables chapter wise
+by default. Unfortunately the tool-chain to create HTML does *not* support 
 enumeration of figures and tables at all.
 
 Asciidoc supports counters. In the manual counters are used to enumerate figures,
@@ -113,7 +113,7 @@ Example:
 image::figures/drift2c1.png[scaledwidth=10cm,width=60%]
 ```
 
-> **Note:** In anchor names underscors (instead of dots) are used for historic
+> **Note:** In anchor names underscores (instead of dots) are used for historic
 reasons. In old versions of the manual, the short form was used and for unknown
 reasons dots are not allowed in this form.
 
@@ -157,12 +157,12 @@ Table with relative column width:
 
 > **Note:** The first line of a table is rendered as header by default.
 
-### Biblopgraphy lists
+### Bibliography lists
 
 With bibliographic references we have the same enumeration problems as with
 figures and tables. Using Asciidoc's bibliography list works well for PDF output 
-but not for HTML. The toolchain to translate into HTML does not enumerate the
-refernces and uses the anchor name as reference label.
+but not for HTML. The tool-chain to translate into HTML does not enumerate the
+references and uses the anchor name as reference label.
 
 For bibliography references follow these rules (see example below):
 * Use the macro form to define an anchor.
@@ -184,18 +184,18 @@ anchor:bib.classic[[{counter:bib-cnt}\]]
 ### LaTeX Math
 
 The implementation of LaTeX Math in Gitlab has a minor error requiring a workaround
-to get LaTeX formulas rendered correct in Gitlab and with our toolchain. According
+to get LaTeX formulas rendered correct in Gitlab and with our tool-chain. According
 to the Asciidoc documentation LaTeX in-line formulas must be enclosed in dollars,
 as in the following example: 
 ```
 This is an inline formula: latexmath:[$y=x^2$]!
 ```
-In Gitlab the formular must be written *without* surounding dollars:
+In Gitlab the formula must be written *without* surrounding dollars:
 ```
 This is an inline formula: latexmath:[y=x^2]!
 ```
-A similiar issue we have with block formulars. According to the Asciidoc
-documentation, block-formulars must be written like:
+A similar issue we have with block formulas. According to the Asciidoc
+documentation, block-formulas must be written like:
 ```
 [latexmath] 
 ++++++++++++ 
@@ -204,15 +204,15 @@ y = x^2
 \] 
 ++++++++++++ 
 ```
-The same block-formular in Gitlab's flavoured Asciidoc:
+The same for block-formula in Gitlab's flavoured Asciidoc:
 ```
 [latexmath] 
 ++++++++++++ 
 y = x^2 
 ++++++++++++ 
 ```
-To be able to preview LaTeX formulars in Gitlab, we write them in the Gitlab
-flavoured variant. In our toolchain to translate the manual, we pre-process all
-formulars to get them in the correct form.
+To be able to preview LaTeX formulas in Gitlab, we write them in the Gitlab
+flavoured variant. In our tool chain to translate the manual, we pre-process all
+formulas to get them in the correct form.
 
 > **Note** inline math must be written on one line! Otherwise our pre-processor fails!
