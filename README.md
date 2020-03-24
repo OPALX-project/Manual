@@ -10,21 +10,11 @@ For more information about Asciidoc see
 * http://asciidoc.org
 * https://asciidoctor.org
 
-In the project OPAL/Documentation/asciidoc2x> we provide scripts to translate the _OPAL_ manual to HTML and PDF. Instructions about how to install these scripts and their requirements are documented in the projects README.
+In the project OPAL/Documentation/manual2x> we provide scripts to translate the _OPAL_ manual to HTML and PDF. Instructions about how to install these scripts and their requirements are documented in the projects README.
 
 ## Translating the manual to HTML and PDF
 
-Assuming the scripts of the project OPAL/Documentation/asciidoc2x> are installed and in you `PATH`, change directory to a clone of the manual and run.
-```
-asciidoc2html
-```
-to convert to HTML and
-```
-asciidoc2pdf
-```
-to convert to PDF.
-
-The hole procedure is something like
+Assuming the scripts of the project OPAL/Documentation/manual2x> are installed and in your `PATH`, the hole procedure is something like
 * clone the _OPAL_ manual with
   ```
   git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
@@ -36,67 +26,123 @@ The hole procedure is something like
 * change directory to cloned repository
 * translate to HTML
   ```
-  asciidoc2html
+  manual2html
   ```
   translate to PDF
   ```
-  asciidoc2pdf
+  manual2pdf
   ```
 
 ## Guidlines
 
-To get good results for HTML and PDF ouput, you should follow some simple rules.
+To get good results for HTML and PDF ouput, you have to follow some simple rules.
 
+### Files
+
+The master document of the _OPAL_ manual is `Manual.asciidoc`. It contains
+* Title
+* Authors
+* Global Asciidoc setting/definitions
+* The abstract
+* Include statements per chapter
+
+Each chapter is represented by one single file which is included by the master document.
 
 ### Chapters and section
 
 * Use one-line titles
-* Include the base file name in the anchor name.
-* For cross-chapter references use the form `link:FILENAME#ANCHOR[TEXT]`. 
-  This is required for the Wiki where each chapter is a Wiki page.
+* Define an anchor before the title
+* Include the base file name in the anchor name to avoid duplicate anchor names.
+* Start the anchor name for a chapter with `chp.`.
+* User `sec.` for sections
+* Use `==`, `===` etc. for titles of chapters, sections etc.
 
 Examples:
+The file `intoduction.asciidoc` contains the chapter "Introduction" of the manual. Anchor and title are defined as
 ```
 [[chp.introduction]]
 == Introduction
 ```
+for section it must be like
 ```
 [[sec.introduction.aim-of-opal-and-history]]
 === Aim of _OPAL_ and History
 ```
-```
-link:fieldsolvers#chp.fieldsolvers[Field Solver]
-```
 
-### Figures
+### Figures and Tables
 
+The toolchain to create PDF's enumerates figures and tables chapter wise
+by default. Unfortunatelly the toolchain to create HTML does *not* support 
+enumeration of figures and tables at all.
+
+Asciidoc supports counters. In the manual counters are used to enumerate figures,
+tables and bibliographic references.
+
+#### Figures
+
+* Use anchors of the form `[[...]]`.
 * Prefix anchor names with `fig_`.
-* Use inline anchors of the form `[#...]`.
-* Define width for PDF output with `scaledwidth`.
-* Define width for HTML (Wiki) output with `TO BE DEFINED`.
+* Use `Figure {counter:fig-cnt}` as reference label.
+* Define an anchor even if this is nowhere referenced! Otherwise the enumeration
+  will be screwed up.
+* To define the width of a figure for PDF output use `scaledwidth` and specify
+  the width in centimeter.
+* To define the width for HTML output use `width` and specify the width in
+  percent.
 
 Example:
 ```
-[#fig_walldrift]
 .Parallel efficiency and particles pushed per latexmath:[\mu s] as a function of cores
-image::figures/drift2c1.png[scaledwidth=10cm]
+[[fig_walldrift,Figure {counter:fig-cnt}]]
+image::figures/drift2c1.png[scaledwidth=10cm,width=60%]
 ```
 
-*NOTE*:: 
-For some unknown reasons dots in inline anchor names cannot be used. Referencing them doesn't work as expected!
+> **Note:** In anchor names underscors (instead of dots) are used for historic
+reasons. In old versions of the manual, the short form was used and for unknown
+reasons dots are not allowed in this form.
 
-### Tables
+#### Tables
 
-* Column width must be specified.
-* Use relative column width.
+* Use anchors of the form `[[...]]`.
+* Prefix anchor names with `tab_`.
+* Use `Table {counter:tab-cnt}` as reference label.
+* Define an anchor even if this is nowhere referenced! Otherwise the enumeration
+  will be screwed up.
+* Column widths must be specified as relative values.
  
-Example:
+Examples:
+Table with default column widths:
 ```
-[#tab_commands]
-[cols="<1,<4",options="header",]
+.Parameters Parallel Performance Example
+[[tab_pex1,Table {counter:tab-cnt}]]
+|===
+|Distribution | Particles | Mesh | Greens Function | Time steps
+
+|Gauss 3D | latexmath:[10^8] | latexmath:[1024^3] | Integrated | 10
+|===
+```
+
+Table with relative column width:
+```
+[[tab_distattrflattopinj,Table {counter:tab-cnt}]]
+[cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
-|Command |Purpose
+|Attribute Name |Default Value |Units |Description
+|`SIGMAX` |0.0 |m |Hard edge width in latexmath:[x] direction.
+
+|`SIGMAY` |0.0 |m |Hard edge width in latexmath:[y] direction.
+
+|`SIGMAR` |0.0 |m |Hard edge radius. If nonzero `SIGMAR` overrides
+`SIGMAX` and `SIGMAY`.
+
+|`SIGMAZ` |0.0 |m |Hard edge length in latexmath:[z] direction.
+|=======================================================================
 ```
+
+> **Note:** The first line of a table is rendered as header by default.
+
+### Biblopgraphic references
+
 
 ### LaTexMath
 
