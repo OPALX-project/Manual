@@ -141,8 +141,29 @@ Table with relative column width:
 
 > **Note:** The first line of a table is rendered as header by default.
 
-### Biblopgraphic references
+### Biblopgraphy lists
 
+With bibliographic references we have the same enumeration problems as with
+figures and tables. Using Asciidoc's bibliography list works well for PDF output 
+but not for HTML. The toolchain to translate into HTML does not enumerate the
+refernces and uses the anchor name as reference label.
+
+For bibliography references follow these rules (see example below):
+* Use the macro form to define an anchor.
+* Prefix the anchor name with `bib.`.
+* Use `[{counter:bib-cnt}\]` as reference label. The closing square bracket must
+  be escaped!
+* The bibliography list is the last section of a chapter.
+
+Example:
+```
+[[sec.introduction.bibliography]]
+=== References
+
+anchor:bib.classic[[{counter:bib-cnt}\]]
+<<bib.classic>> F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
+...
+```
 
 ### LaTexMath
 
