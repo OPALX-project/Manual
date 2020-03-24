@@ -181,7 +181,17 @@ anchor:bib.classic[[{counter:bib-cnt}\]]
 ...
 ```
 
-### LaTexMath
+### LaTeX Math
 
- 
+The implementation of LaTeX Math in Gitlab has a minor error requiring a workaround
+to get LaTeX formulas rendered correct in Gitlab and with our toolchain. According
+to the Asciidoc documentation LaTeX in-line formulas must be enclosed in dollars,
+as in the following example: 
+```
+This is an inline formula: latexmath:[$y=x^2$]!
+```
+
+
+
+
 * inline math must be written on one line! Otherwise `asciidoc2pdf` will fail.
