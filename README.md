@@ -26,10 +26,22 @@ to convert to PDF.
 
 The hole procedure is something like
 * clone the _OPAL_ manual with
-```
-git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
-```
-* bla
+  ```
+  git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
+  ```
+  or
+  ```
+  git clone https://gitlab.psi.ch/OPAL/documentation/manual.git
+  ```
+* change directory to cloned repository
+* translate to HTML
+  ```
+  asciidoc2html
+  ```
+  translate to PDF
+  ```
+  asciidoc2pdf
+  ```
 
 ## Guidlines
 
