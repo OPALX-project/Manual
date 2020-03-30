@@ -28,26 +28,20 @@ to preview your changes. Unfortunately Gitlab does not support all features of
 Asciidoc, thus the preview in Gitlab is pretty useful but is not identical to
 the published version.
 
-## Translating the manual to HTML and PDF
+## Workflow
 
-Assuming the scripts of the project OPAL/Documentation/manual2x> are installed and in your `PATH`, the hole procedure is something like
-* clone the _OPAL_ manual with
-  ```
-  git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
-  ```
-  or
-  ```
-  git clone https://gitlab.psi.ch/OPAL/documentation/manual.git
-  ```
-* change directory to cloned repository
-* translate to HTML
-  ```
-  manual2html
-  ```
-  translate to PDF
-  ```
-  manual2pdf
-  ```
+The workflow for changes in the manual is the same as for OPAL software 
+development:
+
+* open an issue
+* create branch and merge request
+* edit in the new branch
+* apply the merge request. For the time being no approvers are required.
+
+> Note: The branch `master` and all branches matching `Manual-*` are protected! Pushing to these branches is not possible.
+
+For real small changes like fixing typos it is OK to edit the file in the 
+Web GUI/IDE without opening an issue. Anyway a merge request is required!
 
 ## Guidelines
 
@@ -216,3 +210,24 @@ flavoured variant. In our tool chain to translate the manual, we pre-process all
 formulas to get them in the correct form.
 
 > **Note** inline math must be written on one line! Otherwise our pre-processor fails!
+
+## Translating the manual to HTML and PDF
+
+Assuming the scripts of the project OPAL/Documentation/manual2x> are installed and in your `PATH`, the hole procedure is something like
+* clone the _OPAL_ manual with
+  ```
+  git clone git@gitlab.psi.ch:OPAL/documentation/manual.git
+  ```
+  or
+  ```
+  git clone https://gitlab.psi.ch/OPAL/documentation/manual.git
+  ```
+* change directory to cloned repository
+* translate to HTML
+  ```
+  manual2html
+  ```
+  translate to PDF
+  ```
+  manual2pdf
+  ```
