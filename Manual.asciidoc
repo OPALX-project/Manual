@@ -8,10 +8,17 @@ ifdef::backend-docbook5,backend-html5[]
 :keywords: _OPAL_
 endif::[]
 
-ifdef::env-gitlab[]
-*Object Oriented Parallel Accelerator Library*
+ifdef::backend-html5[]
 
-*_OPAL_ 2.3 User's Reference Manual*
+[cols="<19,<27,<.^27,<27",frame="none",grid="none"]
+|===
+
+| image:logos/psi_logo.png[width=121] | image:logos/ciemat_logo.jpg[width=242] | image:logos/SLAC-lab-hires.png[width=220] | image:logos/UKRI_STF_logo.png[width=176]
+
+|===
+
+'''
+
 endif::[]
 
 == Preliminary note
