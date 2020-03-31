@@ -1,12 +1,20 @@
-%%
-%% Index table definitions
-%%
+%
+% style file to render the OPAL manual with dblatex
+%
+% purpose: 
+% - override cover page macro
+% - override 2. page with authors and revisions
+%
+
 
 \RequirePackageWithOptions{docbook}
 
+% enumerate figures and table from 1 to n, indeepending from the chapter
+\usepackage{chngcntr}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 
+% redefine cover page
 \def\DBKcover{
   \pagenumbering{gobble}
   \ifthenelse{\equal{\DBKedition}{}}{\def\edhead{}}{\def\edhead{Ed. \DBKedition}}
@@ -41,7 +49,7 @@
   \lfoot[]{}
 }
 
-% Whole bookinfo tables
+% second page with list of authors, date and logos
 \def\DBKdomitete{
   \pagenumbering{roman}
   \setcounter{page}{2}
@@ -57,18 +65,24 @@
 
   \vfill
 
+  % confirmed
   \includegraphics[height=10mm]{logos/psi_logo.png}
 
-  \includegraphics[height=8.4mm]{logos/mit_logo.png}
+  % 
+  %\includegraphics[height=8.4mm]{logos/mit_logo.png}
 
-  \includegraphics[height=10.5mm]{logos/oxford_logo.png}
+  %
+  %\includegraphics[height=10.5mm]{logos/oxford_logo.png}
 
+  % confirmed
   \includegraphics[height=10mm]{logos/UKRI_STF_logo.png}
 
+  % confirmed
   \includegraphics[height=10mm]{logos/ciemat_logo.jpg}
 
-  \includegraphics[height=9mm]{logos/slac_logo.png}
+  % confirmed
+  \includegraphics[height=9mm]{logos/SLAC-lab-hires.png}
 
-  \includegraphics[height=8.4mm]{logos/LANL_logo.png}
+  %\Includegraphics[height=8.4mm]{logos/LANL_logo.png}
 }
 
