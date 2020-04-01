@@ -12,9 +12,12 @@ ifdef::backend-html5[]
 
 [cols="<19,<27,<.^27,<27",frame="none",grid="none"]
 |===
+| image:logos/psi_logo.png[width=121]
+| image:logos/ciemat_logo.jpg[width=242]
+| image:logos/SLAC-lab-hires.png[width=220]
+| image:logos/UKRI_STF_logo.png[width=176]
 
-| image:logos/psi_logo.png[width=121] | image:logos/ciemat_logo.jpg[width=242] | image:logos/SLAC-lab-hires.png[width=220] | image:logos/UKRI_STF_logo.png[width=176]
-
+| image:logos/MIT-logo-with-spelling-design1-large-black-red.svg[width=175] | | |
 |===
 
 '''
