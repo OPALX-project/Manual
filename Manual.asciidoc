@@ -24,6 +24,7 @@ ifdef::backend-html5[]
 
 endif::[]
 
+:sectnums!:
 == Preliminary note
 
 This is the manual for _OPAL_ 2.3. Odd minor version numbers identify
@@ -33,6 +34,7 @@ doing!
 New feature might not yet be documented or something is already documented
 but not yet implemented.
 
+:sectnums:
 == Abstract
 
 _OPAL_ is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
