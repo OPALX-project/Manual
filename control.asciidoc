@@ -293,6 +293,8 @@ AMR::
   Enable adaptive mesh refinement. Default: FALSE
 AMR_YT_DUMP_FREQ::
   The frequency to dump grid and particle data for AMR. Default: 10
+AMR_REGRID_FREQ::
+  Defines after how many steps an AMR regrid is performed. Default: 10
 MEMORYDUMP::
   If true, it writes the memory consumption of every core to a SDDS file
   (*.mem). The write frequency corresponds to STATDUMPFREQ. Default:

@@ -319,8 +319,8 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the Fieldsolver command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG`,
-`FMG` (AMR only) and `NONE`
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG` and `NONE`. AMR solvers:
+`FMG`, `ML` and `AMR_MG`
 
 |`PARFFTX` |If `TRUE`, the dimension latexmath:[x] is distributed
 among the processors
@@ -365,10 +365,44 @@ grid
 |`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
 `AMR_MAXLEVEL` is zero)
 
-|`AMR_MAXGRID` |Maximum grid size. It has to be smaller than `MX`, `MY`,
-`MT` when running in parallel
+|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2 is tested`
 
-|`AMR_TAGGING` |Mesh-refinement strategy
+|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2 is tested`
+
+|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2 is tested`
+
+|`AMR_MAXGRIDX` |Maximum grid size of base level in x. It has to be smaller than
+`MX` when running in parallel
+
+|`AMR_MAXGRIDY` |Maximum grid size of base level in y. It has to be smaller than
+`MY` when running in parallel
+
+|`AMR_MAXGRIDZ` |Maximum grid size of base level in z. It has to be smaller than
+`MZ` when running in parallel
+
+|`AMR_BFX` |AMReX blocking factor in x. `AMR_MAXGRIDX` has to be a multiple.
+
+|`AMR_BFY` |AMReX blocking factor in y. `AMR_MAXGRIDY` has to be a multiple.
+
+|`AMR_BFZ` |AMReX blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
+
+|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY,POTENTIAL,EFIELD,
+MOMENTA,MAX_NUM_PARTICLES,MIN_NUM_PARTICLES`]
+
+|`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`
+
+|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`
+
+|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`
+
+|`AMR_SCALING` | Refinement threshold in case of `AMR_TAGGING=POTENTIAL` or
+`AMR_TAGGING=POTENTIAL
+
+|`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
+The entries define the ratio in (x, y, z) direction. For example, [1, 0.75, 0.75] yields
+a computation domain of latexmath:[$[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.75]$].
+
+
 |=======================================================================
 
 [[sec.fieldsolvers.FSFSTYPE]]
@@ -484,15 +518,18 @@ that have to pass until all energy bins are merged into one.
 === Define AMR Solver
 
 The option `AMR=TRUE` enables further commands to be used in the
-Fieldsolver command. In order to run a proper AMR simulation one
+Fieldsolver command. In order to run a proper AMR simulation one
 requires following ingredients:
 
 * Upper bound of refinement, specified by `AMR_MAXLEVEL`
-* Maximum allowable grid size, specified by `AMR_MAXGRID`. This size
-holds for all levels in all directions.
-* Mesh refinement strategy, specified by `AMR_TAGGING`. Depending on the
-tagging scheme, further keywords can be used. A summary is given in
-the Table below.
+* Maximum allowable grid size for the base level, specified by `AMR_MAXGRIDX`,
+`AMR_MAXGRIDY` and `AMR_MAXGRIDZ`. The maximum grid size of the next higher level is
+given by the division with the grid cell refinement ratio. The same is true for
+the blocking factors.
+* Mesh refinement strategy, specified by `AMR_TAGGING`. Depending on the
+tagging scheme, further keywords can be used.
+
+See also <<tab_FIELDSOLVER_Commands>> and <<tab_Mesh_refinement_strategies>>.
 
 .Mesh refinement strategies
 [cols="<1,<4",options="header",]
@@ -527,6 +564,62 @@ refined. The bound is specified with `AMR_MIN_NUM_PART`
 refined. The bound is specified with `AMR_MAX_NUM_PART`
 |=======================================================================
 
+[[sec.fieldsolvers.AMR.multigrid]]
+==== Hardware-Architecture Independent AMR Poisson Solver
+
+This solvers is enabled with `ENABLE_AMR_MG_SOLVER=ON` and requires a working
+Trilinos installation with at least the following packages:
+
+* Tpetra <<bib.tpetra>>
+* Ifpack2 <<bib.ifpack2>>
+* Amesos2 and Belos <<bib.amesos2-belos>>
+* MueLu <<bib.muelu>>
+
+Some base level linear solvers may require additional third party libraries. These
+are `SUPERLU` <<bib.superlu>>, `UMFPACK` <<bib.umfpack>>, `PARDISO_MKL` <<bib.pardiso>> <<bib.pardiso-2>>,
+`MUMPS` <<bib.mumps>> and `LAPACK` <<bib.lapack>>. A full list of the arguments
+and linear solvers is given in <<tab_AMR_MG_Commands>>. The solver is tested with
+version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
+
+.Extension of the `FIELDSOLVER` command for the AMR Poisson Solver
+[cols="<1,<4",options="header",]
+[[tab_AMR_MG_Commands,Table {counter:tab-cnt}]]
+|=======================================================================
+|Command |Purpose
+|`AMR_MG_SMOOTHER` |The pre- and post-smoother which is either
+[`GS` (Gauss-Seidel), `JACOBI` or `SGS` (symmetric Gauss-Seidel)]. Default: `GS`
+
+|`AMR_MG_NSWEEPS` |The number of smoothing steps. Default: 8
+
+|`AMR_MG_PREC` |The preconditioner of the bottom linear solver. Please see
+<<bib.ifpack2>> for further information.
+[`NONE,ILUT,CHEBYSHEV,RILUK,SA,JACOBI,BLOCK_JACOBI,GS,BLOCK_GS`]
+
+|`AMR_MG_INTERP` |The prolongator of the level solution to next higher level
+[`PC` (piecewise constant),`TRILINEAR`,`LAGRANGE` (coarse-fine interface only)].
+Default `PC`
+
+|`AMR_MG_NORM` |The norm of the convergence criterion [`L1,L2,LINF`]. Default: `LINF`
+
+|`AMR_MG_VERBOSE` |Boolean to enable/disable solver output. It writes an SDDS file.
+Default: `FALSE`
+
+|`AMR_MG_REBALANCE` |Boolean to rebalance the smoothed aggregation preconditioner or
+linear solver (if `TRUE`, it uses subcommunicators to reduce the communication
+overhead). Default: `FALSE`
+
+|`AMR_MG_REBALANCE` |Reuse type of the smoothed aggregation multigrid solver of MueLu.
+Please see <<bib.muelu>> for further information.
+[`NONE`,RP,RAP,S,FULL`]. Default: `RAP`
+
+|`AMR_MG_TOL` |The tolerance of the solver. Default: latexmath:[$10^{-10}$]
+
+|`ITSOLVER` |The solver of the linear system of equations on the base level.
+[`BICGSTAB,MINRES,PCPG,CG,GMRES,STOCHASTIC_CG,RECYCLING_CG,RECYCLING_GMRES,
+KLU2,SUPERLU,UMFPACK,PARDISO_MKL,MUMPS,LAPACK,SA`]. Please see
+<<bib.amesos2-belos>> for further information. Default: CG
+|=======================================================================
+
 [[sec.fieldsolvers.bibliography]]
 === References
 
@@ -556,5 +649,39 @@ anchor:bib.qiang2006-1_fieldsolver[[{counter:bib-cnt}\]]
 
 anchor:bib.qiang2006-2_fieldsolver[[{counter:bib-cnt}\]]
 <<bib.qiang2006-2_fieldsolver>> J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+
+anchor:bib.tpetra[[{counter:bib-cnt}\]]
+<<bib.tpetra>> C. G. Baker and M. A. Heroux, https://doi.org/10.3233/SPR-2012-0349[_Tpetra, and the use of generic programming in scientific computing_], Scientific Programming, 20(2):115–128 (2012).
+
+anchor:bib.ifpack2[[{counter:bib-cnt}\]]
+<<bib.ifpack2>> A. Prokopenko, C. M. Siefert, J. J. Hu, M. Hoemmen, and A. Klinvex, https://doi.org/10.2172/1259544[_Ifpack2 User's Guide 1.0_], Technical Report SAND2016-5338, Sandia National Labs (2016).
+
+anchor:bib.amesos2-belos[[{counter:bib-cnt}\]]
+<<bib.amesos2-belos>> E. Bavier, M. Hoemmen, S. Rajamanickam, and H. Thornquist, https://doi.org/10.3233/SPR-2012-0352[_Amesos2 and Belos: Direct and iterative solvers for large sparse linear systems_], Scientific Programming, 20(3):241–255 (2012).
+
+anchor:bib.muelu[[{counter:bib-cnt}\]]
+<<bib.muelu>> L. Berger-Vergiat, C. A. Glusa, J. J. Hu, M. Mayr, A. Prokopenko, C. M. Siefert, R. S. Tuminaro, and T. A. Wiesner, https://doi.org/10.2172/1491860[_MueLu User's Guide_], Technical Report SAND2019-0537, Sandia National Laboratories (2019).
+
+anchor:bib.superlu[[{counter:bib-cnt}\]]
+<<bib.superlu>> X. Li, J. Demmel, J. Gilbert, L. Grigori, M. Shao, and I. Yamazaki, http://crd.lbl.gov/~xiaoye/SuperLU[_SuperLU Users' Guide_], Technical Report LBNL-44289, Lawrence Berkeley National Laboratory (1999).
+
+anchor:bib.umfpack[[{counter:bib-cnt}\]]
+<<bib.umfpack>> T. A. Davis, https://doi.org/10.1145/992200.992206[_Algorithm 832: UMFPACK V4.3—an Unsymmetric-Pattern Multifrontal Method_], ACM Trans. Math. Softw., 30(2):196–199 (2004).
+
+anchor:bib.pardiso[[{counter:bib-cnt}\]]
+<<bib.pardiso>> O. Schenk and K. Gärtner, https://doi.org/10.1016/j.future.2003.07.011[_Solving unsymmetric sparse systems of linear equations with PARDISO_], Future Generation Computer Systems, 20(3):475–487 (2004).
+
+anchor:bib.pardiso-2[[{counter:bib-cnt}\]]
+<<bib.pardiso-2>> https://software.intel.com/en-us/onemkl-linux-developer-guide[_Developer Guide for Intel(R) oneAPI Math Kernel Library for Linux_], last updated: February 7, 2020.
+
+anchor:bib.mumps[[{counter:bib-cnt}\]]
+<<bib.mumps>> P. R. Amestoy, I. S. Duff, J.-Y. L'Excellent, and J. Koster, https://doi.org/10.1137/S0895479899358194[_A Fully Asynchronous Multifrontal Solver Using Distributed Dynamic Scheduling_], SIAM Journal on Matrix Analysis and Applications, 23(1):15–41 (2001).
+
+anchor:bib.lapack[[{counter:bib-cnt}\]]
+<<bib.lapack>> E. Anderson, Z. Bai, C. Bischof, L. S. Blackford, J. Demmel, J. Dongarra, J. Du Croz, A. Greenbaum, S. Hammarling, A. McKenney, and D. Sorensen, https://doi.org/10.1137/1.9780898719604[_LAPACK Users' Guide_], SIAM, third edition, 1999,
+ISBN 978-0-89871-447-0.
+
+anchor:bib.amrsolver[[{counter:bib-cnt}\]]
+<<bib.amrsolver>> M. Frey, A. Adelmann, and U. Locans, https://doi.org/10.1016/j.cpc.2019.106912[_On architecture and performance of adaptive mesh refinement in an electrostatics Particle-In-Cell code_], Computer Physics Communications, 247:106912 (2020).
 
 // EOF
