@@ -340,7 +340,7 @@ There are several methods to access output data:
 | septum(<probe>)
 
 | Returns the minimum bin count between the last and second last turn at the given probe. It
-  uses the <probe>.hist and <probe>.peaks file (cf. link:elements#sec.elements.probe-opal-cycl[probe element]).
+  uses the _<probe>.hist_ and _<probe>.peaks_ file (cf. link:elements#sec.elements.probe-opal-cycl[probe element]).
 
 |=======================================================================
 
