@@ -480,8 +480,8 @@ After compiling _OPAL_ with `ENABLE_AMR=ON`, the option `AMR=TRUE` enables furth
 commands to be used in the Fieldsolver command (cf. <<tab_AMR_extensions_fieldsolver_command>>).
 
 The current AMR interface in _OPAL_ is based on _AMReX_ <<bib.amrex>> which provides the
-multigrid solvers `FMG` (till release 18.07) and `ML`. We also provide a hardware-architecture
-independent solver which is described in <<sec.fieldsolvers.AMR.multigrid>>.
+multigrid solvers `FMG` (till release 18.07) and `ML`. We also provide a _Trilinos_ based solver
+which is described in the section <<sec.fieldsolvers.AMR.multigrid>>.
 
 In order to setup an AMR simulation, the user has to specify the number of AMR levels. The
 hierarchy is built based on the values of the refinement ratios, blocking factors and
