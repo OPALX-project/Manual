@@ -536,7 +536,7 @@ MOMENTA,MAX_NUM_PARTICLES,MIN_NUM_PARTICLES`]
 
 |`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
 The entries define the ratio in (x, y, z) direction. For example, [1, 0.75, 0.75] yields
-a computation domain of latexmath:[$[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.75]$].
+a computation domain of latexmath:[[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.75]].
 
 |=======================================================================
 
@@ -621,7 +621,7 @@ overhead). Default: `FALSE`
 Please see <<bib.muelu>> for further information.
 [`NONE`,RP,RAP,S,FULL`]. Default: `RAP`
 
-|`AMR_MG_TOL` |The tolerance of the solver. Default: latexmath:[$10^{-10}$]
+|`AMR_MG_TOL` |The tolerance of the solver. Default: latexmath:[10^{-10}]
 
 |`ITSOLVER` |The solver of the linear system of equations on the base level.
 [`BICGSTAB,MINRES,PCPG,CG,GMRES,STOCHASTIC_CG,RECYCLING_CG,RECYCLING_GMRES,
