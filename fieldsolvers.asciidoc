@@ -534,7 +534,7 @@ See also <<tab_Mesh_refinement_strategies>>.
 |`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`.
 See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING=POTENTIAL` and `AMR_TAGGING=POTENTIAL.
+|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING=POTENTIAL` and `AMR_TAGGING=POTENTIAL`.
 See also <<tab_Mesh_refinement_strategies>>.
 
 |`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
