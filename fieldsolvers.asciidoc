@@ -634,7 +634,7 @@ SUPERLU, UMFPACK, PARDISO_MKL, MUMPS, LAPACK, SA`]. Please see
 
 [[sec.fieldsolvers.AMR.use]]
 ==== Use of AMR
-AMR is only available in the multi-bunch mode (cf. [[sec.opalcycl.MultiBunch]]) of _OPAL-cycl_. As soon as
+AMR is only available in the multi-bunch mode (cf. <<sec.opalcycl.MultiBunch>>) of _OPAL-cycl_. As soon as
 more than one bunch is in the simulation, the AMR hierarchy is built. Note that _AMReX_ handles the MPI parallelism,
 hence, other Poisson solvers of _OPAL_ (cf. `FSTYPE` in <<tab_FIELDSOLVER_Commands>>) are not available.
 
