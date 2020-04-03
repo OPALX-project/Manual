@@ -533,12 +533,12 @@ See also <<tab_Mesh_refinement_strategies>>.
 |`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`.
 See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING=POTENTIAL` and `AMR_TAGGING=POTENTIAL`.
+|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING=POTENTIAL` and `AMR_TAGGING=EFIELD`.
 See also <<tab_Mesh_refinement_strategies>>.
 
 |`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
-The entries define the ratio in (x, y, z) direction. For example, [1, 0.75, 0.75] yields
-a computation domain of latexmath:[[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.75]].
+The entries define the ratio in (x, y, z) direction. For example, latexmath:[[1, 0.75, 0.75\]] yields
+a computation domain of latexmath:[[-1, 1\]\times [-0.75, 0.75\]\times [-0.75, 0.75\]].
 
 |=======================================================================
 
@@ -549,12 +549,12 @@ a computation domain of latexmath:[[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.7
 |Value |Behavior
 |`POTENTIAL` |Mark each cell if
 latexmath:[\phi^{level}_{cell}\ge\alpha\max\phi^{level}], where
-latexmath:[\alpha\in[0, 1]] is the scaling factor `AMR_SCALING`
+latexmath:[\alpha\in[0, 1\]] is the scaling factor `AMR_SCALING`
 
 |`EFIELD` |Mark each cell if the electric field component of any
 direction satisfies
 latexmath:[E^{level}_{d, cell}\ge\alpha\max E_{d}^{level}], where
-latexmath:[d=x, y, z] and latexmath:[\alpha\in[0, 1]] is the scaling
+latexmath:[d=x, y, z] and latexmath:[\alpha\in[0, 1\]] is the scaling
 factor `AMR_SCALING`
 
 |`MOMENTA` |It performs a loop over all particles of a level and
