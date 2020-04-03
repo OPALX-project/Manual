@@ -496,7 +496,7 @@ provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
 [[tab_AMR_extensions_fieldsolver_command,Table {counter:tab-cnt}]]
 |=======================================================================
 |Command |Purpose
-|`FSTYPE` | AMR Poisson solvers: `FMG` (BoxLib), `ML` (AMReX) and `AMR_MG`
+|`FSTYPE` | AMR Poisson solvers: `FMG` (_BoxLib_), `ML` (_AMReX_) and `AMR_MG`
 
 |`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
 `AMR_MAXLEVEL` is zero)
@@ -516,23 +516,26 @@ provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
 |`AMR_MAXGRIDZ` |Maximum grid size of base level in z. It has to be smaller than
 `MZ` when running in parallel
 
-|`AMR_BFX` |AMReX blocking factor in x. `AMR_MAXGRIDX` has to be a multiple.
+|`AMR_BFX` |_AMReX_ blocking factor in x. `AMR_MAXGRIDX` has to be a multiple.
 
-|`AMR_BFY` |AMReX blocking factor in y. `AMR_MAXGRIDY` has to be a multiple.
+|`AMR_BFY` |_AMReX_ blocking factor in y. `AMR_MAXGRIDY` has to be a multiple.
 
-|`AMR_BFZ` |AMReX blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
+|`AMR_BFZ` |_AMReX_ blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
 
 |`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY, POTENTIAL, EFIELD,
 MOMENTA, MAX_NUM_PARTICLES, MIN_NUM_PARTICLES`]
 
-|`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`
+|`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`.
+See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`
+|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`.
+See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`
+|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`.
+See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_SCALING` | Refinement threshold in case of `AMR_TAGGING=POTENTIAL` or
-`AMR_TAGGING=POTENTIAL
+|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING=POTENTIAL` and `AMR_TAGGING=POTENTIAL.
+See also <<tab_Mesh_refinement_strategies>>.
 
 |`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
 The entries define the ratio in (x, y, z) direction. For example, [1, 0.75, 0.75] yields
