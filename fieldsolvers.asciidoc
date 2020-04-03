@@ -602,13 +602,13 @@ version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
 
 |`AMR_MG_PREC` |The preconditioner of the bottom linear solver. Please see
 <<bib.ifpack2>> for further information.
-[`NONE,ILUT,CHEBYSHEV,RILUK,SA,JACOBI,BLOCK_JACOBI,GS,BLOCK_GS`]
+[`NONE, ILUT, CHEBYSHEV, RILUK, SA, JACOBI, BLOCK_JACOBI, GS, BLOCK_GS`]
 
 |`AMR_MG_INTERP` |The prolongator of the level solution to next higher level
-[`PC` (piecewise constant),`TRILINEAR`,`LAGRANGE` (coarse-fine interface only)].
+[`PC` (piecewise constant), `TRILINEAR`, `LAGRANGE` (coarse-fine interface only)].
 Default: `PC`
 
-|`AMR_MG_NORM` |The norm of the convergence criterion [`L1,L2,LINF`]. Default: `LINF`
+|`AMR_MG_NORM` |The norm of the convergence criterion [`L1, L2, LINF`]. Default: `LINF`
 
 |`AMR_MG_VERBOSE` |Boolean to enable/disable solver output. It writes an SDDS file.
 Default: `FALSE`
@@ -619,13 +619,13 @@ overhead). Default: `FALSE`
 
 |`AMR_MG_REBALANCE` |Reuse type of the smoothed aggregation multigrid solver of MueLu.
 Please see <<bib.muelu>> for further information.
-[`NONE,RP,RAP,S,FULL`]. Default: `RAP`
+[`NONE, RP, RAP, S, FULL`]. Default: `RAP`
 
 |`AMR_MG_TOL` |The tolerance of the solver. Default: latexmath:[10^{-10}]
 
 |`ITSOLVER` |The solver of the linear system of equations on the base level.
-[`BICGSTAB,MINRES,PCPG,CG,GMRES,STOCHASTIC_CG,RECYCLING_CG,RECYCLING_GMRES,
-KLU2,SUPERLU,UMFPACK,PARDISO_MKL,MUMPS,LAPACK,SA`]. Please see
+[`BICGSTAB, MINRES, PCPG, CG, GMRES, STOCHASTIC_CG, RECYCLING_CG, RECYCLING_GMRES, KLU2,
+SUPERLU, UMFPACK, PARDISO_MKL, MUMPS, LAPACK, SA`]. Please see
 <<bib.amesos2-belos>> for further information. Default: CG
 |=======================================================================
 
