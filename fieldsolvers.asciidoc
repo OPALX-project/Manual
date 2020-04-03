@@ -652,7 +652,7 @@ OPTION, AMR_REGRID_FREQ  = 10;
 OPTION, AMR_YT_DUMP_FREQ = 100000;
 ...
 
-// intialize kinetic energy etc.
+// initialize kinetic energy etc.
 REAL Edes      = .072;
 REAL turns     = 8;
 REAL nstep     = 360;
