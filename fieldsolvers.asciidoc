@@ -640,7 +640,7 @@ hence, other Poisson solvers of _OPAL_ (cf. `FSTYPE` in <<tab_FIELDSOLVER_Comman
 
 [[sec.fieldsolvers.AMR.example]]
 ==== AMR Example
-In the example below we show an example of an AMR simulation setup. It has a latexmath:[[128^3\]] base
+In the example below we show an AMR simulation setup. It has a latexmath:[[128\]^3] base
 grid and creates two AMR levels. The maximum grid size of the base level is 32. Hence, we can have 4
 MPI-processes per spatial dimension on level zero.
 
