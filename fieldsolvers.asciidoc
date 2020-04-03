@@ -638,6 +638,66 @@ AMR is only available in the multi-bunch mode (cf. <<sec.opalcycl.MultiBunch>>) 
 more than one bunch is in the simulation, the AMR hierarchy is built. Note that _AMReX_ handles the MPI parallelism,
 hence, other Poisson solvers of _OPAL_ (cf. `FSTYPE` in <<tab_FIELDSOLVER_Commands>>) are not available.
 
+[[sec.fieldsolvers.AMR.example]]
+==== AMR Example
+In the example below we show an example of an AMR simulation setup. It has a latexmath:[[128^3\]] base
+grid and creates two AMR levels. The maximum grid size of the base level is 32. Hence, we can have 4
+MPI-processes per spatial dimension on level zero.
+
+[source]
+----
+// global options
+OPTION, AMR              = TRUE;
+OPTION, AMR_REGRID_FREQ  = 10;
+OPTION, AMR_YT_DUMP_FREQ = 100000;
+...
+
+// intialize kinetic energy etc.
+REAL Edes      = .072;
+REAL turns     = 8;
+REAL nstep     = 360;
+REAL frequency = 50.650;
+...
+
+// define the cyclotron
+ring: Cyclotron, ...
+rf0: RFCavity, ...
+rf1: RFCavity, ...
+rf2: RFCavity, ...
+rf3: RFCavity, ...
+rf4: RFCavity, ...
+l1:   Line = (ring, rf0, rf1, rf2, rf3, rf4);
+
+// define the distribution
+Dist1: DISTRIBUTION, ...
+
+// fieldsolver command
+Fs1:FIELDSOLVER, FSTYPE=AMR_MG,
+                 MX=128, MY=128, MT=128,
+                 PARFFTX=true, PARFFTY=true, PARFFTT=true,
+                 BCFFTX=open, BCFFTY=open, BCFFTT=open,
+                 BBOXINCR=20, AMR_MAXLEVEL=2,
+                 AMR_MAXGRIDX=32, AMR_MAXGRIDY=32, AMR_MAXGRIDZ=32,
+                 AMR_BFX=16, AMR_BFY=16, AMR_BFZ=16,
+                 AMR_REFX=2, AMR_REFY=2, AMR_REFZ=2,
+                 AMR_DOMAIN_RATIO={1.0, 0.75, 0.75},
+                 AMR_TAGGING=CHARGE_DENSITY, AMR_DENSITY=1.0e-9,
+                 AMR_MG_VERBOSE=true, AMR_MG_REBALANCE=true, AMR_MG_REUSE=FULL,
+                 ITSOLVER=SA, AMR_MG_NORM=LINF, AMR_MG_NSWEEPS=12;
+
+beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1e5, BCURRENT=2.0E-3, CHARGE=1.0, BFREQ= frequency;
+
+Select, Line=l1;
+
+TRACK,LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,TIMEINTEGRATOR="RK-4";
+    run, method = "CYCLOTRON-T", beam=beam1, fieldsolver=Fs1, distribution=Dist1,
+    MBMODE=FORCE, TURNS=11, MB_BINNING=GAMMA, MB_ETA=0.25;
+
+endtrack;
+
+Stop;
+----
+
 [[sec.fieldsolvers.bibliography]]
 === References
 
