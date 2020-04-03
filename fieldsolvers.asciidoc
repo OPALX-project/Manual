@@ -606,7 +606,7 @@ version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
 
 |`AMR_MG_INTERP` |The prolongator of the level solution to next higher level
 [`PC` (piecewise constant),`TRILINEAR`,`LAGRANGE` (coarse-fine interface only)].
-Default `PC`
+Default: `PC`
 
 |`AMR_MG_NORM` |The norm of the convergence criterion [`L1,L2,LINF`]. Default: `LINF`
 
