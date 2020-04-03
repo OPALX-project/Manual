@@ -477,14 +477,19 @@ that have to pass until all energy bins are merged into one.
 === Define AMR Solver
 
 After compiling _OPAL_ with `ENABLE_AMR=ON`, the option `AMR=TRUE` enables further
-commands to be used in the Fieldsolver command
-(cf. <<tab_AMR_extensions_fieldsolver_command>>). The user specifies the
-maximum grid size of the base level. The size of the next higher level is
-given by the division with the grid cell refinement ratio. The same is true for
-the blocking factors.
+commands to be used in the Fieldsolver command (cf. <<tab_AMR_extensions_fieldsolver_command>>).
 
-Depending on the tagging scheme, further keywords can be used.
-See also <<tab_FIELDSOLVER_Commands>> and <<tab_Mesh_refinement_strategies>>.
+The current AMR interface in _OPAL_ is based on _AMReX_ <<bib.amrex>> which provides the
+multigrid solvers `FMG` (till release 18.07) and `ML`. We also provide a hardware-architecture
+independent solver which is described in <<sec.fieldsolvers.AMR.multigrid>>.
+
+In order to setup an AMR simulation, the user has to specify the number of AMR levels. The
+hierarchy is built based on the values of the refinement ratios, blocking factors and
+maximum grid sizes of the base level. The maximum grid size of the next higher level is
+given by the division with the refinement ratio. The same is true for
+the blocking factors. The mesh refinement follows user-dependent rules that are
+provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
+<<tab_Mesh_refinement_strategies>>.
 
 .AMR extensions to the `FIELDSOLVER` command
 [cols="<1,<4",options="header",]
@@ -572,7 +577,7 @@ refined. The bound is specified with `AMR_MAX_NUM_PART`
 ==== Hardware-Architecture Independent AMR Poisson Solver
 
 This solvers is enabled with `ENABLE_AMR_MG_SOLVER=ON` and requires a working
-Trilinos installation with at least the following packages:
+_Trilinos_ installation with at least the following packages:
 
 * Tpetra <<bib.tpetra>>
 * Ifpack2 <<bib.ifpack2>>
@@ -653,6 +658,9 @@ anchor:bib.qiang2006-1_fieldsolver[[{counter:bib-cnt}\]]
 
 anchor:bib.qiang2006-2_fieldsolver[[{counter:bib-cnt}\]]
 <<bib.qiang2006-2_fieldsolver>> J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+
+anchor:bib.amrex[[{counter:bib-cnt}\]]
+<<bib.amrex>> W. Zhang, A. Almgren, et al., https://doi.org/10.21105/joss.01370[_AMReX: a framework for block-structured adaptive mesh refinement_], Journal of Open Source Software, 4(37):1370 (2019).
 
 anchor:bib.tpetra[[{counter:bib-cnt}\]]
 <<bib.tpetra>> C. G. Baker and M. A. Heroux, https://doi.org/10.3233/SPR-2012-0349[_Tpetra, and the use of generic programming in scientific computing_], Scientific Programming, 20(2):115–128 (2012).
