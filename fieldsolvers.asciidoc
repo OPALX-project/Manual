@@ -517,9 +517,9 @@ that have to pass until all energy bins are merged into one.
 [[sec.fieldsolvers.AMR]]
 === Define AMR Solver
 
-The option `AMR=TRUE` enables further commands to be used in the
-Fieldsolver command. In order to run a proper AMR simulation one
-requires following ingredients:
+After compiling _OPAL_ with `ENABLE_AMR=ON`, the option `AMR=TRUE` enables further
+commands to be used in the Fieldsolver command. In order to run a proper AMR
+simulation one requires following ingredients:
 
 * Upper bound of refinement, specified by `AMR_MAXLEVEL`
 * Maximum allowable grid size for the base level, specified by `AMR_MAXGRIDX`,
