@@ -581,10 +581,10 @@ refined. The bound is specified with `AMR_MAX_NUM_PART`
 This solvers is enabled with `ENABLE_AMR_MG_SOLVER=ON` and requires a working
 _Trilinos_ installation with at least the following packages:
 
-* Tpetra <<bib.tpetra>>
-* Ifpack2 <<bib.ifpack2>>
-* Amesos2 and Belos <<bib.amesos2-belos>>
-* MueLu <<bib.muelu>>
+* _Tpetra_ <<bib.tpetra>>
+* _Ifpack2_ <<bib.ifpack2>>
+* _Amesos2_ and _Belos_ <<bib.amesos2-belos>>
+* _MueLu_ <<bib.muelu>>
 
 Some base level linear solvers may require additional third party libraries. These
 are `SUPERLU` <<bib.superlu>>, `UMFPACK` <<bib.umfpack>>, `PARDISO_MKL` <<bib.pardiso>> <<bib.pardiso-2>>,
