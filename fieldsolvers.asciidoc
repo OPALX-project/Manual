@@ -362,47 +362,6 @@ grid
 
 |`PRECMODE` |Behavior of the preconditioner
 
-|`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
-`AMR_MAXLEVEL` is zero)
-
-|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2 is tested`
-
-|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2 is tested`
-
-|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2 is tested`
-
-|`AMR_MAXGRIDX` |Maximum grid size of base level in x. It has to be smaller than
-`MX` when running in parallel
-
-|`AMR_MAXGRIDY` |Maximum grid size of base level in y. It has to be smaller than
-`MY` when running in parallel
-
-|`AMR_MAXGRIDZ` |Maximum grid size of base level in z. It has to be smaller than
-`MZ` when running in parallel
-
-|`AMR_BFX` |AMReX blocking factor in x. `AMR_MAXGRIDX` has to be a multiple.
-
-|`AMR_BFY` |AMReX blocking factor in y. `AMR_MAXGRIDY` has to be a multiple.
-
-|`AMR_BFZ` |AMReX blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
-
-|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY,POTENTIAL,EFIELD,
-MOMENTA,MAX_NUM_PARTICLES,MIN_NUM_PARTICLES`]
-
-|`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`
-
-|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`
-
-|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`
-
-|`AMR_SCALING` | Refinement threshold in case of `AMR_TAGGING=POTENTIAL` or
-`AMR_TAGGING=POTENTIAL
-
-|`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
-The entries define the ratio in (x, y, z) direction. For example, [1, 0.75, 0.75] yields
-a computation domain of latexmath:[$[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.75]$].
-
-
 |=======================================================================
 
 [[sec.fieldsolvers.FSFSTYPE]]
@@ -518,18 +477,61 @@ that have to pass until all energy bins are merged into one.
 === Define AMR Solver
 
 After compiling _OPAL_ with `ENABLE_AMR=ON`, the option `AMR=TRUE` enables further
-commands to be used in the Fieldsolver command. In order to run a proper AMR
-simulation one requires following ingredients:
-
-* Upper bound of refinement, specified by `AMR_MAXLEVEL`
-* Maximum allowable grid size for the base level, specified by `AMR_MAXGRIDX`,
-`AMR_MAXGRIDY` and `AMR_MAXGRIDZ`. The maximum grid size of the next higher level is
+commands to be used in the Fieldsolver command
+(cf. <<tab_AMR_extensions_fieldsolver_command>>). The user specifies the
+maximum grid size of the base level. The size of the next higher level is
 given by the division with the grid cell refinement ratio. The same is true for
 the blocking factors.
-* Mesh refinement strategy, specified by `AMR_TAGGING`. Depending on the
-tagging scheme, further keywords can be used.
 
+Depending on the tagging scheme, further keywords can be used.
 See also <<tab_FIELDSOLVER_Commands>> and <<tab_Mesh_refinement_strategies>>.
+
+.AMR extensions to the `FIELDSOLVER` command
+[cols="<1,<4",options="header",]
+[[tab_AMR_extensions_fieldsolver_command,Table {counter:tab-cnt}]]
+|=======================================================================
+|Command |Purpose
+|`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
+`AMR_MAXLEVEL` is zero)
+
+|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2 is tested`
+
+|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2 is tested`
+
+|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2 is tested`
+
+|`AMR_MAXGRIDX` |Maximum grid size of base level in x. It has to be smaller than
+`MX` when running in parallel
+
+|`AMR_MAXGRIDY` |Maximum grid size of base level in y. It has to be smaller than
+`MY` when running in parallel
+
+|`AMR_MAXGRIDZ` |Maximum grid size of base level in z. It has to be smaller than
+`MZ` when running in parallel
+
+|`AMR_BFX` |AMReX blocking factor in x. `AMR_MAXGRIDX` has to be a multiple.
+
+|`AMR_BFY` |AMReX blocking factor in y. `AMR_MAXGRIDY` has to be a multiple.
+
+|`AMR_BFZ` |AMReX blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
+
+|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY,POTENTIAL,EFIELD,
+MOMENTA,MAX_NUM_PARTICLES,MIN_NUM_PARTICLES`]
+
+|`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`
+
+|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`
+
+|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`
+
+|`AMR_SCALING` | Refinement threshold in case of `AMR_TAGGING=POTENTIAL` or
+`AMR_TAGGING=POTENTIAL
+
+|`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
+The entries define the ratio in (x, y, z) direction. For example, [1, 0.75, 0.75] yields
+a computation domain of latexmath:[$[-1, 1]\times [-0.75, 0.75]\times [-0.75, 0.75]$].
+
+|=======================================================================
 
 .Mesh refinement strategies
 [cols="<1,<4",options="header",]
