@@ -628,7 +628,7 @@ Please see <<bib.muelu>> for further information.
 |`ITSOLVER` |The solver of the linear system of equations on the base level.
 [`BICGSTAB, MINRES, PCPG, CG, GMRES, STOCHASTIC_CG, RECYCLING_CG, RECYCLING_GMRES, KLU2,
 SUPERLU, UMFPACK, PARDISO_MKL, MUMPS, LAPACK, SA`]. Please see
-<<bib.amesos2-belos>> for further information. Default: CG
+<<bib.amesos2-belos>> for further information. Default: `CG`
 |=======================================================================
 
 [[sec.fieldsolvers.bibliography]]
