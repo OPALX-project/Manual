@@ -590,7 +590,7 @@ Some base level linear solvers may require additional third party libraries. The
 are `SUPERLU` <<bib.superlu>>, `UMFPACK` <<bib.umfpack>>, `PARDISO_MKL` <<bib.pardiso>> <<bib.pardiso-2>>,
 `MUMPS` <<bib.mumps>> and `LAPACK` <<bib.lapack>>. A full list of the arguments
 and linear solvers is given in <<tab_AMR_MG_Commands>>. The solver is tested with
-version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
+_Trilinos_ version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
 
 .Extension of the `FIELDSOLVER` command for the AMR Poisson Solver
 [cols="<1,<4",options="header",]
