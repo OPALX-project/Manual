@@ -522,8 +522,7 @@ provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
 
 |`AMR_BFZ` |_AMReX_ blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
 
-|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY, POTENTIAL, EFIELD,
-MOMENTA, MAX_NUM_PARTICLES, MIN_NUM_PARTICLES`]
+|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY, POTENTIAL, EFIELD, MOMENTA, MAX_NUM_PARTICLES, MIN_NUM_PARTICLES`]
 
 |`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`.
 See also <<tab_Mesh_refinement_strategies>>.
