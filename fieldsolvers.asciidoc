@@ -319,8 +319,8 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the Fieldsolver command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG` and `NONE`. AMR solvers:
-`FMG`, `ML` and `AMR_MG`
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG` and `NONE`. Further
+arguments are enabled with the AMR solver (cf. <<sec.fieldsolvers.AMR>>).
 
 |`PARFFTX` |If `TRUE`, the dimension latexmath:[x] is distributed
 among the processors
@@ -491,6 +491,8 @@ See also <<tab_FIELDSOLVER_Commands>> and <<tab_Mesh_refinement_strategies>>.
 [[tab_AMR_extensions_fieldsolver_command,Table {counter:tab-cnt}]]
 |=======================================================================
 |Command |Purpose
+|`FSTYPE` | AMR Poisson solvers: `FMG` (BoxLib), `ML` (AMReX) and `AMR_MG`
+
 |`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
 `AMR_MAXLEVEL` is zero)
 
