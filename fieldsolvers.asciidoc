@@ -619,7 +619,7 @@ overhead). Default: `FALSE`
 
 |`AMR_MG_REBALANCE` |Reuse type of the smoothed aggregation multigrid solver of MueLu.
 Please see <<bib.muelu>> for further information.
-[`NONE`,RP,RAP,S,FULL`]. Default: `RAP`
+[`NONE,RP,RAP,S,FULL`]. Default: `RAP`
 
 |`AMR_MG_TOL` |The tolerance of the solver. Default: latexmath:[10^{-10}]
 
