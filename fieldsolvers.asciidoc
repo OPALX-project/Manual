@@ -604,7 +604,7 @@ version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
 
 |`AMR_MG_PREC` |The preconditioner of the bottom linear solver. Please see
 <<bib.ifpack2>> for further information.
-[`NONE, ILUT, CHEBYSHEV, RILUK, SA, JACOBI, BLOCK_JACOBI, GS, BLOCK_GS`]
+[`NONE, ILUT, CHEBYSHEV, RILUK, SA, JACOBI, BLOCK_JACOBI, GS, BLOCK_GS`]. Default: `NONE`
 
 |`AMR_MG_INTERP` |The prolongator of the level solution to next higher level
 [`PC` (piecewise constant), `TRILINEAR`, `LAGRANGE` (coarse-fine interface only)].
