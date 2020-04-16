@@ -609,9 +609,6 @@ SYSTEM,string;         // shortcut
 The string see link:format#sec.format.astring[String Attributes] `string` must be a valid operating
 system command.
 
-[[sec.control.system-command-under-unix]]
-==== SYSTEM Command under UNIX
-
 Most UNIX commands can be issued directly.
 
 Example:
@@ -621,6 +618,21 @@ SYSTEM,"ls -l"
 ----
 
 causes a listing of the current directory in long form on the terminal.
+
+The `SYSTEM` command can also be used to execute an external script.
+
+Below is an example that generates a random seed with python.
+The python script
+http://amas.web.psi.ch/opal/Documentation/master/examples/gen_seed.py[gen_seed.py]
+is called with the `SYSTEM` command.
+This scripts writes the seed to a file
+http://amas.web.psi.ch/opal/Documentation/master/examples/gen_seed.opal[gen_seed.opal]
+that can be read with the `CALL` command.
+
+----
+SYSTEM, "python gen_seed.py";
+CALL, "gen_seed.opal";
+----
 
 [[sec.control.title]]
 === TITLE Statement
