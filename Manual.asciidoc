@@ -57,6 +57,7 @@ It should be noted that not all features of _OPAL_ are available in all
 flavours.
 
 ifdef::env-gitlab[]
+
 == Table of Contents
 
 . link:introduction[Introduction]
@@ -92,6 +93,9 @@ ifdef::env-gitlab[]
 endif::[]
 
 ifdef::backend-docbook5,backend-html5[]
+
+include::Manual.macros[]
+
 include::introduction.adoc[]
 
 include::conventions.adoc[]

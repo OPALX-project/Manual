@@ -4,6 +4,9 @@ ifdef::env-gitlab[]
 :toc: macro
 :toclevels: 3
 
+:branch: master
+:website: http://amas.web.psi.ch/opal/Documentation
+
 link:home[Back to Main Page]
 
 toc::[]
@@ -377,7 +380,7 @@ program requires the data format like PSI format field file _ZYKL9Z.NAR_
 and _SO3AV.NAR_, which was given by the measurement. We add 4 parameters
 at the header of the file, namely, latexmath:[r_{min}] [mm],
 latexmath:[\Delta r] [mm], latexmath:[\theta_{min}][latexmath:[^{\circ}]],
-latexmath:[\Delta \theta][latexmath:[^{\circ}]], If latexmath:[\Delta r] or
+latexmath:[\Delta \theta][latexmath:[^{\circ}]]. If latexmath:[\Delta r] or
 latexmath:[\Delta \theta] is decimal, one can set its negative opposite
 number. This is useful if the decimal is unlimited. For instance, if
 latexmath:[\Delta \theta = \frac{1}{3}{^{\circ}}], the fourth line of
@@ -605,7 +608,7 @@ mrad.
 A bash script _tuning.sh_ is shown on the next page, to execute
 _OPAL-cycl_ for tune calculations.
 
-https://gitlab.psi.ch/OPAL/Manual-master/wikis/examples/tuning.sh[tuning.sh]
+{website}/{branch}/examples/tuning.sh[tuning.sh]
 
 To start execution, just run
 _tuning.sh_ which uses the input file _testcycl.in_ and the auxiliary

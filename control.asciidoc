@@ -4,6 +4,9 @@ ifdef::env-gitlab[]
 :toc: macro
 :toclevels: 3
 
+:branch: master
+:website: http://amas.web.psi.ch/opal/Documentation
+
 link:home[Back to Main Page]
 
 toc::[]
@@ -281,14 +284,6 @@ LOGBENDTRAJECTORY::
   Save the reference trajectory inside dipoles in an ASCII file. For
   each dipole a separate file is written to the directory _data/_.
   Default is false.
-VERSION::
-  Used to indicate for which version of _OPAL_ the input file is
-  written. The versions of _OPAL_ and of the input file have to match.
-  The format is `Mmmpp` where `M` stands for the major, `m` for the
-  minor and `p` for the patch version. For version 1.6.0 of _OPAL_
-  `VERSION` should read `10600`. If the version doesn’t match then
-  _OPAL_ stops immediately and prints instructions on how to convert the
-  input file.
 AMR::
   Enable adaptive mesh refinement. Default: FALSE
 AMR_YT_DUMP_FREQ::
@@ -623,10 +618,10 @@ The `SYSTEM` command can also be used to execute an external script.
 
 Below is an example that generates a random seed with python.
 The python script
-http://amas.web.psi.ch/opal/Documentation/master/examples/gen_seed.py[gen_seed.py]
+{website}/{branch}/examples/gen_seed.py[gen_seed.py]
 is called with the `SYSTEM` command.
 This scripts writes the seed to a file
-http://amas.web.psi.ch/opal/Documentation/master/examples/gen_seed.opal[gen_seed.opal]
+{website}/{branch}/examples/gen_seed.opal[gen_seed.opal]
 that can be read with the `CALL` command.
 
 ----

@@ -107,7 +107,7 @@ image::figures/H5rootPicture.png[scaledwidth=18cm,width=90%]
 [[sec.introduction.change-history]]
 === Change History
 
-See https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes/ReleaseNotes[Release Notes]
+See https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes[Release Notes]
 for a detailed list of changes in _OPAL_.
 
 [[sec.introduction.known-issues-and-limitations]]
