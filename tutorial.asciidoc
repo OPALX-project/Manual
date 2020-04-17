@@ -4,6 +4,9 @@ ifdef::env-gitlab[]
 :toc: macro
 :toclevels: 3
 
+:branch: master
+:website: http://amas.web.psi.ch/opal/Documentation
+
 link:home[Back to Main Page]
 
 toc::[]
@@ -152,7 +155,7 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron and other data files.
 
-https://gitlab.psi.ch/OPAL/Manual-master/wikis/examples/Injector2.in[Injector2.in]
+{website}/{branch}/examples/Injector2.in[Injector2.in]
 
 To run opal on a single node, just use this command:
 
@@ -199,7 +202,7 @@ the biggest amplitude is the betatron tune value at the given energy.
 Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
-https://gitlab.psi.ch/OPAL/Manual-master/wikis/examples/Injector2-sc.in[Injector2-sc.in]
+{website}/{branch}/examples/Injector2-sc.in[Injector2-sc.in]
 
 To run opal on single node, just use this command:
 

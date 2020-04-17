@@ -92,7 +92,7 @@ Introducing the Lie operator, which acts similar to a "waiting" Poisson Bracket:
 \end{aligned}
 ++++
 
-If a function latexmath:[f:= f_{\left( \mathbf{q_{(s)}},\mathbf{p_{(s)}}\right) }] describes one of the phase space variables latexmath:[v] its total derivative to the independent variable, combined with the Hamiltonian equations of motions, is similar to the Lie operator times the indepedent variable, i. e. latexmath:[s].
+If a function latexmath:[f:= f \left( \mathbf{q_{(s)}},\mathbf{p_{(s)}}\right) ] describes one of the phase space variables latexmath:[v] its total derivative to the independent variable, combined with the Hamiltonian equations of motions, is similar to the Lie operator times the indepedent variable, i. e. latexmath:[s].
 
 [latexmath]
 ++++
@@ -107,7 +107,7 @@ The integral over the independent variable latexmath:[\int \cdot ds]:
 [latexmath]
 ++++
 \begin{aligned}
-    f_{(s)}&= e^{-:\!H\!: s} f_{(s_0)} \\
+    f(s)&= e^{-:\!H\!: s} f(s_0) \\
         \mathcal{M} &= e^{-:\!H\!: s}
 \end{aligned}
 ++++
@@ -120,12 +120,12 @@ Where latexmath:[e^{-:\!H\!: s}] is the Lie expansion.
 ==== Implementation of map tracking
 For the derivative of the Hamiltonian, a Differential Algebra (DA) was used, in particular the Truncated Power Series Algebra (TPSA).
 This algebra uses the Taylor expansion as the equivalent function, which also is responsible for its name by creating truncated power series.
-Just form the definition of the Taylor expansion, it can be seen that a finite, to the order latexmath:[\Omega], expansion is an approximation of the actual function, due to the error term latexmath:[\mathcal{O}\left( \mathbf{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) ].
+Just form the definition of the Taylor expansion, it can be seen that a finite, to the order latexmath:[\Omega], expansion is an approximation of the actual function, due to the error term latexmath:[\mathcal{O}\left( \mathbf{v}^{\,\Omega +1}\left( \Delta s\right)\right) ].
 
 [latexmath]
 ++++
 \begin{aligned}
-     f = \mathbf{\mathcal{M}} = {\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \mathbf{v}_{\left( \Delta s\right)} \right)^n} + {\mathcal{O}\left( \mathbf{v}_{\left( \Delta s\right)}^{\,\Omega +1}\right) }
+     f = \mathbf{\mathcal{M}} = {\sum_{n=0}^{\Omega} \frac{f^{\left(n\right)}}{n !} \left( \mathbf{v}\left( \Delta s\right) \right)^n} + {\mathcal{O}\left( \mathbf{v}^{\,\Omega +1}\left( \Delta s\right)\right) }
 \end{aligned}
 ++++
 

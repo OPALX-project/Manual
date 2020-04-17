@@ -64,7 +64,7 @@ Each chapter is represented by one single file which is included by the master d
 * Define an anchor before the title
 * Include the base file name in the anchor name to avoid duplicate anchor names.
 * Start the anchor name for a chapter with `chp.`.
-* User `sec.` for sections
+* Use `sec.` for sections
 * Use `==`, `===` etc. for titles of chapters, sections etc.
 
 Examples:
@@ -81,7 +81,7 @@ for section it must be like
 
 ### Figures and Tables
 
-The tool-chain to create PDF's enumerates figures and tables chapter wise
+The tool-chain to create PDFs enumerates figures and tables chapter wise
 by default. Unfortunately the tool-chain to create HTML does *not* support 
 enumeration of figures and tables at all.
 
@@ -206,7 +206,7 @@ y = x^2
 ++++++++++++ 
 ```
 To be able to preview LaTeX formulas in Gitlab, we write them in the Gitlab
-flavoured variant. In our tool chain to translate the manual, we pre-process all
+flavoured variant. In our tool chain to translate the manual, we preprocess all
 formulas to get them in the correct form.
 
 > **Note** inline math must be written on one line! Otherwise our pre-processor fails!
