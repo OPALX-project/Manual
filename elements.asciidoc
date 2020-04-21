@@ -1668,6 +1668,8 @@ AZIMUTHAL_EXTENT:: The field will be assumed zero if particles are more than
 AZIMUTHAL_EXTENT from the magnet centre (psi=0). Default is 
 CENTRE_LENGTH/2.+5.*END_LENGTH [m].
 
+This is a restricted feature: _OPAL-cycl_.
+
 [[sec.elements.verticalffa]]
 ==== Vertical FFA Magnet
 
@@ -1700,6 +1702,8 @@ symmetrically in the bounding box [m].
 
 VERTICALFFAMAGNET is rectangular; the next element will be placed BB_LENGTH
 from the start position of the VERTICALFFAMAGNET.
+
+This is a restricted feature: _OPAL-cycl_.
 
 [[sec.elements.ringdefinition]]
 === Ring Definition
