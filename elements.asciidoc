@@ -1621,6 +1621,90 @@ Ring: CYCLOTRON, TYPE="RINGCYC", CYHARMON=6, PHIINIT=0.0, PRINIT=0.0,
 
 This is a restricted feature: _OPAL-cycl_.
 
+[[sec.elements.FFA]]
+=== FFA Magnet
+OPAL supports two analytical field models that describe FFA magnets. 
+SCALINGFFAMAGNET generates a sector FFA magnet that scales radially.
+VERTICALFFAMAGNET generates a vertical FFA magnet that scales vertically.
+
+[[sec.elements.scalingffa]]
+==== Scaling FFA Magnet
+
+The scaling FFA magnet is a fully scaling field model that includes scaling
+fringe fields. A scaling FFA magnet has a field profile like
+
+latexmath:[B_\phi = \sum_{n=0} f_{2n+1}(\psi) h(r) \left(\frac{z}{r}\right)^{2n+1}]
+latexmath:[B_r = \sum_{n=0}  \left[ \frac{k-2n}{2n+1} f_{2n} - \tan(\delta) f_{2n+1} \right] h(r) \left(\frac{z}{r}\right)^{2n+1}]
+latexmath:[B_z = \sum_{n=0} f_{2n}(\psi) h(r) \left(\frac{z}{r}\right)^{2n}]
+
+where latexmath:[r] and latexmath:[z] are cylindrical polar coordinates,
+latexmath:[\psi = \phi - \tan(\delta) \ln(r/r_0)] is the azimuthal angle in the
+spiral coordinate system, latexmath:[delta], latexmath:[r_0] and latexmath:[k]
+are geometrical constants that define the magnet field dependence and 
+latexmath:[B_0] is the dipole field strength of the magnet at radius
+latexmath:[r_0]. In OPAL, latexmath:[f_0] is a latexmath:[tanh] function and 
+higher order terms are chosen so as to satisfy Maxwell's equations.
+
+B0:: The nominal dipole field of the magnet [T].
+R0:: Radial scale [m].
+FIELD_INDEX:: The scaling magnet field index.
+TAN_DELTA:: Tangent of the spiral angle; set to 0 to make a radial sector 
+magnet.
+MAX_Y_POWER:: The maximum power in y that will be considered in the field 
+expansion.
+END_LENGTH:: The end length of the spiral FFA [m].
+HEIGHT:: Full height of the magnet. Particles moving more than height/2. off the 
+midplane (either above or below) are out of the aperture [m].
+CENTRE_LENGTH::  The centre length of the spiral FFA [m].
+RADIAL_NEG_EXTENT:: Particles are considered outside the tracking region if 
+radius is less than R0-RADIAL_NEG_EXTENT [m].
+RADIAL_POS_EXTENT:: Particles are considered outside the tracking region if 
+radius is greater than R0+RADIAL_POS_EXTENT [m].
+MAGNET_START:: Determines the position of the central portion of the magnet 
+field relative to the element start (default is 2*end_length). [m].
+MAGNET_END:: Offset to the end of the magnet, i.e. placement of the next
+element. Default is centre_length + 4*end_length.
+AZIMUTHAL_EXTENT:: The field will be assumed zero if particles are more than 
+AZIMUTHAL_EXTENT from the magnet centre (psi=0). Default is 
+CENTRE_LENGTH/2.+5.*END_LENGTH [m].
+
+This is a restricted feature: _OPAL-cycl_.
+
+[[sec.elements.verticalffa]]
+==== Vertical FFA Magnet
+
+The VERTICALFFAMAGNET is a fully scaling field model that includes scaling
+fringe fields. A vertical FFA magnet has a field profile like
+
+latexmath:[B_x = \sum_n B_0 \exp(mz) \frac{1}{m} \partial_x f_n y^n]
+latexmath:[B_y = \sum_n B_0 \exp(mz) \frac{n+1}{m} f_{n+1} y^n]
+latexmath:[B_z = \sum_n B_0 \exp(mz) f_n y^n]
+
+where latexmath:[m] and latexmath:[B_0] are magnet parameters, latexmath:[f_0]
+is a latexmath:[tanh] function and higher order terms are chosen so as to
+satisfy Maxwell's equations. The field parameters can be specified in the OPAL
+input file using the following parameters
+
+B0:: The nominal dipole field of the magnet at z = 0, latexmath:[B_0] [T].
+FIELD_INDEX:: The scaling magnet field index, latexmath:[m] [m^-1].
+MAX_Y_POWER:: The maximum power in y that will be considered in the field 
+expansion.
+END_LENGTH:: The end length of the VFFA [m].
+CENTRE_LENGTH::  The centre length of the VFFA [m].
+WIDTH:: The full width of the magnet. Particles moving more than WIDTH/2 
+horizontally, in either direction, are considered out of the tracking region [m].
+HEIGHT_NEG_EXTENT:: Particles are considered outside the tracking region if 
+height is less than HEIGHT_NEG_EXTENT [m].
+HEIGHT_POS_EXTENT:: Particles are considered outside the tracking region if 
+height is greater than HEIGHT_POS_EXTENT [m].
+BB_LENGTH:: The total length of the bounding box. The magnet will be placed
+symmetrically in the bounding box [m].
+
+VERTICALFFAMAGNET is rectangular; the next element will be placed BB_LENGTH
+from the start position of the VERTICALFFAMAGNET.
+
+This is a restricted feature: _OPAL-cycl_.
+
 [[sec.elements.ringdefinition]]
 === Ring Definition
 
