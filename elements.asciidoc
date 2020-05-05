@@ -1633,9 +1633,14 @@ VERTICALFFAMAGNET generates a vertical FFA magnet that scales vertically.
 The scaling FFA magnet is a fully scaling field model that includes scaling
 fringe fields. A scaling FFA magnet has a field profile like
 
-latexmath:[B_\phi = \sum_{n=0} f_{2n+1}(\psi) h(r) \left(\frac{z}{r}\right)^{2n+1}]
-latexmath:[B_r = \sum_{n=0}  \left[ \frac{k-2n}{2n+1} f_{2n} - \tan(\delta) f_{2n+1} \right] h(r) \left(\frac{z}{r}\right)^{2n+1}]
-latexmath:[B_z = \sum_{n=0} f_{2n}(\psi) h(r) \left(\frac{z}{r}\right)^{2n}]
+[latexmath]
+++++
+B_\phi = \sum_{n=0} f_{2n+1}(\psi) h(r) \left(\frac{z}{r}\right)^{2n+1}
+
+B_r = \sum_{n=0}  \left[ \frac{k-2n}{2n+1} f_{2n} - \tan(\delta) f_{2n+1} \right] h(r) \left(\frac{z}{r}\right)^{2n+1}
+
+B_z = \sum_{n=0} f_{2n}(\psi) h(r) \left(\frac{z}{r}\right)^{2n}
+++++
 
 where latexmath:[r] and latexmath:[z] are cylindrical polar coordinates,
 latexmath:[\psi = \phi - \tan(\delta) \ln(r/r_0)] is the azimuthal angle in the
@@ -1676,9 +1681,14 @@ This is a restricted feature: _OPAL-cycl_.
 The VERTICALFFAMAGNET is a fully scaling field model that includes scaling
 fringe fields. A vertical FFA magnet has a field profile like
 
-latexmath:[B_x = \sum_n B_0 \exp(mz) \frac{1}{m} \partial_x f_n y^n]
-latexmath:[B_y = \sum_n B_0 \exp(mz) \frac{n+1}{m} f_{n+1} y^n]
-latexmath:[B_z = \sum_n B_0 \exp(mz) f_n y^n]
+[latexmath]
+++++
+B_x = \sum_n B_0 \exp(mz) \frac{1}{m} \partial_x f_n y^n
+
+B_y = \sum_n B_0 \exp(mz) \frac{n+1}{m} f_{n+1} y^n
+
+B_z = \sum_n B_0 \exp(mz) f_n y^n
+++++
 
 where latexmath:[m] and latexmath:[B_0] are magnet parameters, latexmath:[f_0]
 is a latexmath:[tanh] function and higher order terms are chosen so as to
