@@ -1465,9 +1465,9 @@ BSCALE:
 SYMMETRY::
   Defines symmetrical fold number of the B field map data.
 FMLOWE::
-  Minimal energy [MeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
+  Minimal energy [GeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
 FMHIGHE::
-  Maximal energy [MeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
+  Maximal energy [GeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
 RINIT::
   The initial radius of the reference particle (unit: mm, default: 0)
 PHIINIT::
