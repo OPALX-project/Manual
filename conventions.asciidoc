@@ -4,7 +4,7 @@ ifdef::env-gitlab[]
 :toc: macro
 :toclevels: 3
 
-link:home[Back to Main Page]
+//link:home[Back to Main Page]
 
 toc::[]
 endif::[]
