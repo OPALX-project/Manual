@@ -2655,7 +2655,7 @@ PMAPFN::
   plane with primary direction corresponding to the azimuthal direction,
   secondary direction to the radial direction
   (same file structure as `Cyclotron` `TYPE=CARBONCYCL`).
-  If `PMAPFN` is specified, the `PRESSURE` parameter is ignored.
+  If `PMAPFN` is specified, `PRESSURE` parameter is taken as default value for regions in the accelerator out of the limits of the pressure map.
 PSCALE::
   Scale factor for the pressure field map (default: 1.0).
 GAS::
