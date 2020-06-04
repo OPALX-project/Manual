@@ -146,10 +146,6 @@ REAL KIG3o_vary_Z= 2.0;
 
 VALUE, {KIP3_1L_vary, KIVU_vary_Z, KIG3U_vary_Z, KIG3O_vary_Z};
 
-// Not sure what is going on here, is this replacing the collimators listed above??
-
-CALL,FILE = "../Collimators/collimatorsJUN15.dat";
-
 //---------------------------------------------------------------------------------------------//
 //                                      Distributions                                          //
 //---------------------------------------------------------------------------------------------//
@@ -158,13 +154,13 @@ CALL,FILE = "../Collimators/collimatorsJUN15.dat";
 //       Manual). Some from other sources are in BETA*GAMMA, thus have no units.
 
 //For Single Particle
-DistSP: DISTRIBUTION, TYPE = fromfile, FNAME = "../Distribution/spdist.opal",
+DistSP: DISTRIBUTION, TYPE = fromfile, FNAME = "spdist.opal",
         INPUTMOUNITS = EV;
 //For Multiple Particles
-DistSC: DISTRIBUTION, TYPE = fromfile, FNAME = "../Distribution/scdist.opal",
+DistSC: DISTRIBUTION, TYPE = fromfile, FNAME = "scdist.opal",
         INPUTMOUNITS = NONE;
 //For Tune 
-DistT:  DISTRIBUTION, TYPE = fromfile, FNAME = "../Distribution/tdist.opal";
+DistT:  DISTRIBUTION, TYPE = fromfile, FNAME = "tdist.opal";
 
 //General Distribution
 DistG: DISTRIBUTION, TYPE = gauss,
