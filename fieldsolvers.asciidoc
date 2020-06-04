@@ -328,7 +328,7 @@ among the processors
 |`PARFFTY` |If `TRUE`, the dimension latexmath:[y] is distributed
 among the processors
 
-|`PARFFTZ` |If `TRUE`, the dimension latexmath:[z] is distributed
+|`PARFFTT` |If `TRUE`, the dimension latexmath:[z] is distributed
 among the processors
 
 |`MX` |Number of grid points in latexmath:[x] specifying rectangular
