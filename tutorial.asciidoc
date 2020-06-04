@@ -153,9 +153,18 @@ acceleration cavities (represented by 2 single-gap cavities here) and
 two single-gap flat-top cavities.
 
 Following is an input file of *Single Particle Tracking mode* for PSI
-Injector II cyclotron and other data files.
+Injector II cyclotron.
 
 {website}/{branch}/examples/Injector2.in[Injector2.in]
+
+The supplementary files should be placed in the same directory.
+
+* {website}/{branch}/examples/Fieldmaps/Cav1.dat[Cav1.dat]
+* {website}/{branch}/examples/Fieldmaps/Cav3.dat[Cav3.dat]
+* {website}/{branch}/examples/Fieldmaps/ZYKL9Z.NAR[ZYKL9Z.NAR]
+* {website}/{branch}/examples/Distribution/scdist.opal[scdist.opal]
+* {website}/{branch}/examples/Distribution/spdist.opal[spdist.opal]
+* {website}/{branch}/examples/Distribution/tdist.opal[tdist.opal]
 
 To run opal on a single node, just use this command:
 
@@ -203,6 +212,8 @@ Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
 {website}/{branch}/examples/Injector2-sc.in[Injector2-sc.in]
+
+For the supplementary files see above, <<sec.tutorial.inj2>>
 
 To run opal on single node, just use this command:
 
