@@ -14,8 +14,6 @@ endif::[]
 
 This is a modification of the link:optimiser#chp.optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
 
-**Be aware of the fact, this is an experimental feature in V2.0.0**
-
 [[sec.sampler.sample-commands]]
 === OPAL Commands
 
@@ -130,7 +128,7 @@ OPTION, INFO=TRUE;
 
 // Design variables
 nstep:  DVAR, VARIABLE="nstep", LOWERBOUND=10,     UPPERBOUND=40;
-MX:     DVAR, VARIABLE="MX",    LOWERBOUND=16,      UPPERBOUND=32;
+MX:     DVAR, VARIABLE="MX",    LOWERBOUND=16,     UPPERBOUND=32;
 
 // Sampling methods
 SM1: SAMPLING, VARIABLE="nstep", TYPE="FROMFILE",    FNAME="samples.dat";
