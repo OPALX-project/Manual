@@ -100,13 +100,13 @@ minimum value over all design variables is used.
 
 === Example Input File
 
-[source]
+.```opal.in```
 ----
 OPTION, INFO=TRUE;
 
 // Design variables
 nstep:  DVAR, VARIABLE="nstep", LOWERBOUND=10,     UPPERBOUND=40;
-MX:     DVAR, VARIABLE="MX",    LOWERBOUND=16,      UPPERBOUND=32;
+MX:     DVAR, VARIABLE="MX",    LOWERBOUND=16,     UPPERBOUND=32;
 
 // Sampling methods
 SM1: SAMPLING, VARIABLE="nstep", TYPE="FROMFILE",    FNAME="samples.dat";
@@ -126,6 +126,12 @@ SAMPLE,
 QUIT;
 ----
 
+.Data file ```opal.data``` (no function but needed for historical reasons, not needed in later versions)
+----
+nstep  25
+MX     20
+----
+
 The samples of ```nstep``` are provided by ```samples.dat``` that could look like this:
 ----
 MX    nstep
@@ -141,7 +147,7 @@ MX    nstep
 25    19
 ----
 Although the file contains samples for ```MX```, too, they are not considered. The
-corresponding template file ```Ring.tmpl``` reads:
+corresponding template file ```opal.tmpl``` reads:
 ----
 Option, ECHO=FALSE;
 Option, PSDUMPFREQ=100000;
