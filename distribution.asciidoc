@@ -106,7 +106,7 @@ Convert from [eV/c] to latexmath:[\beta_x\gamma] [dimensionless],
 
 [latexmath]
 ++++
-(\beta_x\gamma)=\sqrt{(\frac{P_x[{eV/c}]}{m_0c}+1)^2-1}.
+(\beta_x\gamma)=\frac{P_x[{eV/c}]}{m_0c}=\frac{P_x[{eV/c}]c}{m_0c^2}
 ++++
 
 This may be deduced by analogy for the latexmath:[y] and
