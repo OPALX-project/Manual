@@ -6,6 +6,7 @@ ifdef::backend-docbook5,backend-html5[]
 :numbered:
 :description: _OPAL_ User Manual
 :keywords: _OPAL_
+:revdate: July, 1st 2020
 endif::[]
 
 ifdef::backend-html5[]
