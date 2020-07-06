@@ -215,7 +215,7 @@ TITLE,"This is a title for the program run ""test""";
 CALL,FILE="save";
 
 REAL X=1;
-TWISS,LINE=LEP&STRING(X+1);
+STRING L2=LEP&STRING(X+1);
 ----
 
 The second example converts the value of the expression `X+1` to a
@@ -776,11 +776,11 @@ Examples for pattern use:
 
 ----
 SELECT,PATTERN="D.."
-SAVE,PATTERN="K.*QD.*\.R1"
+SELECT,PATTERN="K.*QD.*\.R1"
 ----
 
 The first command selects all elements whose names have exactly three
-characters and begin with the letter `D`. The second command saves
+characters and begin with the letter `D`. The second command selects
 definitions beginning with the letter `K`, containing the string `QD`,
 and ending with the string `.R1`. The two occurrences of `.*` each stand
 for an arbitrary number (including zero) of any character, and the
