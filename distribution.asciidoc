@@ -298,7 +298,7 @@ Name:DISTRIBUTION, TYPE = FROMFILE,
                    EMISSIONMODEL = None;
 ----
 
-The text input file for the `FROMFILE` distribution type has slightly a
+The text input file for the `FROMFILE` distribution type has a
 slightly different format, depending on whether the distribution is to
 be _injected_ or _emitted_. The _injected_ file format is defined in
 <<tab_fromfileinjfileformat>>. The particle coordinates are defined in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec.opalcycl.variables[_OPAL-cycl_ variables]. The _emitted_ file format is defined in
