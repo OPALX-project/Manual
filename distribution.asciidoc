@@ -237,7 +237,9 @@ generated (or read in).
 
 |`OFFSETZ` |0.0 |m |Distribution is shifted in latexmath:[z] by this
 amount relative to the reference particle. Same as the average
-latexmath:[z] position, latexmath:[\bar{z}].
+latexmath:[z] position, latexmath:[\bar{z}]. To shift the position 
+where the particles are injected please use `ZSTART` in the  
+link:track[track command].
 |=======================================================================
 
 [[sec.distribution.emitteddistattributes]]
