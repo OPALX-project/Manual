@@ -39,55 +39,8 @@ Examples:
 
 ----
 HELP;
-HELP,NAME=TWISS;
-HELP,TWISS;
-----
-
-[[sec.control.show]]
-==== SHOW Command
-
-The `SHOW` statement displays the current attribute values of an object.
-It has three formats:
-
-----
-SHOW;                 // Give help on the "SHOW" command
-SHOW,NAME=pattern;    // Show names matching of "pattern"
-SHOW,pattern;         // Shortcut for the second format
-----
-
-`pattern` is an regular expression see link:format#sec.format.wildcard[Regular Expressions]. If it is
-non-blank, _OPAL_ displays all object names matching the `pattern`.
-Entering `SHOW` alone displays help on the `SHOW` command.
-
-Examples:
-
-----
-SHOW;
-SHOW,NAME="QD.*\.L*";
-SHOW,"QD.*\.L*";
-----
-
-[[sec.control.what]]
-==== WHAT Command
-
-The `WHAT` statement displays all object names matching a given regular
-expression. It has three formats:
-
-----
-WHAT;                   // Give help on the "WHAT" command
-WHAT,NAME=label;        // Show definition of "label"
-WHAT,label;             // Shortcut for the second format
-----
-
-`label` is an identifier see link:format#sec.format.label[Identifiers or Labels]. If it is non-blank, _OPAL_
-displays the object `label` in a format similar to the input statement
-that created the object. Entering `WHAT` alone displays help on the
-`WHAT` command. Examples:
-
-----
-WHAT;
-WHAT,NAME=QD;
-WHAT,QD;
+HELP,NAME=FIELDSOLVER;
+HELP,FIELDSOLVER;
 ----
 
 [[sec.control.stop]]
@@ -235,8 +188,6 @@ AUTOPHASE::
   is gained should be. The higher this number the more accurate the phase
   will be. If it is set to -1 then the auto-phasing algorithm isn't
   run. Default: 6.
-PPDEBUG::
-  If true, use special initial velocity distribution for parallel plate and print special debug output
 SURFDUMPFREQ::
   The frequency to dump surface-partcle interaction data. Default: -1 (no dump).
 NUMBLOCKS::
@@ -328,7 +279,6 @@ OPTION,SEED=987456321
 |`EBDUMP`            |= `FALSE`
 |`CSRDUMP`           |= `FALSE`
 |`AUTOPHASE`         |= `6`
-|`PPDEBUG`           |= `FALSE`
 |`SURFDUMPFREQ`      |= `-1`
 |`NUMBLOCKS`         |= `0`
 |`RECYCLEBLOCKS`     |= `0`
@@ -529,10 +479,10 @@ A sequence like the following is permitted:
 
 ----
 ...                 // some definitions
-X=0;                // create variable X with value
+REAL X=0;           // create variable X with value
                     // zero
 WHILE (X <= 0.10) {
-  TWISS,LINE=...;   // uses X=0, 0.01, ..., 0.10
+  VALUE, VALUE={X};
   X=EVAL(X+.01);    // increment variable X by 0.01
                     // CANNOT use: X=X+.01;
 }
@@ -691,26 +641,6 @@ OPTION, STATDUMPFREQ = 10;      //How often beam stats dumped to .stat.
 OPTION, BOUNDPDESTROYFQ=10;     //Delete lost particles, if any
 OPTION, AUTOPHASE=4;            //Always leave this on, unless doing a phase scan
 OPTION, VERSION=20000;
-----
-
-[[sec.control.save]]
-==== SAVE Statement
-
-The `SAVE` command has two formats:
-
-----
-SAVE,FILE=file-name
-----
-
-`file-name` is a string see link:format#sec.format.astring[String Attributes]. The command causes all
-beam element, beam line, and parameter definitions to be written on the
-named file.
-
-Examples:
-
-----
-SAVE,FILE="structure";
-SAVE,"structure";
 ----
 
 [[sec.control.if]]
