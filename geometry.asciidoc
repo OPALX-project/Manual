@@ -19,7 +19,7 @@ modes:
 
 1.  specify a H5Fed file holding the surface mesh of a complicated
 boundary geometry
-2.  specify a cylinder with an elliptic base area
+2.  use a predefined geometry: `ELLIPTIC`, `RECTANGULAR` or `BOXCORNER`
 
 [[sec.geometrycmd]]
 Geometry Command
@@ -29,25 +29,26 @@ Geometry Command
 [[tab_GEOMETRY_Commands,Table {counter:tab-cnt}]]
 [cols="<1,<4",options="header",]
 |==============================================================
-|Command |Purpose
+|Command    |Purpose
 |`GEOMETRY` |Specify a geometry
-|`FGEOM` |Specifies the H5Fed geometry file
-|`LENGTH` |Specifies the length of the geometry
-|`S` |Specifies the start of the geometry
-|`A` |Specifies the semi-major axis of the elliptic base area
-|`B` |Specifies the semi-minor axis of the elliptic base area
+|`FGEOM`    |Specifies the geometry file, an H5Fed file, containing the surface mesh
+             of the geometry.
+|`LENGTH`   |The length of the specified geometry in [m].
+|`TOPO`     |The topology of the geometry: `ELLIPTIC`, `RECTANGULAR` or `BOXCORNER`
+|`S`        |The start of the specified geometry in [m].
+|`A`        |The semi-major axis of the ellipse or the half aperture
+             of the rectangle (horizontally) in [m].
+|`B`        |The semi-minor axis of the ellipse or the half aperture
+             of the rectangle (vertically) in [m].
+|`C`        |The height of the corner in [m]. `BOXCORNER` only.
 |==============================================================
 
-FGEOM::
-  Define the geometry file, an H5Fed file, containing the surface mesh
-  of the geometry.
-LENGTH::
-  The length of the specified geometry in [m].
-S::
-  The start of the specified geometry in [m].
-A::
-  The semi-major axis of the ellipse in [m].
-B::
-  The semi-minor axis of the ellipse in [m].
+An example of an elliptic geometry:
+
+----
+Name: GEOMETRY, TOPO=ELLIPTIC, LENGTH=1.0, A=0.005, B=0.005;
+----
+
+The geometry element must later be passed to the link:fieldsolvers#sec.fieldsolvers.fieldsolvercmd[fieldsolver command].
 
 // EOF
