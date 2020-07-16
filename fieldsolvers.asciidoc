@@ -297,7 +297,7 @@ preconditioned conjugate gradient algorithm with smoothed aggregation
 (SA) based algebraic multigrid (AMG) preconditioning. More details are
 given in <<bib.Adelmann2009p543>>.
 
-This solvers is enabled with ENABLE_SAAMG_SOLVER=ON in the _OPAL_ compilation. 
+This solvers is enabled with `ENABLE_SAAMG_SOLVER=ON` in the _OPAL_ compilation. 
 It requires Parmetis and Trilinos previous installation.
 
 [[sec.fieldsolvers.energy-binning]]
