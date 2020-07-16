@@ -442,7 +442,7 @@ Default value is 100.
 === Define Preconditioner Behavior
 
 The behavior of the preconditioner can be: `STD`, `HIERARCHY` or
-`REUSE`. This argument is only relevant when using the `MG` solver and
+`REUSE`. This argument is only relevant when using the `SAAMG` solver and
 should *only be set if the consequences to simulation and solver are
 evident*. A short description is given in the
 Table below.
