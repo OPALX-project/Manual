@@ -14,7 +14,7 @@ endif::[]
 
 At present the `GEOMETRY` command is still an *experimental feature*
 which is not to be used by the general user. It can only be used to
-specify boundaries for the MG Solver. The command can be used in two
+specify boundaries for the `SAAMG` Solver. The command can be used in two
 modes:
 
 1.  specify a H5hut file holding the surface mesh of a complicated

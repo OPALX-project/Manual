@@ -297,6 +297,9 @@ preconditioned conjugate gradient algorithm with smoothed aggregation
 (SA) based algebraic multigrid (AMG) preconditioning. More details are
 given in <<bib.Adelmann2009p543>>.
 
+This solver is enabled with `ENABLE_SAAMG_SOLVER=ON` in the _OPAL_ compilation. 
+It requires Parmetis and Trilinos to be installed.
+
 [[sec.fieldsolvers.energy-binning]]
 === Energy Binning
 
@@ -319,7 +322,7 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the Fieldsolver command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG` and `NONE`. Further
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG` and `NONE`. Further
 arguments are enabled with the AMR solver (cf. <<sec.fieldsolvers.AMR>>).
 
 |`PARFFTX` |If `TRUE`, the dimension latexmath:[x] is distributed
@@ -340,34 +343,34 @@ grid
 |`MT` |Number of grid points in latexmath:[z] specifying rectangular
 grid
 
-|`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]
+|`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]. (`FFT` + `AMR_MG` only)
 
-|`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`]
+|`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`]. (`FFT` + `AMR_MG` only)
 
-|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`]
+|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`]. (`FFT` + `AMR_MG` only)
 
-|`GREENSF` |Defines the Greens function for the FFT Solver
+|`GREENSF` |Defines the Greens function for the FFT Solver. (`FFT` only)
 
 |`BBOXINCR` |Enlargement of the bounding box in %
 
-|`GEOMETRY` |Geometry to be used as domain boundary
+|`GEOMETRY` |Geometry to be used as domain boundary. (`SAAMG` only)
 
-|`ITSOLVER` |Type of iterative solver
+|`ITSOLVER` |Type of iterative solver. (`SAAMG` + `AMR_MG`  only)
 
-|`INTERPL` |Interpolation used for boundary points
+|`INTERPL` |Interpolation used for boundary points. (`SAAMG` only)
 
-|`TOL` |Tolerance for iterative solver
+|`TOL` |Tolerance for iterative solver. (`SAAMG` only)
 
-|`MAXITERS` |Maximum number of iterations of iterative solver
+|`MAXITERS` |Maximum number of iterations of iterative solver. (`SAAMG` only)
 
-|`PRECMODE` |Behavior of the preconditioner
+|`PRECMODE` |Behavior of the preconditioner. (`SAAMG` only)
 
 |=======================================================================
 
 [[sec.fieldsolvers.FSFSTYPE]]
 === Define the Fieldsolver to be used
 
-At present only a FFT based solver is available. Future solvers will
+At present FFT based solver is the most stable solver. Other solvers
 include Finite Element solvers and a Multigrid solver with
 Shortley-Weller boundary conditions for irregular domains.
 
@@ -405,7 +408,7 @@ integrated Green’s function is described in <<bib.qiang2005_fieldsolver>>, <<b
 
 The bounding box defines a minimal rectangular domain including all
 particles. With `BBOXINCR` the bounding box can be enlarged by a factor
-given in percent of the minimal rectangular domain.
+given in percent of the minimal rectangular domain. Default value is 2.0.
 
 [[sec.fieldsolvers.GEOMETRY]]
 === Define Geometry
@@ -416,30 +419,33 @@ details see Chapter link:geometry#chp.geometry[Geometry].
 [[sec.fieldsolvers.ITSOLVER]]
 === Define Iterative Solver
 
-The iterative solver for solving the preconditioned system: `CG`,
+The iterative solver for solving the preconditioned system: `CG` (default),
 `BiCGSTAB` or `GMRES`.
 
 [[sec.fieldsolvers.INTERPL]]
 === Define Interpolation for Boundary Points
 
 The interpolation method for grid points near the boundary: `CONSTANT`,
-`LINEAR` or `QUADRATIC`.
+`LINEAR` (default) or `QUADRATIC`.
 
 [[sec.fieldsolvers.TOL]]
 === Define Tolerance
 
-The tolerance for the iterative solver used by the `MG` solver.
+The tolerance for the iterative solver used by the `SAAMG` solver.
+Default value is 1e-8.
 
 [[sec.fieldsolvers.MAXITERS]]
 === Define Maximal Iterations
 
 The maximal number of iterations the iterative solver performs.
+Default value is 100.
+
 
 [[sec.fieldsolvers.PRECMODE]]
 === Define Preconditioner Behavior
 
 The behavior of the preconditioner can be: `STD`, `HIERARCHY` or
-`REUSE`. This argument is only relevant when using the `MG` solver and
+`REUSE`. This argument is only relevant when using the `SAAMG` solver and
 should *only be set if the consequences to simulation and solver are
 evident*. A short description is given in the
 Table below.
@@ -449,10 +455,10 @@ Table below.
 [[tab_PRECMODE_Commands,Table {counter:tab-cnt}]]
 |=======================================================================
 |Value |Behavior
-|`STD` |The preconditioner is rebuilt in every time step (enabled by
-default)
+|`STD` |The preconditioner is rebuilt in every time step
 
-|`HIERARCHY` |The hierarchy (tentative prolongator) is reused
+|`HIERARCHY` |The hierarchy (tentative prolongator) is reused (enabled by
+default)
 
 |`REUSE` |The preconditioner is reused
 |=======================================================================
