@@ -35,7 +35,8 @@ Geometry Command
                  containing the surface mesh of the geometry.       |
 |`LENGTH`       |The length of the specified geometry in [m].       |1.0
 |`TOPO`         |The topology of the geometry: `ELLIPTIC`,
-                 `RECTANGULAR` or `BOXCORNER`                       |`ELLIPTIC`
+                 `RECTANGULAR` or `BOXCORNER`.
+                 If `FGEOM` is selected `TOPO` is overwritten.      |`ELLIPTIC`
 |`S`            |The start of the specified geometry in [m].        |1.0
 |`A`            |The semi-major axis of the ellipse or the half
                  aperture of the rectangle (horizontally) in [m].   |0.025
