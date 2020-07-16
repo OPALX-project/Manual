@@ -47,12 +47,18 @@ Geometry Command
                  in [m]. `BOXCORNER` only.                          |0.5
 |`L2`           |The second part of the geometry with height
                  `B`-`C` in [m]. `BOXCORNER` only.                  |0.2
-|`ZSHIFT`       |Shift in z direction.                              |0.0
-|`XYZSCALE`     |Multiplicative scaling factor for coordinates      |1.0
-|`XSCALE`       |Multiplicative scaling factor for x-coordinates    |1.0
-|`YSCALE`       |Multiplicative scaling factor for y-coordinates    |1.0
-|`ZSCALE`       |Multiplicative scaling factor for z-coordinates    |1.0
-|`INSIDEPOINT`  |A point inside the geometry                        |
+|`ZSHIFT`       |Shift in z direction.
+                 Only used with a H5hut geometry.                   |0.0
+|`XYZSCALE`     |Multiplicative scaling factor for coordinates.
+                 Only used with a H5hut geometry.                   |1.0
+|`XSCALE`       |Multiplicative scaling factor for x-coordinates.
+                 Only used with a H5hut geometry.                   |1.0
+|`YSCALE`       |Multiplicative scaling factor for y-coordinates.
+                 Only used with a H5hut geometry.                   |1.0
+|`ZSCALE`       |Multiplicative scaling factor for z-coordinates.
+                 Only used with a H5hut geometry.                   |1.0
+|`INSIDEPOINT`  |A point inside the geometry.
+                 Only used with a H5hut geometry.                   |
 |==============================================================
 
 An example of an elliptic geometry:
