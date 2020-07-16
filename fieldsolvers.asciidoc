@@ -452,10 +452,10 @@ Table below.
 [[tab_PRECMODE_Commands,Table {counter:tab-cnt}]]
 |=======================================================================
 |Value |Behavior
-|`STD` |The preconditioner is rebuilt in every time step (enabled by
-default)
+|`STD` |The preconditioner is rebuilt in every time step
 
-|`HIERARCHY` |The hierarchy (tentative prolongator) is reused
+|`HIERARCHY` |The hierarchy (tentative prolongator) is reused (enabled by
+default)
 
 |`REUSE` |The preconditioner is reused
 |=======================================================================
