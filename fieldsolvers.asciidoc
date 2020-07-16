@@ -319,7 +319,7 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the Fieldsolver command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG` and `NONE`. Further
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `MG`, `SAAMG` and `NONE`. Further
 arguments are enabled with the AMR solver (cf. <<sec.fieldsolvers.AMR>>).
 
 |`PARFFTX` |If `TRUE`, the dimension latexmath:[x] is distributed
@@ -340,34 +340,34 @@ grid
 |`MT` |Number of grid points in latexmath:[z] specifying rectangular
 grid
 
-|`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]
+|`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]. (`FFT` + `AMR_MG` only)
 
-|`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`]
+|`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`]. (`FFT` + `AMR_MG` only)
 
-|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`]
+|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`]. (`FFT` + `AMR_MG` only)
 
-|`GREENSF` |Defines the Greens function for the FFT Solver
+|`GREENSF` |Defines the Greens function for the FFT Solver. (`FFT` only)
 
 |`BBOXINCR` |Enlargement of the bounding box in %
 
-|`GEOMETRY` |Geometry to be used as domain boundary
+|`GEOMETRY` |Geometry to be used as domain boundary. (`SAAMG` only)
 
-|`ITSOLVER` |Type of iterative solver
+|`ITSOLVER` |Type of iterative solver. (`SAAMG` + `AMR_MG`  only)
 
-|`INTERPL` |Interpolation used for boundary points
+|`INTERPL` |Interpolation used for boundary points. (`SAAMG` only)
 
-|`TOL` |Tolerance for iterative solver
+|`TOL` |Tolerance for iterative solver. (`SAAMG` only)
 
-|`MAXITERS` |Maximum number of iterations of iterative solver
+|`MAXITERS` |Maximum number of iterations of iterative solver. (`SAAMG` only)
 
-|`PRECMODE` |Behavior of the preconditioner
+|`PRECMODE` |Behavior of the preconditioner. (`SAAMG` only)
 
 |=======================================================================
 
 [[sec.fieldsolvers.FSFSTYPE]]
 === Define the Fieldsolver to be used
 
-At present only a FFT based solver is available. Future solvers will
+At present FFT based solver is the most stable solver. Other solvers
 include Finite Element solvers and a Multigrid solver with
 Shortley-Weller boundary conditions for irregular domains.
 
