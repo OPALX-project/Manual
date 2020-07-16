@@ -17,7 +17,7 @@ which is not to be used by the general user. It can only be used to
 specify boundaries for the MG Solver. The command can be used in two
 modes:
 
-1.  specify a H5Fed file holding the surface mesh of a complicated
+1.  specify a H5hut file holding the surface mesh of a complicated
 boundary geometry
 2.  use a predefined geometry: `ELLIPTIC`, `RECTANGULAR` or `BOXCORNER`
 
@@ -31,7 +31,7 @@ Geometry Command
 |==============================================================
 |Command        |Purpose                                            |Default Value
 |`GEOMETRY`     |Specify a geometry                                 |
-|`FGEOM`        |Specifies the geometry file, an H5Fed file,
+|`FGEOM`        |Specifies the geometry file, an H5hut file,
                  containing the surface mesh of the geometry.       |
 |`LENGTH`       |The length of the specified geometry in [m].       |1.0
 |`TOPO`         |The topology of the geometry: `ELLIPTIC`,
