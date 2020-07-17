@@ -216,8 +216,8 @@ ENABLEHDF5::
   If true (default), HDF5 read and write is enabled.
 ASCIIDUMP::
   If true, instead of HDF5, ASCII output is generated for the following
-  elements: Probe, Collimator, Monitor, Stripper and global
-  losses.
+  elements: Probe, Collimator, Monitor, Stripper, Geometry,
+  Beam stripping losses and global losses.
 BOUNDPDESTROYFQ::
   The frequency to do `boundp_destroy` to delete lost particles. Default
   10
