@@ -13,9 +13,10 @@ endif::[]
 == Geometry
 
 At present the `GEOMETRY` command is still an *experimental feature*
-which is not to be used by the general user. It can only be used to
-specify boundaries for the `SAAMG` Solver. The command can be used in two
-modes:
+which is not to be used by the general user. It can be used to act as
+a terminator for particles that cross the geometry surface and to specify
+boundaries conditions for the `SAAMG` field solver. The command can be
+used in two modes:
 
 1.  specify a H5hut file holding the surface mesh of a complicated
 boundary geometry
@@ -68,5 +69,11 @@ Name: GEOMETRY, TOPO=ELLIPTIC, LENGTH=1.0, A=0.005, B=0.005;
 ----
 
 The geometry element must later be passed to the link:fieldsolvers#sec.fieldsolvers.fieldsolvercmd[fieldsolver command].
+If only particle termination is desired, any solver can be used and
+it is not necessary to specify the geometry in the field solver command.
+
+In the link:track#sec.track.particles[`RUN` command] the boundary geometry has
+always to be specified in order to load it and use it for particle termination.
+
 
 // EOF

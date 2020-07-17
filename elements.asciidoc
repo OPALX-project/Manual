@@ -1464,6 +1464,11 @@ BSCALE:
   Scale factor for the magnetic field map.
 SYMMETRY::
   Defines symmetrical fold number of the B field map data.
+GEOMETRY::
+  Defines the boundary geometry in order to use it for
+  particle termination (see Chapter link:geometry#chp.geometry[Geometry]).
+  The particles hitting on the `GEOMETRY` will be deleted, and they are recorded in the
+  HDF5 file _<GEOM>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 FMLOWE::
   Minimal energy [GeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
 FMHIGHE::

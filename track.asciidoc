@@ -186,18 +186,18 @@ METHOD::
   be used. For the time being the following methods are known:
 +
   * `PARALLEL-T`
-    This method puts _OPAL_ in _OPAL-t_ mode see Chapter link:opalt#chp.opalt[_OPAL-t_].
+    This method puts _OPAL_ in _OPAL-t_ mode (see Chapter link:opalt#chp.opalt[_OPAL-t_]).
   * `CYCLOTRON-T`
-    This method puts _OPAL_ in _OPAL-cycl_ mode see Chapter link:opalcycl#chp.opalcycl[_OPAL-cycl_].
+    This method puts _OPAL_ in _OPAL-cycl_ mode (see Chapter link:opalcycl#chp.opalcycl[_OPAL-cycl_]).
   * `STATISTICAL-ERRORS`
     This is a method to let _OPAL_ run multiple times in parallel while
     adding imperfections to alignment and other physical quantities.
 FIELDSOLVER::
-  The field solver to be used see Chapter link:fieldsolvers#chp.fieldsolvers[Field Solver].
+  The field solver to be used (see Chapter link:fieldsolvers#chp.fieldsolvers[Field Solver]).
 DISTRIBUTION::
-  The particle distribution to be used see Chapter link:distribution#chp.distribution[Distribution].
+  The particle distribution to be used (see Chapter link:distribution#chp.distribution[Distribution]).
 BEAM::
-  The particle beam see Chapter link:beam-command#chp.beam-command[Beam Command] to be used is specified.
+  The particle beam (see Chapter link:beam-command#chp.beam-command[Beam Command]) to be used is specified.
 TURNS::
   The number of turns (integer) to be tracked (default: 1, namely single
   bunch).
@@ -234,6 +234,11 @@ MB_BINNING::
 MB_ETA::
   The scale parameter for binning in multi-bunch mode (default: 0.01). Only
   used in `MB_BINNING=GAMMA`. Only available in _OPAL-cycl_.
++
+BOUNDARYGEOMETRY::
+  The boundary geometry specification is used for
+  particle termination (see Chapter link:geometry#chp.geometry[Geometry]).
+
 +
 TRACKBACK::
   The particles are tracked backward in time if `TRUE`.
