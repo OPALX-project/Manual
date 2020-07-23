@@ -1809,11 +1809,16 @@ LENGTH::
 [[sec.elements.source]]
 === Source
 
-The `SOURCE` element only works in _OPAL-t_. Its only purpose in _OPAL-t_ is to
-indicate that the particle source is contained in the beamline. This is
-needed to place the elements in three-dimensional space when using
-`ELEMEDGE`. Otherwise it has no effect on the particles.
+The `SOURCE` element only works in _OPAL-t_. Its first purpose is to
+indicate that the particles are emitted from a  gun. This is
+needed to place the elements in three-dimensional space.  Its second purpose is
+to delete impacting particles that are propagating in reverse direction. This 
+function is optional and can be controlled with the parameter `TRANSPARENT`.
 
+TRANSPARENT::
+  Boolean to indicate whether impacting particles can propagate further. Its default
+  is `FALSE` such that the particles are deleted.
+  
 [[sec.elements.cavity]]
 === RF Cavities (_OPAL-t_ and _OPAL-cycl_)
 
