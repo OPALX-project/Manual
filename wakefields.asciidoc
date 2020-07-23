@@ -163,7 +163,7 @@ label:WAKE, TYPE=string, NBIN=real, FILTERS=string-array;
 |`WAKE` |Specify a wakefield
 
 |`TYPE` |Specify the wake function [`1D-CSR`, `1D-CSR-IGF`,
-`LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`, `LONG-TRANSV-SHORT-RANGE`]
+`LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`]
 
 |`NBIN` |Number of bins used in the calculation of the line density
 
@@ -199,8 +199,7 @@ see link:elements#sec.elements.common[Common Attributes for all Elements].
 === Define the wakefield type
 
 A string value see link:format#sec.format.astring[String Attributes] to specify the wake function,
-either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE`, `TRANSV-SHORT-RANGE`
-or `LONG-TRANSV-SHORT-RANGE`.
+either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE` or `TRANSV-SHORT-RANGE`.
 
 [[sec.wakefield.NBIN]]
 === Define the number of bins
