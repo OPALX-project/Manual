@@ -106,29 +106,25 @@ ELEMEDGE::
   element is determined by `ELEMEDGE` and its physical length. (Note
   again that in general the fields will extend past the physical end of
   the element.)
-PARTICLEMATTERINTERACTION::
-  Attach a handler for particle matter interaction, see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction].
 X::
-  X-component of the position of the element in the laboratory
-  coordinate system.
+  X-component of the position of the element relative to the position of the first
+  beamline which it is part of and which uses absolute positioning.
 Y::
-  Y-component of the position of the element in the laboratory
-  coordinate system.
+  Y-component of the position of the element relative to the position of the first
+  beamline which it is part of and which uses absolute positioning.
 Z::
-  Z-component of the position of the element in the laboratory
-  coordinate system.
+  Z-component of the position of the element relative to the position of the first
+  beamline which it is part of and which uses absolute positioning.
 THETA::
-  Angle of rotation of the element about the y-axis relative to the
-  default orientation,
-  latexmath:[\mathbf{n} = \left(0, 0, 1\right)^{\mathbf{T}}].
+  Angle of rotation of the element about the y-axis relative to the orientation
+  of the first beamline which it is part of and which uses absolute positioning.
 PHI::
-  Angle of rotation of the element about the x-axis relative to the
-  default orientation,
-  latexmath:[\mathbf{n} = \left(0, 0, 1\right)^{\mathbf{T}}]
+  Angle of rotation of the element about the x-axis relative to the orientation
+  of the first beamline which it is part of and which uses absolute positioning.
 PSI::
-  Angle of rotation of the element about the z-axis relative to the
-  default orientation,
-  latexmath:[\mathbf{n} = \left(0, 0, 1\right)^{\mathbf{T}}]
+  Angle of rotation of the element about the z-axis relative to the orientation
+  of the first beamline which it is part of and which uses absolute positioning.
+////
 ORIGIN::
   3D position vector. An alternative to using `X`, `Y` and `Z` to
   position the element. Can’t be combined with `THETA` and `PHI`. Use
@@ -137,6 +133,7 @@ ORIENTATION::
   Vector of Tait-Bryan angles <<bib.tait-bryan_elements,bib.tait-bryan>>. An alternative to rotate
   the element instead of using `THETA`, `PHI` and `PSI`. Can’t be
   combined with `X`, `Y` and `Z`, use `ORIGIN` instead.
+////
 DX::
   Error on x-component of position of element. Doesn’t affect the design
   trajectory.
@@ -152,6 +149,8 @@ DPHI::
   Error on angle `PHI`. Doesn’t affect the design trajectory.
 DPSI::
   Error on angle `PSI`. Doesn’t affect the design trajectory.
+PARTICLEMATTERINTERACTION::
+  Attach a handler for particle matter interaction, see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction].
 
 All elements can have arbitrary additional attributes which are defined
 in the respective section.
