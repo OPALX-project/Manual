@@ -96,8 +96,6 @@ dipole.
 Default aperture for all other elements is a circle of 1.0m.
 L::
   The length of the element (default: 0m).
-WAKEF::
-  Attach wakefield that was defined using the `WAKE` command.
 ELEMEDGE::
   The edge of an element is specified in s coordinates in meters. This
   edge corresponds to the origin of the local coordinate system and is
@@ -149,6 +147,8 @@ DPHI::
   Error on angle `PHI`. Doesn’t affect the design trajectory.
 DPSI::
   Error on angle `PSI`. Doesn’t affect the design trajectory.
+WAKEF::
+  Attach wakefield that was defined using the `WAKE` command.
 PARTICLEMATTERINTERACTION::
   Attach a handler for particle matter interaction, see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction].
 
