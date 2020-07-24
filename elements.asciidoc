@@ -98,10 +98,9 @@ L::
   The length of the element (default: 0m).
 ELEMEDGE::
   The edge of an element is specified in s coordinates in meters. This
-  edge corresponds to the origin of the local coordinate system and is
-  the physical start of the element. (Note that in general the fields
-  will extend in front of this position.) The physical end of the
-  element is determined by `ELEMEDGE` and its physical length. (Note
+  edge corresponds to the origin of the local coordinate system. (Note that the fields
+  can extend in front of this position.) The physical end of the
+  element is then determined by `ELEMEDGE` and its physical length. (Note
   again that in general the fields will extend past the physical end of
   the element.)
 X::
