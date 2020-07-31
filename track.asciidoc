@@ -241,7 +241,10 @@ BOUNDARYGEOMETRY::
 
 +
 TRACKBACK::
-  The particles are tracked backward in time if `TRUE`.
+  The particles are tracked backward in time if `TRACKBACK=TRUE`. _OPAL_ starts at 
+  `ZSTART` and tracks the bunch back in time. It changes the size of the time step
+  when it crosses the thresholds given in the `ZSTOP` attribute of the `TRACK` 
+  command and stops once it reaches the lowest item of `ZSTOP`.
   Only available in _OPAL-t_. Default is `FALSE`.
 
 Example:
