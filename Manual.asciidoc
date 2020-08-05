@@ -1,4 +1,4 @@
-= The _OPAL_ Framework: Version 2.3
+= The _OPAL_ Framework: Version 2.5
 Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Matthias Frey (PSI); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Nicole Neveu (SLAC); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
@@ -98,61 +98,39 @@ ifdef::env-gitlab[]
 . {baseurl}/benchmarks.{adoc}[Benchmarks]
 endif::[]
 
-ifdef::backend-docbook5,backend-html5[]
-
 include::Manual.macros[]
 
+ifdef::backend-docbook5,backend-html5[]
 include::introduction.adoc[]
-
 include::conventions.adoc[]
-
 include::pitfalls.adoc[]
-
 include::tutorial.adoc[]
-
 include::opalt.adoc[]
-
 include::opalcycl.adoc[]
-
 include::opalmap.adoc[]
-
 include::format.adoc[]
-
 include::control.adoc[]
-
 include::elements.adoc[]
-
 include::field-output.adoc[]
-
 include::lines.adoc[]
-
 include::beam-command.adoc[]
-
 include::distribution.adoc[]
-
 include::fieldsolvers.adoc[]
-
 include::track.adoc[]
-
 include::wakefields.adoc[]
-
 include::geometry.adoc[]
-
 include::partmatter.adoc[]
-
 include::optimiser.adoc[]
-
 include::sampler.adoc[]
-
 include::syntax.adoc[]
-
 include::fieldmaps.adoc[]
-
 include::opal-madx.adoc[]
-
 include::autophase.adoc[]
-
 include::benchmarks.adoc[]
+endif::[]
+
+ifdef::backend-html5[]
+include::introduction.asciidoc[]
 endif::[]
 
 // EOF
