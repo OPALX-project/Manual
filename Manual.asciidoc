@@ -26,6 +26,12 @@ ifdef::backend-html5[]
 endif::[]
 
 include::Manual.macros[]
+ifdef::env-gitlab[]
+:adoc:    asciidoc
+endif::[]
+ifdef::backend-docbook5,backend-html5[]
+:adoc:    adoc
+endif::[]
 
 :sectnums!:
 == Preliminary note
@@ -58,6 +64,7 @@ _OPAL-map_::
 
 It should be noted that not all features of _OPAL_ are available in all
 flavours.
+
 
 ifdef::env-gitlab[]
 == Table of Contents
