@@ -25,6 +25,13 @@ ifdef::backend-html5[]
 
 endif::[]
 
+ifdef::env-gitlab[]
+:adoc:    asciidoc
+endif::[]
+
+ifdef::backend-docbook5,backend-html5[]
+:adoc:    adoc
+endif::[]
 include::Manual.macros[]
 
 :sectnums!:
