@@ -1,3 +1,7 @@
-:branch: master
-:repository: https://gitlab.psi.ch/OPAL/documentation/manual
+:host:    https://gitlab.psi.ch/
+:project: OPAL/documentation/manual
+:repository: {host}/{project}
+:branch:  master
+:baseurl: {host}/{project}/blob/{branch}
+
 :website: http://amas.web.psi.ch/opal/Documentation
