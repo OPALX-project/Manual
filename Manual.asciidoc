@@ -25,6 +25,8 @@ ifdef::backend-html5[]
 
 endif::[]
 
+include::Manual.macros[]
+
 :sectnums!:
 == Preliminary note
 
@@ -58,17 +60,7 @@ It should be noted that not all features of _OPAL_ are available in all
 flavours.
 
 ifdef::env-gitlab[]
-
 == Table of Contents
-
-:host:    https://gitlab.psi.ch/
-:project: OPAL/documentation/manual
-:branch:  master
-:baseurl: {host}/{project}/blob/{branch}
-:adoc:    asciidoc
-
-include::introduction.{adoc}[Introduction]
-
 . {baseurl}/introduction.{adoc}[Introduction]
 . {baseurl}/conventions.{adoc}[Conventions]
 . {baseurl}/pitfalls.{adoc}[Pitfalls and Limitations]
@@ -99,8 +91,6 @@ include::introduction.{adoc}[Introduction]
 . {baseurl}/autophase.{adoc}[Auto-phasing Algorithm]
 . {baseurl}/benchmarks.{adoc}[Benchmarks]
 endif::[]
-
-include::Manual.macros[]
 
 ifdef::backend-docbook5,backend-html5[]
 include::introduction.adoc[]
