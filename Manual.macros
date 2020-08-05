@@ -5,3 +5,11 @@
 :baseurl: {host}/{project}/blob/{branch}
 
 :website: http://amas.web.psi.ch/opal/Documentation
+
+ifdef::env-gitlab[]
+:adoc:    asciidoc
+endif::[]
+
+ifdef::backend-docbook5,backend-html5[]
+:adoc:    asciidoc
+endif::[]
