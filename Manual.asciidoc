@@ -67,6 +67,8 @@ ifdef::env-gitlab[]
 :baseurl: {host}/{project}/blob/{branch}
 :adoc:    asciidoc
 
+include::introduction.{adoc}[Introduction]
+
 . {baseurl}/introduction.{adoc}[Introduction]
 . {baseurl}/conventions.{adoc}[Conventions]
 . {baseurl}/pitfalls.{adoc}[Pitfalls and Limitations]
@@ -99,8 +101,6 @@ ifdef::env-gitlab[]
 endif::[]
 
 include::Manual.macros[]
-
-Website: {website}
 
 ifdef::backend-docbook5,backend-html5[]
 include::introduction.adoc[]
