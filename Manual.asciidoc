@@ -129,8 +129,4 @@ include::autophase.adoc[]
 include::benchmarks.adoc[]
 endif::[]
 
-ifdef::backend-html5[]
-include::introduction.asciidoc[]
-endif::[]
-
 // EOF
