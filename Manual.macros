@@ -5,3 +5,5 @@
 :baseurl: {host}/{project}/blob/{branch}
 
 :website: http://amas.web.psi.ch/opal/Documentation
+
+:OPAL: _OPAL_
