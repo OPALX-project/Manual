@@ -37,7 +37,7 @@ include::Manual.macros[]
 :sectnums!:
 == Preliminary note
 
-This is the manual for _OPAL_ 2.3. Odd minor version numbers identify
+This is the manual for {OPAL} 2.3. Odd minor version numbers identify
 development versions. Use these versions only if you know what you are
 doing!
 
