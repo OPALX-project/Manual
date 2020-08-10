@@ -1,10 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -741,7 +738,7 @@ imposed on the flat top, latexmath:[t_\mathrm{flattop}], in
 
 |`LASERPROFFN` | |None |File name containing measured laser image.
 
-|`IMAGENAME` | |None |Used for h5 files. Name of the groups containing the laser image, see https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/LaserEmission-1/LaserEmission-1.in[regression test].
+|`IMAGENAME` | |None |Used for h5 files. Name of the groups containing the laser image, see {link_regtest_LaserEmission_1}/LaserEmission-1.in[regression test].
 
 |`INTENSITYCUT` |0.0 |None |Parameter defining floor of the background
 to be subtracted from the laser image in percent of the maximum

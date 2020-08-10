@@ -1,9 +1,0 @@
-:host:    https://gitlab.psi.ch/
-:project: OPAL/documentation/manual
-:repository: {host}/{project}
-:branch:  master
-:baseurl: {host}/{project}/blob/{branch}
-
-:website: http://amas.web.psi.ch/opal/Documentation
-
-:OPAL_version: 2.5

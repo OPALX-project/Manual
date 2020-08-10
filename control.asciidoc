@@ -1,13 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-:branch: master
-:website: http://amas.web.psi.ch/opal/Documentation
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -568,10 +562,10 @@ The `SYSTEM` command can also be used to execute an external script.
 
 Below is an example that generates a random seed with python.
 The python script
-{website}/{branch}/examples/gen_seed.py[gen_seed.py]
+{link_OPAL_doc}/examples/gen_seed.py[gen_seed.py]
 is called with the `SYSTEM` command.
 This scripts writes the seed to a file
-{website}/{branch}/examples/gen_seed.opal[gen_seed.opal]
+{link_OPAL_doc}/examples/gen_seed.opal[gen_seed.opal]
 that can be read with the `CALL` command.
 
 ----

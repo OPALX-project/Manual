@@ -1,13 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-:branch: master
-:website: http://amas.web.psi.ch/opal/Documentation
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -17,7 +11,7 @@ endif::[]
 
 This chapter will provide a jump start describing some of the most
 common used features of _OPAL_. The complete set of examples can be
-found and downloaded at https://gitlab.psi.ch/OPAL/src/wikis/home. All
+found and downloaded at {link_OPAL_wiki}/home. All
 examples are requiring a small amount of computing resources and run on
 a single core, but can be used efficiently on up to 8 cores. _OPAL_
 scales in the weak sense, hence for a higher concurrency one has to
@@ -139,9 +133,9 @@ with the first entry defining the number of cavities in the simulation.
 [[sec.tutorial.obla]]
 ==== Laser emission, OBLA (SwissFEL test facility) 4 MeV Gun and Beamline
 
-https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/LaserEmission-1/LaserEmission-1.in[LaserEmission-1.in]
+{link_regtest_LaserEmission_1}/LaserEmission-1.in[LaserEmission-1.in]
 
-All supplementary files can be found in https://gitlab.psi.ch/OPAL/regression-tests/tree/master/RegressionTests/LaserEmission-1[the laser emission regression test].
+All supplementary files can be found in {link_regtest_LaserEmission_1}[the laser emission regression test].
 
 [[sec.tutorial.inj2]]
 ==== PSI Injector II Cyclotron
@@ -155,16 +149,16 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron.
 
-{website}/{branch}/examples/Injector2.in[Injector2.in]
+{link_OPAL_doc}/examples/Injector2.in[Injector2.in]
 
 The supplementary files should be placed in the same directory.
 
-* {website}/{branch}/examples/Fieldmaps/Cav1.dat[Cav1.dat]
-* {website}/{branch}/examples/Fieldmaps/Cav3.dat[Cav3.dat]
-* {website}/{branch}/examples/Fieldmaps/ZYKL9Z.NAR[ZYKL9Z.NAR]
-* {website}/{branch}/examples/Distribution/scdist.opal[scdist.opal]
-* {website}/{branch}/examples/Distribution/spdist.opal[spdist.opal]
-* {website}/{branch}/examples/Distribution/tdist.opal[tdist.opal]
+* {link_OPAL_doc}/examples/Fieldmaps/Cav1.dat[Cav1.dat]
+* {link_OPAL_doc}/examples/Fieldmaps/Cav3.dat[Cav3.dat]
+* {link_OPAL_doc}/examples/Fieldmaps/ZYKL9Z.NAR[ZYKL9Z.NAR]
+* {link_OPAL_doc}/examples/Distribution/scdist.opal[scdist.opal]
+* {link_OPAL_doc}/examples/Distribution/spdist.opal[spdist.opal]
+* {link_OPAL_doc}/examples/Distribution/tdist.opal[tdist.opal]
 
 To run opal on a single node, just use this command:
 
@@ -211,7 +205,7 @@ the biggest amplitude is the betatron tune value at the given energy.
 Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
-{website}/{branch}/examples/Injector2-sc.in[Injector2-sc.in]
+{link_OPAL_doc}/examples/Injector2-sc.in[Injector2-sc.in]
 
 For the supplementary files see above, <<sec.tutorial.inj2>>
 

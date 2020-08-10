@@ -1,10 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -61,7 +58,7 @@ since we are convinced that adequate documentation is a key factor in
 the usefulness of a code like _OPAL_ to study present and future
 particle accelerators. Using tools such as a source code version control
 system (https://git-scm.com[git]), source code documentation using
-Doxygen (found http://amas.web.psi.ch/docs/opal/master-doxygen/[here]) and the
+Doxygen (found {link_doxygen_doc}[here]) and the
 extensive user manual you are now enjoying, we are committed to
 providing users as well as co-developers with state-of-the-art
 documentation to _OPAL_.
@@ -94,7 +91,7 @@ to a file with extension .stat. The frequency with which this data is
 written can be controlled with the `OPTION` statement
 see link:control#sec.control.option[Option Statement] with the flag `STATDUMPFREQ`.
 
-For postprocessing we recommend to use the https://gitlab.psi.ch/OPAL/pyOPALTools/wikis/home[pyOPALTools]
+For postprocessing we recommend to use the {link_pyOPALTools_wiki}/home[pyOPALTools]
 Python package which contains many tools for pre- and postprocessing, and analysing and plotting output data.
 
 In addition to the output files, note that important information is displayed on the _stdout_ i.e. the _terminal_.
@@ -107,13 +104,13 @@ image::figures/H5rootPicture.png[scaledwidth=18cm,width=90%]
 [[sec.introduction.change-history]]
 === Change History
 
-See https://gitlab.psi.ch/OPAL/src/wikis/ReleaseNotes[Release Notes]
+See {link_OPAL_wiki}/ReleaseNotes[Release Notes]
 for a detailed list of changes in _OPAL_.
 
 [[sec.introduction.known-issues-and-limitations]]
 === Known Issues and Limitations
 
-See the https://gitlab.psi.ch/OPAL/src/issues[issue list] in the repository.
+See the {link_OPAL}/issues[issue list] in the repository.
 
 See also link:pitfalls#chp.pitfalls[pitfalls and limitations].
 
