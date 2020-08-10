@@ -1,8 +1,8 @@
 :OPAL_version:                          2.4
 
-:branch_OPAL:                           Manual-2.4
+:branch_OPAL:                           OPAL-2.4
 :branch_manual:                         Manual-2.4
-:branch_reg_tests:                      Manual-2.4
+:branch_reg_tests:                      OPAL-2.4
 
 
 :host_git:                              https://gitlab.psi.ch
