@@ -534,11 +534,9 @@ transmitted to the `ECHO` stream.
 [[sec.control.system]]
 ==== SYSTEM: Execute System Command
 
-During an interactive _OPAL_ session the command `SYSTEM` allows to
-execute operating system commands. After execution of the system
-command, successful or not, control returns to _OPAL_. At present this
-command is only available under UNIX-like OSes (including Linux and
-macOS). It has two formats:
+The command `SYSTEM` allows to execute operating system commands on a single core. 
+After execution of the system
+command, successful or not, control returns to _OPAL_. It has two formats:
 
 ----
 SYSTEM,CMD=string;
@@ -572,6 +570,12 @@ that can be read with the `CALL` command.
 SYSTEM, "python gen_seed.py";
 CALL, "gen_seed.opal";
 ----
+
+[[sec.control.psystem]]
+==== PSYSTEM: Execute System Command in Parallel
+
+Also the command `PSYSTEM` allows to execute operating system commands. But 
+contrary to the command `SYSTEM` this command is executed on all cores.
 
 [[sec.control.title]]
 === TITLE Statement
