@@ -1,10 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -1311,7 +1308,7 @@ model includes fringe fields. The detailed description can be found at:
 https://gitlab.psi.ch/OPAL/src/uploads/0d3fc561b57e8962ed79a57cd6115e37/8FBB32A4-7FA1-4084-A4A7-CDDB1F949CD3_psi.ch.pdf.
 
 ----
-label:MULTIPOLET, L=real, ANGLE=real, VAPERT=real, HAPERT=real,
+Label:MULTIPOLET, L=real, ANGLE=real, VAPERT=real, HAPERT=real,
       LFRINGE=real, RFRINGE=real, TP=real-vector, VARRADIUS=bool;
 ----
 
@@ -1511,7 +1508,7 @@ ring: Cyclotron, TYPE="RING", CYHARMON=6, PHIINIT=0.0,
 ----
 
 If TYPE is set to BANDRF, the 3D electric field map of RF cavity will be
-read from external https://gitlab.psi.ch/H5hut/src/wikis/home[H5Hut] file and the following extra arguments need to specified:
+read from external {link_H5hut_wiki}[H5Hut] file and the following extra arguments need to specified:
 
 RFMAPFN::
   The file name(s) for the electric field map(s) in H5Hut binary format.
@@ -1576,7 +1573,7 @@ TYPE::
   Separate functions can be given for the radial and azimuthal direction.
   These functions are multiplied together for the function.
   If a function in a direction is not specified it is the identity 1.
-  The PSI-BFIELD-MIRRORED type is described in http://accelconf.web.cern.ch/AccelConf/ipac2017/papers/thpab077.pdf
+  The PSI-BFIELD-MIRRORED type is described in {link_ipac2017_thpab077}.
 RMIN::
   Inner radius of the trim coil [mm]
 RMAX::

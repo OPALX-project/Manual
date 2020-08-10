@@ -7,7 +7,14 @@ ifdef::backend-docbook5,backend-html5[]
 :description: _OPAL_ User Manual
 :keywords: _OPAL_
 :revdate: @REVDATE@
+:adoc: adoc
 endif::[]
+
+ifdef::env-gitlab[]
+include::env-gitlab.attributes[]
+endif::[]
+
+include::Manual.attributes[]
 
 ifdef::backend-html5[]
 
@@ -24,15 +31,6 @@ ifdef::backend-html5[]
 '''
 
 endif::[]
-
-ifdef::env-gitlab[]
-:adoc:    asciidoc
-endif::[]
-
-ifdef::backend-docbook5,backend-html5[]
-:adoc:    adoc
-endif::[]
-include::Manual.macros[]
 
 :sectnums!:
 == Preliminary note
@@ -68,36 +66,37 @@ flavours.
 
 
 ifdef::env-gitlab[]
+:sectnums!:
 == Table of Contents
-. {baseurl}/introduction.{adoc}[Introduction]
-. {baseurl}/conventions.{adoc}[Conventions]
-. {baseurl}/pitfalls.{adoc}[Pitfalls and Limitations]
-. {baseurl}/tutorial.{adoc}[Tutorial]
-. {baseurl}/opalt.{adoc}[OPAL-T]
-. {baseurl}/opalcycl.{adoc}[OPAL-CYCL]
-. {baseurl}/opalmap.{adoc}[OPAL-MAP]
-. {baseurl}/format.{adoc}[Command Format]
-. {baseurl}/control.{adoc}[Control Statements]
-. {baseurl}/elements.{adoc}[Elements]
-. {baseurl}/field-output.{adoc}[Field Output Commands]
-. {baseurl}/lines.{adoc}[Beam Lines]
-. {baseurl}/beam-command.{adoc}[Beam Command]
-. {baseurl}/distribution.{adoc}[Distribution Command]
-. {baseurl}/fieldsolvers.{adoc}[Field Solver]
-. {baseurl}/track.{adoc}[Tracking]
-. {baseurl}/wakefields.{adoc}[Wakefields]
-. {baseurl}/geometry.{adoc}[Geometry]
-. {baseurl}/partmatter.{adoc}[Physics Models Used in the Particle Matter Interaction Model]
-. {baseurl}/optimiser.{adoc}[Multi Objective Optimization]
-. {baseurl}/sampler.{adoc}[Sampler]
+. {link_manual_src}/introduction.{adoc}[Introduction]
+. {link_manual_src}/conventions.{adoc}[Conventions]
+. {link_manual_src}/pitfalls.{adoc}[Pitfalls and Limitations]
+. {link_manual_src}/tutorial.{adoc}[Tutorial]
+. {link_manual_src}/opalt.{adoc}[OPAL-T]
+. {link_manual_src}/opalcycl.{adoc}[OPAL-CYCL]
+. {link_manual_src}/opalmap.{adoc}[OPAL-MAP]
+. {link_manual_src}/format.{adoc}[Command Format]
+. {link_manual_src}/control.{adoc}[Control Statements]
+. {link_manual_src}/elements.{adoc}[Elements]
+. {link_manual_src}/field-output.{adoc}[Field Output Commands]
+. {link_manual_src}/lines.{adoc}[Beam Lines]
+. {link_manual_src}/beam-command.{adoc}[Beam Command]
+. {link_manual_src}/distribution.{adoc}[Distribution Command]
+. {link_manual_src}/fieldsolvers.{adoc}[Field Solver]
+. {link_manual_src}/track.{adoc}[Tracking]
+. {link_manual_src}/wakefields.{adoc}[Wakefields]
+. {link_manual_src}/geometry.{adoc}[Geometry]
+. {link_manual_src}/partmatter.{adoc}[Physics Models Used in the Particle Matter Interaction Model]
+. {link_manual_src}/optimiser.{adoc}[Multi Objective Optimization]
+. {link_manual_src}/sampler.{adoc}[Sampler]
 
 .Appendices
 [upperalpha]
-. {baseurl}/syntax.{adoc}[OPAL Language Syntax]
-. {baseurl}/fieldmaps.{adoc}[OPAL-T Field Maps]
-. {baseurl}/opal-madx.{adoc}[OPAL-MADX Conversion Guide]
-. {baseurl}/autophase.{adoc}[Auto-phasing Algorithm]
-. {baseurl}/benchmarks.{adoc}[Benchmarks]
+. {link_manual_src}/syntax.{adoc}[OPAL Language Syntax]
+. {link_manual_src}/fieldmaps.{adoc}[OPAL-T Field Maps]
+. {link_manual_src}/opal-madx.{adoc}[OPAL-MADX Conversion Guide]
+. {link_manual_src}/autophase.{adoc}[Auto-phasing Algorithm]
+. {link_manual_src}/benchmarks.{adoc}[Benchmarks]
 endif::[]
 
 ifdef::backend-docbook5,backend-html5[]

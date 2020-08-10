@@ -1,13 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-:branch: master
-:website: http://amas.web.psi.ch/opal/Documentation
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -608,7 +602,7 @@ mrad.
 A bash script _tuning.sh_ is shown on the next page, to execute
 _OPAL-cycl_ for tune calculations.
 
-{website}/{branch}/examples/tuning.sh[tuning.sh]
+{link_OPAL_doc}/examples/tuning.sh[tuning.sh]
 
 To start execution, just run
 _tuning.sh_ which uses the input file _testcycl.in_ and the auxiliary
@@ -716,14 +710,14 @@ given in the output.
 [[sec.opalcycl.input-file]]
 ===== Input file
 
-https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/RingCyclotronMatched.in[matchedDistribution.in]
+{link_regtest_RingCyclotronMatched}/RingCyclotronMatched.in[matchedDistribution.in]
 
-All supplementary files can be found in https://gitlab.psi.ch/OPAL/regression-tests/tree/master/RegressionTests/RingCyclotronMatched[the matched distribution regression test].
+All supplementary files can be found in {link_regtest_RingCyclotronMatched}[the matched distribution regression test].
 
 [[sec.opalcycl.output-1]]
 ===== Output
 
-https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/reference/RingCyclotronMatched.out[matchedDistribution.output]
+{link_regtest_RingCyclotronMatched}/reference/RingCyclotronMatched.out[matchedDistribution.output]
 
 [[sec.opalcycl.bibliography]]
 === References

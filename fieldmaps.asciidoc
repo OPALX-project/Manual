@@ -1,10 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]

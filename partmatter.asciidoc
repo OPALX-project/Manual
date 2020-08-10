@@ -1,13 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-:branch: master
-:website: http://amas.web.psi.ch/opal/Documentation
-
-link:home[Back to Main Page]
+include::Manual.attributes
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -400,7 +394,7 @@ track it as in a drift and put it back to the main bunch when finishing
 [[sec.partmatter.example-of-an-input-file]]
 === Example of an Input File
 
-{website}/{branch}/examples/particlematterinteraction.in[particlematterinteraction.in]
+{link_OPAL_doc}/examples/particlematterinteraction.in[particlematterinteraction.in]
 
 FX5 is a slit in x direction, the `APERTURE` is *POSITIVE*, the first
 value in `APERTURE` is the left part, the second value is the right

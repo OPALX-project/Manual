@@ -1,10 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -25,7 +22,10 @@ In this chapter we introduce multi-objective optimization problems and
 discuss techniques for their solution with an emphasis on evolutionary
 algorithms.
 
-NOTE: For multi-objective optimization OPAL uses https://gitlab.psi.ch/OPAL/opt-pilot/[`opt-pilot`] developed by Y. Ineichen. `opt-pilot` has been fully integrated into OPAL. Instructions can be found on the https://gitlab.psi.ch/OPAL/opt-pilot/wikis/home[`opt-pilot` wiki page].
+NOTE: For multi-objective optimization OPAL uses
+{link_opt_pilot}[`opt-pilot`] developed by Y. Ineichen. `opt-pilot`
+has been fully integrated into OPAL. Instructions can be found on the
+{link_opt_pilot_wiki}/home[`opt-pilot` wiki page].
 
 [[sec.optimiser.definition]]
 === Definition
@@ -319,8 +319,7 @@ There are several methods to access output data:
   (measurement_i - value_i)^2}]
 
 | radialPeak(<file>, <turn>)
-| A simple expression to get the n-th peak of a radial probe
-  https://gitlab.psi.ch/AMAS-BDModels/PSI-Ring/blob/master/RawData/RRI2-0038Y17.peaks[file].
+| A simple expression to get the n-th peak of a radial probe {link_RRI2_0038Y1}.
 
 | sumErrSqRadialPeak(<meas_file>, <sim_file>, <begin>, <end>)
 | A simple expression computing the sum of all peak errors (given as

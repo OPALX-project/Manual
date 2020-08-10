@@ -1,10 +1,7 @@
 ifdef::env-gitlab[]
-:stem: latexmath
-:sectnums:
-:toc: macro
-:toclevels: 3
-
-link:home[Back to Main Page]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
 
 toc::[]
 endif::[]
@@ -163,9 +160,9 @@ _OPAL-map_ is the new flavour of _OPAL_ and currently just contains the fundamen
 [[sec.opalmap.example]]
 === Example
 
-FODO lattice: https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/MAP-FODO/MAP-FODO.in[MAP-FODO.in]
+FODO lattice: {link_regtest_MAP_FODO}/MAP-FODO.in[MAP-FODO.in]
 
-Input distribution (to be put in directory `data`): https://gitlab.psi.ch/OPAL/regression-tests/blob/master/RegressionTests/MAP-FODO/data/FODO_DIST.dat[FODO_DIST.dat]
+Input distribution (to be put in directory `data`): {link_regtest_MAP_FODO}/data/FODO_DIST.dat[FODO_DIST.dat]
 
 To `RUN` _OPAL-map_, the `METHOD` attribute gets set to `THICK`.
 ----
