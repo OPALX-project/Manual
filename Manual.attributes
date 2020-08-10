@@ -10,7 +10,6 @@
 
 :link_manual:                           {host_git}/OPAL/documentation/manual
 :link_manual_src:                       {link_manual}/blob/{branch_manual}
-:baseurl:                               {link_manual}/blob/{branch_manual}
 
 :link_OPAL_doc:                         {host_amas}/opal/Documentation/{branch_OPAL}
 
