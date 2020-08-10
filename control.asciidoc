@@ -560,10 +560,10 @@ The `SYSTEM` command can also be used to execute an external script.
 
 Below is an example that generates a random seed with python.
 The python script
-{link_OPAL_doc}/examples/gen_seed.py[gen_seed.py]
+{link_manual_src}/examples/gen_seed.py[gen_seed.py]
 is called with the `SYSTEM` command.
 This scripts writes the seed to a file
-{link_OPAL_doc}/examples/gen_seed.opal[gen_seed.opal]
+{link_manual_src}/examples/gen_seed.opal[gen_seed.opal]
 that can be read with the `CALL` command.
 
 ----

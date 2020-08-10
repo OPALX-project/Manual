@@ -4,4 +4,4 @@
 :toclevels: 3
 
 :adoc: asciidoc
-:link_home: {baseurl}/Manual.{adoc}[Back to Main Page]
+:link_manual_src: {baseurl}/Manual.{adoc}[Back to Main Page]
