@@ -394,7 +394,7 @@ track it as in a drift and put it back to the main bunch when finishing
 [[sec.partmatter.example-of-an-input-file]]
 === Example of an Input File
 
-{link_OPAL_doc}/examples/particlematterinteraction.in[particlematterinteraction.in]
+{link_manual_src}/examples/particlematterinteraction.in[particlematterinteraction.in]
 
 FX5 is a slit in x direction, the `APERTURE` is *POSITIVE*, the first
 value in `APERTURE` is the left part, the second value is the right

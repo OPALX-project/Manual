@@ -149,16 +149,16 @@ two single-gap flat-top cavities.
 Following is an input file of *Single Particle Tracking mode* for PSI
 Injector II cyclotron.
 
-{link_OPAL_doc}/examples/Injector2.in[Injector2.in]
+{link_manual_src}/examples/Injector2.in[Injector2.in]
 
 The supplementary files should be placed in the same directory.
 
-* {link_OPAL_doc}/examples/Fieldmaps/Cav1.dat[Cav1.dat]
-* {link_OPAL_doc}/examples/Fieldmaps/Cav3.dat[Cav3.dat]
-* {link_OPAL_doc}/examples/Fieldmaps/ZYKL9Z.NAR[ZYKL9Z.NAR]
-* {link_OPAL_doc}/examples/Distribution/scdist.opal[scdist.opal]
-* {link_OPAL_doc}/examples/Distribution/spdist.opal[spdist.opal]
-* {link_OPAL_doc}/examples/Distribution/tdist.opal[tdist.opal]
+* {link_manual_src}/examples/Fieldmaps/Cav1.dat[Cav1.dat]
+* {link_manual_src}/examples/Fieldmaps/Cav3.dat[Cav3.dat]
+* {link_manual_src}/examples/Fieldmaps/ZYKL9Z.NAR[ZYKL9Z.NAR]
+* {link_manual_src}/examples/Distribution/scdist.opal[scdist.opal]
+* {link_manual_src}/examples/Distribution/spdist.opal[spdist.opal]
+* {link_manual_src}/examples/Distribution/tdist.opal[tdist.opal]
 
 To run opal on a single node, just use this command:
 
@@ -205,7 +205,7 @@ the biggest amplitude is the betatron tune value at the given energy.
 Following is the input file for single bunch tracking with space charge
 effects in Injector II.
 
-{link_OPAL_doc}/examples/Injector2-sc.in[Injector2-sc.in]
+{link_manual_src}/examples/Injector2-sc.in[Injector2-sc.in]
 
 For the supplementary files see above, <<sec.tutorial.inj2>>
 
