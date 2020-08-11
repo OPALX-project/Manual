@@ -25,7 +25,7 @@
 :link_H5hut:                            host_git}/H5hut/src
 :link_H5hut_wiki:                       {link_H5hut}/wikis/home
 
-:link_doxygen_doc:                      {host_amas}/docs/opal/master-doxygen/html
+:link_doxygen_doc:                      {host_amas}/opal/CodeDocumentation/{branch_OPAL}
 
 :link_ipac2017:                         http://accelconf.web.cern.ch/AccelConf/ipac2017
 :link_ipac2017_thpab077:                {link_ipac2017}/papers/thpab077.pdf
