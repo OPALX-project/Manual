@@ -504,11 +504,11 @@ provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
 |`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
 `AMR_MAXLEVEL` is zero)
 
-|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2 is tested`
+|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2` is tested
 
-|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2 is tested`
+|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2` is tested
 
-|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2 is tested`
+|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2` is tested
 
 |`AMR_MAXGRIDX` |Maximum grid size of base level in x. It has to be smaller than
 `MX` when running in parallel
