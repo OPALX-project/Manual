@@ -618,7 +618,9 @@ _OPAL-cycl_ writes out several output files, some specific to the Tracking mode
 [[sec.opalcycl.input_file_name-.stat]]
 ==== _<input_file_name >.stat_
 
-See link:opalt#sec.opalt.input_file_name-.stat[_OPAL-t_ stat file].
+See link:opalt#sec.opalt.input_file_name-.stat[_OPAL-t_ stat file]. The only 
+difference is in cyclotron coordinate convention the z (or s) coordinate refers to the vertical 
+direction and y corresponds to the longitudinal or beam travel direction. 
 
 [[sec.opalcycl.single-particle-tracking-mode-1]]
 ==== Single Particle Tracking mode
