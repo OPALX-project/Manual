@@ -2685,6 +2685,102 @@ bstp: BEAMSTRIPPING, PRESSURE=1E-8, TEMPERATURE=300,
 No matter what the value of STOP is, the particles stripped are recorded in the HDF5 file
 _<elementname>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 
+[[sec.elements.undulator-opal-t]]
+=== Undulator (_OPAL-t_)
+
+_OPAL_'s undulator element comes with its own Finite-Difference Time-Domain full-wave solver, which
+accounts for space-charge and radiation effects in 3D.
+It was implemented by means of the https://github.com/aryafallahi/mithra[MITHRA]
+library, developed by Arya Fallahi.
+
+To use the undulator element and its solver, one needs to compile _OPAL_ in the following way:
+    
+  . install the https://github.com/aryafallahi/mithra[MITHRA 2.0] library,
+  . set the environment variable `MITHRA_PREFIX=directory/where/you/store/mithra`
+  . compile _OPAL_ with the option `cmake -DENABLE_OPAL_FEL=yes ..`
+
+When the head of the bunch crosses the start of an undulator in the beamline
+(defined by `ELEMEDGE`), the solver changes automatically from
+Poisson to full-wave, and changes back to Poisson once the bunch has passed through the
+whole undulator and its fringe fields.
+    
+The length of the undulator is defined as
+[latexmath]
+++++
+\begin{aligned}
+    &L = N\lambda + 2\,\text{fringe},\\
+    &\text{fringe} = 2\lambda,
+\end{aligned}
+++++
+where latexmath:[\lambda] is the undulator period and latexmath:[N] its number of periods.
+Since the element's length is entirely defined by the undulator periods, there is no `LENGTH`
+parameter to be specified for the undulator element.
+
+The magnetic field is that of a planar undulator with flat pole faces:
+[latexmath]
+++++
+\begin{aligned}
+    &B_x = B_0\cosh(kr)\sin(kz)\cos(\alpha),\\
+    &B_y = B_0\cosh(kr)\sin(kz)\sin(\alpha),\\
+    &B_z = B_0\sinh(kr)\cos(kz),
+\end{aligned}
+++++
+where latexmath:[r = x\cos(\alpha) + y\sin(\alpha)] is the radial distance from the undulator axis, latexmath:[k=2\pi/\lambda] the wave-number, latexmath:[\alpha] the angle between the magnetic field polarisation and the x-axis,
+and latexmath:[B_0] the maximum magnetic field value.
+
+The fringe fields are defined as:
+[latexmath]
+++++
+\begin{aligned}
+    &B_x = B_0\cosh(kr)kze^{-(kz)^2/2}\cos(\alpha),\\
+    &B_y = B_0\cosh(kr)kze^{-(kz)^2/2}\sin(\alpha),\\
+    &B_z = B_0\sinh(kr)e^{-(kz)^2/2}.
+\end{aligned}
+++++
+    
+The parameters that describe the undulator element and its associated full-wave solver are as follows:
+
+K::
+  The undulator strength parameter.
+LAMBDA::
+  The undulator period latexmath:[\lambda] [m].
+NUMPERIODS::
+  Number of periods latexmath:[N].
+ANGLE::
+  Angle latexmath:[\alpha] between the magnetic field polarisation and the x-axis  [rad] (default: 0).
+MESHLENGTH::
+  Size in three dimensions latexmath:[(L_x, L_y, L_z)] of the computational grid [m], which is in a frame of reference
+  moving at the average speed of the bunch.
+  It should be large enough to contain the whole bunch, as particles outside of it will not perceive any fields.
+  As a rule of thumb, the grid should be 3 times longer than the bunch, since the bunch will slightly shift
+  longitudinally when entering and exiting the undulator, and 10 times wider than the bunch, to avoid spurious
+  radiation reflections, since the Absorbing Boundary Conditions (ABCs) cannot correctly absorb obliquely incident waves.
+MESHRESOLUTION::
+  Grid-spacing latexmath:[(\Delta_x, \Delta_y, \Delta_z)] of the computational domain [m].
+DTBUNCH::
+  Time-step for the particle update [s]. By default it is equal to the field update time-step,
+  which is automatically chosen by the algorithm in order to satisfy the stability conditon.
+  `DTBUNCH` needs to be equal to or smaller than the field time-step.
+TRUNORDER::
+  Truncation order of the ABCs. Can be 1 or 2 (default: 2).
+TOTALTIME::
+  Total time to simulate using the full-wave solver [s]. By default this is set such that
+  the whole passage through the undulator is simulated.
+FNAME::
+  File specifying which output the full-wave solver should provide.
+  It is equivalent to the job-file in https://github.com/aryafallahi/mithra[MITHRA],
+  without the parameters `MESH`, `bunch-initialization`, and `UNDULATOR`. This file is
+  optional.
+
+Example of the wiggler element used in the AWA beamline:
+
+----
+UND: UNDULATOR, ELEMEDGE = 44.0e-2, K = 10.81, LAMBDA = 8.5e-2, NUMPERIODS = 10, ANGLE = PI/2,
+     MESHLENGTH = { 12e-3, 12e-3, 4e-3 }, MESHRESOLUTION = { 1e-5, 1e-5, 8e-6},
+     FNAME = "wiggler_sims_July_2020/mithra_output.job";
+----
+
+
 [[sec.elements.bibliography]]
 === References
 
