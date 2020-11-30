@@ -1959,6 +1959,8 @@ transverse dependence on electric field.
 [[sec.elements.polynomial-time-dependence]]
 ==== Time Dependence
 
+===== Polynomial Time Dependence
+
 The `POLYNOMIAL_TIME_DEPENDENCE` element is used to define time
 dependent parameters in RF cavities in terms of a third order
 polynomial.
@@ -1980,6 +1982,24 @@ g(t) = p_0 + p_1 t + p_2 t^2 + p_3 t^3.
 
 An example of a Variable Frequency RF cavity of cyclotron with
 polynomial time dependence of parameters is given below:
+
+===== Spline Time Dependence
+
+The `SPLINE_TIME_DEPENDENCE` element is used to define time
+dependent parameters in RF cavities in terms of a first or third order
+spline fit.
+
+ORDER::
+  Order of the lookup - either 1 for linear interpolation, or 3 for cubic 
+  interpolation with quadratic smoothing. Other values make an error.
+
+TIMES::
+  Array of real times in ns. There must be at least `ORDER`+1 elements in the
+  array and they must be strictly monotically increasing.
+
+VALUES::
+  Array of real values. The length of `VALUES` must be the same as the length 
+  of `TIMES`.
 
 [[sec.elements.variable-rf-cavity-fringe-field]]
 ==== Fringe Field
