@@ -366,13 +366,12 @@ which is same as `CARBONCYCL`. But with `BANDRF` type, the program can
 also read in the 3D electric field(s). For the detail about its usage,
 please see  link:elements#sec.elements.cyclotron[Cyclotron].
 
-[[sec.opalcycl.default-psi-format]]
-==== Default PSI format
+[[sec.opalcycl.ring-type]]
+==== RING type
 
-If the value of `TYPE` is other string rather than above mentioned, the
-program requires the data format like PSI format field file _ZYKL9Z.NAR_
-and _SO3AV.NAR_, which was given by the measurement. We add 4 parameters
-at the header of the file, namely, latexmath:[r_{min}] [mm],
+If `TYPE=RING`, the program requires the data format like PSI format field file 
+_ZYKL9Z.NAR_ and _SO3AV.NAR_, which was given by the measurement. We add 
+4 parameters at the header of the file, namely, latexmath:[r_{min}] [mm],
 latexmath:[\Delta r] [mm], latexmath:[\theta_{min}][latexmath:[^{\circ}]],
 latexmath:[\Delta \theta][latexmath:[^{\circ}]]. If latexmath:[\Delta r] or
 latexmath:[\Delta \theta] is decimal, one can set its negative opposite

@@ -1444,8 +1444,8 @@ the magnetic field, and also the initial condition of the injected
 reference particle, and it has currently the following attributes:
 
 TYPE::
-  The data format of field map, Currently the following formats are implemented:
-  CARBONCYCL, CYCIAE, AVFEQ, FFA, BANDRF and default PSI format. For
+  The data format of field map. Currently the following formats are implemented:
+  RING (PSI format), CARBONCYCL, CYCIAE, AVFEQ, FFA and BANDRF. For
   the details of their data format, please read
   link:opalcycl#sec.opalcycl.fieldmap[Field Maps].
 CYHARMON::
