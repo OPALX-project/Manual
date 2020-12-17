@@ -57,7 +57,7 @@ POSITRON;;
     The particles are of type xenon (`MASS`=latexmath:[m_{xe}],
   `CHARGE`=20).
   H2P;;
-    The particles are of type hydrogen+ (`MASS`=latexmath:[2*m_p], `CHARGE`=1).
+    The particles are of type hydrogen+ (`MASS`=latexmath:[m_{h2p}], `CHARGE`=1).
 
 For other particle names one may enter:
 
