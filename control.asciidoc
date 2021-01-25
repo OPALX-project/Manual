@@ -157,7 +157,7 @@ MTSSUBSTEPS::
 REMOTEPARTDEL::
   Artificially delete the remote particle if its distance to the beam
   mass is larger than `REMOTEPARTDEL` times of the beam rms size, its
-  default values is -1 (no delete)
+  default values is -1 (no delete). Only used in _OPAL-cycl_.
 RHODUMP::
   If true the scalar latexmath:[\rho] field is saved each time a phase
   space is written. There exists a reader in Visit with versions greater
@@ -182,8 +182,6 @@ AUTOPHASE::
   is gained should be. The higher this number the more accurate the phase
   will be. If it is set to -1 then the auto-phasing algorithm isn't
   run. Default: 6.
-SURFDUMPFREQ::
-  The frequency to dump surface-partcle interaction data. Default: -1 (no dump).
 NUMBLOCKS::
   Maximum number of vectors in the Krylov space (for RCGSolMgr). Default
   value is 0 and BlockCGSolMgr will be used.
@@ -214,13 +212,13 @@ ASCIIDUMP::
   Beam stripping losses and global losses.
 BOUNDPDESTROYFQ::
   The frequency to do `boundp_destroy` to delete lost particles. Default
-  10
+  10. Only used in _OPAL-cycl_.
 DELPARTFREQ::
   The frequency to delete particles in _OPAL-cycl_. Default: 1
 BEAMHALOBOUNDARY::
-  Defines in terms of sigma where the halo starts. Default: 0.0
+  Defines in terms of sigma where the halo starts. Default: 0.0. Only used in _OPAL-cycl_.
 CLOTUNEONLY::
-  If set to true stop after closed orbit finder and tune calculation.
+  If set to true stop after closed orbit finder and tune calculation. Only used in _OPAL-cycl_.
 IDEALIZED::
   Instructs to use the hard edge model for the calculation of the path
   length in _OPAL-t_. The path length is computed to place the elements
