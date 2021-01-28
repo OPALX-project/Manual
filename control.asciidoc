@@ -211,8 +211,8 @@ ASCIIDUMP::
   elements: Probe, Collimator, Monitor, Stripper, Geometry,
   Beam stripping losses and global losses.
 BOUNDPDESTROYFQ::
-  The frequency to do `boundp_destroy` to delete lost particles. Default
-  10. Only used in _OPAL-cycl_.
+  The frequency to do `boundp_destroy` to delete lost particles. Default 10.
+  Only used in _OPAL-cycl_.
 DELPARTFREQ::
   The frequency to delete particles in _OPAL-cycl_. Default: 1
 BEAMHALOBOUNDARY::
