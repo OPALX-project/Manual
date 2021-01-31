@@ -180,7 +180,7 @@ CSRDUMP::
 AUTOPHASE::
   Defines how accurate the search for the phase at which the maximal energy
   is gained should be. The higher this number the more accurate the phase
-  will be. If it is set to -1 then the auto-phasing algorithm isn't
+  will be. If it is set to 0 then the auto-phasing algorithm isn't
   run. Default: 6.
 NUMBLOCKS::
   Maximum number of vectors in the Krylov space (for RCGSolMgr). Default
