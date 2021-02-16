@@ -147,7 +147,7 @@ DPSI::
 WAKEF::
   Attach wakefield that was defined using the `WAKE` command.
 PARTICLEMATTERINTERACTION::
-  Attach a handler for particle matter interaction, see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction].
+  Attach a handler for particle-matter interaction, see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction].
 
 All elements can have arbitrary additional attributes which are defined
 in the respective section.
@@ -2213,8 +2213,10 @@ CCOLLIMATOR::
 ----
 label:ECOLLIMATOR, TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
+
 label:RCOLLIMATOR,TYPE=string, APERTURE=real-vector,
       L=real, XSIZE=real, YSIZE=real;
+
 label:FLEXIBLECOLLIMATOR, APERTURE=real-vector,
       L=real, DESCRIPTION=string, FNAME=string, OUTFN=string;
 ----
@@ -2225,13 +2227,22 @@ L::
   The collimator length (default: 0 m).
 OUTFN::
   The file name into which the monitor should write the collected data.
-  The file is an H5hut file.
+  The file is an H5hut file (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+PARTICLEMATTERINTERACTION::
+  `PARTICLEMATTERINTERACTION` is an attribute of the element
+  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  `TYPE=SCATTERING` must be selected to include scattering interactions
+  and energy loss calculation through the `MATERIAL` definition
+  (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
+  If this is not set, the particle-matter interaction module will
+  not be activated. The particle hitting collimator will be recorded
+  and directly deleted from the simulation.
 
 Optically a collimator behaves like a drift space, but
 during tracking, it also introduces an aperture limit. The aperture is
 checked at the entrance. If the length is not zero, the aperture is also
-checked at the exit and at every timestep. Lost particles are saved in an H5hut file defined by `OUTFN`. The `ELEMEDGE` defines the location of the collimator and `L`
-the length.
+checked at the exit and at every timestep. Lost particles are saved in an H5hut file defined by `OUTFN`.
+The `ELEMEDGE` defines the location of the collimator and `L` the length.
 
 The reference system for a collimator is a Cartesian coordinate system.
 
@@ -2421,14 +2432,14 @@ WIDTH::
 OUTFN::
   The file name into which the collimator should write the collected data.
 PARTICLEMATTERINTERACTION::
-  `PARTICLEMATTERINTERACTION` is an attribute of the element. Collimator
-  physics is only a kind of particlematterinteraction. It can be applied
-  to any element. If the type of `PARTICLEMATTERINTERACTION` is
-  `COLLIMATOR`, the material is defined here. The material "Cu",
-  "Be", "Graphite" and "Mo" are defined until now. If this is not
-  set, the particle matter interaction module will not be activated. The
-  particle hitting collimator will be recorded and directly deleted from
-  the simulation.
+  `PARTICLEMATTERINTERACTION` is an attribute of the element
+  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  `TYPE=SCATTERING` must be selected to include scattering interactions
+  and energy loss calculation through the `MATERIAL` definition
+  (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
+  If this is not set, the particle-matter interaction module will
+  not be activated. The particle hitting collimator will be recorded
+  and directly deleted from the simulation.
 
 .Collimator
 [[fig_collimator,Figure {counter:fig-cnt}]]
@@ -2445,9 +2456,12 @@ REAL x1=-215.0;
 REAL x2=-220.0;
 REAL x3=0.0;
 REAL x4=0.0;
-cmphys:particlematterinteraction, TYPE="Collimator", MATERIAL="Cu";
+
+cmphys: PARTICLEMATTERINTERACTION, TYPE=SCATTERING, MATERIAL="Copper";
+
 cma1: CCollimator, XSTART=x1, XEND=x2,YSTART=y1, YEND=y2,
       ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys ;
+
 cma2: CCollimator, XSTART=x3, XEND=x4,YSTART=y3, YEND=y4,
       ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
 ----
@@ -2585,11 +2599,20 @@ XSIZE::
   Major axis of the transverse elliptical shape, default value is 1e6.
 YSIZE::
   Minor axis of the transverse elliptical shape, default value is 1e6.
+PARTICLEMATTERINTERACTION::
+  `PARTICLEMATTERINTERACTION` is an attribute of the element
+  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  `TYPE=SCATTERING` must be selected to include scattering interactions
+  and energy loss calculation through the `MATERIAL` definition
+  (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
+  If this is not set, the particle-matter interaction module will
+  not be activated. The particle hitting degrader will be recorded
+  and directly deleted from the simulation.
 
 Example: Graphite degrader of 15 cm thickness.
 
 ----
-DEGPHYS: PARTICLEMATTERINTERACTION, TYPE="DEGRADER", MATERIAL="Graphite";
+DEGPHYS: PARTICLEMATTERINTERACTION, TYPE=SCATTERING, MATERIAL="Graphite";
 
 DEG1: DEGRADER, L=0.15, ELEMEDGE=0.02, PARTICLEMATTERINTERACTION=DEGPHYS;
 ----
@@ -2658,18 +2681,18 @@ KHV:KICKER, HKICK=0.001, VKICK=0.0005;
 The reference system for an orbit corrector is a Cartesian coordinate
 system.
 
-[[sec.elements.beamstripping-opal-cycl]]
-=== Beam Stripping (_OPAL-cycl_)
+[[sec.elements.vacuum-opal-cycl]]
+=== Vacuum (_OPAL-cycl_)
 
-Beam stripping represents an abstract element that includes the necessary
-parameters to consider the interactions with the residual gas and
-the magnetic field of the cyclotron. When the particle interacts,
+Vacuum element represents the conditions and parameters to consider
+interactions with the residual gas and the magnetic field 
+in a cyclotron. When the particle interacts,
 it is recorded in the file, which contains the time,
 coordinates and momentum of the particle at this moment.
 The particle could produce a new particle, changing
 the charge and mass.
 
-There are 7 parameters to describe beam stripping.
+There are 7 parameters to describe the vacuum space.
 
 PRESSURE::
   The average pressure of the residual gas in the cyclotron. [mbar]
@@ -2681,7 +2704,8 @@ PMAPFN::
   plane with primary direction corresponding to the azimuthal direction,
   secondary direction to the radial direction
   (same file structure as `Cyclotron` `TYPE=CARBONCYCL`).
-  If `PMAPFN` is specified, `PRESSURE` parameter is taken as default value for regions in the accelerator out of the limits of the pressure map.
+  If `PMAPFN` is specified, `PRESSURE` parameter is taken as default value
+  for regions in the accelerator out of the limits of the pressure map.
 PSCALE::
   Scale factor for the pressure field map (default: 1.0).
 GAS::
@@ -2691,14 +2715,17 @@ STOP::
   simulation. Otherwise, the outcoming particle continues to be tracked
   as `SECONDARY` particle (default: true).
 PARTICLEMATTERINTERACTION::
-  `PARTICLEMATTERINTERACTION` is an attribute of the element. Beam stripping
-  physics is only a kind of particlematterinteraction.
+  `PARTICLEMATTERINTERACTION` is an attribute of the element
+  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  `TYPE=BEAMSTRIPPING` must be selected to include stripping interactions
+  with the residual gas and Lorentz stripping.
 
-Example: Beam stripping by latexmath:[H_2] residual gas.
+Example: Vacuum representation with latexmath:[H_2] residual gas.
 
 ----
-bstp_phys:particlematterinteraction, TYPE="BEAMSTRIPPING";
-bstp: BEAMSTRIPPING, PRESSURE=1E-8, TEMPERATURE=300, 
+bstp_phys: PARTICLEMATTERINTERACTION, TYPE=BEAMSTRIPPING;
+
+vac: VACUUM, PRESSURE=1E-8, TEMPERATURE=300, 
       GAS="H2", STOP=true, PARTICLEMATTERINTERACTION=bstp_phys;
 ----
 
