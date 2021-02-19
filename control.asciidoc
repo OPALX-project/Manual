@@ -704,20 +704,28 @@ name();
 
 Each actual consists of a set of tokens which replaces all occurrences
 of the corresponding formal name. The actuals are separated by commas.
-Example:
+Examples:
 
 ----
 // macro definitions:
 SHOWIT(X): MACRO {
-   SHOW, NAME = X;
+   VALUE,VALUE={X};
 }
 DOIT(): MACRO {
    DYNAMIC,LINE=RING,FILE="DYNAMIC.OUT";
+}
+KS(X,Y): MACRO {
+   Y = 3e-3*X+0.5e-3;
 }
 
 // macro calls:
 SHOWIT(PI);
 DOIT();
+REAL X = 2;
+REAL Y;
+KS(X, Y);
+SHOWIT(Y);
+
 ----
 
 // EOF
