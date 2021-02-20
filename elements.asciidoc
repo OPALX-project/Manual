@@ -1995,7 +1995,7 @@ ORDER::
 
 TIMES::
   Array of real times in ns. There must be at least `ORDER`+1 elements in the
-  array and they must be strictly monotically increasing.
+  array and they must be strictly monotonically increasing.
 
 VALUES::
   Array of real values. The length of `VALUES` must be the same as the length 
