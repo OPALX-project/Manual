@@ -2221,12 +2221,11 @@ label:FLEXIBLECOLLIMATOR, APERTURE=real-vector,
       L=real, DESCRIPTION=string, FNAME=string, OUTFN=string;
 ----
 
-Each type has the following attributes:
+Each type has the following general attributes
+(available for both _OPAL-t_ and _OPAL-cycl_ collimators):
 
-L::
-  The collimator length (default: 0 m).
 OUTFN::
-  The file name into which the monitor should write the collected data.
+  The file name into which the collimator should write the collected data.
   The file is an H5hut file (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
@@ -2235,31 +2234,32 @@ PARTICLEMATTERINTERACTION::
   and energy loss calculation through the `MATERIAL` definition
   (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
   If this is not set, the particle-matter interaction module will
-  not be activated. The particle hitting collimator will be recorded
+  not be activated. Then, the particle hitting the collimator will be recorded
   and directly deleted from the simulation.
-
-Optically a collimator behaves like a drift space, but
-during tracking, it also introduces an aperture limit. The aperture is
-checked at the entrance. If the length is not zero, the aperture is also
-checked at the exit and at every timestep. Lost particles are saved in an H5hut file defined by `OUTFN`.
-The `ELEMEDGE` defines the location of the collimator and `L` the length.
 
 The reference system for a collimator is a Cartesian coordinate system.
 
 [[sec.elements.opal-t-mode]]
 ==== _OPAL-t_ mode
 
-The `CCOLLIMATOR` isn’t supported. ``ECOLLIMATOR``s and ``RCOLLIMATOR``s
-detect all particles which are outside the aperture defined by `XSIZE`
-and `YSIZE`.
-For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
-respectively, for rectangular apertures they denote the half-width of
-the rectangle.
+Optically a collimator behaves like a drift space, but during tracking,
+it also introduces an aperture limit. The aperture is checked at the entrance.
+If the length is not zero, the aperture is also checked at the exit and at
+every timestep. Lost particles are saved in an H5hut file defined by `OUTFN`.
+The `ELEMEDGE` defines the location of the collimator and `L` the length.
+
+``ECOLLIMATOR``s and ``RCOLLIMATOR``s detect all particles which are
+outside the aperture defined by `XSIZE` and `YSIZE`.
+The `CCOLLIMATOR` isn’t supported. 
 
 XSIZE::
   The horizontal half-aperture (default: unlimited).
 YSIZE::
   The vertical half-aperture (default: unlimited).
+
+For elliptic apertures, `XSIZE` and `YSIZE` denote the half-axes
+respectively, for rectangular apertures they denote the half-width of
+the rectangle.
 
 Example:
 
@@ -2411,7 +2411,9 @@ or scattered. The algorithm is based on the Monte Carlo method. Please
 note when a particle is scattered, it will not be recorded as the lost
 particle. If this particle leaves the bunch, it will be removed during
 the integration afterwards, so as to maintain the accuracy of space
-charge solving.
+charge solving. In addition to the general attributes of a collimator 
+(`OUTFN` and `PARTICLEMATTERINTERACTION`), the parameters for describing
+a `CCOLLIMATOR` are the following:
 
 XSTART::
   The x coordinate of the start point. [mm]
@@ -2426,20 +2428,9 @@ ZSTART::
   -100mm.
 ZEND::
   The maximum vertical coordinate. [mm]. Default value is
-  -100mm.
+  100mm.
 WIDTH::
   The width of the collimator. [mm]
-OUTFN::
-  The file name into which the collimator should write the collected data.
-PARTICLEMATTERINTERACTION::
-  `PARTICLEMATTERINTERACTION` is an attribute of the element
-  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
-  `TYPE=SCATTERING` must be selected to include scattering interactions
-  and energy loss calculation through the `MATERIAL` definition
-  (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
-  If this is not set, the particle-matter interaction module will
-  not be activated. The particle hitting collimator will be recorded
-  and directly deleted from the simulation.
 
 .Collimator
 [[fig_collimator,Figure {counter:fig-cnt}]]
