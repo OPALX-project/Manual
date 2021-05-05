@@ -79,7 +79,7 @@ latexmath:[p_{z}]). Momentum is given as
 latexmath:[\beta_{x} \gamma], latexmath:[\beta_{y} \gamma] and
 latexmath:[\beta_{z} \gamma], as in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables].
 
-|`INPUTMOUNITS` |`EV` (default for _OPAL-cycl_) |Use the units eV for
+|`INPUTMOUNITS` |`EVOVERC` (default for _OPAL-cycl_) |Use the units eV/c for
 the input momentum (latexmath:[p_{x}], latexmath:[p_{y}],
 latexmath:[p_{z}]).
 |=======================================================================

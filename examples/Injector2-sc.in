@@ -150,12 +150,12 @@ VALUE, {KIP3_1L_vary, KIVU_vary_Z, KIG3U_vary_Z, KIG3O_vary_Z};
 //                                      Distributions                                          //
 //---------------------------------------------------------------------------------------------//
 
-// Note: Distribution in eV need to be specified as EV in the parameter INPUTMOUNITS (see Opal
+// Note: Distributions in eV/c need to be specified as EVOVERC in the parameter INPUTMOUNITS (see Opal
 //       Manual). Some from other sources are in BETA*GAMMA, thus have no units.
 
 //For Single Particle
 DistSP: DISTRIBUTION, TYPE = fromfile, FNAME = "spdist.opal",
-        INPUTMOUNITS = EV;
+        INPUTMOUNITS = EVOVERC;
 //For Multiple Particles
 DistSC: DISTRIBUTION, TYPE = fromfile, FNAME = "scdist.opal",
         INPUTMOUNITS = NONE;

@@ -325,13 +325,29 @@ link:distribution#sec.distribution.gaussdisttype[`GAUSS`] and
 link:distribution#sec.distribution.binomialdisttype[`BINOMIAL`]
 distribution types have changed from
 previous versions of _OPAL_. However, legacy distribution commands
-should work as before with one exception. If you are using _OPAL-cycl_
-then your old input files will work just fine. However, if you are using
-_OPAL-t_ then you will need to set the distribution attribute
+should work as before as long as the momentum units are converted to
+the current convention
+(see section on link:distribution#sec.distribution.unitsdistattributes[`units`]).
+
+[[sec.tutorial.change-in-momentum-units]]
+==== Change in Momentum Units
+
+Input momentum can be given without units i.e. as
+latexmath:[\beta\gamma], or in eV/c. Up until OPAL 2.2
+eV was used instead of eV/c, but this was changed since
+eV is a unit of energy rather than momentum. To adapt old files
+with momentum in eV, such that they can work for the newer OPAL
+versions, the following formula can be used:
+
+[latexmath]
+++++
+P[{eV/c}]c = mc^2\sqrt{(\frac{P[{eV}]}{mc^2} + 1)^2 - 1}
+++++
+and you will need to set the distribution attribute
 link:distribution#sec.distribution.unitsdistattributes[`INPUTMOUNITS`] to:
 
 ----
-INPUTMOUNITS = EV
+INPUTMOUNITS = EVOVERC
 ----
 
 // EOF
