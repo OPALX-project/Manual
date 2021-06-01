@@ -148,6 +148,12 @@ WAKEF::
   Attach wakefield that was defined using the `WAKE` command.
 PARTICLEMATTERINTERACTION::
   Attach a handler for particle-matter interaction, see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction].
+OUTFN::
+  The file name into which the element should write the collected data.
+  The user must only provide the output name without the extension. The 
+  extension will be set according to the link:control#sec.control.option[`OPTION`] 
+  statements. If this attribute is empty, the file will be named as the
+  element label.
 
 All elements can have arbitrary additional attributes which are defined
 in the respective section.
@@ -1496,8 +1502,9 @@ MAXR::
 
 During the tracking, the particle (latexmath:[r, z, \theta]) will be
 deleted if MINZ latexmath:[< z <] MAXZ or MINR latexmath:[< r <]
-MAXR, and it will be recorded in the HDF5 file _<inputfilename>.h5_
-(or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+MAXR, and it will be recorded in the HDF5 file _OUTFN.h5_
+(or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true),
+(see link:elements#sec.elements.common[Common Attributes]).
 Example:
 
 ----
@@ -1803,13 +1810,15 @@ LENGTH::
   Length of the offset [m].
 
 [[sec.elements.source]]
-=== Source
+=== Source (_OPAL-t_)
 
-The `SOURCE` element only works in _OPAL-t_. Its first purpose is to
-indicate that the particles are emitted from a  gun. This is
-needed to place the elements in three-dimensional space.  Its second purpose is
-to delete impacting particles that are propagating in reverse direction. This 
-function is optional and can be controlled with the parameter `TRANSPARENT`.
+Its first purpose is to indicate that the particles are emitted from a gun.
+This is needed to place the elements in three-dimensional space.  Its second
+purpose is to delete impacting particles that are propagating in reverse
+direction. This function is optional and can be controlled with the parameter 
+`TRANSPARENT`. The particles hitting on the source are recorded in the `OUTFN`
+file (see link:elements#sec.elements.common[Common Attributes]). The `SOURCE`
+element only works in _OPAL-t_.
 
 TRANSPARENT::
   Boolean to indicate whether impacting particles can propagate further. Its default
@@ -2186,9 +2195,9 @@ particle. The positions of the particles on the monitor are interpolated
 from the current position and momentum one step before they would passe
 the monitor.
 
-OUTFN::
-  The file name into which the monitor should write the collected data.
-  The file is an H5hut file.
+The attribute `OUTFN` defines the file into which the monitor should write
+the collected data (see link:elements#sec.elements.common[Common Attributes]).
+The file is an H5hut file.
 
 If the attribute `TYPE` is set to `TEMPORAL` then the data of all
 particles are written to the H5hut file when the reference particle hits
@@ -2226,6 +2235,7 @@ Each type has the following general attributes
 
 OUTFN::
   The file name into which the collimator should write the collected data.
+  If this attribute is empty, the file will be named as the element label.
   The file is an H5hut file (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
@@ -2411,9 +2421,9 @@ or scattered. The algorithm is based on the Monte Carlo method. Please
 note when a particle is scattered, it will not be recorded as the lost
 particle. If this particle leaves the bunch, it will be removed during
 the integration afterwards, so as to maintain the accuracy of space
-charge solving. In addition to the general attributes of a collimator 
-(`OUTFN` and `PARTICLEMATTERINTERACTION`), the parameters for describing
-a `CCOLLIMATOR` are the following:
+charge solving. In addition to the general attributes of a collimator
+(`OUTFN` and `PARTICLEMATTERINTERACTION`), the parameters for describing a
+`CCOLLIMATOR` are the following:
 
 XSTART::
   The x coordinate of the start point. [mm]
@@ -2458,14 +2468,14 @@ cma2: CCollimator, XSTART=x3, XEND=x4,YSTART=y3, YEND=y4,
 ----
 
 The particles lost on the CCOLLIMATOR are recorded in the HDF5 file
-_<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 
 [[sec.elements.septum-opal-cycl]]
 === Septum (_OPAL-cycl_)
 
 This is a restricted feature for _OPAL-cycl_. The particles hitting on the
-septum is removed from the bunch. There are 5 parameters to describe a
-septum.
+septum are removed from the bunch and recorded in the `OUTFN` file.
+There are 5 parameters to describe a septum.
 
 XSTART::
   The x coordinate of the start point. [mm]
@@ -2477,8 +2487,6 @@ YEND::
   The y coordinate of the end point. [mm]
 WIDTH::
   The width of the septum. [mm]
-OUTFN::
-  The file name into which the septum should write the collected data.
 
 .Septum
 [[fig_septum,Figure {counter:fig-cnt}]]
@@ -2492,13 +2500,14 @@ ystart=-1200.0, yend=-150.0, width=0.05;
 ----
 
 The particles lost on the SEPTUM are recorded in the HDF5 file
-_<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 
 [[sec.elements.probe-opal-cycl]]
 === Probe (_OPAL-cycl_)
 
-The particles hitting on the probe is recorded. There are 5 parameters
-to describe a probe.
+The particles hitting on the probe are recorded in the `OUTFN` file
+(see link:elements#sec.elements.common[Common Attributes]).
+There are 5 parameters to describe a probe.
 
 XSTART::
   The x coordinate of the start point. [mm]
@@ -2510,8 +2519,6 @@ YEND::
   The y coordinate of the end point. [mm]
 STEP::
   The step size of the probe (for histogram and peak finder output). Default: 1 [mm]
-OUTFN::
-  The file name into which the probe should write the collected data.
 
 .Probe
 [[fig_probe,Figure {counter:fig-cnt}]]
@@ -2525,7 +2532,7 @@ ystart=-1226.85, yend=-1241.3;
 ----
 
 The particles probed on the PROBE are recorded in the HDF5 file
-_<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
@@ -2538,9 +2545,10 @@ Note that for probes in multiple quadrants the histogram and peaks file is often
 === Stripper (_OPAL-cycl_)
 
 A stripper element strip the electron(s) from a particle. The particle
-hitting the stripper is recorded in the file, which contains the time,
-coordinates and momentum of the particle at the moment it hit the
-stripper. The charge and mass are changed. It has the same geometry as
+hitting the stripper is recorded in the `OUTFN` file
+(see link:elements#sec.elements.common[Common Attributes]), which contains
+the time, coordinates and momentum of the particle at the moment it hit
+the stripper. The charge and mass are changed. It has the same geometry as
 the PROBE element. Please note that the stripping physics is not
 included yet.
 
@@ -2566,8 +2574,6 @@ STOP::
   If STOP is true, the particle is stopped and deleted from the
   simulation; Otherwise, the outcoming particle continues to be tracked
   along the extraction path.
-OUTFN::
-  The file name into which the stripper should write the collected data.
 
 Example: latexmath:[H_2^+] particle stripping
 
@@ -2579,12 +2585,14 @@ opcharge=1, opmass=PMASS, opyield=2, stop=false;
 
 No matter what the value of STOP is, the particles hitting on the
 STRIPPER are recorded in the HDF5 file
-_<inputfilename>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 
 [[sec.elements.degrader-opal-t]]
 === Degrader (_OPAL-t_)
 
-Elliptical degrader with an overall length `L`.
+Elliptical degrader with an overall length `L`. The particles
+lost on a degrader are recorded in the `OUTFN` file
+(see link:elements#sec.elements.common[Common Attributes]).
 
 XSIZE::
   Major axis of the transverse elliptical shape, default value is 1e6.
@@ -2721,7 +2729,7 @@ vac: VACUUM, PRESSURE=1E-8, TEMPERATURE=300,
 ----
 
 No matter what the value of STOP is, the particles stripped are recorded in the HDF5 file
-_<elementname>.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+(or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
 
 [[sec.elements.undulator-opal-t]]
 === Undulator (_OPAL-t_)
