@@ -223,9 +223,9 @@ PARAMB::
   This argument is only available for `AUTO` mode multi-bunch run in _OPAL-cycl_.
 +
 MB_BINNING::
-  Type of energy binning in multi-bunch mode: `GAMMA` or `BUNCH` (default: `GAMMA`).
-  When `BUNCH` binning, then all particles of a bunch are in the same energy bin.
-  When `GAMMA` binning, then the bin depends on the momentum of the particle.
+  Type of energy binning in multi-bunch mode: `GAMMA_BINNING` or `BUNCH_BINNING` (default: `GAMMA_BINNING`).
+  When `BUNCH_BINNING` binning, then all particles of a bunch are in the same energy bin.
+  When `GAMMA_BINNING` binning, then the bin depends on the momentum of the particle.
   Only available in _OPAL-cycl_.
 +
 MB_ETA::
