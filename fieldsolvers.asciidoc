@@ -613,7 +613,7 @@ _Trilinos_ version 12.14.1. The corresponding paper is <<bib.amrsolver>>.
 [`PC` (piecewise constant), `TRILINEAR`, `LAGRANGE` (coarse-fine interface only)].
 Default: `PC`
 
-|`AMR_MG_NORM` |The norm of the convergence criterion [`L1, L2, LINF`]. Default: `LINF`
+|`AMR_MG_NORM` |The norm of the convergence criterion [`L1_NORM, L2_NORM, LINF_NORM`]. Default: `LINF_NORM`
 
 |`AMR_MG_VERBOSE` |Boolean to enable/disable solver output. It writes an SDDS file.
 Default: `FALSE`
