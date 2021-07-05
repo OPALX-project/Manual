@@ -117,13 +117,12 @@ PSDUMPFRAME::
   physics quantities are defined at a given s-step where s is distance
   along the reference trajectory. For non-isochronous accelerators,
   particles at a given time step can be quite a long way away from the
-  reference particle, yielding unexpected results.
+  reference particle, yielding unexpected results. Currently only
+  available for _OPAL-cycl_. In _OPAL-t_ the phase-space is always
+  written in the frame of the reference particle.
   * `GLOBAL`: data is written in the global Cartesian frame;
   * `BUNCH_MEAN`: data is written in the bunch mean frame or;
   * `REFERENCE`: data is written in the frame of the reference particle.
-    
-  Currently only available for _OPAL-cycl_. In _OPAL-t_ the phase-space
-  is always written in the frame of the reference particle.
 SPTDUMPFREQ::
   Defines after how many time steps we dump the phase space of single
   particle. It is always useful to record the trajectory of reference
