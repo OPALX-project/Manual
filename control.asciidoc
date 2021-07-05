@@ -121,6 +121,7 @@ PSDUMPFRAME::
   * `GLOBAL`: data is written in the global Cartesian frame;
   * `BUNCH_MEAN`: data is written in the bunch mean frame or;
   * `REFERENCE`: data is written in the frame of the reference particle.
+    
   Currently only available for _OPAL-cycl_. In _OPAL-t_ the phase-space
   is always written in the frame of the reference particle.
 SPTDUMPFREQ::
