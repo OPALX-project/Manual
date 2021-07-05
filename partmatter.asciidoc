@@ -541,25 +541,24 @@ image::figures/partmatter/spectandscatter.png[scaledwidth=12cm,width=80%]
 === References
 
 anchor:bib.nakai[[{counter:bib-cnt}\]]
-<<bib.nakai>> Y. Nakai, T. Shirai, T. Tabata, and R. Ito, Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and
-molecules, At. Dat. Nucl. Dat. Tabl., 37, 69-101 (1987).
+<<bib.nakai>> Y. Nakai et al., https://doi.org/10.1016/0092-640X(87)90005-2[_Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and molecules_], At. Dat. Nucl. Dat. Tabl., 37, 69 (1987).
 
 anchor:bib.tabata[[{counter:bib-cnt}\]]
-<<bib.tabata>> T. Tabata and T. Shirai, Anayltic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules, At. Dat. Nucl. Dat. Tabl., 76, 1-25 (2000).
+<<bib.tabata>> T. Tabata and T. Shirai, https://doi.org/10.1006/adnd.2000.0835[_Analytic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules_], At. Dat. Nucl. Dat. Tabl., 76, 1 (2000).
 
 anchor:bib.barnett[[{counter:bib-cnt}\]]
-<<bib.barnett>> C. F. Barnett, Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules, ORNL-6086/V1 (1990).
+<<bib.barnett>> C. F. Barnett, https://inis.iaea.org/collection/NCLCollectionStore/\_Public/22/011/22011031.pdf[__Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules__], Tech. Rep. ORNL-6086/V1, Oak Ridge National Laboratory (1990).
 
 anchor:bib.scherk[[{counter:bib-cnt}\]]
-<<bib.scherk>> L. R. Scherk. An improved value for the electron affinity of the negative hydrogen ion, Can. J. Phys., 57, 558–563 (1979).
+<<bib.scherk>> L. R. Scherk, _An improved value for the electron affinity of the negative hydrogen ion_, Can. J. Phys., 57, 558 (1979).
 
 anchor:bib.atomic[[{counter:bib-cnt}\]]
-<<bib.atomic>> Atomic Weights of the Elements 2019, International Union of Pure and Applied Chemistry (IUPAC), https://www.qmul.ac.uk/sbcs/iupac/AtWt/
+<<bib.atomic>> https://www.qmul.ac.uk/sbcs/iupac/AtWt/[_Atomic Weights of the Elements 2019_], International Union of Pure and Applied Chemistry (IUPAC).
 
 anchor:bib.pdgdatabase[[{counter:bib-cnt}\]]
-<<bib.pdgdatabase>> Atomic and Nuclear Properties of Materials for more than 350 materials, Particle Data Group (PDG), https://pdg.lbl.gov/2020/AtomicNuclearProperties/
+<<bib.pdgdatabase>> Particle Data Group (PDG), https://pdg.lbl.gov/2020/AtomicNuclearProperties/[_Atomic and Nuclear Properties of Materials for more than 350 materials_].
 
 anchor:bib.icru49[[{counter:bib-cnt}\]]
-<<bib.icru49>> Stopping Powers and Ranges for Protons and Alpha Particles, ICRU REPORT 49 (1993)
+<<bib.icru49>> _Stopping Powers and Ranges for Protons and Alpha Particles_, Tech. Rep. ICRU-49, International Commission on Radiation Units and Measurements (1993)
 
 // EOF

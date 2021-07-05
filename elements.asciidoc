@@ -2834,6 +2834,6 @@ anchor:bib.tait-bryan_elements[[{counter:bib-cnt}\]]
 <<bib.tait-bryan_elements>> https://en.wikipedia.org/wiki/Euler_angles#Tait.E2.80.93Bryan_angles[_Tait-bryan angles_].
 
 anchor:bib.enge_elements[[{counter:bib-cnt}\]]
-<<bib.enge_elements>> J. E. Spencer and H. A. Enge, _Split-pole magnetic spectrograph for precision nuclear spectroscopy_, Nucl. Instrum. Methods 49, 181–193 (1967).
+<<bib.enge_elements>> J. E. Spencer and H. A. Enge, https://www.sciencedirect.com/science/article/abs/pii/0029554X67906842[_Split-pole magnetic spectrograph for precision nuclear spectroscopy_], Nucl. Instrum. Methods 49, 181 (1967).
 
 // EOF

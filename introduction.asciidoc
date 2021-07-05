@@ -80,16 +80,16 @@ image::figures/Gun/GunComp.png[scaledwidth=10cm,width=80%]
 [[sec.introduction.output]]
 === Output
 
-The phase space is stored in the H5hut file-format <<bib.howison2010_intro>> and can be analyzed
-using e.g. H5root <<bib.schietinger_intro>>. The frequency of the data output (phase space and
-some statistical quantities) can be controlled using the `OPTION`
-statement see link:control#sec.control.option[Option Statement], with the flag `PSDUMPFREQ`. The file is
-named like in input file but with the extension .h5.
+The phase space is stored in the H5hut file-format <<bib.howison2010_intro>>
+and can be analyzed using e.g. H5root <<bib.h5root_intro>>, <<bib.schietinger_intro>>.
+The frequency of the data output (phase space and some statistical quantities)
+can be controlled using the  (see link:control#sec.control.option[Option Statement]),
+with the flag `PSDUMPFREQ`. The file is named like in input file but with the extension _.h5_.
 
 A SDDS compatible ASCII file with statistical beam parameters is written
 to a file with extension .stat. The frequency with which this data is
-written can be controlled with the `OPTION` statement
-see link:control#sec.control.option[Option Statement] with the flag `STATDUMPFREQ`.
+written can be controlled with the link:control#sec.control.option[`OPTION` statement]
+with the flag `STATDUMPFREQ`.
 
 For postprocessing we recommend to use the {link_pyOPALTools_wiki}/home[pyOPALTools]
 Python package which contains many tools for pre- and postprocessing, and analysing and plotting output data.
@@ -126,7 +126,7 @@ Julian Cummings,
 Ji Qiang,
 Robert Ryne
 and Stefan Adam.
-For the `H5root` visualization tool credits go to Thomas Schietinger.
+For the H5root visualization tool credits go to Thomas Schietinger.
 
 The following individuals are acknowledged for past contributions:
 Christian Baumgarten,
@@ -177,18 +177,21 @@ archivePrefix = {arXiv},
 === References
 
 anchor:bib.classic[[{counter:bib-cnt}\]]
-<<bib.classic>> F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], tech. rep. CERN/SL/96-061 (CERN, 1996).
+<<bib.classic>> F. C. Iselin, https://cds.cern.ch/record/311682/files/sl-96-061.pdf[_The classic project_], Tech. Rep. CERN/SL/96-061, European Organization for Nuclear Research (1996).
 
 anchor:bib.qiang2005_intro[[{counter:bib-cnt}\]]
-<<bib.qiang2005_intro>> J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+<<bib.qiang2005_intro>> J. Qiang et al., http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], Tech. Rep. LBNL-59098, Lawrence Berkeley National Laboratory (2005).
 
 anchor:bib.howison2010_intro[[{counter:bib-cnt}\]]
-<<bib.howison2010_intro>> M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+<<bib.howison2010_intro>> M. Howison et al., http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in 2010 IEEE International Conference on Cluster Computing Workshops and Posters, vol. 1, pp. 1–8 (Heraklion, Crete, 2010).
+
+anchor:bib.h5root_intro[[{counter:bib-cnt}\]]
+<<bib.h5root_intro>> https://gitlab.psi.ch/OPAL/src/-/wikis/h5root[_H5root: a ROOT Based Graphical User Interface for H5hut_].
 
 anchor:bib.schietinger_intro[[{counter:bib-cnt}\]]
-<<bib.schietinger_intro>> T. Schietinger, https://gitlab.psi.ch/OPAL/src/wikis/h5root[_H5root_], 2006.
+<<bib.schietinger_intro>> T. Schietinger, https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf[_H5PartROOT - A visualization and post-processing tool for accelerator simulations_], in Proceedings of the 10th International Computational Accelerator Physics conference (ICAP09), pp. 343-346 (San Francisco, CA, USA, 2009).
 
 anchor:bib.pooma[[{counter:bib-cnt}\]]
-<<bib.pooma>> http://www.nongnu.org/freepooma/
+<<bib.pooma>> R. Günther, http://www.nongnu.org/freepooma/[_Parallel Object-Oriented Methods and Applications_] (2005).
 
 // EOF

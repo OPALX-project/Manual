@@ -656,7 +656,7 @@ The intermediate phase space data of all particles and some interesting
 parameters, including RMS envelop size, RMS emittance, external field,
 time, energy, length of path, number of bunches and tracking step, are
 stored in the H5hut file-format <<bib.howison2010>> and can be analyzed
-using H5root <<bib.schietinger>>. The frequency of the data output can
+using H5root <<bib.h5root>>, <<bib.schietinger>>. The frequency of the data output can
 be set using the `PSDUMPFREQ` option of link:control#sec.control.option[`OPTION` statement].
 The file is named _<input_file_name >.h5_.
 This output can be switched on or off with the option `ENABLEHDF5`.
@@ -741,12 +741,15 @@ All supplementary files can be found in {link_regtest_RingCyclotronMatched}[the 
 === References
 
 anchor:bib.gordon1985[[{counter:bib-cnt}\]]
-<<bib.gordon1985>> M. M. Gordon and V. Taivassalo,  https://ieeexplore.ieee.org/document/4333942[_Nonlinear Effects of Focusing Bars Used in the Extraction Systems of Superconducting Cyclotrons_], in IEEE Transactions on Nuclear Science (1985), 32, pp. 2447-2449.
+<<bib.gordon1985>> M. M. Gordon and V. Taivassalo,  https://ieeexplore.ieee.org/document/4333942[_Nonlinear Effects of Focusing Bars Used in the Extraction Systems of Superconducting Cyclotrons_], IEEE Trans. Nucl. Sci. 32, 2447 (1985)
 
 anchor:bib.howison2010[[{counter:bib-cnt}\]]
-<<bib.howison2010>> M. Howison et al.,  http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in IEEE International Conference on Cluster Computing Workshops and Posters (2010), pp. 1–8, 10 . 1109 / CLUSTERWKSP.2010.5613098.
+<<bib.howison2010>> M. Howison et al., http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in 2010 IEEE International Conference on Cluster Computing Workshops and Posters, vol. 1, pp. 1–8 (Heraklion, Crete, 2010)
+
+anchor:bib.h5root[[{counter:bib-cnt}\]]
+<<bib.h5root>> https://gitlab.psi.ch/OPAL/src/-/wikis/h5root[_H5root: a ROOT Based Graphical User Interface for H5hut_]
 
 anchor:bib.schietinger[[{counter:bib-cnt}\]]
-<<bib.schietinger>> T. Schietinger, https://gitlab.psi.ch/OPAL/src/wikis/h5root[_H5root_], 2006.
+<<bib.schietinger>> T. Schietinger, https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf[_H5PartROOT - A visualization and post-processing tool for accelerator simulations_], in Proceedings of the 10th International Computational Accelerator Physics conference (ICAP09), pp. 343-346 (San Francisco, CA, USA, 2009)
 
 // EOF

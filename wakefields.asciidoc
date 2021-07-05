@@ -362,24 +362,23 @@ anchor:bib.schott[[{counter:bib-cnt}\]]
 <<bib.schott>> G. A. Schott, _Electromagnetic Radiation_ (Cambridge University Press, 1912).
 
 anchor:bib.schwinger1949[[{counter:bib-cnt}\]]
-<<bib.schwinger1949>> J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912–1925 (1949) 10.1103/PhysRev.75.1912. and http://puhep1.princeton.edu/~kirkmcd/accel/schwinger.pdf
+<<bib.schwinger1949>> J. Schwinger, http://dx.doi.org/10.1103/PhysRev.75.1912[_On the Classical Radiation of Accelerated Electrons_], Phys. Rev. 75, 1912 (1949).
 
 anchor:bib.murphy1997[[{counter:bib-cnt}\]]
-<<bib.murphy1997>> J. B. Murphy, S. Krinsky, and R. L. Gluckstern, _Longitudinal Wakefield for an Electron Moving on a Circular Orbit_, Particle Accelerators 57, 9–64 (1997).
+<<bib.murphy1997>> J. B. Murphy, S. Krinsky and R. L. Gluckstern, http://cds.cern.ch/record/1120287/files/p9.pdf[_Longitudinal Wakefield for an Electron Moving on a Circular Orbit_], Part. Accel. 57, 9 (1997).
 
 anchor:bib.nodvick1954[[{counter:bib-cnt}\]]
-<<bib.nodvick1954>> J. S. Nodvick and D. S. Saxon, http://dx.doi.org/10.1103/PhysRev.96.180[_Suppression of Coherent Radiation by Electrons in a Synchrotron_], Phys. Rev. 96, 180–184 (1954) 10.1103/PhysRev.96.180.
+<<bib.nodvick1954>> J. S. Nodvick and D. S. Saxon, http://dx.doi.org/10.1103/PhysRev.96.180[_Suppression of Coherent Radiation by Electrons in a Synchrotron_], Phys. Rev. 96, 180 (1954).
 
 anchor:bib.saldin1997[[{counter:bib-cnt}\]]
-<<bib.saldin1997>> E. L. Saldin, E. A. Schneidmiller, and M. V. Yurkov, http://dx.doi.org/10.1016/S0168-9002(97)00822-X[_On the Coherent Radiation of an Electron Bunch Moving in an Arc of a Circle_], Nucl. Instrum. Methods Phys. Res. Sect. A 398, 373–394 (1997) 10.1016/S0168-9002(97)00822-X.
+<<bib.saldin1997>> E. L. Saldin, E. A. Schneidmiller and M. V. Yurkov, http://dx.doi.org/10.1016/S0168-9002(97)00822-X[_On the Coherent Radiation of an Electron Bunch Moving in an Arc of a Circle_], Nucl. Instrum. Methods A 398, 373(1997).
 
 anchor:bib.mitchell2013[[{counter:bib-cnt}\]]
-<<bib.mitchell2013>> C. E. Mitchell, J. Qiang, and R. D. Ryne, _A fast method for computing 1-d wakefields due to coherent synchrotron radiation_, Nucl. Instrum. Methods Phys. Res. Sect. A 715, 119–125 (2013).
+<<bib.mitchell2013>> C. E. Mitchell, J. Qiang and R. D. Ryne, https://www.sciencedirect.com/science/article/pii/S0168900213002878[_A fast method for computing 1-d wakefields due to coherent synchrotron radiation_], Nucl. Instrum. Methods A 715, 119 (2013).
 
 anchor:bib.borland1995[[{counter:bib-cnt}\]]
-<<bib.borland1995>> M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proc. PAC (1995), pp. 2184–2186.
+<<bib.borland1995>> M. Borland,  http://accelconf.web.cern.ch/AccelConf/p95/ARTICLES/WAE/WAE11.PDF[_A self-describing file protocol for simulation integration and shared postprocessors_], in Proceedings of the Particle Accelerator Conference (PAC'95), vol. 4, pp. 2184–2186 (Dallas, TX, USA, 1995).
 
 anchor:bib.borland1998[[{counter:bib-cnt}\]]
-<<bib.borland1998>> M. Borland, http://www.slac.stanford.edu/econf/C980914/papers/F-Tu10.pdf[_A universal postprocessing toolkit for accelerator simulation and data analysis_], in Proc. 1998 ICAP conference (1998), FTU10.
-
+<<bib.borland1998>> M. Borland, http://www.slac.stanford.edu/econf/C980914/papers/F-Tu10.pdf[_A universal postprocessing toolkit for accelerator simulation and data analysis_], in Proceedings of the 5th International Computational Accelerator Physics conference (ICAP'98), pp. 23-27 (Monterey, CA, USA, 1998).
 // EOF
