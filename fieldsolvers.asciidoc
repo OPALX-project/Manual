@@ -705,67 +705,66 @@ Stop;
 === References
 
 anchor:bib.hockney[[{counter:bib-cnt}\]]
-<<bib.hockney>> R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136–210 (1970).
+<<bib.hockney>> R. W. Hockney, _The potential calculation and some applications_, Methods Comput. Phys. 9, 136 (1970).
 
 anchor:bib.eastwoodandbrownrigg[[{counter:bib-cnt}\]]
-<<bib.eastwoodandbrownrigg>> J. W. Eastwood and D. R. K. Brownrigg, _Remarks on the solution of poisson’s equation for isolated systems_, J. Comput. Phys. 32, 24–38 (1979).
+<<bib.eastwoodandbrownrigg>> J. W. Eastwood and D. R. K. Brownrigg, https://www.sciencedirect.com/science/article/pii/0021999179901396[_Remarks on the solution of poisson’s equation for isolated systems_], J. Comput. Phys. 32, 24 (1979).
 
 anchor:bib.hockneyandeastwood[[{counter:bib-cnt}\]]
 <<bib.hockneyandeastwood>> R. W. Hockney and J. W. Eastwood, _Computer simulation using particles_ (Taylor & Francis Group, 1988).
 
 anchor:bib.qiangandryne[[{counter:bib-cnt}\]]
-<<bib.qiangandryne>> J. Qiang and R. Ryne, _Parallel 3d poisson solver for a charged beam in a conducting pipe_, Comput. Phys. Commun. 138, 18–28 (2001).
+<<bib.qiangandryne>> J. Qiang and R. Ryne, https://www.sciencedirect.com/science/article/pii/S0010465501001850[_Parallel 3D poisson solver for a charged beam in a conducting pipe_], Comput. Phys. Commun. 138, 18 (2001).
 
 anchor:bib.qiangandgluckstern[[{counter:bib-cnt}\]]
-<<bib.qiangandgluckstern>> J. Qiang and R. L. Gluckstern, _Three-dimensional poisson solver for a charged beam with large aspect ratio in a conducting pipe_, Comput. Phys. Commun. 160, 120–128 (2004).
+<<bib.qiangandgluckstern>> J. Qiang and R. L. Gluckstern, https://www.sciencedirect.com/science/article/pii/S0010465504001298[_Three-dimensional poisson solver for a charged beam with large aspect ratio in a conducting pipe_], Comput. Phys. Commun. 160, 120 (2004).
 
 anchor:bib.Adelmann2009p543[[{counter:bib-cnt}\]]
-<<bib.Adelmann2009p543>> A. Adelmann, P. Arbenz, and Y. Ineichen, https://arxiv.org/abs/0907.4863[_A fast parallel poisson solver on irregular domains applied to beam dynamic simulations_], arXiv (2009).
+<<bib.Adelmann2009p543>> A. Adelmann, P. Arbenz and Y. Ineichen, https://www.sciencedirect.com/science/article/pii/S0021999110001026[_A fast parallel poisson solver on irregular domains applied to beam dynamic simulations_], J. Comput. Phys. 229, 4554 (2010).
 
 anchor:bib.qiang2005_fieldsolver[[{counter:bib-cnt}\]]
-<<bib.qiang2005_fieldsolver>> J. Qiang et al.,  http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], tech. rep. LBNL-59098 (LBNL).
+<<bib.qiang2005_fieldsolver>> J. Qiang et al., http://repositories.cdlib.org/lbnl/LBNL-59098[_A three-dimensional quasi-static model for high brightness beam dynamics simulation_], Tech. Rep. LBNL-59098, Lawrence Berkeley National Laboratory (2005).
 
 anchor:bib.qiang2006-1_fieldsolver[[{counter:bib-cnt}\]]
-<<bib.qiang2006-1_fieldsolver>> J. Qiang et al., _Three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 9 (2006).
+<<bib.qiang2006-1_fieldsolver>>  J. Qiang et al., https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.9.044204[_Three-dimensional quasi-static model for high brightness beam dynamics simulation_], Phys. Rev. ST Accel. Beams 9, 044204 (2006).
 
 anchor:bib.qiang2006-2_fieldsolver[[{counter:bib-cnt}\]]
-<<bib.qiang2006-2_fieldsolver>> J. Qiang et al., _Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_, Phys. Rev. ST Accel. Beams 10, 12990 (2007).
+<<bib.qiang2006-2_fieldsolver>> J. Qiang et al., https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.10.129901[_Erratum: three-dimensional quasi-static model for high brightness beam dynamics simulation_], Phys. Rev. ST Accel. Beams 10, 12990 (2007).
 
 anchor:bib.amrex[[{counter:bib-cnt}\]]
-<<bib.amrex>> W. Zhang, A. Almgren, et al., https://doi.org/10.21105/joss.01370[_AMReX: a framework for block-structured adaptive mesh refinement_], Journal of Open Source Software, 4(37):1370 (2019).
+<<bib.amrex>> W. Zhang et al., https://doi.org/10.21105/joss.01370[_AMReX: a framework for block-structured adaptive mesh refinement_], J. Open Source Softw. 4, 1370 (2019).
 
 anchor:bib.tpetra[[{counter:bib-cnt}\]]
-<<bib.tpetra>> C. G. Baker and M. A. Heroux, https://doi.org/10.3233/SPR-2012-0349[_Tpetra, and the use of generic programming in scientific computing_], Scientific Programming, 20(2):115–128 (2012).
+<<bib.tpetra>> C. G. Baker and M. A. Heroux, https://doi.org/10.3233/SPR-2012-0349[_Tpetra, and the use of generic programming in scientific computing_], Sci. Program. 20, 115 (2012).
 
 anchor:bib.ifpack2[[{counter:bib-cnt}\]]
-<<bib.ifpack2>> A. Prokopenko, C. M. Siefert, J. J. Hu, M. Hoemmen, and A. Klinvex, https://doi.org/10.2172/1259544[_Ifpack2 User's Guide 1.0_], Technical Report SAND2016-5338, Sandia National Labs (2016).
+<<bib.ifpack2>> A. Prokopenko et al., https://doi.org/10.2172/1259544[_Ifpack2 User's Guide 1.0_], Tech. Rep. SAND2016-5338, Sandia National Laboratories (2016).
 
 anchor:bib.amesos2-belos[[{counter:bib-cnt}\]]
-<<bib.amesos2-belos>> E. Bavier, M. Hoemmen, S. Rajamanickam, and H. Thornquist, https://doi.org/10.3233/SPR-2012-0352[_Amesos2 and Belos: Direct and iterative solvers for large sparse linear systems_], Scientific Programming, 20(3):241–255 (2012).
+<<bib.amesos2-belos>> E. Bavier et al., https://doi.org/10.3233/SPR-2012-0352[_Amesos2 and Belos: Direct and iterative solvers for large sparse linear systems_], Sci. Program. 20, 241 (2012).
 
 anchor:bib.muelu[[{counter:bib-cnt}\]]
-<<bib.muelu>> L. Berger-Vergiat, C. A. Glusa, J. J. Hu, M. Mayr, A. Prokopenko, C. M. Siefert, R. S. Tuminaro, and T. A. Wiesner, https://doi.org/10.2172/1491860[_MueLu User's Guide_], Technical Report SAND2019-0537, Sandia National Laboratories (2019).
+<<bib.muelu>> L. Berger-Vergiat et al., https://doi.org/10.2172/1491860[_MueLu User's Guide_], Tech. Rep. SAND2019-0537, Sandia National Laboratories (2019).
 
 anchor:bib.superlu[[{counter:bib-cnt}\]]
-<<bib.superlu>> X. Li, J. Demmel, J. Gilbert, L. Grigori, M. Shao, and I. Yamazaki, http://crd.lbl.gov/~xiaoye/SuperLU[_SuperLU Users' Guide_], Technical Report LBNL-44289, Lawrence Berkeley National Laboratory (1999).
+<<bib.superlu>> X. Li  et al., http://crd.lbl.gov/~xiaoye/SuperLU[_SuperLU Users' Guide_], Tech. Rep. LBNL-44289, Lawrence Berkeley National Laboratory (1999).
 
 anchor:bib.umfpack[[{counter:bib-cnt}\]]
-<<bib.umfpack>> T. A. Davis, https://doi.org/10.1145/992200.992206[_Algorithm 832: UMFPACK V4.3—an Unsymmetric-Pattern Multifrontal Method_], ACM Trans. Math. Softw., 30(2):196–199 (2004).
+<<bib.umfpack>> T. A. Davis, https://doi.org/10.1145/992200.992206[_Algorithm 832: UMFPACK V4.3—an Unsymmetric-Pattern Multifrontal Method_], ACM Trans. Math. Softw. 30, 196 (2004).
 
 anchor:bib.pardiso[[{counter:bib-cnt}\]]
-<<bib.pardiso>> O. Schenk and K. Gärtner, https://doi.org/10.1016/j.future.2003.07.011[_Solving unsymmetric sparse systems of linear equations with PARDISO_], Future Generation Computer Systems, 20(3):475–487 (2004).
+<<bib.pardiso>> O. Schenk and K. Gärtner, https://doi.org/10.1016/j.future.2003.07.011[_Solving unsymmetric sparse systems of linear equations with PARDISO_], Future Gener. Comput. Syst. 20, 475 (2004).
 
 anchor:bib.pardiso-2[[{counter:bib-cnt}\]]
 <<bib.pardiso-2>> https://software.intel.com/en-us/onemkl-linux-developer-guide[_Developer Guide for Intel(R) oneAPI Math Kernel Library for Linux_], last updated: February 7, 2020.
 
 anchor:bib.mumps[[{counter:bib-cnt}\]]
-<<bib.mumps>> P. R. Amestoy, I. S. Duff, J.-Y. L'Excellent, and J. Koster, https://doi.org/10.1137/S0895479899358194[_A Fully Asynchronous Multifrontal Solver Using Distributed Dynamic Scheduling_], SIAM Journal on Matrix Analysis and Applications, 23(1):15–41 (2001).
+<<bib.mumps>> P. R. Amestoy et al., https://doi.org/10.1137/S0895479899358194[_A Fully Asynchronous Multifrontal Solver Using Distributed Dynamic Scheduling_], SIAM J. Matrix Anal. Appl. 23, 15 (2001).
 
 anchor:bib.lapack[[{counter:bib-cnt}\]]
-<<bib.lapack>> E. Anderson, Z. Bai, C. Bischof, L. S. Blackford, J. Demmel, J. Dongarra, J. Du Croz, A. Greenbaum, S. Hammarling, A. McKenney, and D. Sorensen, https://doi.org/10.1137/1.9780898719604[_LAPACK Users' Guide_], SIAM, third edition, 1999,
-ISBN 978-0-89871-447-0.
+<<bib.lapack>> E. Anderson et al., https://doi.org/10.1137/1.9780898719604[_LAPACK Users' Guide_], 3rd edition (SIAM, 1999).
 
 anchor:bib.amrsolver[[{counter:bib-cnt}\]]
-<<bib.amrsolver>> M. Frey, A. Adelmann, and U. Locans, https://doi.org/10.1016/j.cpc.2019.106912[_On architecture and performance of adaptive mesh refinement in an electrostatics Particle-In-Cell code_], Computer Physics Communications, 247:106912 (2020).
+<<bib.amrsolver>> M. Frey, A. Adelmann and U. Locans, https://doi.org/10.1016/j.cpc.2019.106912[_On architecture and performance of adaptive mesh refinement in an electrostatics Particle-In-Cell code_], Comput. Phys. Commun. 247, 106912 (2020).
 
 // EOF

@@ -1202,18 +1202,18 @@ coordinates. (<<sec.distribution.fromfiledisttype>>).
 === References
 
 anchor:bib.JohoDist[[{counter:bib-cnt}\]]
-<<bib.JohoDist>> W. Joho, Representation of beam ellipses for transport calculations, PSI Internal Report TM-11-14, https://intranet.psi.ch/pub/AUTHOR_WWW/ABE/TalksDE/TM-11-14.pdf.
+<<bib.JohoDist>> W. Joho, https://indico.psi.ch/event/3484/attachments/5948/7502/TM-11-14.pdf[_Representation of beam ellipses for transport calculations_], PSI Internal Report TM-11-14, Paul Scherrer Institute (1980).
 
 anchor:bib.laserPulseShaping[[{counter:bib-cnt}\]]
-<<bib.laserPulseShaping>> J. G. Power and C. Jing, Temporal Laser Pulse Shaping for RF Photocathode Guns: The Cheap and Easy way using UV Birefringent Crystals, AIP Conference Proceedings 1086, 689 (2009); https://doi.org/10.1063/1.3080991
+<<bib.laserPulseShaping>> J. G. Power and C. Jing, https://doi.org/10.1063/1.3080991[_Temporal Laser Pulse Shaping for RF Photocathode Guns: The Cheap and Easy way using UV Birefringent Crystals_], AIP Conf. Proc. 1086, 689 (2009).
 
 anchor:bib.flo97[[{counter:bib-cnt}\]]
-<<bib.flo97>> K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, tech. rep. TESLA FEL-Report (DESY, Jan. 1997).
+<<bib.flo97>> K. Flöttmann, _Note on the thermal emittance of electrons emitted by Cesium Telluride photo cathodes_, Tech. Rep. DESY-TESLA-FEL-97-01, Deutsches Elektronen-Synchrotron (1997).
 
 anchor:bib.clen2000[[{counter:bib-cnt}\]]
-<<bib.clen2000>> J. E. Clendenin et al., _Reduction of thermal emittance of rf guns_, Nucl. Instrum. Methods Phys. Res. Sect. A 455, 198–201 (2000).
+<<bib.clen2000>> J. E. Clendenin et al., https://www.sciencedirect.com/science/article/pii/S0168900200007312[_Reduction of thermal emittance of RF guns_], Nucl. Instrum. Methods A 455, 198 (2000).
 
 anchor:bib.dowe2009[[{counter:bib-cnt}\]]
-<<bib.dowe2009>> D. H. Dowell and J. F. Schmerge, _Quantum efficiency and thermal emittance of metal photocathodes_, Phys. Rev. ST Accel. Beams 12, 074201 (2009).
+<<bib.dowe2009>> D. H. Dowell and J. F. Schmerge, https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.12.074201[_Quantum efficiency and thermal emittance of metal photocathodes_], Phys. Rev. ST Accel. Beams 12, 074201 (2009).
 
 // EOF

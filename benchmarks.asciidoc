@@ -1020,18 +1020,18 @@ image::figures/Benchmarks/opal-impact-1MHz-z.png[scaledwidth=10cm,width=50%]
 === References
 
 anchor:bib.TraceMan[[{counter:bib-cnt}\]]
-<<bib.TraceMan>> K. Crandall and D. Rusthoi, _Documentation for trace: an interactive beam-transport code_, tech. rep. (Los Alamos National Laboratory).
+<<bib.TraceMan>> K. Crandall and D. Rusthoi, https://doi.org/10.2172/5937743[_Documentation for TRACE: An Interactive Beam-Transport Code_], Tech. Rep. LA—10235-MS, Los Alamos National Laboratory (1985).
 
 anchor:bib.transport[[{counter:bib-cnt}\]]
-<<bib.transport>> K. L. Brown et al., _TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems_, tech. rep. CERN 73-16, revised as CERN 80-4 (CERN, 1980).
+<<bib.transport>> K. L. Brown et al., http://cds.cern.ch/record/133647[_TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems_], Tech. Rep. CERN 80-4, European Organization for Nuclear Research (1980).
 
 anchor:bib.Transport_GUI[[{counter:bib-cnt}\]]
-<<bib.Transport_GUI>> U. Rohrer, _PSI graphic transport framework based on a cern-slac-fermilab version by K.L. Brown et al_, tech. rep. (PSI).
+<<bib.Transport_GUI>> U. Rohrer, http://aea.web.psi.ch/Urs_Rohrer/MyWeb/trans.htm[_PSI graphic transport framework based on a CERN-SLAC-FERMILAB version by K.L. Brown et al_].
 
 anchor:bib.Tran_ex[[{counter:bib-cnt}\]]
 <<bib.Tran_ex>> U. Rohrer, http://aea.web.psi.ch/Urs_Rohrer/MyWeb/moregifs/gantryb.gif.
 
 anchor:bib.elegant[[{counter:bib-cnt}\]]
-<<bib.elegant>> M. Borland, https://www1.aps.anl.gov/icms_files/lsnotes/files/APS_1418218.pdf[_Elegant: a flexible SDDS-compliant code for accelerator simulation_], tech. rep. LS-287 (Advanced Photon Source, Sept. 2000).
+<<bib.elegant>> M. Borland, https://publications.anl.gov/anlpubs/2000/08/36940.pdf[_elegant: a flexible SDDS-compliant code for accelerator simulation_], Tech. Rep. LS-287, Advanced Photon Source (2000).
 
 // EOF
