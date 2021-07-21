@@ -359,10 +359,20 @@ following format:
 [[sec.opalcycl.bandrf-type]]
 ==== BANDRF type
 
-If `TYPE=BANDRF`, the program requires the latexmath:[B_z] data format
-which is same as `CARBONCYCL`. But with `BANDRF` type, the program can
-also read in the 3D electric field(s). For the detail about its usage,
-please see  link:elements#sec.elements.cyclotron[Cyclotron].
+`BANDRF` fieldmap `TYPE` allows to read both the magnetic field and the
+electric field from the link:elements#sec.elements.cyclotron[`CYCLOTRON`]
+element. The magnetic field data (latexmath:[B_z]) are stored in the same
+format as link:opalcycl#sec.opalcycl.carboncycl-type[`CARBONCYCL`]. Regarding
+the electric field, the 3D RF field-map can be read from {link_H5hut_wiki}[H5Hut]
+type file (_.h5part_ file extension) making use of a conversion tool integrated
+into _OPAL_: _ascii2h5block_. For the details about its usage, please see
+link:opalcycl#sec.opalcycl.read-3d-rf-field-map[Read 3D RF field-map].
+The electric field map can be imported from some field files, which can be
+optionally superposed, providing different meshing specifications for the
+field map. This is useful for modeling the central region electric fields
+which usually has complicated shapes. Please note that in this case, the E
+field is treated as a part of `CYCLOTRON` element, rather than an independent
+`RFCAVITY` element.
 
 [[sec.opalcycl.ring-type]]
 ==== RING type
@@ -480,12 +490,20 @@ respectively.
 [[sec.opalcycl.read-3d-rf-field-map]]
 ==== Read 3D RF field-map
 
-The 3D RF field-map can be read from H5hut type file. This is useful for
-modeling the central region electric fields which usually has complicate
-shapes. For the detail about its usage, please see  link:elements#sec.elements.cyclotron[Cyclotron].
+The 3D RF field-map can be read from {link_H5hut_wiki}[H5Hut] type file for
+`TYPE=BANDRF`. To generate the _h5part_ field files, it is necessary to use the
+_ascii2h5block_ conversion tool. This program builds h5part field files from
+ASCII file output of ANSYS or OPERA 3D field data. The command to use it should be like: 
 
-Please note that in this case, the E field is treated as a part of
-`CYCLOTRON` element, rather than a independent `RFCAVITY` element.
+----
+ascii2h5block efield.txt hfield.txt ehfout
+----
+
+The ASCII input files must be adapted for an adequate conversion. The first
+three rows of a field map that you wish to combine should include integers
+with the amount of steps (or different values) in latexmath:[x], latexmath:[y]
+and latexmath:[z]. The 2D mid-plane map is in cylindrical coordinates, while
+the 3D map must be in Cartesian coordinates.
 
 [[sec.opalcycl.particle-tracking-and-acceleration]]
 === Particle Tracking and Acceleration
