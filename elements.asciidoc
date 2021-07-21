@@ -1514,8 +1514,9 @@ ring: Cyclotron, TYPE="RING", CYHARMON=6, PHIINIT=0.0,
       MAXZ=10, MINZ=-10, MINR=0, MAXR=2500;
 ----
 
-If TYPE is set to BANDRF, the 3D electric field map of RF cavity will be
-read from external {link_H5hut_wiki}[H5Hut] file and the following extra arguments need to specified:
+If `TYPE` is set to `BANDRF`, the 3D electric field map of RF cavity will be
+read from external {link_H5hut_wiki}[H5Hut] file and the following extra
+arguments need to specified:
 
 RFMAPFN::
   The file name(s) for the electric field map(s) in H5Hut binary format.
