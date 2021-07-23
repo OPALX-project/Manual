@@ -652,7 +652,7 @@ _<input_file_name >-afterEachTurn.dat_. The data is stored in the global cylindr
 coordinate system. Please note that if the field map is ideally
 isochronous, the reference particle of a given energy take exactly one
 revolution in `STEPSPERTURN` steps; Otherwise, the particle may not go
-through a full 360latexmath:[\degree] in `STEPSPERTURN` steps.
+through a full 360latexmath:[^{\circ}] in `STEPSPERTURN` steps.
 
 There are 3 ASCII files which store the phase space data around
 latexmath:[0], latexmath:[\pi/8] and latexmath:[\pi/4] azimuths.
