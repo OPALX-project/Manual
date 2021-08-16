@@ -154,6 +154,10 @@ OUTFN::
   extension will be set according to the link:control#sec.control.option[`OPTION`] 
   statements. If this attribute is empty, the file will be named as the
   element label.
+DELETEONTRANSVERSEEXIT::
+  Particles that exit elements on their sides get deleted in _OPAL-t_. The user can
+  control this behavior by setting this attribute. If its value is `TRUE` then particles
+  that exit on the sides are deleted (default), with `FALSE` they are kept.
 
 All elements can have arbitrary additional attributes which are defined
 in the respective section.
