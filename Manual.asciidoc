@@ -35,7 +35,7 @@ endif::[]
 :sectnums!:
 == Preliminary note
 
-This is the manual for _OPAL_ {OPAL_version}. Odd minor version numbers identify
+This is the manual for _OPAL_ {OPAL_version}. Versions with the postfix `-dev` identify 
 development versions. Use these versions only if you know what you are
 doing!
 
