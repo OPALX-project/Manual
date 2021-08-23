@@ -1,4 +1,4 @@
-= The _OPAL_ Framework: Version 2021.1
+= The _OPAL_ Framework: Version 2021.2-dev
 Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Matthias Frey (PSI); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Nicole Neveu (SLAC); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
