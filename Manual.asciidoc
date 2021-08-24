@@ -32,16 +32,6 @@ ifdef::backend-html5[]
 
 endif::[]
 
-:sectnums!:
-== Preliminary note
-
-This is the manual for _OPAL_ {OPAL_version}. Odd minor version numbers identify
-development versions. Use these versions only if you know what you are
-doing!
-
-New feature might not yet be documented or something is already documented
-but not yet implemented.
-
 :sectnums:
 == Abstract
 
