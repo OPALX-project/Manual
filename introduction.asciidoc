@@ -19,7 +19,7 @@ Parallel Particle Layer) is the framework which provides parallel
 particles and fields using data parallel approach. IPPL was inspired by the POOMA <<bib.pooma>>.
 
 _OPAL-t_ can be used to model guns,
-injectors, ERLs and complete XFELs excluding the undulator.
+injectors, ERLs and complete XFELs.
 
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities
