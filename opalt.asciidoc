@@ -50,10 +50,10 @@ X::
 PX::
   latexmath:[\beta_x\gamma] Horizontal canonical momentum [1].
 Y::
-  Horizontal position latexmath:[y] of a particle relative to the axis
+  Vertical position latexmath:[y] of a particle relative to the axis
   of the element [m].
 PY::
-  latexmath:[\beta_y\gamma] Horizontal canonical momentum [1].
+  latexmath:[\beta_y\gamma] Vertical canonical momentum [1].
 Z::
   Longitudinal position latexmath:[z] of a particle in floor
   co-ordinates [m].
@@ -152,8 +152,8 @@ latexmath:[(X_i, Y_i, Z_i)] and three angles
 latexmath:[(\Theta_i, \Phi_i, \Psi_i)].
 
 latexmath:[\Psi] is the roll angle about the global
-latexmath:[Z]-axis. latexmath:[\Phi] is the pitch angle about the
-global latexmath:[Y]-axis. Lastly, latexmath:[\Theta] is the yaw
+latexmath:[Z]-axis. latexmath:[\Phi] is the yaw angle about the
+global latexmath:[Y]-axis. Lastly, latexmath:[\Theta] is the pitch
 angle about the global latexmath:[X]-axis. All three angles form
 right-handed screws with their corresponding axes. The angles
 (latexmath:[\Theta,\Phi,\Psi]) are the Tait-Bryan angles
