@@ -38,9 +38,9 @@ PX::
 (Where latexmath:[p_x] is the momentum of the particle and latexmath:[P_0] is the momentum of the reference particle)
 
 Y::
-  Horizontal position latexmath:[y] of a particle relative to the reference particle [m].
+  Vertical position latexmath:[y] of a particle relative to the reference particle [m].
 PY::
-  latexmath:[\frac{p_y}{P_0}] Normalized horizontal canonical momentum [1].
+  latexmath:[\frac{p_y}{P_0}] Normalized vertical canonical momentum [1].
 Z::
   Longitudinal position latexmath:[z] of a particle relative to the reference particle [m].
 DELTA::
