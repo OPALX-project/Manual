@@ -2685,39 +2685,46 @@ KHV:KICKER, HKICK=0.001, VKICK=0.0005;
 The reference system for an orbit corrector is a Cartesian coordinate
 system.
 
-[[sec.elements.vacuum-opal-cycl]]
-=== Vacuum (_OPAL-cycl_)
+[[sec.elements.vacuum]]
+=== Vacuum
 
 Vacuum element represents the conditions and parameters to consider
-interactions with the residual gas and the magnetic field 
-in a cyclotron. When the particle interacts,
-it is recorded in the file, which contains the time,
+interactions with the residual gas and the magnetic field. When the
+particle interacts, it is recorded in the file, which contains the time,
 coordinates and momentum of the particle at this moment.
 The particle could produce a new particle, changing
 the charge and mass.
 
-There are 7 parameters to describe the vacuum space.
+In _OPAL-cycl_ the vacuum region is defined according to the cyclotron
+boundaries (`MINZ`, `MAXZ`, `MINR` and `MAXR`,
+see link:elements#sec.elements.cyclotron[`CYCLOTRON` element]), whereas
+in _OPAL-t_ is described by `L` and `ELEMEDGE` parameters
+(see link:elements#sec.elements.common[Common Attributes]).
+
+There are 7 specific parameters to describe the vacuum space.
 
 PRESSURE::
-  The average pressure of the residual gas in the cyclotron. [mbar]
+  The average pressure of the residual gas. [mbar]
 TEMPERATURE::
   Temperature of residual gas. [K]
 PMAPFN::
-  File name of the mid-plane pressure map.
-  The pressure data is stored in a sequence shown in 2D field map on the median
-  plane with primary direction corresponding to the azimuthal direction,
-  secondary direction to the radial direction
+  File name of the mid-plane pressure map. This feature is only available
+  for _OPAL-cycl_. The pressure data is stored in a sequence shown in 2D field
+  map on the median plane with primary direction corresponding to the azimuthal
+  direction, secondary direction to the radial direction
   (same file structure as `Cyclotron` `TYPE=CARBONCYCL`).
   If `PMAPFN` is specified, `PRESSURE` parameter is taken as default value
   for regions in the accelerator out of the limits of the pressure map.
 PSCALE::
   Scale factor for the pressure field map (default: 1.0).
+  Only available for _OPAL-cycl_.
 GAS::
   Type of gas for residual vacuum: `H2` or `AIR`
 STOP::
   If STOP is true, the particle is stopped and deleted from the
-  simulation. Otherwise, the outcoming particle continues to be tracked
-  as `SECONDARY` particle (default: true).
+  simulation. Otherwise, the outcoming particle (according to the cross
+  section evaluation) continues to be tracked as `SECONDARY` particle
+  (default: true).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
   (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).

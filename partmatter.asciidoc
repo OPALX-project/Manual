@@ -280,6 +280,12 @@ P(x) = 1 - e^{-x/\lambda}
 where latexmath:[P(x)] is the statistic cumulative interaction
 probability of the process.
 
+<<fig_BstpPhysics>> summarizes the iterative steps evaluated by the algorithm.
+
+.The diagram of BeamStrippingPhysics in _OPAL_.
+[[fig_BstpPhysics,Figure {counter:fig-cnt}]]
+image::figures/partmatter/OPALBSTP_flowchart.jpeg[{fig-width-default}]
+
 [[sec.partmatter.residual-gas-interaction]]
 ==== Residual gas interaction
 
@@ -307,13 +313,14 @@ each step latexmath:[\delta _s].
 
 Gas stripping could be applied for four different types of incoming
 particles: negative hydrogen ions (`HMINUS`), protons
-(`PROTON`), neutral hydrogen atoms (`HYDROGEN`) and hydrogen
-molecule ions (`H2P`). Single / Double - electron detachment
-or capture reactions are considered for each of them.
+(`PROTON`), neutral hydrogen atoms (`HYDROGEN`), hydrogen
+molecule ions (`H2P`) and deuterons (`DEUTERON`). Single / Double - electron
+detachment or capture reactions are considered for each of them.
 
-Cross sections are calculated according to energy of the particle
-employing analytic expressions fitted to cross section experimental data.
-There are three different fitting expressions:
+Cross sections are calculated according to energy of the particle employing
+analytic expressions fitted to cross section experimental data. The suitable
+function is selected in each case according to the type of incident particle
+and the residual gas under consideration. There are different fitting expressions:
 
  *** Nakai function <<bib.nakai>>
 
@@ -343,7 +350,9 @@ incident projectile energy in keV, latexmath:[E_{th}] is the threshold energy
 of reaction in keV, and the symbols latexmath:[a_i] denote adjustable parameters.
 
  *** Tabata function <<bib.tabata>>: A linear combination of the Nakai function,
-improved and fitted with a greater number of experimental data.
+latexmath:[f(E)], improved and fitted with a greater number of experimental data
+and considering more setting parameters. The enhancement of the function makes it
+possible to extrapolate the cross section data to some extent.
 
  *** Barnett function <<bib.barnett>>:
 
@@ -359,14 +368,31 @@ X=\frac{(\ln{E}-\ln{E_{min}})-(\ln{E_{max}}-\ln{E})}{\ln{E_{max}}-\ln{E_{min}}}
 
 where latexmath:[T_i] are the Chebyshev orthogonal polynomials.
 
+*** Bohr function <<bib.betz>>:
+
+[latexmath]
+++++
+\sigma =
+\left\{\begin{array}{l}
+4\pi a_0^2 \displaystyle\frac{z_t+z_t^2}{z_i}\left(\frac{v_0}{v}\right)^2 \hspace{8mm} z_t < 15\\
+\\
+\pi a_0^2 \displaystyle\frac{z_t^{2/3}}{z_i}\left(\frac{v_0}{v}\right) \hspace{14mm} z_t > 15
+\end{array}\right.
+++++
+
+where latexmath:[z_i] and latexmath:[z_t] are the charge of the incident
+particle and the charge of the target nuclei, latexmath:[a_0] is the Bohr
+radius, latexmath:[v_0=e^2/4\pi\varepsilon_0\hslash] is the characteristic
+Bohr velocity and latexmath:[v] is the incident particle velocity.
+
 
 [[sec.partmatter.electromagnetic-stripping]]
 ==== Electromagnetic stripping
 
-In case of latexmath:[H^-], the second electron is slightly bounded, so
+In case of `HMINUS` particles, the second electron is slightly bounded, so
 it is relevant to consider the detachement by the magnetic field. The
 orthogonal component of the magnetic field to the median plane (read
-from `Cyclotron` element), produces an electric field according to
+from `CYCLOTRON` element), produces an electric field according to
 Lorentz transformation, latexmath:[E\!=\!\gamma\beta cB]. The fraction
 of particles dissociated by the electromagnetic field during a time
 step latexmath:[\delta _t] is:
@@ -390,9 +416,29 @@ latexmath:[S_{\!0}] is a spectroscopy coefficient, and the normalization constan
 is latexmath:[N=(2k_0(k_0+\alpha)(2k_0+\alpha))^{1/2} / \alpha], where
 latexmath:[\alpha] is a parameter for the ionic potential function.
 
+The electromagnetic stripping calculation is restricted to _OPAL-cycl_.
+
+
+[[sec.partmatter.the-substeps]]
+=== The _ScatteringPhysics_ Substeps
+
+Small step is needed in the routine of ScatteringPhysics.
+
+If a large step is given in the main input file, in the file
+_ScatteringPhysics.cpp_, it is divided by a integer number
+latexmath:[n] to make the step size using for the calculation of
+scattering physics less than 1.01e-12 s. As shown by
+<<fig_CollPhysics>> and <<fig_CollPhysics2>> in the following subsection,
+first we track one step for the particles already in the element and the
+newcomers, then another (n-1) steps to make sure the particles in the element
+experience the same time as the ones in the main bunch.
+
+Now, if the particle leave the element during the (n-1) steps, we
+track it as in a drift and put it back to the main bunch when finishing
+(n-1) steps.
 
 [[sec.partmatter.the-flow-diagram-of-scatteringphysics-class-in-opal]]
-=== The Flow Diagram of _ScatteringPhysics_ Class in OPAL
+==== The Flow Diagram of _ScatteringPhysics_ Class in OPAL
 
 .The diagram of ScatteringPhysics in _OPAL_.
 [[fig_CollPhysics,Figure {counter:fig-cnt}]]
@@ -402,23 +448,6 @@ image::figures/partmatter/diagram.png[scaledwidth=16cm,width=70%]
 [[fig_CollPhysics2,Figure {counter:fig-cnt}]]
 image::figures/partmatter/Diagram2.png[scaledwidth=8cm,width=30%]
 
-[[sec.partmatter.the-substeps]]
-==== The Substeps
-
-Small step is needed in the routine of ScatteringPhysics.
-
-If a large step is given in the main input file, in the file
-_ScatteringPhysics.cpp_, it is divided by a integer number
-latexmath:[n] to make the step size using for the calculation of
-scattering physics less than 1.01e-12 s. As shown by
-<<fig_CollPhysics>> and <<fig_CollPhysics2>> in the previous section, first we track one
-step for the particles already in the element and the newcomers, then
-another (n-1) steps to make sure the particles in the element
-experience the same time as the ones in the main bunch.
-
-Now, if the particle leave the element during the (n-1) steps, we
-track it as in a drift and put it back to the main bunch when finishing
-(n-1) steps.
 
 [[sec.partmatter.available-materials-in-opal]]
 === Available Materials in _OPAL_
@@ -549,8 +578,11 @@ anchor:bib.tabata[[{counter:bib-cnt}\]]
 anchor:bib.barnett[[{counter:bib-cnt}\]]
 <<bib.barnett>> C. F. Barnett, https://inis.iaea.org/collection/NCLCollectionStore/\_Public/22/011/22011031.pdf[__Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules__], Tech. Rep. ORNL-6086/V1, Oak Ridge National Laboratory (1990).
 
+anchor:bib.betz[[{counter:bib-cnt}\]]
+<<bib.betz>> H.-D. Betz, https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.44.465[__Charge States and Charge-Changing Cross Sections of Fast Heavy Ions Penetrating Through Gaseous and Solid Media__], Rev. Mod. Phys. 44, 465 (1972).
+
 anchor:bib.scherk[[{counter:bib-cnt}\]]
-<<bib.scherk>> L. R. Scherk, _An improved value for the electron affinity of the negative hydrogen ion_, Can. J. Phys., 57, 558 (1979).
+<<bib.scherk>> L. R. Scherk, https://cdnsciencepub.com/doi/10.1139/p79-077[__An improved value for the electron affinity of the negative hydrogen ion__], Can. J. Phys., 57, 558 (1979).
 
 anchor:bib.atomic[[{counter:bib-cnt}\]]
 <<bib.atomic>> https://www.qmul.ac.uk/sbcs/iupac/AtWt/[_Atomic Weights of the Elements 2019_], International Union of Pure and Applied Chemistry (IUPAC).
