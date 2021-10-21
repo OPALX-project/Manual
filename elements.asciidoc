@@ -1311,7 +1311,7 @@ component only to model a defective multipole.
 [[sec.elements.multipoleT]]
 === General Multipole (will replace <<sec.elements.multipole>> when implemented)
 
-A `MULTIPOLET` is in _OPAL-t_ a general multipole with extended
+A `MULTIPOLET` is in _OPAL-cycl_ a general multipole with extended
 features. It can represent a straight or curved magnet. In the curved
 case, the user may choose between constant or variable radius. This
 model includes fringe fields. The detailed description can be found at:
