@@ -502,16 +502,16 @@ simplify their repeated use in statements and expressions.
 |`RADDEG` |latexmath:[180/\pi] |57.29577951308232087685 |rad/deg
 |`DEGRAD` |latexmath:[\pi/180] |0.01745329251994329576922 |deg/rad
 |`E` |latexmath:[e] |2.7182818284590452354 |1
-|`MUMASS` |latexmath:[m_\mu] |0.1056583755 |GeV
 |`EMASS` |latexmath:[m_e] |0.51099895000e-03 |GeV
+|`MUMASS` |latexmath:[m_\mu] |0.1056583755 |GeV
 |`PMASS` |latexmath:[m_p] |0.93827208816 |GeV
+|`DMASS` |latexmath:[m_d] |2.013553212745 * `AMU` |GeV
 |`HMMASS` |latexmath:[m_{hm}] |1.00837 * `AMU` |GeV
 |`H2PMASS` |latexmath:[m_{h2p}] |2.01510 * `AMU` |GeV
-|`DMASS` |latexmath:[m_d] |2.013553212745 * `AMU` |GeV
 |`ALPHAMASS` |latexmath:[m_{\alpha}] |4.001506179127 * `AMU` |GeV
-|`CMASS` |latexmath:[m_c] |12 * `AMU` |GeV
-|`XEMASS` |latexmath:[m_{xe}] |124 * `AMU` |GeV
-|`UMASS` |latexmath:[m_u] |238.050787 * `AMU` |GeV
+|`CMASS` |latexmath:[m_c] |11.9967074146787 * `AMU` |GeV
+|`XEMASS` |latexmath:[m_{xe}] |128.87494026 * `AMU` |GeV
+|`UMASS` |latexmath:[m_u] |237.999501 * `AMU` |GeV
 |`CLIGHT` |latexmath:[c] |299792458 |m/s
 |`AMU` |  |0.93149410242 |GeV
 |_OPALVERSION_ | |120 |for 1.2.0
