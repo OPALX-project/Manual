@@ -24,52 +24,56 @@ The `label` is optional, it defaults to `UNNAMED_BEAM`.
 === Particle Definition
 
 The beam particle is defined by `PARTICLE` attribute, which includes a
-direct assignment of the particle mass and charge, as indicated below.
-For other type of particle beams, this attribute must not be used.
-Instead, the particle beam is defined by means of the `MASS` and
-`CHARGE` attributes specified by the user.
+direct assignment of the particle mass and charge, as indicated below. The
+mass values are taken from Atomic Mass Data Center <<bib.amdc>> and Kinetic
+Database <<bib.kinetic_database>>. In the case of heavy ion beams, it is
+important to note that a specific type of fully ionized isotope are considered.
+The mass of the ions is calculated by subtracting the mass of the electrons and
+the binding energy <<bib.nist_database>> from the atomic mass. For other type
+of particle beams, this attribute must not be used. Instead, the particle beam
+is defined by means of `MASS` and `CHARGE` attributes specified by the user.
 
 PARTICLE:: The name of particles in the machine.
 +
 _OPAL_ knows the mass (see link:format#sec.format.symbolic-constants[Predefined Symbolic Constants])
 and the charge for the following particles:
 +
-  POSITRON;;
-    The particles are positrons (`MASS` = latexmath:[m_e],
-    `CHARGE` = 1).
   ELECTRON;;
-    The particles are electrons (`MASS` = latexmath:[m_e],
-    `CHARGE` = -1).
-  PROTON;;
-    The particles are protons (default, `MASS` = latexmath:[m_p],
-    `CHARGE` = 1).
-  ANTIPROTON;;
-    The particles are anti-protons (`MASS` = latexmath:[m_p],
-    `CHARGE` = -1).
-  HMINUS;;
-    The particles are negative hydrogen ions (H-) (`MASS` = latexmath:[m_{hm}],
-    `CHARGE` = -1).
-  CARBON;;
-    The particles are carbons (`MASS` = latexmath:[m_c],
-    `CHARGE` = 6).
-  URANIUM;;
-    The particles are of type uranium (`MASS` = latexmath:[m_u],
-    `CHARGE` = 35).
+    The particles are electrons
+    (`MASS` = latexmath:[m_e], `CHARGE` = -1).
+  POSITRON;;
+    The particles are positrons
+    (`MASS` = latexmath:[m_e], `CHARGE` = +1).
   MUON;;
-    The particles are of type muon (`MASS` = latexmath:[m_\mu],
-    `CHARGE` = -1).
+    The particles are of type muon
+    (`MASS` = latexmath:[m_\mu], `CHARGE` = -1).
+  PROTON;;
+    The particles are protons
+    (`MASS` = latexmath:[m_p], `CHARGE` = +1).
+  ANTIPROTON;;
+    The particles are anti-protons
+    (`MASS` = latexmath:[m_p], `CHARGE` = -1).
   DEUTERON;;
-    The particles are of type deuteron (`MASS` = latexmath:[m_d],
-    `CHARGE` = 1).
-  XENON;;
-    The particles are of type xenon (`MASS` = latexmath:[m_{xe}],
-    `CHARGE` = 20).
+    The particles are of type deuteron
+    (`MASS` = latexmath:[m_d], `CHARGE` = +1).
+  HMINUS;;
+    The particles are negative hydrogen ions (latexmath:[H^-])
+    (`MASS` = latexmath:[m_{hm}], `CHARGE` = -1).
   H2P;;
-    The particles are of type molecular hydrogen ions+
-    (`MASS` = latexmath:[m_{h2p}], `CHARGE` = 1).
+    The particles are molecular hydrogen ions (latexmath:[H_2^+])
+    (`MASS` = latexmath:[m_{h2p}], `CHARGE` = +1).
   ALPHA;;
-    The particles are of alpha particles (`MASS` = latexmath:[m_{\alpha}],
-    `CHARGE` = 2).
+    The particles are of alpha particles
+    (`MASS` = latexmath:[m_{\alpha}], `CHARGE` = +2).
+  CARBON;;
+    The particles are fully-stripped carbon-12 ions
+    (`MASS` = latexmath:[m_c], `CHARGE` = +6).
+  XENON;;
+    The particles are fully-stripped xenon-129 ions
+    (`MASS` = latexmath:[m_{xe}], `CHARGE` = +54).
+  URANIUM;;
+    The particles are fully-stripped uranium-238 ions
+    (`MASS` = latexmath:[m_u], `CHARGE` = +92).
 
 
 For other particle types one may enter:
@@ -106,5 +110,18 @@ NPART::
   The number of macro particles for the simulations
 NSLICE::
   The number of slices per bunch
+
+
+[[sec.beam.bibliography]]
+=== References
+
+anchor:bib.amdc[[{counter:bib-cnt}\]]
+<<bib.amdc>> M. Wang et al., https://iopscience.iop.org/article/10.1088/1674-1137/abddaf[_The AME 2020 atomic mass evaluation (II). Tables, graphs and references_], Chinese Phys. C, 45, 030003 (2021). Atomic Mass Data Center, https://www-nds.iaea.org/amdc/[_Atomic Mass Evaluation - AME2020_].
+
+anchor:bib.kinetic_database[[{counter:bib-cnt}\]]
+<<bib.kinetic_database>> https://kida.astrochem-tools.org/[_Kinetic Database for Astrochemistry_].
+
+anchor:bib.nist_database[[{counter:bib-cnt}\]]
+<<bib.nist_database>> https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html[_NIST Atomic Spectra Database Ionization Energies Form_], Atomic Spectra Database, NIST Standard Reference Database 78 (Version 5.9).
 
 // EOF
