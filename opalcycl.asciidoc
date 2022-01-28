@@ -195,7 +195,8 @@ using a magnetic potential and measured latexmath:[B_z] on the median
 plane at the point latexmath:[(r,\theta, z)] in cylindrical polar
 coordinates, the third order field can be written as:
 
-[latexmath#eq-Bfield]
+.Derivative of magnetic field
+[latexmath%number#eq-Bfield]
 ++++
 \begin{aligned}
   B_r(r,\theta, z) & = & z\frac{\partial B_z}{\partial r}-\frac{1}{6}z^3 C_r, \\ \\
@@ -205,7 +206,8 @@ coordinates, the third order field can be written as:
 
 where latexmath:[B_z\equiv B_z(r, \theta, 0)] and
 
-[latexmath]
+.Coefficients for derivatives with 5-point Lagrange formula
+[latexmath%number#eq-CoeffDer]
 ++++
 \begin{aligned}
   C_r & = & \frac{\partial^{3}{B_z}}{\partial r^{3}} + \frac{1}{r}\frac{\partial^{2}{B_z}}{\partial r^{2}} - \frac{1}{r^2}\frac{\partial{B_z}}{\partial r}
