@@ -26,7 +26,7 @@ size, which is beyond this tutorial.
 image::figures/tutorial/gen-str.png[scaledwidth=6cm,width=30%]
 
 [[sec.tutorial.starting-opal]]
-=== Starting OPAL
+=== Starting _OPAL_
 
 The name of the application is `opal`. When called without any argument
 an interactive session is started.
@@ -160,7 +160,7 @@ The supplementary files should be placed in the same directory.
 * {link_manual_src}/examples/Distribution/spdist.opal[spdist.opal]
 * {link_manual_src}/examples/Distribution/tdist.opal[tdist.opal]
 
-To run opal on a single node, just use this command:
+To run _OPAL_ on a single node, just use this command:
 
 ----
  opal Injector2.in
@@ -209,13 +209,13 @@ effects in Injector II.
 
 For the supplementary files see above, <<sec.tutorial.inj2>>
 
-To run opal on single node, just use this command:
+To run _OPAL_ on single node, just use this command:
 
 ----
  opal Injector2-sc.in
 ----
 
-To run opal on N nodes in parallel environment interactively, use this
+To run _OPAL_ on N nodes in parallel environment interactively, use this
 command instead:
 
 ----
@@ -333,10 +333,10 @@ the current convention
 ==== Change in Momentum Units
 
 Input momentum can be given without units i.e. as
-latexmath:[\beta\gamma], or in eV/c. Up until OPAL 2.2
+latexmath:[\beta\gamma], or in eV/c. Up until _OPAL_ 2.2,
 eV was used instead of eV/c, but this was changed since
 eV is a unit of energy rather than momentum. To adapt old files
-with momentum in eV, such that they can work for the newer OPAL
+with momentum in eV, such that they can work for the newer _OPAL_
 versions, the following formula can be used:
 
 [latexmath]

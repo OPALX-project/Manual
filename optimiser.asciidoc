@@ -23,9 +23,9 @@ In this chapter we introduce multi-objective optimization problems and
 discuss techniques for their solution with an emphasis on evolutionary
 algorithms.
 
-NOTE: For multi-objective optimization OPAL uses
+NOTE: For multi-objective optimization _OPAL_ uses
 {link_opt_pilot}[`opt-pilot`] developed by Y. Ineichen. `opt-pilot`
-has been fully integrated into OPAL. Instructions can be found on the
+has been fully integrated into _OPAL_. Instructions can be found on the
 {link_opt_pilot_wiki}/home[`opt-pilot` wiki page].
 
 [[sec.optimiser.definition]]
@@ -133,7 +133,7 @@ Some links to "What is the tradeoff between population size and the number of ge
 
 
 [[sec.optimiser.opt-pilot-commands]]
-=== OPAL Commands
+=== Optimiser OPAL Commands
 
 ==== Basic Syntax
 
@@ -175,100 +175,102 @@ The second constraint will be evaluated after the simulation.
 
 ==== OPTIMIZE Command
 
-The OPTIMIZE command initiates optimization.
+The `OPTIMIZE` command initiates optimization.
 
-.Attributes for the command OPTIMIZE.
+.Attributes for the `OPTIMIZE` command.
 [[tab_OPTIMIZE_Attributes,Table {counter:tab-cnt}]]
 [cols="<1,<2",options="header",]
 |=======================================================================
-| Attribute                 | Description
-| INPUT                     | Path to input file.
-| OUTPUT                    | Name used in output file generation.
-| OUTDIR                    | Name of directory used to store generation output files.
-| OBJECTIVES                | List of objectives to be used.
-| DVARS                     | List of optimization variables to be used.
-| CONSTRAINTS               | List of constraints to be used.
-| INITIALPOPULATION         | Size of the initial population.
-| STARTPOPULATION           | A generation file (JSON format) to be started from (optional). In case the number of individuals of the provided file is lower than INITIALPOPULATION, it creates the remaining individuals randomly within the bounds of the DVARS. In case
-the number of individuals is greater it takes the first INITIALPOPULATION individuals.
-| NUM_MASTERS               | Number of master nodes.
-| NUM_COWORKERS             | Number processors per worker.
-| DUMP_DAT                  | Dump old generation data format with frequency, default: false.
-| DUMP_FREQ                 | Dump generation data format with frequency, default: 1
-| DUMP_OFFSPRING            | Dump offspring (instead of parent population), default: true.
-| NUM_IND_GEN               | Number of individuals in a generation.
-| MAXGENERATIONS            | Number of generations to run.
-| EPSILON                   | Tolerance of hypervolume criteria, default: 0.001.
-| EXPECTED_HYPERVOL         | The reference hypervolume, default: 0.
-| HYPERVOLREFERENCE         | The reference point (real array) for the hypervolume, default: origin.
-| CONV_HVOL_PROG            | Converge if change in hypervolume is smaller, default: 0.
-| ONE_PILOT_CONVERGE        | default: false
-| SOL_SYNCH                 | Solution exchange frequency, default: 0.
-| INITIAL_OPTIMIZATION      | Optimize speed of first generation creation (useful when number of infeasible solutions large), default: false
-| BIRTH_CONTROL             | Enforce strict population sizes, default: false.
-                              If true, population sizes and generations are strictly as defined by `INITIALPOPULATION`, `NUM_IND_GEN` and the classic genetic algorithm.
-                              If false, optimisation is done to keep all workers busy at all times. This means that population sizes can be larger (in case `INITIAL_OPTIMIZATION` is true) and individuals might have been created in a previous generation.
-| MUTATION_PROBABILITY      | Mutation probability of individual, default: 0.5.
-| MUTATION                  | Mutation type of an individual ("OneBit" (single gene), "IndependentBit" (default, multiple genes))
-| GENE_MUTATION_PROBABILITY | Mutation probability of single gene (used in "IndependentBit" mutation only), default: 0.5.
-| RECOMBINATION_PROBABILITY | Probability for individuals to combine (crossover), default: 0.5.
-| CROSSOVER                 | Method of child generation based on two individuals ("Blend" (default), "NaiveOnePoint", "NaiveUniform" or "SimulatedBinary")
-| SIMBIN_CROSSOVER_NU       | Simulated binary crossover parameter latexmath:[\nu], default: 2.0
-| SIMTMPDIR                 | Directory where simulations are run.
-| TEMPLATEDIR               | Directory where templates are stored.
-| FIELDMAPDIR               | Directory where field maps are stored.
-| DISTDIR                   | Directory where distributions are stored (optional).
-| RESTART_FILE              | H5 file to restart the OPAL simulations from (optional).
-                              Each individual copies the H5 to its simulation directory in
-                              order to avoid overwriting of the original file. This attributes
-                              is used together with RESTART_STEP.
-| RESTART_STEP              | Restart from given H5 step (optional). Used together with RESTART_FILE.
+| Attribute                   | Description
+| `INPUT`                     | Path to input file.
+| `OUTPUT`                    | Name used in output file generation.
+| `OUTDIR`                    | Name of directory used to store generation output files.
+| `OBJECTIVES`                | List of objectives to be used.
+| `DVARS`                     | List of optimization variables to be used.
+| `CONSTRAINTS`               | List of constraints to be used.
+| `INITIALPOPULATION`         | Size of the initial population.
+| `STARTPOPULATION`           | A generation file (JSON format) to be started from (optional).
+                                In case the number of individuals of the provided file is lower than `INITIALPOPULATION`, it creates the remaining individuals randomly within the bounds of the DVARS.
+                                In case the number of individuals is greater it takes the first `INITIALPOPULATION` individuals.
+| `NUM_MASTERS`               | Number of master nodes.
+| `NUM_COWORKERS`             | Number processors per worker.
+| `DUMP_DAT`                  | Dump old generation data format with frequency, default: false.
+| `DUMP_FREQ`                 | Dump generation data format with frequency, default: 1
+| `DUMP_OFFSPRING`            | Dump offspring (instead of parent population), default: true.
+| `NUM_IND_GEN`               | Number of individuals in a generation.
+| `MAXGENERATIONS`            | Number of generations to run.
+| `EPSILON`                   | Tolerance of hypervolume criteria, default: 0.001.
+| `EXPECTED_HYPERVOL`         | The reference hypervolume, default: 0.
+| `HYPERVOLREFERENCE`         | The reference point (real array) for the hypervolume, default: origin.
+| `CONV_HVOL_PROG`            | Converge if change in hypervolume is smaller, default: 0.
+| `ONE_PILOT_CONVERGE`        | default: false
+| `SOL_SYNCH`                 | Solution exchange frequency, default: 0.
+| `INITIAL_OPTIMIZATION`      | Optimize speed of first generation creation (useful when number of infeasible solutions large), default: false
+| `BIRTH_CONTROL`             | Enforce strict population sizes, default: false.
+                                If true, population sizes and generations are strictly as defined by `INITIALPOPULATION`, `NUM_IND_GEN` and the classic genetic algorithm.
+                                If false, optimisation is done to keep all workers busy at all times. This means that population sizes can be larger (in case `INITIAL_OPTIMIZATION` is true) and individuals might have been created in a previous generation.
+| `MUTATION_PROBABILITY`      | Mutation probability of individual, default: 0.5.
+| `MUTATION`                  | Mutation type of an individual (`ONEBIT` (single gene), `INDEPENDENTBIT` (default, multiple genes)).
+| `GENE_MUTATION_PROBABILITY` | Mutation probability of single gene (used in `INDEPENDENTBIT` mutation only), default: 0.5.
+| `RECOMBINATION_PROBABILITY` | Probability for individuals to combine (crossover), default: 0.5.
+| `CROSSOVER`                 | Method of child generation based on two individuals (`BLEND` (default), `NAIVEONEPOINT`, `NAIVEUNIFORM` or `SIMULATEDBINARY`)
+| `SIMBIN_CROSSOVER_NU`       | Simulated binary crossover parameter latexmath:[\nu], default: 2.0.
+| `SIMTMPDIR`                 | Directory where simulations are run.
+| `TEMPLATEDIR`               | Directory where templates are stored.
+| `FIELDMAPDIR`               | Directory where field maps are stored.
+| `DISTDIR`                   | Directory where distributions are stored (optional).
+| `RESTART_FILE`              | H5 file to restart the _OPAL_ simulations from (optional).
+                                Each individual copies the H5 to its simulation directory in
+                                order to avoid overwriting of the original file. This attributes
+                                is used together with `RESTART_STEP`.
+| `RESTART_STEP`              | Restart from given H5 step (optional). Used together with `RESTART_FILE`.
 |=======================================================================
 
 [[sec.optimiser.dvar-command]]
 ==== DVAR Command
 
-The DVAR command defines a variable for optimization.
+The `DVAR` command defines a variable for optimization.
 
-.Attributes for the command DVAR.
+.Attributes for the command `DVAR`.
 [[tab_DVAR_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header",]
 |=======================================================================
-|Attribute   | Description
-| VARIABLE   | Variable name that should be varied during optimization.
-| LOWERBOUND | Lower limit of the range of values that the variable should assume.
-| UPPERBOUND | Upper limit of the range of values that the variable should assume.
+|Attribute     | Description
+| `VARIABLE`   | Variable name that should be varied during optimization.
+| `LOWERBOUND` | Lower limit of the range of values that the variable should assume.
+| `UPPERBOUND` | Upper limit of the range of values that the variable should assume.
 |=======================================================================
 
 ==== OBJECTIVE Command
 
-The OBJECTIVE command defines an objective for optimization.
+The `OBJECTIVE` command defines an objective for optimization.
 
-.Attributes for the command OBJECTIVE.
+.Attributes for the command `OBJECTIVE`.
 [[tab_OBJECTIVE_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header",]
 |=======================================================================
-|Attribute |Description
-| EXPR | Expression to minimize during optimization.
+|Attribute | Description
+| `EXPR`   | Expression to minimize during optimization.
 |=======================================================================
 
 ==== CONSTRAINT Command
 
-The CONSTRAINT command defines a constraint for optimization.
+The `CONSTRAINT` command defines a constraint for optimization.
 
-.Attributes for the command CONSTRAINT.
+.Attributes for the command `CONSTRAINT`.
 [[tab_CONSTRAINT_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header",]
 |=======================================================================
-|Attribute |Description
-| EXPR | Expression that should be fulfilled during optimization.
+|Attribute | Description
+| `EXPR`   | Expression that should be fulfilled during optimization.
 |=======================================================================
 
 
 ==== Available Expressions
 The following expressions are available:
 
-The `EXPR` The optimiser parser knows the following mathematical functions (which are mapped directly to the STL <cmath> functions with the same name):
+The `EXPR` The optimiser parser knows the following mathematical functions
+(which are mapped directly to the STL <cmath> functions with the same name):
 
 * `sqrt(x)`  : square root of x
 * `pow(x,k)` : x to the power k
@@ -291,7 +293,7 @@ In addition the optimiser parser has one non-STL function:
 
 There are several methods to access output data:
 
-.Available functions for the EXPR attributes for OBJECTIVE and CONSTRAINT.
+.Available functions for the `EXPR` attributes for `OBJECTIVE` and `CONSTRAINT`.
 [[tab_EXPR_functions,Table {counter:tab-cnt}]]
 [cols="<3,<5",options="header,breakable",]
 |=======================================================================
@@ -337,8 +339,9 @@ There are several methods to access output data:
 
 | septum(<probe>)
 
-| Returns the minimum bin count between the last and second last turn at the given probe. It
-  uses the _<probe>.hist_ and _<probe>.peaks_ file (cf. link:elements#sec.elements.probe-opal-cycl[probe element]).
+| Returns the minimum bin count between the last and second last turn at the
+  given probe. It uses the _<probe>.hist_ and _<probe>.peaks_ file
+  (cf. link:elements#sec.elements.probe-opal-cycl[Probe element]).
 
 |=======================================================================
 
@@ -372,9 +375,7 @@ OPTIMIZE, INPUT="tmpl/05-DL_QN3.tmpl", OBJECTIVES = {drmsx, drmsy, goalfun},
 QUIT;
 ----
 
-.Template file `tmpl/05-DL_QN3.tmpl`.
-Note that the design variables start and end with underscores:
-
+.Template file `tmpl/05-DL_QN3.tmpl`. Note that the design variables start and end with underscores:
 ----
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;
@@ -449,7 +450,7 @@ ENDTRACK;
 QUIT;
 ----
 
-Run OPAL with:
+Run _OPAL_ with:
 
 ```
 mpirun /path/to/opal --info 5 05-DL_QN3.in
@@ -459,9 +460,10 @@ mpirun /path/to/opal --info 5 05-DL_QN3.in
 
 ==== Output
 
-The solutions for each generation will be saved in either a plain ASCII (if `DUMP_DAT` true) and JSON format.
-The Pareto front of all individuals is in a JSON file, `ParetoFront_.json`.
-There are three log files `opt.trace.0`, `opt-progress.0` and `pilot.trace.0` that log the job management.
+The solutions for each generation will be saved in either a plain ASCII
+(if `DUMP_DAT` true) and JSON format. The Pareto front of all individuals
+is in a JSON file, `ParetoFront_.json`. There are three log files `opt.trace.0`,
+`opt-progress.0` and `pilot.trace.0` that log the job management.
 E.g. to count the total number of dispatched simulations:
 
 ```

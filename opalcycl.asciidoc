@@ -593,7 +593,7 @@ number to identify which energy bin it belongs to.
 === Input
 
 All the three working modes of _OPAL-cycl_ use an input file written in
-`mad` language which will be described in detail in the following
+_MAD_ language which will be described in detail in the following
 chapters.
 
 For the *Tune Calculation mode*, one additional auxiliary file with the
@@ -759,15 +759,15 @@ All supplementary files can be found in {link_regtest_RingCyclotronMatched}[the 
 === References
 
 anchor:bib.gordon1985[[{counter:bib-cnt}\]]
-<<bib.gordon1985>> M. M. Gordon and V. Taivassalo,  https://ieeexplore.ieee.org/document/4333942[_Nonlinear Effects of Focusing Bars Used in the Extraction Systems of Superconducting Cyclotrons_], IEEE Trans. Nucl. Sci. 32, 2447 (1985)
+<<bib.gordon1985>> M. M. Gordon and V. Taivassalo,  https://ieeexplore.ieee.org/document/4333942[_Nonlinear Effects of Focusing Bars Used in the Extraction Systems of Superconducting Cyclotrons_], IEEE Trans. Nucl. Sci. 32, 2447 (1985).
 
 anchor:bib.howison2010[[{counter:bib-cnt}\]]
-<<bib.howison2010>> M. Howison et al., http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in 2010 IEEE International Conference on Cluster Computing Workshops and Posters, vol. 1, pp. 1–8 (Heraklion, Crete, 2010)
+<<bib.howison2010>> M. Howison et al., http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in 2010 IEEE International Conference on Cluster Computing Workshops and Posters, vol. 1, pp. 1–8 (Heraklion, Crete, 2010).
 
 anchor:bib.h5root[[{counter:bib-cnt}\]]
 <<bib.h5root>> https://gitlab.psi.ch/OPAL/src/-/wikis/h5root[_H5root: a ROOT Based Graphical User Interface for H5hut_]
 
 anchor:bib.schietinger[[{counter:bib-cnt}\]]
-<<bib.schietinger>> T. Schietinger, https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf[_H5PartROOT - A visualization and post-processing tool for accelerator simulations_], in Proceedings of the 10th International Computational Accelerator Physics conference (ICAP09), pp. 343-346 (San Francisco, CA, USA, 2009)
+<<bib.schietinger>> T. Schietinger, https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf[_H5PartROOT - A visualization and post-processing tool for accelerator simulations_], in Proceedings of the 10th International Computational Accelerator Physics conference (ICAP09), pp. 343-346 (San Francisco, CA, USA, 2009).
 
 // EOF

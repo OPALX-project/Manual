@@ -17,7 +17,7 @@ wakefields.
 
 Basically there are two different kind of wakefields that can be used.
 The first one is the wakefield of a round, metallic beam pipe that can
-be calculated numerically (see <<sec.wakefield.wakefield_to_be_used>> - <<sec.wakefield.TAU>>).
+be calculated numerically (see <<sec.wakefield.wakecmd>>).
 Since this also limits the applications of wakefields we also provide a
 way to import a discretized wakefield from a file The wakefield of a
 round, metallic beam pipe with radius latexmath:[a] can be calculated
@@ -136,14 +136,14 @@ In addition to the `1D-CSR` model also one that makes use of an
 integrated Green function <<bib.mitchell2013>>, `1D-CSR-IGF`.
 
 [[sec.wakefield.wakecmd]]
-=== The `WAKE` Command
+=== The WAKE Command
 
-The general input format is
+The general input format for the `WAKE` command is:
 
 ----
-label:WAKE, TYPE=string, NBIN=real, CONST_LENGTH=bool,
-      CONDUCT=string, Z0=real, FORM=string, RADIUS=real,
-      SIGMA=real, TAU=real, FILTERS=string-array;
+label: WAKE, TYPE=string, NBIN=real, CONST_LENGTH=bool,
+       CONDUCT=string, Z0=real, FORM=string, RADIUS=real,
+       SIGMA=real, TAU=real, FILTERS=string-array;
 ----
 
 The format for a CSR wake is
@@ -186,127 +186,95 @@ constant
 |`FILTER` |The names of the filters that should be applied
 |=======================================================================
 
-[[sec.wakefield.wakefield_to_be_used]]
-=== Define the Wakefield to be used
 
-The `WAKE` command defines data for a wake function on an element
-see link:elements#sec.elements.common[Common Attributes for all Elements].
-
-[[sec.wakefield.WTYPE]]
-=== Define the wakefield type
-
-A string value see link:format#sec.format.astring[String Attributes] to specify the wake function,
-either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE` or `TRANSV-SHORT-RANGE`.
-
-[[sec.wakefield.NBIN]]
-=== Define the number of bins
-
-The number of bins used in the calculation of the line density.
-
-[[sec.wakefield.CONSTLEN]]
-=== Define the bunch length to be constant
-
-With the `CONST_LENGTH` flag the bunch length can be set to be constant.
-This has no effect on CSR wakefunctions.
-
-[[sec.wakefield.CONDUCT]]
-=== Define the conductivity
-
-The conductivity of the bunch which can be set to either `AC` or `DC`.
-This has no effect on CSR wakefunctions.
-
-[[sec.wakefield.Z]]
-=== Define the impedance
-
-The impedance latexmath:[Z_0] of the beam pipe in
-[latexmath:[\Omega]]. This has no effect on CSR wakefunctions.
-
-[[sec.wakefield.FORM]]
-=== Define the form of the beam pipe
-
-The form of the beam pipe can be set to `ROUND`. This has no effect on
-CSR wakefunctions.
-
-[[sec.wakefield.RADIUS]]
-=== Define the radius of the beam pipe
-
-The radius of the beam pipe in [m]. This has no effect on CSR
-wakefunctions.
-
-[[sec.wakefield.SIGMA]]
-=== Define the sigma of the beam pipe
-
-The latexmath:[\sigma] of the beam pipe (material constant), see
-<<eq-dc_cond>>. This has no effect on CSR wakefunctions.
-
-[[sec.wakefield.TAU]]
-=== Define the relaxation time (tau) of the beam pipe
-
-The latexmath:[\tau] defines the relaxation time and is needed to
-calculate the impedance of the beam pipe see <<eq-dc_cond>>. This
-has no effect on CSR wakefunctions.
-
-[[sec.wakefield.WFNAME]]
-=== Import a wakefield from a file
-
-Since we only need values of the wake function at several discrete
-points to calculate the force on the particle it is also possible to
-specify these in a file.To get required data points of the wakefield not
-provide in the file we linearly interpolate the available function
-values. The files are specified in the SDDS format
-<<bib.borland1995>>, <<bib.borland1998>>.
-
-Whenever a file is specified _OPAL_ will use the wakefield found in the
-file and ignore all other commands related to round beam pipes.
-
-[[sec.wakefield.FILTER]]
-=== List of Filters
-
-Array of names of filters to be applied to the longitudinal histogram of
-the bunch to get rid of the noise and to calculate derivatives. All the
-filters are applied to the line density in the order they appear in the
-array. The last filter is also used for calculating the derivatives. The
-actual filters have to be defined elsewhere.
+WAKE::
+  Define the Wakefield to be used. The `WAKE` command defines data for a wake
+  function on an element
+  (see link:elements#sec.elements.common[Common Attributes for all Elements]).
+TYPE::
+  Define the wakefield type. A string value
+  (see link:format#sec.format.astring[String Attributes]) to specify the wake
+  function, either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE` or
+  `TRANSV-SHORT-RANGE`.
+NBIN::
+  The number of bins used in the calculation of the line density.
+CONST_LENGTH::
+  With the `CONST_LENGTH` flag the bunch length can be set to be constant.
+  This has no effect on CSR wakefunctions.
+CONDUCT::
+  The conductivity of the bunch which can be set to either `AC` or `DC`.
+  This has no effect on CSR wakefunctions.
+Z0::
+  Define the impedance latexmath:[Z_0] of the beam pipe in
+  [latexmath:[\Omega]]. This has no effect on CSR wakefunctions.
+FORM::
+  Define the form of the beam pipe can be set to `ROUND`. This has no effect
+  on CSR wakefunctions.
+RADIUS::
+  Define the radius of the beam pipe [m]. This has no effect on CSR
+  wakefunctions.
+SIGMA::
+  Define the latexmath:[\sigma] of the beam pipe (material constant), see
+  <<eq-dc_cond>>. This has no effect on CSR wakefunctions.
+TAU::
+  The latexmath:[\tau] defines the relaxation time of the beam pipe and is
+  needed to calculate the impedance of the beam pipe see <<eq-dc_cond>>. This
+  has no effect on CSR wakefunctions.
+FNAME::
+  Import a wakefield from a file. Since we only need values of the wake
+  function at several discrete points to calculate the force on the particle
+  it is also possible to specify these in a file.To get required data points
+  of the wakefield not provide in the file we linearly interpolate the
+  available function values. The files are specified in the SDDS format
+  <<bib.borland1995>>, <<bib.borland1998>>.
+  +
+Whenever a file is specified _OPAL_ will use the wakefield found in the file
+and ignore all other commands related to round beam pipes.
+FILTER::
+  List of Filters. Array of names of filters to be applied to the longitudinal
+  histogram of the bunch to get rid of the noise and to calculate derivatives.
+  All the filters are applied to the line density in the order they appear in
+  the array. The last filter is also used for calculating the derivatives. The
+  actual filters have to be defined elsewhere.
 
 [[sec.wakefield.the-filter-command]]
-=== The `FILTER` Command
+=== The FILTER Command
 
 Filters can be defined which then are applied to the line density of the
 bunch. The following smoothing filters are implemented:
-`Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`, `RelativFFTLowPass`. The
+`SAVITZKY-GOLAY`, `STENCIL`, `FIXEDFFTLOWPASS`, `RELATIVEFFTLOWPASS`. The
 input format for them is
 
 ----
-label:FILTER, TYPE=string, NFREQ=real, THRESHOLD=real,
-      NPOINTS=real, NLEFT=real, NRIGHT=real,
-      POLYORDER=real
+label: FILTER, TYPE=string, NFREQ=real, THRESHOLD=real,
+       NPOINTS=real, NLEFT=real, NRIGHT=real, POLYORDER=real
 ----
 
 TYPE::
-  The type of filter: `Savitzky-Golay`, `Stencil`, `FixedFFTLowPass`,
-  `RelativFFTLowPass`
+  The type of filter: `SAVITZKY-GOLAY`, `STENCIL`, `FIXEDFFTLOWPASS`,
+  `RELATIVEFFTLOWPASS`
 NFREQ::
-  Only used in `FixedFFTLowPass`: the number of frequencies to keep
+  Only used in `FIXEDFFTLOWPASS`: the number of frequencies to keep
 THRESHOLD::
-  Only used in `RelativeFFTLowPass`: the minimal strength of frequency
+  Only used in `RELATIVEFFTLOWPASS`: the minimal strength of frequency
   compared to the strongest to consider.
 NPOINTS::
-  Only used in `Savitzky-Golay`: width of moving window in number of
+  Only used in `SAVITZKY-GOLAY`: width of moving window in number of
   points
 NLEFT::
-  Only used in `Savitzky-Golay`: number of points to the left
+  Only used in `SAVITZKY-GOLAY`: number of points to the left
 NRIGHT::
-  Only used in `Savitzky-Golay`: number of points to the right
+  Only used in `SAVITZKY-GOLAY`: number of points to the right
 POLYORDER::
-  Only used in `Savitzky-Golay`: polynomial order to be used in least
+  Only used in `SAVITZKY-GOLAY`: polynomial order to be used in least
   square approximation
 
-The `Savitzky-Golay` filter and the ones based on the FFT routine
-provide a derivative on a natural way. For the `Stencil` filter a second
+The `SAVITZKY-GOLAY` filter and the ones based on the FFT routine
+provide a derivative on a natural way. For the `STENCIL` filter a second
 order stencil is used to calculate the derivative.
 
-An implementation of the `Savitzky-Golay` filter can be found in the
-Numerical Recipes. The `Stencil` filter uses the following two stencil
+An implementation of the `SAVITZKY-GOLAY` filter can be found in the
+Numerical Recipes. The `STENCIL` filter uses the following two stencil
 consecutively to smooth the line density:
 
 [latexmath]
@@ -336,8 +304,8 @@ density. Then they set all coefficients corresponding to frequencies
 above a certain threshold to zero. Finally the back-transformation is
 calculate using this coefficients. The two filters differ in the way
 they identify coefficients which should be set to zero.
-`FixedFFTLowPass` uses the n lowest frequencies whereas
-`RelativeFFTLowPass` searches for the coefficient which has the biggest
+`FIXEDFFTLOWPASS` uses the n lowest frequencies whereas
+`RELATIVEFFTLOWPASS` searches for the coefficient which has the biggest
 absolute value. All coefficients which, compared to this value, are
 below a threshold (measure in percents) are set to zero. For the
 derivative the coefficients are multiplied with the following function
