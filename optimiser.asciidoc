@@ -14,8 +14,8 @@ corresponding to extreme values of some specific criteria. Problems
 consisting of more than one criterion are called _multi-objective
 optimization problems_. Multiple objectives arise naturally in many real
 world optimization problems, such as portfolio optimization, design,
-planning and many more <<bib.pgnl:06>>, <<bib.zepv:00>>, <<bib.gala:98>>, 
-<<bib.yrss:09>>, <<bib.basi:05>>. It is important to stress that
+planning and many more <<bib.pgnl06>>, <<bib.zepv00>>, <<bib.gala98>>, 
+<<bib.yrss09>>, <<bib.basi05>>. It is important to stress that
 multi-objective problems are in general harder and more expensive to solve
 than single-objective optimization problems.
 
@@ -86,7 +86,7 @@ candidate solutions based on the concept of dominance. A solution is
 said to dominate another solution if it is no worse than the other
 solution in all objectives and if it is strictly better in at least one
 objective. A more formal description of the dominance relation is given
-in <<bib.deb:09>>.
+in <<bib.deb09>>.
 
 The properties of the dominance relation include transitivity
 
@@ -109,7 +109,7 @@ non-dominated solutions.
 The problem of deciding if a point truly belongs to the Pareto set is
 NP-hard. As shown in <<fig_pareto-def>> there exist "weaker"
 formulations of Pareto optimality. Of special interest is the result
-shown in <<bib.paya:01>>, where the authors present a polynomial (in the input
+shown in <<bib.paya01>>, where the authors present a polynomial (in the input
 size of the problem and latexmath:[1/\varepsilon]) algorithm for
 finding an approximation, with accuracy latexmath:[\varepsilon], of
 the Pareto set for database queries.
@@ -480,24 +480,24 @@ cat opt.trace.0 | grep invalid | wc -l
 [[sec.optimiser.bibliography]]
 === References
 
-anchor:bib.pgnl:06[[{counter:bib-cnt}\]]
-<<bib.pgnl:06>> A. Persson et al., https://ieeexplore.ieee.org/document/4117810[_Simulation-based multi-objective optimization of a real-world scheduling problem_], in Proceedings of the 38th conference on Winter Simulation Conference (WSC’06), pp. 1757–1764 (Monterey, CA, USA, 2006).
+anchor:bib.pgnl06[[{counter:bib-cnt}\]]
+<<bib.pgnl06>> A. Persson et al., https://ieeexplore.ieee.org/document/4117810[_Simulation-based multi-objective optimization of a real-world scheduling problem_], in Proceedings of the 38th conference on Winter Simulation Conference (WSC’06), pp. 1757–1764 (Monterey, CA, USA, 2006).
 
-anchor:bib.zepv:00[[{counter:bib-cnt}\]]
-<<bib.zepv:00>> R. Zebulum, M. Pacheco, and M. Vellasco, _A novel multi-objective optimization methodology applied to the synthesis of cmos operational amplifiers_, J. Solid-State Dev. and Circ., pp. 10-15 (2000).
+anchor:bib.zepv00[[{counter:bib-cnt}\]]
+<<bib.zepv00>> R. Zebulum, M. Pacheco, and M. Vellasco, _A novel multi-objective optimization methodology applied to the synthesis of cmos operational amplifiers_, J. Solid-State Dev. and Circ., pp. 10-15 (2000).
 
-anchor:bib.gala:98[[{counter:bib-cnt}\]]
-<<bib.gala:98>> M. Galante, https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1097-0207(19960215)39:3%3C361::AID-NME854%3E3.0.CO;2-1[_Genetic algorithms as an approach to optimize real-world trusses_], Int. J. Numer. Methods Eng., 39, 361 (1998).
+anchor:bib.gala98[[{counter:bib-cnt}\]]
+<<bib.gala98>> M. Galante, https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1097-0207(19960215)39:3%3C361::AID-NME854%3E3.0.CO;2-1[_Genetic algorithms as an approach to optimize real-world trusses_], Int. J. Numer. Methods Eng., 39, 361 (1998).
 
-anchor:bib.yrss:09[[{counter:bib-cnt}\]]
-<<bib.yrss:09>> L. Yang et al., https://www.sciencedirect.com/science/article/pii/S0168900209016040[_Global optimization of an accelerator lattice using multiobjective genetic algorithms_], Nucl. Instrum. Methods. Phys. Res. A, 609, 50 (2009).
+anchor:bib.yrss09[[{counter:bib-cnt}\]]
+<<bib.yrss09>> L. Yang et al., https://www.sciencedirect.com/science/article/pii/S0168900209016040[_Global optimization of an accelerator lattice using multiobjective genetic algorithms_], Nucl. Instrum. Methods. Phys. Res. A, 609, 50 (2009).
 
-anchor:bib.basi:05[[{counter:bib-cnt}\]]
-<<bib.basi:05>> I. Bazarov and C. Sinclair, https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.8.034202[_Multivariate optimization of a high brightness dc gun photoinjector_], Phys. Rev. ST Accel. Beams, 8, 034202 (2005).
+anchor:bib.basi05[[{counter:bib-cnt}\]]
+<<bib.basi05>> I. Bazarov and C. Sinclair, https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.8.034202[_Multivariate optimization of a high brightness dc gun photoinjector_], Phys. Rev. ST Accel. Beams, 8, 034202 (2005).
 
-anchor:bib.deb:09[[{counter:bib-cnt}\]]
-<<bib.deb:09>> K. Deb, _Multi-Objective Optimization Using Evolutionary Algorithms_, Wiley (2009).
+anchor:bib.deb09[[{counter:bib-cnt}\]]
+<<bib.deb09>> K. Deb, _Multi-Objective Optimization Using Evolutionary Algorithms_, Wiley (2009).
 
-anchor:bib.paya:01[[{counter:bib-cnt}\]]
-<<bib.paya:01>> C. Papadimitriou and M. Yannakakis, https://dl.acm.org/doi/10.1145/375551.375560[_Multiobjective query optimization_], in Proceedings of the twentieth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems, pp. 52–59 (Santa Barbara, CA, USA, 2001).
+anchor:bib.paya01[[{counter:bib-cnt}\]]
+<<bib.paya01>> C. Papadimitriou and M. Yannakakis, https://dl.acm.org/doi/10.1145/375551.375560[_Multiobjective query optimization_], in Proceedings of the twentieth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems, pp. 52–59 (Santa Barbara, CA, USA, 2001).
 
