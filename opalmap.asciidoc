@@ -259,6 +259,6 @@ The first number describes the coefficient and the following 6 the variables of 
 [[sec.opalmap.bibliography]]
 === References
 anchor:bib.berz1999_opalmap[[{counter:bib-cnt}\]]
-<<bib.berz1999_opalmap>> M. Berz, _Modern map methods in particle beam physics_ (Academic Press, San Diego, 1999)
+<<bib.berz1999_opalmap>> M. Berz, _Modern map methods in particle beam physics_, Academic Press (1999).
 
 // EOF

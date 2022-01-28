@@ -9,12 +9,16 @@ endif::[]
 [[chp.sampler]]
 == Sampler
 
-This is a modification of the link:optimiser#chp.optimiser[optimiser]. Instead of performing a multi-objective optimisation, it creates samples of the design variables and runs those simulations. This feature can be used for example as training / validation of neural networks or uncertainty quantification (UQ).
+This is a modification of the link:optimiser#chp.optimiser[optimiser]. Instead
+of performing a multi-objective optimisation, it creates samples of the design
+variables and runs those simulations. This feature can be used for example as
+training / validation of neural networks or uncertainty quantification (UQ).
 
 [[sec.sampler.sample-commands]]
-=== OPAL Commands
+=== Sampler OPAL Commands
 
-It uses almost the same syntax as the optimiser.
+It uses almost the same syntax as the optimiser
+(see link:optimiser#sec.optimiser.opt-pilot-commands[Optimiser OPAL commands]).
 
 ==== Basic Syntax
 
@@ -23,98 +27,106 @@ design variables is described in the section link:optimiser#sec.optimiser.dvar-c
 
 ==== SAMPLE Command
 
-It allows *random* (RASTER=false) and *raster* mode.
+It allows *random* (`RASTER=FALSE`) and *raster* mode.
 
-.Attributes for the command SAMPLE.
+.Attributes for the command `SAMPLE`.
 [[tab_SAMPLE_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header,breakable",]
 |=======================================================================
-| Attribute      | Description
-| RASTER         | Boolean to choose how the sample spaces for the DVARS are combined, see below, (default: true)
-| INPUT          | Path to input file.
-| OUTPUT         | Name used for the output of the result.
-| OUTDIR         | Name of directory where the simulations are run and the result file is stored.
-| DVARS          | List of design variables to be used.
-| OBJECTIVES     | List of objectives which are evaluated for each simulation. The results are stored to the result file
-| SAMPLINGS      | List of sample methods to be used.
-| NUM_MASTERS    | Number of master nodes.
-| NUM_COWORKERS  | Number processors per worker.
-| TEMPLATEDIR    | Directory where templates are stored.
-| FIELDMAPDIR    | Directory where field maps are stored.
-| DISTDIR        | Directory where distributions are stored (optional).
-| KEEP           | List of file extensions (e.g. STAT, H5) that shouldn't be deleted.
-                   If nothing is specified, all files are kept. If objectives are
-                   defined and list is empty all files are deleted.
-| RESTART_FILE   | H5 file to restart the OPAL simulations from (optional).
-                   Each individual copies the H5 to its simulation directory
-                   in order to avoid overwriting of the original file. This
-                   attributes is used together with RESTART_STEP.
-| RESTART_STEP   |  Restart from given H5 step (optional). Used together
-                   with RESTART_FILE.
-| JSON_DUMP_FREQ | Defines how often new individuals are appended to the final JSON file
-                   i.e. every time JSON_DUMP_FREQ samples finished they are written.
-                   (default: All individuals are written at the end)
+| Attribute        | Description
+| `RASTER`         | Boolean to choose how the sample spaces for the `DVARS` are combined, see below, (default: true).
+| `INPUT`          | Path to input file.
+| `OUTPUT`         | Name used for the output of the result.
+| `OUTDIR`         | Name of directory where the simulations are run and the result file is stored.
+| `DVARS`          | List of design variables to be used.
+| `OBJECTIVES`     | List of objectives which are evaluated for each simulation. The results are stored to the result file.
+| `SAMPLINGS`      | List of sample methods to be used.
+| `NUM_MASTERS`    | Number of master nodes.
+| `NUM_COWORKERS`  | Number processors per worker.
+| `TEMPLATEDIR`    | Directory where templates are stored.
+| `FIELDMAPDIR`    | Directory where field maps are stored.
+| `DISTDIR`        | Directory where distributions are stored (optional).
+| `KEEP`           | List of file extensions (e.g. STAT, H5) that shouldn't be deleted.
+                     If nothing is specified, all files are kept. If objectives are
+                     defined and list is empty all files are deleted.
+| `RESTART_FILE`   | H5 file to restart the OPAL simulations from (optional).
+                     Each individual copies the H5 to its simulation directory
+                     in order to avoid overwriting of the original file. This
+                     attributes is used together with `RESTART_STEP`.
+| `RESTART_STEP`   | Restart from given H5 step (optional). Used together
+                     with `RESTART_FILE`.
+| `JSON_DUMP_FREQ` | Defines how often new individuals are appended to the final JSON file
+                     i.e. every time `JSON_DUMP_FREQ` samples finished they are written
+                     (default: All individuals are written at the end).
 |=======================================================================
 
-The difference between `RASTER = TRUE` and `RASTER = FALSE` can be depicted in the following figure.
+The difference between `RASTER=TRUE` and `RASTER=FALSE` can be depicted in the following figure.
 
 .Sampling methods
 [[fig_des_to_sampl,Figure {counter:fig-cnt}]]
 image::figures/sampler/differenceSEQUENCESampler.png[scaledwidth=10cm,width=70%]
 
-The two sampling methods differ in the number of samples since with `RASTER = TRUE` every combination of individual sampling is computed. Thus the total number is latexmath:[N = N_1 \times N_2 \times \ldots \times N_n] where latexmath:[n] is the number of `DVARS`. If for some `DVAR` a random sampling is chosen then for every sampling point a new random number is computed. With `RASTER = FALSE` the number of sampling points is latexmath:[N = \min(N_1, N_2,\ldots, N_n)], each item of a sequence is used only once.
+The two sampling methods differ in the number of samples since with
+`RASTER=TRUE` every combination of individual sampling is computed.
+Thus the total number is latexmath:[N = N_1 \times N_2 \times \ldots \times N_n]
+where latexmath:[n] is the number of `DVARS`. If for some `DVAR` a random
+sampling is chosen then for every sampling point a new random number is
+computed. With `RASTER=FALSE` the number of sampling points is
+latexmath:[N = \min(N_1, N_2,\ldots, N_n)], each item of a sequence is used
+only once.
 
 ==== SAMPLING Command
 
-.Attributes for the command SAMPLING.
+.Attributes for the command `SAMPLING`.
 [[tab_SAMPLING_Attributes,Table {counter:tab-cnt}]]
 [cols="<2,<5",options="header,breakable",]
 |=======================================================================
-| Attribute | Description
-| VARIABLE  | Name of the design variable.
-| TYPE      | Sampling method (see next section).
-| RANDOM    | Boolean to control whether sampling mode is random or sequential. Default is sequential. 
-| SEED      | Seed for random sampling (default: 42).
-| STEP      | Increment for randomized sequences (default: 1)
-| FNAME     | File to read the samples from.
-| N         | Number of samples per this design variable. In case of random mode, the
-minimum value over all design variables is used.
+| Attribute   | Description
+| `VARIABLE`  | Name of the design variable.
+| `TYPE`      | Sampling method (see <<sec.sampler.available-sampling-methods>>).
+| `RANDOM`    | Boolean to control whether sampling mode is random or sequential. Default is sequential. 
+| `SEED`      | Seed for random sampling (default: 42).
+| `STEP`      | Increment for randomized sequences (default: 1).
+| `FNAME`     | File to read the samples from.
+| `N`         | Number of samples per this design variable. In case of random
+                mode, the minimum value over all design variables is used.
 |=======================================================================
 
+[[sec.sampler.available-sampling-methods]]
 ==== Available Sampling Methods
 
 .Available sampling methods.
 [[tab_SAMPLE_Methods,Table {counter:tab-cnt}]]]
 [cols="<2,<5",options="header,breakable"]
 |=======================================================================
-| Method            | Description
-| FROMFILE          | The samples are provided by a file. A column represents the
-                      values of a design variable. The first line is the header reading
-                      the variable name. Not all variables need to be provided in the file.
-                      This allows also reading variables from different files.
-| UNIFORM           | In sequence mode: Generates an equidistant sequence taking the lower and upper
-                      bound of the design variable command as limits.
-                      In random mode: Uniform random sampling of floats. It takes the lower and upper
-                      bound of the design variable command as limits.
-| UNIFORM_INT       | In sequence mode: Generates an equidistant sequence of integers taking the lower
-                      and upper bound of the design variable command as limits.
-                      In random mode: Uniform random sampling of integers. It takes the lower and
-                      upper bound of the design variable command.
-| GAUSSIAN          | In sequence mode: Generates a sequence with a gaussian distribution taking
-                      the difference between upper and lower bound of the design
-                      variable as latexmath:[10\;\sigma].
-                      In random mode: Gaussian random sampling of floats. The upper and lower bound
-                      are the latexmath:[\pm 5\; \sigma] limits of the distribution.
-| LATIN_HYPERCUBE   | In random mode only. Each dimension is discretized into N
-                      (i.e. number of samples) equally distant bins. In order to sample a bin
-                      in every dimension is randomly selected where the same bin in a dimension
-                      occurs only once (exclusive sampling).
-| RANDOM_SEQUENCE_UNIFORM_INT | In random mode only. Similar to UNIFORM_INT in sequence mode but
-                                the values are returned randomly and a value may occur several times
-                                or never. Together with the STEP attribute.
-| RANDOM_SEQUENCE_UNIFORM     | In random mode only. Similar to UNIFORM in sequence mode but
-                                the values are returned randomly and a value may occur several times
-                                or never. Together with the STEP attribute.
+| Method              | Description
+| `FROMFILE`          | The samples are provided by a file. A column represents the
+                        values of a design variable. The first line is the header reading
+                        the variable name. Not all variables need to be provided in the file.
+                        This allows also reading variables from different files.
+| `UNIFORM`           | In sequence mode: Generates an equidistant sequence taking the lower and upper
+                        bound of the design variable command as limits.
+                        In random mode: Uniform random sampling of floats. It takes the lower and upper
+                        bound of the design variable command as limits.
+| `UNIFORM_INT`       | In sequence mode: Generates an equidistant sequence of integers taking the lower
+                        and upper bound of the design variable command as limits.
+                        In random mode: Uniform random sampling of integers. It takes the lower and
+                        upper bound of the design variable command.
+| `GAUSSIAN`          | In sequence mode: Generates a sequence with a gaussian distribution taking
+                        the difference between upper and lower bound of the design
+                        variable as latexmath:[10\;\sigma].
+                        In random mode: Gaussian random sampling of floats. The upper and lower bound
+                        are the latexmath:[\pm 5\,\sigma] limits of the distribution.
+| `LATIN_HYPERCUBE`   | In random mode only. Each dimension is discretized into `N`
+                        (i.e. number of samples) equally distant bins. In order to sample a bin
+                        in every dimension is randomly selected where the same bin in a dimension
+                        occurs only once (exclusive sampling).
+| `RANDOM_SEQUENCE_UNIFORM_INT` | In random mode only. Similar to `UNIFORM_INT` in sequence mode but
+                                  the values are returned randomly and a value may occur several times
+                                  or never. Together with the `STEP` attribute.
+| `RANDOM_SEQUENCE_UNIFORM`     | In random mode only. Similar to UNIFORM in sequence mode but
+                                  the values are returned randomly and a value may occur several times
+                                  or never. Together with the `STEP` attribute.
 |=======================================================================
 
 === Example Input File
@@ -145,7 +157,7 @@ SAMPLE,
 QUIT;
 ----
 
-The samples of ```nstep``` are provided by ```samples.dat``` that could look like this:
+The samples of `nstep` are provided by `samples.dat` that could look like this:
 ----
 MX    nstep
 16    10
@@ -159,8 +171,8 @@ MX    nstep
 24    18
 25    19
 ----
-Although the file contains samples for ```MX```, too, they are not considered. The
-corresponding template file ```Ring.tmpl``` reads:
+Although the file contains samples for `MX`, too, they are not considered. The
+corresponding template file `Ring.tmpl` reads:
 ----
 Option, ECHO=FALSE;
 Option, PSDUMPFREQ=100000;

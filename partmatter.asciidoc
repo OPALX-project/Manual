@@ -1,5 +1,5 @@
 ifdef::env-gitlab[]
-include::Manual.attributes
+include::Manual.attributes[]
 include::env-gitlab.attributes[]
 {link_home}
 
@@ -9,7 +9,7 @@ endif::[]
 [[chp.partmatter]]
 == Physics Models Used in the Particle Matter Interaction Model
 
-The command to define the particle-matter interacton is
+The command to define particle-matter interactons is
 `PARTICLEMATTERINTERACTION`.
 
 TYPE::
@@ -27,7 +27,7 @@ LOWENERGYTHR::
   Particles with lower energy will be removed (default: 0.01 MeV). 
 
 The so defined instance has then to be added to an element using the
-attribute
+attribute.
 
 [[sec.partmatter.the-energy-loss]]
 === The Energy Loss
@@ -59,7 +59,8 @@ T_{max}=\frac{2m_ec^2\beta^2\gamma^2}{1+2\gamma m_e/M+(m_e/M)^2},
 where latexmath:[M] is the incident particle mass.
 
 This expression is valid for energies from 600 keV to 10 GeV for 
-incident beams of `PROTON`, `DEUTERON`, `MUON`, `HMINUS` and `H2P`;
+incident beams (see link:beam-command#sec.beam-command.particle-definition[`PARTICLE` definition])
+of `PROTON`, `DEUTERON`, `MUON`, `HMINUS` and `H2P`;
 and also for `ALPHA` particles from 10 MeV to 1 GeV.
 
 The stopping power is compared with PSTAR program of NIST in
@@ -148,10 +149,10 @@ thickness.
 === The Coulomb Scattering
 
 The Coulomb scattering is treated as two independent events: the
-multiple Coulomb scattering and the large angle Rutherford scattering. +
+multiple Coulomb scattering and the large angle Rutherford scattering.
 Using the distribution given in Classical Electrodynamics, by J. D.
-Jackson, the multiple- and single-scattering distributions can be
-written: 
+Jackson <<bib.jackson>>, the multiple- and single-scattering distributions
+can be written: 
 
 [latexmath]
 ++++
@@ -569,6 +570,9 @@ image::figures/partmatter/spectandscatter.png[scaledwidth=12cm,width=80%]
 [[sec.partmatter.bibliography]]
 === References
 
+anchor:bib.jackson[[{counter:bib-cnt}\]]
+<<bib.jackson>> J. D. Jackson, _Classical Electrodynamics_, John Wiley & Sons, 3rd ed. (1999).
+
 anchor:bib.nakai[[{counter:bib-cnt}\]]
 <<bib.nakai>> Y. Nakai et al., https://doi.org/10.1016/0092-640X(87)90005-2[_Cross sections for charge transfer of hydrogen atoms and ions colliding with gaseous atoms and molecules_], At. Dat. Nucl. Dat. Tabl., 37, 69 (1987).
 
@@ -591,6 +595,6 @@ anchor:bib.pdgdatabase[[{counter:bib-cnt}\]]
 <<bib.pdgdatabase>> Particle Data Group (PDG), https://pdg.lbl.gov/2020/AtomicNuclearProperties/[_Atomic and Nuclear Properties of Materials for more than 350 materials_].
 
 anchor:bib.icru49[[{counter:bib-cnt}\]]
-<<bib.icru49>> _Stopping Powers and Ranges for Protons and Alpha Particles_, Tech. Rep. ICRU-49, International Commission on Radiation Units and Measurements (1993)
+<<bib.icru49>> _Stopping Powers and Ranges for Protons and Alpha Particles_, Tech. Rep. ICRU-49, International Commission on Radiation Units and Measurements (1993).
 
 // EOF

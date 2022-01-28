@@ -32,8 +32,8 @@ distribution(s).
 |=======================================================================
 
 The distribution command is used to introduce particles into an _OPAL_
-simulation. Like other _OPAL_ commands see Chapter link:format#chp.format[Command Format], the
-distribution command is of the form:
+simulation. Like other _OPAL_ commands (see Chapter link:format#chp.format[Command Format]),
+the distribution command is of the form:
 
 ----
 Name:DISTRIBUTION, TYPE = DISTRIBUTION_TYPE,
@@ -85,7 +85,7 @@ latexmath:[p_{z}]).
 |=======================================================================
 
 [[sec.distribution.note-unit-conversion-of-momentum-in-opal-t-and-opal-cycl]]
-=== note: unit conversion of momentum in _OPAL-t_ and _OPAL-cycl_
+==== Unit conversion of momentum in _OPAL-t_ and _OPAL-cycl_
 
 Convert latexmath:[\beta_x \gamma] [dimensionless] to [mrad],
 
@@ -162,11 +162,11 @@ _data/<basename >_ DIST.dat_.
 of number of particles. The result depends on the number of cores used.
 
 |`WEIGHT` |1.0 |None |Weight of distribution when used in a distribution
-list see <<sec.distribution.distlist>>.
+list (see <<sec.distribution.distlist>>).
 
 |`NBIN` |0 |None |The distribution (beam) will be broken up into `NBIN`
 energy bins. This has consequences for the space charge solver
-see link:fieldsolvers#sec.fieldsolvers.FSENBINS[Energy Bins].
+(see link:fieldsolvers#sec.fieldsolvers.FSENBINS[Energy Bins]).
 
 |`SBIN` |100| None| Number of sample bins to use per energy bin.
 
@@ -259,11 +259,14 @@ The simulation time step will be adjusted during emission to ensure that
 this many time steps will be required to emit the entire distribution.
 
 |`EMISSIONMODEL` |None |None |Emission model to use when emitting
-particles from cathode see <<sec.distribution.emissionmodel>>.
+particles from cathode (see <<sec.distribution.emissionmodel>>).
 |=======================================================================
 
+[[sec.distribution.opaldisttype]]
+=== Distribution Types
+
 [[sec.distribution.fromfiledisttype]]
-=== `FROMFILE` Distribution Type
+==== `FROMFILE` Distribution Type
 
 The most versatile distribution type is to use a user generated text
 file as input to _OPAL_. This allows the user to generate their own
@@ -284,17 +287,17 @@ particle coordinates.
 An example of an _injected_ `FROMFILE` distribution definition is:
 
 ----
-Name:DISTRIBUTION, TYPE = FROMFILE,
-                   FNAME = "text file name";
+Name:DISTRIBUTION, TYPE=FROMFILE,
+                   FNAME="text file name";
 ----
 
 an example of an _emitted_ `FROMFILE` distribution definition is:
 
 ----
-Name:DISTRIBUTION, TYPE = FROMFILE,
-                   FNAME = "text file name",
-                   EMITTED = TRUE,
-                   EMISSIONMODEL = None;
+Name:DISTRIBUTION, TYPE=FROMFILE,
+                   FNAME="text file name",
+                   EMITTED=TRUE,
+                   EMISSIONMODEL=None;
 ----
 
 The text input file for the `FROMFILE` distribution type has a
@@ -348,7 +351,7 @@ To maintain consistency latexmath:[N] and `NPART` from the `BEAM`
 command in Chapter link:beam-command#chp.beam-command[Beam Command] must be equal.
 
 [[sec.distribution.gaussdisttype]]
-=== `GAUSS` Distribution Type
+==== `GAUSS` Distribution Type
 
 As the name implies, the `GAUSS` distribution type can generate
 distributions with a general Gaussian shape (here we show a
@@ -365,7 +368,7 @@ emitted beam with a flat top time profile. We will go over the various
 options for the `GAUSS` distribution type in this section.
 
 [[simple-gauss-distribution-type]]
-==== Simple `GAUSS` Distribution Type
+===== Simple `GAUSS` Distribution Type
 
 We will begin by describing how to create a simple `GAUSS` distribution
 type. That is, a simple 6-dimensional distribution with a Gaussian
@@ -476,19 +479,19 @@ is _injected_ into the simulation at an average position of
 latexmath:[(\bar{x},\bar{y},\bar{z})=({1.0} \mathrm{mm}, {-2.0} \mathrm{mm}, {10.0} \mathrm{mm})].
 
 [[sec.distribution.gaussdisttypephotoinjector]]
-==== `GAUSS` Distribution for Photoinjector
+===== `GAUSS` Distribution for Photoinjector
 
 .Definition of additional distribution attributes for an _emitted_ `GAUSS` distribution type. These are used to generate a distribution with a time profile as illustrated in <<fig_flattop>>.
 [[tab_distattremittedgauss,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
-|`TPULSEFWHM` |0.0 |s |Flat top time see <<fig_flattop>>.
+|`TPULSEFWHM` |0.0 |s |Flat top time (see <<fig_flattop>>).
 
-|`TRISE` |0.0 |s |Rise time see <<fig_flattop>>. If defined will
+|`TRISE` |0.0 |s |Rise time (see <<fig_flattop>>). If defined will
 override `SIGMAT`.
 
-|`TFALL` |0.0 |s |Fall time see <<fig_flattop>>. If defined will
+|`TFALL` |0.0 |s |Fall time (see <<fig_flattop>>). If defined will
 override `SIGMAT`.
 
 |`FTOSCAMPLITUDE` |0 |None |Sinusoidal oscillations can imposed on the
@@ -534,7 +537,7 @@ the profile, `TPULSEFWHM`, is defined as (See also <<fig_flattop>>):
 
 Total emission time, latexmath:[t_{E}], of this distribution, is a
 function of the longitudinal cutoff, `CUTOFFLONG`
-see <<tab_distattrgauss>>, and is given by:
+(see <<tab_distattrgauss>>), and is given by:
 
 [latexmath]
 ++++
@@ -558,7 +561,7 @@ latexmath:[t_\mathrm{flattop}], the amplitude of the oscillation will
 be latexmath:[0.05].
 
 [[correlations-for-gauss-distribution-experimental]]
-==== Correlations for `GAUSS` Distribution (Experimental)
+===== Correlations for `GAUSS` Distribution (Experimental)
 
 .Definition of additional distribution attributes for a `GAUSS` distribution type for generating correlations in the beam.
 [[tab_additional_distribution_attributes,Table {counter:tab-cnt}]]
@@ -648,26 +651,26 @@ coefficient matrix be:
 then the corresponding distribution command will read:
 
 ----
-Dist:DISTRIBUTION, TYPE = GAUSS,
-                   SIGMAX = 4.796e-03,
-                   SIGMAPX = 231.0585,
-                   CORRX = 0.756,
-                   SIGMAY = 23.821e-03,
-                   SIGMAPY = 1.6592e+03,
-                   CORRY = -0.999,
-                   SIGMAZ = 0.466e-02,
-                   SIGMAPZ = 74.7,
-                   CORRZ = -0.834,
-                   OFFSETZ = 0.466e-02,
+Dist:DISTRIBUTION, TYPE     = GAUSS,
+                   SIGMAX   = 4.796e-03,
+                   SIGMAPX  = 231.0585,
+                   CORRX    = 0.756,
+                   SIGMAY   = 23.821e-03,
+                   SIGMAPY  = 1.6592e+03,
+                   CORRY    = -0.999,
+                   SIGMAZ   = 0.466e-02,
+                   SIGMAPZ  = 74.7,
+                   CORRZ    = -0.834,
+                   OFFSETZ  = 0.466e-02,
                    OFFSETPZ = 72e6,
-                   R61 = 0.496,
-                   R62 = -0.042,
-                   R51 = 0.023,
-                   R52 = 0.385;
+                   R61      = 0.496,
+                   R62      = -0.042,
+                   R51      = 0.023,
+                   R52      = 0.385;
 ----
 
 [[sec.distribution.flattopdisttype]]
-=== `FLATTOP` Distribution Type
+==== `FLATTOP` Distribution Type
 
 The `FLATTOP` distribution type is used to define hard edge beam
 distributions. Hard edge, in this case, means a more or less uniformly
@@ -677,7 +680,7 @@ photoinjectors, and so we usually will make this an _emitted_
 distribution. However it can be _injected_ as well.
 
 [[injected-flattop]]
-==== Injected `FLATTOP`
+===== Injected `FLATTOP`
 
 The attributes for an _injected_ `FLATTOP` distribution are defined in
 <<tab_distattrflattopinj>> and <<tab_distattruniversal>>. At the moment, we cannot
@@ -703,7 +706,7 @@ elliptical cross section.)
 |=======================================================================
 
 [[emitted-flattop]]
-==== Emitted `FLATTOP`
+===== Emitted `FLATTOP`
 
 .Definition of the basic distribution attributes for an _emitted_ `FLATTOP` distribution type.
 [[tab_distattrflattopemit,Table {counter:tab-cnt}]]
@@ -720,12 +723,12 @@ elliptical cross section.)
 |`SIGMAT` |0.0 |s |RMS rise and fall of half Gaussian in flat top
 defined in in <<fig_flattop>>.
 
-|`TPULSEFWHM` |0.0 |s |Flat top time. See <<fig_flattop>>.
+|`TPULSEFWHM` |0.0 |s |Flat top time (see <<fig_flattop>>).
 
-|`TRISE` |0.0 |s |Rise time. See <<fig_flattop>>. If defined will
+|`TRISE` |0.0 |s |Rise time (see <<fig_flattop>>). If defined will
 override `SIGMAT`.
 
-|`TFALL` |0.0 |s |Fall time. See <<fig_flattop>>. If defined will
+|`TFALL` |0.0 |s |Fall time (see <<fig_flattop>>). If defined will
 override `SIGMAT`.
 
 |`FTOSCAMPLITUDE` |0 |None |Sinusoidal oscillations can imposed on the
@@ -785,7 +788,7 @@ Dist:DISTRIBUTION, TYPE = FLATTOP,
 ----
 
 [[transverse-distribution-from-laser-profile-under-development]]
-==== Transverse Distribution from Laser Profile (Under Development)
+===== Transverse Distribution from Laser Profile (Under Development)
 
 An alternative to using a uniform, elliptical transverse profile is to
 define the `LASERPROFFN`, `IMAGENAME` and `INTENSITYCUT` attributes from
@@ -795,7 +798,7 @@ the basis to sample the transverse distribution.
 *_This distribution option is not yet available._*
 
 [[sec.distribution.gungaussflattopthdisttype]]
-==== `GUNGAUSSFLATTOPTH` Distribution Type
+===== `GUNGAUSSFLATTOPTH` Distribution Type
 
 This is a legacy distribution type. A `GUNGAUSSFLATTOPTH` is the
 equivalent of a `FLATTOP` distribution, except that the `EMITTED`
@@ -803,7 +806,7 @@ attribute will set to `TRUE` automatically and the `EMISSIONMODEL` will
 be automatically set to `ASTRA`.
 
 [[sec.distribution.astraflattopthdisttype]]
-==== `ASTRAFLATTOPTH` Distribution Type
+===== `ASTRAFLATTOPTH` Distribution Type
 
 This is a legacy distribution type. A `ASTRAFLATTOPTH` is the equivalent
 of a `FLATTOP` distribution, except that the `EMITTED` attribute will
@@ -812,7 +815,7 @@ automatically set to `ASTRA`. There are a few other differences with how
 the longitudinal time profile of the distribution is generated.
 
 [[sec.distribution.binomialdisttype]]
-=== `BINOMIAL` Distribution Type
+==== `BINOMIAL` Distribution Type
 
 The `BINOMIAL` type of distribution is based on <<bib.JohoDist>>. The shape of
 the binomial distribution is governed by one parameter latexmath:[m].
@@ -899,13 +902,13 @@ Dist:DISTRIBUTION, TYPE    = BINOMIAL,
 ----
 
 [[sec.distribution.gaussmatchedtype]]
-=== `GAUSSMATCHED` Matched Gauss Distribution type
+==== `GAUSSMATCHED` Matched Gauss Distribution Type
 
 The attributes of a `GAUSSMATCHED` distribution are defined in <<tab_distattrgaussmatched>>.
 `Limitation:` Does not consider Trimcoil field maps!
 
 .Definition of the basic distribution attributes for a `GAUSSMATCHED` distribution type.
-[[tab_distattrgaussmatched,{counter:tab-cnt}]]
+[[tab_distattrgaussmatched,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -924,7 +927,7 @@ The attributes of a `GAUSSMATCHED` distribution are defined in <<tab_distattrgau
 |=======================================================================
 
 [[sec.distribution.multigausstype]]
-=== `MULTIGAUSS` Distribution type
+==== `MULTIGAUSS` Distribution type
 The purpose of this distribution is to mimic photoinjectors in which the laser beam consists of a train of Gaussian pulses <<bib.laserPulseShaping>>. 
 Therefore this distribution has a uniform elliptical transverse distribution, and a train of equally spaced normal distributions along the z or t axis.
 
@@ -933,7 +936,7 @@ When emitted, each particle acquires momentum according to the emission model.
 When injected, the momentum follows a normal distribution, and the user can specify latexmath:[ (\sigma_{px}, \sigma_{py}, \sigma_{pz})].
 
 .Definition of the basic distribution attributes for a `MULTIGAUSS` distribution type.
-[[tab_distattrmultigauss,{counter:tab-cnt}]]
+[[tab_distattrmultigauss,Table {counter:tab-cnt}]]
 [cols="<2,^1,^1,<4",options="header",]
 |=======================================================================
 |Attribute Name |Default Value |Units |Description
@@ -1006,7 +1009,7 @@ image::./figures/distribution/MultiGaussInjected.png[scaledwidth=8cm]
 
 
 
-An example (fig. <<fig_multiGaussInjected>>) of a `MULTIGAUSS` injected bunch could be:
+An example (Figure <<fig_multiGaussInjected>>) of a `MULTIGAUSS` injected bunch could be:
 
 ----
 Dist: DISTRIBUTION, TYPE = MULTIGAUSS,
@@ -1151,14 +1154,14 @@ Dist:DISTRIBUTION, TYPE = GAUSS,
 ----
 
 [[sec.distribution.distlist]]
-==== Distribution List
+=== Distribution List
 
 It is possible to use multiple distributions in the same simulation. We
 do this be using a distribution list in the `RUN` command
-see Chapter link:track#chp.track[Tracking]. Assume we have defined several distributions:
-`DIST1`, `DIST2` and `DIST3`. If we want to use just one of these
-distributions in a simulation, we would use the following `RUN` command
-to start the simulation:
+(see Chapter link:track#chp.track[Tracking]). Assume we have defined
+several distributions: `DIST1`, `DIST2` and `DIST3`. If we want to use
+just one of these distributions in a simulation, we would use the following
+`RUN` command to start the simulation:
 
 ----
 RUN, METHOD = "PARALLEL-T",
@@ -1185,17 +1188,17 @@ will be forced to this same condition. If `DIST1` is to be _injected_,
 then all other distribution is the list will also be _injected_.
 
 The number of particles in the simulation is defined in the `BEAM`
-command see Chapter link:beam-command#chp.beam-command[Beam Command]. The number of particles in each distribution
-in a distribution list is determined by this number and the `WEIGHT`
-attribute of each distribution (<<tab_distattruniversal>>). If all
-distributions have the same `WEIGHT` value, then the number of particles
-will be divided up evenly among them. If, however we have a distribution
-list consisting of two distributions, and one has twice the `WEIGHT` of
-the other, then it will have twice the particles as its partner. The
-exception here is any `FROMFILE` distribution type. In this case, the
-`WEIGHT` attribute and the number of particles in the `BEAM` command are
-ignored. The number of particles in any `FROMFILE` distribution type is
-defined by the text file containing the distribution particle
+command see Chapter link:beam-command#chp.beam-command[Beam Command].
+The number of particles in each distribution in a distribution list is
+determined by this number and the `WEIGHT` attribute of each distribution
+(<<tab_distattruniversal>>). If all distributions have the same `WEIGHT`
+value, then the number of particles will be divided up evenly among them.
+If, however we have a distribution list consisting of two distributions, and
+one has twice the `WEIGHT` of the other, then it will have twice the particles
+as its partner. The exception here is any `FROMFILE` distribution type. In
+this case, the `WEIGHT` attribute and the number of particles in the `BEAM`
+command are ignored. The number of particles in any `FROMFILE` distribution
+type is defined by the text file containing the distribution particle
 coordinates. (<<sec.distribution.fromfiledisttype>>).
 
 [[sec.distribution.bibliography]]

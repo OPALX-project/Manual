@@ -25,9 +25,9 @@ HELP,NAME=label;      // List funct. and attr. types of
 HELP,label;           // Shortcut for the second format
 ----
 
-`label` is an identifier see link:format#sec.format.label[Identifiers or Labels]. If it is non-blank, _OPAL_
-prints the function of the object `label` and lists its attribute types.
-Entering `HELP` alone displays help on the `HELP` command.
+`label` is an identifier (see link:format#sec.format.label[Identifiers or Labels]).
+If it is non-blank, _OPAL_ prints the function of the object `label` and lists
+its attribute types. Entering `HELP` alone displays help on the `HELP` command.
 
 Examples:
 
@@ -46,8 +46,8 @@ The statement
 STOP or QUIT;
 ----
 
-terminates execution of the _OPAL_ program, or, when the statement
-occurs in a `CALL` file see_<<sec.control.call>>, returns to the calling file.
+terminates execution of the _OPAL_ program, or, when the statement occurs
+in a `CALL` file (see <<sec.control.call>>), returns to the calling file.
 Any statement following the `STOP` or `QUIT` statement is ignored.
 
 [[sec.control.option]]
@@ -203,9 +203,9 @@ CZERO::
   If true the distributions are generated such that the centroid is
   exactly zero and not statistically dependent. Its default value is false.
 RNGTYPE::
-  The name (see link:format#sec.format.astring[String Attributes]) of a random number generator can be
-  provided. The default random number generator (RANDOM) is a portable
-  48-bit generator. Three quasi random generators are available:
+  The name (see link:format#sec.format.astring[String Attributes]) of a random
+  number generator can be provided. The default random number generator (RANDOM)
+  is a portable 48-bit generator. Three quasi random generators are available:
 +
   1.  HALTON
   2.  SOBOL
@@ -238,7 +238,7 @@ LOGBENDTRAJECTORY::
   each dipole a separate file is written to the directory _data/_.
   Default is false.
 AMR::
-  Enable adaptive mesh refinement. Default: FALSE
+  Enable adaptive mesh refinement. Default is false.
 AMR_YT_DUMP_FREQ::
   The frequency to dump grid and particle data for AMR. Default: 10
 AMR_REGRID_FREQ::
@@ -328,13 +328,13 @@ REAL variable-name:=real-expression;
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in real-expression see link:format#sec.format.areal[Real Expressions]. Whenever an
-operand changes in `real-expression`, a new value is calculated. The
-definition may be thought of as a mathematical equation. However, _OPAL_
+quantities occurring in real-expression (see link:format#sec.format.areal[Real Expressions]).
+Whenever an operand changes in `real-expression`, a new value is calculated.
+The definition may be thought of as a mathematical equation. However, _OPAL_
 is not able to solve the equation for a quantity on the right-hand side.
 
 An assignment in the sense of the FORTRAN or C languages can be achieved
-by using the `EVAL` function see <<sec.control.eval>>.
+by using the `EVAL` function (see <<sec.control.eval>>).
 
 A reserved variable is the value `P0` which is used as the global
 reference momentum for normalizing all magnetic field coefficients.
@@ -350,7 +350,7 @@ Circular definitions are not allowed:
 ----
 X=X+1;    // X cannot be equal to X+1
 REAL A=B;
-REAL B=A;      // A and B are equal, but of unknown value
+REAL B=A; // A and B are equal, but of unknown value
 ----
 
 However, redefinitions by assignment are allowed:
@@ -371,8 +371,8 @@ now it is mandatory!
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in vector-expression see link:format#sec.format.anarray[Arrays] on the
-right-hand side. Whenever an operand changes in `vector-expression`, a
+quantities occurring in vector-expression (see link:format#sec.format.anarray[Arrays])
+on the right-hand side. Whenever an operand changes in `vector-expression`, a
 new value is calculated. The definition may be thought of as a
 mathematical equation. However, _OPAL_ is not able to solve the equation
 for a quantity on the right-hand side.
@@ -396,7 +396,7 @@ BOOL variable-name=logical-expression;
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in logical-expression see link:format#sec.format.alogical[Logical Expressions].
+quantities occurring in logical-expression (see link:format#sec.format.alogical[Logical Expressions]).
 Whenever an operand changes in `logical-expression`, a new value is
 calculated. The definition may be thought of as a mathematical equation.
 However, _OPAL_ is not able to solve the equation for a quantity on the
@@ -415,7 +415,7 @@ are allowed.
 ==== Symbolic Constants
 
 _OPAL_ recognizes a few build-in built-in mathematical and physical
-constants see <<tab_constant>>.
+constants (see <<tab_constant>>).
 Additional constants can be defined by the command
 
 ----
@@ -446,7 +446,7 @@ REAL VECTOR vector-name=vector-expression;
 The keyword `REAL` is optional. It creates a new global vector
 `vector-name` and discards any old vector with the same name. Its value
 depends on all quantities occurring in vector-expression
-see link:format#sec.format.anarray[Arrays]. Whenever an operand changes in
+(see link:format#sec.format.anarray[Arrays]). Whenever an operand changes in
 `vector-expression`, a new value is calculated. The definition may be
 thought of as a mathematical equation. However, _OPAL_ is not able to
 solve the equation for a quantity on the right-hand side.
@@ -541,8 +541,8 @@ ECHO,MESSAGE=message;
 ECHO,message;           // shortcut
 ----
 
-`message` is a string value see link:format#sec.format.astring[String Attributes]. It is immediately
-transmitted to the `ECHO` stream.
+`message` is a string value (see link:format#sec.format.astring[String Attributes]).
+It is immediately transmitted to the `ECHO` stream.
 
 [[sec.control.system]]
 ==== SYSTEM: Execute System Command
@@ -556,8 +556,8 @@ SYSTEM,CMD=string;
 SYSTEM,string;         // shortcut
 ----
 
-The string see link:format#sec.format.astring[String Attributes] `string` must be a valid operating
-system command.
+The string (see link:format#sec.format.astring[String Attributes]) `string`
+must be a valid operating system command.
 
 Most UNIX commands can be issued directly.
 
@@ -601,9 +601,9 @@ TITLE,page-header;          // shortcut for first format
 TITLE,STRING="";            // clear page header
 ----
 
-`page-header` is a string value see link:format#sec.format.astring[String Attributes]. It defines the
-page header which will be used as a title for subsequent output pages.
-Before the first `TITLE` statement is encountered, the page header is
+`page-header` is a string value (see link:format#sec.format.astring[String Attributes]).
+It defines the page header which will be used as a title for subsequent output
+pages. Before the first `TITLE` statement is encountered, the page header is
 empty. It can be redefined at any time.
 
 [[sec.control.file-handling]]
@@ -619,9 +619,9 @@ CALL,FILE=file-name;
 CALL,file-name;
 ----
 
-`file-name` is a string see link:format#sec.format.astring[String Attributes]. The statement causes the
-input to switch to the named file. Input continues on that file until a
-`STOP` or an end of file is encountered. Example:
+`file-name` is a string (see link:format#sec.format.astring[String Attributes]).
+The statement causes the input to switch to the named file. Input continues on
+that file until a `STOP` or an end of file is encountered. Example:
 
 ----
 CALL,FILE="structure";

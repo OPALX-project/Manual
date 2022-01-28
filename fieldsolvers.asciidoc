@@ -11,9 +11,9 @@ endif::[]
 
 Space charge effects are included in the simulation by specifying a
 field solver described in this chapter and attaching it to the track
-command as described in Chapter link:track#chp.track[Tracking]. By default, the code does not
-assume any symmetry i.e. full 3D. In the near future it is planed to
-implement also a slice (2D) model. This will allow the use of less
+command as described in Chapter link:track#chp.track[Tracking]. By default,
+the code does not assume any symmetry i.e. full 3D. In the near future it is
+planed to implement also a slice (2D) model. This will allow the use of less
 numbers of macro-particles in the simulation which reduces the
 computational time significantly.
 
@@ -42,11 +42,11 @@ self-consistent electrostatic beam dynamics code that models the
 transport of intense charged particle beams in accelerators. If the
 bunch is small compared to the transverse size of the beam pipe, the
 conducting walls are usually neglected. In such cases the Hockney method
-may be employed <<bib.hockney>>, <<bib.eastwoodandbrownrigg>> and <<bib.hockneyandeastwood>>. In
-that method, rather than computing latexmath:[N_p^2] point-to-point
-interactions (where latexmath:[N_p] is the number of macro-particles),
-the potential is instead calculated on a grid of size
-latexmath:[(2 N)^d], where latexmath:[N] is the number of grid
+may be employed <<bib.hockney>>, <<bib.eastwoodandbrownrigg>> and
+<<bib.hockneyandeastwood>>. In that method, rather than computing
+latexmath:[N_p^2] point-to-point interactions (where latexmath:[N_p] is the
+number of macro-particles), the potential is instead calculated on a grid of
+size latexmath:[(2 N)^d], where latexmath:[N] is the number of grid
 points in each dimension of the physical mesh containing the charge, and
 where latexmath:[d] is the dimension of the problem. Using the Hockney
 method, the calculation is performed using Fast Fourier Transform (FFT)
@@ -58,7 +58,7 @@ transversely, or when the bunch length is long compared with the pipe
 transverse size, the conducting boundaries cannot be ignored. Poisson
 solvers have been developed previously to treat a bunch of charge in an
 open-ended pipe with various geometries
-<<bib.qiangandryne>> , <<bib.qiangandgluckstern>>.
+<<bib.qiangandryne>>, <<bib.qiangandgluckstern>>.
 
 The solution of the Poisson equation,
 
@@ -308,19 +308,20 @@ hence the electrostatic approximation is valid. More details will be
 given in Version 2.0.0.
 
 [[sec.fieldsolvers.fieldsolvercmd]]
-=== The `FIELDSOLVER` Command
+=== The FIELDSOLVER Command
 
-See <<tab_FIELDSOLVER_Commands>> for a summary of the Fieldsolver command.
+See <<tab_FIELDSOLVER_Commands>> for a summary of the `FIELDSOLVER` command.
 
-.Fieldsolver command summary
+.Fieldsolver command attributes
 [[tab_FIELDSOLVER_Commands,Table {counter:tab-cnt}]]
 [cols="<1,<4",options="header",]
 |=======================================================================
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG` and `NONE`. Further
-arguments are enabled with the AMR solver (cf. <<sec.fieldsolvers.AMR>>).
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG` and
+`NONE`. Further arguments are enabled with the AMR solver
+(cf. <<sec.fieldsolvers.AMR>>).
 
 |`PARFFTX` |If `TRUE`, the dimension latexmath:[x] is distributed
 among the processors
@@ -340,39 +341,39 @@ grid
 |`MT` |Number of grid points in latexmath:[z] specifying rectangular
 grid
 
-|`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`]. (`FFT` + `AMR_MG` only)
+|`BCFFTX` |Boundary condition in latexmath:[x] [`OPEN`] (`FFT` + `AMR_MG` only).
 
-|`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`]. (`FFT` + `AMR_MG` only)
+|`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`] (`FFT` + `AMR_MG` only).
 
-|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`]. (`FFT` + `AMR_MG` only)
+|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`] (`FFT` + `AMR_MG` only).
 
-|`GREENSF` |Defines the Greens function for the FFT Solver. (`FFT` only)
+|`GREENSF` |Defines the Greens function for the FFT Solver (`FFT` only).
 
-|`BBOXINCR` |Enlargement of the bounding box in %
+|`BBOXINCR` |Enlargement of the bounding box in %.
 
-|`GEOMETRY` |Geometry to be used as domain boundary. (`SAAMG` only)
+|`GEOMETRY` |Geometry to be used as domain boundary (`SAAMG` only).
 
-|`ITSOLVER` |Type of iterative solver. (`SAAMG` + `AMR_MG`  only)
+|`ITSOLVER` |Type of iterative solver (`SAAMG` + `AMR_MG`  only).
 
-|`INTERPL` |Interpolation used for boundary points. (`SAAMG` only)
+|`INTERPL` |Interpolation used for boundary points (`SAAMG` only).
 
-|`TOL` |Tolerance for iterative solver. (`SAAMG` only)
+|`TOL` |Tolerance for iterative solver (`SAAMG` only).
 
-|`MAXITERS` |Maximum number of iterations of iterative solver. (`SAAMG` only)
+|`MAXITERS` |Maximum number of iterations of iterative solver (`SAAMG` only).
 
-|`PRECMODE` |Behavior of the preconditioner. (`SAAMG` only)
+|`PRECMODE` |Behavior of the preconditioner (`SAAMG` only).
 
 |=======================================================================
 
 [[sec.fieldsolvers.FSFSTYPE]]
-=== Define the Fieldsolver to be used
+==== Fieldsolver type
 
-At present FFT based solver is the most stable solver. Other solvers
+At present `FFT` based solver is the most stable solver. Other solvers
 include Finite Element solvers and a Multigrid solver with
 Shortley-Weller boundary conditions for irregular domains.
 
 [[sec.fieldsolvers.FSDomDEC]]
-=== Define Domain Decomposition
+==== Domain Decomposition
 
 The dimensions in latexmath:[x], latexmath:[y] and latexmath:[z]
 can be parallel (`TRUE`) or serial `FALSE`. The default settings are:
@@ -380,13 +381,13 @@ parallel in latexmath:[z] and serial in latexmath:[x] and
 latexmath:[y].
 
 [[sec.fieldsolvers.FSMX]]
-=== Define Number of Grid Points
+==== Number of Grid Points
 
-Number of grid points in latexmath:[x], latexmath:[y] and
-latexmath:[z] for a rectangular grid.
+Number of grid points in latexmath:[x], latexmath:[y]
+and latexmath:[z] for a rectangular grid.
 
 [[sec.fieldsolvers.FSBC]]
-=== Define Boundary Conditions
+==== Boundary Conditions
 
 Two boundary conditions can be selected independently among
 latexmath:[x], latexmath:[y] namely: `OPEN` and for latexmath:[z]
@@ -394,58 +395,57 @@ latexmath:[x], latexmath:[y] namely: `OPEN` and for latexmath:[z]
 you are about to model a DC-beam.
 
 [[sec.fieldsolvers.FSGREEN]]
-=== Define Greens Function
+==== Greens Function
 
 Two Greens functions can be selected: `INTEGRATED`, `STANDARD`. The
-integrated Green’s function is described in <<bib.qiang2005_fieldsolver>>, <<bib.qiang2006-1_fieldsolver>>,
-<<bib.qiang2006-2_fieldsolver>>. Default setting is `INTEGRATED`.
+integrated Green’s function is described in <<bib.qiang2005_fieldsolver>>,
+<<bib.qiang2006-1_fieldsolver>>, <<bib.qiang2006-2_fieldsolver>>.
+Default setting is `INTEGRATED`.
 
 [[sec.fieldsolvers.FSBBOX]]
-=== Define Bounding Box Enlargement
+==== Bounding Box Enlargement
 
 The bounding box defines a minimal rectangular domain including all
 particles. With `BBOXINCR` the bounding box can be enlarged by a factor
 given in percent of the minimal rectangular domain. Default value is 2.0.
 
 [[sec.fieldsolvers.GEOMETRY]]
-=== Define Geometry
+==== Geometry
 
 The list of geometries defining the beam line boundary. For further
 details see Chapter link:geometry#chp.geometry[Geometry].
 
 [[sec.fieldsolvers.ITSOLVER]]
-=== Define Iterative Solver
+==== Iterative Solver
 
-The iterative solver for solving the preconditioned system: `CG` (default),
-`BiCGSTAB` or `GMRES`.
+The iterative solver (`ITSOLVER`) for solving the preconditioned system:
+`CG` (default), `BiCGSTAB` or `GMRES`.
 
 [[sec.fieldsolvers.INTERPL]]
-=== Define Interpolation for Boundary Points
+==== Interpolation for Boundary Points
 
-The interpolation method for grid points near the boundary: `CONSTANT`,
-`LINEAR` (default) or `QUADRATIC`.
+The interpolation method (`INTERPL`) for grid points near the boundary:
+`CONSTANT`, `LINEAR` (default) or `QUADRATIC`.
 
 [[sec.fieldsolvers.TOL]]
-=== Define Tolerance
+==== Tolerance
 
-The tolerance for the iterative solver used by the `SAAMG` solver.
+The tolerance (`TOL`) for the iterative solver used by the `SAAMG` solver.
 Default value is 1e-8.
 
 [[sec.fieldsolvers.MAXITERS]]
-=== Define Maximal Iterations
+==== Maximal Iterations
 
-The maximal number of iterations the iterative solver performs.
+The maximal number of iterations the iterative solver performs (`MAXITERS`).
 Default value is 100.
 
-
 [[sec.fieldsolvers.PRECMODE]]
-=== Define Preconditioner Behavior
+==== Preconditioner Behavior
 
-The behavior of the preconditioner can be: `STD`, `HIERARCHY` or
+The behavior of the preconditioner (`PRECMODE`) can be: `STD`, `HIERARCHY` or
 `REUSE`. This argument is only relevant when using the `SAAMG` solver and
 should *only be set if the consequences to simulation and solver are
-evident*. A short description is given in the
-Table below.
+evident*. A short description is given in <<tab_PRECMODE_Commands>>.
 
 .Preconditioner behavior command summary
 [cols="<1,<4",options="header",]
@@ -461,38 +461,38 @@ default)
 |=======================================================================
 
 [[sec.fieldsolvers.FSENBINS]]
-=== Define the number of Energy Bins to use
+==== Number of Energy Bins
 
 Suppose latexmath:[\mathrm{d} E] the energy spread in the particle
 bunch is to large, the electrostatic approximation is no longer valid.
 One solution to that problem is to introduce latexmath:[k] energy bins
 and perform latexmath:[k] separate field solves in which
 latexmath:[\mathrm{d} E] is again small and hence the electrostatic
-approximation valid. In case of a cyclotron see link:elements#sec.elements.cyclotron[Cyclotron] the
-number of energy bins must be at minimum the number of neighboring
-bunches (`NNEIGHBB`) i.e.
+approximation valid. In case of a cyclotron
+(see link:elements#sec.elements.cyclotron[Cyclotron]) the number of energy
+bins must be at minimum the number of neighboring bunches (`NNEIGHBB`) i.e.
 latexmath:[\mathrm{ENBINS} \le \mathrm{NNEIGHBB}].
 
 The variable `MINSTEPFORREBIN` defines the number of integration step
 that have to pass until all energy bins are merged into one.
 
 [[sec.fieldsolvers.AMR]]
-=== Define AMR Solver
+===  Adaptive Mesh Refinement (AMR) Solver
 
 After compiling _OPAL_ with `ENABLE_AMR=ON`, the option `AMR=TRUE` enables further
 commands to be used in the Fieldsolver command (cf. <<tab_AMR_extensions_fieldsolver_command>>).
 
-The current AMR interface in _OPAL_ is based on _AMReX_ <<bib.amrex>> which provides the
-multigrid solvers `FMG` (till release 18.07) and `ML`. We also provide a _Trilinos_ based solver
-which is described in the section <<sec.fieldsolvers.AMR.multigrid>>.
+The current AMR interface in _OPAL_ is based on _AMReX_ <<bib.amrex>> which
+provides the multigrid solvers `FMG` (till release 18.07) and `ML`. We also
+provide a _Trilinos_ based solver which is described in <<sec.fieldsolvers.AMR.multigrid>>.
 
-In order to setup an AMR simulation, the user has to specify the number of AMR levels. The
-hierarchy is built based on the values of the refinement ratios, blocking factors and
-maximum grid sizes of the base level. The maximum grid size of the next higher level is
-given by the division with the refinement ratio. The same is true for
-the blocking factors. The mesh refinement follows user-dependent rules that are
-provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
-<<tab_Mesh_refinement_strategies>>.
+In order to setup an AMR simulation, the user has to specify the number of AMR
+levels. The hierarchy is built based on the values of the refinement ratios,
+blocking factors and maximum grid sizes of the base level. The maximum grid
+size of the next higher level is given by the division with the refinement
+ratio. The same is true for the blocking factors. The mesh refinement follows
+user-dependent rules that are provided by `AMR_TAGGING`. The various mesh
+refinement methods are provided in <<tab_Mesh_refinement_strategies>>.
 
 .AMR extensions to the `FIELDSOLVER` command
 [cols="<1,<4",options="header",]
@@ -502,22 +502,22 @@ provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
 |`FSTYPE` | AMR Poisson solvers: `FMG` (_BoxLib_), `ML` (_AMReX_) and `AMR_MG`
 
 |`AMR_MAXLEVEL` |Maximum adaptive mesh refinement level (single level if
-`AMR_MAXLEVEL` is zero)
+`AMR_MAXLEVEL` is zero).
 
-|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2` is tested
+|`AMR_REFX` |Grid cell refinement ratio in x, only `AMR_REFX=2` is tested.
 
-|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2` is tested
+|`AMR_REFY` |Grid cell refinement ratio in y, only `AMR_REFY=2` is tested.
 
-|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2` is tested
+|`AMR_REFZ` |Grid cell refinement ratio in z, only `AMR_REFZ=2` is tested.
 
-|`AMR_MAXGRIDX` |Maximum grid size of base level in x. It has to be smaller than
-`MX` when running in parallel
+|`AMR_MAXGRIDX` |Maximum grid size of base level in x. It has to be smaller
+than `MX` when running in parallel.
 
-|`AMR_MAXGRIDY` |Maximum grid size of base level in y. It has to be smaller than
-`MY` when running in parallel
+|`AMR_MAXGRIDY` |Maximum grid size of base level in y. It has to be smaller
+than `MY` when running in parallel.
 
-|`AMR_MAXGRIDZ` |Maximum grid size of base level in z. It has to be smaller than
-`MZ` when running in parallel
+|`AMR_MAXGRIDZ` |Maximum grid size of base level in z. It has to be smaller
+than `MZ` when running in parallel.
 
 |`AMR_BFX` |_AMReX_ blocking factor in x. `AMR_MAXGRIDX` has to be a multiple.
 
@@ -525,10 +525,11 @@ provided by `AMR_TAGGING`. The various mesh refinement methods are provided in
 
 |`AMR_BFZ` |_AMReX_ blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
 
-|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY, POTENTIAL, EFIELD, MOMENTA, MAX_NUM_PARTICLES, MIN_NUM_PARTICLES`]
+|`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY`, `POTENTIAL`,
+`EFIELD`, `MOMENTA`, `MAX_NUM_PARTICLES`, `MIN_NUM_PARTICLES`]
 
-|`AMR_DENSITY` | Charge density refinement threshold when `AMR_TAGGING=CHARGE_DENSITY`.
-See also <<tab_Mesh_refinement_strategies>>.
+|`AMR_DENSITY` | Charge density refinement threshold when
+`AMR_TAGGING=CHARGE_DENSITY`. See also <<tab_Mesh_refinement_strategies>>.
 
 |`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`.
 See also <<tab_Mesh_refinement_strategies>>.

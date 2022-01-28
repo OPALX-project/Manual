@@ -50,9 +50,9 @@ label:keyword,attribute,...,attribute;
 It has three parts:
 
 1.  The `label` is required for a definition statement. Its must be an
-identifier see <<sec.format.label>> and gives a name to the stored command.
+identifier (see <<sec.format.label>>) and gives a name to the stored command.
 2.  The `keyword` identifies the action desired. It must be an
-identifier see <<sec.format.label>>.
+identifier (see <<sec.format.label>>).
 3.  Each `attribute` is entered in one of the forms
 +
 ----
@@ -64,15 +64,15 @@ attribute-name:=attribute-value
 and serves to define data for the command, where:
 
 * The `attribute-name` selects the attribute, it must be an identifier
-see <<sec.format.label>>.
-* The `attribute-value` gives it a value see <<sec.format.attribute>>. When
+(see <<sec.format.label>>).
+* The `attribute-value` gives it a value (see <<sec.format.attribute>>). When
 the attribute value is a constant or an expression preceded by the
 delimiter `=` it is evaluated immediately and the result is assigned to
 the attribute as a constant. When the attribute value is an expression
 preceded by the delimiter `:=` the expression is retained and
 re-evaluated whenever one of its operands changes.
 +
-Each attribute has a fixed attribute type see <<sec.format.attribute>>. +
+Each attribute has a fixed attribute type (see <<sec.format.attribute>>). +
 The `attribute-value` can only be left out for logical attributes, this
 implies a `true` value.
 
@@ -125,7 +125,7 @@ _OPAL_ output with another program.
 
 When a name is not quoted, it is converted to upper case; the resulting
 name must be unique. An identifier can also be generated from a string
-expression see <<sec.format.astring>>.
+expression (see <<sec.format.astring>>).
 
 [[sec.format.attribute]]
 === Command Attribute Types
@@ -137,7 +137,7 @@ An object attribute is referred to by the syntax
 object-name->attribute-name
 ----
 
-If the attribute is an array see <<sec.format.anarray>>, one of its
+If the attribute is an array (see <<sec.format.anarray>>), one of its
 components is found by the syntax
 
 ----
@@ -183,9 +183,9 @@ A string attribute makes alphanumeric information available, e.g. a
 title, file name, element class name, or an option. It can contain any
 characters, enclosed in single (`’`) or double (`"`) quotes. However, if
 it contains a quote, this character must be doubled. Strings can be
-concatenated using the `&` operator see <<tab_stroperator>>. An operand
-in a string can also use the function `STRING` see <<tab_stringfun>>.
-String values can occur in string arrays see <<sec.format.anarray>>.
+concatenated using the `&` operator (see <<tab_stroperator>>). An operand
+in a string can also use the function `STRING` (see <<tab_stringfun>>).
+String values can occur in string arrays (see <<sec.format.anarray>>).
 
 .String Operator in __OPAL__
 [[tab_stroperator,Table {counter:tab-cnt}]]
@@ -224,11 +224,11 @@ string and appends it to `LEP`, giving the string `LEP2`.
 Many commands in _OPAL_ require the setting of logical values (flags) to
 represent the on/off state of an option. A logical value is represented
 by one of the values `TRUE` or `FALSE`, or by a logical expression. A
-logical expression can occur in logical arrays see <<sec.format.logarray>>.
+logical expression can occur in logical arrays (see <<sec.format.logarray>>).
 
 A logical expression has the same format and operator precedence as a
 logical expression in C. It is built from logical operators
-see <<tab_logoperator>> and logical operands:
+(see <<tab_logoperator>>) and logical operands:
 
 ----
 relation      ::= "TRUE" |
@@ -294,10 +294,10 @@ the expression is re-evaluated. Expression definitions may be entered in
 any order. _OPAL_ evaluates them in the correct order before it performs
 any computation. At evaluation time all operands used must have values
 assigned. A real expression can occur in real arrays
-see <<sec.format.realarray>>.
+(see <<sec.format.realarray>>).
 
-A real expression is built from operators see <<tab_operator>> and
-operands see <<sec.format.operand>>:
+A real expression is built from operators (see <<tab_operator>>) and
+operands (see <<sec.format.operand>>):
 
 ----
 real-ref  ::= real-variable |
@@ -329,15 +329,15 @@ real-expr ::= term |
               real-expr "-" term |
 ----
 
-It may contain functions see <<tab_realfun>>, Parentheses indicate
+It may contain functions (see <<tab_realfun>>), Parentheses indicate
 operator precedence if required. Constant sub-expressions are evaluated
 immediately, and the result is stored as a constant.
 
 [[sec.format.operators]]
 === Operators
 
-An expression can be formed using operators see <<tab_operator>> and
-functions see <<tab_realfun>> acting on operands see <<sec.format.operand>>.
+An expression can be formed using operators (see <<tab_operator>>) and
+functions (see <<tab_realfun>>) acting on operands (see <<sec.format.operand>>).
 
 .Real Operators in __OPAL__
 [[tab_operator,Table {counter:tab-cnt}]]
@@ -488,7 +488,7 @@ Examples:
 ==== Symbolic constants
 
 _OPAL_ recognizes a few built-in mathematical and physical constants
-see <<tab_constant>>. Their names must not be used for
+(see <<tab_constant>). Their names must not be used for
 user-defined labels. Additional symbolic constants may be defined to
 simplify their repeated use in statements and expressions.
 
@@ -659,8 +659,8 @@ S[1]::M[1]::
 [[sec.format.arange]]
 ==== Range Selection
 
-A `range` in a beam line see Chapter link:lines#chp.lines[Beam Lines] is selected by the following
-syntax:
+A `range` in a beam line (see Chapter link:lines#chp.lines[Beam Lines]) is
+selected by the following syntax:
 
 ----
 range ::= place |
@@ -671,13 +671,13 @@ This denotes the range of elements from the first`place` to the second
 `place`. Both positions are included. A few special cases are worth
 noting:
 
-* When `place1` refers to a `LINE` see Chapter link:lines#chp.lines[Beam Lines]. the range starts
-at the *beginning* of this line.
-* When `place2` refers to a `LINE` see Chapter link:lines#chp.lines[Beam Lines]. the range ends at
-the *ending* of this line.
+* When `place1` refers to a `LINE` (see Chapter link:lines#chp.lines[Beam Lines]),
+the range starts at the *beginning* of this line.
+* When `place2` refers to a `LINE` (see Chapter link:lines#chp.lines[Beam Lines]),
+the range ends at the *ending* of this line.
 * When both `place` specifications refer to the same object, then the
 second can be omitted. In this case, and if `place` refers to a `LINE`
-see Chapter link:lines#chp.lines[Beam Lines] the range contains the whole of the line.
+(see Chapter link:lines#chp.lines[Beam Lines]) the range contains the whole of the line.
 
 Examples: Assume the following definitions:
 
@@ -732,7 +732,7 @@ A variable name can have one of the formats:
 ----
 
 The first format refers to the value of the global variable
-see <<sec.format.avariable>>, the second format refers to a named `attribute`
+(see <<sec.format.avariable>>), the second format refers to a named `attribute`
 of the named `object`. `object` can refer to an element or a command
 
 [[sec.format.wildcard]]
@@ -765,7 +765,7 @@ All other characters stand for themselves. The pattern
 ----
 
 illustrates all possible unquoted identifier formats
-see <<sec.format.label>>. Since identifiers are converted to lower case,
+(see <<sec.format.label>>). Since identifiers are converted to lower case,
 after reading they will match the pattern
 
 ----
@@ -790,7 +790,7 @@ occurrence `\.` stands for a literal period.
 === Arrays
 
 An attribute array is a set of values of the same attribute type
-see <<sec.format.attribute>>. Normally an array is entered as a list in
+(see <<sec.format.attribute>>). Normally an array is entered as a list in
 braces:
 
 ----

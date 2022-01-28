@@ -23,10 +23,11 @@ comprehensive set of beamline elements, and furthermore allows arbitrary
 overlap of their fields, which gives _OPAL-t_ a capability to model both
 the standing wave structure and traveling wave structure. Beside
 IMPACT-T it is the only code making use of space charge solvers based on
-an integrated Green <<bib.qiang2005_opalt>>, <<bib.qiang2006-1_opalt>>, <<bib.qiang2006-2_opalt>> function to
-efficiently and accurately treat beams with large aspect ratio, and a
-shifted Green function to efficiently treat image charge effects of a
-cathode <<bib.fubiani2006>>, <<bib.qiang2005_opalt>>, <<bib.qiang2006-1_opalt>>,<<bib.qiang2006-2_opalt>>. For
+an integrated Green <<bib.qiang2005_opalt>>, <<bib.qiang2006-1_opalt>>,
+<<bib.qiang2006-2_opalt>> function to efficiently and accurately treat beams
+with large aspect ratio, and a shifted Green function to efficiently treat
+image charge effects of a cathode <<bib.fubiani2006>>, <<bib.qiang2005_opalt>>,
+<<bib.qiang2006-1_opalt>>,<<bib.qiang2006-2_opalt>>. For
 simulations of particles sources i.e. electron guns _OPAL-t_ uses the
 technique of energy binning in the electrostatic space charge
 calculation to model beams with large energy spread. In the very near
