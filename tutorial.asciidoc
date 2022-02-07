@@ -53,23 +53,24 @@ OPAL > Finished reading startup file.
 ==>
 ----
 
-One can exit from this session with the command `QUIT;` (including the
-semicolon).
+One can exit from this session with the command
+`link:control#sec.control.stop[QUIT;]` (including the semicolon).
 
 For batch runs _OPAL_ accepts the following command line arguments: +
 
 [cols="<1,<1,<4",options="header",]
 |=======================================================================
 |Argument |Values |Function
-|--input |<file > |the input file. Using "--input" is optional.
+|--input |<file > |The input file. Using "--input" is optional.
 Instead the input file can be provided either as first or as last
 argument.
 
-|--info |0 – 5 |controls the amount of output to the command line. 0
-means no or scarce output, 5 means a lot of output. Default: 1. +
-Full support currently only in _OPAL-t_.
+|--info |0 – 5 |Controls the amount of output to the command line. 0
+means no or scarce output, 5 means a lot of output. Default: 1.
 
-|--restart |-1 – <Integer> |restarts from given step in file with saved
+|--warn |0 – 5 |Controls the amount of output warning message. Default: 1.
+
+|--restart |-1 – <Integer> |Restarts from given step in file with saved
 phase space. Per default _OPAL_ tries to restart from a file <file>.h5
 where <file>is the input file without extension. -1 stands for the last
 step in the file. If no other file is specified to restart from and if
@@ -77,13 +78,28 @@ the last step of the file is chosen, then the new data is appended to
 the file. Otherwise the data from this particular step is copied to a
 new file and all new data appended to the new file.
 
-|--restartfn |<file> |a file in H5hut format from which _OPAL_ should
+|--restartfn |<file> |A file in H5hut format from which _OPAL_ should
 restart.
 
 |--help | |Displays a summary of all command-line arguments and then
 quits.
 
-|--version | |Prints the version and then quits.
+|--help-command |<command> |Display the help for the _OPAL_ command <command>
+and all the information about their attributes.
+
+|--version | |Prints the curent version of _OPAL_ installed.
+
+|--version-full | |Prints the version of _OPAL_ with additional informations.
+
+|--git-revision | |Print the revision hash of the repository.
+
+|--summary | |Print IPPL lib summary at start.
+
+|--time | |Show total time used in execution.
+
+|--notime | |Do not show timing info (default).
+
+|--commlib <x> |mpi or serial |Selects a parallel comm. library.
 |=======================================================================
 
 Example:
