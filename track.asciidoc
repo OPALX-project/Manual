@@ -181,16 +181,13 @@ of previous tracking.
 Its attributes are:
 
 METHOD::
-  The name (a string, see link:format#sec.format.astring[String Attributes]) of the tracking method to
-  be used. For the time being the following methods are known:
+  The name (a string, see link:format#sec.format.astring[String Attributes])
+  of the tracking method to be used. For the time being the following methods are known:
 +
   * `PARALLEL-T`
     This method puts _OPAL_ in _OPAL-t_ mode (see Chapter link:opalt#chp.opalt[_OPAL-t_]).
   * `CYCLOTRON-T`
     This method puts _OPAL_ in _OPAL-cycl_ mode (see Chapter link:opalcycl#chp.opalcycl[_OPAL-cycl_]).
-  * `STATISTICAL-ERRORS`
-    This is a method to let _OPAL_ run multiple times in parallel while
-    adding imperfections to alignment and other physical quantities.
 FIELDSOLVER::
   The field solver to be used (see Chapter link:fieldsolvers#chp.fieldsolvers[Field Solver]).
 DISTRIBUTION::
