@@ -633,11 +633,47 @@ _OPAL-cycl_ writes out several output files, some specific to the Tracking mode
 (see following sections).
 
 [[sec.opalcycl.input_file_name-.stat]]
-==== _<input_file_name >.stat_
+==== Statistics output
 
-See link:opalt#sec.opalt.input_file_name-.stat[_OPAL-t_ stat file]. The only 
-difference is in the cyclotron coordinate convention. The z (or s) coordinate refers to the vertical 
-direction and y corresponds to the longitudinal or beam travel direction. 
+See link:opalt#sec.opalt.input_file_name-.stat[_OPAL-t_ Statistics output]. The only
+difference is in the cyclotron coordinate convention. The z (or s) coordinate
+refers to the vertical direction and y corresponds to the longitudinal or beam
+travel direction. In addition, _OPAL-cycl_ includes some extra data, as is
+described in the following table.
+
+.Additional data stored in statistics output file in _OPAL-cycl_.
+[cols="<1,<1,<5",options="header",]
+[[tab_opal_cycl_stat,{counter:tab-cnt}]]
+|=======================================================================
+|Name |Units |Meaning
+
+|R0_x |m |X-component of position of particle with ID 0 (only when
+run serial)
+
+|R0_y |m |Y-component of position of particle with ID 0 (only when
+run serial)
+
+|R0_s |m |S-component of position of particle with ID 0 (only when
+run serial)
+
+|P0_x |m |X-component of momentum of particle with ID 0 (only when
+run serial)
+
+|P0_y |m |Y-component of momentum of particle with ID 0 (only when
+run serial)
+
+|P0_s |m |S-component of momentum of particle with ID 0 (only when
+run serial)
+
+|halo_x |1 |Halo in x
+
+|halo_y |1 |Halo in y
+
+|halo_z |1 |Halo in z
+
+|azimuth |deg |Azimuth in global coordinates
+|=======================================================================
+
 
 [[sec.opalcycl.single-particle-tracking-mode-1]]
 ==== Single Particle Tracking mode

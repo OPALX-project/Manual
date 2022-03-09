@@ -316,16 +316,19 @@ In addition to the progress report that _OPAL-t_ writes to the standard
 output (stdout) it also writes different files for various purposes.
 
 [[sec.opalt.input_file_name-.stat]]
-==== _<input_file_name >.stat_
+==== Statistics output
 
 This file is used to log the statistical properties of the bunch in the
 ASCII variant of the SDDS format <<bib.borland1995_opalt>>. It can be viewed
 with the SDDS Tools <<bib.borland2016>> or GNUPLOT. The frequency with
 which the statistics are computed and written to file can be controlled
-With the option `STATDUMPFREQ`. The information that is stored are found
-in the following table.
+With the option `STATDUMPFREQ` (see link:control#sec.control.option[Option Statement]).
+The name of the output file is _<input_file_name >.stat_.
+The information that is stored are found in the following table.
 
+.Data stored in statistics output file in _OPAL-t_.
 [cols="<1,<1,<1,<5",options="header",]
+[[tab_opal_t_stat,{counter:tab-cnt}]]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |t |ns |Time
@@ -421,35 +424,91 @@ in floor coordinate system
 
 |42 |partsOutside |1 |Number of particles outside
 latexmath:[n \times gma] of beam, where latexmath:[n] is controlled
-with `BEAMHALOBOUNDARY`
+with `BEAMHALOBOUNDARY` (see link:control#sec.control.option[Option Statement])
 
-|43 |R0_x |m |X-component of position of particle with ID 0 (only when
-run serial)
+|43 |68_Percentile_x |m |68.27 percentile (1 sigma of normal distribution)
+of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
 
-|44 |R0_y |m |Y-component of position of particle with ID 0 (only when
-run serial)
+|44 |68_Percentile_y |m |68.27 percentile (1 sigma of normal distribution)
+of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
 
-|45 |R0_s |m |S-component of position of particle with ID 0 (only when
-run serial)
+|45 |68_Percentile_z |m |68.27 percentile (1 sigma of normal distribution)
+of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
 
-|46 |P0_x |m |X-component of momentum of particle with ID 0 (only when
-run serial)
+|46 |95_Percentile_x |m |95.45 percentile (2 sigma of normal distribution)
+of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
 
-|47 |P0_y |m |Y-component of momentum of particle with ID 0 (only when
-run serial)
+|47 |95_Percentile_y |m |95.45 percentile (2 sigma of normal distribution)
+of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
 
-|48 |P0_s |m |S-component of momentum of particle with ID 0 (only when
-run serial)
+|48 |95_Percentile_z |m |95.45 percentile (2 sigma of normal distribution)
+of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|49 |99_Percentile_x |m |99.73 percentile (3 sigma of normal distribution)
+of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|50 |99_Percentile_y |m |99.73 percentile (3 sigma of normal distribution)
+of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|51 |99_Percentile_z |m |99.73 percentile (3 sigma of normal distribution)
+of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|52 |99_99_Percentile_x |m |99.994 percentile (4 sigma of normal distribution)
+of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|53 |99_99_Percentile_y |m |99.994 percentile (4 sigma of normal distribution)
+of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|54 |99_99_Percentile_z |m |99.994 percentile (4 sigma of normal distribution)
+of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+
+|55 |normalizedEps68Percentile_x |m |x-component of normalized emittance at 68
+percentile (1 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|56 |normalizedEps68Percentile_y |m |y-component of normalized emittance at 68
+percentile (1 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|57 |normalizedEps68Percentile_z |m |z-component of normalized emittance at 68
+percentile (1 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|58 |normalizedEps95Percentile_x |m |x-component of normalized emittance at 95
+percentile (2 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|59 |normalizedEps95Percentile_y |m |y-component of normalized emittance at 95
+percentile (2 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|60 |normalizedEps95Percentile_z |m |z-component of normalized emittance at 95
+percentile (2 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|61 |normalizedEps99Percentile_x |m |x-component of normalized emittance at 99
+percentile (3 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|62 |normalizedEps99Percentile_y |m |y-component of normalized emittance at 99
+percentile (3 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|63 |normalizedEps99Percentile_z |m |z-component of normalized emittance at 99
+percentile (3 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|64 |normalizedEps99_99Percentile_x |m |x-component of normalized emittance at 99.99
+percentile (4 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|65 |normalizedEps99_99Percentil_y |m |y-component of normalized emittance at 99.99
+percentile (4 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
+
+|66 |normalizedEps99_99Percentil_z |m |z-component of normalized emittance at 99.99
+percentile (4 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
 |=======================================================================
 
 [[sec.opalt.datainput_file_name-_monitors.stat]]
-==== _data/<input_file_name >_Monitors.stat_
+==== Monitor statistics output
 
-_OPAL-t_ computes the statistics of the bunch for every `MONITOR` that
-it passes. The information that is written can be found in the following
-table.
+_OPAL-t_ computes the statistics of the bunch for every `MONITOR` that it
+passes. The name of the output file is _data/<input_file_name >_Monitors.stat_.
+The information that is written can be found in the following table.
 
+.Data stored in `MONITOR` statistics output file in _OPAL-t_.
 [cols="<1,<1,<1,<5",options="header",]
+[[tab_opal_t_monitor_stat,{counter:tab-cnt}]]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |name |a string |Name of the monitor
@@ -530,14 +589,18 @@ in floor coordinate system
 |=======================================================================
 
 [[sec.opalt.datainput_file_name-_3d.opal]]
-==== _data/<input_file_name >_3D.opal_
+==== Input file transcription
 
 _OPAL-t_ copies the input file into this file and replaces all
 occurrences of `ELEMEDGE` with the corresponding position using `X`,
-`Y`, `Z`, `THETA`, `PHI` and `PSI`.
+`Y`, `Z`, `THETA`, `PHI` and `PSI`. The name of the output file is
+_data/<input_file_name >_3D.opal_.
+
+[[sec.opalt.datainput_file_name-_elementpositions]]
+==== Element positions output files
 
 [[sec.opalt.datainput_file_name-_elementpositions.txt]]
-==== _data/<input_file_name >_ElementPositions.txt_
+===== _data/<input_file_name >_ElementPositions.txt_
 
 _OPAL-t_ stores for every element the position of the entrance and the
 exit. Additionally the reference trajectory inside dipoles is stored. On
@@ -547,7 +610,7 @@ store the z-component then the x-component and finally the y-component
 of the position in floor coordinates.
 
 [[sec.opalt.datainput_file_name-_elementpositions.py]]
-==== _data/<input_file_name >_ElementPositions.py_
+===== _data/<input_file_name >_ElementPositions.py_
 
 This Python script can be used to generate visualizations of the beam
 line in different formats. Beside an ASCII file that can be printed
@@ -575,13 +638,15 @@ The following arguments can be passed
 * `--normal x y z` specify the normal for projection with the components `x`, `y` and `z`
 
 [[sec.opalt.datainput_file_name-_elementpositions.sdds]]
-==== _data/<input_file_name >_ElementPositions.sdds_
+===== _data/<input_file_name >_ElementPositions.sdds_
 
 This file can be used when plotting the statistics of the bunch to
 indicate the positions of the magnets. It is written in the SDDS format.
 The information that is written can be found in the following table.
 
+.Data stored in the element position output file in _OPAL-t_.
 [cols="<1,<1,<1,<5",options="header",]
+[[tab_opal_t_elem_out,{counter:tab-cnt}]]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |s |m |The position in path length
@@ -627,12 +692,15 @@ This produces a plot as found in <<fig_elementIndicator>>
 image::./figures/opalt/elementIndicator.png[scaledwidth=6cm,width=40%]
 
 [[sec.opalt.datainput_file_name-_designpath.dat]]
-==== _data/<input_file_name >_DesignPath.dat_
+==== Reference particle trajectory output
 
 The trajectory of the reference particle is stored in this ASCII file.
+The name of the output file is _data/<input_file_name >_DesignPath.dat_.
 The content of the columns are listed in the following table.
 
+.Data stored in the reference particle output file in _OPAL-t_.
 [cols="<1,<1,<1,<5",options="header",]
+[[tab_opal_t_ref_out,{counter:tab-cnt}]]
 |========================================================
 |Column Nr. |Name |Units |Meaning
 |1  | |m |Position in path length

@@ -104,7 +104,7 @@ PSDUMPFREQ::
   H5hut file. Its default value is 10.
 STATDUMPFREQ::
   Defines after how many time steps we dump statistical data, such as
-  RMS beam emittance, to the .stat file. The default value is 10.
+  RMS beam emittance, to the _.stat_ file. The default value is 10.
   Currently only available for _OPAL-t_.
 PSDUMPEACHTURN::
   Control option of phase space dumping. If true, dump phase space after
@@ -112,7 +112,7 @@ PSDUMPEACHTURN::
   simulation in _OPAL-cycl_. Its default value is false.
 PSDUMPFRAME::
   Control option that defines the frame in which the phase space data is
-  written for h5 and stat files.  Beware that the data is written in a
+  written for _.h5_ and _.stat_ files.  Beware that the data is written in a
   given time step. Most accelerator
   physics quantities are defined at a given s-step where s is distance
   along the reference trajectory. For non-isochronous accelerators,
@@ -249,6 +249,13 @@ MEMORYDUMP::
   FALSE
 HALOSHIFT::
   Constant parameter to shift halo value. Its default value is 0.0.
+COMPUTEPERCENTILES::
+  If true, the 68 (1 sigmas for normal distribution), the 95 (2 sigmas),
+  the 99.7 (3 sigmas) and the 99.99 (4 sigmas) percentiles of the bunch
+  size and the normalized emittance are calculated. The data are stored
+  into _.stat_ output file and loss file in HDF5 format (_.h5_). The
+  calculation is performed whenever the number of particles exceeds 100.
+  Default is false.
 
 Examples:
 
@@ -303,6 +310,7 @@ OPTION,SEED=987456321
 |`MEMORYDUMP`        |= `FALSE`
 |`HALOSHIFT`         |= `0.0`
 |`DELPARTFREQ`       |= `1`
+|`COMPUTEPERCENTILES`|= `FALSE`
 |=======================================================================
 
 [[sec.consumption.parameter]]
@@ -647,8 +655,8 @@ Example:
 // all OPAL runs will use the same OPTIONs
 OPTION, ECHO=FALSE;
 OPTION, INFO=FALSE;             //psdump and statdump are in time steps
-OPTION, PSDUMPFREQ = 10000000;  //How often 6d info is dumped to .h5
-OPTION, STATDUMPFREQ = 10;      //How often beam stats dumped to .stat.
+OPTION, PSDUMPFREQ = 10000000;  //How often 6d info is dumped to _.h5_
+OPTION, STATDUMPFREQ = 10;      //How often beam stats dumped to _.stat_
 OPTION, BOUNDPDESTROYFQ=10;     //Delete lost particles, if any
 OPTION, AUTOPHASE=4;            //Always leave this on, unless doing a phase scan
 OPTION, VERSION=20000;
