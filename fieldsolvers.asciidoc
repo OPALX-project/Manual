@@ -695,7 +695,7 @@ Select, Line=l1;
 
 TRACK,LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,TIMEINTEGRATOR="RK-4";
     run, method = "CYCLOTRON-T", beam=beam1, fieldsolver=Fs1, distribution=Dist1,
-    MBMODE=FORCE, TURNS=11, MB_BINNING=GAMMA, MB_ETA=0.25;
+    MBMODE=FORCE, TURNS=11, MB_BINNING=GAMMA_BINNING, MB_ETA=0.25;
 
 endtrack;
 

@@ -226,7 +226,7 @@ MB_BINNING::
 +
 MB_ETA::
   The scale parameter for binning in multi-bunch mode (default: 0.01). Only
-  used in `MB_BINNING=GAMMA`. Only available in _OPAL-cycl_.
+  used in `MB_BINNING=GAMMA_BINNING`. Only available in _OPAL-cycl_.
 +
 BOUNDARYGEOMETRY::
   The boundary geometry specification is used for
