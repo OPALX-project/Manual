@@ -419,7 +419,7 @@ details see Chapter link:geometry#chp.geometry[Geometry].
 ==== Iterative Solver
 
 The iterative solver (`ITSOLVER`) for solving the preconditioned system:
-`CG` (default), `BiCGSTAB` or `GMRES`.
+`CG` (default), `BICGSTAB` or `GMRES`.
 
 [[sec.fieldsolvers.INTERPL]]
 ==== Interpolation for Boundary Points
@@ -526,18 +526,20 @@ than `MZ` when running in parallel.
 |`AMR_BFZ` |_AMReX_ blocking factor in z. `AMR_MAXGRIDZ` has to be a multiple.
 
 |`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY`, `POTENTIAL`,
-`EFIELD`, `MOMENTA`, `MAX_NUM_PARTICLES`, `MIN_NUM_PARTICLES`]
+`EFIELD`, `MOMENTA`, `MAX_NUM_PARTICLES`, `MIN_NUM_PARTICLES`].
+Note that this attribute is defined as a string value
+(see link:format#sec.format.astring[String Attributes]), so it must be quoted.
 
 |`AMR_DENSITY` | Charge density refinement threshold when
-`AMR_TAGGING=CHARGE_DENSITY`. See also <<tab_Mesh_refinement_strategies>>.
+`AMR_TAGGING="CHARGE_DENSITY"`. See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING=MAX_NUM_PARTICLES`.
+|`AMR_MAX_NUM_PART` | Refinement threshold for `AMR_TAGGING="MAX_NUM_PARTICLES"`.
 See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING=MIN_NUM_PARTICLES`.
+|`AMR_MIN_NUM_PART` | Refinement threshold for `AMR_TAGGING="MIN_NUM_PARTICLES"`.
 See also <<tab_Mesh_refinement_strategies>>.
 
-|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING=POTENTIAL` and `AMR_TAGGING=EFIELD`.
+|`AMR_SCALING` | Refinement threshold for `AMR_TAGGING="POTENTIAL"` and `AMR_TAGGING="EFIELD"`.
 See also <<tab_Mesh_refinement_strategies>>.
 
 |`AMR_DOMAIN_RATIO` | Box ratio of the AMR computation domain. It is an array of size 3.
@@ -623,9 +625,9 @@ Default: `FALSE`
 linear solver (if `TRUE`, it uses subcommunicators to reduce the communication
 overhead). Default: `FALSE`
 
-|`AMR_MG_REBALANCE` |Reuse type of the smoothed aggregation multigrid solver of MueLu.
+|`AMR_MG_REUSE` |Reuse type of the smoothed aggregation multigrid solver of MueLu.
 Please see <<bib.muelu>> for further information.
-[`NONE, RP, RAP, S, FULL`]. Default: `RAP`
+[`NONE, RP, RAP, SYMBOLIC, FULL`]. Default: `RAP`
 
 |`AMR_MG_TOL` |The tolerance of the solver. Default: latexmath:[10^{-10}]
 
@@ -685,9 +687,9 @@ Fs1:FIELDSOLVER, FSTYPE=AMR_MG,
                  AMR_BFX=16, AMR_BFY=16, AMR_BFZ=16,
                  AMR_REFX=2, AMR_REFY=2, AMR_REFZ=2,
                  AMR_DOMAIN_RATIO={1.0, 0.75, 0.75},
-                 AMR_TAGGING=CHARGE_DENSITY, AMR_DENSITY=1.0e-9,
+                 AMR_TAGGING="CHARGE_DENSITY", AMR_DENSITY=1.0e-9,
                  AMR_MG_VERBOSE=true, AMR_MG_REBALANCE=true, AMR_MG_REUSE=FULL,
-                 ITSOLVER=SA, AMR_MG_NORM=LINF, AMR_MG_NSWEEPS=12;
+                 ITSOLVER=SA, AMR_MG_NORM=LINF_NORM, AMR_MG_NSWEEPS=12;
 
 beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1e5, BCURRENT=2.0E-3, CHARGE=1.0, BFREQ= frequency;
 
