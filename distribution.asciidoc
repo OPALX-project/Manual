@@ -1100,8 +1100,8 @@ emitted particle’s momentum in a random way:
 ++++
 \begin{aligned}
     p_{total} &= \sqrt{\left(\frac{\mathrm{EKIN}}{mc^{2}} + 1\right)^{2} - 1} \\
-    p_{x} &= p_\text{total} \sin(\phi) \cos(\theta) \\
-    p_{y} &= p_\text{total} \sin(\phi) \sin(\theta) \\
+    p_{x} &= p_\text{total} \sin(\theta) \cos(\phi) \\
+    p_{y} &= p_\text{total} \sin(\theta) \sin(\phi) \\
     p_{z} &= p_\text{total} |{\cos(\theta)}|
   \end{aligned}
 ++++
