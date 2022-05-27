@@ -148,12 +148,12 @@ SCSOLVEFREQ::
   this option allows to change the frequency of space charge
   calculation, i.e. the space charge forces are evaluated every
   SCSOLVEFREQ step and then reused for the following steps. Affects
-  integrators LF-2 and RK-4 of _OPAL-cycl_. Its default value is 1.
-  Note: as the multiple-time-stepping (MTS) integrator maintains
+  integrators `LF2` and `RK4` of _OPAL-cycl_. Its default value is 1.
+  Note: as the multiple-time-stepping (`MTS`) integrator maintains
   accuracy much better with reduced space charge solve frequency, this
   option should probably not be used anymore.
 MTSSUBSTEPS::
-  Only used for multiple-time-stepping (MTS) integrator in _OPAL-cycl_.
+  Only used for multiple-time-stepping (`MTS`) integrator in _OPAL-cycl_.
   Specifies how many sub-steps for external field integration are done
   per step. Default value is 1. Making less steps per turn and
   increasing this value is the recommended way to reduce space charge

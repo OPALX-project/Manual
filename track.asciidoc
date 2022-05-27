@@ -84,16 +84,16 @@ ZSTOP::
   last set of the array then the simulation stops.
 TIMEINTEGRATOR::
   Define the time integrator. Currently only available in _OPAL-cycl_.
-  The valid options are `RK-4`, `LF-2` and `MTS`:
+  The valid options are `RK4`, `LF2` and `MTS`:
 +
-  * RK-4
+  * RK4
     the fourth-order Runge-Kutta integrator. This is the default
     integrator for _OPAL-cycl_.
-  * LF-2
+  * LF2
     the second-order Boris-Buneman (leapfrog-like) integrator.
     Currently, `LF-2` is only available for multi-particles with/without
     space charge. For single particle tracking and tune calculations,
-    use the `RK-4` for the time being.
+    use the `RK4` for the time being.
   * MTS
     the multiple-time-stepping integrator. Considering that the space
     charge fields change much slower than the external fields in
@@ -105,7 +105,7 @@ TIMEINTEGRATOR::
     number of sub-steps can be set with the option `MTSSUBSTEPS` and its
     default value is 1. When using this integrator, the input file has
     to be rewritten in the units of the outer step. For example,
-    extracts of the input file suited for `LF-2` or `RK-4` read
+    extracts of the input file suited for `LF2` or `RK4` read
 +
 ----
 Option, PSDUMPFREQ=100;
@@ -114,9 +114,10 @@ Option, SPTDUMPFREQ=50;
 Option, VERSION=10600;
 REAL turns=5;
 REAL nstep=3000;
-TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,
-TIMEINTEGRATOR="LF-2";
-    RUN, METHOD = "CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
+
+TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep, TIMEINTEGRATOR=LF2
+RUN, METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
+
 ENDTRACK;
 ----
 +
@@ -131,7 +132,7 @@ Option, VERSION=10600;
 REAL turns=5;
 REAL nstep=300;
 TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,
-TIMEINTEGRATOR="MTS";
+TIMEINTEGRATOR=MTS;
     RUN, METHOD = "CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1;
 ENDTRACK;
 ----
@@ -243,7 +244,7 @@ TRACKBACK::
 Example:
 
 ----
-RUN, FILE="table", TURNS=5, MBMODE="AUTO", PARAMB=10.0,
+RUN, FILE="table", TURNS=5, MBMODE=AUTO, PARAMB=10.0,
      METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1,
      DISTRIBUTION=Dist1;
 ----
