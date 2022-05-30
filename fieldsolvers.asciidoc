@@ -666,42 +666,41 @@ REAL frequency = 50.650;
 ...
 
 // define the cyclotron
-ring: Cyclotron, ...
-rf0: RFCavity, ...
-rf1: RFCavity, ...
-rf2: RFCavity, ...
-rf3: RFCavity, ...
-rf4: RFCavity, ...
-l1:   Line = (ring, rf0, rf1, rf2, rf3, rf4);
+ring: CYCLOTRON, ...
+rf0: RFCAVITY, ...
+rf1: RFCAVITY, ...
+rf2: RFCAVITY, ...
+rf3: RFCAVITY, ...
+rf4: RFCAVITY, ...
+l1: LINE = (ring, rf0, rf1, rf2, rf3, rf4);
 
 // define the distribution
 Dist1: DISTRIBUTION, ...
 
 // fieldsolver command
-Fs1:FIELDSOLVER, FSTYPE=AMR_MG,
-                 MX=128, MY=128, MT=128,
-                 PARFFTX=true, PARFFTY=true, PARFFTT=true,
-                 BCFFTX=open, BCFFTY=open, BCFFTT=open,
-                 BBOXINCR=20, AMR_MAXLEVEL=2,
-                 AMR_MAXGRIDX=32, AMR_MAXGRIDY=32, AMR_MAXGRIDZ=32,
-                 AMR_BFX=16, AMR_BFY=16, AMR_BFZ=16,
-                 AMR_REFX=2, AMR_REFY=2, AMR_REFZ=2,
-                 AMR_DOMAIN_RATIO={1.0, 0.75, 0.75},
-                 AMR_TAGGING="CHARGE_DENSITY", AMR_DENSITY=1.0e-9,
-                 AMR_MG_VERBOSE=true, AMR_MG_REBALANCE=true, AMR_MG_REUSE=FULL,
-                 ITSOLVER=SA, AMR_MG_NORM=LINF_NORM, AMR_MG_NSWEEPS=12;
+Fs1: FIELDSOLVER, FSTYPE=AMR_MG,
+                  MX=128, MY=128, MT=128,
+                  PARFFTX=true, PARFFTY=true, PARFFTT=true,
+                  BCFFTX=open, BCFFTY=open, BCFFTT=open,
+                  BBOXINCR=20, AMR_MAXLEVEL=2,
+                  AMR_MAXGRIDX=32, AMR_MAXGRIDY=32, AMR_MAXGRIDZ=32,
+                  AMR_BFX=16, AMR_BFY=16, AMR_BFZ=16,
+                  AMR_REFX=2, AMR_REFY=2, AMR_REFZ=2,
+                  AMR_DOMAIN_RATIO={1.0, 0.75, 0.75},
+                  AMR_TAGGING="CHARGE_DENSITY", AMR_DENSITY=1.0e-9,
+                  AMR_MG_VERBOSE=true, AMR_MG_REBALANCE=true, AMR_MG_REUSE=FULL,
+                  ITSOLVER=SA, AMR_MG_NORM=LINF_NORM, AMR_MG_NSWEEPS=12;
 
 beam1: BEAM, PARTICLE=PROTON, pc=P0, NPART=1e5, BCURRENT=2.0E-3, CHARGE=1.0, BFREQ= frequency;
 
-Select, Line=l1;
+SELECT, LINE=l1;
 
-TRACK,LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,TIMEINTEGRATOR="RK-4";
-    run, method = "CYCLOTRON-T", beam=beam1, fieldsolver=Fs1, distribution=Dist1,
+TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep,TIMEINTEGRATOR=RK4;
+RUN, METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1,
     MBMODE=FORCE, TURNS=11, MB_BINNING=GAMMA_BINNING, MB_ETA=0.25;
 
-endtrack;
-
-Stop;
+ENDTRACK;
+STOP;
 ----
 
 [[sec.fieldsolvers.bibliography]]

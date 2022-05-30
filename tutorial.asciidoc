@@ -127,7 +127,7 @@ The cavity would be defined like
 ----
 FINSS_RGUN: RFCavity, L = 0.17493, VOLT = 100.0,
     FMAPFN = "FINSS-RGUN.dat",
-    ELEMEDGE =0.0, TYPE = "STANDING", FREQ = 2998.0,
+    ELEMEDGE = 0.0, TYPE = STANDING, FREQ = 2998.0,
     LAG = FINSS_RGUN_phi;
 ----
 
