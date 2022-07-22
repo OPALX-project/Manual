@@ -281,6 +281,18 @@ FFT in all 3 dimensions.
 
 More details will be given in Version 2.0.0.
 
+[[sec.fieldsolvers.p3m]]
+=== Particle-Particle-Particle-Mesh (latexmath:[P^3M]) Solver
+
+The Particle-Mesh (PM) solver is one of the oldest improvements over the
+PP solver. Still one of the best references is the book by R.W. Hockney
+& J.W. Eastwood <<bib.hockney>>. The PM solver introduces a discretization of
+space. The rectangular computation domain
+latexmath:[\Omega:=[-L_x,L_x\]\times[-L_y,L_y\]\times[-L_t,L_t\]], just
+big enough to include all particles, is segmented into a regular mesh of
+latexmath:[M=M_x\times M_y\times M_t] grid points. For the discussion
+below we assume latexmath:[N=M_x=M_y=M_t].
+
 [[sec.fieldsolvers.iterative-space-charge-solver]]
 === Iterative Space Charge Solver
 
@@ -702,6 +714,7 @@ RUN, METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1,
 ENDTRACK;
 STOP;
 ----
+
 
 [[sec.fieldsolvers.bibliography]]
 === References
