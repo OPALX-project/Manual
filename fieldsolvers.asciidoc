@@ -339,7 +339,7 @@ version of the standard Green's function described before is the availability of
 the integration.
 
 [[sec.fieldsolvers.P3M.use]]
-==== Use of P3M solver
+==== Use of latexmath:[P^3M] solver
 At the moment, `P3M` solver is only available in _OPAL-T_ and that too not during emission. We can 
 specify the solver in the input file as follows
 
