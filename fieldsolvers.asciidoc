@@ -819,8 +819,8 @@ anchor:bib.amrsolver[[{counter:bib-cnt}\]]
 anchor:bib.p3mhuenenberger[[{counter:bib-cnt}\]]
 <<bib.p3mhuenenberger>> P. H. Hünenberger, https://doi.org/10.1063/1.1324713[_Optimal charge-shaping functions for the particle–particle—particle–mesh (P3M) method for computing electrostatic interactions in molecular simulations_], The Journal of Chemical Physics 113.23 : 10464-10476 (2000).
 
-anchor:bib.p3mhuenenberger[[{counter:bib-cnt}\]]
-<<bib.p3mulmerthesis>> B. Ulmer, https://amas.web.psi.ch/people/aadelmann/ETH-Accel-Lecture-1/projectscompleted/cse/thesisBUlmer.pdf [_The 
+anchor:bib.p3mulmerthesis[[{counter:bib-cnt}\]]
+<<bib.p3mulmerthesis>> B. Ulmer, https://amas.web.psi.ch/people/aadelmann/ETH-Accel-Lecture-1/projectscompleted/cse/thesisBUlmer.pdf[_The 
 P3M Model on Emerging Computer Architectures With Application to Microbunching_], Master's thesis, ETH Zurich (2016).
 
 // EOF
