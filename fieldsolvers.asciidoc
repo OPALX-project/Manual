@@ -340,7 +340,7 @@ the integration.
 
 [[sec.fieldsolvers.P3M.use]]
 ==== Use of P3M solver
-At the moment, latexmath:[P^3M] solver is only available in _OPAL-T_ and that too not during emission. We can 
+At the moment, `P3M` solver is only available in _OPAL-T_ and that too not during emission. We can 
 specify the solver in the input file as follows
 
 [source]
