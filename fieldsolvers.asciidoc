@@ -322,7 +322,10 @@ where latexmath:[\alpha] is the interaction splitting parameter which determines
 signifcance of the particle-particle part to the particle-mesh part. It is usually chosen as
 latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and C is
 a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
-charges. Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
+charges. In OPAL for the `P3M` solver we use this Green's function when the option is 
+specifed as `STANDARD`.
+
+Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
 as given in Table I of appendix B in <<bib.p3mhuenenberger>>. The lowest order function in the table corresponds to
 
 [latexmath#eq-oneterm]
@@ -331,7 +334,25 @@ f(r) = \frac{\xi(3 - \xi^2)}{2}
 ++++
 
 where latexmath:[\xi = r/r_c]. We use the integrated version of this Green's function when we specify the option 
-for Green's function as `INTEGRATED` in the `P3M` solver in OPAL.
+for Green's function as `INTEGRATED` in the `P3M` solver in OPAL. The reason to use this one instead of the integrated
+version of the standard Green's function described before is the availability of a closed form expression when performing
+the integration.
+
+[[sec.fieldsolvers.P3M.use]]
+==== Use of P3M solver
+At the moment, latexmath:[P^3M] solver is only available in _OPAL-T_ and that too not during emission. We can 
+specify the solver in the input file as follows
+
+[source]
+----
+ REAL inter_rad = 3.125e-5;
+
+ FS_P3M: Fieldsolver, FSTYPE = "P3M", MX = 64, MY = 64, MT = 64, PARFFTX = decx, PARFFTY = decy,
+        PARFFTT = decz, BCFFTX = open, BCFFTY = open, BCFFTT = open, RC=inter_rad, GREENSF = INTEGRATED;
+
+----
+
+
 
 [[sec.fieldsolvers.iterative-space-charge-solver]]
 === Iterative Space Charge Solver
