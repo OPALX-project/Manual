@@ -299,7 +299,7 @@ where latexmath:[F_{sr}] is the short-range component which can be
 computed efficiently in the real-space with a small cut-off radius by direct summation, 
 whereas latexmath:[F_{lr}] is the long-range component and this can be calculated efficiently
 in the Fourier space with a few Fourier modes due to its rapid spectral decay. Consequently, 
-we split the Green's function latexmat:[G] also into two components as 
+we split the Green's function latexmath:[G] also into two components as 
 [latexmath#eq-oneterm]
 ++++
 G(r) = \psi(r) + \phi(r) = \frac{1 - f(r)}{r} + \frac{f(r)}{r}
@@ -310,6 +310,7 @@ latexmath:[\phi(r)] is the long range or the particle-mesh Green's function. Apa
 smoothness conditions there is a lot of flexibility in the choice of latexmath:[f(r)] and this 
 leads to different screening shapes for the particles. The standard choice from the Ewald 
 summation corresponds to <<bib.p3mulmerthesis>>, <<bib.p3mhuenenberger>>
+[latexmath#eq-oneterm]
 ++++
 f(r) = erf(\alpha r)
 ++++
@@ -319,6 +320,7 @@ latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction 
 a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
 charges. Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
 as given in Table I of appendix B in <<bib.huenenberger>>. The lowest order function in the table corresponds to
+[latexmath#eq-oneterm]
 ++++
 f(r) = \frac{\xi(3 - \xi^2)}{2}
 ++++
