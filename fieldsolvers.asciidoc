@@ -284,14 +284,46 @@ More details will be given in Version 2.0.0.
 [[sec.fieldsolvers.p3m]]
 === Particle-Particle-Particle-Mesh (latexmath:[P^3M]) Solver
 
-The Particle-Mesh (PM) solver is one of the oldest improvements over the
-PP solver. Still one of the best references is the book by R.W. Hockney
-& J.W. Eastwood <<bib.hockney>>. The PM solver introduces a discretization of
-space. The rectangular computation domain
-latexmath:[\Omega:=[-L_x,L_x\]\times[-L_y,L_y\]\times[-L_t,L_t\]], just
-big enough to include all particles, is segmented into a regular mesh of
-latexmath:[M=M_x\times M_y\times M_t] grid points. For the discussion
-below we assume latexmath:[N=M_x=M_y=M_t].
+The latexmath:[P^3M] solver of Hockney and Eastwood <<bib.hockneyandeastwood>> 
+takes in to account collisions between particles in an electrostatic 
+one-one PIC simulation, i.e. every simulation particle is a
+real particle, in an efficient manner compared to PIC with excessive mesh refinement or
+a direct N-body summation. The main idea behind this appraoch is a splitting of the 
+total force latexmath:[F] into two components 
+
+[latexmath#eq-oneterm]
+++++
+F = F_{sr} + F_{lr}
+++++
+where latexmath:[F_{sr}] is the short-range component which can be 
+computed efficiently in the real-space with a small cut-off radius by direct summation, 
+whereas latexmath:[F_{lr}] is the long-range component and this can be calculated efficiently
+in the Fourier space with a few Fourier modes due to its rapid spectral decay. Consequently, 
+we split the Green's function latexmat:[G] also into two components as 
+[latexmath#eq-oneterm]
+++++
+G(r) = \psi(r) + \phi(r) = \frac{1 - f(r)}{r} + \frac{f(r)}{r}
+++++
+
+where latexmath:[\psi(r)] is the short-range or the particle-particle Green's function and 
+latexmath:[\phi(r)] is the long range or the particle-mesh Green's function. Apart from certain 
+smoothness conditions there is a lot of flexibility in the choice of latexmath:[f(r)] and this 
+leads to different screening shapes for the particles. The standard choice from the Ewald 
+summation corresponds to <<bib.p3mulmerthesis>>, <<bib.p3mhuenenberger>>
+++++
+f(r) = erf(\alpha r)
+++++
+where latexmath:[\alpha] is the interaction splitting parameter which determines the relative 
+signifcance of the particle-particle part to the particle-mesh part. It is usually chosen as
+latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and C is
+a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
+charges. Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
+as given in Table I of appendix B in <<bib.huenenberger>>. The lowest order function in the table corresponds to
+++++
+f(r) = \frac{\xi(3 - \xi^2)}{2}
+++++
+where latexmath:[\xi = r/r_c]. We use the integrated version of this Green's function when we specify the option 
+for Green's function as `INTEGRATED` in the `P3M` solver in OPAL.
 
 [[sec.fieldsolvers.iterative-space-charge-solver]]
 === Iterative Space Charge Solver
@@ -781,5 +813,12 @@ anchor:bib.lapack[[{counter:bib-cnt}\]]
 
 anchor:bib.amrsolver[[{counter:bib-cnt}\]]
 <<bib.amrsolver>> M. Frey, A. Adelmann and U. Locans, https://doi.org/10.1016/j.cpc.2019.106912[_On architecture and performance of adaptive mesh refinement in an electrostatics Particle-In-Cell code_], Comput. Phys. Commun. 247, 106912 (2020).
+
+anchor:bib.p3mhuenenberger[[{counter:bib-cnt}\]]
+<<bib.p3mhuenenberger>> P. H. Hünenberger, https://doi.org/10.1063/1.1324713[_Optimal charge-shaping functions for the particle–particle—particle–mesh (P3M) method for computing electrostatic interactions in molecular simulations_], The Journal of Chemical Physics 113.23 : 10464-10476 (2000).
+
+anchor:bib.p3mhuenenberger[[{counter:bib-cnt}\]]
+<<bib.p3mulmerthesis>> B. Ulmer, https://amas.web.psi.ch/people/aadelmann/ETH-Accel-Lecture-1/projectscompleted/cse/thesisBUlmer.pdf [_The 
+P3M Model on Emerging Computer Architectures With Application to Microbunching_], Master's thesis, ETH Zurich (2016).
 
 // EOF
