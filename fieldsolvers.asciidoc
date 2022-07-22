@@ -371,7 +371,7 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the `FIELDSOLVER` command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG` and
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG`, `P3M` and
 `NONE`. Further arguments are enabled with the AMR solver
 (cf. <<sec.fieldsolvers.AMR>>).
 
@@ -399,7 +399,7 @@ grid
 
 |`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`] (`FFT` + `AMR_MG` only).
 
-|`GREENSF` |Defines the Greens function for the FFT Solver (`FFT` only).
+|`GREENSF` |Defines the Greens function for the FFT Solver (`FFT` + `P3M` only).
 
 |`BBOXINCR` |Enlargement of the bounding box in %.
 
@@ -414,6 +414,10 @@ grid
 |`MAXITERS` |Maximum number of iterations of iterative solver (`SAAMG` only).
 
 |`PRECMODE` |Behavior of the preconditioner (`SAAMG` only).
+
+|`RC` |Defines the cut-off radius in the boosted frame for the P3M solver (`P3M` only).
+
+|`ALPHA` |Defines the interaction splitting parameter for the P3M solver with standard Green's function (`P3M` + `GREENSF=STANDARD` only).
 
 |=======================================================================
 
