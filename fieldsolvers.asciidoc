@@ -516,6 +516,22 @@ default)
 |`REUSE` |The preconditioner is reused
 |=======================================================================
 
+[[sec.fieldsolvers.RC]]
+==== Cut-off Radius
+
+The real space cut-off radius for the `P3M` solver. Within the interaction radius all the collisions are 
+calculated using direct summation. Deafult value is 0 which corresponds to no particle-particle part.
+
+[[sec.fieldsolvers.ALPHA]]
+==== Interaction splitting parameter
+
+The interaction splitting parameter latexmath:[\alpha] determines the relative significance of the particle-particle
+part to the particle-mesh part in the `P3M` solver. If latexmath:[\alpha] is very large then the particle-mesh 
+part is more significant and if it is very small then the particle-particle part is the dominant one. It is usually
+chosen as latexmath:[\alpha = C/r_c] where C is a positive constant usually of latexmath:[\mathcal{O}(1)]. 
+Default value is latexmath:[1e8].   
+
+
 [[sec.fieldsolvers.FSENBINS]]
 ==== Number of Energy Bins
 
