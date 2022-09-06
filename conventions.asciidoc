@@ -137,4 +137,14 @@ latexmath:[I_0= e/4\pi\epsilon_0mc^3] [A].
 beams.
 |=======================================================================
 
+[[sec.conventions.elegantconv]]
+=== Elegant Multipole Conversion
+OPAL-t uses gradient in T/m so the conversion is dB_y/dx=0.29979/(E[GeV])*dBy/dx[T/m])
+
+A Python code for conversion:
+
+ def k1tog(k1, E = 45):
+    """convert K1 to gradient, E in MeV"""
+    g = 3.335E-3 * E * k1
+    return g
 // EOF
