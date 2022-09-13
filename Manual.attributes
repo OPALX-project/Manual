@@ -29,6 +29,9 @@
 :link_ipac2017:                         http://accelconf.web.cern.ch/AccelConf/ipac2017
 :link_ipac2017_thpab077:                {link_ipac2017}/papers/thpab077.pdf
 
+:link_prab:                             https://journals.aps.org/prab
+:link_prab2019_frey:                    {link_prab}/pdf/10.1103/PhysRevAccelBeams.22.064602
+
 :link_reg_tests:                        {host_git}/OPAL/regression-tests
 :link_reg_tests_src:                    {link_reg_tests}/blob/{branch_reg_tests}/RegressionTests
 :link_regtest_MAP_FODO:                 {link_reg_tests_src}/MAP-FODO

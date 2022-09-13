@@ -111,13 +111,13 @@ Z::
   Z-component of the position of the element relative to the position of the first
   beamline which it is part of and which uses absolute positioning.
 THETA::
-  Angle of rotation of the element about the y-axis relative to the orientation
+  Rotation angle of the element about the y-axis relative to the orientation
   of the first beamline which it is part of and which uses absolute positioning.
 PHI::
-  Angle of rotation of the element about the x-axis relative to the orientation
+  Rotation angle of the element about the x-axis relative to the orientation
   of the first beamline which it is part of and which uses absolute positioning.
 PSI::
-  Angle of rotation of the element about the z-axis relative to the orientation
+  Rotation angle of the element about the z-axis relative to the orientation
   of the first beamline which it is part of and which uses absolute positioning.
 ////
 ORIGIN::
@@ -1586,6 +1586,8 @@ to do fine tuning on the magnetic field. The trimcoils can be added with:
 
 TRIMCOIL::
   Array of the trim coil names
+TRIMCOILTHRESHOLD::
+  Minimum magnetic absolute value of main field [T] for which trim coils are applied (default: 0.0).
 
 A `TRIMCOIL` object can be defined in two ways:
 
@@ -1596,6 +1598,7 @@ TYPE::
   Separate functions can be given for the radial and azimuthal direction.
   These functions are multiplied together for the function.
   If a function in a direction is not specified it is the identity 1.
+  The PSI-BFIELD and PSI-PHASE types are described in {link_prab2019_frey}.
   The PSI-BFIELD-MIRRORED type is described in {link_ipac2017_thpab077}.
 RMIN::
   Inner radius of the trim coil [mm]
@@ -1606,7 +1609,7 @@ PHIMIN::
 PHIMAX::
   Maximal azimuth [deg] (default 360latexmath:[^{\circ}]) (not for PSI-BFIELD-MIRRORED)
 BMAX::
-  Maximal B field of the trim coils [T] (for PSI-BFIELD) or maximal phase shift (for PSI-PHASE)
+  Maximal B field of the trim coils [T]
 COEFNUM::
   Coefficients of the numerator for the radial direction,
   first coefficient is zeroth order.
