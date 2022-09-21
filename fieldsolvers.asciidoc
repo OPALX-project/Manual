@@ -281,6 +281,80 @@ FFT in all 3 dimensions.
 
 More details will be given in Version 2.0.0.
 
+[[sec.fieldsolvers.p3m]]
+=== Particle-Particle-Particle-Mesh (latexmath:[P^3M]) Solver
+
+The latexmath:[P^3M] solver of Hockney and Eastwood <<bib.hockneyandeastwood>> 
+takes into account collisions between particles in an electrostatic 
+one-one PIC simulation (every simulation particle is a
+real particle) in an efficient manner compared to PIC with excessive mesh refinement or
+a direct N-body summation. The main idea behind this approach is a splitting of the 
+total force latexmath:[F] into two components 
+
+[latexmath#eq-oneterm]
+++++
+F = F_{sr} + F_{lr}
+++++
+
+where latexmath:[F_{sr}] is the short-range component which can be 
+computed efficiently in the real-space with a small cut-off radius by direct summation, 
+whereas latexmath:[F_{lr}] is the long-range component and this can be calculated efficiently
+in the Fourier space with a few Fourier modes due to its rapid spectral decay. Consequently, 
+we split the Green's function latexmath:[G] also into two components as 
+
+[latexmath#eq-oneterm]
+++++
+G(r) = \psi(r) + \phi(r) = \frac{1 - f(r)}{r} + \frac{f(r)}{r}
+++++
+
+where latexmath:[\psi(r)] is the short-range or the particle-particle Green's function and 
+latexmath:[\phi(r)] is the long range or the particle-mesh Green's function. Apart from certain 
+smoothness conditions there is a lot of flexibility in the choice of latexmath:[f(r)] and this 
+leads to different screening shapes for the particles. The standard choice from the Ewald 
+summation corresponds to <<bib.p3mulmerthesis>>, <<bib.p3mhuenenberger>>
+
+[latexmath#eq-oneterm]
+++++
+f(r) = erf(\alpha r)
+++++
+
+where latexmath:[\alpha] is the interaction splitting parameter which determines the relative 
+significance of the particle-particle part to the particle-mesh part. It is usually chosen as
+latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and C is
+a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
+charges. In OPAL, the `P3M` solver uses this Green's function when the option is 
+specifed as `STANDARD`.
+
+Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
+as given in Table I of appendix B in <<bib.p3mhuenenberger>>. The lowest order function in the table corresponds to
+
+[latexmath#eq-oneterm]
+++++
+f(r) = \frac{\xi(3 - \xi^2)}{2}
+++++
+
+where latexmath:[\xi = r/r_c]. We use the integrated version of this Green's function when we specify the option 
+for Green's function as `INTEGRATED` in the `P3M` solver in OPAL. The reason to use this one instead of the integrated
+version of the standard Green's function described before is the availability of a closed form expression when performing
+the integration.
+
+[[sec.fieldsolvers.P3M.use]]
+==== Use of latexmath:[P^3M] solver
+At the moment, the `P3M` solver is only available in _OPAL-T_ when emission is not active. It uses `OPEN`
+boundary conditions. The interaction splitting parameter latexmath:[\alpha] is used only for the `STANDARD` 
+Green's function option. We can specify the solver in the input file as follows
+
+[source]
+----
+ REAL inter_rad = 3.125e-5;
+
+ FS_P3M: Fieldsolver, FSTYPE = "P3M", MX = 64, MY = 64, MT = 64, PARFFTX = decx, PARFFTY = decy,
+        PARFFTT = decz, RC=inter_rad, GREENSF = INTEGRATED;
+
+----
+
+
+
 [[sec.fieldsolvers.iterative-space-charge-solver]]
 === Iterative Space Charge Solver
 
@@ -319,7 +393,7 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the `FIELDSOLVER` command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG` and
+|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG`, `P3M` and
 `NONE`. Further arguments are enabled with the AMR solver
 (cf. <<sec.fieldsolvers.AMR>>).
 
@@ -347,7 +421,7 @@ grid
 
 |`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`] (`FFT` + `AMR_MG` only).
 
-|`GREENSF` |Defines the Greens function for the FFT Solver (`FFT` only).
+|`GREENSF` |Defines the Greens function for the FFT-based solvers (`FFT` + `P3M` only).
 
 |`BBOXINCR` |Enlargement of the bounding box in %.
 
@@ -362,6 +436,10 @@ grid
 |`MAXITERS` |Maximum number of iterations of iterative solver (`SAAMG` only).
 
 |`PRECMODE` |Behavior of the preconditioner (`SAAMG` only).
+
+|`RC` |Defines the cut-off radius in the boosted frame for the P3M solver (`P3M` only).
+
+|`ALPHA` |Defines the interaction splitting parameter for the P3M solver with standard Green's function (`P3M` + `GREENSF=STANDARD` only).
 
 |=======================================================================
 
@@ -459,6 +537,22 @@ default)
 
 |`REUSE` |The preconditioner is reused
 |=======================================================================
+
+[[sec.fieldsolvers.RC]]
+==== Cut-off Radius
+
+The real space cut-off radius for the `P3M` solver. Within the interaction radius all the collisions are 
+calculated using direct summation. Default value is 0 which corresponds to no particle-particle part.
+
+[[sec.fieldsolvers.ALPHA]]
+==== Interaction splitting parameter
+
+The interaction splitting parameter latexmath:[\alpha] determines the relative significance of the particle-particle
+part to the particle-mesh part in the `P3M` solver. If latexmath:[\alpha] is very large then the particle-mesh 
+part is more significant and if it is very small then the particle-particle part is the dominant one. It is usually
+chosen as latexmath:[\alpha = C/r_c] where C is a positive constant usually of latexmath:[\mathcal{O}(1)]. 
+Default value is latexmath:[1e8]. It is used only for the `STANDARD` Green's function option.  
+
 
 [[sec.fieldsolvers.FSENBINS]]
 ==== Number of Energy Bins
@@ -703,6 +797,7 @@ ENDTRACK;
 STOP;
 ----
 
+
 [[sec.fieldsolvers.bibliography]]
 === References
 
@@ -768,5 +863,12 @@ anchor:bib.lapack[[{counter:bib-cnt}\]]
 
 anchor:bib.amrsolver[[{counter:bib-cnt}\]]
 <<bib.amrsolver>> M. Frey, A. Adelmann and U. Locans, https://doi.org/10.1016/j.cpc.2019.106912[_On architecture and performance of adaptive mesh refinement in an electrostatics Particle-In-Cell code_], Comput. Phys. Commun. 247, 106912 (2020).
+
+anchor:bib.p3mhuenenberger[[{counter:bib-cnt}\]]
+<<bib.p3mhuenenberger>> P. H. Hünenberger, https://doi.org/10.1063/1.1324713[_Optimal charge-shaping functions for the particle–particle—particle–mesh (P3M) method for computing electrostatic interactions in molecular simulations_], The Journal of Chemical Physics 113.23 : 10464-10476 (2000).
+
+anchor:bib.p3mulmerthesis[[{counter:bib-cnt}\]]
+<<bib.p3mulmerthesis>> B. Ulmer, https://amas.web.psi.ch/people/aadelmann/ETH-Accel-Lecture-1/projectscompleted/cse/thesisBUlmer.pdf[_The 
+P3M Model on Emerging Computer Architectures With Application to Microbunching_], Master's thesis, ETH Zurich (2016).
 
 // EOF
