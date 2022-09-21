@@ -285,7 +285,7 @@ More details will be given in Version 2.0.0.
 === Particle-Particle-Particle-Mesh (latexmath:[P^3M]) Solver
 
 The latexmath:[P^3M] solver of Hockney and Eastwood <<bib.hockneyandeastwood>> 
-takes in to account collisions between particles in an electrostatic 
+takes into account collisions between particles in an electrostatic 
 one-one PIC simulation (every simulation particle is a
 real particle) in an efficient manner compared to PIC with excessive mesh refinement or
 a direct N-body summation. The main idea behind this approach is a splitting of the 
