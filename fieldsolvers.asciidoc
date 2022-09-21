@@ -322,7 +322,7 @@ where latexmath:[\alpha] is the interaction splitting parameter which determines
 significance of the particle-particle part to the particle-mesh part. It is usually chosen as
 latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and C is
 a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
-charges. In OPAL for the `P3M` solver we use this Green's function when the option is 
+charges. In OPAL, the `P3M` solver uses this Green's function when the option is 
 specifed as `STANDARD`.
 
 Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
