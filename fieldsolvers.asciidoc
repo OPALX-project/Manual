@@ -340,7 +340,7 @@ the integration.
 
 [[sec.fieldsolvers.P3M.use]]
 ==== Use of latexmath:[P^3M] solver
-At the moment, `P3M` solver is only available in _OPAL-T_ and that too not during emission. It uses `OPEN`
+At the moment, the `P3M` solver is only available in _OPAL-T_ when emission is not active. It uses `OPEN`
 boundary conditions. The interaction splitting parameter latexmath:[\alpha] is used only for the `STANDARD` 
 Green's function option. We can specify the solver in the input file as follows
 
