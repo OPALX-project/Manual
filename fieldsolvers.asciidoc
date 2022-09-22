@@ -348,8 +348,8 @@ Green's function option. We can specify the solver in the input file as follows
 ----
  REAL inter_rad = 3.125e-5;
 
- FS_P3M: Fieldsolver, FSTYPE = "P3M", MX = 64, MY = 64, MT = 64, PARFFTX = decx, PARFFTY = decy,
-        PARFFTT = decz, RC=inter_rad, GREENSF = INTEGRATED;
+ FS_P3M: Fieldsolver, FSTYPE = "P3M", MX = 64, MY = 64, MT = 64, PARFFTX = decx, 
+         PARFFTY = decy, PARFFTT = decz, RC=inter_rad, GREENSF = INTEGRATED;
 
 ----
 
