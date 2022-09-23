@@ -320,7 +320,7 @@ f(r) = erf(\alpha r)
 
 where latexmath:[\alpha] is the interaction splitting parameter which determines the relative 
 significance of the particle-particle part to the particle-mesh part. It is usually chosen as
-latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and C is
+latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and latexmath:[C] is
 a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
 charges. In OPAL, the `P3M` solver uses this Green's function when the option is 
 specifed as `STANDARD`.
@@ -550,8 +550,8 @@ calculated using direct summation. Default value is 0 which corresponds to no pa
 The interaction splitting parameter latexmath:[\alpha] determines the relative significance of the particle-particle
 part to the particle-mesh part in the `P3M` solver. If latexmath:[\alpha] is very large then the particle-mesh 
 part is more significant and if it is very small then the particle-particle part is the dominant one. It is usually
-chosen as latexmath:[\alpha = C/r_c] where C is a positive constant usually of latexmath:[\mathcal{O}(1)]. 
-Default value is latexmath:[1e8]. It is used only for the `STANDARD` Green's function option.  
+chosen as latexmath:[\alpha = C/r_c] where latexmath:[C] is a positive constant usually of latexmath:[\mathcal{O}(1)]. 
+Default value of latexmath:[\alpha] is latexmath:[1e8]. It is used only for the `STANDARD` Green's function option.  
 
 
 [[sec.fieldsolvers.FSENBINS]]
