@@ -32,7 +32,7 @@ to the lag, latexmath:[\varphi] and set the result to zero:
 [latexmath]
 ++++
 \begin{aligned}
-\mathrm{d}{\Delta E(\varphi,r)}{\varphi} &= -\int_{z_\text{begin}}^{z_\text{end}} (1 + \omega \frac{\partial t(z,\varphi)}{\partial \varphi}) \sin(\omega t(z,\varphi) + \varphi) E_z(z,r)\\
+\frac{\mathrm{d}{\Delta E(\varphi,r)}}{\mathrm{d}{\varphi}} &= -\int_{z_\text{begin}}^{z_\text{end}} (1 + \omega \frac{\partial t(z,\varphi)}{\partial \varphi}) \sin(\omega t(z,\varphi) + \varphi) E_z(z,r)\\
 &= -\cos(\varphi) \int_{z_\text{begin}}^{z_\text{end}} (1 + \omega \frac{\partial t(z,\varphi)}{\partial \varphi}) \sin(\omega t(z,\varphi)) E_z(z,r) dz \\
 &-\sin(\varphi) \int_{z_\text{begin}}^{z_\text{end}} (1 + \omega \frac{\partial t(z,\varphi)}{\partial \varphi}) \cos(\omega t(z,\varphi)) E_z(z,r) dz \equiv 0.
 \end{aligned}
