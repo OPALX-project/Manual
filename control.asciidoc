@@ -256,6 +256,9 @@ COMPUTEPERCENTILES::
   into _.stat_ output file and loss file in HDF5 format (_.h5_). The
   calculation is performed whenever the number of particles exceeds 100.
   Default is false.
+DUMPBEAMMATRIX::
+  If true, the 6-dimensional beam matrix (upper triangle only) is stored
+  in the statistics output file. Default is false.
 
 Examples:
 
@@ -311,6 +314,7 @@ OPTION,SEED=987456321
 |`HALOSHIFT`         |= `0.0`
 |`DELPARTFREQ`       |= `1`
 |`COMPUTEPERCENTILES`|= `FALSE`
+|`DUMPBEAMMATRIX`    |= `FALSE`
 |=======================================================================
 
 [[sec.consumption.parameter]]
