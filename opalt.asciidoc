@@ -324,11 +324,18 @@ with the SDDS Tools <<bib.borland2016>> or GNUPLOT. The frequency with
 which the statistics are computed and written to file can be controlled
 With the option `STATDUMPFREQ` (see link:control#sec.control.option[Option Statement]).
 The name of the output file is _<input_file_name >.stat_.
-The information that is stored are found in the following table.
+The information that is stored are found in <<tab_opal_t_stat>>. Additionally,
+more statistical information about the beam can be saved. The option
+`COMPUTEPERCENTILES` allow whether the 68.27 (1 sigma for normal distribution),
+the 95.45 (2 sigmas), the 99.73 (3 sigmas) and the 99.994 (4 sigmas)
+percentiles for the beam size and the normalized emittance should be computed
+(see <<tab_stat_percentiles>>)). Whereas, `DUMPBEAMMATRIX` control whether to
+write the 6-dimensional beam matrix (upper triangle only) to statatistic file
+(see <<tab_stat_beammatrix>>)).
 
 .Data stored in statistics output file in _OPAL-t_.
 [cols="<1,<1,<1,<5",options="header",]
-[[tab_opal_t_stat,{counter:tab-cnt}]]
+[[tab_opal_t_stat,Table {counter:tab-cnt}]]
 |=======================================================================
 |Column Nr. |Name |Units |Meaning
 |1 |t |ns |Time
@@ -426,78 +433,146 @@ in floor coordinate system
 latexmath:[n \times gma] of beam, where latexmath:[n] is controlled
 with `BEAMHALOBOUNDARY` (see link:control#sec.control.option[Option Statement])
 
-|43 |68_Percentile_x |m |68.27 percentile (1 sigma of normal distribution)
-of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+|43 |DebyeLength |m |Debye length in the boosted frame
 
-|44 |68_Percentile_y |m |68.27 percentile (1 sigma of normal distribution)
-of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+|44 |plasmaParameter |1 |Plasma parameter that gives no. of particles
+in a Debye sphere
 
-|45 |68_Percentile_z |m |68.27 percentile (1 sigma of normal distribution)
-of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+|45 |temperature |K |Temperature of the beam
 
-|46 |95_Percentile_x |m |95.45 percentile (2 sigma of normal distribution)
-of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
+|46 |rmsDensity |1 |RMS number density of the beam
 
-|47 |95_Percentile_y |m |95.45 percentile (2 sigma of normal distribution)
-of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|48 |95_Percentile_z |m |95.45 percentile (2 sigma of normal distribution)
-of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|49 |99_Percentile_x |m |99.73 percentile (3 sigma of normal distribution)
-of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|50 |99_Percentile_y |m |99.73 percentile (3 sigma of normal distribution)
-of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|51 |99_Percentile_z |m |99.73 percentile (3 sigma of normal distribution)
-of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|52 |99_99_Percentile_x |m |99.994 percentile (4 sigma of normal distribution)
-of x-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|53 |99_99_Percentile_y |m |99.994 percentile (4 sigma of normal distribution)
-of y-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|54 |99_99_Percentile_z |m |99.994 percentile (4 sigma of normal distribution)
-of z-component of position (only when `COMPUTEPERCENTILES=TRUE`)
-
-|55 |normalizedEps68Percentile_x |m |x-component of normalized emittance at 68
-percentile (1 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|56 |normalizedEps68Percentile_y |m |y-component of normalized emittance at 68
-percentile (1 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|57 |normalizedEps68Percentile_z |m |z-component of normalized emittance at 68
-percentile (1 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|58 |normalizedEps95Percentile_x |m |x-component of normalized emittance at 95
-percentile (2 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|59 |normalizedEps95Percentile_y |m |y-component of normalized emittance at 95
-percentile (2 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|60 |normalizedEps95Percentile_z |m |z-component of normalized emittance at 95
-percentile (2 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|61 |normalizedEps99Percentile_x |m |x-component of normalized emittance at 99
-percentile (3 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|62 |normalizedEps99Percentile_y |m |y-component of normalized emittance at 99
-percentile (3 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|63 |normalizedEps99Percentile_z |m |z-component of normalized emittance at 99
-percentile (3 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|64 |normalizedEps99_99Percentile_x |m |x-component of normalized emittance at 99.99
-percentile (4 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|65 |normalizedEps99_99Percentil_y |m |y-component of normalized emittance at 99.99
-percentile (4 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
-
-|66 |normalizedEps99_99Percentil_z |m |z-component of normalized emittance at 99.99
-percentile (4 sigma of normal distribution) (only when `COMPUTEPERCENTILES=TRUE`)
 |=======================================================================
+
+.Additional data stored in statistics output file if `COMPUTEPERCENTILES=TRUE`.
+[cols="<1,<1,<5",options="header",]
+[[tab_stat_percentiles,Table {counter:tab-cnt}]]
+|=======================================================================
+|Name |Units |Meaning
+
+|68_Percentile_x |m |68.27 percentile (1 sigma of normal distribution)
+of x-component of position
+
+|68_Percentile_y |m |68.27 percentile (1 sigma of normal distribution)
+of y-component of position
+
+|68_Percentile_z |m |68.27 percentile (1 sigma of normal distribution)
+of z-component of position
+
+|95_Percentile_x |m |95.45 percentile (2 sigma of normal distribution)
+of x-component of position
+
+|95_Percentile_y |m |95.45 percentile (2 sigma of normal distribution)
+of y-component of position
+
+|95_Percentile_z |m |95.45 percentile (2 sigma of normal distribution)
+of z-component of position
+
+|99_Percentile_x |m |99.73 percentile (3 sigma of normal distribution)
+of x-component of position
+
+|99_Percentile_y |m |99.73 percentile (3 sigma of normal distribution)
+of y-component of position
+
+|99_Percentile_z |m |99.73 percentile (3 sigma of normal distribution)
+of z-component of position
+
+|99_99_Percentile_x |m |99.994 percentile (4 sigma of normal distribution)
+of x-component of position
+
+|99_99_Percentile_y |m |99.994 percentile (4 sigma of normal distribution)
+of y-component of position
+
+|99_99_Percentile_z |m |99.994 percentile (4 sigma of normal distribution)
+of z-component of position
+
+|normalizedEps68Percentile_x |m |x-component of normalized emittance at 68
+percentile (1 sigma of normal distribution)
+
+|normalizedEps68Percentile_y |m |y-component of normalized emittance at 68
+percentile (1 sigma of normal distribution)
+
+|normalizedEps68Percentile_z |m |z-component of normalized emittance at 68
+percentile (1 sigma of normal distribution)
+
+|normalizedEps95Percentile_x |m |x-component of normalized emittance at 95
+percentile (2 sigma of normal distribution)
+
+|normalizedEps95Percentile_y |m |y-component of normalized emittance at 95
+percentile (2 sigma of normal distribution)
+
+|normalizedEps95Percentile_z |m |z-component of normalized emittance at 95
+percentile (2 sigma of normal distribution)
+
+|normalizedEps99Percentile_x |m |x-component of normalized emittance at 99
+percentile (3 sigma of normal distribution)
+
+|normalizedEps99Percentile_y |m |y-component of normalized emittance at 99
+percentile (3 sigma of normal distribution)
+
+|normalizedEps99Percentile_z |m |z-component of normalized emittance at 99
+percentile (3 sigma of normal distribution)
+
+|normalizedEps99_99Percentile_x |m |x-component of normalized emittance at 99.99
+percentile (4 sigma of normal distribution)
+
+|normalizedEps99_99Percentil_y |m |y-component of normalized emittance at 99.99
+percentile (4 sigma of normal distribution)
+
+|normalizedEps99_99Percentil_z |m |z-component of normalized emittance at 99.99
+percentile (4 sigma of normal distribution)
+|=======================================================================
+
+.Additional data stored in statistics output file if `DUMPBEAMMATRIX=TRUE`.
+[cols="<1,<1,<5",options="header",]
+[[tab_stat_beammatrix,Table {counter:tab-cnt}]]
+|=======================================================================
+|Name |Units |Meaning
+
+|S11 |m2 |Element 1,1 of 6D beam matrix
+
+|S12 |m |Element 1,2 of 6D beam matrix
+
+|S13 |m2 |Element 1,3 of 6D beam matrix
+
+|S14 |m |Element 1,4 of 6D beam matrix
+
+|S15 |m2 |Element 1,5 of 6D beam matrix
+
+|S16 |m |Element 1,6 of 6D beam matrixn
+
+|S22 |1 |Element 2,2 of 6D beam matrix
+
+|S23 |m |Element 2,3 of 6D beam matrix
+
+|S24 |1 |Element 2,4 of 6D beam matrixn
+
+|S25 |m |Element 2,5 of 6D beam matrix
+
+|S26 |1 |Element 2,6 of 6D beam matrix
+
+|S33 |m2 |Element 3,3 of 6D beam matrix
+
+|S34 |m |Element 3,4 of 6D beam matrix
+
+|S35 |m2 |Element 3,5 of 6D beam matrix
+
+|S36 |m |Element 3,6 of 6D beam matrix
+
+|S44 |1 |Element 4,4 of 6D beam matrix
+
+|S45 |m |Element 4,5 of 6D beam matrix
+
+|S46 |1 |Element 4,6 of 6D beam matrix
+
+|S55 |m2 |Element 5,5 of 6D beam matrix
+
+|S56 |m |Element 5,6 of 6D beam matrix
+
+|S66 |1 |Element 6,6 of 6D beam matrix
+|=======================================================================
+
+
 
 [[sec.opalt.datainput_file_name-_monitors.stat]]
 ==== Monitor statistics output
