@@ -1,5 +1,5 @@
 = The _OPAL_ Framework: Version 2022.1-dev
-Andreas Adelmann (PSI); Arnau Albà (PSI); Pedro Calvo (CIEMAT); Matthias Frey (U. St Andrews); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Sriramkrishnan Muralikrishnan (PSI); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
+Andreas Adelmann (PSI); Arnau Albà (PSI); Pedro Calvo (CIEMAT); Matthias Frey (U. St Andrews); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Sriramkrishnan Muralikrishnan (JSC); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
 :toc: left
@@ -26,8 +26,9 @@ ifdef::backend-html5[]
 | image:logos/UKRI_STF_logo.png[width=176]
 
 | image:logos/MIT-logo-with-spelling-design1-large-black-red.svg[width=175]
+| image:logos/Logo_FZ_Juelich_1561x454_rgb_jpg.jpg[width=165]
 | image:logos/St_Andrews_logo.png[width=165]
-| image:logos/NIU_horz_3Clr.png[width=165] |
+| image:logos/NIU_horz_3Clr.png[width=165]
 |===
 
 '''
