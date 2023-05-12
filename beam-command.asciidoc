@@ -110,7 +110,8 @@ NPART::
   The number of macro particles for the simulations
 NSLICE::
   The number of slices per bunch
-
+MOMENTUM_TOLERANCE::
+  Fractional tolerance to deviations in the distribution compared to the reference momentum at initialisation. If <= 0, no tolerance checking is done (default=1e-2).
 
 [[sec.beam.bibliography]]
 === References

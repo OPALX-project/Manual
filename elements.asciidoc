@@ -1749,7 +1749,7 @@ This is a restricted feature: _OPAL-cycl_.
 label: RINGDEFINITION,
        RFFREQ=real, HARMONIC_NUMBER=real, IS_CLOSED=string, SYMMETRY=int,
        LAT_RINIT=real, LAT_PHIINIT=real, LAT_THETAINIT=real,
-       BEAM_PHIINIT=real, BEAM_PRINIT=real, BEAM_RINIT=real;
+       BEAM_PHIINIT=real, BEAM_THETAINIT=real, BEAM_PRINIT=real, BEAM_RINIT=real;
 ----
 
 A `RingDefinition` object contains the main characteristics of a
@@ -1781,6 +1781,8 @@ BEAM_RINIT::
   Initial radius of the reference trajectory [m].
 BEAM_PHIINIT::
   Initial azimuthal angle of the reference trajectory [degree].
+BEAM_THETAINIT::
+  Additional rotation of the beam direction relative to the ring tangent [degree].
 BEAM_PRINIT::
   Transverse momentum latexmath:[\beta \gamma] for the reference
   trajectory.
