@@ -492,20 +492,34 @@ respectively.
 [[sec.opalcycl.read-3d-rf-field-map]]
 ==== Read 3D RF field-map
 
-The 3D RF field-map can be read from {link_H5hut_wiki}[H5Hut] type file for
-`TYPE=BANDRF`. To generate the _h5part_ field files, it is necessary to use the
-_ascii2h5block_ conversion tool. This program builds h5part field files from
-ASCII file output of ANSYS or OPERA 3D field data. The command to use it should be like: 
+The 3D RF field-map can be read from {link_H5hut_wiki}[H5Hut] type
+file for `TYPE=BANDRF`. To generate the _h5part_ field files, it is
+necessary to use the _ascii2h5block_ conversion tool. This tool is
+available after compiling _OPAL_ with `ENABLE_BANDRF=ON`. This program
+builds h5part field files from ASCII file output of ANSYS or OPERA 3D
+field data. The command to use it should be like: 
 
 ----
 ascii2h5block efield.txt hfield.txt ehfout
 ----
 
-The ASCII input files must be adapted for an adequate conversion. The first
-three rows of a field map that you wish to combine should include integers
-with the amount of steps (or different values) in latexmath:[x], latexmath:[y]
-and latexmath:[z]. The 2D mid-plane map is in cylindrical coordinates, while
-the 3D map must be in Cartesian coordinates.
+The ASCII input files must be adapted for an adequate conversion. The
+first row of each input field map that you wish to combine should specify
+the grid size in each direction, that is integers with the amount of
+steps (or different values) in latexmath:[x], latexmath:[y] and latexmath:[z].
+The first three columns contains the spatial coordinates specified in meters,
+and the last three columns store the field data. Positions and field are
+supplied on points in a Cartesian coordinates grid:[(x, y, z)]. Example
+showing the requiered format for ASCII file:
+
+----
+101 101 11
+-0.110000   -0.018000   -0.006000   37.341814   226.620820    -319049.189111 
+-0.109200   -0.018000   -0.006000   56.839707   209.995240    303511.031113 
+-0.108400   -0.018000   -0.006000   -28.180696  37.248050     -292542.457735 
+-0.107600   -0.018000   -0.00600    8.412707    89.317296     -283046.136227 
+                        ...
+----
 
 [[sec.opalcycl.particle-tracking-and-acceleration]]
 === Particle Tracking and Acceleration
