@@ -352,7 +352,8 @@ To maintain consistency, latexmath:[N] and `NPART` from the `BEAM` command
 In the same way, when using a `FROMFILE` type distribution, the average
 momentum of the distribution must coincide with the momentum specified in the
 `BEAM` command by means of `GAMMA`, `ENERGY` or `PC` attributes
-(see Section link:beam-command#sec.beam-command.beam-energy[Beam Energy]).
+(see Section link:beam-command#sec.beam-command.beam-energy[Beam Energy]),
+according to the parameter `MOMENTUMTOLERANCE`.
 In _OPAL-t_, the given momentum in the `BEAM` command must coincide with the
 z-component of the momentum of the particle distribution in the file.
 On the other hand, in _OPAL-cycl_ the given momentum must coincide with the
