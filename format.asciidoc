@@ -218,6 +218,23 @@ STRING L2=LEP&STRING(X+1);
 The second example converts the value of the expression `X+1` to a
 string and appends it to `LEP`, giving the string `LEP2`.
 
+[[sec.format.predefined-strings]]
+==== Predefined String Attributes
+
+_OPAL_ recognizes some specific string names using a list of predefined strings.
+Consequentially, attributes of type `PredefinedString` should only accept
+strings that are contained in a predefined set of strings according to their
+internal description. If the provided string is not contained in the predefined
+set, an exception is thrown, since this string is marked as a protected keyword
+and cannot be used to name an object. Most of the string attributes in _OPAL_
+have been defined based on `PredefinedString` to prevent the user from entering
+variable names that are used internally for another functionality. All these
+predefined string attributes do not have to be enclosed in quotes,
+unlike regular strings. The list of accepted strings as well as the default
+value, if any, are added to the `--help-command` message
+(see <<tab_CommandLineArg>>).
+
+
 [[sec.format.alogical]]
 === Logical Expressions
 
