@@ -56,8 +56,10 @@ OPAL > Finished reading startup file.
 One can exit from this session with the command
 `link:control#sec.control.stop[QUIT;]` (including the semicolon).
 
-For batch runs _OPAL_ accepts the following command line arguments: +
+For batch runs _OPAL_ accepts the command line arguments shown in <<tab_CommandLineArg>>:
 
+.Command line arguments
+[[tab_CommandLineArg,Table {counter:tab-cnt}]]
 [cols="<1,<1,<4",options="header",]
 |=======================================================================
 |Argument |Values |Function
