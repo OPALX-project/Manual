@@ -12,7 +12,10 @@ endif::[]
 [[sec.conventions.units]]
 === Physical Units
 
-Throughout the computations _OPAL_ uses international units, as defined by SI (Système International).
+Throughout the computations, _OPAL_ internally uses international units, as
+defined by SI (Système International), for all physical quantities (see <<tab_Physical_Units>>).
+However, some elements and field maps are defined in other units in the 
+input file, as is specified in their corresponding description in the Manual.
 
 .Physical Units
 [[tab_Physical_Units,Table {counter:tab-cnt}]]
@@ -39,7 +42,7 @@ latexmath:[\mathrm{eV}]
 |Particle mass |latexmath:[\mathrm{MeV c^{-2}}]
 
 |Particle momentum |latexmath:[\mathrm{\beta\gamma}] or
-latexmath:[\mathrm{eV}]
+latexmath:[\mathrm{eV}] (see link:distribution#sec.distribution.unitsdistattributes[Units])
 
 |Beam current |latexmath:[\mathrm{A}] (Amperes)
 
@@ -52,14 +55,6 @@ latexmath:[\mathrm{eV}]
 |RF power |latexmath:[\mathrm{MW}] (Megawatts)
 |=======================================================================
 
-[[sec.conventions.opal-cycl]]
-==== _OPAL-cycl_
-
-The _OPAL-cycl_ flavor (see link:elements#sec.elements.cyclotron[Cyclotron]) is using the so called
-Cyclotron units. Lengths are defined in (mm), frequencies in (MHz), momenta
-in (latexmath:[\beta\gamma]) and angles in (deg), except `RFPHI` which
-is in (rad). More information is included in
-link:distribution#sec.distribution.unitsdistattributes[Units].
 
 [[sec.conventions.symbols-used]]
 === Symbols used
