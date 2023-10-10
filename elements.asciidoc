@@ -2638,9 +2638,9 @@ lost on a degrader are recorded in the `OUTFN` file
 (see link:elements#sec.elements.common[Common Attributes]).
 
 XSIZE::
-  Major axis of the transverse elliptical shape (default: 1e6).
+  Horizontal axis of the transverse elliptical shape [m] (default: 1e6).
 YSIZE::
-  Minor axis of the transverse elliptical shape (default: 1e6).
+  Vertical axis of the transverse elliptical shape [m] (default: 1e6).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
   (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
