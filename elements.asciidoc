@@ -1787,6 +1787,12 @@ BEAM_THETAINIT::
 BEAM_PRINIT::
   Transverse momentum latexmath:[\beta \gamma] for the reference
   trajectory.
+MIN_R::
+  Set the minimum radius for tracking. Particles at lower radius will be assumed
+  to have hit the beam pipe. If set, MAX_R must also be set.
+MAX_R::
+  Set the maximum radius for tracking. Particles at higher radius will be assumed
+  to have hit the beam pipe. If set, MIN_R must also be set.
 
 In the following example, we define a ring with radius 2.35 m and 4
 cells.
