@@ -284,65 +284,71 @@ More details will be given in Version 2.0.0.
 [[sec.fieldsolvers.p3m]]
 === Particle-Particle-Particle-Mesh (latexmath:[P^3M]) Solver
 
-The latexmath:[P^3M] solver of Hockney and Eastwood <<bib.hockneyandeastwood>> 
+The latexmath:[P^3M] solver of Hockney and Eastwood <<bib.hockneyandeastwood>>
 takes into account collisions between particles in an electrostatic 
-one-one PIC simulation (every simulation particle is a
-real particle) in an efficient manner compared to PIC with excessive mesh refinement or
-a direct N-body summation. The main idea behind this approach is a splitting of the 
+one-one PIC simulation (every simulation particle is a real particle) in an
+efficient manner compared to PIC with excessive mesh refinement or a direct
+N-body summation. The main idea behind this approach is a splitting of the 
 total force latexmath:[F] into two components 
 
-[latexmath#eq-oneterm]
+[latexmath#eq-p3mForce]
 ++++
 F = F_{sr} + F_{lr}
 ++++
 
-where latexmath:[F_{sr}] is the short-range component which can be 
-computed efficiently in the real-space with a small cut-off radius by direct summation, 
-whereas latexmath:[F_{lr}] is the long-range component and this can be calculated efficiently
-in the Fourier space with a few Fourier modes due to its rapid spectral decay. Consequently, 
-we split the Green's function latexmath:[G] also into two components as 
+where latexmath:[F_{sr}] is the short-range component which can be computed
+efficiently in the real-space with a small cut-off radius by direct summation, 
+whereas latexmath:[F_{lr}] is the long-range component and this can be
+calculated efficiently in the Fourier space with a few Fourier modes due to its
+rapid spectral decay. Consequently, we split the Green's function
+latexmath:[G] also into two components as 
 
-[latexmath#eq-oneterm]
+[latexmath#eq-p3mGreen]
 ++++
 G(r) = \psi(r) + \phi(r) = \frac{1 - f(r)}{r} + \frac{f(r)}{r}
 ++++
 
-where latexmath:[\psi(r)] is the short-range or the particle-particle Green's function and 
-latexmath:[\phi(r)] is the long range or the particle-mesh Green's function. Apart from certain 
-smoothness conditions there is a lot of flexibility in the choice of latexmath:[f(r)] and this 
-leads to different screening shapes for the particles. The standard choice from the Ewald 
-summation corresponds to <<bib.p3mulmerthesis>>, <<bib.p3mhuenenberger>>
+where latexmath:[\psi(r)] is the short-range or the particle-particle
+Green's function and latexmath:[\phi(r)] is the long range or the
+particle-mesh Green's function. Apart from certain smoothness conditions
+there is a lot of flexibility in the choice of latexmath:[f(r)] and this 
+leads to different screening shapes for the particles. The standard choice
+from the Ewald summation corresponds to <<bib.p3mulmerthesis>>, <<bib.p3mhuenenberger>>
 
-[latexmath#eq-oneterm]
+[latexmath#eq-p3mEwald]
 ++++
 f(r) = erf(\alpha r)
 ++++
 
-where latexmath:[\alpha] is the interaction splitting parameter which determines the relative 
-significance of the particle-particle part to the particle-mesh part. It is usually chosen as
-latexmath:[\alpha = C/r_c], where latexmath:[r_c] is the cut-off or interaction radius and latexmath:[C] is
-a postive constant. This choice of Green's function corresponds to Gaussian shaped screening 
-charges. In OPAL, the `P3M` solver uses this Green's function when the option is 
-specifed as `STANDARD`.
+where latexmath:[\alpha] is the interaction splitting parameter which
+determines the relative significance of the particle-particle part to the
+particle-mesh part. It is usually chosen as latexmath:[\alpha = C/r_c], where
+latexmath:[r_c] is the cut-off or interaction radius and latexmath:[C] is
+a postive constant. This choice of Green's function corresponds to Gaussian
+shaped screening charges. In OPAL, the `P3M` solver uses this Green's function
+when the option is specifed as `STANDARD`.
 
-Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials of different orders 
-as given in Table I of appendix B in <<bib.p3mhuenenberger>>. The lowest order function in the table corresponds to
+Another popular choice for latexmath:[f(r)] corresponds to truncated polynomials
+of different orders as given in Table I of appendix B in <<bib.p3mhuenenberger>>.
+The lowest order function in the table corresponds to
 
-[latexmath#eq-oneterm]
+[latexmath#eq-p3mLowFunc]
 ++++
 f(r) = \frac{\xi(3 - \xi^2)}{2}
 ++++
 
-where latexmath:[\xi = r/r_c]. We use the integrated version of this Green's function when we specify the option 
-for Green's function as `INTEGRATED` in the `P3M` solver in OPAL. The reason to use this one instead of the integrated
-version of the standard Green's function described before is the availability of a closed form expression when performing
-the integration.
+where latexmath:[\xi = r/r_c]. We use the integrated version of this Green's
+function when we specify the option for Green's function as `INTEGRATED` in the
+`P3M` solver in OPAL. The reason to use this one instead of the integrated
+version of the standard Green's function described before is the availability
+of a closed form expression when performing the integration.
 
 [[sec.fieldsolvers.P3M.use]]
 ==== Use of latexmath:[P^3M] solver
-At the moment, the `P3M` solver is only available in _OPAL-T_ when emission is not active. It uses `OPEN`
-boundary conditions. The interaction splitting parameter latexmath:[\alpha] is used only for the `STANDARD` 
-Green's function option. We can specify the solver in the input file as follows
+At the moment, the `P3M` solver is only available in _OPAL-T_ when emission
+is not active. It uses `OPEN` boundary conditions. The interaction splitting
+parameter latexmath:[\alpha] is used only for the `STANDARD` Green's function
+option. We can specify the solver in the input file as follows
 
 [source]
 ----
