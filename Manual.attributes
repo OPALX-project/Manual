@@ -1,8 +1,8 @@
-:OPAL_version:                          2021.1.99
+:OPAL_version:                          2024.1
 
-:branch_OPAL:                           master
-:branch_manual:                         master
-:branch_reg_tests:                      master
+:branch_OPAL:                           2024.1
+:branch_manual:                         2024.1
+:branch_reg_tests:                      2024.1
 
 :host_git:                              https://gitlab.psi.ch
 :host_amas:                             http://amas.web.psi.ch
