@@ -1,4 +1,4 @@
-= The _OPAL_ Framework: Version 2022.1-dev
+= The _OPAL_ Framework: Version 2024.1
 Andreas Adelmann (PSI); Arnau Albà (PSI); Pedro Calvo (CIEMAT); Matthias Frey (U. St Andrews); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Sriramkrishnan Muralikrishnan (JSC); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
@@ -34,16 +34,6 @@ ifdef::backend-html5[]
 '''
 
 endif::[]
-
-:sectnums!:
-== Preliminary note
-
-This is the manual for _OPAL_ {OPAL_version}. Versions with the postfix `-dev` identify 
-development versions. Use these versions only if you know what you are
-doing!
-
-New feature might not yet be documented or something is already documented
-but not yet implemented.
 
 :sectnums:
 == Abstract
