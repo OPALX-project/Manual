@@ -399,7 +399,7 @@ See <<tab_FIELDSOLVER_Commands>> for a summary of the `FIELDSOLVER` command.
 |Command |Purpose
 |`FIELDSOLVER` |Specify a fieldsolver
 
-|`FSTYPE` |Specify the type of field solver: `FFT`, `FFTPERIODIC`, `SAAMG`, `P3M` and
+|`FSTYPE` |Specify the type of field solver: `FFT`, `SAAMG`, `P3M` and
 `NONE`. Further arguments are enabled with the AMR solver
 (cf. <<sec.fieldsolvers.AMR>>).
 
@@ -425,7 +425,7 @@ grid
 
 |`BCFFTY` |Boundary condition in latexmath:[y] [`OPEN`] (`FFT` + `AMR_MG` only).
 
-|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN,PERIODIC`] (`FFT` + `AMR_MG` only).
+|`BCFFTZ` |Boundary condition in latexmath:[z] [`OPEN`] (`FFT` + `AMR_MG` only).
 
 |`GREENSF` |Defines the Greens function for the FFT-based solvers (`FFT` + `P3M` only).
 
@@ -473,10 +473,8 @@ and latexmath:[z] for a rectangular grid.
 [[sec.fieldsolvers.FSBC]]
 ==== Boundary Conditions
 
-Two boundary conditions can be selected independently among
-latexmath:[x], latexmath:[y] namely: `OPEN` and for latexmath:[z]
-`OPEN` & `PERIODIC`. In the case you select for latexmath:[z] periodic
-you are about to model a DC-beam.
+There is one boundary condition supported for the FFT solver namely: `OPEN` in 
+all spatial dimensions. 
 
 [[sec.fieldsolvers.FSGREEN]]
 ==== Greens Function
