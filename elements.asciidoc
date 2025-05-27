@@ -1318,7 +1318,7 @@ system at its exit is the same as at its entrance. Use the dipole
 component only to model a defective multipole.
 
 [[sec.elements.multipoleT]]
-=== General Multipole
+=== General Multipole With Fringe Field Model
 
 A `MULTIPOLET` is in _OPAL-cycl_ a general multipole with extended
 features. It can represent a straight or curved magnet. In the curved
