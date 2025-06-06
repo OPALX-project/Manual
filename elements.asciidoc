@@ -2612,7 +2612,7 @@ peaks file is often not meaningful since the absolute radius is stored.
 
 The output plane element is similar to the Probe element.
 Information about particles that pass through the plane is
-recorded in the file specified by the 'OUTFN'attribute.
+recorded in the file specified by the 'OUTFN' attribute.
 (see link:elements#sec.elements.common[Common Attributes]).
 The location of the plane can be specified in one of two ways
 indicated by the 'PLACEMENT_STYLE' attribute.
@@ -2621,12 +2621,12 @@ extent from 'XSTART' to 'XEND' and vertical extent from 'YSTART' to 'YEND'
 in the same manner as the Probe element.
 The style 'CENTRE_NORMAL' uses the 'CENTRE' point and the 'NORMAL' to define
 the location and orientation of the plane while 'WIDTH', 'HEIGHT' and 'RADIUS'
-specify its extent.  If 'WIDTH', 'HEIGHT' or 'RADIUS' are negative, then that
+specify its extent.  If any of 'WIDTH', 'HEIGHT' or 'RADIUS' are zero, then that
 attribute is ignored, making it possible to define circular, rectangular
 and infinite planes.
 The plane then adjusts itself the first time the reference particle
 passes through it so that it is centred on that particle's crossing
-and its normal points in that particles trajectory direction.
+and its normal points in that particle's trajectory direction.
 
 These attributes describe the output plane.
 
