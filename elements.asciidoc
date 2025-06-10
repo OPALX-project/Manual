@@ -2607,6 +2607,67 @@ found in the probe histogram by the same peak finder used for the PSI
 measurements. Note that for probes in multiple quadrants the histogram and
 peaks file is often not meaningful since the absolute radius is stored.
 
+[[sec.elements.output-plane-opal-cycl]]
+=== Output Plane (_OPAL-cycl_)
+
+The output plane element is similar to the Probe element.
+Information about particles that pass through the plane is
+recorded in the file specified by the 'OUTFN' attribute.
+(see link:elements#sec.elements.common[Common Attributes]).
+The location of the plane can be specified in one of two ways
+indicated by the 'PLACEMENT_STYLE' attribute.
+The style 'PROBE' defines the plane with horizontal
+extent from 'XSTART' to 'XEND' and vertical extent from 'YSTART' to 'YEND'
+in the same manner as the Probe element.
+The style 'CENTRE_NORMAL' uses the 'CENTRE' point and the 'NORMAL' to define
+the location and orientation of the plane while 'WIDTH', 'HEIGHT' and 'RADIUS'
+specify its extent.  If any of 'WIDTH', 'HEIGHT' or 'RADIUS' are zero, then that
+attribute is ignored, making it possible to define circular, rectangular
+and infinite planes.
+The plane then adjusts itself the first time the reference particle
+passes through it so that it is centred on that particle's crossing
+and its normal points in that particle's trajectory direction.
+
+These attributes describe the output plane.
+
+XSTART::
+  The x coordinate of the start point for PROBE style placement [m].
+XEND::
+  The x coordinate of the end point for PROBE style placement  [m].
+YSTART::
+  The y coordinate of the start point for PROBE style placement  [m].
+YEND::
+  The y coordinate of the end point for probe PROBE placement  [m].
+CENTRE::
+  3-vector position of the plane centre for CENTER_NORMAL style placement [m].
+NORMAL::
+  3-vector normal to the plane.
+REFERENCE_ALIGNMENT_PARTICLE::
+  Set to a particle number (usually 0, the reference particle).
+  The first time that the particle crosses the reference plane, then
+  the plane will be moved to centre on that particle and point in
+  the direction S of the particle.
+TOLERANCE::
+  Tolerance on position of track intercept [m].
+RADIUS::
+  Maximum distance from centre of plane for crossings [m].
+ALGORITHM::
+  The algorithm used to step from the track point to the plane, one of "INTERPOLATION", "RK4".
+PLACEMENT_STYLE::
+  Set to PROBE to define the plane using XSTART, XEND, YSTART, YEND or CENTRE_NORMAL to define
+  the plane using centre and normal.
+VERBOSE::
+  Set to 0 for minimal output up to 4 to output diagnostics on every track step.
+  Output is sent to the OPAL console."
+
+Example:
+
+----
+outplane1: OUTPUTPLANE, PLACEMENT_STYLE=CENTRE_NORMAL, CENTRE={10, 13.5, 0},
+           NORMAL={1,0,0}, WIDTH=1.5, HEIGHT=0.8, RADIUS=1, ALGORITHM=RK4,
+           VERBOSE=1, REFERENCE_ALIGNMENT_PARTICLE=0, OUTFN="FileName.txt";
+----
+
 [[sec.elements.stripper-opal-cycl]]
 === Stripper (_OPAL-cycl_)
 
