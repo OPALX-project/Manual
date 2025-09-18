@@ -1329,7 +1329,7 @@ https://gitlab.psi.ch/OPAL/src/uploads/0d3fc561b57e8962ed79a57cd6115e37/8FBB32A4
 ----
 label: MULTIPOLET, L=real, TP=real-vector, LFRINGE=real, RFRINGE=real, VAPERT=real, HAPERT=real,
        MAXFORDER=real, ROTATION=real, EANGLE=real, BBLENGTH=real, ANGLE=real, MAXXORDER=real,
-       VARRADIUS=bool, ENTRYOFFSET=real;
+       VARRADIUS=bool, ENTRYOFFSET=real, SCALING_MODEL=string;
 ----
 
 L::
@@ -1401,6 +1401,9 @@ ENTRYOFFSET::
   value is +L/2 (half the L attribute value) which will then place the origin in the center
   of the magnet.  This allows the magnet to be positioned using its center point
   rather than its entry point.  (Default: 0.0 m)
+SCALING_MODEL::
+  String naming the time dependence model that scales the multipole coefficients (TP).
+  If the name is blank or missing, no time dependence is applied.
 
 Superposition of many multipole components is permitted. The reference
 system for a multipole is a Cartesian coordinate system for straight
@@ -2030,6 +2033,10 @@ P2::
   Second order term in the polynomial expansion [nslatexmath:[^{-2}]].
 P3::
   Third order term in the polynomial expansion [nslatexmath:[^{-3}]].
+COEFFICIENTS::
+  An array containing the coefficients.  Using this attribute allows
+  polynomials up to and beyond third order to be specified.  Only use
+  the P0..P3 attributes or the COEFFICIENTS attribute, not both.  
 
 The polynomial is evaluated as
 [latexmath]
@@ -2057,6 +2064,33 @@ TIMES::
 VALUES::
   Array of real values. The length of `VALUES` must be the same as the length 
   of `TIMES`.
+
+===== Sinusoidal Time Dependence
+
+The `SINUSOIDAL_TIME_DEPENDENCE` element is used to define time
+dependencies that are sinusoidal in nature.
+
+FREQUENCIES::
+  The frequencies of the sine waves that are summed to generate the outputs.
+  The length of the array defines the number of sine waves.
+  Frequencies are in Hertz.
+
+AMPLITUDES::
+  The amplitude of the corresponding sine wave.  This array may be shorter
+  than the frequencies array in which case the value 1.0 is used for the
+  missing entries.  If the array is longer than the frequencies array, the
+  extra values are ignored.
+
+PHASE_OFFSETS::
+  The phase offset (in radians) of the corresponding sine wave.  Like the
+  amplitudes array, if the array is shorter than the frequencies array the
+  default value of 0.0 is used for the missing entries.  If the array is longer,
+  extra values are ignored.
+
+DC_OFFSETS::
+  The DC offset of the corresponding sine wave.  If the array is shorter
+  than the frequencies array, the default value of 0.0 is used for the 
+  missing entries.  If the array is longer, extra values are ignored.     
 
 [[sec.elements.variable-rf-cavity-fringe-field]]
 ==== Fringe Field
