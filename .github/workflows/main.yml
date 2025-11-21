@@ -28,11 +28,6 @@ jobs:
         with:
           ruby-version: '3.3'
 
-      - name: Test
-        run: |
-          pwd
-          ls -l
-
       - name: Install Asciidoctor
         run: |
           gem install asciidoctor
@@ -44,7 +39,8 @@ jobs:
           ./scripts/fix_latexmath
           ls
           mkdir -p build
-          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build Manual.asciidoc
+          cp Manual.adoc index.adoc
+          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
