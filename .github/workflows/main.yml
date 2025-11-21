@@ -37,7 +37,6 @@ jobs:
           declare revdate=$(git log -1 --date=format:'%Y-%m-%d' --format=%cd)
           sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
           ./scripts/fix_latexmath
-          ls
           mkdir -p build
           cp Manual.adoc index.adoc
           asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
