@@ -1,0 +1,39 @@
+#!/bin/bash
+
+mydir=$(dirname "$0")
+mydir=$(cd "${mydir}" && pwd)
+
+texstyle=manual.sty
+
+declare -r input_fname="${1:-Manual.asciidoc}"
+declare -r xml_fname="${input_fname%.*}.xml"
+declare -r tex_fname="${input_fname%.*}.tex"
+declare -r pdf_fname="${input_fname%.*}.pdf"
+
+declare -r create_tex_output='yes'
+
+# if we run on macOS with asciidoctor and TeX from Macports
+declare -x TEXINPUTS=".:/opt/local/share/dblatex/latex/style:/opt/local/share/dblatex/latex/misc:"
+
+rm -f *.aux *.bbl *.cb* *.lo* *.idx *.toc *.tex *.xml *.glo *.4tc *.dvi *.tmp *.xref
+
+# we have to set the revdate here. Otherwise asciidoctor uses
+# the timestamp of Manual.asciidoc.
+declare revdate=$(git log -1 --date=format:'%Y-%m-%d' --format=%cd)
+sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
+
+"${mydir}/fix_latexmath" || exit 3
+
+if [[ "${create_tex_output}" == "no" ]]; then
+	asciidoctor -b docbook5 -d book "${input_fname}" || exit 1
+	#dblatex --texstyle="${texstyle}" -V -P "table.default.position=[hp]" -t pdf "${xml_fname}" || exit 2
+	dblatex -V -P "table.default.position=[hp]" -t pdf "${xml_fname}" || exit 2
+else
+	asciidoctor -v -b docbook5 -d book "${input_fname}" || exit 1
+	dblatex --texstyle="${texstyle}" -V -P "table.default.position=[H]" -t tex "${xml_fname}" || exit 2
+	pdflatex "${tex_fname}" || exit 3
+	pdflatex "${tex_fname}" || exit 4
+fi
+
+# revert the change we did above
+git checkout -- Manual.asciidoc

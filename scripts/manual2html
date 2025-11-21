@@ -1,0 +1,18 @@
+#!/bin/bash
+
+mydir=$(dirname "$0")
+mydir=$(cd "${mydir}" && pwd)
+
+declare -r input_fname="${1:-Manual.asciidoc}"
+
+# we have to set the revdate here. Otherwise asciidoctor uses
+# the timestamp of Manual.asciidoc.
+declare revdate=$(git log -1 --date=format:'%Y-%m-%d' --format=%cd)
+sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
+
+"${mydir}/fix_latexmath" || exit $?
+
+asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book "${input_fname}" 
+
+# revert the change we did above
+git checkout -- Manual.asciidoc
