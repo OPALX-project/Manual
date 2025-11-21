@@ -39,6 +39,10 @@ jobs:
 
       - name: Build AsciiDoc
         run: |
+          declare revdate=$(git log -1 --date=format:'%Y-%m-%d' --format=%cd)
+          sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
+          ./scripts/fix_latexmath
+          ls
           mkdir -p build
           asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build Manual.asciidoc
 
