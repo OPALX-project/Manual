@@ -38,9 +38,11 @@ jobs:
           sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
           ./scripts/fix_latexmath
           mkdir -p build/figures
+          mkdir -p build/logos
           cp Manual.adoc index.adoc
           asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
           cp -rv figures/* build/figures
+          cp -rv logos/* build/logos
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
