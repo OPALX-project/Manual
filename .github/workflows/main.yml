@@ -40,8 +40,7 @@ jobs:
       - name: Build AsciiDoc
         run: |
           mkdir -p build
-          asciidoctor -D build docs/index.adoc
-          # or build multiple files as needed
+          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build Manual.asciidoc
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
