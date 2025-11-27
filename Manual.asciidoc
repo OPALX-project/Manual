@@ -1,5 +1,5 @@
-= The _OPAL_ Framework: Version 2024.2
-Andreas Adelmann (PSI); Arnau Albà (PSI); Pedro Calvo (CIEMAT); Matthias Frey (U. St Andrews); Achim Gsell (PSI); Uldis Locans (PSI); Christof Metzger-Kraus; Sriramkrishnan Muralikrishnan (JSC); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Steve Russell (LANL); Suzanne Sheehy (Oxford); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
+= The _OPAL(X)_ Framework: Version 2024.2
+Andreas Adelmann (PSI); Arnau Albà (PSI); Pedro Calvo (CIEMAT); Achim Gsell (PSI);  Sriramkrishnan Muralikrishnan (JSC); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Mohsen Sadr (PSI/MIT); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
 :toc: left
