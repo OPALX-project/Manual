@@ -18,6 +18,18 @@ include::Manual.attributes[]
 
 ifdef::backend-html5[]
 
+[cols="<19,<27,<.^27,<27",frame="none",grid="none"]
+|===
+| image:logos/psi_logo.png[width=121]
+| image:logos/ciemat_logo.jpg[width=242]
+| image:logos/SLAC-lab-hires.png[width=220]
+| image:logos/UKRI_STF_logo.png[width=176]
+
+| image:logos/MIT-logo-with-spelling-design1-large-black-red.svg[width=175]
+| image:logos/Logo_FZ_Juelich_1561x454_rgb_jpg.jpg[width=165]
+| image:logos/St_Andrews_logo.png[width=165]
+| image:logos/NIU_horz_3Clr.png[width=165]
+|===
 
 ++++
 <!-- Toggle bar -->
@@ -71,34 +83,29 @@ ifdef::backend-html5[]
 </script>
 ++++
 
-
-
-
-
-[cols="<19,<27,<.^27,<27",frame="none",grid="none"]
-|===
-| image:logos/psi_logo.png[width=121]
-| image:logos/ciemat_logo.jpg[width=242]
-| image:logos/SLAC-lab-hires.png[width=220]
-| image:logos/UKRI_STF_logo.png[width=176]
-
-| image:logos/MIT-logo-with-spelling-design1-large-black-red.svg[width=175]
-| image:logos/Logo_FZ_Juelich_1561x454_rgb_jpg.jpg[width=165]
-| image:logos/St_Andrews_logo.png[width=165]
-| image:logos/NIU_horz_3Clr.png[width=165]
-|===
-
 '''
-
 endif::[]
 
 :sectnums!:
+
+[.feature-opal]
+====
+
 == Preliminary note
 
 This is the manual for _OPAL_ {OPAL_version} which is still under development. Use at your own risc.
 
 New feature might not yet be documented or something is already documented
 but not yet implemented.
+====
+
+
+[.feature-opalx]
+====
+This is the manual for _OPAL_X which is still under heavy development. 
+
+====
+
 
 :sectnums:
 == Abstract
