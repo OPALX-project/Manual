@@ -12,6 +12,9 @@ endif::[]
 [[sec.introduction.aim-of-opal-and-history]]
 === History
 
+[.feature-opal]
+====
+
 Using the _MAD_ language with extensions, _OPAL_ is
 derived from _MAD9P_ and is based on the _CLASSIC_ <<bib.classic>> class library, which
 was started in 1995 by an international collaboration. IPPL (Independent
@@ -20,6 +23,15 @@ particles and fields using data parallel approach. IPPL was inspired by the POOM
 
 _OPAL-t_ can be used to model guns,
 injectors, ERLs and complete XFELs.
+====
+
+[.feature-opalx]
+====
+_OPALX_ is a rewrite of _OPAL_ introducing C++20 and Kokkos. This endevor started in 2023 and has the goal
+to enable the use of GPUs, refactoring the code and make some changes to the input structure. For example the
+flavours do not exist anymore.
+====
+
 
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities

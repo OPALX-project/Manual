@@ -1,4 +1,5 @@
 :OPAL_version:                          2024.2
+:OPALX_version:                         2025.0
 
 :branch_OPAL:                           master
 :branch_manual:                         master
@@ -37,4 +38,3 @@
 :link_regtest_MAP_FODO:                 {link_reg_tests_src}/MAP-FODO
 :link_regtest_LaserEmission_1:          {link_reg_tests_src}/LaserEmission-1
 :link_regtest_RingCyclotronMatched:     {link_reg_tests_src}/RingCyclotronMatched
-
