@@ -1,4 +1,5 @@
 Manual.html
+build
 OPAL_Manual.html
 *.adoc
 *.aux
@@ -20,3 +21,4 @@ OPAL_Manual.html
 *.dvi
 *.tmp
 *.xref
+*~
