@@ -37,14 +37,14 @@ Differences in the manual between OPAL and OPALX can be maked with
 ```
 [.feature-opal]
 --
-  your OPAL desctiption
+  your OPAL description
 --
 ```
 and
 ```
 [.feature-opalx]
 --
-  your OPALX desctiption
+  your OPALX description
 --
 ```
 and in the webbrowser you can select what you want to see.
