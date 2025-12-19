@@ -44,7 +44,7 @@ and
 ```
 [.feature-opalx]
 --
-  your OPAL desctiption
+  your OPALX desctiption
 --
 ```
 and in the webbrowser you can select what you want to see.
