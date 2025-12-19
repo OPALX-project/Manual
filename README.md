@@ -49,6 +49,7 @@ and
 ```
 and in the webbrowser you can select what you want to see.
 
+![Toggle example](figures/toggle.png)
 
 ## Workflow
 
