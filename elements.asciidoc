@@ -185,7 +185,8 @@ given, if no field is present.
 
 [[sec.elements.bend]]
 === Bending Magnets
-
+[.feature-opal]
+--
 Bending magnets refer to dipole fields that bend particle trajectories.
 Currently _OPAL_ supports the following different bend elements: `RBEND`, (valid
 in _OPAL-t_, see <<sec.elements.RBend>>), `SBEND` (valid in _OPAL-t_, see
@@ -208,10 +209,11 @@ an `SBEND3D` element in an _OPAL-cycl_ simulation.
 .Illustration of a general rectangular bend (`RBEND`) with a positive bend angle latexmath:[\alpha].
 [[fig_rbend,Figure {counter:fig-cnt}]]
 image::figures/Elements/rbend.png[{fig-width-default}]
-
+--
 [[sec.elements.RBend]]
 ==== RBend (_OPAL-t_)
-
+[.feature-opal]
+--
 An `RBEND` is a rectangular bending magnet. The key property of an
 `RBEND` is that it has parallel pole faces. <<fig_rbend>> shows an
 `RBEND` with a positive bend angle and a positive entrance edge angle.
@@ -254,10 +256,11 @@ FMAPFN::
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
   (see <<sec.elements.benddefaultfieldmapopalt>>). The field map is used to
   describe the fringe fields of the magnet (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]).
-
+--
 [[sec.elements.RBend3D]]
 ==== RBend3D (_OPAL-t_)
-
+[.feature-opal]
+--
 An `RBEND3D3D` is a rectangular bending magnet. The key property of an
 `RBEND3D` is that it has parallel pole faces. <<fig_rbend>> shows an
 `RBEND3D` with a positive bend angle and a positive entrance edge angle.
@@ -309,10 +312,11 @@ charge particle, the magnetic field is directed out of the page.
 .Illustration of a general sector bend (`SBEND`) with a positive bend angle latexmath:[\alpha]
 [[fig_sbend,Figure {counter:fig-cnt}]]
 image::figures/Elements/sbend.png[{fig-width-default}]
-
+--
 [[sec.elements.SBend]]
 ==== SBend (_OPAL-t_)
-
+[.feature-opal]
+--
 An `SBEND` is a sector bending magnet. An `SBEND` can have independent
 entrance and exit edge angles. <<fig_sbend>> shows an `SBEND` with a
 positive bend angle, a positive entrance edge angle, and a positive exit
@@ -361,10 +365,11 @@ FMAPFN::
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
   (see <<sec.elements.benddefaultfieldmapopalt>>). The field map is used to
   describe the fringe fields of the magnet (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]).
-
+--
 [[sec.elements.RBendSBendExamp]]
 ==== RBend and SBend Examples (_OPAL-t_)
-
+[.feature-opal]
+--
 Describing an `RBEND` or an `SBEND` in an _OPAL-t_ simulation requires
 effectively identical commands. There are only slight differences
 between the two. The `L` attribute has a different definition for the
@@ -895,10 +900,11 @@ Now we see that the bend angle for the ideal, hard edge magnet, matches
 the bend angle of the reference particle through the soft edge magnet.
 In other words, the effective length of the soft edge, real magnet is
 the same as the hard edge magnet described by the reference trajectory.
-
+--
 [[sec.elements.opaltrbendsbendfields]]
 ==== Bend Fields from 1D Field Maps (_OPAL-t_)
-
+[.feature-opal]
+--
 .Plot of the entrance fringe field of a dipole magnet along the mid-plane, perpendicular to its entrance face. The field is normalized to 1.0. In this case, the fringe field is described by an Enge function see <<eq-enge_func>> with the parameters from the default `1DProfile1` field map described in <<sec.elements.benddefaultfieldmapopalt>>. The exit fringe field of this magnet is the mirror image.
 [[fig_rbend_enge_fringe,Figure {counter:fig-cnt}]]
 image::figures/Elements/Enge-func-plot.png[{fig-width-default}]
@@ -1164,6 +1170,7 @@ This is a restricted feature for _OPAL-cycl_.
 .A hard edge model of latexmath:[90^{\circ}] dipole magnet with homogeneous magnetic field. The right figure is showing the horizontal cross section of the 3D magnetic field map when latexmath:[z = 0]
 [[fig_sbend3d1,Figure {counter:fig-cnt}]]
 image::figures/Elements/sbend3d.png[scaledwidth=18cm,width=80%]
+--
 
 [[sec.elements.quadrupole]]
 === Quadrupole
@@ -1320,7 +1327,8 @@ component only to model a defective multipole.
 
 [[sec.elements.multipoleT]]
 === General Multipole With Fringe Field Model
-
+[.feature-opal]
+--
 A `MULTIPOLET` is in _OPAL-cycl_ a general multipole with extended
 features. It can represent a straight or curved magnet. In the curved
 case, the user may choose between constant or variable radius. This
@@ -1670,16 +1678,21 @@ Ring: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0, PRINIT=0.0,
 ----
 
 This is a restricted feature: _OPAL-cycl_.
+--
 
 [[sec.elements.FFA]]
 === FFA Magnet
-_OPAL_ supports two analytical field models that describe FFA magnets. 
+[.feature-opal]
+--
+_OPAL_ supports two analytical field models that describe FFA magnets.
 SCALINGFFAMAGNET generates a sector FFA magnet that scales radially.
 VERTICALFFAMAGNET generates a vertical FFA magnet that scales vertically.
+--
 
 [[sec.elements.scalingffa]]
 ==== Scaling FFA Magnet
-
+[.feature-opal]
+--
 The scaling FFA magnet is a fully scaling field model that includes scaling
 fringe fields. A scaling FFA magnet has a field profile like
 
@@ -1764,9 +1777,12 @@ VERTICALFFAMAGNET is rectangular; the next element will be placed BB_LENGTH
 from the start position of the VERTICALFFAMAGNET.
 
 This is a restricted feature: _OPAL-cycl_.
+--
 
 [[sec.elements.ringdefinition]]
 === Ring Definition
+[.feature-opal]
+--
 
 ----
 label: RINGDEFINITION,
@@ -1858,6 +1874,7 @@ THETA_OUT::
   Angle between the displacement vector and the next element [rad].
 LENGTH::
   Length of the offset [m].
+--
 
 [[sec.elements.source]]
 === Source (_OPAL-t_)
@@ -1876,7 +1893,8 @@ TRANSPARENT::
   
 [[sec.elements.cavity]]
 === RF Cavities (_OPAL-t_ and _OPAL-cycl_)
-
+[.feature-opal]
+--
 For an `RFCAVITY` the three modes have four real attributes in common:
 
 ----
@@ -1984,11 +2002,12 @@ and its parameters.
 .Schematic of the simplified geometry of a cavity gap and parameters
 [[fig_Cyclotron_cavity,Figure {counter:fig-cnt}]]
 image::./figures/cyclotron/Cavity.png[scaledwidth=12cm,width=70%]
-
+--
 
 [[sec.elements.variable-rf-cavity-cycl]]
 === RF Cavities with Time Dependent Parameters
-
+[.feature-opal]
+--
 The `VARIABLE_RF_CAVITY` element can be used to define RF Cavities with
 Time Dependent Parameters in _OPAL-cycl_ mode. Variable RF Cavities must
 be placed using the `RingDefinition` element.
@@ -2142,11 +2161,12 @@ SOFT_RF_CAVITY: VARIABLE_RF_CAVITY_FRINGE_FIELD,
            FREQUENCY_MODEL="RF_FREQUENCY", L=0.200, HEIGHT=0.200, WIDTH=2.000
            CENTRE_LENGTH=0.1, END_LENGTH=0.01, CAVITY_CENTRE=0.1, MAX_ORDER=4;
 ----
-
+--
 
 [[sec.elements.travelingwave]]
 === Traveling Wave Structure
-
+[.feature-opal]
+--
 .The on-axis field of an S-band (2997.924 MHz) `TRAVELINGWAVE` structure. The field of a single cavity is shown between its entrance and exit fringe fields. The fringe fields extend one half wavelength (latexmath:[\lambda/2]) to either side.
 [[fig_FINSB-RAC-field,Figure {counter:fig-cnt}]]
 image::./figures/traveling-wave-structure/FINSB-RAC-field.png[scaledwidth=10cm,width=60%]
@@ -2264,10 +2284,11 @@ lrf0: TRAVELINGWAVE, L=0.0253, VOLT=14.750,
       FMAPFN="INLB-02-RAC.Ez", MODE=1/3,
       FREQ=1498.956, LAG=248.0/360.0;
 ----
-
+--
 [[sec.elements.monitor]]
 === Monitor
-
+[.feature-opal]
+--
 A `MONITOR` detects all particles passing it and writes the position,
 the momentum and the time when they hit it into an H5hut file.
 Furthermore the exact position of the monitor is stored. It has always a
@@ -2286,9 +2307,11 @@ particles are written to the H5hut file when the reference particle hits
 the monitor.
 
 This is a restricted feature for _OPAL-t_.
-
+--
 [[sec.elements.collimators]]
 === Collimators
+[.feature-opal]
+--
 
 Four types of collimators are defined:
 
@@ -2599,10 +2622,12 @@ eec2: SEPTUM, XSTART=4100.0, XEND=4300.0,
 
 The particles lost on the SEPTUM are recorded in the HDF5 file
 _OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+--
 
 [[sec.elements.probe-opal-cycl]]
 === Probe (_OPAL-cycl_)
-
+[.feature-opal]
+--
 The particles hitting on the probe are recorded in the `OUTFN` file
 (see link:elements#sec.elements.common[Common Attributes]).
 There are 5 parameters to describe a probe.
@@ -2641,10 +2666,12 @@ in actual probe measurements. The corresponding peaks file contains the peaks
 found in the probe histogram by the same peak finder used for the PSI
 measurements. Note that for probes in multiple quadrants the histogram and
 peaks file is often not meaningful since the absolute radius is stored.
+--
 
 [[sec.elements.output-plane-opal-cycl]]
 === Output Plane (_OPAL-cycl_)
-
+[.feature-opal]
+--
 The output plane element is similar to the Probe element.
 Information about particles that pass through the plane is
 recorded in the file specified by the 'OUTFN' attribute.
@@ -2702,10 +2729,11 @@ outplane1: OUTPUTPLANE, PLACEMENT_STYLE=CENTRE_NORMAL, CENTRE={10, 13.5, 0},
            NORMAL={1,0,0}, WIDTH=1.5, HEIGHT=0.8, RADIUS=1, ALGORITHM=RK4,
            VERBOSE=1, REFERENCE_ALIGNMENT_PARTICLE=0, OUTFN="FileName.txt";
 ----
-
+--
 [[sec.elements.stripper-opal-cycl]]
 === Stripper (_OPAL-cycl_)
-
+[.feature-opal]
+--
 A stripper element strip the electron(s) from a particle. The particle
 hitting the stripper is recorded in the `OUTFN` file
 (see link:elements#sec.elements.common[Common Attributes]), which contains
@@ -2749,9 +2777,12 @@ prob1: STRIPPER, XSTARTt=4166.16, XEND=4250.0,
 No matter what the value of `STOP` is, the particles hitting on the
 `STRIPPER` are recorded in the HDF5 file
 _OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+--
 
 [[sec.elements.degrader-opal-t]]
 === Degrader (_OPAL-t_)
+[.feature-opal]
+--
 
 Elliptical degrader with an overall length `L`. The particles
 lost on a degrader are recorded in the `OUTFN` file
@@ -2778,10 +2809,12 @@ DEGPHYS: PARTICLEMATTERINTERACTION, TYPE=SCATTERING, MATERIAL=GRAPHITE;
 
 DEG1: DEGRADER, L=0.15, ELEMEDGE=0.02, PARTICLEMATTERINTERACTION=DEGPHYS;
 ----
+--
 
 [[sec.elements.corrector]]
 === Correctors (_OPAL-t_)
-
+[.feature-opal]
+--
 Three types of correctors are available:
 
 HKICKER::
@@ -2842,9 +2875,12 @@ KHV: KICKER,  HKICK=0.001, VKICK=0.0005;
 
 The reference system for an orbit corrector is a Cartesian coordinate
 system.
+--
 
 [[sec.elements.vacuum]]
 === Vacuum
+[.feature-opal]
+--
 
 Vacuum element represents the conditions and parameters to consider
 interactions with the residual gas and the magnetic field. When the
@@ -2900,10 +2936,12 @@ vac: VACUUM, PRESSURE=1E-8, TEMPERATURE=300,
 
 No matter what the value of STOP is, the particles stripped are recorded in the HDF5 file
 (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+--
 
 [[sec.elements.undulator-opal-t]]
 === Undulator (_OPAL-t_)
-
+[.feature-opal]
+--
 _OPAL_'s undulator element comes with its own Finite-Difference Time-Domain full-wave solver, which
 accounts for space-charge and radiation effects in 3D.
 It was implemented by means of the https://github.com/aryafallahi/mithra[MITHRA]
@@ -2996,6 +3034,7 @@ UND: UNDULATOR, ELEMEDGE = 44.0e-2, K = 10.81, LAMBDA = 8.5e-2, NUMPERIODS = 10,
      FNAME = "wiggler_sims_July_2020/mithra_output.job";
 ----
 
+--
 
 [[sec.elements.bibliography]]
 === References
