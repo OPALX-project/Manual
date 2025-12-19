@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.format]]
 == Command Format
+include::stylesheets/Toggle[]
 
 All flavors of _OPAL_ using the same input language the _MAD_ language.
 The language dialect here is ajar to _MAD9_, for hard core __MAD8__

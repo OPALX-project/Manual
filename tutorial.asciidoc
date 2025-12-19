@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.tutorial]]
 == Tutorial
+include::stylesheets/Toggle[]
 
 This chapter will provide a jump start describing some of the most
 common used features of _OPAL_. The complete set of examples can be

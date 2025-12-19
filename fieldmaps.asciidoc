@@ -8,6 +8,8 @@ endif::[]
 
 [appendix]
 [[appendix.opalt-fieldmaps]]
+include::stylesheets/Toggle[]
+
 == _OPAL-t_ Field Maps
 
 [[sec.fieldmaps.introduction]]

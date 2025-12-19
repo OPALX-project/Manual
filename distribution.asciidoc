@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.distribution]]
 == Distribution Command
+include::stylesheets/Toggle[]
 
 .Possible distribution types.
 [[tab_disttypes,Table {counter:tab-cnt}]]

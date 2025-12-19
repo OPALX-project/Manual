@@ -1,4 +1,4 @@
-= The _OPAL(X)_ Framework: Version 2024.2
+= The _OPAL(X)_ Framework Documentation
 Andreas Adelmann (PSI); Arnau Albà (PSI); Pedro Calvo (CIEMAT); Achim Gsell (PSI);  Sriramkrishnan Muralikrishnan (JSC); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Mohsen Sadr (PSI/MIT); Jochem Snuverink (PSI); Daniel Winklehner (MIT)
 ifdef::backend-docbook5,backend-html5[]
 :docinfo1:
@@ -6,7 +6,7 @@ ifdef::backend-docbook5,backend-html5[]
 :numbered:
 :description: _OPAL_ User Manual
 :keywords: _OPAL_
-:revdate: @REVDATE@
+:revdate: 2025-11-27
 :adoc: adoc
 endif::[]
 
@@ -32,20 +32,30 @@ ifdef::backend-html5[]
 |===
 
 '''
-
 endif::[]
+
+include::stylesheets/Toggle[]
 
 :sectnums!:
 == Preliminary note
 
+[.feature-opal]
+====
 This is the manual for _OPAL_ {OPAL_version} which is still under development. Use at your own risc.
 
 New feature might not yet be documented or something is already documented
 but not yet implemented.
+====
+
+[.feature-opalx]
+====
+This is the manual for _OPALX_ {OPALX_version} which is still under heavy development.
+====
 
 :sectnums:
 == Abstract
-
+[.feature-opal]
+====
 _OPAL_ is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
 Using the _MAD_ language with extensions, _OPAL_ can run on a laptop as well as on the largest high performance computing systems.
 _OPAL_ is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
@@ -64,6 +74,24 @@ _OPAL-map_::
 
 It should be noted that not all features of _OPAL_ are available in all
 flavours.
+====
+
+[.feature-opal]
+====
+_OPAL_ is a parallel open source tool for charged-particle optics in linear accelerators and rings, including 3D space charge.
+Using the _MAD_ language with extensions, _OPAL_ can run on a laptop as well as on the largest high performance computing systems.
+_OPAL_ is built from the ground up as a parallel application exemplifying the fact that high performance computing is the third leg of science, complementing theory and experiment.
+====
+
+[.feature-opalx]
+====
+_OPALX_ is a rewrite of _OPAL_, achiving Performance Portability among NVIDIA, AMD and Intel GPUs.
+_OPALX_ is a parallel open source tool targeting Exascal computing and at the same time is running on your local cluster or laptop.
+The primary use is for charged-particle optics computations in linear accelerators and rings, including 3D space charge.
+Using the same _MAD_ language with extensions, _OPALX_ is mostly backward compatible with _OPAL_. This manual shows precicely the small differernces.
+
+The _OPALX_ framework makes it easy to add new features in the form of new _C++20_ classes.
+====
 
 
 ifdef::env-gitlab[]
@@ -90,7 +118,6 @@ ifdef::env-gitlab[]
 . {link_manual_src}/partmatter.{adoc}[Physics Models Used in the Particle Matter Interaction Model]
 . {link_manual_src}/optimiser.{adoc}[Multi Objective Optimization]
 . {link_manual_src}/sampler.{adoc}[Sampler]
-
 .Appendices
 [upperalpha]
 . {link_manual_src}/syntax.{adoc}[OPAL Language Syntax]

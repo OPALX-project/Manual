@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.fieldsolvers]]
 == Field Solver
+include::stylesheets/Toggle[]
 
 Space charge effects are included in the simulation by specifying a
 field solver described in this chapter and attaching it to the track

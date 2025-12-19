@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.control]]
 == Control Statements
+include::stylesheets/Toggle[]
 
 [[getting-help]]
 === Getting Help

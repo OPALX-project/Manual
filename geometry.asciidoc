@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.geometry]]
 == Geometry
+include::stylesheets/Toggle[]
 
 At present the `GEOMETRY` command is still an *experimental feature*
 which is not to be used by the general user. It can be used to act as

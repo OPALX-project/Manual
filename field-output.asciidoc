@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.field_output]]
 == Field Output
+include::stylesheets/Toggle[]
 
 There are two routines that can be used to write out the external field used in _OPAL-cycl_.
 

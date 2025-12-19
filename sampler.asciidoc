@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.sampler]]
 == Sampler
+include::stylesheets/Toggle[]
 
 This is a modification of the link:optimiser#chp.optimiser[optimiser]. Instead
 of performing a multi-objective optimisation, it creates samples of the design
@@ -266,3 +267,4 @@ STOP;
 ----
 
 // EOF
+

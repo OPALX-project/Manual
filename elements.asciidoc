@@ -11,6 +11,7 @@ ifdef::backend-html5,env-gitlab[:fig-width-default: width=50%]
 
 [[chp.elements]]
 == Elements
+include::stylesheets/Toggle[]
 
 [[sec.elements.input-format]]
 === Element Input Format

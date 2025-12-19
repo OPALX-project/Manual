@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.partmatter]]
 == Physics Models Used in the Particle Matter Interaction Model
+include::stylesheets/Toggle[]
 
 The command to define particle-matter interactons is
 `PARTICLEMATTERINTERACTION`.

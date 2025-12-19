@@ -1,4 +1,4 @@
-# OPAL User Manual
+# OPAL and OPALX User Manual
 
 ## Introduction
 
@@ -37,7 +37,7 @@ Differences in the manual between OPAL and OPALX can be maked with
 ```
 [.feature-opal]
 --
-  your OPAL description
+  your OPAL desctiption 
 --
 ```
 and

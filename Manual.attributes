@@ -1,6 +1,9 @@
 :OPAL_version:                          2024.2
+:OPALX_version:                         2026.0
 
 :branch_OPAL:                           master
+:branch_OPALX:                           master
+
 :branch_manual:                         master
 :branch_reg_tests:                      master
 

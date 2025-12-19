@@ -7,7 +7,8 @@ toc::[]
 endif::[]
 
 [[chp.pitfalls]]
-== Pitfalls and Limitations
+== Pitfalls and Limitation
+include::stylesheets/Toggle[]
 
 A loose collection of pitfalls that may be difficult to avoid in particular for new users but also experienced user might profit from this list.
 

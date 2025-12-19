@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.track]]
 == Tracking
+include::stylesheets/Toggle[]
 
 [[sec.track.mode]]
 === Track Mode
@@ -166,7 +167,8 @@ ENDTRACK;
 
 [[sec.track.particles]]
 === Track Particles
-
+[.feature-opal]
+--
 This command starts or continues the actual tracking:
 
 ----
@@ -174,13 +176,26 @@ RUN, METHOD=string, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
      TURNS=integer, MBMODE=string, PARAMB=float,
      BOUNDARYGEOMETRY=string, TRACKBACK=logical;
 ----
+--
+
+[.feature-opalx]
+--
+This command starts or continues the actual tracking:
+
+----
+RUN, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
+     TURNS=integer, MBMODE=string, PARAMB=float,
+     BOUNDARYGEOMETRY=string, TRACKBACK=logical;
+----
+--
 
 The `RUN` command initialises tracking and uses the most recent particle
 bunch for initial conditions. The particle positions may be the result
 of previous tracking.
 
-Its attributes are:
-
+Its attributes are
+[.feature-opal]
+--
 METHOD::
   The name (a string, see link:format#sec.format.astring[String Attributes])
   of the tracking method to be used. For the time being the following methods are known:
@@ -189,6 +204,7 @@ METHOD::
     This method puts _OPAL_ in _OPAL-t_ mode (see Chapter link:opalt#chp.opalt[_OPAL-t_]).
   * `CYCLOTRON-T`
     This method puts _OPAL_ in _OPAL-cycl_ mode (see Chapter link:opalcycl#chp.opalcycl[_OPAL-cycl_]).
+--
 FIELDSOLVER::
   The field solver to be used (see Chapter link:fieldsolvers#chp.fieldsolvers[Field Solver]).
 DISTRIBUTION::

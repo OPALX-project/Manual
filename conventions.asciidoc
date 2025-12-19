@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.conventions]]
 == Conventions
+include::stylesheets/Toggle[]
 
 [[sec.conventions.units]]
 === Physical Units

@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.optimiser]]
 == Multi Objective Optimization
+include::stylesheets/Toggle[]
 
 Optimization methods deal with finding a feasible set of solutions
 corresponding to extreme values of some specific criteria. Problems
@@ -19,6 +20,10 @@ planning and many more <<bib.pgnl06>>, <<bib.zepv00>>, <<bib.gala98>>,
 multi-objective problems are in general harder and more expensive to solve
 than single-objective optimization problems.
 
+
+
+[.feature-opal]
+--
 In this chapter we introduce multi-objective optimization problems and
 discuss techniques for their solution with an emphasis on evolutionary
 algorithms.
@@ -475,6 +480,12 @@ or to count all invalid simulations:
 ```
 cat opt.trace.0 | grep invalid | wc -l
 ```
+--
+
+[.feature-opalx]
+--
+This feature is not yet avaidable in OPALX.
+--
 
 
 [[sec.optimiser.bibliography]]
@@ -500,4 +511,3 @@ anchor:bib.deb09[[{counter:bib-cnt}\]]
 
 anchor:bib.paya01[[{counter:bib-cnt}\]]
 <<bib.paya01>> C. Papadimitriou and M. Yannakakis, https://dl.acm.org/doi/10.1145/375551.375560[_Multiobjective query optimization_], in Proceedings of the twentieth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems, pp. 52–59 (Santa Barbara, CA, USA, 2001).
-

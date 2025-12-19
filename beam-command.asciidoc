@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.beam-command]]
 == Beam Command
+include::stylesheets/Toggle[]
 
 All _OPAL_ commands working on a beam require the setting of various
 quantities related to this beam. These are entered by a `BEAM` command:

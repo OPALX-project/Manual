@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.lines]]
 == Beam Lines
+include::stylesheets/Toggle[]
 
 The accelerator to be studied is known to _OPAL_ as a sequence of
 physical elements called a *beam line*. A beam line is built from

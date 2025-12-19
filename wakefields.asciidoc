@@ -8,6 +8,7 @@ endif::[]
 
 [[chp.wakefields]]
 == Wakefields
+include::stylesheets/Toggle[]
 
 _OPAL-t_ provides methods to compute CSR and short-range geometric
 wakefields.

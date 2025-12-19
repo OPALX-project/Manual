@@ -6,20 +6,28 @@ include::env-gitlab.attributes[]
 toc::[]
 endif::[]
 
+
 [[chp.introduction]]
 == Introduction
+include::stylesheets/Toggle[]
 
 [[sec.introduction.aim-of-opal-and-history]]
 === History
 
+[.feature-opal]
+--
 Using the _MAD_ language with extensions, _OPAL_ is
 derived from _MAD9P_ and is based on the _CLASSIC_ <<bib.classic>> class library, which
 was started in 1995 by an international collaboration. IPPL (Independent
 Parallel Particle Layer) is the framework which provides parallel
 particles and fields using data parallel approach. IPPL was inspired by the POOMA <<bib.pooma>>.
 
-_OPAL-t_ can be used to model guns,
-injectors, ERLs and complete XFELs.
+_OPAL-t_ can be used to model guns, injectors, ERLs and complete XFELs.
+--
+
++++<div class="feature-opalx">+++
+_OPALX_ also uses an extended _MAD_ language. 
++++</div>+++
 
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities

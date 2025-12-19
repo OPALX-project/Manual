@@ -15,4 +15,4 @@ sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
 asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book "${input_fname}" 
 
 # revert the change we did above
-git checkout -- Manual.asciidoc
+#git checkout -- Manual.asciidoc
