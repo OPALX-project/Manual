@@ -28,6 +28,28 @@ to preview your changes. Unfortunately Gitlab does not support all features of
 Asciidoc, thus the preview in Gitlab is pretty useful but is not identical to
 the published version.
 
+## OPAL and OPALX Manual in the same Place
+Since 2023 there is an effort to make OPAL performace poratble and exascale ready.
+Our aim is to make that as smooth as possible for the user hence, minimal inputfile
+changes!
+
+Differences in the manual between OPAL and OPALX can be maked with
+```
+[.feature-opal]
+--
+  your OPAL desctiption
+--
+```
+and
+```
+[.feature-opalx]
+--
+  your OPAL desctiption
+--
+```
+and in the webbrowser you can select what you want to see.
+
+
 ## Workflow
 
 The workflow for changes in the manual is the same as for OPAL software 
