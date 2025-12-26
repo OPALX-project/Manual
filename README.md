@@ -19,9 +19,7 @@ and their requirements are documented in the projects README.
 
 HTML versions of the _OPAL_ manual are published here:
 
-* http://amas.web.psi.ch/opal/Documentation/master/OPAL_Manual.html
-* http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html
-* http://amas.web.psi.ch/opal/Documentation/2.0/OPAL_Manual.html
+* Achimm needs to fix this 
 
 Gitlab displays the translated content of Asciidoc files. You can use Gitlab
 to preview your changes. Unfortunately Gitlab does not support all features of
