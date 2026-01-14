@@ -24,7 +24,6 @@ ifdef::backend-html5[]
 | image:logos/ciemat_logo.jpg[width=242]
 | image:logos/SLAC-lab-hires.png[width=220]
 | image:logos/UKRI_STF_logo.png[width=176]
-
 | image:logos/MIT-logo-with-spelling-design1-large-black-red.svg[width=175]
 | image:logos/Logo_FZ_Juelich_1561x454_rgb_jpg.jpg[width=165]
 | image:logos/NIU_horz_3Clr.png[width=165]
