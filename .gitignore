@@ -1,4 +1,6 @@
 Manual.html
+build
+*~
 OPAL_Manual.html
 *.adoc
 *.aux
