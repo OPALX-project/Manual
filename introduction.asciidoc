@@ -105,9 +105,21 @@ Python package which contains many tools for pre- and postprocessing, and analys
 In addition to the output files, note that important information is displayed on the _stdout_ i.e. the _terminal_.
 The user is advised to consult the stdout frequently.
 
-.H5root enables a variety of data analysis and post processing task on _OPAL_ data
-[[fig_H5root_analysis,Figure {counter:fig-cnt}]]
-image::figures/H5rootPicture.png[scaledwidth=18cm,width=90%]
+[.feature-opalx]
+====
+The level of stdout can be tuned with the `--info <level>` argument.
+
+- `level == 1`: Highest-priority, coarse status and rare/critical events that should be visible even at very low verbosity.
+- `level == 2`: Normal progress and key run summaries (per-track or per-run), printed infrequently during typical production runs.
+- `level == 3`: Detailed algorithm progress and important but more frequent state changes (e.g. `dt` updates, repartitioning, binning setup).
+- `level == 4`: Fine-grained implementation details inside algorithms, normally hidden in production but useful for debugging.
+- `level ==  5`: Full debug/trace output, including very chatty per-step or per-bin diagnostics and internal binning/solver details.
+
+For production runs we suggest `level==1` or `level==2` i.e.
+....
+opalx inputfile.in --info 1
+....
+====
 
 [[sec.introduction.change-history]]
 === Change History
@@ -128,21 +140,22 @@ See also link:pitfalls#chp.pitfalls[pitfalls and limitations].
 The contributions of various individuals and groups are acknowledged in
 the relevant chapters, however a few individuals have or had
 considerable influence on the development of _OPAL_, namely
+
+The following individuals are acknowledged for past contributions:
+
 Chris Iselin,
 John Jowett,
 Julian Cummings,
 Ji Qiang,
-Robert Ryne
-and Stefan Adam.
-For the H5root visualization tool credits go to Thomas Schietinger.
-
-The following individuals are acknowledged for past contributions:
+Robert Ryne,
+Stefan Adam,
 Christian Baumgarten,
 J. Scott Berg,
 Yuanjie Bi,
 David Bruhwiler,
 Chris Cortes,
 Martin Duy Tat,
+Matthias Frey,
 Philippe Ganz,
 Colwyn Gulliford,
 Yves Ineichen,
@@ -157,6 +170,8 @@ Hao Zha.
 [[sec.introduction.citation]]
 === Citation
 
+[.feature-opal]
+====
 Please cite _OPAL_ in the following way:
 
 ....
@@ -180,6 +195,12 @@ archivePrefix = {arXiv},
 }
 
 ....
+====
+
+[.feature-opalx]
+====
+no citation yet!
+====
 
 [[sec.introduction.bibliography]]
 === References

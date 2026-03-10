@@ -201,6 +201,10 @@ PSDUMPFREQ::
   Defines after how many time steps the phase space is dumped into the H5hut
   file (_.h5_). It also controls the frequency of phase space printed on the
   standard output. Its default value is 10.
+[.feature-opalx]                                                                                        
+====
+In case `PSDUMPFREQ<0` no hdf5 output is created. Note, the file is however appearing but empty.
+====
 PSDUMPEACHTURN::
   Control option of phase space dumping. If true, dump phase space after
   each turn. For the time being, this is only use for multi-bunch
