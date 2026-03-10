@@ -8,6 +8,7 @@ ifdef::backend-docbook5,backend-html5[]
 :keywords: _OPAL_
 :revdate: 2025-11-27
 :adoc: adoc
+:markdown:
 endif::[]
 
 ifdef::env-gitlab[]
@@ -91,7 +92,6 @@ Using the same _MAD_ language with extensions, _OPALX_ is mostly backward compat
 The _OPALX_ framework makes it easy to add new features in the form of new _C++20_ classes.
 ====
 
-
 ifdef::env-gitlab[]
 :sectnums!:
 == Table of Contents
@@ -109,6 +109,7 @@ ifdef::env-gitlab[]
 . {link_manual_src}/lines.{asciidoc}[Beam Lines]
 . {link_manual_src}/beam-command.{asciidoc}[Beam Command]
 . {link_manual_src}/distribution.{asciidoc}[Distribution Command]
+. {link_manual_src}/energybins.{asciidoc}[Energy Bins]
 . {link_manual_src}/fieldsolvers.{asciidoc}[Field Solver]
 . {link_manual_src}/track.{asciidoc}[Tracking]
 . {link_manual_src}/wakefields.{asciidoc}[Wakefields]
@@ -141,6 +142,7 @@ include::field-output.asciidoc[]
 include::lines.asciidoc[]
 include::beam-command.asciidoc[]
 include::distribution.asciidoc[]
+include::energybins.asciidoc[]
 include::fieldsolvers.asciidoc[]
 include::track.asciidoc[]
 include::wakefields.asciidoc[]
