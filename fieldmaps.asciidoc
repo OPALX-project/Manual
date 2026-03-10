@@ -347,6 +347,7 @@ Superfish <<bib.superfish>> interpolation algorithm.
 [[fig_fieldnoiseexample,Figure {counter:fig-cnt}]]
 image::./figures/Fieldmaps/fieldnoise_example.png[scaledwidth=18cm,width=80%]
 ====
+
 [.feature-opalx]
 ====
 Not implemented anymore.
