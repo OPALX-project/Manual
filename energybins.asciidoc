@@ -1,0 +1,45 @@
+ifdef::env-gitlab[]
+include::Manual.attributes[]
+include::env-gitlab.attributes[]
+{link_home}
+
+toc::[]
+endif::[]
+
+ifdef::backend-docbook5[:fig-width-default: scaledwidth=10cm]
+ifdef::backend-html5,env-gitlab[:fig-width-default: width=50%]
+
+[[chp.energybins]]
+== Energy Bins
+include::stylesheets/Toggle[]
+
+
+[[sec.energybins.binningcmd]]
+=== The BINNING Command
+
+[.feature-opal]
+====
+In _OPAL_ the energy bin definition is done at the DISTRIBUTION. 
+====
+
+[.feature-opalx]
+====
+In _OPALX_ the energy bin defined as a process (command) and the given to the fieldsolver
+as an argument.
+
+----
+BINS1: BINNING, 
+    MAXBINS      = 120, 
+    DESIREDWIDTH = 0.2, 
+    BINNINGALPHA = 1.1, 
+    BINNINGBETA  = 1.6, 
+    PARAMETER    = VELOCITYZ, // Could be "VELOCITYZ", "POSITIONZ", "PZ" or "GAMMAZ"
+    DUMPBINSFILE = "data/bin-dump.json",
+    DUMPBINSFREQ = 1; 
+----
+MAXBINS::
+
+DESIREDWIDTH::
+
+====
+
