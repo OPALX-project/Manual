@@ -3036,6 +3036,22 @@ UND: UNDULATOR, ELEMEDGE = 44.0e-2, K = 10.81, LAMBDA = 8.5e-2, NUMPERIODS = 10,
 
 --
 
+[[sec.elements.ip]]
+=== Interaction Point (IP)
+[.feature-opalx]
+--
+
+Example of an straight interacion point element at 42m and with 1m in lenght:
+
+----
+ip1: IP, ELEMEDGE = 44.0, L = 1;
+----
+
+As soon as the first particle enters the IP region a second bunch is created at ELEMEDGE+L with p = (px,py,-pz).
+
+--
+
+
 [[sec.elements.bibliography]]
 === References
 
