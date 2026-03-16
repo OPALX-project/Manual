@@ -10,7 +10,11 @@ endif::[]
 == Field Output
 include::stylesheets/Toggle[]
 
+[.feature-opal]
 There are two routines that can be used to write out the external field used in _OPAL-cycl_.
+
+[.feature-opalx]
+OpalX supports a single command that writes out the external field to a file.
 
 DUMPFIELDS::
   Write out static magnetic field map on a Cartesian grid
