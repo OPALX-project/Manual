@@ -168,6 +168,8 @@ T_STEPS::
 ==== Cylindrical Mode
 
 In Cylindrical mode the format of the field output is:
+[.feature-opal]
+--
 ----
 <number of rows>
 1 r [m]
@@ -185,6 +187,27 @@ In Cylindrical mode the format of the field output is:
 <r1> <phi1> <z1> <t1> <Br1> <Bphi1> <Bz1> <Er1> <Ephi1> <Ez1>
 ...
 ----
+--
+[.feature-opalx]
+--
+----
+<number of rows>
+1 r [m]
+2 phi [deg]
+3 y [m]
+4 t [ns]
+5 Br   [kGauss]
+6 Bphi [kGauss]
+7 By   [kGauss]
+8 Er   [MV/m]
+9 Ephi [MV/m]
+10 Ey  [MV/m]
+0
+<r0> <phi0> <y0> <t0> <Br0> <Bphi0> <By0> <Er0> <Ephi0> <Ey0>
+<r1> <phi1> <y1> <t1> <Br1> <Bphi1> <By1> <Er1> <Ephi1> <Ey1>
+...
+----
+--
 
 The following attributes are enabled on the `DUMPEMFIELDS` statement
 when operating in Cylindrical mode:
@@ -210,6 +233,8 @@ DPHI::
 PHI_STEPS::
   Number of steps in phi.
   It is an error if `PHI_STEPS` is non-integer or less than 1.
+[.feature-opal]
+--
 Z_START::
   Start point in the grid in z [m].
 DZ::
@@ -217,6 +242,17 @@ DZ::
 Z_STEPS::
   Number of steps in z.
   It is an error if `Z_STEPS` is non-integer or less than 1.
+--
+[.feature-opalx]
+--
+Y_START::
+Start point in the grid in y [m].
+DY::
+Grid step size in y [m].
+Y_STEPS::
+Number of steps in y.
+It is an error if `Y_STEPS` is non-integer or less than 1.
+--
 T_START::
   Start point in the grid in time [ns].
 DT::
@@ -227,11 +263,11 @@ T_STEPS::
 [.feature-opalx]
 --
 CYL_ORIGIN_X::
-  X coordinate of the origin of the cylindrical coordinate system [m]
+  X coordinate of the origin of the cylindrical coordinate system [m]. Default is 0.
 CYL_ORIGIN_Y::
-  Y coordinate of the origin of the cylindrical coordinate system [m]
+  Y coordinate of the origin of the cylindrical coordinate system [m]. Default is 0.
 CYL_ORIGIN_Z::
-  Z coordinate of the origin of the cylindrical coordinate system [m]
+  Z coordinate of the origin of the cylindrical coordinate system [m]. Default is 0.
 --
 
 // EOF
