@@ -1,4 +1,4 @@
-teifdef::env-gitlab[]
+ifdef::env-gitlab[]
 include::Manual.attributes[]
 include::env-gitlab.attributes[]
 {link_home}

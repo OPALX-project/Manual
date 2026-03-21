@@ -7,6 +7,7 @@ toc::[]
 endif::[]
 
 [[chp.optimiser]]
+[.feature-opal]
 == Multi Objective Optimization
 include::stylesheets/Toggle[]
 
@@ -20,10 +21,6 @@ planning and many more <<bib.pgnl06>>, <<bib.zepv00>>, <<bib.gala98>>,
 multi-objective problems are in general harder and more expensive to solve
 than single-objective optimization problems.
 
-
-
-[.feature-opal]
---
 In this chapter we introduce multi-objective optimization problems and
 discuss techniques for their solution with an emphasis on evolutionary
 algorithms.
@@ -480,12 +477,9 @@ or to count all invalid simulations:
 ```
 cat opt.trace.0 | grep invalid | wc -l
 ```
---
 
 [.feature-opalx]
---
 This feature is not yet avaidable in OPALX.
---
 
 
 [[sec.optimiser.bibliography]]
