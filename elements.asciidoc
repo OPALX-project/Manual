@@ -2452,7 +2452,7 @@ The supported mathematical constants and functions are listed in the following t
 .Mathematical constants and functions
 [[tab_math_consts_and_funcs,{counter:tab-cnt}]]
 [cols="4*<",]
-|===================
+|===
 |e
 |pi
 |abs(x)
@@ -2490,7 +2490,10 @@ The supported mathematical constants and functions are listed in the following t
 |max(x,y)
 |min(x,y)
 |pow(x,n)
-|===================
+|
+|
+|
+|===
 
 
 A simple elliptic collimator with major and minor axis of 4 cm and 3 cm respectively can be defined using
@@ -2622,7 +2625,6 @@ eec2: SEPTUM, XSTART=4100.0, XEND=4300.0,
 
 The particles lost on the SEPTUM are recorded in the HDF5 file
 _OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
---
 
 [[sec.elements.probe-opal-cycl]]
 === Probe (_OPAL-cycl_)
@@ -3041,18 +3043,24 @@ UND: UNDULATOR, ELEMEDGE = 44.0e-2, K = 10.81, LAMBDA = 8.5e-2, NUMPERIODS = 10,
 [.feature-opalx]
 --
 
-Example of an straight interacion point element at 42m and with 1m in lenght:
+Example of a straight interaction-point element with a 0.1 m interaction
+window and ASCII visualization enabled:
 
 ----
-ip1: IP, ELEMEDGE = 44.0, COLWINLEN = 0.1;
+ip1: IP, ELEMEDGE = 44.0, COLWINLEN = 0.1, VISUALIZE = TRUE;
 ----
 
-As soon as the first particle enters the IP region a second bunch is created at ELEMEDGE+COLWINLEN with p = (px,py,-pz).
+As soon as the head of the physical bunch enters the interaction window,
+_OPALX_ switches to the collision model described in
+Chapter link:collisions#chp.collisions[Physics Models Used in Modelling Collisions].
+The current implementation uses one real tracked bunch and one virtual mirrored bunch.
 
 COLWINLEN::
-  Defines the lenght [m] over which the coulomb interaction of the collisons are calculeted.
-
---
+  Defines the length [m] of the interaction window over which the Coulomb
+  interaction of the colliding bunches is evaluated.
+VISUALIZE::
+  If `TRUE`, enable the ASCII interaction-window visualization in the terminal and
+  the frame dump output. The default is `FALSE`.
 
 
 [[sec.elements.bibliography]]

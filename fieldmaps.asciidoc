@@ -1213,7 +1213,7 @@ latexmath:[\max(|E_{z,\text{ on axis}}|) = 1\mathrm{MV/m}].
 
 |latexmath:[E_{z,\,N}] (or latexmath:[E_{r,\,N}]) (MV/m))
 |latexmath:[E_{r,\,N}] (or latexmath:[E_{z,\,N}]) (MV/m)
-|latexmath:[|E_N|] (MV/m) |latexmath:[H_{\phi,\,N}] (A/m)
+|latexmath:[\|E_N\|] (MV/m) |latexmath:[H_{\phi,\,N}] (A/m)
 |=======================================================================
 
 A `2DDynamic` field map has the general form shown in <<tab_2DDynamic>>.

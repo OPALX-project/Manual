@@ -757,6 +757,29 @@ table.tableblock.grid-all th.tableblock, table.tableblock.grid-all td.tableblock
     font-weight: 600;
 }
 
+.feature-toggle .feature-choice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.feature-toggle .feature-choice input {
+    margin: 0;
+}
+
+.feature-toggle .feature-choice-opal input {
+    accent-color: #3366cc;
+}
+
+.feature-toggle .feature-choice-opalx input {
+    accent-color: #33aa66;
+}
+
 /* Baseline: show both if JS not working */
 .feature-opal,
 .feature-opalx {
@@ -793,13 +816,42 @@ html[data-feature-mode="both"] .feature-opalx {
     background: #eefdf4;
 }
 
+.sect1.feature-opal,
+.sect1.feature-opalx {
+    padding-left: 2.25rem;
+}
+
+.sect1.feature-opal > h2,
+.sect1.feature-opalx > h2,
+.sect1.feature-opal > .sectionbody,
+.sect1.feature-opalx > .sectionbody {
+    margin-left: 0;
+}
+
 /* Color the toggle labels */
-.feature-toggle label[for="mode-opal"] {
+.feature-toggle .feature-choice-opal {
     color: #3366cc;
     font-weight: 600;
 }
 
-.feature-toggle label[for="mode-opalx"] {
+.feature-toggle .feature-choice-opalx {
     color: #33aa66;
+    font-weight: 600;
+}
+
+html[data-feature-mode="opal"] .feature-toggle .feature-choice-opal {
+    background: #eef3ff;
+    border-color: #3366cc;
+}
+
+html[data-feature-mode="opalx"] .feature-toggle .feature-choice-opalx {
+    background: #eefdf4;
+    border-color: #33aa66;
+}
+
+html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choice-opal):not(.feature-choice-opalx) {
+    background: #f0f0f0;
+    border-color: #888;
+    color: #222;
     font-weight: 600;
 }
