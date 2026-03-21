@@ -18,12 +18,13 @@ include::stylesheets/Toggle[]
 === The BINNING Command
 
 opal-begin
-In _OPAL_ the energy bin definition is done at the DISTRIBUTION. 
+In _OPAL_, energy-bin definitions are attached to the `DISTRIBUTION`
+statement.
 opal-end
 
 opalx-begin
-In _OPALX_ the energy bin defined as a process (command) and the given to the fieldsolver
-as an argument.
+In _OPALX_, energy binning is defined as a separate command and then
+passed to the field solver as an argument.
 
 ----
 BINS1: BINNING, 
@@ -36,8 +37,26 @@ BINS1: BINNING,
     DUMPBINSFREQ = 1; 
 ----
 MAXBINS::
+  Maximum number of energy bins that may be created.
 
 DESIREDWIDTH::
+  Target width of each bin in the selected binning parameter.
+
+BINNINGALPHA::
+  Scale parameter used by the adaptive binning algorithm.
+
+BINNINGBETA::
+  Second scale parameter used by the adaptive binning algorithm.
+
+PARAMETER::
+  Quantity used to construct the bins. Supported values are
+  `VELOCITYZ`, `POSITIONZ`, `PZ`, and `GAMMAZ`.
+
+DUMPBINSFILE::
+  Optional output file used to dump the current bin structure.
+
+DUMPBINSFREQ::
+  Frequency, in time steps, at which the bin structure is written to
+  `DUMPBINSFILE`.
 
 opalx-end
-

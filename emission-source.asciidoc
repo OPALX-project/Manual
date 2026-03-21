@@ -30,7 +30,7 @@ In _OPALX_, the relevant objects are:
   `TRACK`.
 
 The term _injection_ is used here for a distribution that is introduced
-at one time, whereas _emission_ refers to particles that are created over
+at one instant, whereas _emission_ refers to particles that are created over
 multiple time steps. Time-dependent samplers such as `TYPE = FLATTOP`
 belong to the latter category.
 
@@ -116,7 +116,7 @@ ES1: EMISSIONSOURCE,
 
 All offsets default to `0.0`, and `T0` defaults to `0.0`.
 
-The source augments, but does not replace, the linked distribution, in more detail:
+The source augments, but does not replace, the linked distribution. More precisely:
 
 - `R0X`, `R0Y`, and `R0Z` are applied as source offsets on top of the
   sampled particle coordinates.
