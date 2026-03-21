@@ -14,8 +14,7 @@ include::stylesheets/Toggle[]
 [[sec.introduction.aim-of-opal-and-history]]
 === History
 
-[.feature-opal]
---
+opal-begin
 Using the _MAD_ language with extensions, _OPAL_ is
 derived from _MAD9P_ and is based on the _CLASSIC_ <<bib.classic>> class library, which
 was started in 1995 by an international collaboration. IPPL (Independent
@@ -23,7 +22,7 @@ Parallel Particle Layer) is the framework which provides parallel
 particles and fields using data parallel approach. IPPL was inspired by the POOMA <<bib.pooma>>.
 
 _OPAL-t_ can be used to model guns, injectors, ERLs and complete XFELs.
---
+opal-end
 
 +++<div class="feature-opalx">+++
 _OPALX_ also uses an extended _MAD_ language. 
@@ -105,8 +104,7 @@ Python package which contains many tools for pre- and postprocessing, and analys
 In addition to the output files, note that important information is displayed on the _stdout_ i.e. the _terminal_.
 The user is advised to consult the stdout frequently.
 
-[.feature-opalx]
-====
+opalx-begin
 The level of stdout can be tuned with the `--info <level>` argument.
 
 - `level == 1`: Highest-priority, coarse status and rare/critical events that should be visible even at very low verbosity.
@@ -119,7 +117,7 @@ For production runs we suggest `level==1` or `level==2` i.e.
 ....
 opalx inputfile.in --info 1
 ....
-====
+opalx-end
 
 [[sec.introduction.change-history]]
 === Change History
@@ -170,8 +168,7 @@ Hao Zha.
 [[sec.introduction.citation]]
 === Citation
 
-[.feature-opal]
-====
+opal-begin
 Please cite _OPAL_ in the following way:
 
 ....
@@ -195,12 +192,11 @@ archivePrefix = {arXiv},
 }
 
 ....
-====
+opal-end
 
-[.feature-opalx]
-====
+opalx-begin
 no citation yet!
-====
+opalx-end
 
 [[sec.introduction.bibliography]]
 === References

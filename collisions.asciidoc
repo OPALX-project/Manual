@@ -16,8 +16,7 @@ include::stylesheets/Toggle[]
 [[sec.collisions.intro]]
 === Introduction
 
-[.feature-opalx]
-====
+opalx-begin
 
 This chapter documents the current collision model used by the `IP` element in _OPALX_.
 
@@ -36,14 +35,13 @@ The current model therefore uses:
 The model is entered when the head of the physical bunch reaches the beginning
 of the interaction window and is left once the tail of the bunch has passed the
 end of the window.
-====
+opalx-end
 
 
 [[sec.collisions.ansatz]]
 === Symmetric Counter-Propagating Ansatz
 
-[.feature-opalx]
-====
+opalx-begin
 Let latexmath:[z_\mathrm{IP}] denote the interaction-point position in the local
 beam coordinate system during the interaction-window solve. For a particle of
 the physical bunch with coordinates latexmath:[(x,y,z)] and momentum
@@ -68,12 +66,11 @@ p'_z &= -p_z.
 This is the current head-on, fully symmetric ansatz. It assumes that the two
 bunches are identical up to the longitudinal mirror operation about the
 interaction point.
-====
+opalx-end
 
 [[sec.collisions.mesh-model]]
 === Mesh Model
-[.feature-opalx]
-====
+opalx-begin
 Outside the interaction window, the longitudinal field mesh remains
 bunch-following. In software-engineering terms, this is a Lagrangian-in-z
 representation of the field mesh.
@@ -89,13 +86,12 @@ distinction is important:
 
 * physical bunch bounds remain the actual particle bounds,
 * field-domain bounds in latexmath:[z] represent the fixed interaction window.
-====
+opalx-end
 
 [[sec.collisions.scope]]
 === Scope of the Current Model
 
-[.feature-opalx]
-====
+opalx-begin
 
 The present implementation should be interpreted as a first collision model for
 symmetric head-on beams. It is suitable for studying:
@@ -107,4 +103,4 @@ symmetric head-on beams. It is suitable for studying:
 
 It is not yet a full two-bunch strong-strong model with two independently
 tracked particle populations.
-====
+opalx-end

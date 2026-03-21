@@ -169,21 +169,19 @@ ENDTRACK;
 === Track Particles
 [.feature-opal]
 This command starts or continues the actual tracking:
-[.feature-opal]
-----
+opal-begin
 RUN, METHOD=string, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
      TURNS=integer, MBMODE=string, PARAMB=float,
      BOUNDARYGEOMETRY=string, TRACKBACK=logical;
-----
+opal-end
 
 [.feature-opalx]
 This command starts or continues the actual tracking:
-[.feature-opalx]
-----
+opalx-begin
 RUN, FIELDSOLVER=label, DISTRIBUTION=label-vector, BEAM=label,
      TURNS=integer, MBMODE=string, PARAMB=float,
      BOUNDARYGEOMETRY=string, TRACKBACK=logical;
-----
+opalx-end
 
 The `RUN` command initialises tracking and uses the most recent particle
 bunch for initial conditions. The particle positions may be the result

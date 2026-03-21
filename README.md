@@ -27,25 +27,42 @@ Asciidoc, thus the preview in Gitlab is pretty useful but is not identical to
 the published version.
 
 ## OPAL and OPALX Manual in the same Place
-Since 2023 there is an effort to make OPAL performace poratble and exascale ready.
-Our aim is to make that as smooth as possible for the user hence, minimal inputfile
-changes!
+Since 2023 there has been an effort to make OPAL performance-portable and
+exascale-ready. Our aim is to keep the transition as smooth as possible for
+users, with minimal input-file changes where feasible.
 
-Differences in the manual between OPAL and OPALX can be maked with
-```
+The manual therefore documents OPAL and OPALX in the same place, and the
+rendered HTML lets the reader switch between:
+
+* `OPAL`
+* `OPALX`
+* `Both`
+
+Use section roles when an entire section belongs to one variant:
+
+```text
 [.feature-opal]
---
-  your OPAL desctiption 
---
-```
-and
-```
+=== OPAL-only section
+
 [.feature-opalx]
---
-  your OPALX description
---
+=== OPALX-only section
 ```
-and in the webbrowser you can select what you want to see.
+
+Use explicit markers for feature-gated body content:
+
+```text
+opal-begin
+...
+opal-end
+
+opalx-begin
+...
+opalx-end
+```
+
+These body markers are interpreted by the Asciidoctor extension
+`extensions/feature_blocks.rb`. In the web browser, the toggle selects which
+variant is shown.
 
 ![Toggle example](figures/toggle.png)
 

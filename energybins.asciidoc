@@ -17,13 +17,11 @@ include::stylesheets/Toggle[]
 [[sec.energybins.binningcmd]]
 === The BINNING Command
 
-[.feature-opal]
-====
+opal-begin
 In _OPAL_ the energy bin definition is done at the DISTRIBUTION. 
-====
+opal-end
 
-[.feature-opalx]
-====
+opalx-begin
 In _OPALX_ the energy bin defined as a process (command) and the given to the fieldsolver
 as an argument.
 
@@ -41,5 +39,5 @@ MAXBINS::
 
 DESIREDWIDTH::
 
-====
+opalx-end
 
