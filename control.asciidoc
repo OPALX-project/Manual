@@ -65,6 +65,11 @@ OPTION, VERSION=integer, ECHO=logical,INFO=logical,TRACE=logical,
         REPARTFREQ=integer, REBINFREQ=integer, TELL=logical;
 ----
 
+opalx-begin
+In _OPALX_, the `OPTION` statement also provides storage-related options such as
+`QM_MODE`.
+opalx-end
+
 VERSION::
   Used to indicate for which version of _OPAL_ the input file is
   written. The major and minor versions of _OPAL_ and of the input file
@@ -221,6 +226,17 @@ PSDUMPFRAME::
   * `GLOBAL`: data is written in the global Cartesian frame;
   * `BUNCH_MEAN`: data is written in the bunch mean frame or;
   * `REFERENCE`: data is written in the frame of the reference particle.
+opalx-begin
+QM_MODE::
+  Controls how particle charge and mass are stored internally in _OPALX_.
+  This option does not change the physics model by itself, but it changes the
+  storage layout and memory footprint of the particle container.
+  * `SINGLE`: store one shared charge value and one shared mass value per
+    particle container. This is the default and uses the least memory.
+  * `ATTRIBUTES`: store charge and mass as per-particle attributes. Use this
+    mode when particles in the same container need to carry different charge
+    or mass values.
+opalx-end
 REBINFREQ::
   Defines after how many time steps we update the energy Bin ID of each
   particle. For the time being. Only available for multi-bunch
@@ -307,6 +323,7 @@ STATDUMPFREQ::
 |`PSDUMPEACHTURN`    |= `FALSE`
 |`PSDUMPFRAME`       |= `GLOBAL`
 |`PSDUMPFREQ`        |= `10`
+|`QM_MODE`           |= `SINGLE` (_OPALX_)
 |`RECYCLEBLOCKS`     |= `0`
 |`REBINFREQ`         |= `100`
 |`REMOTEPARTDEL`     |= `0.0`
