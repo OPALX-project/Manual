@@ -1322,9 +1322,16 @@ component only to model a defective multipole.
 === General Multipole With Fringe Field Model
 opal-begin
 A `MULTIPOLET` is in _OPAL-cycl_ a general multipole with extended
-features. It can represent a straight or curved magnet. In the curved
-case, the user may choose between constant or variable radius. This
-model includes fringe fields. The detailed description can be found at:
+features. It can represent a straight or curved magnet. 
+[.feature-opal]
+--
+In the curved case, the user may choose between constant or variable radius. 
+--
+[.feature-opalx]
+--
+In the curved case, only constant radius is currently supported on _OPALX_.
+--
+This model includes fringe fields. The detailed description can be found at:
 https://gitlab.psi.ch/OPAL/src/uploads/0d3fc561b57e8962ed79a57cd6115e37/8FBB32A4-7FA1-4084-A4A7-CDDB1F949CD3_psi.ch.pdf.
 
 ----
