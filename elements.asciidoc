@@ -3015,13 +3015,13 @@ opal-end
 
 [[sec.elements.ip]]
 [.feature-opalx]
-=== Interaction Point (IP)
+=== Beam-Beam Interaction Point (BEAMBEAM)
 
 Example of a straight interaction-point element with a 0.1 m interaction
 window and ASCII visualization enabled:
 
 ----
-ip1: IP, ELEMEDGE = 44.0, COLWINLEN = 0.1, VISUALIZE = TRUE;
+ip1: BEAMBEAM, ELEMEDGE = 44.0, L = 0.1, VISUALIZE = TRUE;
 ----
 
 As soon as the head of the physical bunch enters the interaction window,
@@ -3029,7 +3029,7 @@ _OPALX_ switches to the collision model described in
 Chapter link:collisions#chp.collisions[Physics Models Used in Modelling Collisions].
 The current implementation uses one real tracked bunch and one virtual mirrored bunch.
 
-COLWINLEN::
+L::
   Defines the length [m] of the interaction window over which the Coulomb
   interaction of the colliding bunches is evaluated.
 VISUALIZE::
@@ -3049,7 +3049,7 @@ longitudinal momentum.
 ----
 .... 
 DR1: DRIFT, L = 0.1, ELEMEDGE = 0.0;
-IP1: IP, L = 0.1, ELEMEDGE = 0.1, COLWINLEN = 0.05, VISUALIZE = TRUE, COPY = TRUE;
+IP1: BEAMBEAM, L = 0.05, ELEMEDGE = 0.1, VISUALIZE = TRUE, COPY = TRUE;
 DR2: DRIFT, L = 0.1, ELEMEDGE = 0.1;
 
 myLine: LINE = (DR1, IP1, DR2);
@@ -3085,7 +3085,7 @@ generated and and tracked in the oposite direction.
 ----
 ...
 DR1: DRIFT, L = 0.1, ELEMEDGE = 0.0;
-IP1: IP, L = 0.1, ELEMEDGE = 0.1, COLWINLEN=0.05, VISUALIZE=TRUE COPY=FALSE;
+IP1: BEAMBEAM, L = 0.05, ELEMEDGE = 0.1, VISUALIZE=TRUE COPY=FALSE;
 DR2: DRIFT, L = 0.1, ELEMEDGE = 0.1;
 
 myLine: Line = (DR1,IP1,DR2);

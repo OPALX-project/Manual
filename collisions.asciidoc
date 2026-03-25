@@ -18,7 +18,7 @@ include::stylesheets/Toggle[]
 
 opalx-begin
 
-This chapter documents the current collision model used by the `IP`
+This chapter documents the current collision model used by the `BEAMBEAM`
 element in _OPALX_.
 
 The present implementation is a reduced symmetric head-on collision
@@ -32,7 +32,7 @@ The current model therefore uses:
 2. one virtual bunch, reconstructed from the physical bunch by symmetry about
   the interaction point,
 3. an interaction-window field solve that is active only while the bunch
-  traverses the interval defined by `COLWINLEN`.
+  traverses the interval defined by the element length `L`.
 
 The model is entered when the head of the physical bunch reaches the
 beginning of the interaction window and is left once the tail of the
