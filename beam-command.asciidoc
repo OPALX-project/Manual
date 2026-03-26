@@ -16,7 +16,7 @@ quantities related to this beam. These are entered by a `BEAM` command:
 ----
 label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
       ENERGY=real, PC=real, GAMMA=real, BCURRENT=real,
-      NPART=real, BFREQ=real;
+      NPART=real, BFREQ=real, SOURCES=name;
 ----
 
 The `label` is optional, it defaults to `UNNAMED_BEAM`.
@@ -109,6 +109,11 @@ BCURRENT::
   with latexmath:[Q] the total charge.
 NPART::
   The number of macro particles for the simulations
+SOURCES::
+  _OPALX_ attribute naming the `EMISSIONSOURCELIST` used to initialise this
+  beam. Because the `BEAM` command validates the reference when it is defined,
+  the corresponding `EMISSIONSOURCE` and `EMISSIONSOURCELIST` objects must be
+  declared before the `BEAM` command.
 NSLICE::
   The number of slices per bunch
 MOMENTUMTOLERANCE::
