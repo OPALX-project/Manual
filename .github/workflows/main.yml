@@ -40,7 +40,7 @@ jobs:
           mkdir -p build/figures
           mkdir -p build/logos
           cp Manual.adoc index.adoc
-          asciidoctor -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
+          asciidoctor -r ./extensions/feature_blocks.rb -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
           cp -rv figures/* build/figures
           cp -rv logos/* build/logos
 
