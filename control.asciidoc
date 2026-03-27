@@ -338,7 +338,6 @@ STATDUMPFREQ::
 |`TRACE`             |= `FALSE`
 |`VERSION`           |= `none`
 |`WARN`              |= `TRUE`
-|                    |
 |=======================================================================
 
 [[sec.consumption.parameter]]

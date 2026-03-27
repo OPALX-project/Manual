@@ -6,6 +6,9 @@ include::env-gitlab.attributes[]
 toc::[]
 endif::[]
 
+ifdef::backend-docbook5[:fig-width-default: scaledwidth=10cm]
+ifdef::backend-html5,env-gitlab[:fig-width-default: width=50%]
+
 [[chp.beam-command]]
 == Beam Command
 include::stylesheets/Toggle[]
@@ -13,11 +16,21 @@ include::stylesheets/Toggle[]
 All _OPAL_ commands working on a beam require the setting of various
 quantities related to this beam. These are entered by a `BEAM` command:
 
+opal-begin
+----
+label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
+      ENERGY=real, PC=real, GAMMA=real, BCURRENT=real,
+      NPART=real, BFREQ=real;
+----
+opal-end
+
+opalx-begin
 ----
 label:BEAM, PARTICLE=name, MASS=real, CHARGE=real,
       ENERGY=real, PC=real, GAMMA=real, BCURRENT=real,
       NPART=real, BFREQ=real, SOURCES=name;
 ----
+opalx-end
 
 The `label` is optional, it defaults to `UNNAMED_BEAM`.
 
@@ -109,11 +122,13 @@ BCURRENT::
   with latexmath:[Q] the total charge.
 NPART::
   The number of macro particles for the simulations
+opalx-begin
 SOURCES::
   _OPALX_ attribute naming the `EMISSIONSOURCELIST` used to initialise this
   beam. Because the `BEAM` command validates the reference when it is defined,
   the corresponding `EMISSIONSOURCE` and `EMISSIONSOURCELIST` objects must be
   declared before the `BEAM` command.
+opalx-end
 NSLICE::
   The number of slices per bunch
 MOMENTUMTOLERANCE::
