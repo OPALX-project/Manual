@@ -127,8 +127,13 @@ AUTOPHASE::
 BEAMHALOBOUNDARY::
   Defines in terms of sigma where the halo starts. Only used in _OPAL-cycl_.
   Its default value is 0.0.
+opalx-begin
+BOUNDPDESTROY::
+opalx-end
+opal-begin
 BOUNDPDESTROYFQ::
-  The frequency to delete particles which are too far away from the
+opal-end
+The frequency to delete particles which are too far away from the
   center of beam. Only used in _OPAL-cycl_. Its default value is 10.
 CLOTUNEONLY::
   If set to true, stop after closed orbit finder and tune calculation.
