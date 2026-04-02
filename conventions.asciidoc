@@ -56,6 +56,18 @@ latexmath:[\mathrm{eV}] (see link:distribution#sec.distribution.unitsdistattribu
 |RF power |latexmath:[\mathrm{MW}] (Megawatts)
 |=======================================================================
 
+opalx-begin
+
+For the _OPALX_ `LASER` element, the analytic pulse attributes use SI units:
+
+* `WAVELENGTH` in m
+* `PULSEENERGY` in J
+* `PULSELENGTH` in s
+* `WAISTX` and `WAISTY` in m
+* `DIR` and `STOKES` are dimensionless 3-vectors
+
+opalx-end
+
 
 [[sec.conventions.symbols-used]]
 === Symbols used

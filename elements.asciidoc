@@ -183,6 +183,65 @@ reference system for a drift space is a Cartesian coordinate system. This
 is a restricted feature of _OPAL-t_. In _OPAL-t_ drifts are implicitly
 given, if no field is present.
 
+opalx-begin
+[[sec.elements.laser]]
+=== Laser
+
+----
+label: LASER, L=real, ELEMEDGE=real,
+       WAVELENGTH=real, PULSEENERGY=real, PULSELENGTH=real,
+       WAISTX=real, WAISTY=real, DIR=real-vector, STOKES=real-vector;
+----
+
+The `LASER` element defines a passive analytic laser pulse for _OPALX_.
+At this stage it is an input object with validated pulse parameters and
+lattice placement, but it does not yet apply laser-particle physics by
+itself.
+
+The required attributes are:
+
+WAVELENGTH::
+  Laser wavelength in m. Must be greater than zero.
+PULSEENERGY::
+  Total pulse energy in J. Must be greater than zero.
+PULSELENGTH::
+  Pulse duration in s. Must be greater than zero.
+WAISTX::
+  Horizontal waist in m. Must be greater than zero.
+WAISTY::
+  Vertical waist in m. Must be greater than zero.
+DIR::
+  Propagation direction as a 3-component vector. The vector must be non-zero.
+  _OPALX_ normalizes it internally.
+STOKES::
+  Optional normalized Stokes vector `{xi1, xi2, xi3}`. If omitted,
+  `{0, 0, 0}` is used. The vector must contain exactly three entries and must
+  satisfy latexmath:[\xi_1^2 + \xi_2^2 + \xi_3^2 \le 1].
+
+`L` and `ELEMEDGE` use the common element semantics described in
+<<sec.elements.common>>. `L` defaults to zero, so a `LASER` can initially be
+used as a placed marker-like interaction object until dedicated laser
+interaction elements are introduced.
+
+This `LASER` element is distinct from the photoinjector drive-laser settings
+described in Chapter link:distribution#chp.distribution[Distribution]. In
+particular, attributes such as `LASERPROFFN` and `ELASER` belong to source
+generation models and not to the _OPALX_ beamline `LASER` element.
+
+Example:
+
+----
+LASL: LASER,
+      WAVELENGTH = 1.03e-6,
+      PULSEENERGY = 1.0,
+      PULSELENGTH = 2.0e-12,
+      WAISTX = 5.0e-6,
+      WAISTY = 5.0e-6,
+      DIR = {0, 0, -1},
+      STOKES = {0, 0, 1};
+----
+opalx-end
+
 [[sec.elements.bend]]
 === Bending Magnets
 opal-begin
