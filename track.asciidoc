@@ -80,6 +80,9 @@ In the current Part 1 multiple-species implementation, _OPALX_ accepts
 multiple beams on `TRACK` and allocates one particle container per beam during
 initialisation. Full multi-container tracking and field-solver coupling are
 still under development.
++
+`PARTICLE=PHOTON` beams are currently rejected by `TRACK`. Photon transport is
+reserved for a later OPALX step.
 opalx-end
 T0::
   The initial time [s] of the simulation, its default value is 0.
