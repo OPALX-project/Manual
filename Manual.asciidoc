@@ -119,14 +119,15 @@ ifdef::env-gitlab[]
 . {link_manual_src}/partmatter.{asciidoc}[Physics Models Used in the Particle Matter Interaction Model]
 . {link_manual_src}/optimiser.{asciidoc}[Multi Objective Optimization]
 . {link_manual_src}/sampler.{asciidoc}[Sampler]
-. {link_manual_src}/fieldmaps.{asciidoc}[OPAL-T Field Maps]
 
 .Appendices
 [upperalpha]
+. {link_manual_src}/fieldmaps.{asciidoc}[OPAL-T Field Maps]
 . {link_manual_src}/syntax.{asciidoc}[OPAL Language Syntax]
 . {link_manual_src}/opal-madx.{asciidoc}[OPAL-MADX Conversion Guide]
 . {link_manual_src}/autophase.{asciidoc}[Auto-phasing Algorithm]
 . {link_manual_src}/benchmarks.{asciidoc}[Benchmarks]
+. {link_manual_src}/ics_gg_design_note.{asciidoc}[OPALX Design Note: Laser--Electron ICS and gamma-gamma Collision Physics]
 endif::[]
 
 ifdef::backend-docbook5,backend-html5[]
@@ -159,6 +160,8 @@ include::syntax.asciidoc[]
 include::opal-madx.asciidoc[]
 include::autophase.asciidoc[]
 include::benchmarks.asciidoc[]
+[appendix]
+include::ics_gg_design_note.asciidoc[leveloffset=+1]
 endif::[]
 
 // EOF

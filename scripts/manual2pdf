@@ -25,11 +25,11 @@ sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
 "${mydir}/fix_latexmath" || exit 3
 
 if [[ "${create_tex_output}" == "no" ]]; then
-	asciidoctor -b docbook5 -d book "${input_fname}" || exit 1
+	asciidoctor -r ./extensions/feature_blocks.rb -b docbook5 -d book "${input_fname}" || exit 1
 	#dblatex --texstyle="${texstyle}" -V -P "table.default.position=[hp]" -t pdf "${xml_fname}" || exit 2
 	dblatex -V -P "table.default.position=[hp]" -t pdf "${xml_fname}" || exit 2
 else
-	asciidoctor -v -b docbook5 -d book "${input_fname}" || exit 1
+	asciidoctor -r ./extensions/feature_blocks.rb -v -b docbook5 -d book "${input_fname}" || exit 1
 	dblatex --texstyle="${texstyle}" -V -P "table.default.position=[H]" -t tex "${xml_fname}" || exit 2
 	pdflatex "${tex_fname}" || exit 3
 	pdflatex "${tex_fname}" || exit 4

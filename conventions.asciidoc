@@ -40,6 +40,10 @@ input file, as is specified in their corresponding description in the Manual.
 |Particle energy |latexmath:[\mathrm{MeV}] or
 latexmath:[\mathrm{eV}]
 
+opalx-begin
+|Photon beam `BEAM::ENERGY` |latexmath:[\mathrm{eV}] (`PARTICLE=PHOTON`, CAIN-compatible)
+opalx-end
+
 |Particle mass |latexmath:[\mathrm{MeV c^{-2}}]
 
 |Particle momentum |latexmath:[\mathrm{\beta\gamma}] or
@@ -57,7 +61,6 @@ latexmath:[\mathrm{eV}] (see link:distribution#sec.distribution.unitsdistattribu
 |=======================================================================
 
 opalx-begin
-
 For the _OPALX_ `LASER` element, the analytic pulse attributes use SI units:
 
 * `WAVELENGTH` in m
@@ -66,6 +69,12 @@ For the _OPALX_ `LASER` element, the analytic pulse attributes use SI units:
 * `WAISTX` and `WAISTY` in m
 * `DIR` and `STOKES` are dimensionless 3-vectors
 
+=======
+For charged-particle beams, the `BEAM` command keeps the existing _OPAL(X)_
+convention: `ENERGY` is specified in `GeV`.
+
+For `BEAM, PARTICLE=PHOTON`, _OPALX_ follows the CAIN convention instead:
+the beam reference energy is specified in `eV`, matching CAIN's `E0`.
 opalx-end
 
 

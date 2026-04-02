@@ -14,12 +14,15 @@ include::stylesheets/Toggle[]
 === Track Mode
 
 Before starting to track, a link:lines#chp.lines[`LINE`] and a
-link:beam-command#chp.beam-command[`BEAM`] must be selected. In _OPALX_, a
-single beam can be selected with `BEAM`, or multiple beams can be selected with
-`BEAMS`. The time step (`DT`) and the maximal steps to track (`MAXSTEPS`) or
-`ZSTOP` should be set. This command causes _OPAL_ to enter "tracking mode", in
-which it accepts only the track commands (see <<tab_TRACK_Commands>>). In order
-to perform several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
+link:beam-command#chp.beam-command[`BEAM`] must be selected.
+opalx-begin
+In _OPALX_, a single beam can be selected with `BEAM`, or multiple beams can be selected with
+`BEAMS`.
+opalx-end
+The time step (`DT`) and the maximal steps to track (`MAXSTEPS`) or `ZSTOP`
+should be set. This command causes _OPAL_ to enter "tracking mode", in which it
+accepts only the track commands (see <<tab_TRACK_Commands>>). In order to
+perform several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 `ZSTOP`. This can be used to change the time step manually.
 
 
@@ -33,8 +36,9 @@ to perform several tracks, specify arrays of parameter in `DT`, `MAXSTEPS` and
 |`LINE`           | Label of `LINE` or `SEQUENCE`
 
 |`BEAM`           | Label of `BEAM`
-
+opalx-begin
 |`BEAMS`          | Array of `BEAM` labels (_OPALX_)
+opalx-end
 
 |`T0`             | Initial time [s]
 
@@ -66,6 +70,7 @@ LINE::
 BEAM::
   The named `BEAM` command defines the particle mass, charge and
   reference momentum (default: `UNNAMED_BEAM`).
+opalx-begin
 BEAMS::
   _OPALX_ array of `BEAM` labels. If `BEAMS` is present it takes precedence
   over `BEAM`. `BEAM` remains valid for single-beam inputs and backward
@@ -75,6 +80,10 @@ In the current Part 1 multiple-species implementation, _OPALX_ accepts
 multiple beams on `TRACK` and allocates one particle container per beam during
 initialisation. Full multi-container tracking and field-solver coupling are
 still under development.
++
+`PARTICLE=PHOTON` beams are currently rejected by `TRACK`. Photon transport is
+reserved for a later OPALX step.
+opalx-end
 T0::
   The initial time [s] of the simulation, its default value is 0.
 DT::
@@ -215,9 +224,10 @@ DISTRIBUTION::
   The particle distribution to be used (see Chapter link:distribution#chp.distribution[Distribution]).
 BEAM::
   In _OPAL_, the particle beam (see Chapter link:beam-command#chp.beam-command[Beam Command]) to be used is specified here.
-+
+opalx-begin
 In _OPALX_, `RUN` no longer accepts a `BEAM` attribute. Beam selection is taken
 from the enclosing `TRACK` command through `BEAM` or `BEAMS`.
+opalx-end
 TURNS::
   The number of turns (integer) to be tracked (default: 1, namely single bunch).
 +
