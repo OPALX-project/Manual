@@ -183,10 +183,10 @@ reference system for a drift space is a Cartesian coordinate system. This
 is a restricted feature of _OPAL-t_. In _OPAL-t_ drifts are implicitly
 given, if no field is present.
 
-opalx-begin
+
 [[sec.elements.laser]]
 === Laser
-
+opalx-begin
 ----
 label: LASER, L=real, ELEMEDGE=real,
        WAVELENGTH=real, PULSEENERGY=real, PULSELENGTH=real,
