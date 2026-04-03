@@ -69,7 +69,6 @@ For the _OPALX_ `LASER` element, the analytic pulse attributes use SI units:
 * `WAISTX` and `WAISTY` in m
 * `DIR` and `STOKES` are dimensionless 3-vectors
 
-=======
 For charged-particle beams, the `BEAM` command keeps the existing _OPAL(X)_
 convention: `ENERGY` is specified in `GeV`.
 
