@@ -2058,21 +2058,24 @@ and its parameters.
 image::./figures/cyclotron/Cavity.png[scaledwidth=12cm,width=70%]
 
 [[sec.elements.variable-rf-cavity-cycl]]
-[.feature-opal]
+
 === RF Cavities with Time Dependent Parameters
 The `VARIABLE_RF_CAVITY` element can be used to define RF Cavities with
-Time Dependent Parameters in _OPAL-cycl_ mode. Variable RF Cavities must
+Time Dependent Parameters.
+
+[.feature-opal]
+In _OPAL-cycl_ mode, variable RF Cavities must
 be placed using the `RingDefinition` element.
 
 FREQUENCY_MODEL::
   String naming the time dependence model of the cavity frequency,
-  latexmath:[f] [MHz].
+  latexmath:[f(t)] [MHz].
 AMPLITUDE_MODEL::
   String naming the time dependence model of the cavity amplitude,
-  latexmath:[E_0] [MV/m].
+  latexmath:[a(t)] [MV/m].
 PHASE_MODEL::
   String naming the time dependence model of the cavity phase offset,
-  latexmath:[\phi] [rad].
+  latexmath:[\phi(t)] [rad].
 WIDTH::
   Full width of the cavity [m].
 HEIGHT::
@@ -2083,7 +2086,7 @@ L::
 The field inside the cavity is given by
 [latexmath]
 ++++
-\mathbf{E} = \big(0, 0, E_0(t)\sin[2\pi f(t) t+\phi(t)]\big)
+E(t) = a(t)\,\sin\!\left(2\pi \int_0^t f(\tau)\,d\tau + \phi(t)\right)
 ++++
 with no field outside the cavity boundary. There is no magnetic field or
 transverse dependence on electric field.
@@ -2162,8 +2165,9 @@ PHASE_OFFSETS::
 DC_OFFSETS::
   The DC offset of the corresponding sine wave.  If the array is shorter
   than the frequencies array, the default value of 0.0 is used for the 
-  missing entries.  If the array is longer, extra values are ignored.     
+  missing entries.  If the array is longer, extra values are ignored.
 
+[.feature-opal]
 [[sec.elements.variable-rf-cavity-fringe-field]]
 ==== Fringe Field
 It is possible to model a soft-edged RF cavity with time dependent parameters using the `VARIABLE_RF_CAVITY_FRINGE_FIELD` element. This will place a full cavity including the field body and fringe fields.  `VARIABLE_RF_CAVITY_FRINGE_FIELD` must be placed using the `RingDefinition` element.
