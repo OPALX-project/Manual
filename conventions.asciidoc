@@ -47,7 +47,7 @@ opalx-end
 |Particle mass |latexmath:[\mathrm{MeV c^{-2}}]
 
 |Particle momentum |latexmath:[\mathrm{\beta\gamma}] or
-latexmath:[\mathrm{eV}] (see link:distribution#sec.distribution.unitsdistattributes[Units])
+latexmath:[\mathrm{eV}] (see <<sec.distribution.unitsdistattributes,Units>>)
 
 |Beam current |latexmath:[\mathrm{A}] (Amperes)
 

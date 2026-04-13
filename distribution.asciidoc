@@ -33,7 +33,7 @@ distribution(s).
 |=======================================================================
 
 The distribution command is used to introduce particles into an _OPAL_
-simulation. Like other _OPAL_ commands (see Chapter link:format#chp.format[Command Format]),
+simulation. Like other _OPAL_ commands (see Chapter <<chp.format,Command Format>>),
 the distribution command is of the form:
 
 ----
@@ -61,7 +61,7 @@ value for it does no harm. That attribute just gets ignored.)
 === Units
 
 The internal units used by _OPAL-t_ and _OPAL-cycl_ are described in
-link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec.opalcycl.variables[_OPAL-cycl_ variables].
+<<sec.opalt.variablesopalt,_OPAL-t_ variables>> and <<sec.opalcycl.variables,_OPAL-cycl_ variables>>.
 When defining a
 distribution, both _OPAL-t_ and _OPAL-cycl_ use meters for length and
 seconds for time. However, there are different options for the units
@@ -78,7 +78,7 @@ used to input the momentum. This is controlled with the
 input momentum (latexmath:[p_{x}], latexmath:[p_{y}],
 latexmath:[p_{z}]). Momentum is given as
 latexmath:[\beta_{x} \gamma], latexmath:[\beta_{y} \gamma] and
-latexmath:[\beta_{z} \gamma], as in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables].
+latexmath:[\beta_{z} \gamma], as in <<sec.opalt.variablesopalt,_OPAL-t_ variables>>.
 
 |`INPUTMOUNITS` |`EVOVERC` (default for _OPAL-cycl_) |Use the units eV/c for
 the input momentum (latexmath:[p_{x}], latexmath:[p_{y}],
@@ -131,7 +131,7 @@ distribution.
 | `EMITTED` | `FALSE` (default) | The distribution is injected into the
 simulation in its entirety at the start of the simulation. The particle
 coordinates for an injected distribution are defined as in
-link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec.opalcycl.variables[_OPAL-cycl_ variables].
+<<sec.opalt.variablesopalt,_OPAL-t_ variables>> and <<sec.opalcycl.variables,_OPAL-cycl_ variables>>.
 Note that in _OPAL-t_ the
 entire distribution will automatically be shifted to ensure that the
 latexmath:[z] coordinate will be greater than zero for all particles.
@@ -139,7 +139,7 @@ latexmath:[z] coordinate will be greater than zero for all particles.
 |`EMITTED` |`TRUE` |The distribution is emitted into the simulation over
 time as the simulation progresses. Currently only _OPAL-t_ supports this
 type of distribution. In this case, the longitudinal coordinate, as
-defined by link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables], is given in seconds instead of
+defined by <<sec.opalt.variablesopalt,_OPAL-t_ variables>>, is given in seconds instead of
 meters. Early times are emitted first.
 |=======================================================================
 
@@ -167,7 +167,7 @@ list (see <<sec.distribution.distlist>>).
 
 |`NBIN` |0 |None |The distribution (beam) will be broken up into `NBIN`
 energy bins. This has consequences for the space charge solver
-(see link:fieldsolvers#sec.fieldsolvers.FSENBINS[Energy Bins]).
+(see <<sec.fieldsolvers.FSENBINS,Energy Bins>>).
 
 |`SBIN` |100| None| Number of sample bins to use per energy bin.
 
@@ -304,8 +304,8 @@ Name:DISTRIBUTION, TYPE=FROMFILE,
 The text input file for the `FROMFILE` distribution type has a
 slightly different format, depending on whether the distribution is to
 be _injected_ or _emitted_. The _injected_ file format is defined in
-<<tab_fromfileinjfileformat>>. The particle coordinates are defined in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] and link:opalcycl#sec.opalcycl.variables[_OPAL-cycl_ variables]. The _emitted_ file format is defined in
-<<tab_fromfileemitfileformat>>. The particle coordinates are defined in link:opalt#sec.opalt.variablesopalt[_OPAL-t_ variables] except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
+<<tab_fromfileinjfileformat>>. The particle coordinates are defined in <<sec.opalt.variablesopalt,_OPAL-t_ variables>> and <<sec.opalcycl.variables,_OPAL-cycl_ variables>>. The _emitted_ file format is defined in
+<<tab_fromfileemitfileformat>>. The particle coordinates are defined in <<sec.opalt.variablesopalt,_OPAL-t_ variables>> except that latexmath:[z], in meters, is replaced by latexmath:[t] in seconds.
 [cols="<,<,<,<,<,<",]
 
 .File format for _injected_ `FROMFILE` distribution type. N is the number of particles in the file. 
@@ -349,18 +349,18 @@ of `NONE` for the `EMISSIONMODEL` (which is the default) can be defined
 so as not to affect the distribution coordinates at all.
 
 To maintain consistency, latexmath:[N] and `NPART` from the `BEAM` command
-(see Chapter link:beam-command#chp.beam-command[Beam Command]) must be equal.
+(see Chapter <<chp.beam-command,Beam Command>>) must be equal.
 In the same way, when using a `FROMFILE` type distribution, the average
 momentum of the distribution must coincide with the momentum specified in the
 `BEAM` command by means of `GAMMA`, `ENERGY` or `PC` attributes
-(see Section link:beam-command#sec.beam-command.beam-energy[Beam Energy]),
+(see Section <<sec.beam-command.beam-energy,Beam Energy>>),
 according to the parameter `MOMENTUMTOLERANCE`.
 In _OPAL-t_, the given momentum in the `BEAM` command must coincide with the
 z-component of the momentum of the particle distribution in the file.
 On the other hand, in _OPAL-cycl_ the given momentum must coincide with the
 total momentum of the particle distribution, taking into account that the
 initial distribution in _OPAL-cycl_ is always specified in the
-link:opalcycl#sec.opalcycl.localframe[local reference frame].
+<<sec.opalcycl.localframe,local reference frame>>.
 
 [[sec.distribution.gaussdisttype]]
 ==== `GAUSS` Distribution Type
@@ -1170,7 +1170,7 @@ Dist:DISTRIBUTION, TYPE = GAUSS,
 
 It is possible to use multiple distributions in the same simulation. We
 do this be using a distribution list in the `RUN` command
-(see Chapter link:track#chp.track[Tracking]). Assume we have defined
+(see Chapter <<chp.track,Tracking>>). Assume we have defined
 several distributions: `DIST1`, `DIST2` and `DIST3`. If we want to use
 just one of these distributions in a simulation, we would use the following
 `RUN` command to start the simulation:
@@ -1200,7 +1200,7 @@ will be forced to this same condition. If `DIST1` is to be _injected_,
 then all other distribution is the list will also be _injected_.
 
 The number of particles in the simulation is defined in the `BEAM`
-command see Chapter link:beam-command#chp.beam-command[Beam Command].
+command see Chapter <<chp.beam-command,Beam Command>>.
 The number of particles in each distribution in a distribution list is
 determined by this number and the `WEIGHT` attribute of each distribution
 (<<tab_distattruniversal>>). If all distributions have the same `WEIGHT`

@@ -26,9 +26,9 @@ where
 
 label::
   Is the name to be given to the element (in the example QF), it is an
-  identifier (see link:format#sec.format.label[Identifiers or Labels]).
+  identifier (see <<sec.format.label,Identifiers or Labels>>).
 keyword::
-  Is a keyword (see link:format#sec.format.label[Identifiers or Labels]),
+  Is a keyword (see <<sec.format.label,Identifiers or Labels>>),
   it is an element type keyword (in the example `QUADRUPOLE`),
 attribute::
   normally has the form
@@ -39,9 +39,9 @@ attribute-name=attribute-value
 attribute-name::
   selects the attribute from the list defined for the element type
   `keyword` (in the example `L` and `K1`). It must be an identifier
-  (see link:format#sec.format.label[Identifiers or Labels]).
+  (see <<sec.format.label,Identifiers or Labels>>).
 attribute-value::
-  gives it a value (see link:format#sec.format.attribute[Command Attribute Types])
+  gives it a value (see <<sec.format.attribute,Command Attribute Types>>)
   (in the example `1.8` and `0.015832`).
 
 Omitted attributes are assigned a default value, normally zero.
@@ -58,10 +58,10 @@ QF: QUADRUPOLE, L=1.8, K1=0.015832;
 The following attributes are allowed on all elements:
 
 TYPE::
-  A string value (see link:format#sec.format.astring[String Attributes]).
+  A string value (see <<sec.format.astring,String Attributes>>).
   It specifies an "engineering type" and can be used for element selection.
 APERTURE::
-  A string value (see link:format#sec.format.astring[String Attributes]) which
+  A string value (see <<sec.format.astring,String Attributes>>) which
   describes the element aperture. All but the last attribute of the aperture
   have units of meter, the last one is optional and is a positive real number.
   Possible choices are
@@ -149,11 +149,11 @@ WAKEF::
   Attach wakefield that was defined using the `WAKE` command.
 PARTICLEMATTERINTERACTION::
   Attach a handler for particle-matter interaction
-  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  (see Chapter <<chp.partmatter,Particle Matter Interaction>>).
 OUTFN::
   The file name into which the element should write the collected data.
   The user must only provide the output name without the extension. The 
-  extension will be set according to the link:control#sec.control.option[`OPTION`] 
+  extension will be set according to the <<sec.control.option,`OPTION`>> 
   statements. If this attribute is empty, the file will be named as the
   element label.
 DELETEONTRANSVERSEEXIT::
@@ -224,7 +224,7 @@ used as a placed marker-like interaction object until dedicated laser
 interaction elements are introduced.
 
 This `LASER` element is distinct from the photoinjector drive-laser settings
-described in Chapter link:distribution#chp.distribution[Distribution]. In
+described in Chapter <<chp.distribution,Distribution>>. In
 particular, attributes such as `LASERPROFFN` and `ELASER` belong to source
 generation models and not to the _OPALX_ beamline `LASER` element.
 
@@ -309,10 +309,10 @@ DESIGNENERGY::
   approximately the path shown in <<fig_rbend>>.
 FMAPFN::
   Name of the field map for the magnet. Currently maps of type
-  link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] can be used. The default option
+  <<sec.fieldmaps.1DProfile1,`1DProfile1`>> can be used. The default option
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
   (see <<sec.elements.benddefaultfieldmapopalt>>). The field map is used to
-  describe the fringe fields of the magnet (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]).
+  describe the fringe fields of the magnet (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>).
 opal-end
 [[sec.elements.RBend3D]]
 ==== RBend3D (_OPAL-t_)
@@ -355,10 +355,10 @@ DESIGNENERGY::
   approximately the path shown in <<fig_rbend>>.
 FMAPFN::
   Name of the field map for the magnet. Currently maps of type
-  link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] can be used. The default option
+  <<sec.fieldmaps.1DProfile1,`1DProfile1`>> can be used. The default option
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
   (see <<sec.elements.benddefaultfieldmapopalt>>). The field map is used to
-  describe the fringe fields of the magnet (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]).
+  describe the fringe fields of the magnet (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>).
 
 <<fig_sbend>> illustrates a general sector bend(`SBEND`) with a positive bend
 angle latexmath:[\alpha]. In this example the entrance and exit edge angles
@@ -416,10 +416,10 @@ DESIGNENERGY::
   travels approximately the path shown in <<fig_sbend>>.
 FMAPFN::
   Name of the field map for the magnet. Currently maps of type
-  link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] can be used. The default option
+  <<sec.fieldmaps.1DProfile1,`1DProfile1`>> can be used. The default option
   for this attribute is `FMAPN` = `1DPROFILE1-DEFAULT`
   (see <<sec.elements.benddefaultfieldmapopalt>>). The field map is used to
-  describe the fringe fields of the magnet (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]).
+  describe the fringe fields of the magnet (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>).
 opal-end
 [[sec.elements.RBendSBendExamp]]
 ==== RBend and SBend Examples (_OPAL-t_)
@@ -457,7 +457,7 @@ For the rest of this section, we will give several examples of how to
 input bends in an _OPAL-t_ simulation. We will start with a simple
 example using the `ANGLE` attribute to set the bend strength and using
 the default field map (see <<sec.elements.benddefaultfieldmapopalt>>) for
-describing the magnet fringe fields (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]):
+describing the magnet fringe fields (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>):
 
 ----
 Bend: RBEND, ANGLE = 30.0 * Pi / 180.0,
@@ -474,7 +474,7 @@ vertical gap of 2 cm and a 0latexmath:[^{\circ}] entrance edge angle.
 (Therefore the exit edge angle is 30latexmath:[^{\circ}].) We are
 using the default, internal field map "1DPROFILE1-DEFAULT"
 see <<sec.elements.benddefaultfieldmapopalt>> which describes the magnet fringe
-fields see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]. When _OPAL_
+fields see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>. When _OPAL_
 is run, you will get the following output (assuming an electron beam) for this
 `RBEND` definition:
 
@@ -520,7 +520,7 @@ about the various axes.
 Of course, in the actual simulation the particles will not see a hard
 edge bend magnet, but rather a soft edge magnet with fringe fields
 described by the `RBEND` field map file `FMAPFN`
-(see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]). So, once the
+(see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>). So, once the
 hard edge bend/reference trajectory is determined, _OPAL_ then includes the
 fringe fields in the calculation. When the user chooses to use the default
 field map, _OPAL_ will automatically adjust the position of the fringe fields
@@ -701,7 +701,7 @@ two bends are very similar in command format.)
 
 Up till now, we have only used the default field map. Custom field maps
 can also be used. There are two different options in this case
-see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]:
+see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>:
 
 1.  Field map defines fringe fields and magnet length.
 2.  Field map defines fringe fields only.
@@ -720,7 +720,7 @@ for each dipole of different length even if the fringe fields are the
 same.
 2.  We can adjust the position of the fringe field origin relative to
 the entrance and exit points of the magnet
-(see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`]).
+(see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>).
 This gives us another degree of freedom for describing the fringe
 fields, allowing us to adjust the effective length of the magnet.
 
@@ -906,7 +906,7 @@ file to:
   2.00000E+00
 ----
 
-We have moved the Enge function origins (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`])
+We have moved the Enge function origins (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>)
 outward from the entrance and exit faces of the magnet by 0.3026 mm. This has
 the effect of making the effective length of the soft edge magnet longer.
 When we do this, the same input:
@@ -973,7 +973,7 @@ regions:
 
 This can be seen clearly in <<fig_rbend_field_profile>>.
 
-The purpose of the `1DProfile1` field map (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`])
+The purpose of the `1DProfile1` field map (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>>)
 associated with the element is to define the Enge functions
 (<<eq-enge_func>>) that model the entrance and exit fringe fields.
 To model a particular bend magnet, one must fit the field profile along
@@ -1127,7 +1127,7 @@ Enge coefficients that fit the actual magnets that will be used in a
 given design.)
 
 The default field map is the equivalent of the following custom
-`1DProfile1` (see link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] for an
+`1DProfile1` (see <<sec.fieldmaps.1DProfile1,`1DProfile1`>> for an
 explanation of the field map format) map:
 
 ----
@@ -1343,22 +1343,22 @@ label: MULTIPOLE, TYPE=string, APERTURE=real-vector,
 ----
 
 KN::
-  A real vector (see link:format#sec.format.anarray[Arrays]), containing the
+  A real vector (see <<sec.format.anarray,Arrays>>), containing the
   normal multipole coefficients, latexmath:[K_n=\frac{\partial{^n} B_y}{\partial x^n}].
   (default is 0 latexmath:[\mathrm{Tm^{-n}}]). A component is positive, if
   latexmath:[B_y] is positive on the positive latexmath:[x]-axis.
 KS::
-  A real vector (see link:format#sec.format.anarray[Arrays]), containing the
+  A real vector (see <<sec.format.anarray,Arrays>>), containing the
   skew multipole coefficients,
   latexmath:[K_{n~s}=-\frac{\partial{^n}B_x}{\partial x^{n}}].
   (default is 0 latexmath:[\mathrm{Tm^{-n}}]). A component is negative, if
   latexmath:[B_x] is positive on the positive latexmath:[x]-axis.
 DKN::
-  A real vector (see link:format#sec.format.anarray[Arrays]), containing the
+  A real vector (see <<sec.format.anarray,Arrays>>), containing the
   normal normalised multipole strength errors
   (default is 0 latexmath:[\mathrm{Tm^{-n}}]).
 DKS::
-  A real vector (see link:format#sec.format.anarray[Arrays]), containing the
+  A real vector (see <<sec.format.anarray,Arrays>>), containing the
   skew normalised multipole strength errors (default is 0 latexmath:[\mathrm{Tm^{-n}}]).
 
 The number of poles of each component is (latexmath:[2 n + 2]).
@@ -1405,7 +1405,7 @@ L::
   of the fringe field curves. (Default:
   1 m)
 TP::
-  A real vector (see link:format#sec.format.anarray[Arrays]), containing the
+  A real vector (see <<sec.format.anarray,Arrays>>), containing the
   multipole coefficients of the field expansion on the mid-plane in the body
   of the magnet: the transverse profile
   latexmath:[ T(x) = B_0 + B_1 x + B_2 x^2 + \ldots ] is set by
@@ -1562,7 +1562,7 @@ TYPE::
   The data format of field map. Currently the following formats are
   implemented: `RING` (PSI format), `CARBONCYCL`, `CYCIAE`, `AVFEQ`, `FFA`
   and `BANDRF`. For   the details of their data format, please read
-  link:opalcycl#sec.opalcycl.fieldmap[Field Maps].
+  <<sec.opalcycl.fieldmap,Field Maps>>.
 CYHARMON::
   The harmonic number of the cyclotron latexmath:[h].
 RFFREQ::
@@ -1577,10 +1577,10 @@ SYMMETRY::
   Defines symmetrical fold number of the B field map data.
 GEOMETRY::
   Defines the boundary geometry in order to use it for
-  particle termination (see Chapter link:geometry#chp.geometry[Geometry]).
+  particle termination (see Chapter <<chp.geometry,Geometry>>).
   The particles hitting on the `GEOMETRY` will be deleted, and they are
   recorded in the HDF5 file _<GEOM>.h5_
-  (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+  (or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 FMLOWE::
   Minimal energy [GeV] the fieldmap can accept. Used in `GAUSSMATCHED` distribution.
 FMHIGHE::
@@ -1609,8 +1609,8 @@ MAXR::
 During the tracking, the particle (latexmath:[r, z, \theta]) will be
 deleted if `MINZ` latexmath:[< z <] `MAXZ` or `MINR` latexmath:[< r <]
 `MAXR`, and it will be recorded in the HDF5 file _OUTFN.h5_
-or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true
-(see link:elements#sec.elements.common[Common Attributes]).
+or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true
+(see <<sec.elements.common,Common Attributes>>).
 Example:
 
 ----
@@ -1939,7 +1939,7 @@ This is needed to place the elements in three-dimensional space.  Its second
 purpose is to delete impacting particles that are propagating in reverse
 direction. This function is optional and can be controlled with the parameter 
 `TRANSPARENT`. The particles hitting on the source are recorded in the `OUTFN`
-file (see link:elements#sec.elements.common[Common Attributes]). The `SOURCE`
+file (see <<sec.elements.common,Common Attributes>>). The `SOURCE`
 element only works in _OPAL-t_.
 
 TRANSPARENT::
@@ -1965,7 +1965,7 @@ LAG::
   The phase lag [rad] (default: 0). In _OPAL-t_ this phase is in general
   relative to the phase at which the reference particle gains the most
   energy. This phase is determined using an auto-phasing algorithm
-  (see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]).
+  (see Appendix <<appendix.autophasing,Auto-phasing Algorithm>>).
   This auto-phasing algorithm can be switched off, see `APVETO`.
 DLAG::
   The phase lag error [rad] (default: 0).
@@ -2019,7 +2019,7 @@ parameters are defined:
 FMAPFN::
   Name of file which stores normalized voltage amplitude curve
   of cavity gap in ASCII format. (See data format in
-  link:opalcycl#sec.opalcycl.rffieldmap[RF field])
+  <<sec.opalcycl.rffieldmap,RF field>>)
 VOLT::
   Peak value of voltage amplitude curve [MV].
 TYPE::
@@ -2296,7 +2296,7 @@ LAG::
   The phase lag [rad] (default: 0). In _OPAL-t_ this phase is in general
   relative to the phase at which the reference particle gains the most
   energy. This phase is determined using an auto-phasing algorithm
-  (see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]). This auto-phasing algorithm can be
+  (see Appendix <<appendix.autophasing,Auto-phasing Algorithm>>). This auto-phasing algorithm can be
   switched off, see `APVETO`.
 DLAG::
   The phase lag error [rad] (default: 0).
@@ -2317,7 +2317,7 @@ MODE::
   structure.
 FAST::
   If FAST is true and the provided field map is in 1D then a 2D field
-  map is constructed from the 1D on-axis field, see link:fieldmaps#sec.fieldmaps.type_and_format[Fieldmaps Types and Format].
+  map is constructed from the 1D on-axis field, see <<sec.fieldmaps.type_and_format,Fieldmaps Types and Format>>.
   To track the particles the field values are interpolated from this map
   instead of using an FFT based algorithm for each particle and each
   step. (default: FALSE)
@@ -2352,7 +2352,7 @@ from the current position and momentum one step before they would passe
 the monitor.
 
 The attribute `OUTFN` defines the file into which the monitor should write
-the collected data (see link:elements#sec.elements.common[Common Attributes]).
+the collected data (see <<sec.elements.common,Common Attributes>>).
 The file is an H5hut file.
 
 If the attribute `TYPE` is set to `TEMPORAL` then the data of all
@@ -2393,13 +2393,13 @@ Each type has the following general attributes
 OUTFN::
   The file name into which the collimator should write the collected data.
   If this attribute is empty, the file will be named as the element label.
-  The file is an H5hut file (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+  The file is an H5hut file (or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
-  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  (see Chapter <<chp.partmatter,Particle Matter Interaction>>).
   `TYPE=SCATTERING` must be selected to include scattering interactions
   and energy loss calculation through the `MATERIAL` definition
-  (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
+  (see <<sec.partmatter.available-materials-in-opal,Available Materials in _OPAL_>>).
   If this is not set, the particle-matter interaction module will
   not be activated. Then, the particle hitting the collimator will be recorded
   and directly deleted from the simulation.
@@ -2643,7 +2643,7 @@ cma2: CCOLLIMATOR, XSTART=x3, XEND=x4, YSTART=y3, YEND=y4,
 ----
 
 The particles lost on the `CCOLLIMATOR` are recorded in the HDF5 file
-_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 
 [[sec.elements.septum-opal-cycl]]
 === Septum (_OPAL-cycl_)
@@ -2676,13 +2676,13 @@ eec2: SEPTUM, XSTART=4100.0, XEND=4300.0,
 ----
 
 The particles lost on the SEPTUM are recorded in the HDF5 file
-_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 
 [[sec.elements.probe-opal-cycl]]
 === Probe (_OPAL-cycl_)
 opal-begin
 The particles hitting on the probe are recorded in the `OUTFN` file
-(see link:elements#sec.elements.common[Common Attributes]).
+(see <<sec.elements.common,Common Attributes>>).
 There are 5 parameters to describe a probe.
 
 XSTART::
@@ -2709,7 +2709,7 @@ prob1: PROBE, XSTART=4166.16, XEND=4250.0,
 ----
 
 The particles probed on the PROBE are recorded in the HDF5 file
-_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 Please note that these particles are not deleted
 in the simulation, however, they are recorded in the "loss" file.
 
@@ -2727,7 +2727,7 @@ opal-begin
 The output plane element is similar to the Probe element.
 Information about particles that pass through the plane is
 recorded in the file specified by the 'OUTFN' attribute.
-(see link:elements#sec.elements.common[Common Attributes]).
+(see <<sec.elements.common,Common Attributes>>).
 The location of the plane can be specified in one of two ways
 indicated by the 'PLACEMENT_STYLE' attribute.
 The style 'PROBE' defines the plane with horizontal
@@ -2787,7 +2787,7 @@ opal-end
 opal-begin
 A stripper element strip the electron(s) from a particle. The particle
 hitting the stripper is recorded in the `OUTFN` file
-(see link:elements#sec.elements.common[Common Attributes]), which contains
+(see <<sec.elements.common,Common Attributes>>), which contains
 the time, coordinates and momentum of the particle at the moment it hit
 the stripper. The charge and mass are changed. It has the same geometry as
 the PROBE element. Please note that the stripping physics is not
@@ -2827,7 +2827,7 @@ prob1: STRIPPER, XSTARTt=4166.16, XEND=4250.0,
 
 No matter what the value of `STOP` is, the particles hitting on the
 `STRIPPER` are recorded in the HDF5 file
-_OUTFN.h5_ (or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+_OUTFN.h5_ (or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 opal-end
 
 [[sec.elements.degrader-opal-t]]
@@ -2836,7 +2836,7 @@ opal-begin
 
 Elliptical degrader with an overall length `L`. The particles
 lost on a degrader are recorded in the `OUTFN` file
-(see link:elements#sec.elements.common[Common Attributes]).
+(see <<sec.elements.common,Common Attributes>>).
 
 XSIZE::
   Horizontal axis of the transverse elliptical shape [m] (default: 1e6).
@@ -2844,10 +2844,10 @@ YSIZE::
   Vertical axis of the transverse elliptical shape [m] (default: 1e6).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
-  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  (see Chapter <<chp.partmatter,Particle Matter Interaction>>).
   `TYPE=SCATTERING` must be selected to include scattering interactions
   and energy loss calculation through the `MATERIAL` definition
-  (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
+  (see <<sec.partmatter.available-materials-in-opal,Available Materials in _OPAL_>>).
   If this is not set, the particle-matter interaction module will
   not be activated. The particle hitting degrader will be recorded
   and directly deleted from the simulation.
@@ -2939,9 +2939,9 @@ the charge and mass.
 
 In _OPAL-cycl_ the vacuum region is defined according to the cyclotron
 boundaries (`MINZ`, `MAXZ`, `MINR` and `MAXR`,
-see link:elements#sec.elements.cyclotron[`CYCLOTRON` element]), whereas
+see <<sec.elements.cyclotron,`CYCLOTRON` element>>), whereas
 in _OPAL-t_ is described by `L` and `ELEMEDGE` parameters
-(see link:elements#sec.elements.common[Common Attributes]).
+(see <<sec.elements.common,Common Attributes>>).
 
 There are 7 specific parameters to describe the vacuum space.
 
@@ -2969,7 +2969,7 @@ STOP::
   (default: true).
 PARTICLEMATTERINTERACTION::
   `PARTICLEMATTERINTERACTION` is an attribute of the element
-  (see Chapter link:partmatter#chp.partmatter[Particle Matter Interaction]).
+  (see Chapter <<chp.partmatter,Particle Matter Interaction>>).
   `TYPE=BEAMSTRIPPING` must be selected to include stripping interactions
   with the residual gas and Lorentz stripping.
 
@@ -2983,7 +2983,7 @@ vac: VACUUM, PRESSURE=1E-8, TEMPERATURE=300,
 ----
 
 No matter what the value of STOP is, the particles stripped are recorded in the HDF5 file
-(or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+(or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 opal-end
 
 [[sec.elements.undulator-opal-t]]
@@ -3096,7 +3096,7 @@ ip1: BEAMBEAM, ELEMEDGE = 44.0, L = 0.1, VISUALIZE = TRUE;
 
 As soon as the head of the physical bunch enters the interaction window,
 _OPALX_ switches to the collision model described in
-Chapter link:collisions#chp.collisions[Physics Models Used in Modelling Collisions].
+Chapter <<chp.collisions,Physics Models Used in Modelling Collisions>>.
 The current implementation uses one real tracked bunch and one virtual mirrored bunch.
 
 L::

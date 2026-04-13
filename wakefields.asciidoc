@@ -191,10 +191,10 @@ constant
 WAKE::
   Define the Wakefield to be used. The `WAKE` command defines data for a wake
   function on an element
-  (see link:elements#sec.elements.common[Common Attributes for all Elements]).
+  (see <<sec.elements.common,Common Attributes for all Elements>>).
 TYPE::
   Define the wakefield type. A string value
-  (see link:format#sec.format.astring[String Attributes]) to specify the wake
+  (see <<sec.format.astring,String Attributes>>) to specify the wake
   function, either `1D-CSR`, `1D-CSR-IGF`, `LONG-SHORT-RANGE` or
   `TRANSV-SHORT-RANGE`.
 NBIN::

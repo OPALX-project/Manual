@@ -12,7 +12,7 @@ ifdef::backend-docbook5,backend-html5[]
 endif::[]
 
 ifdef::backend-html5[]
-:imagesdir: ..
+:imagesdir: .
 endif::[]
 
 ifdef::env-gitlab[]
@@ -38,7 +38,9 @@ ifdef::backend-html5[]
 '''
 endif::[]
 
-include::stylesheets/Toggle[]
+ifdef::backend-html5[]
+include::stylesheets/ToggleUI[]
+endif::[]
 
 :sectnums!:
 == Preliminary note

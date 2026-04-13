@@ -45,17 +45,17 @@ X::
   Horizontal position latexmath:[x] of a particle relative to the axis
   of the element [m].
 PX::
-  latexmath:[\beta_x\gamma] Horizontal canonical momentum [link:distribution#sec.distribution.unitsdistattributes[Units]].
+  latexmath:[\beta_x\gamma] Horizontal canonical momentum [<<sec.distribution.unitsdistattributes,Units>>].
 Y::
   Vertical position latexmath:[y] of a particle relative to the axis
   of the element [m].
 PY::
-  latexmath:[\beta_y\gamma] Vertical canonical momentum [link:distribution#sec.distribution.unitsdistattributes[Units]].
+  latexmath:[\beta_y\gamma] Vertical canonical momentum [<<sec.distribution.unitsdistattributes,Units>>].
 Z::
   Longitudinal position latexmath:[z] of a particle in floor
   co-ordinates [m].
 PZ::
-  latexmath:[\beta_z\gamma] Longitudinal canonical momentum [link:distribution#sec.distribution.unitsdistattributes[Units]].
+  latexmath:[\beta_z\gamma] Longitudinal canonical momentum [<<sec.distribution.unitsdistattributes,Units>>].
 
 The independent variable is *t* [s].
 
@@ -80,7 +80,7 @@ positions and momenta _OPAL-t_ uses the Boris-Buneman algorithm
 
 Since _OPAL_ version 2.0 of _OPAL_ elements can be placed in space using
 3D coordinates `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI`, see
-link:elements#sec.elements.common[Common Attributes for all Elements].
+<<sec.elements.common,Common Attributes for all Elements>>.
 The old notation using `ELEMEDGE` is still
 supported. _OPAL-t_ then computes the position in 3D using `ELEMDGE`,
 `ANGLE` and `DESIGNENERGY`. It assumes that the trajectory consists of
@@ -98,7 +98,7 @@ transverse extent was not defined for elements except when combined with
 2D or 3D field maps. An aperture had to be designed to give elements a
 limited extent in transverse direction since elements now can be placed
 freely in three-dimensional space.
-See link:elements#sec.elements.common[Common Attributes for all Elements]
+See <<sec.elements.common,Common Attributes for all Elements>>
 for how to define an aperture.
 
 [[sec.opalt.CoordinateSystems]]
@@ -211,7 +211,7 @@ where
 latexmath:[\mathbf{v}_0] corresponds to the origin of the `LINE` and
 latexmath:[\mathcal{W}_0] to its orientation. In _OPAL-t_ they can be
 defined using either `X`, `Y`, `Z`, `THETA`, `PHI` and `PSI` or `ORIGIN`
-and `ORIENTATION`, see link:lines#sec.lines.simple-beam-lines[Simple Beam Lines].
+and `ORIENTATION`, see <<sec.lines.simple-beam-lines,Simple Beam Lines>>.
 
 [[sec.opalt.space-charge-coordinate-system]]
 ==== Space Charge Coordinate System
@@ -276,7 +276,7 @@ that overlap with the field of a dipole.
 The `OrbitThreader` integrates a design particle through the lattice and
 setups up a multi map structure (`IndexMap`). Furthermore when the
 reference particle hits an rf-structure for the first time then it
-auto-phases the rf-structure, see Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm]. The multi map
+auto-phases the rf-structure, see Appendix <<appendix.autophasing,Auto-phasing Algorithm>>. The multi map
 structure speeds up the search for elements that influence the particles
 at a given position in 3D space by minimizing the looping over elements
 when integrating an ensemble of particles. For each time step,
@@ -322,7 +322,7 @@ This file is used to log the statistical properties of the bunch in the
 ASCII variant of the SDDS format <<bib.borland1995_opalt>>. It can be viewed
 with the SDDS Tools <<bib.borland2016>> or GNUPLOT. The frequency with
 which the statistics are computed and written to file can be controlled
-With the option `STATDUMPFREQ` (see link:control#sec.control.option[Option Statement]).
+With the option `STATDUMPFREQ` (see <<sec.control.option,Option Statement>>).
 The name of the output file is _<input_file_name >.stat_.
 The information that is stored are found in <<tab_opal_t_stat>>. Additionally,
 more statistical information about the beam can be saved. The option
@@ -431,7 +431,7 @@ in floor coordinate system
 
 |42 |partsOutside |1 |Number of particles outside
 latexmath:[n \times gma] of beam, where latexmath:[n] is controlled
-with `BEAMHALOBOUNDARY` (see link:control#sec.control.option[Option Statement])
+with `BEAMHALOBOUNDARY` (see <<sec.control.option,Option Statement>>)
 
 |43 |DebyeLength |m |Debye length in the boosted frame
 
@@ -799,7 +799,7 @@ The content of the columns are listed in the following table.
 === Multiple Species
 
 In the present version only one particle species can be defined
-see Chapter link:beam-command#chp.beam-command[Beam Command], however due to the underlying general structure, the
+see Chapter <<chp.beam-command,Beam Command>>, however due to the underlying general structure, the
 implementation of a true multi species version of _OPAL_ should be
 simple to accomplish.
 

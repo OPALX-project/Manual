@@ -55,7 +55,7 @@ OPAL > Finished reading startup file.
 ----
 
 One can exit from this session with the command
-`link:control#sec.control.stop[QUIT;]` (including the semicolon).
+`<<sec.control.stop,QUIT;>>` (including the semicolon).
 
 For batch runs _OPAL_ accepts the command line arguments shown in <<tab_CommandLineArg>>:
 
@@ -115,9 +115,9 @@ opal input.in --restartfn input.h5 --restart -1 --info 3
 === Auto-phase Example
 
 This is a partially complete example. First we have to set _OPAL_ in
-`AUTOPHASE` mode, as described in link:control#sec.control.option[Option Statement] and for example set
+`AUTOPHASE` mode, as described in <<sec.control.option,Option Statement>> and for example set
 the nominal phase to latexmath:[-3.5^{\circ}]). The way how _OPAL_ is
-computing the phases is explained in Appendix link:autophase#appendix.autophasing[Auto-phasing Algorithm].
+computing the phases is explained in Appendix <<appendix.autophasing,Auto-phasing Algorithm>>.
 
 ----
 Option, AUTOPHASE=4;
@@ -286,7 +286,7 @@ Injector II.
 [[sec.tutorial.oldtonewdist]]
 === Translate Old to New Distribution Commands
 
-As of _OPAL_ 1.2, the distribution command see Chapter link:distribution#chp.distribution[Distribution]
+As of _OPAL_ 1.2, the distribution command see Chapter <<chp.distribution,Distribution>>
 was changed significantly. Many of the changes were internal to the
 code, allowing us to more easily add new distribution command options.
 However, other changes were made to make creating a distribution easier,
@@ -315,8 +315,8 @@ errors in the calculation. (Or at least we hope not.)
 [[sec.tutorial.oldtonewdistgungaussandastra]]
 ==== `GUNGAUSSFLATTOPTH` and `ASTRAFLATTOPTH` Distribution Types
 
-The link:distribution#sec.distribution.gungaussflattopthdisttype[`GUNGAUSSFLATTOPTH`] and
-link:distribution#sec.distribution.astraflattopthdisttype[`ASTRAFLATTOPTH`] 
+The <<sec.distribution.gungaussflattopthdisttype,`GUNGAUSSFLATTOPTH`>> and
+<<sec.distribution.astraflattopthdisttype,`ASTRAFLATTOPTH`>> 
 distribution types are two
 common types previously implemented to simulate electron beams emitted
 from photocathodes in an electron photoinjector. These are no longer
@@ -339,14 +339,14 @@ simulation to behave the same as before.
 [[sec.tutorial.fromfile-gauss-and-binomial-distribution-types]]
 ==== `FROMFILE`, `GAUSS` and `BINOMIAL` Distribution Types
 
-The link:distribution#sec.distribution.fromfiledisttype[`FROMFILE`],
-link:distribution#sec.distribution.gaussdisttype[`GAUSS`] and
-link:distribution#sec.distribution.binomialdisttype[`BINOMIAL`]
+The <<sec.distribution.fromfiledisttype,`FROMFILE`>>,
+<<sec.distribution.gaussdisttype,`GAUSS`>> and
+<<sec.distribution.binomialdisttype,`BINOMIAL`>>
 distribution types have changed from
 previous versions of _OPAL_. However, legacy distribution commands
 should work as before as long as the momentum units are converted to
 the current convention
-(see section on link:distribution#sec.distribution.unitsdistattributes[`units`]).
+(see section on <<sec.distribution.unitsdistattributes,`units`>>).
 
 [[sec.tutorial.change-in-momentum-units]]
 ==== Change in Momentum Units
@@ -363,7 +363,7 @@ versions, the following formula can be used:
 P[{eV/c}]c = mc^2\sqrt{(\frac{P[{eV}]}{mc^2} + 1)^2 - 1}
 ++++
 and you will need to set the distribution attribute
-link:distribution#sec.distribution.unitsdistattributes[`INPUTMOUNITS`] to:
+<<sec.distribution.unitsdistattributes,`INPUTMOUNITS`>> to:
 
 ----
 INPUTMOUNITS = EVOVERC

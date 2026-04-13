@@ -49,7 +49,7 @@ is defined by means of `MASS` and `CHARGE` attributes specified by the user.
 
 PARTICLE:: The name of particles in the machine.
 +
-_OPAL_ knows the mass (see link:format#sec.format.symbolic-constants[Predefined Symbolic Constants])
+_OPAL_ knows the mass (see <<sec.format.symbolic-constants,Predefined Symbolic Constants>>)
 and the charge for the following particles:
 +
   ELECTRON;;

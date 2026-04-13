@@ -24,7 +24,7 @@ The main advantage in map tracking codes lies in the ''map'' itself. These do no
 
 [[sec.opalmap.variablesopalmap]]
 === Variables in _OPAL-map_
-For in and outputs, the units as in `link:opalt#sec.opalt.variablesopalt[Variables in OPAL-t]` are used.
+For in and outputs, the units as in `<<sec.opalt.variablesopalt,Variables in OPAL-t>>` are used.
 
 _OPAL-map_ uses an Frenet-Serret coordinate system, referring on a reference particle. This particle has the ideal properties, ergo follows the design path. The following canonical variables to describe the motion of particles. The physical units are listed in square brackets.
 
@@ -126,7 +126,7 @@ Just form the definition of the Taylor expansion, it can be seen that a finite, 
 \end{aligned}
 ++++
 
-In _OPAL-map_ the Hamiltonian gets Taylor expanded and its map derived (`link:opalmap#sec.opalmap.creationOfMap[Creation of Map]`) in the TPSA using the _OPAL_ DA package. The truncation length gets defined in `TRACK` setting the `MAP_ORDER` attribute.
+In _OPAL-map_ the Hamiltonian gets Taylor expanded and its map derived (`<<sec.opalmap.creationOfMap,Creation of Map>>`) in the TPSA using the _OPAL_ DA package. The truncation length gets defined in `TRACK` setting the `MAP_ORDER` attribute.
 ----
 TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
 ---- 
@@ -152,9 +152,9 @@ TRACK, LINE= QUADTEST, BEAM=BEAM1, MAXSTEPS=10000, DT=1.0e-10, ZSTOP=4.0, MAP_OR
 ==== Limitations
 _OPAL-map_ is the new flavour of _OPAL_ and currently just contains the fundamental beam line elements:
 
-* Drift (`link:opalt#sec.elements.drift[Drift]`),
-* Dipole (`link:opalt#sec.elements.SBend[Sbend]`),
-* Quadrupole (`link:opalt#sec.elements.quadrupole[Quadrupole]`)
+* Drift (`<<sec.elements.drift,Drift>>`),
+* Dipole (`<<sec.elements.SBend,Sbend>>`),
+* Quadrupole (`<<sec.elements.quadrupole,Quadrupole>>`)
 
 
 [[sec.opalmap.example]]
@@ -193,7 +193,7 @@ output (stdout) it also writes different files for various purposes.
 ==== Statistics output
 
 The file structure is analogous to
-link:opalt#sec.opalt.input_file_name-.stat[_OPAL-t_ Statistics output file].
+<<sec.opalt.input_file_name-.stat,_OPAL-t_ Statistics output file>>.
 
 
 [[sec.opalmap.datainput_file_name.dispersion]]

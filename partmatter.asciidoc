@@ -20,7 +20,7 @@ TYPE::
   by heavy charged particles and `BEAMSTRIPPING` for interactions
   with residual gas and Lorentz stripping.
 MATERIAL::
-  The material of the surface (see link:partmatter#sec.partmatter.available-materials-in-opal[Available Materials in _OPAL_]).
+  The material of the surface (see <<sec.partmatter.available-materials-in-opal,Available Materials in _OPAL_>>).
 ENABLERUTHERFORD::
   Switch to disable Rutherford scattering (default: true).
 LOWENERGYTHR::
@@ -60,7 +60,7 @@ T_{max}=\frac{2m_ec^2\beta^2\gamma^2}{1+2\gamma m_e/M+(m_e/M)^2},
 where latexmath:[M] is the incident particle mass.
 
 This expression is valid for energies from 600 keV to 10 GeV for 
-incident beams (see link:beam-command#sec.beam-command.particle-definition[`PARTICLE` definition])
+incident beams (see <<sec.beam-command.particle-definition,`PARTICLE` definition>>)
 of `PROTON`, `DEUTERON`, `MUON`, `HMINUS` and `H2P`;
 and also for `ALPHA` particles from 10 MeV to 1 GeV.
 
@@ -128,7 +128,7 @@ of coefficients of the empirical formulas are showed in <<tab_AZ_coeff>>.
 
 The particles lost due to excessive energy loss (final energy null
 or lower than `LOWENERGYTHR`) are recorded in a HDF5 file
-(or ASCII if link:control#sec.control.option[`ASCIIDUMP`] is true).
+(or ASCII if <<sec.control.option,`ASCIIDUMP`>> is true).
 The loss file name is compound by the associated element name
 and the `PARTICLEMATTERINTERACTION` name.
 

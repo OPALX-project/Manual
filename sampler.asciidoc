@@ -10,7 +10,7 @@ endif::[]
 == Sampler
 include::stylesheets/Toggle[]
 
-This is a modification of the link:optimiser#chp.optimiser[optimiser]. Instead
+This is a modification of the <<chp.optimiser,optimiser>>. Instead
 of performing a multi-objective optimisation, it creates samples of the design
 variables and runs those simulations. This feature can be used for example as
 training / validation of neural networks or uncertainty quantification (UQ).
@@ -19,12 +19,12 @@ training / validation of neural networks or uncertainty quantification (UQ).
 === Sampler OPAL Commands
 
 It uses almost the same syntax as the optimiser
-(see link:optimiser#sec.optimiser.opt-pilot-commands[Optimiser OPAL commands]).
+(see <<sec.optimiser.opt-pilot-commands,Optimiser OPAL commands>>).
 
 ==== Basic Syntax
 
 One needs to define the design variables and their sampling method. The syntax for
-design variables is described in the section link:optimiser#sec.optimiser.dvar-command[DVAR Command].
+design variables is described in the section <<sec.optimiser.dvar-command,DVAR Command>>.
 
 ==== SAMPLE Command
 

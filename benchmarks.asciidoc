@@ -587,7 +587,7 @@ The field index parameter K1 is defined as:
 K1 = \frac{1}{B\rho}\frac{\partial B_y}{\partial x},
 ++++
 +
-link:elements#sec.elements.RBend[RBend (_OPAL-t_)]. Instead, in TRACE 3D the field index parameter n is:
+<<sec.elements.RBend,RBend (_OPAL-t_)>>. Instead, in TRACE 3D the field index parameter n is:
 +
 [latexmath]
 ++++
@@ -695,7 +695,7 @@ dipole definition using the default map:
       
 ----
 
-Please refer to link:fieldmaps#sec.fieldmaps.1DProfile1[`1DProfile1`] for the definition of the field map
+Please refer to <<sec.fieldmaps.1DProfile1,`1DProfile1`>> for the definition of the field map
 and the default map `1DPROFILE1-DEFAULT`. It defines a fringe field that
 extends to 10 cm away from a dipole edge in both directions and it has
 both latexmath:[B_y] and latexmath:[B_z] components. This makes the

@@ -24,9 +24,9 @@ particles and fields using data parallel approach. IPPL was inspired by the POOM
 _OPAL-t_ can be used to model guns, injectors, ERLs and complete XFELs.
 opal-end
 
-+++<div class="feature-opalx">+++
+opalx-begin
 _OPALX_ also uses an extended _MAD_ language. 
-+++</div>+++
+opalx-end
 
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities
@@ -74,7 +74,7 @@ One example of an non trivial test-example is the PSI DC GUN. In
 <<fig_guncomp1>> the comparison between _Impact-t_ and _OPAL-t_ is
 shown. This example is part of the regression test suite that is run
 every night. The input file is found in
-link:tutorial#sec.tutorial.examplesbeamlines[Examples of Particle Accelerators and Beamlines].
+<<sec.tutorial.examplesbeamlines,Examples of Particle Accelerators and Beamlines>>.
 
 Misprints and obscurity are almost inevitable in a document of this
 size. Comments and _active contributions_ from readers are therefore
@@ -90,12 +90,12 @@ image::figures/Gun/GunComp.png[scaledwidth=10cm,width=80%]
 The phase space is stored in the H5hut file-format <<bib.howison2010_intro>>
 and can be analyzed using e.g. H5root <<bib.h5root_intro>>, <<bib.schietinger_intro>>.
 The frequency of the data output (phase space and some statistical quantities)
-can be controlled using the  (see link:control#sec.control.option[Option Statement]),
+can be controlled using the  (see <<sec.control.option,Option Statement>>),
 with the flag `PSDUMPFREQ`. The file is named like in input file but with the extension _.h5_.
 
 A SDDS compatible ASCII file with statistical beam parameters is written
 to a file with extension .stat. The frequency with which this data is
-written can be controlled with the link:control#sec.control.option[`OPTION` statement]
+written can be controlled with the <<sec.control.option,`OPTION` statement>>
 with the flag `STATDUMPFREQ`.
 
 For postprocessing we recommend to use the {link_pyOPALTools_wiki}/home[pyOPALTools]
@@ -130,7 +130,7 @@ for a detailed list of changes in _OPAL_.
 
 See the {link_OPAL}/issues[issue list] in the repository.
 
-See also link:pitfalls#chp.pitfalls[pitfalls and limitations].
+See also <<chp.pitfalls,pitfalls and limitations>>.
 
 [[sec.introduction.acknowledgments]]
 === Acknowledgments
