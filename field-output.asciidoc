@@ -102,6 +102,7 @@ and a cylindrical coordinate system about the z-axis in latexmath:[(r,\phi,z,t)]
 ==== Cartesian Mode
 
 In Cartesian mode the format of the field output is:
+opal-begin
 ----
 <number of rows>
 1  x [m]
@@ -119,6 +120,26 @@ In Cartesian mode the format of the field output is:
 <x1> <y1> <z1> <t1> <Bx1> <By1> <Bz1> <Ex1> <Ey1> <Ez1>
 ...
 ----
+opal-end
+opalx-begin
+----
+<number of rows>
+1  x [m]
+2  y [m]
+3  z [m]
+4  t [ns]
+5  Bx [T]
+6  By [T]
+7  Bz [T]
+8  Ex [MV/m]
+9  Ey [MV/m]
+10 Ez [MV/m]
+0
+<x0> <y0> <z0> <t0> <Bx0> <By0> <Bz0> <Ex0> <Ey0> <Ez0>
+<x1> <y1> <z1> <t1> <Bx1> <By1> <Bz1> <Ex1> <Ey1> <Ez1>
+...
+----
+opalx-end
 
 The following attributes are enabled on the `DUMPEMFIELDS` statement
 when operating in Cartesian mode:
@@ -190,9 +211,9 @@ opalx-begin
 2 phi [deg]
 3 y [m]
 4 t [ns]
-5 Br   [kGauss]
-6 Bphi [kGauss]
-7 By   [kGauss]
+5 Br   [T]
+6 Bphi [T]
+7 By   [T]
 8 Er   [MV/m]
 9 Ephi [MV/m]
 10 Ey  [MV/m]
