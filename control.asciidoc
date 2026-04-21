@@ -26,7 +26,7 @@ HELP,NAME=label;      // List funct. and attr. types of
 HELP,label;           // Shortcut for the second format
 ----
 
-`label` is an identifier (see link:format#sec.format.label[Identifiers or Labels]).
+`label` is an identifier (see <<sec.format.label,Identifiers or Labels>>).
 If it is non-blank, _OPAL_ prints the function of the object `label` and lists
 its attribute types. Entering `HELP` alone displays help on the `HELP` command.
 
@@ -90,7 +90,7 @@ INFO::
   If this option is turned off, _OPAL_ suppresses all information
   messages. It also affects the _gnu.out_ and _eb.out_ files in case of
   _OPAL-cycl_ simulations
-  (see link:opalcycl#sec.opalcycl.fields-maps-1[_OPAL-cycl_ output field maps]).
+  (see <<sec.opalcycl.fields-maps-1,_OPAL-cycl_ output field maps>>).
   The level of information showed is controlled with `--info` command line
   (see <<tab_CommandLineArg>>) Its default value is true.
 TELL::
@@ -107,13 +107,13 @@ The remaining options (ordered alphabetically) are used to control
 diverse _OPAL_ features:
 
 AMR::
-  Enable adaptive mesh refinement (see link:fieldsolver#sec.fieldsolvers.AMR[`AMR` Solver]).
+  Enable adaptive mesh refinement (see <<sec.fieldsolvers.AMR,`AMR` Solver>>).
   Its default value is false.
 AMR_REGRID_FREQ::
-  Defines after how many steps an link:fieldsolver#sec.fieldsolvers.AMR[`AMR`]
+  Defines after how many steps an <<sec.fieldsolvers.AMR,`AMR`>>
   regrid is performed. Its default value is 10.
 AMR_YT_DUMP_FREQ::
-  The frequency to dump grid and particle data for link:fieldsolver#sec.fieldsolvers.AMR[`AMR`].
+  The frequency to dump grid and particle data for <<sec.fieldsolvers.AMR,`AMR`>>.
   Its default value is 10.
 ASCIIDUMP::
   If true, instead of HDF5, ASCII output is generated for the following
@@ -205,7 +205,7 @@ NLHS::
   vector. Default value is 1 and just the last solution is used.
 NUMBLOCKS::
   Maximum number of vectors in the Krylov space for `ITSOLVER=CG` or `ITSOLVER=GMRES`
-  (see link:fieldsolver#sec.fieldsolvers.fieldsolvercmd[`FIELDSOLVER` command]).
+  (see <<sec.fieldsolvers.fieldsolvercmd,`FIELDSOLVER` command>>).
   Its default value is 0.
 PSDUMPFREQ::
   Defines after how many time steps the phase space is dumped into the H5hut
@@ -248,7 +248,7 @@ REBINFREQ::
   simulation in _OPAL-cycl_. Its default value is 100.
 RECYCLEBLOCKS::
   Number of vectors in the recycle space for `ITSOLVER=CG` or `ITSOLVER=GMRES`
-  (see link:fieldsolver#sec.fieldsolvers.fieldsolvercmd[`FIELDSOLVER` command]).
+  (see <<sec.fieldsolvers.fieldsolvercmd,`FIELDSOLVER` command>>).
   Its default value is 0.
 REMOTEPARTDEL::
   Artificially delete remote particles if their distances to the beam
@@ -266,7 +266,7 @@ RHODUMP::
   space is written. There exists a reader in Visit with versions greater
   or equal 1.11.1. Its default value is false.
 RNGTYPE::
-  The name (see link:format#sec.format.astring[String Attributes]) of a random
+  The name (see <<sec.format.astring,String Attributes>>) of a random
   number generator can be provided. The default random number generator
   (RANDOM) is a portable 48-bit generator. Three quasi random generators are
   available: `HALTON`, `SOBOL` and `NIEDERREITER`. For details see the GSL
@@ -284,7 +284,7 @@ SEED::
   Selects a particular sequence of random values. A `SEED` value is an
   integer in the range [0...999999999] (default: 123456789). `SEED` can be
   an expression. If `SEED` latexmath:[=] -1, the time is used as seed
-  and the generator is not portable anymore. See also link:format#sec.format.adefer[Deferred Expressions and Random Values].
+  and the generator is not portable anymore. See also <<sec.format.adefer,Deferred Expressions and Random Values>>.
 SPTDUMPFREQ::
   Defines after how many time steps we dump the phase space of single
   particle in _OPAL-cycl_. It is always useful to record the trajectory
@@ -368,7 +368,7 @@ REAL variable-name:=real-expression;
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in real-expression (see link:format#sec.format.areal[Real Expressions]).
+quantities occurring in real-expression (see <<sec.format.areal,Real Expressions>>).
 Whenever an operand changes in `real-expression`, a new value is calculated.
 The definition may be thought of as a mathematical equation. However, _OPAL_
 is not able to solve the equation for a quantity on the right-hand side.
@@ -411,7 +411,7 @@ now it is mandatory!
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in vector-expression (see link:format#sec.format.anarray[Arrays])
+quantities occurring in vector-expression (see <<sec.format.anarray,Arrays>>)
 on the right-hand side. Whenever an operand changes in `vector-expression`, a
 new value is calculated. The definition may be thought of as a
 mathematical equation. However, _OPAL_ is not able to solve the equation
@@ -436,7 +436,7 @@ BOOL variable-name=logical-expression;
 
 This statement creates a new global variable `variable-name` and
 discards any old variable with the same name. Its value depends on all
-quantities occurring in logical-expression (see link:format#sec.format.alogical[Logical Expressions]).
+quantities occurring in logical-expression (see <<sec.format.alogical,Logical Expressions>>).
 Whenever an operand changes in `logical-expression`, a new value is
 calculated. The definition may be thought of as a mathematical equation.
 However, _OPAL_ is not able to solve the equation for a quantity on the
@@ -486,7 +486,7 @@ REAL VECTOR vector-name=vector-expression;
 The keyword `REAL` is optional. It creates a new global vector
 `vector-name` and discards any old vector with the same name. Its value
 depends on all quantities occurring in vector-expression
-(see link:format#sec.format.anarray[Arrays]). Whenever an operand changes in
+(see <<sec.format.anarray,Arrays>>). Whenever an operand changes in
 `vector-expression`, a new value is calculated. The definition may be
 thought of as a mathematical equation. However, _OPAL_ is not able to
 solve the equation for a quantity on the right-hand side.
@@ -581,7 +581,7 @@ ECHO,MESSAGE=message;
 ECHO,message;           // shortcut
 ----
 
-`message` is a string value (see link:format#sec.format.astring[String Attributes]).
+`message` is a string value (see <<sec.format.astring,String Attributes>>).
 It is immediately transmitted to the `ECHO` stream.
 
 [[sec.control.system]]
@@ -596,7 +596,7 @@ SYSTEM,CMD=string;
 SYSTEM,string;         // shortcut
 ----
 
-The string (see link:format#sec.format.astring[String Attributes]) `string`
+The string (see <<sec.format.astring,String Attributes>>) `string`
 must be a valid operating system command.
 
 Most UNIX commands can be issued directly.
@@ -641,7 +641,7 @@ TITLE,page-header;          // shortcut for first format
 TITLE,STRING="";            // clear page header
 ----
 
-`page-header` is a string value (see link:format#sec.format.astring[String Attributes]).
+`page-header` is a string value (see <<sec.format.astring,String Attributes>>).
 It defines the page header which will be used as a title for subsequent output
 pages. Before the first `TITLE` statement is encountered, the page header is
 empty. It can be redefined at any time.
@@ -659,7 +659,7 @@ CALL,FILE=file-name;
 CALL,file-name;
 ----
 
-`file-name` is a string (see link:format#sec.format.astring[String Attributes]).
+`file-name` is a string (see <<sec.format.astring,String Attributes>>).
 The statement causes the input to switch to the named file. Input continues on
 that file until a `STOP` or an end of file is encountered. Example:
 
@@ -674,11 +674,11 @@ CALL,"structure";
 Before entering the main input file, the file `$HOME/init.opal` is executed (if present).
 It can be thought of as a `CALL, FILE=$HOME/init.opal` statement at the start of the input file.
 This init file can be used to avoid writing the same lines in every input file.
-For example one can set some link:control#sec.control.option[`OPTION`],
-define a link:control#sec.control.macro[`MACRO`], or define some physics constants.
+For example one can set some <<sec.control.option,`OPTION`>>,
+define a <<sec.control.macro,`MACRO`>>, or define some physics constants.
 
 Note that one should be well aware of the contents of the `init.opal` file as otherwise it might lead to confusion when switching to a different computer where the file is not present.
-Therefore, it might be advisable to use an explicit link:control#sec.control.call[`CALL`] statement instead.
+Therefore, it might be advisable to use an explicit <<sec.control.call,`CALL`>> statement instead.
 
 Example:
 

@@ -1,5 +1,5 @@
 [#appendix-ics-gg]
-= OPALX Design Note: Laser--Electron ICS and latexmath:[\gamma\gamma] Collision Physics
+= OPALX Design Note: Laser--Electron ICS and gamma-gamma Collision Physics
 
 == Purpose
 
@@ -256,7 +256,7 @@ public:
 
 === Suggested tracker call pattern
 
-[source,text]
+[source]
 ----
 advanceOneGlobalStep(dt):
     advanceExternalAndCollectiveFields(dt)     ! existing OPALX path
@@ -660,7 +660,7 @@ The branch-preserving version is cleaner and easier to validate.
 
 ==== Pseudocode
 
-[source,text]
+[source]
 ----
 applyLaserCompton(ctx, dt_sub):
     electrons = ctx.primaryBeam
@@ -738,7 +738,7 @@ applyLaserCompton(ctx, dt_sub):
 
 The simplest robust sampler is rejection sampling in latexmath:[(\cos\theta,\phi)].
 
-[source,text]
+[source]
 ----
 sampleFromDifferentialKernel(kernel):
     repeat:
@@ -757,7 +757,7 @@ For production runs, the better option is a pre-tabulated CDF in latexmath:[\mu 
 
 Use exact pair loops inside each collision cell when the population is small enough.
 
-[source,text]
+[source]
 ----
 applyGammaGammaLuminosity(ctx, dt_sub):
     bins = ctx.histW
@@ -816,7 +816,7 @@ Then each sampled pair contributes the unbiased luminosity estimator
 
 Pseudocode:
 
-[source,text]
+[source]
 ----
 applyGammaGammaLuminositySampled(ctx, dt_sub):
     for each collision cell c:
@@ -847,7 +847,7 @@ applyGammaGammaLuminositySampled(ctx, dt_sub):
 
 This should be the default for version 1.
 
-[source,text]
+[source]
 ----
 applyBreitWheeler(ctx, dt_sub):
     photonsA = ctx.beamA
@@ -891,7 +891,7 @@ applyBreitWheeler(ctx, dt_sub):
 
 A true event mode is still useful for validation.
 
-[source,text]
+[source]
 ----
 if ctx.mode == STOCHASTIC:
     P = min(mu / w_ref, 1)

@@ -86,7 +86,7 @@ derived from the per-distribution `NPARTDIST` values and checked against
 enters other derived beam quantities such as macrocharge and macromass.
 
 For the full set of distribution parameters, see Chapter
-link:distribution#chp.distribution[Distribution Command].
+<<chp.distribution,Distribution Command>>.
 
 [[sec.emission-source.statement]]
 === The `EMISSIONSOURCE` Statement

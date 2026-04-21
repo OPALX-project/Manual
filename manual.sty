@@ -9,6 +9,15 @@
 
 \RequirePackageWithOptions{docbook}
 
+% Reduce noisy hyperlink warnings in large generated PDFs.
+\hypersetup{hypertexnames=false,bookmarks=false}
+
+% Keep bookmark strings readable when section titles include TeX/math commands.
+\pdfstringdefDisableCommands{%
+  \def\gamma{gamma}%
+  \def\textemdash{-}%
+}
+
 % enumerate figures and table from 1 to n, indeepending from the chapter
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}

@@ -336,14 +336,14 @@ There are several methods to access output data:
 
 | Returns the value of the variable (first argument) with a certain ID
   (second argument) from
-  link:elements#sec.elements.probe-opal-cycl[probe] loss file (third
+  <<sec.elements.probe-opal-cycl,probe>> loss file (third
   argument).
 
 | septum(<probe>)
 
 | Returns the minimum bin count between the last and second last turn at the
   given probe. It uses the _<probe>.hist_ and _<probe>.peaks_ file
-  (cf. link:elements#sec.elements.probe-opal-cycl[Probe element]).
+  (cf. <<sec.elements.probe-opal-cycl,Probe element>>).
 
 |=======================================================================
 

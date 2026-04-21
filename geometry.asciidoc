@@ -67,11 +67,11 @@ Name: GEOMETRY, TOPO=ELLIPTIC, LENGTH=1.0, A=0.005, B=0.005;
 ----
 
 The geometry element must later be passed to the
-link:fieldsolvers#sec.fieldsolvers.fieldsolvercmd[`FIELDSOLVER` command].
+<<sec.fieldsolvers.fieldsolvercmd,`FIELDSOLVER` command>>.
 If only particle termination is desired, any solver can be used and
 it is not necessary to specify the geometry in the field solver command.
 
-In the link:track#sec.track.particles[`RUN` command] the boundary geometry has
+In the <<sec.track.particles,`RUN` command>> the boundary geometry has
 always to be specified in order to load it and use it for particle termination.
 
 

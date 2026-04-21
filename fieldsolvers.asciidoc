@@ -12,7 +12,7 @@ include::stylesheets/Toggle[]
 
 Space charge effects are included in the simulation by specifying a
 field solver described in this chapter and attaching it to the track
-command as described in Chapter link:track#chp.track[Tracking]. By default,
+command as described in Chapter <<chp.track,Tracking>>. By default,
 the code does not assume any symmetry i.e. full 3D. In the near future it is
 planed to implement also a slice (2D) model. This will allow the use of less
 numbers of macro-particles in the simulation which reduces the
@@ -498,7 +498,7 @@ given in percent of the minimal rectangular domain. Default value is 2.0.
 ==== Geometry
 
 The list of geometries defining the beam line boundary. For further
-details see Chapter link:geometry#chp.geometry[Geometry].
+details see Chapter <<chp.geometry,Geometry>>.
 
 [[sec.fieldsolvers.ITSOLVER]]
 ==== Iterative Solver
@@ -570,7 +570,7 @@ One solution to that problem is to introduce latexmath:[k] energy bins
 and perform latexmath:[k] separate field solves in which
 latexmath:[\mathrm{d} E] is again small and hence the electrostatic
 approximation valid. In case of a cyclotron
-(see link:elements#sec.elements.cyclotron[Cyclotron]) the number of energy
+(see <<sec.elements.cyclotron,Cyclotron>>) the number of energy
 bins must be at minimum the number of neighboring bunches (`NNEIGHBB`) i.e.
 latexmath:[\mathrm{ENBINS} \le \mathrm{NNEIGHBB}].
 
@@ -629,7 +629,7 @@ than `MZ` when running in parallel.
 |`AMR_TAGGING` |Mesh-refinement strategy [`CHARGE_DENSITY`, `POTENTIAL`,
 `EFIELD`, `MOMENTA`, `MAX_NUM_PARTICLES`, `MIN_NUM_PARTICLES`].
 Note that this attribute is defined as a string value
-(see link:format#sec.format.astring[String Attributes]), so it must be quoted.
+(see <<sec.format.astring,String Attributes>>), so it must be quoted.
 
 |`AMR_DENSITY` | Charge density refinement threshold when
 `AMR_TAGGING="CHARGE_DENSITY"`. See also <<tab_Mesh_refinement_strategies>>.
