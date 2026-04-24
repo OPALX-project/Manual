@@ -284,6 +284,15 @@ when integrating an ensemble of particles. For each time step,
 latexmath:[\mathcal{S}_{\text{e}} \subset {e_0 \ldots e_n}] in case of
 the example given in <<fig_KS1>>. An implicit drift is modelled as an
 empty set latexmath:[\emptyset].
+opalx-begin
+The `IndexMap` therefore represents an occupancy model on the reference
+  coordinate: each interval stores the set of elements whose field-support
+  extents are active on that interval. This is distinct from the geometric
+  placement of the corresponding element bodies. In overlapping regions
+  the design particle sees the superposition of all active fields, and the
+  reference path is determined by integrating this combined field.
+opalx-end
+
 
 [[sec.opalt.flow-diagram-of-opal-t]]
 === Flow Diagram of _OPAL-t_

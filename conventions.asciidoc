@@ -10,6 +10,44 @@ endif::[]
 == Conventions
 include::stylesheets/Toggle[]
 
+[[sec.conventions.elementplacement]]
+=== Element Placing 
+opalx-begin
+In the current placement model it is useful to distinguish between the
+  _nominal body extent_ of an element and its _field-support extent_.
+
+The nominal body extent is the geometric extent of the element used for
+  placement, ports, and visualization. It is the extent associated with
+  the length `L` and with the local element frame. The field-support
+  extent is the longitudinal interval on which the external field model is
+  defined and evaluated. In general these two extents need not coincide.
+  For example, fringe fields may extend beyond the nominal body extent, or
+  a field map may occupy only part of the body.
+
+This distinction is important for both tracking and reporting. Geometry
+  export, survey, and element placement use the nominal body extent. Field
+  evaluation, overlap handling, and the reference-order occupancy model
+  use the field-support extent. In particular, the presence of fringe
+  fields is represented through the field-support extent and not by
+  changing the nominal body length.
+
+The legacy attribute `ELEMEDGE` remains supported for backward
+  compatibility. However, it should be viewed as a legacy reference and
+  ordering coordinate rather than as the primary geometric placement
+  mechanism. Internally the preferred model is explicit placement by
+  `X`, `Y`, `Z`, `THETA`, `PHI`, and `PSI`, together with the nominal body
+  extent of the element.
+
+Overlapping elements are allowed. In this case _OPALX_ decomposes the
+  reference coordinate into maximal intervals on which the active element
+  set is constant. The actual reference or design trajectory is not
+  assigned to one distinguished element. Instead it is obtained by
+  integrating the reference particle through the superposed fields of all
+  active elements according to the Lorentz force equation.
+opalx-end
+
+
+
 [[sec.conventions.units]]
 === Physical Units
 

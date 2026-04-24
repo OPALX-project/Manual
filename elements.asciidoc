@@ -94,6 +94,13 @@ dipole.
 Default aperture for all other elements is a circle of 1.0m.
 L::
   The length of the element (default: 0m).
+opalx-begin
+The nominal body length of the element (default: 0m). This length is
+    used for geometric placement, ports, and visualization. In general the
+    field-support extent of an element may differ from its nominal body
+    length, for example due to fringe fields or finite field-map support.
+opalx-end
+
 ELEMEDGE::
   The edge of an element is specified in s coordinates in meters. This
   edge corresponds to the origin of the local coordinate system and is
@@ -102,6 +109,15 @@ ELEMEDGE::
   element is determined by `ELEMEDGE` and its physical length. (Note
   again that in general the fields will extend past the physical end of
   the element.)
+opalx-begin
+Legacy placement attribute specifying the body entrance of an element
+    in reference-coordinate `s` (meters). This attribute remains supported
+    for backward compatibility. For new input files, explicit 3D placement
+    with `X`, `Y`, `Z`, `THETA`, `PHI`, and `PSI` is preferred. In general
+    the fields may extend in front of or beyond the body extent specified
+    by `ELEMEDGE` and `L`.
+opalx-end
+
 X::
   X-component of the position of the element relative to the position of the first
   beamline which it is part of and which uses absolute positioning.
