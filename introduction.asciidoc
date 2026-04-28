@@ -28,6 +28,59 @@ opalx-begin
 _OPALX_ also uses an extended _MAD_ language. 
 opalx-end
 
+[[sec.introduction.project-resources]]
+=== Project Resources and Getting Started
+
+The public project pages at {link_opal_pages} collect the current landing-page
+material for both _OPAL_ and _OPALX_. The published manual is available at
+{link_public_manual}[{link_public_manual}], and the _OPAL_ mailing list
+{mail_mailing_list} can be joined via
+{link_mailing_list}[the subscription page]. Please use the mailing list for
+questions, bug reports, and feature requests. For a broader overview of current
+use cases and publications, see {link_opal_references}[papers and presentations].
+
+If you are starting with example problems, the following entry points are the
+most useful:
+
+* {link_opal_pages}/Examples/Cyclotron.html[Cyclotron examples]
+* {link_opal_pages}/Examples/RFPhotoInjector.html[RF photo injector examples]
+* {link_opal_pages}/Examples/AWAEEXBeamline.html[AWA EEX beamline examples]
+* {link_opal_pages}/Examples/AWADriveLinac.html[AWA drive linac examples]
+* {link_opal_pages}/Examples/RegressionTestExamples.html[Regression-test examples]
+* {link_opal_pages}/Examples/FFA.html[FFA examples]
+* <<chp.tutorial,Tutorial>>
+
+Users working at PSI can additionally consult
+{link_opal_pages}/Using-OPAL-at-PSI[Using _OPAL_ at PSI].
+
+opalx-begin
+For _OPALX_, user-facing material is still sparse. The current public entry
+point for execution and build instructions is
+{link_merlin7_opalx}[Run/compile _OPALX_ on Merlin7].
+
+The user-level distributions page currently referenced from the project landing
+page is {link_opal_pages}/For-Users/Distributions.html[Distributions].
+opalx-end
+
+[[sec.introduction.tools]]
+=== Tools
+
+The project pages list a small set of supporting tools around the core
+simulation codes:
+
+* {link_opal_pages}/runOPAL.html[runOPAL] provides Python scripts to launch and
+  automate multiple jobs, including parameter scans.
+* {link_pyopaltools}/[pyOPALTools] provides pre-processing, post-processing,
+  analysis, and plotting utilities for simulation data.
+* {link_opal_pages}/OPAL-conversion-utilities.html[_OPAL_ conversion utilities]
+  provide format-conversion helpers.
+
+opalx-begin
+For _OPALX_, these tools are still evolving; the most stable interfaces remain
+the manual, the source repositories, and the regression and documentation pages
+listed in the developer appendix.
+opalx-end
+
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities
 
