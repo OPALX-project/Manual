@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>Operating systems</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -871,115 +871,261 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 <div id="header">
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_operating_systems">Operating systems</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
+<div class="paragraph">
+<p>The following operating systems are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Linux</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Redhat Enterprise Linux</p>
+</li>
+<li>
+<p>Suse Leap</p>
+</li>
+<li>
+<p>Ubuntu</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>macOS</p>
+</li>
+<li>
+<p>Windows (with the Windows Subsystem for Linux (WSL))</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_required_software">Required software</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Linux</dt>
+<dd>
+<p>the usual standard and development tools like gcc, cmake, make, lex/flex, yacc/bison, tar, bzip2, wget, vim, curl, patch, file, git, autoconf&#8230;&#8203;</p>
+</dd>
+<dt class="hdlist1">macOS</dt>
+<dd>
+<p>Xcode, command line tools, for some features Macports or Homebrew</p>
+</dd>
+<dt class="hdlist1">Windows</dt>
+<dd>
+<p>use Windows Subsystem for Linux (WSL)</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Before compiling everything yourself, you might want to try the versions available on your system. Check the requirements below before trying.</p>
+</div>
+<div class="paragraph">
+<p>Build scripts for all required software are available <a href="https://github.com/OPALX-project/OPALX-project.github.io/blob/master/For-Developers/Compile-required-software.adoc">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>The list below shows the required software and versions we use to compile <em>OPAL</em>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>recommended Versions</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Notes</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cmake</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.27.8 or newer</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C/C&#43;&#43; Compiler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gcc 13 or Clang 12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">must support C&#43;&#43; 17 or better. Minimum version for GCC is 9.5.0. If this or a newer version is available on your system, use it. If you want/have to compile GCC yourself, see the instructions below.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fortran Compiler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gfortran 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional, must support Fortan 95 or better.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open MPI 4.1.6<br>
+        MPICH 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If MPI is installed on your system or available as environment module, use it. In most cases this works better than compiling MPI yourself.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zlib</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use system zlib if available (<code>libz.a</code> or <code>libz.so</code>)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hdf5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.10.11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A parallel version is required.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GNU Scientific Library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.8</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VTK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: required if you want to compile H5hut with the VTK to H5hut mesh converter.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5hut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.0rc7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A parallel version is required.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.88.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The following boost libraries are required: <code>filesystem</code>,
+ <code>iostreams</code>, <code>serialization</code>, <code>system</code>, <code>timer</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ParMETIS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: required for OPAL compiled with SAAMG solver.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenBLAS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.3.30 or newer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: required for OPAL compiled with SAAMG solver.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trilinos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13.4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: required for OPAL compiled with SAAMG solver. Minimum version &gt;13</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMReX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18.07</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: required for OPAL compiled with AMR solvers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MITHRA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: required for OPAL compiled with FEL simulation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">google-test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.14.0 or newer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: Required to run the unit-tests</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compiler">Compiler</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_gnu_compiler_collection">GNU Compiler Collection</h3>
+<div class="paragraph">
+<p>The GNU Compiler Collection (GCC) is the recommended compiler for <em>OPAL</em>
+on a Linux system and on Windows with the Windows Services for
+Linux. If you want to use GCC on macOS, it is recommended to
+use GCC provided by Macports, Homebrew, Fink or another software
+package manager.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>NOTE:</strong> If you do not want to use the compilers provided by the
+    system (Linux distribution, Xcode,&#8230;&#8203;), make sure that the
+    commands <code>cc</code> and <code>c&#43;&#43;</code> are calling the right binary. At least
+    with GCC from Macports <code>cc</code> and <code>c&#43;&#43;</code> are not set with <code>port select</code>.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>For compiling GCC you need:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>recommended Versions</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GNU Multiple Precision Arithmetic Library (GMP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.3.0 or newer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: if you want to compile GCC</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GNU MPFR Library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.2.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: if you want to compile GCC</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GNU MPC Library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional: if you want to compile GCC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_clangllvm_macos_only">Clang/LLVM (macOS only)</h3>
+<div class="paragraph">
+<p>Clang is the recommended compiler for OPAL on macOS - as long as you
+do not need AMR. If you want to compile OPAL with AMR, a Fortran
+compiler is required. In this case you can try with the new Flang
+front-end of LLVM or GCC from one of the package managers.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Note:</strong> The LLVM Fortran front-end Flang is not included in
+   Xcode.</p>
+</div>
+</blockquote>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>recommended Version</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clang (LLVM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12.4</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -987,9 +1133,10 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

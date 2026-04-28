@@ -19,7 +19,7 @@ For this calculation the initial conditions are all set in the input file. Run O
 
 `opal  RFphotoinjector.in | tee RFphotoinjector.out`
 
-For postprocessing visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing).
+For postprocessing visit [the local postprocessing page](../postprocessing.html).
 The results for the case with a 32^3 mesh and 1E5 macro particles are shown in the following figures:
 
 ![RFphoto5mNoMinStep](https://amas.web.psi.ch/wiki/RFphotoinjector/figures/wikitest5mNoMinStep.png)

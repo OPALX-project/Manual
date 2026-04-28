@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<meta name="author" content="Matthias Frey">
+<title>Build OPAL on Piz Daint at CSCS</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -869,127 +870,564 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </head>
 <body class="book">
 <div id="header">
+<h1>Build OPAL on Piz Daint at CSCS</h1>
+<div class="details">
+<span id="author" class="author">Matthias Frey</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_account">1. Account</a>
+<ul class="sectlevel2">
+<li><a href="#_creation">1.1. Creation</a></li>
+<li><a href="#_login">1.2. Login</a></li>
+</ul>
+</li>
+<li><a href="#_modules">2. Modules</a>
+<ul class="sectlevel2">
+<li><a href="#_load_environment">2.1. Load environment</a></li>
+<li><a href="#_export_environment_variables_for_builds">2.2. Export environment variables for builds</a></li>
+<li><a href="#_building_openblas">2.3. Building OpenBLAS</a></li>
+<li><a href="#_building_hdf5">2.4. Building HDF5</a></li>
+<li><a href="#_building_h5hut">2.5. Building H5hut</a></li>
+<li><a href="#_building_boost">2.6. Building Boost</a></li>
+<li><a href="#_building_gsl">2.7. Building GSL</a></li>
+<li><a href="#_building_opal">2.8. Building OPAL</a></li>
+</ul>
+</li>
+<li><a href="#_modification_of_bashrc">3. Modification of ~/.bashrc</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_account">1. Account</h2>
+<div class="sectionbody">
+<hr>
+<div class="sect2">
+<h3 id="_creation">1.1. Creation</h3>
+<div class="paragraph">
+<p>First you need a proper CSCS account. In order to do that click on <a href="http://www.cscs.ch/user_lab/applying_for_accounts/index.html">this link</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_login">1.2. Login</h3>
+<div class="paragraph">
+<p>One has first to access <a href="http://www.cscs.ch/computers/ela/index.html">Ela</a> before being able to login to <a href="http://www.cscs.ch/computers/piz_daint/index.html">Piz Daint</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ ssh username@ela.cscs.ch
+&gt; ssh daint</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modules">2. Modules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The hybrid architecture of Piz Daint allows to run on GPUs and CPUs. Therefore, it provides two modules in order to set up the
+environment properly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; module load daint-gpu
+&gt; module load daint-mc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This instruction only shows the installation of OPAL for the multicore architecture (i.e. the module <code><code>daint-mc</code></code>).</p>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="_load_environment">2.1. Load environment</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; module load daint-mc
+&gt; module switch PrgEnv-cray/6.0.8 PrgEnv-gnu/6.0.8
+&gt; module load CMake/3.14.5</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_export_environment_variables_for_builds">2.2. Export environment variables for builds</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export TARGET_DIR=$HOME/gcc/8.3.0
+&gt; export DOWNLOADS_DIR=$SCRATCH
+&gt; export SRC_DIR=$SCRATCH
+&gt; export NJOBS=4</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_building_openblas">2.3. Building OpenBLAS</h3>
+<hr>
+<div class="sect3">
+<h4 id="_installation_script_openblas_install_sh">2.3.1. Installation script (openblas_install.sh)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+
+# recipe for:
+P=OpenBLAS
+V=0.2.20
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+    "http://github.com/xianyi/$P/archive/v$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" &amp;&amp; cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+cd "$P-$V"
+
+# configure
+# nothing to configure
+
+# compile &amp; install
+make TARGET=CORE2
+make TARGET=CORE2 PREFIX="${PREFIX}" install</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_installation_procedure">2.3.2. Installation procedure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export PREFIX=$TARGET_DIR/OpenBLAS/0.2.20
+&gt; ./openblas_install.sh
+&gt; export OPENBLAS_DIR=$PREFIX
+&gt; export OPENBLAS_HOME=$OPENBLAS_DIR
+&gt; export OPENBLAS_INCLUDE_DIR=$OPENBLAS_HOME/include
+&gt; export OPENBLAS_LIBRARY_DIR=$OPENBLAS_HOME/lib
+&gt; export OPENBLAS_PREFIX=$OPENBLAS_HOME
+&gt; export OPENBLAS_VERSION=0.2.20
+&gt; export BLASLIB=OPENBLAS_LIBRARY_DIR/libopenblas.a</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_hdf5">2.4. Building HDF5</h3>
+<hr>
+<div class="sect3">
+<h4 id="_installation_script_hdf5_install_sh">2.4.1. Installation script (hdf5_install.sh)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+
+# recipe for:
+P=hdf5
+V_MAJOR=1
+V_MINOR=10
+V=${V_MAJOR}.${V_MINOR}.6
+
+# download
+curl -L \
+     --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+     "https://support.hdfgroup.org/ftp/HDF5/releases/$P-$V_MAJOR.$V_MINOR/$P-$V/src/$P-$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" &amp;&amp; cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+#configure
+mkdir -p "${SRC_DIR}/$P/build" &amp;&amp; cd "$_"
+CXX=CC CC=cc Ftn=ftn \
+    "${SRC_DIR}/$P/$P-$V/configure" \
+    --prefix="${PREFIX}" \
+    --enable-shared \
+    --enable-parallel \
+    --enable-cxx \
+    --enable-unsupported \
+    --with-pic
+
+# compile &amp; install
+make -j ${NJOBS}
+make install</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_installation_procedure_2">2.4.2. Installation procedure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export PREFIX=$TARGET_DIR/hdf5/1.10.6
+&gt; ./hdf5_install.sh
+&gt; export HDF5_DIR=$PREFIX
+&gt; export HDF5_HOME=$HDF5_DIR
+&gt; export HDF5_ROOT=$HDF5_DIR
+&gt; export HDF5_PREFIX=$HDF5_DIR
+&gt; export HDF5_INCLUDE_DIR=$HDF5_HOME/include
+&gt; export HDF5_LIBRARY_DIR=$HDF5_HOME/lib
+&gt; export HDF5_VERSION=1.10.6</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_h5hut">2.5. Building H5hut</h3>
+<hr>
+<div class="sect3">
+<h4 id="_installation_script_h5hut_install_sh">2.5.1. Installation script (h5hut_install.sh)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+
+# recipe for:
+P=H5hut
+V=2.0.0rc6
+SHA=7e7a85f14fc3ee123c122859a641db624de41b2a
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/$P-$V.tar.gz" \
+    "https://gitlab.psi.ch/$P/src/repository/archive.tar.gz?ref=$P-$V"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" &amp;&amp; cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+
+# pre-configure
+cd "src-$P-$V-$SHA"
+./autogen.sh
+cd ..
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" &amp;&amp; cd "$_"
+CXX=CC CC=cc FC=ftn \
+    "${SRC_DIR}/$P/src-$P-$V-$SHA/configure" \
+    --prefix="${PREFIX}" \
+    --enable-parallel \
+    --with-hdf5="${HDF5_PREFIX}" \
+    --with-pic
+
+# compile &amp; install
+make -j ${NJOBS}
+make install</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_installation_procedure_3">2.5.2. Installation procedure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export PREFIX=$TARGET_DIR/H5hut/2.0.0rc6
+&gt; ./h5hut_install.sh
+&gt; export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc6
+&gt; export H5HUT_HOME=$H5HUT_DIR
+&gt; export H5HUT_PREFIX=$H5HUT_HOME
+&gt; export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
+&gt; export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
+&gt; export H5HUT_VERSION=2.0.0rc6</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_boost">2.6. Building Boost</h3>
+<hr>
+<div class="sect3">
+<h4 id="_installation_script_boost_install_sh">2.6.1. Installation script (boost_install.sh)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+
+# recipe for:
+P=boost
+V=1_70_0
+
+# download
+curl -L \
+    --output "${DOWNLOADS_DIR}/${P}_$V.tar.gz" \
+    "https://netcologne.dl.sourceforge.net/project/$P/$P/${V//_/.}/${P}_$V.tar.gz"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" &amp;&amp; cd "$_"
+tar xvf "${DOWNLOADS_DIR}/${P}_$V.tar.gz"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build"
+cd "${SRC_DIR}/$P/${P}_$V"
+./bootstrap.sh \
+    --prefix="${PREFIX}" \
+    --with-libraries=mpi,chrono,filesystem,iostreams,regex,serialization,system,timer
+
+echo "using mpi : : " &gt;&gt; project-config.jam
+echo "&lt;include&gt;\"${MPICH_DIR}/include\"" &gt;&gt; project-config.jam
+echo "&lt;library-path&gt;\"${MPICH_DIR}/lib\"" &gt;&gt; project-config.jam
+echo "&lt;find-shared-library&gt;mpich" &gt;&gt; project-config.jam
+echo "&lt;find-shared-library&gt;mpichcxx" &gt;&gt; project-config.jam
+echo "&lt;find-shared-library&gt;fmpich ;" &gt;&gt; project-config.jam
+
+# compile &amp; install
+./b2 \
+    --build-dir=""${SRC_DIR}/$P/build"" \
+    --layout=system \
+    variant=release \
+    link=shared,static \
+    threading=multi \
+    stage
+./b2 \
+    --build-dir=""${SRC_DIR}/$P/build"" \
+    --layout=system \
+    variant=release \
+    link=shared,static \
+    threading=multi \
+    install</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_installation_procedure_4">2.6.2. Installation procedure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export PREFIX=$TARGET_DIR/boost/1.70.0
+&gt; ./boost_install.sh
+&gt; export BOOST_DIR=$PREFIX
+&gt; export BOOST_HOME=$BOOST_DIR
+&gt; export BOOST_INCLUDE_DIR=$BOOST_DIR/include
+&gt; export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
+&gt; export BOOST_PREFIX=$BOOST_DIR
+&gt; export BOOST_VERSION=1.70.0</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_gsl">2.7. Building GSL</h3>
+<hr>
+<div class="sect3">
+<h4 id="_installation_script_gsl_install_sh">2.7.1. Installation script (gsl_install.sh)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+
+# recipe for:
+P=gsl
+V=${GSL_VERSION:-2.6}
+
+FNAME="$P-$V.tar.gz"
+DOWNLOAD_URL="ftp://ftp.gnu.org/gnu/$P/${FNAME}"
+SRC_FILE="${DOWNLOADS_DIR}/${FNAME}"
+
+# download
+test -r "${SRC_FILE}" || curl -L --output "$_" "${DOWNLOAD_URL}"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" &amp;&amp; cd "$_"
+tar xvf "${SRC_FILE}"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" &amp;&amp; cd "$_"
+"${SRC_DIR}/$P/$P-$V/configure" \
+                --prefix="${PREFIX}" \
+                --disable-shared
+
+# compile &amp; install
+make -j ${NJOBS}
+make install</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_installation_procedure_5">2.7.2. Installation procedure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export PREFIX=$TARGET_DIR/gsl/2.6
+&gt; ./gsl_install.sh
+&gt; export GSL_DIR=$PREFIX
+&gt; export GSL_HOME=$GSL_DIR
+&gt; export GSL_INCLUDE_DIR=$GSL_HOME/include
+&gt; export GSL_LIBRARY_DIR=$GSL_HOME/lib
+&gt; export GSL_PREFIX=$GSL_DIR
+&gt; export GSL_VERSION=2.6</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_opal">2.8. Building OPAL</h3>
+<hr>
+<div class="sect3">
+<h4 id="_installation_script_opal_install_sh">2.8.1. Installation script (opal_install.sh)</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/bash
+
+# recipe for:
+P=OPAL
+V=2.4.0
+SHA=ffded40c6dd317d29776f58f33080e2919319d89
+
+# download
+mkdir -p "${DOWNLOADS_DIR}/$P" &amp;&amp; cd "$_"
+curl -L \
+    --output "${DOWNLOADS_DIR}/${P}-$V.tar.gz" \
+    "https://gitlab.psi.ch/$P/src/repository/archive.tar.gz?ref=$P-$V"
+
+# unpack
+mkdir -p "${SRC_DIR}/$P" &amp;&amp; cd "$_"
+tar xvf "${DOWNLOADS_DIR}/$P-$V.tar.gz"
+mv "${SRC_DIR}/$P/src-$P-$V-$SHA" "${SRC_DIR}/$P/$P-$V"
+
+# configure
+mkdir -p "${SRC_DIR}/$P/build" &amp;&amp; cd "$_"
+CXX=CC CC=cc FC=ftn cmake \
+    -DCMAKE_INSTALL_PREFIX:STRING="${PREFIX}" \
+    -DCMAKE_BUILD_TYPE:STRING=Release \
+    -DCMAKE_C_COMPILER=cc \
+    -DCMAKE_CXX_COMPILER=CC \
+    "${SRC_DIR}/$P/$P-$V"
+
+# compile &amp; install
+make -j ${NJOBS}
+make install</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_installation_procedure_6">2.8.2. Installation procedure</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export PREFIX=$TARGET_DIR/opal/2.4.0
+&gt; ./opal_install.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You might add the executable path to the environment variable:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; export OPAL_EXE_PATH=$PREFIX/bin
+&gt; export PATH=$OPAL_EXE_PATH:$PATH</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure you use the right directory. You can check if it worked with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; which opal</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; whereis opal</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_modification_of_bashrc">3. Modification of ~/.bashrc</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s convenient to add a helper function to your <code>~/.bashrc</code> in order to make life easier:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">load_opal_gcc830() {
+    module load daint-mc
+    module switch PrgEnv-cray/6.0.8 PrgEnv-gnu/6.0.8
+    module load CMake/3.14.5
+
+    TARGET_DIR=$HOME/gcc/8.3.0
+
+    export MPI_HOME=$MPICH_DIR
+    export MPI_PREFIX=$MPI_HOME
+    export MPI_INCLUDE_DIR=$MPI_HOME/include
+    export MPI_LIBRARY_DIR=$MPI_HOME/lib
+
+    export OPENBLAS_DIR=$TARGET_DIR/OpenBLAS/0.2.20
+    export OPENBLAS_HOME=$OPENBLAS_DIR
+    export OPENBLAS_INCLUDE_DIR=$OPENBLAS_HOME/include
+    export OPENBLAS_LIBRARY_DIR=$OPENBLAS_HOME/lib
+    export OPENBLAS_PREFIX=$OPENBLAS_HOME
+    export OPENBLAS_VERSION=0.2.20
+    export BLASLIB=$OPENBLAS_LIBRARY_DIR/libopenblas.a
+
+    export LD_LIBRARY_PATH=$OPENBLAS_LIBRARY_DIR/:$LD_LIBRARY_PATH
+
+    export BOOST_DIR=$TARGET_DIR/boost/1.70.0
+    export BOOST_HOME=$BOOST_DIR
+    export BOOST_INCLUDE_DIR=$BOOST_DIR/include
+    export BOOST_LIBRARY_DIR=$BOOST_DIR/lib
+    export BOOST_PREFIX=$BOOST_DIR
+    export BOOST_VERSION=1.70.0
+
+    export GSL_DIR=$TARGET_DIR/gsl/2.6
+    export GSL_HOME=$GSL_DIR
+    export GSL_INCLUDE_DIR=$GSL_HOME/include
+    export GSL_LIBRARY_DIR=$GSL_HOME/lib
+    export GSL_PREFIX=$GSL_DIR
+    export GSL_VERSION=2.6
+
+    export HDF5_DIR=$TARGET_DIR/hdf5/1.10.6
+    export HDF5_HOME=$HDF5_DIR
+    export HDF5_PREFIX=$HDF5_DIR
+    export HDF5_ROOT=$HDF5_DIR
+    export HDF5_INCLUDE_DIR=$HDF5_HOME/include
+    export HDF5_LIBRARY_DIR=$HDF5_HOME/lib
+    export HDF5_VERSION=1.10.6
+
+    export H5HUT_DIR=$TARGET_DIR/H5hut/2.0.0rc6
+    export H5HUT_HOME=$H5HUT_DIR
+    export H5HUT_PREFIX=$H5HUT_HOME
+    export H5HUT_INCLUDE_DIR=$H5HUT_HOME/include
+    export H5HUT_LIBRARY_DIR=$H5HUT_HOME/lib
+    export H5HUT_VERSION=2.0.0rc6
+
+    export OPAL_EXE_PATH=$TARGET_DIR/opal/2.4.0/bin
+    export PATH=$OPAL_EXE_PATH:$PATH
+
+    export CRAYPE_LINK_TYPE=dynamic
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At the next login (or by just doing <code>source ~/.bashrc</code>) you can load everything by executing</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">&gt; load_opal_gcc830</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

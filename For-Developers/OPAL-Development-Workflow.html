@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>1. A short introduction</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -873,123 +873,604 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_a_short_introduction">1. A short introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On this Wiki page we explain the <em>OPAL</em> development workflow for fixing issues, implementing bigger changes and editing the manual. In the last section we explain the scheme we use for versioning.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>file all changes (bugfixes and feature changes) in the <a href="https://gitlab.psi.ch/OPAL/src/issues">issue tracker</a> of Gitlab</p>
+</li>
+<li>
+<p>all issues have to be assigned to an OPAL version number(to be discussed: maybe better a milestone?) (a certain feature will be implemented in  this version)</p>
+</li>
+<li>
+<p>create a branches for all issues, merge these branches to the desired upstream stable and development branches.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this document we show you to do each step on the command line. For many IDEs have nativ Git support, for most(?) editors extensions are available, like Magic for Emacs. If you prefer a standalone GUI just Google for something like "git gui".</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_terminology">2. Terminology</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>upstream repository</strong><br>
+In this document we use the term <strong>upstream</strong> repository for the original repository on <code>gitlab.psi.ch</code>. The upstream repository for <em>OPAL</em> is <code>https://gitlab.psi.ch/OPAL/srv</code> for the manual it is <code>https://gitlab.psi.ch/OPAL/Documentation/Manual</code></p>
+</li>
+<li>
+<p><strong>fork</strong><br>
+A <strong>fork</strong> is a complete copy of an upstream repository on <code>https://gitlab.psi.ch</code>. Forks are usually located in the users namespace and are created via Gitlabs fork mechanism. We use forks to implement huger chances.</p>
+</li>
+<li>
+<p><strong>origin</strong><br>
+In Git, <strong>origin</strong> is a shorthand name for the remote repository that a repository was originally cloned from. This points either to the upstream repository or a forked repository.</p>
+</li>
+<li>
+<p><strong>branch</strong><br>
+<strong>Branches</strong> are a basic concept in Git. Usually multiple branches exist in the same Git repository. A <strong>branch</strong> makes it possible to implement changes without impacting other branches. We use branches to separate code for different versions. For example in the <em>OPAL</em> upstream repository we have the branches <code>OPAL-2.0</code>, <code>OPAL2.2</code>, <code>master</code>&#8230;&#8203; Another use-case for branches is to fix bugs, code cleanup and small code changes in general. The lifetime of these branches should be short.</p>
+</li>
+<li>
+<p><strong>protected branches</strong><br>
+A <strong>protected branch</strong> is a branch you are <strong>not</strong> allowed to push to. The master branch and all branches for the different versions are protected. Changes to protected branches must be done via merge requests!</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_fixing_issues_in_the_upstream_repository">3. Fixing issues in the upstream repository</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use the following workflow to implement smaller changes, code cleanup and bugfixes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open issue and create merge request (MR)</p>
+</li>
+<li>
+<p>Update your clone and checkout branch created for MR</p>
+</li>
+<li>
+<p>Implement your changes, commit and push frequently</p>
+</li>
+<li>
+<p>Resolve work in progress (WIP) status  of your MR and add at least two approvers (more are better)</p>
+</li>
+<li>
+<p>Wait for approval. As long as discussions are open:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>answer to comments/suggestions/questions in discussions</p>
+</li>
+<li>
+<p>Implement more/adapt your changes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Merge</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Same as a flowchart (an experiment with <em>mermaid</em>):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  graph LR
+  subgraph Fixing issues in upstream
+    open_issue(Open issue &amp; create MR) --&gt; update_local
+    update_local[git pull &amp;&amp; git checkout BRANCH] --&gt; solve_issue
+    solve_issue[work on issue] --&gt; resolve_mr
+    resolve_mr[resolve MR] --&gt; wait_approval;
+    wait_approval[wait for approval] --&gt; merge
+    merge(merge)
+  end</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_1_open_issue_and_create_merge_request">3.1 Open issue and create merge request</h3>
+<div class="paragraph">
+<p>The following steps must be performed in Gitlabs Web GUI:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open issue in Gitlabs issue tracker. Select a template for the report. At the time of writing templates for bug reports and feature requests are available. For other issues use "no template".</p>
+</li>
+<li>
+<p>It is usually a good idea to create a merge request as soon as you start working on the issue.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Merge request for the <strong>master</strong> branch can be created directly via the issue tracker. In this case a new branch and and a request for merging this branch will be created. The merge request will be marked as <strong>WIP</strong> (work in progress).</p>
+</li>
+<li>
+<p>If you want to create a merge request for another branch, you have to create a branch related to the issue yourself. Choose a name for the branch which make the relation to the merge request clear.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_2_update_your_clone_and_checkout_branch_created_for_the_merge_request">3.2 Update your clone and checkout branch created for the merge request</h3>
+<div class="paragraph">
+<p>On you local copy, run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git pull
+git checkout BRANCH</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
 <tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Maybe you have to commit  your local changes first!
+</td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_3_implement_your_changes">3.3 Implement your changes</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>implement your changes, check changes against coding style guide</p>
+</li>
+<li>
+<p>Tell Git which files you would like to commit</p>
+<div class="listingblock">
+<div class="content">
+<pre>git add &lt;filename1&gt; &lt;filename2&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Commit the files locally on your development machine</p>
+<div class="listingblock">
+<div class="content">
+<pre>git commit -m "Description of changes"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>push your changes to Gitlab (optional if you have to implement more changes)</p>
+<div class="listingblock">
+<div class="content">
+<pre>git push</pre>
+</div>
+</div>
+</li>
+<li>
+<p>go back to 1. if you are not done</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Same as <em>mermaid</em> flowchart:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>graph LR
+  subgraph work on issue
+    git_checkout(checkout branch of MR) --&gt; implement
+    implement[implement your changes] --&gt; git_commit
+    git_commit[commit your changes] --&gt; implement
+    git_commit --&gt; git_push
+    git_push[push to origin] --&gt; more_todo
+    more_todo{more to do?} --&gt;|yes|implement
+    more_todo --&gt;|no|resolve_mr
+    resolve_mr(resolve MR)
+  end</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_4_resolve_work_in_progress_wip_status_of_your_mr">3.4 Resolve work in progress (WIP) status  of your MR</h3>
+<div class="paragraph">
+<p>Open Gitlabs Web-GUI for the  next steps.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open  merge request.</p>
+</li>
+<li>
+<p>Resolve <strong>WIP</strong> status</p>
+</li>
+<li>
+<p>Edit merge request:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>add at least two approvers</p>
+</li>
+<li>
+<p>assign merge request to yourself (usually)</p>
+</li>
+<li>
+<p>check the "delete branch" checkbox (there are only few cases where you don&#8217;t want this)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_5_wait_for_approval_as_long_as_discussions_are_open">3.5 Wait for approval. As long as discussions are open:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>answer to comments/suggestions/questions in discussions</p>
+</li>
+<li>
+<p>Implement more/adapt your changes</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  graph LR
+  subgraph wait for approval
+    wait(wait) --&gt; discussion
+    discussion{open discussions?} --&gt;|yes| answer
+    discussion --&gt;|no| done
+    done(done)
+    answer[add comment] --&gt; changes_required;
+    changes_required{are changes required?} --&gt;|yes|work_on_issue
+    changes_required --&gt;|no| wait
+    work_on_issue[work on issue] --&gt; wait
+  end</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_6_merge">3.6 Merge</h3>
+<div class="paragraph">
+<p>After all discussions are closed and the merge request has been approved, you can merge it. Merging <strong>must</strong> be done in Gitlab!</p>
+</div>
+<div class="paragraph">
+<p>If your merge request includes a significant number of commits, please consider squashing the commits before merging, in order to simplify the commit history of the branch. A very simple way to do it is using a <a href="https://gitlab.psi.ch/help/user/project/merge_requests/squash_and_merge">tool</a> integrated in GitLab</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_develop_a_new_opal_feature">4. Develop a new OPAL Feature</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Huge changes like OPAL3d should be done in a fork. This includes all student work like Master- and PhD. thesis.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>It is good practice to use the issue tracker and merge request in your fork.</p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Merge changes from your fork to the upstream repository, when the work is <strong>done</strong> or something <strong>usable</strong> is available.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><strong>Setup:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open an issue in the <a href="https://gitlab.psi.ch/OPAL/src">OPAL project</a></p>
+</li>
+<li>
+<p>Create a fork on Gitlab.</p>
+</li>
+<li>
+<p>Create a new branch in your fork on Gitlab. This is the branch you have to work on. Do <em>not</em> work on the master-branch!</p>
+</li>
+<li>
+<p>Create a local clone.</p>
+</li>
+<li>
+<p>Checkout the branch created in step 3.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Implement:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Code your feature</p>
+</li>
+<li>
+<p>Commit and push to your fork frequently</p>
+</li>
+<li>
+<p>Frequently fetch changes from upstream master to your master and merge to your branch.</p>
+</li>
+<li>
+<p>Go back to 1. till you are done</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Merge:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a merge request in the <a href="https://gitlab.psi.ch/OPAL/src"><em>OPAL</em> project</a>, select at least two approvers and resolve work in progress (WIP) status.</p>
+</li>
+<li>
+<p>Wait for approval, depending on the discussions changes might be required (they usually are).</p>
+</li>
+<li>
+<p>Merge your changes</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In the next sections these steps are explained in more detail.</p>
+</div>
+<div class="sect2">
+<h3 id="_4_1_create_a_fork">4.1 Create a fork</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="https://gitlab.psi.ch/OPAL/src">OPAL project</a> and push the fork button</p>
+</li>
+<li>
+<p>Select a group you want to fork into. (to be discussed: do we want to keep all forks in a sub-group of OPAL? Like <a href="https://gitlab.psi.ch/OPAL/src/Forks" class="bare">https://gitlab.psi.ch/OPAL/src/Forks</a>.)</p>
+</li>
+<li>
+<p>Wait till the creation of the fork completes.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_2_create_a_local_clone_of_your_fork">4.2 Create a local clone of your fork</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On your development machine, copy the URI of your fork to the clip board and clone it:</p>
+<div class="listingblock">
+<div class="content">
+<pre>git clone &lt;new repository&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change into the cloned repository and add the upstream repository as a <em>remote</em></p>
+<div class="listingblock">
+<div class="content">
+<pre>git remote add upstream git@gitlab.psi.ch:OPAL/src</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_3_workflow_while_implementing_the_new_feature">4.3 Workflow while implementing the new feature</h3>
+<div class="paragraph">
+<p>It&#8217;s a good practice</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>to commit and push your changes frequently.</p>
+</li>
+<li>
+<p>to merge from the upstream repository often.</p>
+</li>
+<li>
+<p>use the issue tracker and merge request (no approvers are required for merge request in your fork)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The workflow is basically the same as for fixing issues in an upstream branch. In addition you have to merge changes from the upstream repository.</p>
+</div>
+<div class="paragraph">
+<p>The workflow to merge changes from upstream is</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fetch changes from upstream</p>
+<div class="listingblock">
+<div class="content">
+<pre>git fetch</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Merge changes from upstream</p>
+<div class="listingblock">
+<div class="content">
+<pre>git merge upstream/master</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Resolve conflicts, if any</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If your upstream branch is not <code>master</code>, replace it with the correct branch.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_4_merge_changes_from_your_fork_to_the_upstream_repository">4.4 Merge changes from your fork to the upstream repository</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a new merge request in the <a href="https://gitlab.psi.ch/OPAL/src"><em>OPAL</em> project</a>.</p>
+</li>
+<li>
+<p>Select the group of the fork and your working branch as source branch and submit the request.</p>
+</li>
+<li>
+<p>Select at least to approvers and resolve the merge request.</p>
+</li>
+<li>
+<p>Discuss your changes with the approvers, maybe you have to implement some changes.</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>After committing new changes the request must be (re-)approved by all approvers.</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>After all discussions are closed you can merge the request.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_opal_manual">5. <em>OPAL</em> Manual</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For the manual we use the same workflow as for fixing issues in the master branch. The only difference is that merge request <em>requires</em> no approval - it many cases asking for approval is a good idea anyway.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_versioning">6. Versioning</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major version number</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>no incompatible changes in the input file</p>
+</li>
+<li>
+<p>no incompatible changes in the output files</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor version number</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>stable versions have an even minor version number (like 1.4.0)</p>
+</li>
+<li>
+<p>development version have an odd minor version number (like 1.5.0)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>The third number in a version number</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>identify bugfixes and feature changes (like 1.4.1)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Stable versions</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>only bugfixes and small feature changes are done in a stable version</p>
+</li>
+<li>
+<p>development for a stable version is done in a branch named OPAL-$MAJOR_VERSION.$MINOR_VERSION</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Development versions</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>development is done in the 'master' branch.</p>
+</li>
+<li>
+<p>increase the third number in the version frequently to reflect changes (either bugfixes or new features)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_7_links">7. Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.atlassian.com/git/tutorials/git-forks-and-upstreams" class="bare">https://www.atlassian.com/git/tutorials/git-forks-and-upstreams</a></p>
+</li>
+<li>
+<p>splint, lint alternative (<a href="http://splint.org" class="bare">http://splint.org</a>)</p>
+</li>
+<li>
+<p>cppcheck, static code analisys (<a href="http://cppcheck.sourceforge.net" class="bare">http://cppcheck.sourceforge.net</a>)</p>
+</li>
+<li>
+<p>uncrustify (<a href="http://uncrustify.sourceforge.net" class="bare">http://uncrustify.sourceforge.net</a>)</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

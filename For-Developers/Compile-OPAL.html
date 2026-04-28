@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>Introduction</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -873,123 +873,185 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Compiling <em>OPAL</em> can be quite challenging due to all <a href="https://github.com/OPALX-project/OPALX-project.github.io/blob/master/For-Developers/Compile-required-software.adoc">the required libraries</a>. Even if some libraries are available on the system, this
+doesn&#8217;t mean that they can be used for compiling <em>OPAL</em> due to missing
+features.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>NOTE</strong>:  In the code snippets below we use the environment variables <code>SRC_DIR</code> and <code>PREFIX</code>. Whereby <code>SRC_DIR</code> must be set to the directory <em>OPAL</em> will be build in and <code>PREFIX</code> to the <em>OPAL</em> installation directory.</p>
+</div>
+</blockquote>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_the_opal_sources">Get the OPAL sources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clone the OPAL Git repository</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">mkdir -p "${SRC_DIR}/OPAL"
+cd "${SRC_DIR}/OPAL"
+git clone https://github.com/OPALX-project/OPAL.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Select the OPAL branch you want to compile. The current stable branch is <code>OPAL-2024.1</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">cd "${SRC_DIR}/OPAL/src"
+git checkout OPAL-2024.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To checkout the (unstable) development branch run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">cd "${SRC_DIR}/OPAL/src"
+git checkout master</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To get a list of all available branches, you can run the command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">git branch -a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>from inside your clone.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_opal">Configure OPAL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OPAL uses CMake to configure the build process. You can either pass options to <code>cmake</code> or you can run the command <code>ccmake</code> in the build directory <strong>after</strong> calling <code>cmake</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">mkdir -p "${SRC_DIR}/OPAL/build" &amp;&amp; cd "$_"
+CC=mpicc CXX=mpicxx cmake \
+        --prefix="${PREFIX}" \
+        "${SRC_DIR}/OPAL/src"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following table shows the most important options:</p>
+</div>
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CMAKE_BUILD_TYPE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build type can be either <code>Debug</code>, <code>Release</code>, <code>RelWithDebInfo</code> or <code>MinSizeRel</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CMAKE_INSTALL_PREFIX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prefix for installation</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BUILD_OPAL_UNIT_TESTS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable the unit-tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requires google-test &gt;= 1.10.0</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_AMR</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable AMR solver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requires AMReX (release 18.07)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_AMR_MG_SOLVER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable AMR multigrid solver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requires trilinos &gt;= 13.x and AMReX (release 18.07)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_BANDRF</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">compile BANDRF field conversion scripts</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_OPAL_FEL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable full-wave solver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requires MITHRA 2.0</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_SAAMG_SOLVER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable SAAMG solver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requires trilinos &gt;= 13.x</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BUILD_OPAL_PYTHON</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enable PyOPAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">requires Python 3.0+ and Boost with Python. You have to set <code>WILL_BUILD_SHARED_LIBRARY=on</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WILL_BUILD_SHARED_LIBRARY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">build libOPAL as shared library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">this must be enabled for PyOPAL</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_DOXYDOC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">automatically configures Doxyfile.in</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Trilinos</div>
+<div class="paragraph">
+<p>For compiling Trilinos please see the <a href="https://github.com/OPALX-project/build-recipes/blob/master/220-build-trilinos">Trilinos build recipe</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compile_and_install_opal">Compile and install OPAL</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">cd "${SRC_DIR}/OPAL/build"
+make -j ${NJOBS}
+make install</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

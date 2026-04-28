@@ -26,9 +26,10 @@ discuss techniques for their solution with an emphasis on evolutionary
 algorithms.
 
 NOTE: For multi-objective optimization _OPAL_ uses
-{link_opt_pilot}[`opt-pilot`] developed by Y. Ineichen. `opt-pilot`
-has been fully integrated into _OPAL_. Instructions can be found on the
-{link_opt_pilot_wiki}/home[`opt-pilot` wiki page].
+`opt-pilot`, developed by Y. Ineichen. `opt-pilot`
+has been fully integrated into _OPAL_. The public project-specific wiki
+that was previously linked here is no longer available; current usage is
+best understood from the _OPAL_ source tree and optimization examples.
 
 [[sec.optimiser.definition]]
 === Definition

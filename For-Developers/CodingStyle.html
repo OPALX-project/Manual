@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>Coding style</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -869,127 +869,952 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </head>
 <body class="book">
 <div id="header">
+<h1>Coding style</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_TOC_">0. Short Introduction</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>In a huger software project it is good practice to define a coding-style.
+This helps other developers to read your code and improves maintainability.</p>
+</div>
+<div class="paragraph">
+<p>The OPAL coding-style includes rules, recommendations and conventions for</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>naming of classes, functions, variables etc</p>
+</li>
+<li>
+<p>length/complexity of functions</p>
+</li>
+<li>
+<p>code commenting</p>
+</li>
+<li>
+<p>code formatting</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For code-formatting Clang-format should be used. The formatting rules are
+defined in the file <code>.clang-format</code> in the top-level directory of the OPAL
+repository. For the time being code formatting rules are not enforced, but this will be done somewhen in the future.</p>
+</div>
+<div class="paragraph">
+<p>The tool <code>clang-format</code> is available for most Linux distributions and macOS via Macports. At PSI <code>clang-format</code> is available via the Pmodule <code>clang</code>.</p>
+</div>
+<div class="paragraph">
+<p>A good example for a coding-style is the <a href="https://www.kernel.org/doc/html/v4.10/process/coding-style.html">Linux coding-style</a>. It&#8217;s worth to read.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_language_standards">1. Language Standards</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>C99</p>
+</li>
+<li>
+<p>C&#43;&#43;17</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_naming_conventions">2. Naming Conventions</h2>
+<div class="sectionbody">
+<h3 id="_2_1_general_notes" class="discrete">2.1. General notes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use descriptive names.</p>
+</li>
+<li>
+<p>Use compound name.</p>
+</li>
+<li>
+<p>Compound names shouldn&#8217;t be too long (up to three words).</p>
+</li>
+<li>
+<p>Use short names where it makes sense, for example counters (<code>i</code>,
+<code>j</code>, <code>k</code> etc).</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_2_class_names" class="discrete">2.2. Class Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Name the class after what it is.</p>
+</li>
+<li>
+<p>Use compound names with up to three words.</p>
+</li>
+<li>
+<p>Use nouns.</p>
+</li>
+<li>
+<p>CamelCase: Use upper case letters as word separators, lower case for
+the rest of a word</p>
+</li>
+<li>
+<p>First character in a name is upper case</p>
+</li>
+<li>
+<p>No underscores ('_')</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<p><code>class BoundaryGeometry;</code></p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_3_file_names" class="discrete">2.3. File Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use one file per class definition.</p>
+</li>
+<li>
+<p>The file name is the same as the class name.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>BoundaryGeometry.cpp</code><br>
+<code>BoundaryGeometry.h</code></p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_4_class_library_names" class="discrete">2.4. Class Library Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use name spaces - so you don&#8217;t have the problem</p>
+</li>
+<li>
+<p>When not using name spaces, it&#8217;s common to prevent class name
+clashes by prefixing class names with a short unique string.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Examples</dt>
+<dd>
+<p><code>class QObject; // the base class of all Qt objects</code></p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_5_method_names" class="discrete">2.5. Method Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use camelCase (first character is lower case).</p>
+</li>
+<li>
+<p>No underscores ('_')</p>
+</li>
+<li>
+<p>Use a verb as first part in a compound name</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>isInGeometry</code> - to ask a question about something.</p>
+</li>
+<li>
+<p><code>getMaxCoords</code> - to get a value</p>
+</li>
+<li>
+<p><code>setFoo</code> - to set a value</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>getMaxExtend();</code></p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_6_c_function_names" class="discrete">2.6. C Function Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All lower case with underscore as separators.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>get_max_extend();</code></p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_7_class_member_variable_names" class="discrete">2.7. Class Member Variable Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use descriptive names.</p>
+</li>
+<li>
+<p>Use camelCase_m: like method names but append <code>_m</code>.</p>
+</li>
+<li>
+<p>No other underscores</p>
+</li>
+<li>
+<p>Physical units must be given, no units are noted by []</p>
+</li>
+<li>
+<p>Doxygen formulas: <a href="http://www.doxygen.nl/manual/formulas.html" class="bare">http://www.doxygen.nl/manual/formulas.html</a></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>bool doHdf5Save_m;</code> `real p_m; /// $\f\beta\gamma\f$</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_8_method_argument_and_local_variable_names" class="discrete">2.8. Method Argument and local Variable Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use descriptive names.</p>
+</li>
+<li>
+<p>camelCase</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_9_pointer_and_reference_variables_names" class="discrete">2.9. Pointer and Reference Variables Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You may append <code>_r</code> to reference variable names.</p>
+</li>
+<li>
+<p>Same for pointer variable names with <code>_p</code>.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_10_global_and_static_variables" class="discrete">2.10. Global and Static Variables</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use global and static variables only if really required.</p>
+</li>
+<li>
+<p>You should append <code>_g</code> to global variable names to make the scope
+clear.</p>
+</li>
+<li>
+<p>Same for static variable names with <code>_s</code>.</p>
+</li>
+<li>
+<p>If you have multiple suffixe use <code>_mp</code>, <code>_gp</code> etc.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_11_global_constants_enums_and_macro_names" class="discrete">2.11. Global Constants, Enums and Macro Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All caps with underscore as separators.</p>
+</li>
+<li>
+<p>Consts and Enums without class scoping should have a reasonable
+prefix to avoid conflicts.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Example</dt>
+<dd>
+<p><code>enum {STATE_ERR,  STATE_OPEN, STATE_RUNNING,  STATE_DYING};</code></p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_2_12_type_names" class="discrete">2.12. Type Names</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Make a typedef for types based on native types.</p>
+</li>
+<li>
+<p>Use the <code>_t</code> suffix for typedefs: <code>typedef UniformMesh Mesh_t</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">   #if defined(USE_LARGE_INDICES)
+        typedef int64_t                 h5_loc_idx_t;   // type for a local index
+        typedef int64_t                 h5_loc_id_t;    // type for a local ID
+        #else
+        typedef int32_t                 h5_loc_idx_t;   // type for a local index
+        typedef int32_t                 h5_loc_id_t;    // type for a local ID
+        #endif</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="_2_13_c_file_extensions" class="discrete">2.13. C&#43;&#43; File Extensions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>header files: <code>.h</code></p>
+</li>
+<li>
+<p>source files: <code>.cpp</code></p>
+</li>
+<li>
+<p>template classes: <code>.hpp</code></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_documentation">3. Documentation</h2>
+<div class="sectionbody">
+<h3 id="_3_1_file_header" class="discrete">3.1. File Header</h3>
+<div class="listingblock">
+<div class="content">
+<pre>//
+// Brief description
+//
+// Copyright (c) YYYY, Notice mentioning University, Institute, Lab or Author
+//
+// Optional: related work, e.g. title of PhD or Master thesis
+//
+// This file is part of OPAL.
+//
+// OPAL is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// You should have received a copy of the GNU General Public License
+// along with OPAL.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+//</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For PSI employees the copyright notice would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>// Copyright (c) YYYY1[, YYYY2...], Paul Scherrer Institut, Villigen PSI, Switzerland
+// All rights reserved.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For a PhD or Master student, or someone with another affiliation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>// Copyright (c) YYYY1[, YYYY2...], Firstname Lastname, University
+// All rights reserved</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Copyright year should be updated, whenever there is a change to the file.
+Consecutive years should be aggregated with a dash, individual periods, comma-separated.</p>
+</div>
+<div class="paragraph">
+<p>This proposal has been discussed in src#482.</p>
+</div>
+<hr>
+<h3 id="_3_2_header_files" class="discrete">3.2. Header Files</h3>
+<div class="paragraph">
+<p>Add extensive class documentation below header.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/*!
+ Class documentation
+*/</pre>
+</div>
+</div>
+<hr>
+<h3 id="_3_3_api_documentation" class="discrete">3.3. API Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>All public methods and functions must be documented using Doxygen.</p>
+</li>
+</ul>
+</div>
+<h3 id="_3_4_code_documentation" class="discrete">3.4. Code Documentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Generally comment WHAT the code does but not HOW.</p>
+</li>
+<li>
+<p>Write comments as you code.</p>
+</li>
+<li>
+<p>do not over-comment (do not comment the obvious).</p>
+</li>
+<li>
+<p>write the code so that the <em>working</em> is obvious (so no commenting is required).</p>
+</li>
+<li>
+<p>try to use comments at the head of a function only.</p>
+</li>
+<li>
+<p>Avoid longer comments inside functions. If this is required, the
+function might already be to complex.</p>
+</li>
+<li>
+<p>split large complex functions into multiple self-descriptive functions,</p>
+</li>
+<li>
+<p>use <code>/* ... */</code> for multi-line comments</p>
+</li>
+<li>
+<p>use <code>//</code> for <em>short</em> comments</p>
+</li>
+<li>
+<p>Make gotchas explicit</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:TODO:</code> to not forget to implement something later.</p>
+</li>
+<li>
+<p><code>:BUG:</code> to document a known bug.</p>
+</li>
+<li>
+<p><code>:WARNING:</code> beware of something.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is over-commenting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">class Distribution: public Definition {
+
+    //===============
+    // Class methods.
+    //===============
+public:
+
+    /// Exemplar constructor.
+    Distribution();
+    ...
+}</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="_3_5_doxygen" class="discrete">3.5. Doxygen</h3>
+<div class="paragraph">
+<p>See <a href="doxygen">Doxygen</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-{.wiki}" data-lang="{.wiki}">// $Id$
+/**
+ * @file sourceFile.cpp
+ * Write description of source file here for Doxygen.
+ *
+ * @brief Can use "brief" tag to explicitly generate comments for file documentation.
+ *
+ * @author Me        [Note: deprecated practice as CM systems like git will maintain author info and blame logs.]
+ * @version 1.69    [Note: deprecated practice as CM systems like git will maintain file history and revision numbers.]
+ */
+// $Log$
+
+///  Single line comment for Doxygen.
+
+/**
+   Write description of function here.
+   The function should follow these comments.
+   Use of "brief" tag is optional. (no point to it)
+
+   The function arguments listed with "param" will be compared
+   to the declaration and verified.
+
+   @param[in]     _inArg1 Description of first function argument.
+   @param[out]    _outArg2 Description of second function argument.
+   @param[in,out] _inoutArg3 Description of third function argument.
+   @return Description of returned value.
+ */</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example of detailed code description in Latex</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-{.wiki}" data-lang="{.wiki}"> /** \f[ \vec{u}_{m} = \vec{\beta}_{n} \gamma_{n} = \vec{\beta}_{n-1/2}\; \gamma_{n-1/2} + \frac{q}{m_{e} c} \vec{E} \frac{\Delta t}{2} \f]
+   * \code
+   * um = P + 0.5 * Q * dt/M * c * E;
+   * \endcode
+   */</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_methods_and_functions">4. Methods and Functions</h2>
+<div class="sectionbody">
+<h3 id="_4_1_complexity" class="discrete">4.1. Complexity</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Do <strong>one</strong> thing per method.</p>
+</li>
+<li>
+<p>The maximum length of a function is inversely proportional to the
+complexity.</p>
+</li>
+<li>
+<p>Break down complex methods.</p>
+</li>
+<li>
+<p>Use helper functions/methods.</p>
+</li>
+<li>
+<p>3-4 levels of indentation are OK - 6+ definitely not.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_4_2_centralized_exiting_and_early_returns" class="discrete">4.2. Centralized exiting and early returns</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>If a function exists from multiple location and some common work has
+to be done (like cleanup), the <code>goto</code> statement becomes handy.</p>
+</li>
+<li>
+<p>If there is no common work to be done, return from a function as
+soon as possible.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Rationale:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>unconditional statements are easier to understand and follow</p>
+</li>
+<li>
+<p>nesting is reduced</p>
+</li>
+<li>
+<p>errors by not updating individual exit points when making
+modifications are prevented</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:   (from Linux coding style)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">        int fun (int a)
+        {
+                int result = 0;
+                char *buffer = kmalloc(SIZE);
+
+                if (buffer == NULL)
+                        return -ENOMEM;
+
+                if (condition1) {
+                        while (loop1) {
+                                ...
+                        }
+                        result = 1;
+                        goto out;
+                }
+                ...
+        out:
+                kfree(buffer);
+                return result;
+        }</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_formatting">5. Formatting</h2>
+<div class="sectionbody">
+<h3 id="_5_1_indentation" class="discrete">5.1. Indentation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>4 spaces per level.</p>
+</li>
+<li>
+<p>Use spaces not tabs.</p>
+</li>
+<li>
+<p>Don&#8217;t even think about redefining the TAB-character &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_5_2_breaking_long_lines_and_strings" class="discrete">5.2. Breaking long lines and strings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The maximum length of a line is 100 characters. This limit applies
+to code as well as comments.</p>
+</li>
+<li>
+<p>This applies also to strings.</p>
+</li>
+<li>
+<p>Comments should fit within 80 characters per line</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="_5_3_placing_spaces" class="discrete">5.3. Placing Spaces</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>use a space between a keyword and an opening parenthesis <code>(</code></p>
+</li>
+<li>
+<p>don&#8217;t use a space between a function and the opening parenthesis</p>
+</li>
+<li>
+<p>use a space before an opening curly bracket <code>{</code> but not before a
+C&#43;&#43;11 braced list (see example below).</p>
+</li>
+<li>
+<p>do not use a space before an opening square bracket.</p>
+</li>
+<li>
+<p>use spaces around binary operators</p>
+</li>
+<li>
+<p>but no space after unary operators</p>
+</li>
+<li>
+<p>no space after prefix increment- and decrement operator</p>
+</li>
+<li>
+<p>no space before postfix increment- and decrement operator</p>
+</li>
+<li>
+<p>no space around <code>.</code> and <code>-&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>if (i == 42) {
+    return i;
+}
+i = j + 2;
+i += 42;
+i++;
+mesh-&gt;fname = argv[1];
+int[3] a{1, 2, 3}; // C++ braced list</pre>
+</div>
+</div>
+<hr>
+<h3 id="_5_4_pointer_and_reference_variables" class="discrete">5.4. Pointer and Reference Variables</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>If you define a pointer or reference type, place <code>*</code> resp. <code>&amp;</code> close
+to the type not the variable name.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:   <code>h5t_mesh_t* const mesh;</code></p>
+</div>
+<hr>
+<h3 id="_5_5_placing_braces" class="discrete">5.5. Placing Braces</h3>
+<div class="paragraph">
+<p><strong>classes</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">class Distribution: public Definition {
+
+public:
+    Distribution();
+    ...
+
+private:
+    ...
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>methods and functions</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">int method (int x) {
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>if</code>-statement</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">if (i == 42) {
+    ...
+} else {
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use braces even for single line blocks, otherwise wrong indentation will confuse you:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">if (i == 42) {
+    return SUCCESS;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>for</code>-loop</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">for (i = 0; i &lt; 42; i++) {
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>do-while</code>-loop</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">do {
+    ...
+} while (i &lt; 42);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><code>switch</code>-statement</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">switch (i) {
+    case: 0 {
+        ...
+    }
+    case: 42 {
+        ...
+    }
+    default: {
+        ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is good practice to keep the cases small.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">switch (entity_type) {
+    case H5T_TYPE_VERTEX: {
+        return get_adjacencies_to_vertex (m, entity_id, dim, list);
+    }
+    case H5T_TYPE_EDGE: {
+        return get_adjacencies_to_edge (m, entity_id, dim, list);
+    }
+    case H5T_TYPE_TRIANGLE: {
+        return get_adjacencies_to_triangle (m, entity_id, dim, list);
+    }
+    case H5T_TYPE_TET: {
+        return get_adjacencies_to_tet (m, entity_id, dim, list);
+    }
+    default: {
+        break;
+    }
+}</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="_5_6_c_templates" class="discrete">5.6. C&#43;&#43; Templates</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Naming conventions for template classes/functions are the same as
+for the non template ones.</p>
+</li>
+<li>
+<p>In nested template instantiations put spaces between consecutive <code>&gt;</code></p>
+</li>
+<li>
+<p>Break long template parameter lists into multiple lines and use
+indentation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">std::tuple&lt;
+        std::vector&lt;int&gt;,
+        double,
+        std::map&lt;std::string, std::vector&lt;char&gt; &gt;
+&gt; my_really_complicated_variable;</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="_5_7_tools" class="discrete">5.7 Tools</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://astyle.sourceforge.net">Artistic Style</a> is a source code indenter, formatter, and beautifier for the C, C&#43;&#43;, C# and Java programming languages.</p>
+</li>
+<li>
+<p><a href="http://uncrustify.sourceforge.net/">Uncrustify</a> a highly configurable, easily modifiable source code beautifier.</p>
+</li>
+<li>
+<p><a href="http://universalindent.sourceforge.net/">UniversalIndentGUI</a> offers a live preview for setting the parameters of nearly any indenter. You change the value of a parameter and directly see how your reformatted code will look like. Save your beauty looking code or create an anywhere usable batch/shell script to reformat whole directories or just one file even out of the editor of your choice that supports external tool calls"</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_6_memory_allocation">6. Memory Allocation</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>std::vector</code> for dynamic arrays</p>
+</li>
+<li>
+<p>Use <code>std::unique_ptr</code>/<code>std::shared_ptr</code> and <code>std::make_unique</code> (once <a href="https://gitlab.psi.ch/OPAL/src/-/issues/607">Increase C&#43;&#43; Standard to c&#43;&#43;17</a> is implemented) / <code>std::make_shared</code> where ever possible.</p>
+</li>
+<li>
+<p>Avoid old-style dynamic memory allocation using <code>new</code></p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_7_error_handling">7. Error Handling</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Always check error conditions and handle them!</p>
+</li>
+<li>
+<p>If we can proceed, it may be enough to print a warning.</p>
+</li>
+<li>
+<p>Otherwise print an error message and return with an error code. Do
+<strong><em>not</em></strong> proceed!</p>
+</li>
+<li>
+<p>Use asserts to handle pre/pst condition errors</p>
+</li>
+<li>
+<p>Use exceptions to handle runtime conditions/errors</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_8_references">8. References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://www.possibility.com/Cpp/CppCodingStandard.html" class="bare">http://www.possibility.com/Cpp/CppCodingStandard.html</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.kernel.org/doc/Documentation/CodingStyle">Linux Kernel Coding Style</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.yolinux.com/TUTORIALS/LinuxTutorialC++CodingStyle.html#DOXYGEN">http://www.yolinux.com/TUTORIALS/LinuxTutorialC&#43;&#43;CodingStyle.html#DOXYGEN</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://google.github.io/styleguide/cppguide.html">Google C&#43;&#43; Style Guide</a></p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

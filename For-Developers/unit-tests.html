@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>C++ Quick Start</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -873,123 +873,243 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>The idea behind unit tests is to check "does this function do what I think it&#8217;s doing". We want to check that, when we write a function, we haven&#8217;t put any subtle (or not so subtle) errors in the code. Also we want to check that when we change some other function, it doesn&#8217;t break existing code. So for each function (or maybe pair of functions) we write a test function. These are known as "unit tests".</p>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p>Unit testing is an essential part of the development process for OPAL.
+Also note that tests are code that we need to edit, etc, so tests should obey any
+<a href="For%20Developers/CodingStyle">relevant style guides</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_c_quick_start">C++ Quick Start</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Run <code>build-recipes</code> to build <code>300-gtest</code></p>
+</li>
+<li>
+<p>From the root opal source directory run <code>cmake -DBUILD_OPAL_UNIT_TESTS=1</code></p>
+</li>
+<li>
+<p>Run <code>tests/opal_unit_tests</code> to run the unit tests</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pyopal_quick_start">PyOpal Quick Start</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>From the root opal source directory run <code>cmake -DBUILD_OPAL_PYTHON=1</code></p>
+</li>
+<li>
+<p>Look for the line <code>-- PyOpal install location resolved to /path/to/python/site-packages/</code> and make sure that <code>/path/to/python/site-packages/</code> is in your <code>PYTHONPATH</code></p>
+</li>
+<li>
+<p>Don&#8217;t forget to run <code>make install</code> to install pyopal library to your install area</p>
+</li>
+<li>
+<p>Either: Run <code>python tests/opal_src/PyOpal/test_runner.py</code> to run all the unit tests</p>
+</li>
+<li>
+<p>Or: Run <code>python tests/opal_src/PyOpal/path/to/a_unit_test.py</code> to run a specific unit test</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_up_the_tests">Setting up the tests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In OPAL we use the google testing framework which has some convenience functions for e.g. equality testing in the presence of floating point errors, setting up common test data, etc.
+There is a script for installing gtest in <code>tests/tools/install_gtest.bash</code>.
+At the moment it doesn&#8217;t work on macs - sorry about that.</p>
+</div>
+<div class="paragraph">
+<p>Documentation for gtest can be found at:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/google/googletest/blob/master/googletest/docs/primer.md" class="bare">https://github.com/google/googletest/blob/master/googletest/docs/primer.md</a></p>
+</div>
+<div class="paragraph">
+<p>Go ahead and edit the tests if you need to
+We should have one source file for each header file in the main body of the code.
+The directory structure is supposed to reflect the directory structure of the main OPAL source (add a directory if you need to).
+If you want to add an extra test, you need to make sure that it includes gtest <code>#include "gtest/gtest.h"</code>
+It should be automatically added to the test executable by cmake.</p>
+</div>
+<div class="paragraph">
+<p>To run the tests, either run the full regression testing suite,
+or run just the cpp tests by running executable test/opal_unit_tests (after building).
+If you are just interested in a specific test,
+you can do e.g. <code>tests/opal_unit_tests --gtest_filter=SBend3DTest.*</code> to run all tests from SBend3DTest.
+There are some other useful command line options; do <code>tests/opal_unit_tests --help</code> to list them all.</p>
+</div>
+<div class="paragraph">
+<p>In general:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Unit tests are in the directory <code>tests</code></p>
+</li>
+<li>
+<p>Code which is in src/Classic should have tests in <code>tests/classic_src</code></p>
+</li>
+<li>
+<p>Other code should have tests in <code>tests/opal_src</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pyopal_tests">PyOpal tests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Within the tests area are some specific tests for the OPAL python API. These tests are a mixture of unit tests and integration tests (i.e. testing the pyopal workflow), but they are all quick to run. There is also a slower test for code style. Tests are implemented in python.</p>
+</div>
+<div class="paragraph">
+<p>Tests will only successfully execute if you have built the OPAL python API. This is controlled by setting <code>BUILD_OPAL_PYTHON</code> to true at cmake time, by doing something like <code>cmake -DBUILD_OPAL_PYTHON=1</code>. It requires dynamic linking of the OPAL libraries which can be fiddly to achieve. The PyOpal install location is determined dynamically at cmake time, look at <code>src/PyOpal/CMakeLists.txt</code> for the install path resolution code. Make sure that the install location is in your PYTHONPATH environment variables - look for an output during cmake like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>-- PyOpal install location resolved to /path/to/python/site-packages/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to figure out what is the path to include.</p>
+</div>
+<div class="paragraph">
+<p>Individual tests use the built-in python unittest package. Tests are implemented as instances of <code>unittest.TestCase</code>. Tests should be executable as a standalone test by calling them as scripts from the command line, like <code>python tests/opal_src/PyOpal/path/to/a_unit_test.py</code>.</p>
+</div>
+<div class="paragraph">
+<p>Some tests execute the main OPAL workflow. Unfortunately, once finished OPAL tends to leave a lot of things lying about in memory which can cause problems in subsequent tests. In order to combat this, a small wrapper class has been written which wraps some tests in a forked process using os.fork. Details can be found at <code>src/PyOpal/PyPython/encapsulated_test_case.py</code></p>
+</div>
+<div class="paragraph">
+<p>There exists a set of style tests to check that code is written in a way compatible with the official python style and to perform some static code checks. These checks are executed by doing <code>python tests/opal_src/PyOpal/test_pylint.py</code>. <code>test_pylint.py</code> looks for python files in subdirectories of <code>tests/opal_src/PyOpal</code> or python files that are installed in the pyopal install target area.</p>
+</div>
+<div class="paragraph">
+<p>All of the tests can be run using the test runner, <code>python tests/opal_src/PyOpal/test_runner.py</code>. Note that this does run the pylint tests, which can be slow. To disable pylint execution, pass <code>--do_not_run_pylint</code> as a command line argument. <code>test_runner.py</code> looks for tests that are in subdirectories of <code>tests/opal_src/PyOpal</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_on_the_unit_test_concept">More on the unit test concept</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The idea behind unit tests is to test at the level of the smallest unit that the code does what we think. We test at the smallest unit so that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>test coverage is high</p>
+</li>
+<li>
+<p>tests are quick to run</p>
+</li>
+<li>
+<p>we get logically separated functions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s consider each of these points individually</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>test coverage is high</em> - if we imagine the execution path following some branch structure, then we get many more possible execution paths for longer code snippets. So maintaining high test coverage becomes very difficult, and we need many more tests to have good test coverage. Thus its a good idea to test the smallest code snippet possible.</p>
+</li>
+<li>
+<p><em>tests are quick to run</em> - the execution time goes as the (number_of_tests)*(length_of_each_test). Now, we have many more tests to keep a good test coverage, and each test is longer because they are testing bigger code snippets. This means tests are slowwww. You want to actually run the tests, and an essential part of this is making sure they are quick enough.</p>
+</li>
+<li>
+<p><em>we get logically separated functions</em> - functions that do simple, understandable things are less likely to be buggy than functions that do complicated or difficult things. The process of really testing if a function does what you intended forces us to make code simple and understandable - otherwise the test becomes difficult to write.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Explicitly, unit tests are not intended to test: that code works together in the desired fashion, code integrates properly with external libraries, the load on hardware is not too big, etc. These issues are dealt with in the Regression tests.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_driven_design_tdd">Test driven design (TDD)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Test driven design (TDD) is a recommended way to design code in which unit tests come for free.</p>
+</div>
+<div class="paragraph">
+<p>Instead of class design, TDD starts by writing the unit tests. This focuses directly on the usage of the new classes / features.</p>
+</div>
+<div class="paragraph">
+<p>From <a href="http://www.drdobbs.com/architecture-and-design/test-driven-design/240168102" class="bare">http://www.drdobbs.com/architecture-and-design/test-driven-design/240168102</a>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>By putting the test first and then writing code to make the test pass, TDD becomes a way to design code.
+Even better, as you add tests you incrementally improve your design.
+In an environment that (deliberately) lacks detailed, up-front design thinking, that last characteristic is critical.
+The process works so well, in fact, that the architecture that emerges from a TDD environment is usually better than the one that, I at least, can create from whole cloth ahead of time.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>TDD consists of the following steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write unit tests</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Unit test does not compile</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Write class/feature design (skeleton)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Unit test will compile, but fail</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Write class/feature implementation</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Unit test will pass</em> (if implementation correct)</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

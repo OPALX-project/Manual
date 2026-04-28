@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>AMD LUMI Debug Notes</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -869,127 +869,434 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </head>
 <body class="book">
 <div id="header">
+<h1>AMD LUMI Debug Notes</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_scope">Scope</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>This note summarizes is about debugging on <strong>LUMI</strong> with <strong>AMD ROCm</strong>, especially when using <strong>Kokkos</strong> rather than writing HIP directly.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_typical_failure">Typical failure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A representative runtime error was:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">Memory access fault by GPU node-4 (Agent handle: 0x514a400) on address 0x14f8105fa000. Reason: Unknown.
+srun: error: nid005001: task 0: Aborted (core dumped)
+srun: Terminating StepId=17146122.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This indicates a <strong>GPU side illegal memory access or memory violation</strong>. The host process then aborts through the HSA runtime. In many cases the CPU backtrace is not the interesting part.</p>
+</div>
+<div class="paragraph">
+<p>Common root causes include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>out of bounds access</p>
+</li>
+<li>
+<p>invalid device pointer</p>
+</li>
+<li>
+<p>use after free</p>
+</li>
+<li>
+<p>stale pointer after reallocation</p>
+</li>
+<li>
+<p>missing synchronization</p>
+</li>
+<li>
+<p>race or lifetime issue</p>
+</li>
+<li>
+<p>host pointer accidentally used on device</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_core_files_core_and_gpucore_pid">Core files: <code>core</code> and <code>gpucore.&lt;pid&gt;</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ROCm produces a <strong>GPU core</strong> file such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">gpucore.&lt;pid&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Linux may also produce a regular host core such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">core</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The GPU core is <strong>not</strong> meant to be opened by itself like a normal CPU core. ROCgdb expects a <strong>merged heterogeneous core</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_correct_workflow">Correct workflow</h3>
+<div class="paragraph">
+<p>Enable core dumps and run outside ROCgdb:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ulimit -c unlimited
+export HSA_ENABLE_DEBUG=1
+srun -n 1 ./your_exe ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you get both a host core and a GPU core, merge them:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">roccoremerge combined core gpucore.&lt;pid&gt;
+rocgdb ./your_exe -core combined</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The host core may simply be called <code>core</code> without a pid suffix.</p>
+</li>
+<li>
+<p>ROCgdb can load the merged core even if it prints warnings about <code>/dev/kfd</code>, <code>/dev/dri/&#8230;&#8203;</code>, or similar mappings.</p>
+</li>
+<li>
+<p>A host backtrace that stops in <code>libhsa-runtime64.so.1</code> is normal after a GPU queue error.</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_we_need_merged_cores">Why we need merged cores</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When opening the merged core, it is common to see only the host side abort path, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>abort()</code></p>
+</li>
+<li>
+<p><code>libhsa-runtime64.so.1</code></p>
+</li>
+<li>
+<p><code>__pthread_kill_implementation</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>That usually means you are looking at the <strong>CPU thread that noticed the GPU error</strong>, not the <strong>GPU wavefront thread that caused it</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_important_consequence">Important consequence</h3>
+<div class="paragraph">
+<p><code>where</code> on the current thread is often not enough.</p>
+</div>
+<div class="paragraph">
+<p>Instead, in ROCgdb inspect all threads:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-gdb" data-lang="gdb">info threads
+thread apply all bt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>AMD GPU wavefronts are represented as threads. The useful information is often in one of those GPU threads, not in thread 1.</p>
+</div>
+<div class="paragraph">
+<p>Then select the interesting GPU thread and inspect it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-gdb" data-lang="gdb">thread &lt;n&gt;
+bt
+frame 0
+info registers
+info registers system
+info registers scalar
+info registers vector</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interactive_rocgdb_versus_post_mortem_cores">Interactive ROCgdb versus post mortem cores</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For memory violations, <strong>interactive ROCgdb</strong> is often more useful than post mortem inspection of a merged core.</p>
+</div>
+<div class="paragraph">
+<p>Start ROCgdb directly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">rocgdb ./your_exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inside ROCgdb:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-gdb" data-lang="gdb">set amdgpu precise-memory on
+run ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This enables more precise reporting for GPU memory violations.</p>
+</div>
+<div class="sect2">
+<h3 id="_important_caveat">Important caveat</h3>
+<div class="paragraph">
+<p>If ROCgdb is attached during execution, ROCm may not generate the usual AMD GPU core dump in the same way. So:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>interactive debugging</strong> and</p>
+</li>
+<li>
+<p><strong>post mortem GPU core generation</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>are not always compatible workflows.</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rocr_debug_agent">ROCr Debug Agent</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A very useful alternative is AMD’s <strong>ROCr Debug Agent</strong>, which can report faulting wavefronts and kernel names.</p>
+</div>
+<div class="paragraph">
+<p>Use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">export HSA_ENABLE_DEBUG=1
+export HSA_TOOLS_LIB=/opt/rocm/lib/librocm-debug-agent.so.2
+export ROCM_DEBUG_AGENT_OPTIONS="--all --save-code-objects"
+srun -n 1 ./your_exe ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This can help identify:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the faulting kernel</p>
+</li>
+<li>
+<p>wavefront state</p>
+</li>
+<li>
+<p>code objects for later inspection</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_important_observation_from_the_discussion">Important observation from the discussion</h3>
+<div class="paragraph">
+<p>With these environment variables enabled, the crash disappeared.</p>
+</div>
+<div class="paragraph">
+<p>This should <strong>not</strong> be treated as a fix. It strongly suggests a <strong>debug sensitive bug</strong> or <strong>Heisenbug</strong>, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>race condition</p>
+</li>
+<li>
+<p>lifetime issue</p>
+</li>
+<li>
+<p>missing fence</p>
+</li>
+<li>
+<p>uninitialized data</p>
+</li>
+<li>
+<p>asynchronous ordering bug</p>
+</li>
+<li>
+<p>out of bounds access that depends on timing</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The debug agent and HSA debug mode change runtime behavior enough that some bugs disappear.</p>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kokkos_specific_translation">Kokkos specific translation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_build_with_kokkos_debug_options">Build with Kokkos debug options</h3>
+<div class="paragraph">
+<p>Recommended options for debugging:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CMAKE_BUILD_TYPE=Debug</code></p>
+</li>
+<li>
+<p><code>Kokkos_ENABLE_DEBUG=ON</code></p>
+</li>
+<li>
+<p><code>Kokkos_ENABLE_DEBUG_BOUNDS_CHECK=ON</code></p>
+</li>
+<li>
+<p><code>Kokkos_ENABLE_DEBUG_DUALVIEW_MODIFY_CHECK=ON</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If full Debug is too intrusive, <code>RelWithDebInfo</code> is a reasonable compromise.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_translating_backtrace_addresses_to_lines">Translating backtrace addresses to lines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given a file containing lines such as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">[0xc846e8]
+[0xc63efd]
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you can resolve them with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">grep -o '\[0x[0-9a-fA-F]\+\]' your_file | tr -d '[]' | xargs llvm-addr2line -e /path/to/your/exe -f -C</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or with GNU <code>addr2line</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">grep -o '\[0x[0-9a-fA-F]\+\]' your_file | tr -d '[]' | xargs addr2line -e /path/to/your/exe -f -C</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This helps map Kokkos bounds check backtraces to source locations.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_practical_debugging_checklist">Practical debugging checklist</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rocm_and_lumi_side">ROCm and LUMI side</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Enable core dumps:
+<code><code>bash
+ulimit -c unlimited
+</code></code></p>
+</li>
+<li>
+<p>Run once outside ROCgdb:
+<code><code>bash
+export HSA_ENABLE_DEBUG=1
+srun -n 1 ./your_exe &#8230;&#8203;
+</code></code></p>
+</li>
+<li>
+<p>If both files exist, merge:
+<code><code>bash
+roccoremerge combined core gpucore.&lt;pid&gt;
+rocgdb ./your_exe -core combined
+</code></code></p>
+</li>
+<li>
+<p>In ROCgdb, inspect GPU threads:
+<code><code>gdb
+info threads
+thread apply all bt
+</code></code></p>
+</li>
+<li>
+<p>For better memory fault locations, use interactive ROCgdb:
+<code><code>gdb
+set amdgpu precise-memory on
+run &#8230;&#8203;
+</code></code></p>
+</li>
+<li>
+<p>If needed, run with the ROCr Debug Agent:
+<code><code>bash
+export HSA_ENABLE_DEBUG=1
+export HSA_TOOLS_LIB=/opt/rocm/lib/librocm-debug-agent.so.2
+export ROCM_DEBUG_AGENT_OPTIONS="--all --save-code-objects"
+srun -n 1 ./your_exe &#8230;&#8203;
+</code></code></p>
+</li>
+<li>
+<p>Narrow the problem to a single kernel with fences and labels.</p>
+</li>
+<li>
+<p>Treat “bug disappears under debug agent” as evidence of a timing sensitive bug, not a fix.</p>
+</li>
+</ol>
+</div>
+<hr>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>

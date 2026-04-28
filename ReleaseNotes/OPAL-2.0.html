@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>Release Notes for OPAL 2.0</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -869,127 +869,250 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </head>
 <body class="book">
 <div id="header">
+<h1>Release Notes for OPAL 2.0</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_changes_in_opal_2_0_2">Changes in OPAL 2.0.2</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
+<div class="ulist">
+<ul>
+<li>
+<p>Bugfixes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Issue #206 Cyclotron elements positioning</p>
+</li>
+<li>
+<p>Issue #246 Add protection when all particles are in material</p>
+</li>
+<li>
+<p>Issue #247 Collimator geometry check fixed</p>
+</li>
+<li>
+<p>Issue #253 Probe, stripper and septum check fixed</p>
+</li>
+<li>
+<p>Issue #267 RFCavity applied twice</p>
+</li>
+<li>
+<p>Issue #271 Fixed OPAL getting stuck sometimes on multicore</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changes_in_opal_2_0_1">Changes in OPAL 2.0.1</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Bugfixes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Issue #235 Optimiser crashes with HDF5</p>
+</li>
+<li>
+<p>Issue #243 Collimator lost particle checks</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_new_features_in_opal_2_0_0">New features in OPAL 2.0.0</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OPAL-T: 3D placement of elements</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Overlapping fringe fields now supported</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Integration of optimizer</p>
+</li>
+<li>
+<p>OPAL-Cycl: general trim coils added</p>
+</li>
+<li>
+<p>OPAL-T: A flexible collimator with configurable hole placement (e.g. for multi-slit or pepper-pot) added</p>
+</li>
+<li>
+<p>Method for scalable generation of particle distribution now provided</p>
+</li>
+<li>
+<p>OPAL-T: Normalization of field maps can be switched off</p>
+</li>
+<li>
+<p>Scan option is removed</p>
+</li>
+<li>
+<p>Sample command added</p>
+</li>
+<li>
+<p>OPAL mode for highlighting in emacs added</p>
+</li>
+<li>
+<p>Many more features, for details see the <a href="http://amas.web.psi.ch/opal/Documentation/2.0/OPAL_Manual.html">manual</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_input_file_related_changes">Input file related changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OPAL-T: Beamlines containing a cathode have to have a <code>SOURCE</code> element to indicate this fact.</p>
+</li>
+<li>
+<p>OPAL-T: The design energy of dipoles is now expected in MeV instead of eV</p>
+</li>
+<li>
+<p>The meaning of <code>OFFSETZ</code> of the command <code>DISTRIBUTION</code> has changed. It now indicates a shift of the particle bunch relative to the reference particle. Use the <code>ZSTART</code> attribute of the <code>TRACK</code> command to start the simulation at a position <code>z &gt; 0</code></p>
+</li>
+<li>
+<p>The attribute <code>DISTRIBUTION</code> of the command <code>DISTRIBUTION</code> has been renamed to <code>TYPE</code></p>
+</li>
+<li>
+<p>The attributes <code>LAT_RINIT</code> and <code>BEAM_RINIT</code> of the element <code>RINGDEFINITION</code> have units [m] instead of [mm].</p>
+</li>
+<li>
+<p>OPAL-T: The attribute <code>ROTATION</code> of <code>RBEND</code> and <code>SBEND</code> has been replaced by <code>PSI</code> which now can be applied to all elements to rotate them about the reference trajectory</p>
+</li>
+<li>
+<p>OPAL-Cycl: The trim coil description has been changed and trim coils are now a separate element.
+A new recommended description based on a rational function has been added.
+The old description has changed its units for <code>BMAX</code> from [kG] to [T] and <code>SLPTC</code> has been inverted to [1/mm].</p>
+</li>
+<li>
+<p>OPAL-Cycl: <code>DUMPFIELDS</code> and <code>DUMPEMFIELDS</code> commands now uses metres and radians as input instead of mm and degrees.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_output_file_related_changes">Output file related changes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OPAL-Cycl: <em>-trackOrbit.dat</em> file is now in [m] instead of [mm].</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_input_file_related_changes_introduced_in_opal_1_6">Input file related changes introduced in <a href="OPAL-1.6">OPAL-1.6</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>The attribute <code>BFREQ</code> of the <code>BEAM</code> command is now in MHz instead of Hz</p>
+</li>
+<li>
+<p>Input files must have a version tag, for example</p>
+<div class="listingblock">
+<div class="content">
+<pre>  OPTION, VERSION=20000;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>indicating version 2.0.x and newer</p>
+</div>
+</li>
+<li>
+<p>OPAL is now fully typed. Each variable has to have a type for example</p>
+<div class="listingblock">
+<div class="content">
+<pre>  REAL Edes=.072;
+  REAL gamma=(Edes+PMASS)/PMASS;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Only <strong>REAL, REAL CONSTANT, REAL VARIABLE, STRING, STRING CONSTANT, BOOL, BOOL CONSTANT</strong> and <strong>REAL VECTOR</strong> are supported</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation_of_the_binary_package">Installation of the binary package</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
 <tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The latest version of the binary package is OPAL 2.0.1-1.
+</td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
 </table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The package can be installed wherever you want. Let&#8217;s name this directory <code>$PREFIX</code>.</p>
+</li>
+<li>
+<p>change your working directory to <code>$PREFIX</code></p>
+</li>
+<li>
+<p>Un-tar the package</p>
+<div class="listingblock">
+<div class="content">
+<pre> tar xf OPAL-2.0.1-1-x86_64-linux.tar.xz</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Source the OPAL shell profile. For the time being only sh-like shells are supported.</p>
+<div class="listingblock">
+<div class="content">
+<pre> source "$PREFIX/OPAL-2.0.1-1/etc/profile.d/opal.sh"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now you are ready to run opal, opal converter tools and the visualization tool <a href="https://gitlab.psi.ch/OPAL/src/wikis/h5root">H5root</a>.</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>MPI is included in the OPAL package.  If you want to run OPAL with MPI, be sure to use the MPI utilities shipped with OPAL!</p>
+</div>
+</blockquote>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:20:50 +0200
 </div>
 </div>
 </body>

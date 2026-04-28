@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>H5root is no longer supported! Please use pyOPALTools instead for postprocessing.</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -869,127 +869,216 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </head>
 <body class="book">
 <div id="header">
+<h1>H5root is no longer supported! Please use <a href="https://github.com/OPALX-project/pyOPALTools">pyOPALTools</a> instead for postprocessing.</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<h1 id="_h5root_a_root_based_graphical_user_interface_for_h5hut" class="sect0">H5root: a ROOT Based Graphical User Interface for H5hut</h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>The purpose of this application is convenient graphical access to the data stored in
+<a href="https://www.hdfgroup.org/solutions/hdf5/">HDF5</a> files written by
+<a href="https://dav.lbl.gov/archive/Software/H5hut-H5part/">H5hut</a> (formerly known as H5Part)
+via a graphical user interface based on <a href="http://root.cern.ch/">ROOT</a>.
+<a href="https://accelconf.web.cern.ch/accelconf/ICAP2009/papers/thpsc049.pdf">H5root</a>
+is tailored towards data analysis of particle accelerator simulations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation_guide">Installation guide</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect2">
+<h3 id="_on_psi_cluster">On PSI Cluster</h3>
+<div class="listingblock">
+<div class="content">
+<pre>module use unstable
+module load gcc/7.3.0 H5root/1.3.4</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quick_user_guide">Quick User Guide</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two ways to use H5root:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>as a data browser (no knowledge whatsoever about C&#43;&#43; or ROOT is needed)</p>
+</li>
+<li>
+<p>as a shared library loaded into an interactive ROOT session (some knowledge of C&#43;&#43; and ROOT required).
+Of course you can also use the H5root shared library in ROOT macros or compiled executables.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_data_browser">Data Browser</h3>
+<div class="paragraph">
+<p>Once you have built the application (with <code>--enable-static</code>), just do <code>./H5root</code>. The main GUI will appear.
+The menus are meant to be self-explaining, for instance,
+<code>File -&gt; Load</code> pops up a file browser that lets you pick the file(s) you want to load.
+Up to four files may be loaded in the same session.</p>
+</div>
+<div class="paragraph">
+<p>Then you just select variables, time step etc. and push the buttons!
+You can select multiple files and multiple variables,
+the program is supposed to produce the plot that makes most sense given the input.
+(Note, however, that many multi-file and/or multi-variable plots have not yet been implemented. Missing methods issue an error message for the time being and will be implemented later according to demand.)</p>
+</div>
+<div class="sect3">
+<h4 id="_command_line_arguments">Command line arguments</h4>
+<div class="paragraph">
+<p>H5root comes with limited command line functionality:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>File loading: simply write up to four files after H5root, e.g.:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>./H5root file1.h5 file2.h5 file3.h5</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Subsampling rate: the option <code>-ss</code> lets you choose a subsampling rate for the files being loaded, e.g.:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>./H5root -ss 100 file1.h5</code></p>
+</div>
+<div class="paragraph">
+<p>will read in only every 100th particle in the specified file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_canvas_editor">Canvas editor</h4>
+<div class="paragraph">
+<p><code>Edit -&gt; Canvas</code> will pop up ROOT&#8217;s nifty Canvas editor,
+which lets you change the properties of the specific plot you just created.
+For instance, you can change the marker size on a line plot.
+Initially, the editor is set to the canvas,
+you can change its focus by simply clicking on the objects on the plot (graph, histogram, label, etc.)</p>
+</div>
+<div class="paragraph">
+<p>Note also that you can zoom into plots clicking and dragging along the axes.
+This will stretch your plot without adding more information.
+For a true rebinning of the plot, use the zoom sliders on the left and at the bottom of the plot
+(or change the binning via Options -&gt; Binning and Contours&#8230;&#8203;).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_shared_library">The Shared Library</h3>
+<div class="paragraph">
+<p>You create the shared libary when compiling the application.
+Once you have your shared object <code>libh5root.so</code>,
+you can load it into any interactive ROOT session with the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">   if (TString(gSystem-&gt;GetBuildArch()) == TString("macosx64"))
+     gSystem-&gt;Load("libh5root.dylib");
+   else
+     gSystem-&gt;Load("libh5root.so");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then access all the H5root objects, such as (and most probably) TH5Dataset,
+while fully profiting from ROOT&#8217;s powerful CINT interpreter.
+An example session on Linux would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">gSystem-&gt;Load("libh5root.so");                     \\ load the shared library
+TH5Style::SetStyle();                              \\ set the H5root plotting style
+TH5Dataset data("example.h5");                     \\ load data in example.h5
+data.Histo2d("x","y");                             \\ plot x and y (for default step 0, with default ranges from -1 to 1)
+data.Histo2d("x","y",100,-0.02,0.02,-0.015,0.015); \\ for step 100, with x-range and y-range specified
+data.H&lt;Tab&gt;                                        \\ check what other methods starting with H... are available for this object!</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The most convenient way to generate a line plot is via the method <code>GetGraphXY</code>. Here&#8217;s an example (see source code for extensive documentation):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">data.SetSlicePosition("mean");                     \\ slice should be centered around mean z of all particles
+                                                   \\ (other options are "median", "half" − for the position halfway between zmin and zmax −,
+                                                   \\ "start", "end", and "peak".
+data.SetSliceLength(0.5,"mm");                     \\ slice length should be 0.5 mm (you can also specify in "ps").
+                                                   \\ Alternatively, you can request a slice that contains x percent of the whole bunch, via data.SetSlicePercent(x);!
+TGraph* sliceEmittance = data.GetGraphXY("SPOS","emittance(x,px)","slice");
+TH1F *frame = myCanv-&gt;DrawFrame(0.,0.,1.0,0.00015);
+frame-&gt;SetXTitle("s [m]");
+frame-&gt;SetYTitle("#varepsilon_{x} [mm mrad]");
+sliceEmittance-&gt;Draw("LPsame");
+myCanv-&gt;Update();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more complex operations you will likely want to write a macro.
+The example macro <a href="H5root/example.C">example.C</a> is enclosed in the package.
+It was used to produce this jpeg image:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="H5root/H5rootexample.jpg" alt="TunesClosedOrbitFinder">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_online_class_documentation">Online Class Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="http://amas.web.psi.ch/tools/H5root/htmldoc/">online class documentation for version 1.2</a>
+is produced with ROOT&#8217;s <a href="http://root.cern.ch/root/html/THtml.html">THtml</a> class.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_known_bugs_problems">Known Bugs / Problems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>None yet</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_planned_features">Planned Features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>None yet</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_comments">Other Comments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>H5root follows the ROOT coding conventions, which are themselves based on the Taligent rules.
+For instance, (base) classes begin with a capital 'T', data members with a small 'f', etc.
+The classes specifically written for H5root begin with 'TH5' to distinguish them from the plain ROOT classes.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:34:17 +0200
 </div>
 </div>
 </body>

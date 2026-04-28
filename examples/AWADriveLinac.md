@@ -27,4 +27,4 @@ Here, grid is set to: MX = 64, MY = 64, MZ = 32
 [Results](https://amas.web.psi.ch/wiki/AWADriveLinac/OPAL_Drivelinac_Example.pdf)
 A simple Python [script](https://amas.web.psi.ch/wiki/AWADriveLinac/Opal_beamdist_plot.py) not using pyOPALTools.
 
-For general post processing, please visit [here](https://gitlab.psi.ch/OPAL/src/wikis/PostProcessing).
+For general post processing, please visit [the local postprocessing page](../postprocessing.html).

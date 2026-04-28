@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Untitled</title>
+<title>Cyclotron</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -869,127 +869,215 @@ html[data-feature-mode="both"] .feature-toggle .feature-choice:not(.feature-choi
 </head>
 <body class="book">
 <div id="header">
+<h1>Cyclotron</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_goal">Goal</h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all" style="width: 80%;">
+<div class="paragraph">
+<p>Here we will run the Cyclotron flavour of OPAL (OPAL-cycl) in two distinct modes</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tune Calculation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tune Calculation with OPAL&#8217;s closed orbit finder (only in OPAL 2.2 and higher)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Accelerated orbit mode
+&lt;!--</p>
+</li>
+<li>
+<p>3D space charge calculation (under construction)
+-&#8594;</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preparation">Preparation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This example is for OPAL 2.0.x and 1.6.x (see compatible versions in examples).
+If you do not have already access to OPAL, you can visit the download page <a href="home">the download page</a>. In
+case OPAL is on your cluster please check with the administrator how to use. PSI user please click <a href="OPALAtPSI">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_needed_input_files">Needed Input Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this project we need input files, that you obtain by clicking on links below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Version</th>
-<th class="tableblock halign-left valign-top">Source</th>
-<th class="tableblock halign-left valign-top">Linux</th>
-<th class="tableblock halign-left valign-top">macOS</th>
-<th class="tableblock halign-left valign-top">Release Notes</th>
+<th class="tableblock halign-left valign-top">File</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.1.2019.11-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.1.2019.11-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.1.2019.11-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="uploads/7697ea84f47c30e9c80c63f58b8505eb/cyclotron1.in">cyclotron1.in</a> and <a href="uploads/7d4ce0fdf2f5cfaed4921c58d26e7026/cyclotron2.in">cyclotron2.in</a> (<a href="Cyclotron/1.6/cyclotron1.in">cyclotron1.in</a> and <a href="Cyclotron/1.6/cyclotron2.in">cyclotron2.in</a> for 1.6.x)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the OPAL input files</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.1-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-2.0.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cyclotron/bfield.dat">bfield.dat</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">magnetic field map</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cyclotron/rffield1.dat">rffield1.dat</a> and <a href="Cyclotron/rffield2.dat">rffield2.dat</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rf field maps</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-2.0.0rc2-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-2.0.0rc2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-2.0.0rc2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL-2.0.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cyclotron/dist1.dat">dist1.dat</a> <a href="Cyclotron/dist2.dat">dist2.dat</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the input distributions</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.2-1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.2.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.2-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.2-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cyclotron/ic.dat">ic.dat</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">initial conditions for the tune calculation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.1-3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.1.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.1-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.1-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cyclotron/refsol.dat">refsol.dat</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the reference solution for the tune calculation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.6.0-2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/src//OPAL-1.6.0.tar.xz">source</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.6.0-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.6.0-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.6.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.4.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.4.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.4.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.4.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-3</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-3-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-3-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.2-2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.2-2-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.2-2-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.2.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.1-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.1-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.1-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.1.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.3.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.3.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.3.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="ReleaseNotes/OPAL%201.3.0.html">release notes</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OPAL-1.2.0-1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-linux.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-linux.tar.xz.md5">md5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://amas.web.psi.ch/Downloads/OPAL/package//OPAL-1.2.0-1-x86_64-macos.tar.xz">tar.xz</a>, <a href="http://amas.web.psi.ch/Downloads/OPAL/package/OPAL-1.2.0-1-x86_64-macos.tar.xz.md5">md</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="Cyclotron/cyclotron1.gpl">cyclotron1.gpl</a> and <a href="Cyclotron/cyclotron2.gpl">cyclotron2.gpl</a> (<a href="Cyclotron/1.6/cyclotron2.gpl">cyclotron2.gpl</a> for 1.6.x)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plotting scripts for gnuplot</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_tune_calculation_using_cyclotron1_in">Tune Calculation using cyclotron1.in</h2>
+<div class="sectionbody">
+<h3 id="_needed_files_cyclotron1_inbashgpl_bfield_dat_dist1_dat_ic_dat_refsol_dat" class="discrete">Needed files: cyclotron1.{in,bash,gpl}, bfield.dat, dist1.dat, ic.dat &amp; refsol.dat</h3>
+<div class="paragraph">
+<p>For the tune calculation we need initial conditions (ic):  energy, radius and radial momenta given to us by an other program in the file  ic.dat.
+The Bash script <a href="Cyclotron/cyclotron1.bash">cyclotron1.bash</a> will run the tune calculation for all energies specified in ic.dat and store the
+radial and vertical tune values together with reference data.
+Make sure the script has execute permission (<code>chmod u+x cyclotron1.bash</code>).
+A comparison can be plotted with <a href="http://www.gnuplotting.org">gnuplot</a>, by executing</p>
+</div>
+<div class="paragraph">
+<p><code>gnuplot cyclotron1.gpl</code></p>
+</div>
+<div class="paragraph">
+<p>The result is saved in cyclotron1.pdf and shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Cyclotron/cyclotron1.png" alt="tunesFIXPO">
+</div>
+</div>
+<h3 id="_tune_calculation_with_opals_closed_orbit_finder_only_in_opal_2_2_and_higher" class="discrete">Tune Calculation with OPAL&#8217;s closed orbit finder (only in OPAL 2.2 and higher)</h3>
+<h3 id="_needed_files" class="discrete">Needed files</h3>
+<div class="paragraph">
+<p>| File | Description |
+| --- |-----|
+| <a href="uploads/a45407d49ba5b59f9fb1c43d55664b5c/cyclotronTune-2-1.in">cyclotronTune-2-1.in</a> | OPAL input file |
+| <a href="Cyclotron/bfield.dat">bfield.dat</a> | magnetic field map |
+| <a href="Cyclotron/plotTunes.py">plotTunes.py</a> | python (version 3) plotting script for tune calculation |</p>
+</div>
+<div class="paragraph">
+<p>Since version 2.2 OPAL has a closed orbit finder with tune calculation based on Gordon&#8217;s algorithm.</p>
+</div>
+<div class="paragraph">
+<p>The important commands in the input file are:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OPTION, CLOTUNEONLY =true;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This tells OPAL to only perform the closed orbit finder and tune calculation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>RingCycl: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0, PRINIT=pr0, RINIT=r0 , SYMMETRY=8.0, RFFREQ=f1, FMAPFN="bfield.dat", FMLOWE=72, FMHIGHE=590;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The minimal and maximal energy for the tune calculation (72 and 590 MeV).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DistTO: DISTRIBUTION,  TYPE=GAUSSMATCHED, LINE=L1,
+        NSTEPS=1440, DENERGY=0.001, MAXSTEPSCO = 100, NSECTORS=8, SECTOR=FALSE;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The matched gauss distribution with parameters for the closed orbit finder
+(energy steps of 0.001 GeV, average the field over 8 sectors and a maximum of 100 steps for the closed orbit finder to converge).
+More information on the matched gauss distribution can be found in the <a href="http://amas.web.psi.ch/opal/Documentation/2.2/OPAL_Manual.html#sec.distribution.gaussmatchedtype">Manual</a>.</p>
+</div>
+<div class="paragraph">
+<p>Run OPAL with</p>
+</div>
+<div class="paragraph">
+<p><code>opal cyclotronTune-2-1.in</code></p>
+</div>
+<div class="paragraph">
+<p>and plot the result from the output file <code>data/tunes.dat</code> with</p>
+</div>
+<div class="paragraph">
+<p><code>python3 plotTunes.py</code></p>
+</div>
+<div class="paragraph">
+<p>The result is saved in <code>RingTunes.png</code> and shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Cyclotron/RingTunes.png" alt="TunesClosedOrbitFinder">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accelerated_orbit_calculation_using_cyclotron2_in">Accelerated Orbit Calculation using cyclotron2.in</h2>
+<div class="sectionbody">
+<h3 id="_needed_files_cyclotron2_ingpl_bfield_dat_dist2_dat_rffield1_dat_rffield2_dat" class="discrete">Needed files: cyclotron2.{in,gpl}, bfield.dat, dist2.dat, rffield1.dat &amp; rffield2.dat</h3>
+<div class="paragraph">
+<p>For this calculation the initial conditions are set in the input file. Run OPAL with</p>
+</div>
+<div class="paragraph">
+<p><code>opal cyclotron2.in | tee cyclotron2.out</code></p>
+</div>
+<div class="paragraph">
+<p>where you also save the output in cyclotron2.out. It is always a good idea to check the standard output of OPAL in order to reveal problems.</p>
+</div>
+<div class="paragraph">
+<p><code>gnuplot cyclotron2.gpl</code></p>
+</div>
+<div class="paragraph">
+<p>As in the previous example, the result is saved in cyclotron2.pdf and shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Cyclotron/cyclotron2.png" alt="Orbit">
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-28 23:20:07 +0200
+Last updated 2026-04-28 23:07:23 +0200
 </div>
 </div>
 </body>
