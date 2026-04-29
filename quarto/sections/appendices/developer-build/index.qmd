@@ -66,7 +66,7 @@ For `OPALX`, the linked developer resources are:
 - [Development workflow](https://opalx-project.github.io/Manual/For-Developers/OPAL-Development-Workflow.html)
 - [Unit tests](https://opalx-project.github.io/Manual/For-Developers/unit-tests.html)
 - [Ideas](https://opalx-project.github.io/Manual/For-Developers/tech-ideas.html)
-- [OPALX Doxygen](https://amas.pages.psi.ch/opal-live-doc/opalx-doxygen/index.html)
+- [OPALX Doxygen](https://opalx-project.github.io/PhysicsManual/api/opalx/html/)
 - [OPALX source code repository](https://github.com/OPALX-project/OPALX)
 - [OPALX regression tests](https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html)
 :::
