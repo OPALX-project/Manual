@@ -7,6 +7,7 @@ book:
   site-url: "https://opalx-project.github.io/Manual-new/"
   repo-url: "https://github.com/OPALX-project/Manual"
   repo-branch: master
+  repo-subdir: quarto
   repo-actions: [edit, issue]
   chapters:
     - index.qmd
