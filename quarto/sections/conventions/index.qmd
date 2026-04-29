@@ -1,0 +1,112 @@
+---
+title: "Conventions"
+---
+
+```{=html}
+<div class="feature-toggle">
+  <span>View:</span>
+  <label class="feature-choice">
+    <input type="radio" name="feature-mode" value="opal"> OPAL
+  </label>
+  <label class="feature-choice">
+    <input type="radio" name="feature-mode" value="opalx"> OPALX
+  </label>
+  <label class="feature-choice">
+    <input type="radio" name="feature-mode" value="both" checked> Both
+  </label>
+</div>
+```
+
+::: {.feature-opal}
+## Physical Units
+
+Throughout the computations, OPAL internally uses international units, as
+defined by SI, for all physical quantities. Some elements and field maps are
+defined in other units in the input file as specified in their corresponding
+manual entries.
+
+| Quantity | Dimension |
+|---|---|
+| Length | $\mathrm{m}$ (meters) |
+| Angle | $\mathrm{rad}$ (radians) |
+| Quadrupole coefficient | $\mathrm{Tm^{-1}}$ |
+| Multipole coefficient, $2n$ poles | $\mathrm{Tm^{-n + 1}}$ |
+| Electric voltage | $\mathrm{MV}$ (megavolts) |
+| Electric field strength | $\mathrm{MV\ m^{-1}}$ |
+| Frequency | $\mathrm{MHz}$ (megahertz) |
+| Particle energy | $\mathrm{MeV}$ or $\mathrm{eV}$ |
+| Particle mass | $\mathrm{MeV\ c^{-2}}$ |
+| Particle momentum | $\beta\gamma$ or $\mathrm{eV}$ |
+| Beam current | $\mathrm{A}$ (amperes) |
+| Particle charge | $\mathrm{e}$ (elementary charges) |
+| Impedances | $\mathrm{M \Omega}$ (megaohms) |
+| Emittances (normalized and geometric) | $\mathrm{mrad}$ |
+| RF power | $\mathrm{MW}$ (megawatts) |
+:::
+
+::: {.feature-opalx}
+## OPALX Unit Additions
+
+For OPALX, two additional conventions are already relevant in the current
+manual content:
+
+- Photon-beam `BEAM::ENERGY` uses $\mathrm{eV}$ for `PARTICLE=PHOTON`,
+  following the CAIN convention.
+- For the `LASER` element, the analytic pulse attributes use SI units:
+  `WAVELENGTH` in `m`, `PULSEENERGY` in `J`, `PULSELENGTH` in `s`, `WAISTX`
+  and `WAISTY` in `m`, while `DIR` and `STOKES` are dimensionless 3-vectors.
+
+For charged-particle beams, the `BEAM` command keeps the existing OPAL/OPALX
+convention that `ENERGY` is specified in `GeV`.
+:::
+
+::: {.feature-opal}
+## Symbols Used
+
+The following symbols are used throughout the manual.
+
+| Symbol | Definition |
+|---|---|
+| $X$ | Ellipse axis along the $x$ dimension, in m. $X = R$ for circular beams. |
+| $Y$ | Ellipse axis along the $y$ dimension, in m. $Y = R$ for circular beams. |
+| $R$ | Beam radius for a circular beam, in m. |
+| $R^*$ | Effective beam radius for an elliptical beam: $R^* = (X+Y)/2$, in m. |
+| $\sigma_x$ | RMS beam size in $x$: $\sigma_x = \langle x^2\rangle^{1/2}$, in m. |
+| $\sigma_y$ | RMS beam size in $y$: $\sigma_y = \langle y^2\rangle^{1/2}$, in m. |
+| $\sigma_i$ | RMS beam size in $x$ ($i=1$) or $y$ ($i=2$). |
+| $\sigma_L$ | RMS beam size in the Larmor frame for cylindrically symmetric beams and external fields. |
+| $\sigma_r$ | RMS beam size in $r$ for a circular beam: $\sigma_r = \langle r^2\rangle^{1/2} = R/\sqrt{2}$, in m. |
+| $\sigma^*$ | Average RMS size for an elliptical beam: $\sigma^* = (\sigma_x+\sigma_y)/2$, in m. |
+| $\theta_r$ | Larmor angle, in rad. |
+| $\dot\theta_r$ | Time derivative of the Larmor angle: $\dot\theta_r = -eB_z/(2m\gamma)$, in rad/s. |
+| $z_s$ | Longitudinal position of a particular beam slice, in m. |
+| $z_h, z_t$ | Position of the head and tail of a beam bunch, in m. |
+| $\zeta$ | Position label of a beam slice; for bunched beams $\zeta = z_s-z_t$. |
+| $\xi$ | Position label of a slice image charge; for bunched beams $\xi = z_h + z_t$. |
+| $K$ | Focusing function of cylindrically symmetric external fields: $K = -\frac{\partial F_r}{\partial r}$, in N/m. |
+| $K_i$ | Focusing function in direction $x_i$: $K_i = -\frac{\partial F_{x_i}}{\partial x_i}$, in N/m. |
+| $I_0$ | Alfven current: $I_0= e/(4\pi\epsilon_0mc^3)$, in A. |
+| $I$ | Beam current, in A. |
+| $I(\zeta)$ | Slice beam current, in A. |
+| $k_p$ | Beam perveance: $k_p = I(\zeta)/(2I_0)$. |
+| $g(\zeta)$ | Form factor used in slice analysis of bunched beams. |
+:::
+
+::: {.feature-opal}
+## Elegant Multipole Conversion
+
+OPAL-T uses the magnetic gradient in `T/m`, so the conversion is
+
+$$
+\frac{dB_y}{dx} = \frac{0.29979}{E[\mathrm{GeV}]} \, k_1.
+$$
+
+A compact Python helper for conversion is:
+
+```python
+def k1tog(k1, E=45):
+    """convert K1 to gradient, E in MeV"""
+    g = 3.335e-3 * E * k1
+    return g
+```
+:::

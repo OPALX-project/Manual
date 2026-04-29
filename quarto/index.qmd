@@ -1,0 +1,27 @@
+# Home {.unnumbered}
+
+Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Achim Gsell (PSI); Sriramkrishnan Muralikrishnan (JSC); Nicole Neveu (SLAC); Philippe Piot (NIU); Chris Rogers (RAL); Mohsen Sadr (PSI/MIT); Jochem Snuverink (PSI); Jonathan Thompson (RAL); Daniel Winklehner (MIT)
+
+```{=html}
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;align-items:center;justify-items:center;margin:1.5rem 0 2rem 0;">
+  <img src="logos/psi_logo.png" alt="PSI" style="max-width:121px;max-height:72px;">
+  <img src="logos/ciemat_logo.jpg" alt="CIEMAT" style="max-width:242px;max-height:72px;">
+  <img src="logos/SLAC-lab-hires.png" alt="SLAC" style="max-width:220px;max-height:72px;">
+  <img src="logos/UKRI_STF_logo.png" alt="UKRI STFC" style="max-width:176px;max-height:72px;">
+  <img src="logos/MIT-logo-with-spelling-design1-large-black-red.svg" alt="MIT" style="max-width:175px;max-height:72px;">
+  <img src="logos/Logo_FZ_Juelich_1561x454_rgb_jpg.jpg" alt="FZ Juelich" style="max-width:165px;max-height:72px;">
+  <img src="logos/NIU_horz_3Clr.png" alt="NIU" style="max-width:165px;max-height:72px;">
+</div>
+```
+
+_OPAL_ is a parallel open-source tool for charged-particle optics in linear accelerators and rings, including 3D space charge. Using the _MAD_ language with extensions, it runs on laptops as well as on the largest high-performance computing systems.
+
+_OPALX_ is the performance-portable rewrite of _OPAL_, targeting NVIDIA, AMD, and Intel GPUs while remaining usable on local clusters and laptops. It keeps the same extended _MAD_ language and is intended to be mostly backward compatible with _OPAL_, with this manual documenting the differences explicitly.
+
+Quick links:
+
+- [Build and Developer Resources](sections/appendices/developer-build/index.qmd)
+- [Download OPAL Binary Packages](sections/appendices/developer-build/index.qmd#download-of-binaries-and-clone-of-repository)
+- [OPALX Physics Manual](https://opalx-project.github.io/PhysicsManual/)
+
+Use the sidebar to navigate the chapters.

@@ -1,0 +1,26 @@
+---
+title: "Energy Bins"
+---
+
+```{=html}
+<div class="feature-toggle">
+  <span>View:</span>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
+</div>
+```
+
+## The `BINNING` Command
+
+The `BINNING` command controls how particles are grouped into energy bins for
+solver and multi-bunch workflows that use energy-resolved sub-structures.
+
+In practice, energy bins interact with:
+
+- `DISTRIBUTION` attributes such as `NBIN` and `SBIN`
+- field-solver settings that support energy-binned calculations
+- multi-bunch and restart workflows in OPAL-cycl
+
+The chapter is short in the legacy manual and mainly exists to document the
+available command attributes and their interaction with solver setup.
