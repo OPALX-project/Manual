@@ -37,6 +37,7 @@ book:
     - sections/partmatter/index.qmd
     - sections/optimiser/index.qmd
     - sections/sampler/index.qmd
+    - sections/literature/index.qmd
   appendices:
     - sections/appendices/fieldmaps/index.qmd
     - sections/appendices/syntax/index.qmd
@@ -45,7 +46,6 @@ book:
     - sections/appendices/benchmarks/index.qmd
     - sections/appendices/ics-design-note/index.qmd
     - sections/appendices/developer-build/index.qmd
-    - sections/literature/index.qmd
 
 number-sections: true
 number-depth: 3

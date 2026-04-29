@@ -20,10 +20,10 @@ Binary packages for `OPALX` are not published yet.
 ::::: {.feature-opal}
 | Version / source code | Linux binary package | macOS binary package | Manual | Source code documentation | Release notes |
 |---|---|---|---|---|---|
-| `OPAL` development | n.a. | n.a. | [HTML](https://opalx-project.github.io/Manual/) | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master) | n.a. |
-| [`OPAL 2024.1.0`](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz) |  |  |  | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master) | [Release notes 2024.1](https://opalx-project.github.io/Manual/ReleaseNotes/OPAL-2024.1.html) |
-| [`OPAL 2022.1.0`](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0.tar.xz) | [tar.xz](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0-1-x86_64-linux.tar.xz) | [tar.xz (x86_64)](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0-1-x86_64-macos.tar.xz), [tar.xz (M1)](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0-1-arm-macos.tar.xz) |  | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master) | [Release notes 2022.1](https://opalx-project.github.io/Manual/ReleaseNotes/OPAL-2022.1.html) |
-| [`OPAL 2021.1.0`](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2021.1.0/OPAL-2021.1.0.tar.xz) | [tar.xz](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2021.1.0/OPAL-2021.1.0-1-x86_64-linux.tar.xz) | [tar.xz (x86_64)](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2021.1.0/OPAL-2021.1.0-1-x86_64-macos.tar.xz) |  | [HTML](http://amas.web.psi.ch/opal/CodeDocumentation/master) | [Release notes 2021.1](https://opalx-project.github.io/Manual/ReleaseNotes/OPAL-2021.1.html) |
+| `OPAL` development | n.a. | n.a. | [HTML](https://opalx-project.github.io/Manual/) | [HTML](https://opalx-project.github.io/OPAL/) | n.a. |
+| [`OPAL 2024.1.0`](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2024.1.0/OPAL-2024.1.0.tar.xz) |  |  |  | [HTML](https://opalx-project.github.io/OPAL/) | [Release notes 2024.1](https://opalx-project.github.io/ReleaseNotes/OPAL-2024.1.html) |
+| [`OPAL 2022.1.0`](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0.tar.xz) | [tar.xz](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0-1-x86_64-linux.tar.xz) | [tar.xz (x86_64)](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0-1-x86_64-macos.tar.xz), [tar.xz (M1)](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2022.1.0/OPAL-2022.1.0-1-arm-macos.tar.xz) |  | [HTML](https://opalx-project.github.io/OPAL/) | [Release notes 2022.1](https://opalx-project.github.io/ReleaseNotes/OPAL-2022.1.html) |
+| [`OPAL 2021.1.0`](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2021.1.0/OPAL-2021.1.0.tar.xz) | [tar.xz](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2021.1.0/OPAL-2021.1.0-1-x86_64-linux.tar.xz) | [tar.xz (x86_64)](https://github.com/OPALX-project/OPAL/releases/download/OPAL-2021.1.0/OPAL-2021.1.0-1-x86_64-macos.tar.xz) |  | [HTML](https://opalx-project.github.io/OPAL/) | [Release notes 2021.1](https://opalx-project.github.io/ReleaseNotes/OPAL-2021.1.html) |
 
 Instead of downloading a source tarball, you can clone the full repository with:
 
@@ -44,11 +44,11 @@ For older releases, see the [OPAL GitHub releases page](https://github.com/OPALX
 
 For `OPAL`, the standard build instructions are:
 
-- [Supported OS and required software to build OPAL](https://opalx-project.github.io/Manual/For-Developers/Supported-OS-and-required-Software-to-build-OPAL.html)
-- [Setup build environment at PSI](https://opalx-project.github.io/Manual/For-Developers/Setup-build-environment-at-PSI.html)
-- [Compile required software](https://opalx-project.github.io/Manual/For-Developers/Compile-required-software.html)
-- [Compile OPAL](https://opalx-project.github.io/Manual/For-Developers/Compile-OPAL.html)
-- [Compile OPAL at CSCS](https://opalx-project.github.io/Manual/For-Developers/Compile-OPAL-at-CSCS.html)
+- [Supported OS and required software to build OPAL](https://opalx-project.github.io/For-Developers/Supported-OS-and-required-Software-to-build-OPAL.html)
+- [Setup build environment at PSI](https://opalx-project.github.io/For-Developers/Setup-build-environment-at-PSI.html)
+- [Compile required software](https://opalx-project.github.io/For-Developers/Compile-required-software.html)
+- [Compile OPAL](https://opalx-project.github.io/For-Developers/Compile-OPAL.html)
+- [Compile OPAL at CSCS](https://opalx-project.github.io/For-Developers/Compile-OPAL-at-CSCS.html)
 
 For `OPALX`, the current public build and run instructions are:
 
@@ -59,28 +59,29 @@ For `OPALX`, the current public build and run instructions are:
 ::: {.feature-opalx}
 For `OPALX`, the linked developer resources are:
 
-- [Coding Style](https://opalx-project.github.io/Manual/For-Developers/CodingStyle.html)
-- [AMD (Lumi) Debug Guide](https://opalx-project.github.io/Manual/For-Developers/amd-lumi-debug.html)
-- [File Format Statistical Output](https://opalx-project.github.io/Manual/For-Developers/File-Format-for-stat-Storage.html)
-- [Guide to program structure](https://opalx-project.github.io/Manual/For-Developers/Most-Used-Directories-in-the-Code.html)
-- [Development workflow](https://opalx-project.github.io/Manual/For-Developers/OPAL-Development-Workflow.html)
-- [Ideas](https://opalx-project.github.io/Manual/For-Developers/tech-ideas.html)
+- [Coding Style](https://opalx-project.github.io/For-Developers/CodingStyle.html)
+- [AMD (Lumi) Debug Guide](https://opalx-project.github.io/For-Developers/amd-lumi-debug.html)
+- [File Format Statistical Output](https://opalx-project.github.io/For-Developers/File-Format-for-stat-Storage.html)
+- [Guide to program structure](https://opalx-project.github.io/For-Developers/Most-Used-Directories-in-the-Code.html)
+- [Development workflow](https://opalx-project.github.io/For-Developers/OPAL-Development-Workflow.html)
+- [Ideas](https://opalx-project.github.io/For-Developers/tech-ideas.html)
 - [OPALX Doxygen](https://opalx-project.github.io/PhysicsManual/api/opalx/html/)
 - [OPALX source code repository](https://github.com/OPALX-project/OPALX)
-- [OPALX unit & regression tests](https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html)
+- [OPALX unit tests](https://github.com/OPALX-project/OPALX/tree/master/unit_tests)
+- [OPALX regression tests](https://github.com/OPALX-project/regression-tests-x/tree/master/RegressionTests)
 :::
 
 ::: {.feature-opal}
 For `OPAL`, the linked developer resources are:
 
-- [Coding Style and conventions](https://opalx-project.github.io/Manual/For-Developers/CodingStyle.html)
-- [Building, executing, and writing unit tests](https://opalx-project.github.io/Manual/For-Developers/unit-tests.html)
-- [Development workflow](https://opalx-project.github.io/Manual/For-Developers/OPAL-Development-Workflow.html)
-- [Release procedure](https://opalx-project.github.io/Manual/For-Developers/Release-Procedure.html)
-- [OPAL Doxygen](http://amas.web.psi.ch/opal/CodeDocumentation/master)
+- [Coding Style and conventions](https://opalx-project.github.io/For-Developers/CodingStyle.html)
+- [Building, executing, and writing unit tests](https://opalx-project.github.io/For-Developers/unit-tests.html)
+- [Development workflow](https://opalx-project.github.io/For-Developers/OPAL-Development-Workflow.html)
+- [Release procedure](https://opalx-project.github.io/For-Developers/Release-Procedure.html)
+- [OPAL Doxygen](https://opalx-project.github.io/OPAL/)
 - [Regression-test repository](https://github.com/OPALX-project/regression-tests)
-- [Regression tests](https://amas.pages.psi.ch/opal-live-doc/opal-regression-test/regressionTests/master/index.html)
-- [Unit tests](https://amas.pages.psi.ch/opal-live-doc/opal-regression-test/unitTests/master/index.html)
+- [Regression tests](https://github.com/OPALX-project/regression-tests/tree/master/RegressionTests)
+- [Unit tests](https://github.com/OPALX-project/OPAL/tree/master/tests)
 :::
 
 ## Source Repositories and Issue Trackers
