@@ -365,7 +365,7 @@ following format:
 electric field from the <<sec.elements.cyclotron,`CYCLOTRON`>>
 element. The magnetic field data (latexmath:[B_z]) are stored in the same
 format as <<sec.opalcycl.carboncycl-type,`CARBONCYCL`>>. Regarding
-the electric field, the 3D RF field-map can be read from {link_H5hut_wiki}[H5Hut]
+the electric field, the 3D RF field-map can be read from H5Hut
 type file (_.h5part_ file extension) making use of a conversion tool integrated
 into _OPAL_: _ascii2h5block_. For the details about its usage, please see
 <<sec.opalcycl.read-3d-rf-field-map,Read 3D RF field-map>>.
@@ -492,7 +492,7 @@ respectively.
 [[sec.opalcycl.read-3d-rf-field-map]]
 ==== Read 3D RF field-map
 
-The 3D RF field-map can be read from {link_H5hut_wiki}[H5Hut] type
+The 3D RF field-map can be read from H5Hut type
 file for `TYPE=BANDRF`. To generate the _h5part_ field files, it is
 necessary to use the _ascii2h5block_ conversion tool. This tool is
 available after compiling _OPAL_ with `ENABLE_BANDRF=ON`. This program
@@ -633,7 +633,7 @@ mrad.
 A bash script _tuning.sh_ is shown on the next page, to execute
 _OPAL-cycl_ for tune calculations.
 
-{link_manual_src}/examples/tuning.sh[tuning.sh]
+link:examples/tuning.sh[tuning.sh]
 
 To start execution, just run
 _tuning.sh_ which uses the input file _testcycl.in_ and the auxiliary
@@ -798,14 +798,14 @@ given in the output.
 [[sec.opalcycl.input-file]]
 ===== Input file
 
-{link_regtest_RingCyclotronMatched}/RingCyclotronMatched.in[matchedDistribution.in]
+https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/RingCyclotronMatched.in[matchedDistribution.in]
 
-All supplementary files can be found in {link_regtest_RingCyclotronMatched}[the matched distribution regression test].
+All supplementary files can be found in https://github.com/OPALX-project/regression-tests/tree/master/RegressionTests/RingCyclotronMatched[the matched distribution regression test].
 
 [[sec.opalcycl.output-1]]
 ===== Output
 
-{link_regtest_RingCyclotronMatched}/reference/RingCyclotronMatched.out[matchedDistribution.output]
+https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/reference/RingCyclotronMatched.out[matchedDistribution.output]
 
 [[sec.opalcycl.bibliography]]
 === References
@@ -817,7 +817,7 @@ anchor:bib.howison2010[[{counter:bib-cnt}\]]
 <<bib.howison2010>> M. Howison et al., http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in 2010 IEEE International Conference on Cluster Computing Workshops and Posters, vol. 1, pp. 1–8 (Heraklion, Crete, 2010).
 
 anchor:bib.h5root[[{counter:bib-cnt}\]]
-<<bib.h5root>> https://gitlab.psi.ch/OPAL/src/-/wikis/h5root[_H5root: a ROOT Based Graphical User Interface for H5hut_]
+<<bib.h5root>> link:h5root.html[_H5root: a ROOT Based Graphical User Interface for H5hut_]
 
 anchor:bib.schietinger[[{counter:bib-cnt}\]]
 <<bib.schietinger>> T. Schietinger, https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf[_H5PartROOT - A visualization and post-processing tool for accelerator simulations_], in Proceedings of the 10th International Computational Accelerator Physics conference (ICAP09), pp. 343-346 (San Francisco, CA, USA, 2009).

@@ -160,9 +160,9 @@ _OPAL-map_ is the new flavour of _OPAL_ and currently just contains the fundamen
 [[sec.opalmap.example]]
 === Example
 
-FODO lattice: {link_regtest_MAP_FODO}/MAP-FODO.in[MAP-FODO.in]
+FODO lattice: https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/MAP-FODO/MAP-FODO.in[MAP-FODO.in]
 
-Input distribution (to be put in directory `data`): {link_regtest_MAP_FODO}/data/FODO_DIST.dat[FODO_DIST.dat]
+Input distribution (to be put in directory `data`): https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/MAP-FODO/data/FODO_DIST.dat[FODO_DIST.dat]
 
 To `RUN` _OPAL-map_, the `METHOD` attribute gets set to `THICK`.
 ----

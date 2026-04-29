@@ -541,7 +541,7 @@ low-energy region are illustrated in <<tab_AZ_coeff>>.
 [[sec.partmatter.example-of-an-input-file]]
 === Example of an Input File
 
-{link_manual_src}/examples/particlematterinteraction.in[particlematterinteraction.in]
+link:examples/particlematterinteraction.in[particlematterinteraction.in]
 
 FX5 is a slit in x direction, the `APERTURE` is *POSITIVE*, the first
 value in `APERTURE` is the left part, the second value is the right
@@ -581,7 +581,7 @@ anchor:bib.tabata[[{counter:bib-cnt}\]]
 <<bib.tabata>> T. Tabata and T. Shirai, https://doi.org/10.1006/adnd.2000.0835[_Analytic Cross Section for Collisions of H+, H2+, H3+, H, H2, and H- with Hydrogen Molecules_], At. Dat. Nucl. Dat. Tabl., 76, 1 (2000).
 
 anchor:bib.barnett[[{counter:bib-cnt}\]]
-<<bib.barnett>> C. F. Barnett, https://inis.iaea.org/collection/NCLCollectionStore/\_Public/22/011/22011031.pdf[__Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules__], Tech. Rep. ORNL-6086/V1, Oak Ridge National Laboratory (1990).
+<<bib.barnett>> C. F. Barnett, https://inis.iaea.org/collection/NCLCollectionStore/_Public/22/011/22011031.pdf[__Atomic Data for Fusion Vol. I: Collisions of H, H2, He and Li atoms and ions atoms and molecules__], Tech. Rep. ORNL-6086/V1, Oak Ridge National Laboratory (1990).
 
 anchor:bib.betz[[{counter:bib-cnt}\]]
 <<bib.betz>> H.-D. Betz, https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.44.465[__Charge States and Charge-Changing Cross Sections of Fast Heavy Ions Penetrating Through Gaseous and Solid Media__], Rev. Mod. Phys. 44, 465 (1972).

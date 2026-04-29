@@ -1,0 +1,196 @@
+---
+title: "OPAL-MAP"
+---
+
+```{=html}
+<div class="feature-toggle">
+  <span>View:</span>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
+</div>
+```
+
+:::: {.feature-opal}
+## Introduction
+
+`OPAL-MAP` is the map-tracking flavor of OPAL. Instead of direct time-domain
+field integration, it computes transfer maps for beamline elements and applies
+those maps to particle phase-space coordinates.
+
+Map creation is based on Lie operators acting on the element Hamiltonian and is
+evaluated in truncated power-series algebra (TPSA). In contrast to `OPAL-T`,
+which uses time `t` as independent variable, `OPAL-MAP` uses the longitudinal
+position `s`.
+
+The main advantage is that maps can be accumulated and reused, reducing the
+cost of repeated tracking through a fixed lattice.
+
+## Variables in `OPAL-MAP`
+
+For inputs and outputs, the usual `OPAL-T` units are used. The internal
+coordinates are Frenet-Serret coordinates with respect to a reference particle:
+
+| Variable | Meaning | Units |
+|---|---|---|
+| `X` | horizontal position relative to the reference particle | `m` |
+| `PX` | normalized horizontal canonical momentum `p_x / P_0` | `1` |
+| `Y` | vertical position relative to the reference particle | `m` |
+| `PY` | normalized vertical canonical momentum `p_y / P_0` | `1` |
+| `Z` | longitudinal position relative to the reference particle | `m` |
+| `DELTA` | `E / (P_0 c) - 1 / beta_0` | `1` |
+
+The independent variable is the reference-particle position `s [m]`.
+
+## Principle of Map Tracking
+
+Particle motion is computed by applying a map `M` to the initial phase-space
+vector:
+
+$$
+v^f = \mathcal{M} \circ v^i.
+$$ {#eq-opalmap-map-action}
+
+The map may represent:
+
+- an element slice,
+- a full element,
+- a beamline section,
+- or the whole line.
+
+The source chapter illustrates the workflow with a dedicated map-tracking
+diagram:
+
+![Flow chart of map tracking.](figures/mapTracking.png){#fig-opalmap-flow width="30%"}
+
+### Creation of Map
+
+Map creation is based on Hamiltonian mechanics and the Lie operator. The source
+writes:
+
+$$
+\begin{aligned}
+H &= T + V, \\
+\frac{d q_i}{ds} &= \frac{\partial H}{\partial p_i},
+\qquad
+\frac{d p_i}{ds} = - \frac{\partial H}{\partial q_i}.
+\end{aligned}
+$$ {#eq-opalmap-hamilton}
+
+Introducing the Lie operator,
+
+$$
+:\!f\!: = [f,\circ] =
+\sum_{i=1}^{n}
+\left(
+\frac{\partial f}{\partial q_i}\frac{\partial \circ}{\partial p_i} -
+\frac{\partial f}{\partial p_i}\frac{\partial \circ}{\partial q_i}
+\right),
+$$ {#eq-opalmap-lie}
+
+the map is written formally as
+
+$$
+f(s) = e^{-:\!H\!: s} f(s_0),
+\qquad
+\mathcal{M} = e^{-:\!H\!: s}.
+$$ {#eq-opalmap-lie-map}
+
+### Implementation of Map Tracking
+
+The Hamiltonian is Taylor-expanded in the TPSA using the OPAL differential
+algebra package. The truncation order is set on `TRACK` through `MAP_ORDER`:
+
+```text
+TRACK, LINE=QUADTEST, BEAM=BEAM1, MAXSTEPS=10000,
+       DT=1.0e-10, ZSTOP=4.0, MAP_ORDER=2;
+```
+
+## Additional Parameters in `OPAL-MAP`
+
+| Attribute | Set In | Default | Meaning |
+|---|---|---:|---|
+| `MAP_ORDER` | `TRACK` | `1` | map order, equal to TPSA order minus one |
+| `NSLICES` | beamline element | `1` | number of slices inside the element |
+
+## Limitations
+
+The source chapter marks `OPAL-MAP` as an early flavor with only the
+fundamental beamline elements:
+
+- `DRIFT`
+- `SBEND`
+- `QUADRUPOLE`
+
+## Example
+
+The original chapter points to the map-tracking regression test:
+
+- [MAP-FODO.in](https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/MAP-FODO/MAP-FODO.in)
+- [FODO_DIST.dat](https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/MAP-FODO/data/FODO_DIST.dat)
+
+To run `OPAL-MAP`, the `RUN` method is set to `THICK`:
+
+```text
+RUN, METHOD="THICK", BEAM=BEAM1, FIELDSOLVER=FS1, DISTRIBUTION=DIST1;
+```
+
+Element slicing is optional and uses the usual `NSLICES` attribute:
+
+```text
+D1:  DRIFT,      L=1.0, ELEMEDGE=0.000, NSLICES=10;
+QP1: QUADRUPOLE, L=0.3, K1=8.64195, ELEMEDGE=1.000, NSLICES=15;
+```
+
+## Output
+
+In addition to progress output, `OPAL-MAP` writes several map-specific files.
+
+### Statistics Output
+
+The `.stat` file is analogous to the `OPAL-T` statistics output.
+
+### `data/<input>.dispersion`
+
+`OPAL-MAP` computes beamline dispersion from the transfer matrix:
+
+$$
+\begin{pmatrix} \eta_i \\ \eta_{p_i} \end{pmatrix}_{s_1}
+=
+\begin{pmatrix} R_{11} & R_{12} \\ R_{21} & R_{22} \end{pmatrix}
+\begin{pmatrix} \eta_i \\ \eta_{p_i} \end{pmatrix}_{s_0}
++
+\begin{pmatrix} R_{16} \\ R_{26} \end{pmatrix}.
+$$ {#eq-opalmap-dispersion}
+
+The file columns are:
+
+| Column | Name | Units | Meaning |
+|---:|---|---|---|
+| 1 | `position` | `m` | longitudinal position |
+| 2 | `eta_x` | `m` | spatial dispersion in `x` |
+| 3 | `eta_px` | `1` | momentum dispersion in `x` |
+| 4 | `eta_y` | `m` | spatial dispersion in `y` |
+| 5 | `eta_py` | `1` | momentum dispersion in `y` |
+
+### `data/<input>.map`
+
+This file stores the transfer map of the whole beamline. Its format is that of
+the fixed-algebra vector-polynomial representation: the first number is the
+coefficient, followed by six integers describing the monomial powers in
+`(x, p_x, y, p_y, z, delta)`.
+
+| Column | Name | Meaning |
+|---:|---|---|
+| 1 | coefficient | polynomial coefficient |
+| 2 | `x` | power of `x` |
+| 3 | `p_x` | power of `p_x` |
+| 4 | `y` | power of `y` |
+| 5 | `p_y` | power of `p_y` |
+| 6 | `z` | power of `z` |
+| 7 | `delta` | power of `delta` |
+
+## References
+
+- M. Berz, _Modern map methods in particle beam physics_, Academic Press (1999).
+::::
