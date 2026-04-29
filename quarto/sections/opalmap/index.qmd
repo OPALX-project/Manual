@@ -24,7 +24,8 @@ which uses time `t` as independent variable, `OPAL-MAP` uses the longitudinal
 position `s`.
 
 The main advantage is that maps can be accumulated and reused, reducing the
-cost of repeated tracking through a fixed lattice.
+cost of repeated tracking through a fixed lattice. A standard reference for
+modern transfer-map methods in accelerator physics is [@berz1999].
 
 ## Variables in `OPAL-MAP`
 
@@ -190,7 +191,4 @@ coefficient, followed by six integers describing the monomial powers in
 | 6 | `z` | power of `z` |
 | 7 | `delta` | power of `delta` |
 
-## References
-
-- M. Berz, _Modern map methods in particle beam physics_, Academic Press (1999).
 ::::

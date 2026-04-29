@@ -242,7 +242,7 @@ The appendix again notes that there is no `FAST` variant.
 ## `1DProfile1`
 
 `1DProfile1` is the special bend-fringe profile format. It uses Enge functions
-for the entrance and exit fringe fields,
+for the entrance and exit fringe fields [@spencerenge1967],
 
 $$
 F(z) = \frac{1}{1 + e^{\sum_{n=0}^{N_{\mathrm{order}}} c_n (z/D)^n}},
@@ -336,7 +336,8 @@ Example header:
 ```
 
 This format describes a sampled electrostatic field with bilinear
-interpolation. In the source example the map spans `5000` longitudinal points
+interpolation. In the legacy workflow these maps were often produced with
+Poisson Superfish [@billenyoung2004]. In the source example the map spans `5000` longitudinal points
 and `200` radial points. The field is non-negligible from `-3.0 cm` to
 `51.0 cm` relative to `ELEMEDGE`, and the radial support is `0.0 cm` to
 `2.0 cm`. In `XZ` orientation the first column is `Ez` and the second is `Er`;
@@ -494,11 +495,4 @@ The grid ordering is again `z` fastest, then `y`, then `x`.
 | 5 | `z_start z_end Nz` in cm |
 | remaining lines | `Ex Ey Ez Hx Hy Hz` |
 
-## References
-
-- J. E. Spencer and H. A. Enge, [_Split-pole magnetic spectrograph for
-  precision nuclear spectroscopy_](https://www.sciencedirect.com/science/article/abs/pii/0029554X67906842),
-  Nucl. Instrum. Methods 49, 181 (1967).
-- J. H. Billen and L. M. Young, _Poisson superfish_, Los Alamos report
-  LA-UR-96-1834 (2004).
-:::::
+::::::

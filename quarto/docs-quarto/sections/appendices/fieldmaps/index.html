@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>Appendix A — OPAL-T Field Maps – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
@@ -23,28 +20,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
-
-
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../sections/appendices/syntax/index.html" rel="next">
-<link href="../../../sections/sampler/index.html" rel="prev">
+<meta content="../../../" name="quarto:offset"/>
+<link href="../../../sections/appendices/syntax/index.html" rel="next"/>
+<link href="../../../sections/sampler/index.html" rel="prev"/>
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +135,6 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -172,10 +186,8 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -202,288 +214,277 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+<div class="sidebar margin-sidebar zindex-bottom" id="quarto-margin-sidebar">
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></a></li></ol></nav>
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Appendix A — OPAL-T Field Maps</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked=""> Both</label>
+<span>View:</span>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
+<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
 </div>
 <div class="feature-opal">
-<section id="introduction" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">A.1</span> Introduction</h2>
+<section class="level2" data-number="A.1" id="introduction">
+<h2 class="anchored" data-anchor-id="introduction" data-number="A.1"><span class="header-section-number">A.1</span> Introduction</h2>
 <p>This appendix documents the field-map types accepted by <code>OPAL-T</code>. The legacy implementation supports several one-, two-, and three-dimensional field-map formats that originated from different external codes and accelerator applications.</p>
 <p>The original manual groups them into three families:</p>
 <ol type="1">
@@ -493,8 +494,8 @@ window.Quarto = {
 </ol>
 <p>In all cases, electric maps are normalized to a peak on-axis longitudinal field of <code>1 MV/m</code> and magnetic maps to a peak on-axis longitudinal field of <code>1 T</code>, unless the map type is explicitly documented as an exception.</p>
 </section>
-<section id="comments-in-field-maps" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="comments-in-field-maps"><span class="header-section-number">A.2</span> Comments in Field Maps</h2>
+<section class="level2" data-number="A.2" id="comments-in-field-maps">
+<h2 class="anchored" data-anchor-id="comments-in-field-maps" data-number="A.2"><span class="header-section-number">A.2</span> Comments in Field Maps</h2>
 <p>Comments are introduced by <code>#</code> and extend to the end of the line. They are accepted:</p>
 <ul>
 <li>at the beginning of the file</li>
@@ -513,12 +514,12 @@ window.Quarto = {
 -60.0 60.0 # invalid inline split # 9999
 0.0 2.0 199</code></pre>
 </section>
-<section id="normalization" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="normalization"><span class="header-section-number">A.3</span> Normalization</h2>
+<section class="level2" data-number="A.3" id="normalization">
+<h2 class="anchored" data-anchor-id="normalization" data-number="A.3"><span class="header-section-number">A.3</span> Normalization</h2>
 <p>ASCII field maps are normalized with the maximum absolute value of the longitudinal on-axis field. The documented exception is <code>1DProfile1</code>. This normalization can be disabled by appending <code>FALSE</code> to the first line of the field map.</p>
 </section>
-<section id="field-map-warnings-and-errors" class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="field-map-warnings-and-errors"><span class="header-section-number">A.4</span> Field-Map Warnings and Errors</h2>
+<section class="level2" data-number="A.4" id="field-map-warnings-and-errors">
+<h2 class="anchored" data-anchor-id="field-map-warnings-and-errors" data-number="A.4"><span class="header-section-number">A.4</span> Field-Map Warnings and Errors</h2>
 <p>If <code>OPAL-T</code> encounters a parsing error, it disables the corresponding element, emits a warning, and continues the simulation. The main warning categories are:</p>
 <ul>
 <li>too few lines compared with the header counts</li>
@@ -538,15 +539,15 @@ window.Quarto = {
 \tag{A.2}\]</span></span></p>
 <p>where <code>F_z</code> is the sampled field from the file and <code>\tilde F_z</code> is the field reconstructed after low-pass filtering.</p>
 </section>
-<section id="types-and-format" class="level2" data-number="A.5">
-<h2 data-number="A.5" class="anchored" data-anchor-id="types-and-format"><span class="header-section-number">A.5</span> Types and Format</h2>
+<section class="level2" data-number="A.5" id="types-and-format">
+<h2 class="anchored" data-anchor-id="types-and-format" data-number="A.5"><span class="header-section-number">A.5</span> Types and Format</h2>
 <p>The legacy appendix lists both implemented and planned descriptors.</p>
-<section id="implemented-families" class="level3" data-number="A.5.1">
-<h3 data-number="A.5.1" class="anchored" data-anchor-id="implemented-families"><span class="header-section-number">A.5.1</span> Implemented families</h3>
+<section class="level3" data-number="A.5.1" id="implemented-families">
+<h3 class="anchored" data-anchor-id="implemented-families" data-number="A.5.1"><span class="header-section-number">A.5.1</span> Implemented families</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -602,12 +603,12 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="planned-but-not-implemented-in-the-historical-appendix" class="level3" data-number="A.5.2">
-<h3 data-number="A.5.2" class="anchored" data-anchor-id="planned-but-not-implemented-in-the-historical-appendix"><span class="header-section-number">A.5.2</span> Planned but not implemented in the historical appendix</h3>
+<section class="level3" data-number="A.5.2" id="planned-but-not-implemented-in-the-historical-appendix">
+<h3 class="anchored" data-anchor-id="planned-but-not-implemented-in-the-historical-appendix" data-number="A.5.2"><span class="header-section-number">A.5.2</span> Planned but not implemented in the historical appendix</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -628,8 +629,8 @@ window.Quarto = {
 </table>
 </section>
 </section>
-<section id="field-map-orientation" class="level2" data-number="A.6">
-<h2 data-number="A.6" class="anchored" data-anchor-id="field-map-orientation"><span class="header-section-number">A.6</span> Field-Map Orientation</h2>
+<section class="level2" data-number="A.6" id="field-map-orientation">
+<h2 class="anchored" data-anchor-id="field-map-orientation" data-number="A.6"><span class="header-section-number">A.6</span> Field-Map Orientation</h2>
 <p>Two- and three-dimensional maps carry an orientation string in the header.</p>
 <p>For 2D maps:</p>
 <ul>
@@ -648,34 +649,34 @@ window.Quarto = {
 <li><code>Hphi</code></li>
 </ul>
 <p>In the alternative 2D orientation, the first two columns are interchanged while the third and fourth are unchanged.</p>
-<div id="fig-fieldmaps-order" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-fieldmaps-order">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fieldmaps-order-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/order.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/order.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fieldmaps-order-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;A.1: Axis-ordering conventions for the legacy field-map orientation rules.
+Figure A.1: Axis-ordering conventions for the legacy field-map orientation rules.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="fast-attribute-for-1d-field-maps" class="level2" data-number="A.7">
-<h2 data-number="A.7" class="anchored" data-anchor-id="fast-attribute-for-1d-field-maps"><span class="header-section-number">A.7</span> <code>FAST</code> Attribute for 1D Field Maps</h2>
+<section class="level2" data-number="A.7" id="fast-attribute-for-1d-field-maps">
+<h2 class="anchored" data-anchor-id="fast-attribute-for-1d-field-maps" data-number="A.7"><span class="header-section-number">A.7</span> <code>FAST</code> Attribute for 1D Field Maps</h2>
 <p>For some 1D field maps, the boolean attribute <code>FAST</code> can be used to speed up field evaluation. When <code>FAST = TRUE</code>, <code>OPAL-T</code> generates an internal 2D field map and then uses bilinear interpolation rather than the slower Fourier-series technique.</p>
 <p>This is faster, but the legacy appendix warns that it can introduce numerical noise if the generated 2D grid is too coarse.</p>
-<div id="fig-fieldmaps-noise" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-fieldmaps-noise">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fieldmaps-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/fieldnoise_example.png" class="img-fluid figure-img" style="width:80.0%">
+<img class="img-fluid figure-img" src="figures/fieldnoise_example.png" style="width:80.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fieldmaps-noise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;A.2: Example of field noise caused by insufficient one-dimensional reconstruction.
+Figure A.2: Example of field noise caused by insufficient one-dimensional reconstruction.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="dmagnetostatic" class="level2" data-number="A.8">
-<h2 data-number="A.8" class="anchored" data-anchor-id="dmagnetostatic"><span class="header-section-number">A.8</span> <code>1DMagnetoStatic</code></h2>
+<section class="level2" data-number="A.8" id="dmagnetostatic">
+<h2 class="anchored" data-anchor-id="dmagnetostatic" data-number="A.8"><span class="header-section-number">A.8</span> <code>1DMagnetoStatic</code></h2>
 <p>A <code>1DMagnetoStatic</code> map stores one-dimensional static magnetic data on axis. An example header from the appendix is:</p>
 <pre class="text"><code>1DMagnetoStatic 40
 -60.0 60.0 9999
@@ -709,8 +710,8 @@ Figure&nbsp;A.2: Example of field noise caused by insufficient one-dimensional r
 </tbody>
 </table>
 </section>
-<section id="astramagnetostatic" class="level2" data-number="A.9">
-<h2 data-number="A.9" class="anchored" data-anchor-id="astramagnetostatic"><span class="header-section-number">A.9</span> <code>AstraMagnetoStatic</code></h2>
+<section class="level2" data-number="A.9" id="astramagnetostatic">
+<h2 class="anchored" data-anchor-id="astramagnetostatic" data-number="A.9"><span class="header-section-number">A.9</span> <code>AstraMagnetoStatic</code></h2>
 <p>This format accepts non-equidistant longitudinal samples in meters. The first column is <code>z</code>, the second is the on-axis longitudinal magnetic field. <code>OPAL-T</code> uses cubic-spline interpolation to resample the data to an equidistant mesh, then computes Fourier coefficients from that internal mesh.</p>
 <table class="caption-top table">
 <thead>
@@ -732,8 +733,8 @@ Figure&nbsp;A.2: Example of field noise caused by insufficient one-dimensional r
 </table>
 <p>The appendix explicitly notes that <code>AstraMagnetoStatic</code> does not provide a <code>FAST</code> path.</p>
 </section>
-<section id="ddynamic" class="level2" data-number="A.10">
-<h2 data-number="A.10" class="anchored" data-anchor-id="ddynamic"><span class="header-section-number">A.10</span> <code>1DDynamic</code></h2>
+<section class="level2" data-number="A.10" id="ddynamic">
+<h2 class="anchored" data-anchor-id="ddynamic" data-number="A.10"><span class="header-section-number">A.10</span> <code>1DDynamic</code></h2>
 <p>A <code>1DDynamic</code> map is the RF analogue of <code>1DMagnetoStatic</code>. An example header is:</p>
 <pre class="text"><code>1DDynamic 40
 -3.0 57.0 4999
@@ -771,8 +772,8 @@ Figure&nbsp;A.2: Example of field noise caused by insufficient one-dimensional r
 </tbody>
 </table>
 </section>
-<section id="astradynamic" class="level2" data-number="A.11">
-<h2 data-number="A.11" class="anchored" data-anchor-id="astradynamic"><span class="header-section-number">A.11</span> <code>AstraDynamic</code></h2>
+<section class="level2" data-number="A.11" id="astradynamic">
+<h2 class="anchored" data-anchor-id="astradynamic" data-number="A.11"><span class="header-section-number">A.11</span> <code>AstraDynamic</code></h2>
 <p><code>AstraDynamic</code> accepts a frequency line followed by non-equidistant <code>z</code> and <code>Ez</code> samples in meters and MV/m. <code>OPAL-T</code> spline-resamples the data to an internal equidistant mesh before the Fourier reconstruction.</p>
 <table class="caption-top table">
 <thead>
@@ -798,39 +799,39 @@ Figure&nbsp;A.2: Example of field noise caused by insufficient one-dimensional r
 </table>
 <p>The appendix again notes that there is no <code>FAST</code> variant.</p>
 </section>
-<section id="dprofile1" class="level2" data-number="A.12">
-<h2 data-number="A.12" class="anchored" data-anchor-id="dprofile1"><span class="header-section-number">A.12</span> <code>1DProfile1</code></h2>
-<p><code>1DProfile1</code> is the special bend-fringe profile format. It uses Enge functions for the entrance and exit fringe fields,</p>
+<section class="level2" data-number="A.12" id="dprofile1">
+<h2 class="anchored" data-anchor-id="dprofile1" data-number="A.12"><span class="header-section-number">A.12</span> <code>1DProfile1</code></h2>
+<p><code>1DProfile1</code> is the special bend-fringe profile format. It uses Enge functions for the entrance and exit fringe fields <span class="citation" data-cites="spencerenge1967"><a href="../../literature/index.html#ref-spencerenge1967" role="doc-biblioref">[13]</a></span>,</p>
 <p><span id="eq-fieldmaps-enge-function"><span class="math display">\[
 F(z) = \frac{1}{1 + e^{\sum_{n=0}^{N_{\mathrm{order}}} c_n (z/D)^n}},
 \tag{A.3}\]</span></span></p>
 <p>where <code>D</code> is the full gap of the magnet and <code>c_n</code> are fitted coefficients. Unlike the other ASCII formats, <code>1DProfile1</code> is not normalized to unit peak field.</p>
 <p>The appendix warns that the polynomial degree should be odd and the highest coefficient should be positive, otherwise the fitted profile may turn upward again at large distance.</p>
-<div id="fig-fieldmaps-enge" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-fieldmaps-enge">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fieldmaps-enge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/Enge_poly.png" class="img-fluid figure-img" style="width:80.0%">
+<img class="img-fluid figure-img" src="figures/Enge_poly.png" style="width:80.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fieldmaps-enge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;A.3: Polynomial Enge-style profile used for <code>1DProfile1</code>.
+Figure A.3: Polynomial Enge-style profile used for <code>1DProfile1</code>.
 </figcaption>
 </figure>
 </div>
-<div id="fig-fieldmaps-profile1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-fieldmaps-profile1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fieldmaps-profile1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/profile-1.png" class="img-fluid figure-img" style="width:80.0%">
+<img class="img-fluid figure-img" src="figures/profile-1.png" style="width:80.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fieldmaps-profile1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;A.4: Profile shape for <code>1DProfile1</code>.
+Figure A.4: Profile shape for <code>1DProfile1</code>.
 </figcaption>
 </figure>
 </div>
 <p>The generic file layout is:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -857,8 +858,8 @@ Figure&nbsp;A.4: Profile shape for <code>1DProfile1</code>.
 </tr>
 </tbody>
 </table>
-<section id="dprofile1-type-1" class="level3" data-number="A.12.1">
-<h3 data-number="A.12.1" class="anchored" data-anchor-id="dprofile1-type-1"><span class="header-section-number">A.12.1</span> <code>1DProfile1</code> Type 1</h3>
+<section class="level3" data-number="A.12.1" id="dprofile1-type-1">
+<h3 class="anchored" data-anchor-id="dprofile1-type-1" data-number="A.12.1"><span class="header-section-number">A.12.1</span> <code>1DProfile1</code> Type 1</h3>
 <p>Type 1 stores the magnet length implicitly in the difference between the second exit and entrance parameters. The appendix defines</p>
 <p><span id="eq-fieldmaps-profile1-type1-input"><span class="math display">\[
 \begin{aligned}
@@ -879,29 +880,29 @@ L &amp;= \text{Exit Parameter 2} - \text{Entrance Parameter 2} \\
 \Delta_4 &amp;= \text{Exit Parameter 3} - \text{Exit Parameter 2}.
 \end{aligned}
 \tag{A.5}\]</span></span></p>
-<div id="fig-fieldmaps-rbendtype1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-fieldmaps-rbendtype1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fieldmaps-rbendtype1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/RBendType1.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/RBendType1.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fieldmaps-rbendtype1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;A.5: <code>RBEND</code> profile geometry for <code>1DProfile1</code> type 1.
+Figure A.5: <code>RBEND</code> profile geometry for <code>1DProfile1</code> type 1.
 </figcaption>
 </figure>
 </div>
-<div id="fig-fieldmaps-sbendtype1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-fieldmaps-sbendtype1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fieldmaps-sbendtype1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/SBendType1.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/SBendType1.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fieldmaps-sbendtype1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code> type 1.
+Figure A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code> type 1.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="dprofile1-type-2" class="level3" data-number="A.12.2">
-<h3 data-number="A.12.2" class="anchored" data-anchor-id="dprofile1-type-2"><span class="header-section-number">A.12.2</span> <code>1DProfile1</code> Type 2</h3>
+<section class="level3" data-number="A.12.2" id="dprofile1-type-2">
+<h3 class="anchored" data-anchor-id="dprofile1-type-2" data-number="A.12.2"><span class="header-section-number">A.12.2</span> <code>1DProfile1</code> Type 2</h3>
 <p>Type 2 removes the magnet-length information from the field map and uses the beamline element attribute <code>L</code> instead. This allows the Enge origins to move relative to the physical edges.</p>
 <p><span id="eq-fieldmaps-profile1-type2-origins"><span class="math display">\[
 \begin{aligned}
@@ -916,10 +917,10 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </ul>
 </section>
 </section>
-<section id="two-dimensional-families" class="level2" data-number="A.13">
-<h2 data-number="A.13" class="anchored" data-anchor-id="two-dimensional-families"><span class="header-section-number">A.13</span> Two-Dimensional Families</h2>
-<section id="delectrostatic" class="level3" data-number="A.13.1">
-<h3 data-number="A.13.1" class="anchored" data-anchor-id="delectrostatic"><span class="header-section-number">A.13.1</span> <code>2DElectroStatic</code></h3>
+<section class="level2" data-number="A.13" id="two-dimensional-families">
+<h2 class="anchored" data-anchor-id="two-dimensional-families" data-number="A.13"><span class="header-section-number">A.13</span> Two-Dimensional Families</h2>
+<section class="level3" data-number="A.13.1" id="delectrostatic">
+<h3 class="anchored" data-anchor-id="delectrostatic" data-number="A.13.1"><span class="header-section-number">A.13.1</span> <code>2DElectroStatic</code></h3>
 <p>Example header:</p>
 <pre class="text"><code>2DElectroStatic XZ
 -3.0 51.0 4999
@@ -927,7 +928,7 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 0.00000e+00 0.00000e+00
 4.36222e-06 0.00000e+00
 ...</code></pre>
-<p>This format describes a sampled electrostatic field with bilinear interpolation. In the source example the map spans <code>5000</code> longitudinal points and <code>200</code> radial points. The field is non-negligible from <code>-3.0 cm</code> to <code>51.0 cm</code> relative to <code>ELEMEDGE</code>, and the radial support is <code>0.0 cm</code> to <code>2.0 cm</code>. In <code>XZ</code> orientation the first column is <code>Ez</code> and the second is <code>Er</code>; for <code>ZX</code> orientation the columns are exchanged.</p>
+<p>This format describes a sampled electrostatic field with bilinear interpolation. In the legacy workflow these maps were often produced with Poisson Superfish <span class="citation" data-cites="billenyoung2004"><a href="../../literature/index.html#ref-billenyoung2004" role="doc-biblioref">[14]</a></span>. In the source example the map spans <code>5000</code> longitudinal points and <code>200</code> radial points. The field is non-negligible from <code>-3.0 cm</code> to <code>51.0 cm</code> relative to <code>ELEMEDGE</code>, and the radial support is <code>0.0 cm</code> to <code>2.0 cm</code>. In <code>XZ</code> orientation the first column is <code>Ez</code> and the second is <code>Er</code>; for <code>ZX</code> orientation the columns are exchanged.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -955,8 +956,8 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </tbody>
 </table>
 </section>
-<section id="dmagnetostatic-1" class="level3" data-number="A.13.2">
-<h3 data-number="A.13.2" class="anchored" data-anchor-id="dmagnetostatic-1"><span class="header-section-number">A.13.2</span> <code>2DMagnetoStatic</code></h3>
+<section class="level3" data-number="A.13.2" id="dmagnetostatic-1">
+<h3 class="anchored" data-anchor-id="dmagnetostatic-1" data-number="A.13.2"><span class="header-section-number">A.13.2</span> <code>2DMagnetoStatic</code></h3>
 <p>Example header:</p>
 <pre class="text"><code>2DMagnetoStatic ZX
 0.0 2.0 199
@@ -992,8 +993,8 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </tbody>
 </table>
 </section>
-<section id="ddynamic-1" class="level3" data-number="A.13.3">
-<h3 data-number="A.13.3" class="anchored" data-anchor-id="ddynamic-1"><span class="header-section-number">A.13.3</span> <code>2DDynamic</code></h3>
+<section class="level3" data-number="A.13.3" id="ddynamic-1">
+<h3 class="anchored" data-anchor-id="ddynamic-1" data-number="A.13.3"><span class="header-section-number">A.13.3</span> <code>2DDynamic</code></h3>
 <p>Example header:</p>
 <pre class="text"><code>2DDynamic XZ
 -3.0 51.0 4121
@@ -1041,10 +1042,10 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </table>
 </section>
 </section>
-<section id="three-dimensional-families" class="level2" data-number="A.14">
-<h2 data-number="A.14" class="anchored" data-anchor-id="three-dimensional-families"><span class="header-section-number">A.14</span> Three-Dimensional Families</h2>
-<section id="dmagnetostatic-2" class="level3" data-number="A.14.1">
-<h3 data-number="A.14.1" class="anchored" data-anchor-id="dmagnetostatic-2"><span class="header-section-number">A.14.1</span> <code>3DMagnetoStatic</code></h3>
+<section class="level2" data-number="A.14" id="three-dimensional-families">
+<h2 class="anchored" data-anchor-id="three-dimensional-families" data-number="A.14"><span class="header-section-number">A.14</span> Three-Dimensional Families</h2>
+<section class="level3" data-number="A.14.1" id="dmagnetostatic-2">
+<h3 class="anchored" data-anchor-id="dmagnetostatic-2" data-number="A.14.1"><span class="header-section-number">A.14.1</span> <code>3DMagnetoStatic</code></h3>
 <p>Example header:</p>
 <pre class="text"><code>3DMagnetoStatic
 -1.5 1.5 227
@@ -1084,8 +1085,8 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </tbody>
 </table>
 </section>
-<section id="dmagnetostatic_extended" class="level3" data-number="A.14.2">
-<h3 data-number="A.14.2" class="anchored" data-anchor-id="dmagnetostatic_extended"><span class="header-section-number">A.14.2</span> <code>3DMagnetoStatic_Extended</code></h3>
+<section class="level3" data-number="A.14.2" id="dmagnetostatic_extended">
+<h3 class="anchored" data-anchor-id="dmagnetostatic_extended" data-number="A.14.2"><span class="header-section-number">A.14.2</span> <code>3DMagnetoStatic_Extended</code></h3>
 <p>Example header:</p>
 <pre class="text"><code>3DMagnetoStatic_Extended
 -9.9254 9.9254 133
@@ -1125,8 +1126,8 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </tbody>
 </table>
 </section>
-<section id="ddynamic-2" class="level3" data-number="A.14.3">
-<h3 data-number="A.14.3" class="anchored" data-anchor-id="ddynamic-2"><span class="header-section-number">A.14.3</span> <code>3DDynamic</code></h3>
+<section class="level3" data-number="A.14.3" id="ddynamic-2">
+<h3 class="anchored" data-anchor-id="ddynamic-2" data-number="A.14.3"><span class="header-section-number">A.14.3</span> <code>3DDynamic</code></h3>
 <p>Example header:</p>
 <pre class="text"><code>3DDynamic
 1498.9534
@@ -1181,16 +1182,7 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
 </table>
 </section>
 </section>
-<section id="references" class="level2" data-number="A.15">
-<h2 data-number="A.15" class="anchored" data-anchor-id="references"><span class="header-section-number">A.15</span> References</h2>
-<ul>
-<li>J. E. Spencer and H. A. Enge, <a href="https://www.sciencedirect.com/science/article/abs/pii/0029554X67906842"><em>Split-pole magnetic spectrograph for precision nuclear spectroscopy</em></a>, Nucl. Instrum. Methods 49, 181 (1967).</li>
-<li>J. H. Billen and L. M. Young, <em>Poisson superfish</em>, Los Alamos report LA-UR-96-1834 (2004).</li>
-</ul>
-</section>
 </div>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1594,20 +1586,16 @@ Figure&nbsp;A.6: <code>SBEND</code> profile geometry for <code>1DProfile1</code>
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../sections/sampler/index.html" class="pagination-link" aria-label="Sampler">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../sections/appendices/syntax/index.html" class="pagination-link" aria-label="OPAL Language Syntax">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Sampler" class="pagination-link" href="../../../sections/sampler/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="OPAL Language Syntax" class="pagination-link" href="../../../sections/appendices/syntax/index.html">
+<span class="nav-page-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/fieldmaps/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/fieldmaps/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

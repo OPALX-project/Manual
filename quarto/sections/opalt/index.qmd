@@ -433,15 +433,4 @@ while for curved multipoles the operator is modified by the curvature terms
 through `h_s`. The point of this alternative derivation is to keep the geometry
 and fringe profile separated through `T(x)` and `S(s)`.
 
-## References
-
-The source chapter cites:
-
-- J. Qiang et al. on the quasi-static model and integrated Green-function space
-  charge
-- E. Fubiani et al. on cathode image-charge treatment
-- Langdon on the Boris-Buneman algorithm
-- Tait-Bryan angle references
-- Borland / SDDS output references
-- ParaView and VisIt for geometry/output visualization
 ::::

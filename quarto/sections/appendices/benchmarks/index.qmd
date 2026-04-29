@@ -15,7 +15,7 @@ title: "Benchmarks"
 ## `OPAL-T` Compared with TRANSPORT and TRACE 3D
 
 The first benchmark family compares `OPAL-T` with the envelope and transport
-codes TRACE 3D and TRANSPORT.
+codes TRACE 3D and TRANSPORT [@crandallrusthoi1985; @brown1980transport].
 
 ### TRACE 3D Units and Input
 
@@ -170,7 +170,7 @@ The `OPAL-T` bend comparison is shown for three cases:
 
 ## Hard-Edge Dipole Comparison with ELEGANT
 
-The second benchmark family studies a hard-edge dipole against ELEGANT.
+The second benchmark family studies a hard-edge dipole against ELEGANT [@borland2000elegant].
 Because the default `1DPROFILE1-DEFAULT` map in `OPAL` includes finite fringe
 extent, the appendix proposes the following hard-edge replacement:
 
@@ -234,7 +234,7 @@ correlation between transverse position and energy that is visible in
 ## `OPAL` and `Impact-T`
 
 The final benchmark family compares `OPAL` and `Impact-T` for a cold `10 mA`
-`H+` bunch expanding in a `1 m` drift. The setup uses:
+`H+` bunch expanding in a `1 m` drift [@impacttmanual]. The setup uses:
 
 - Gaussian distribution cut at `4 sigma`
 - `16^3` space-charge grid
@@ -354,17 +354,5 @@ for the two space-charge implementations in a simple drift benchmark.
 
 ![Longitudinal detail of the `OPAL` and `Impact-T` comparison.](figures/opal-impact-1MHz-z.png){#fig-benchmarks-impact-z width="50%"}
 
-## References
-
-- K. Crandall and D. Rusthoi, [_Documentation for TRACE: An Interactive
-  Beam-Transport Code_](https://doi.org/10.2172/5937743), Los Alamos report
-  LA-10235-MS (1985).
-- K. L. Brown et al., [_TRANSPORT - A Computer Program for Designing Charged
-  Particle Beam Transport Systems_](http://cds.cern.ch/record/133647), CERN
-  80-4 (1980).
-- U. Rohrer, [PSI graphic transport framework](http://aea.web.psi.ch/Urs_Rohrer/MyWeb/trans.htm).
-- M. Borland, [_elegant: a flexible SDDS-compliant code for accelerator
-  simulation_](https://publications.anl.gov/anlpubs/2000/08/36940.pdf), LS-287
-  (2000).
-- L. Qiang et al., `Impact-T` references as cited in the original appendix.
 :::::
+

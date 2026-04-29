@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>Appendix B — OPAL Language Syntax – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
@@ -24,27 +21,25 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../sections/appendices/opal-madx/index.html" rel="next">
-<link href="../../../sections/appendices/fieldmaps/index.html" rel="prev">
+<meta content="../../../" name="quarto:offset"/>
+<link href="../../../sections/appendices/opal-madx/index.html" rel="next"/>
+<link href="../../../sections/appendices/fieldmaps/index.html" rel="prev"/>
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +115,6 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -172,301 +166,289 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/syntax/index.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/syntax/index.html"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#statements" id="toc-statements" class="nav-link active" data-scroll-target="#statements"><span class="header-section-number">B.1</span> Statements</a></li>
-  <li><a href="#real-expressions" id="toc-real-expressions" class="nav-link" data-scroll-target="#real-expressions"><span class="header-section-number">B.2</span> Real Expressions</a></li>
-  <li><a href="#real-variables-and-constants" id="toc-real-variables-and-constants" class="nav-link" data-scroll-target="#real-variables-and-constants"><span class="header-section-number">B.3</span> Real Variables and Constants</a></li>
-  <li><a href="#logical-expressions-and-variables" id="toc-logical-expressions-and-variables" class="nav-link" data-scroll-target="#logical-expressions-and-variables"><span class="header-section-number">B.4</span> Logical Expressions and Variables</a></li>
-  <li><a href="#string-expressions-and-constants" id="toc-string-expressions-and-constants" class="nav-link" data-scroll-target="#string-expressions-and-constants"><span class="header-section-number">B.5</span> String Expressions and Constants</a></li>
-  <li><a href="#real-array-expressions-and-definitions" id="toc-real-array-expressions-and-definitions" class="nav-link" data-scroll-target="#real-array-expressions-and-definitions"><span class="header-section-number">B.6</span> Real Array Expressions and Definitions</a></li>
-  <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints"><span class="header-section-number">B.7</span> Constraints</a></li>
-  <li><a href="#variable-references" id="toc-variable-references" class="nav-link" data-scroll-target="#variable-references"><span class="header-section-number">B.8</span> Variable References</a></li>
-  <li><a href="#token-lists-and-regular-expressions" id="toc-token-lists-and-regular-expressions" class="nav-link" data-scroll-target="#token-lists-and-regular-expressions"><span class="header-section-number">B.9</span> Token Lists and Regular Expressions</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/syntax/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#statements" href="#statements" id="toc-statements"><span class="header-section-number">B.1</span> Statements</a></li>
+<li><a class="nav-link" data-scroll-target="#real-expressions" href="#real-expressions" id="toc-real-expressions"><span class="header-section-number">B.2</span> Real Expressions</a></li>
+<li><a class="nav-link" data-scroll-target="#real-variables-and-constants" href="#real-variables-and-constants" id="toc-real-variables-and-constants"><span class="header-section-number">B.3</span> Real Variables and Constants</a></li>
+<li><a class="nav-link" data-scroll-target="#logical-expressions-and-variables" href="#logical-expressions-and-variables" id="toc-logical-expressions-and-variables"><span class="header-section-number">B.4</span> Logical Expressions and Variables</a></li>
+<li><a class="nav-link" data-scroll-target="#string-expressions-and-constants" href="#string-expressions-and-constants" id="toc-string-expressions-and-constants"><span class="header-section-number">B.5</span> String Expressions and Constants</a></li>
+<li><a class="nav-link" data-scroll-target="#real-array-expressions-and-definitions" href="#real-array-expressions-and-definitions" id="toc-real-array-expressions-and-definitions"><span class="header-section-number">B.6</span> Real Array Expressions and Definitions</a></li>
+<li><a class="nav-link" data-scroll-target="#constraints" href="#constraints" id="toc-constraints"><span class="header-section-number">B.7</span> Constraints</a></li>
+<li><a class="nav-link" data-scroll-target="#variable-references" href="#variable-references" id="toc-variable-references"><span class="header-section-number">B.8</span> Variable References</a></li>
+<li><a class="nav-link" data-scroll-target="#token-lists-and-regular-expressions" href="#token-lists-and-regular-expressions" id="toc-token-lists-and-regular-expressions"><span class="header-section-number">B.9</span> Token Lists and Regular Expressions</a></li>
+</ul>
+<div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/syntax/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/syntax/index.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></a></li></ol></nav>
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/syntax/index.html"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Appendix B — OPAL Language Syntax</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <p>This appendix reproduces the compact grammar summary of the <code>OPAL</code> input language. Words in italic in the legacy appendix denote syntactic entities, while monospaced tokens must be entered literally.</p>
-<section id="statements" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="statements"><span class="header-section-number">B.1</span> Statements</h2>
+<section class="level2" data-number="B.1" id="statements">
+<h2 class="anchored" data-anchor-id="statements" data-number="B.1"><span class="header-section-number">B.1</span> Statements</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -521,12 +503,12 @@ ul.task-list li input[type="checkbox"] {
 <li>regular expression</li>
 </ul>
 </section>
-<section id="real-expressions" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="real-expressions"><span class="header-section-number">B.2</span> Real Expressions</h2>
+<section class="level2" data-number="B.2" id="real-expressions">
+<h2 class="anchored" data-anchor-id="real-expressions" data-number="B.2"><span class="header-section-number">B.2</span> Real Expressions</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -576,12 +558,12 @@ ul.task-list li input[type="checkbox"] {
 <li><code>_table-reference_</code></li>
 </ul>
 </section>
-<section id="real-variables-and-constants" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="real-variables-and-constants"><span class="header-section-number">B.3</span> Real Variables and Constants</h2>
+<section class="level2" data-number="B.3" id="real-variables-and-constants">
+<h2 class="anchored" data-anchor-id="real-variables-and-constants" data-number="B.3"><span class="header-section-number">B.3</span> Real Variables and Constants</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -606,8 +588,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>The original appendix also lists <code>_real-name_</code>, <code>_object-name_</code>, <code>_table-name_</code>, and <code>_column-name_</code> as identifiers.</p>
 </section>
-<section id="logical-expressions-and-variables" class="level2" data-number="B.4">
-<h2 data-number="B.4" class="anchored" data-anchor-id="logical-expressions-and-variables"><span class="header-section-number">B.4</span> Logical Expressions and Variables</h2>
+<section class="level2" data-number="B.4" id="logical-expressions-and-variables">
+<h2 class="anchored" data-anchor-id="logical-expressions-and-variables" data-number="B.4"><span class="header-section-number">B.4</span> Logical Expressions and Variables</h2>
 <p>Logical expressions are built from relations combined with <code>&amp;&amp;</code> and <code>||</code>. The relation grammar allows:</p>
 <ul>
 <li><code>_logical-name_</code></li>
@@ -631,8 +613,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>and the same <code>=</code> versus <code>:=</code> distinction as for reals.</p>
 </section>
-<section id="string-expressions-and-constants" class="level2" data-number="B.5">
-<h2 data-number="B.5" class="anchored" data-anchor-id="string-expressions-and-constants"><span class="header-section-number">B.5</span> String Expressions and Constants</h2>
+<section class="level2" data-number="B.5" id="string-expressions-and-constants">
+<h2 class="anchored" data-anchor-id="string-expressions-and-constants" data-number="B.5"><span class="header-section-number">B.5</span> String Expressions and Constants</h2>
 <p>String expressions may be:</p>
 <ul>
 <li>a literal string</li>
@@ -645,8 +627,8 @@ ul.task-list li input[type="checkbox"] {
 <li><code>STRING name := expression</code></li>
 </ul>
 </section>
-<section id="real-array-expressions-and-definitions" class="level2" data-number="B.6">
-<h2 data-number="B.6" class="anchored" data-anchor-id="real-array-expressions-and-definitions"><span class="header-section-number">B.6</span> Real Array Expressions and Definitions</h2>
+<section class="level2" data-number="B.6" id="real-array-expressions-and-definitions">
+<h2 class="anchored" data-anchor-id="real-array-expressions-and-definitions" data-number="B.6"><span class="header-section-number">B.6</span> Real Array Expressions and Definitions</h2>
 <p>The legacy appendix distinguishes scalar and array grammars explicitly. Array expressions mirror scalar arithmetic:</p>
 <ul>
 <li>unary <code>+</code> and <code>-</code></li>
@@ -678,8 +660,8 @@ ul.task-list li input[type="checkbox"] {
 <li><code>_array-definition_ : _array-prefix_ _array-name_ := _array-expression_</code></li>
 </ul>
 </section>
-<section id="constraints" class="level2" data-number="B.7">
-<h2 data-number="B.7" class="anchored" data-anchor-id="constraints"><span class="header-section-number">B.7</span> Constraints</h2>
+<section class="level2" data-number="B.7" id="constraints">
+<h2 class="anchored" data-anchor-id="constraints" data-number="B.7"><span class="header-section-number">B.7</span> Constraints</h2>
 <p>Constraints are first-class attribute values in the grammar. The appendix gives exactly:</p>
 <ul>
 <li><code>_constraint_ : _array-expression_ _constraint-operator_ _array-expression_</code></li>
@@ -692,8 +674,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>This is the form used by optimization-related commands when comparing vector or sampled quantities.</p>
 </section>
-<section id="variable-references" class="level2" data-number="B.8">
-<h2 data-number="B.8" class="anchored" data-anchor-id="variable-references"><span class="header-section-number">B.8</span> Variable References</h2>
+<section class="level2" data-number="B.8" id="variable-references">
+<h2 class="anchored" data-anchor-id="variable-references" data-number="B.8"><span class="header-section-number">B.8</span> Variable References</h2>
 <p>The variable-reference grammar in the appendix is intentionally small:</p>
 <ul>
 <li><code>_variable-reference_ : _real-name_</code></li>
@@ -701,8 +683,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>This is the basic hook that lets later statements reuse parser-visible values and object attributes.</p>
 </section>
-<section id="token-lists-and-regular-expressions" class="level2" data-number="B.9">
-<h2 data-number="B.9" class="anchored" data-anchor-id="token-lists-and-regular-expressions"><span class="header-section-number">B.9</span> Token Lists and Regular Expressions</h2>
+<section class="level2" data-number="B.9" id="token-lists-and-regular-expressions">
+<h2 class="anchored" data-anchor-id="token-lists-and-regular-expressions" data-number="B.9"><span class="header-section-number">B.9</span> Token Lists and Regular Expressions</h2>
 <p>The final grammar sections define parser tokens that are not scalar numbers.</p>
 <p>Token lists:</p>
 <ul>
@@ -715,10 +697,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>_regular-expression_ : "</code> <em>UNIX-regular-expression</em> <code>"</code></li>
 </ul>
 <p>These forms appear mostly in higher-level command attributes and parser-side matching constructs rather than in beam-dynamics expressions.</p>
-
-
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1121,20 +1100,16 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../sections/appendices/fieldmaps/index.html" class="pagination-link" aria-label="OPAL-T Field Maps">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../sections/appendices/opal-madx/index.html" class="pagination-link" aria-label="OPAL - MADX Conversion Guide">
-        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="OPAL-T Field Maps" class="pagination-link" href="../../../sections/appendices/fieldmaps/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="OPAL - MADX Conversion Guide" class="pagination-link" href="../../../sections/appendices/opal-madx/index.html">
+<span class="nav-page-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/syntax/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/syntax/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

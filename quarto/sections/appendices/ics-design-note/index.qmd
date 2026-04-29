@@ -520,7 +520,7 @@ The note recommends keeping the first PR narrow:
 The next PR after that should add `GGLUMINOSITY`, followed by
 `GGBREITWHEELER`.
 
-## References
+## Related Material
 
 - The public `OPALX` manual chapters for `TRACK`, `BEAMBEAM`, and
   `PARTICLEMATTERINTERACTION`

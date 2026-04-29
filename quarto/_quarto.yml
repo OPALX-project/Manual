@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs-quarto
+  post-render:
+    - python3 scripts/postprocess_bibliography.py
 
 book:
   title: "The OPAL(X) Framework Documentation"
@@ -43,11 +45,13 @@ book:
     - sections/appendices/benchmarks/index.qmd
     - sections/appendices/ics-design-note/index.qmd
     - sections/appendices/developer-build/index.qmd
+    - sections/literature/index.qmd
 
 number-sections: true
 number-depth: 3
 
 bibliography: references.bib
+csl: csl/ieee.csl
 
 format:
   html:

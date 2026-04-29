@@ -357,7 +357,9 @@ The reference example in the original manual is the PSI Ring Cyclotron at
 `580 MeV` and `2.2 mA`. The matched-distribution algorithm computes the
 covariance matrix in `(x, x', y, y', z, delta)`, while particles are later
 represented in `(x, p_x, y, p_y, z, p_z)`, so the appropriate transformation is
-required before comparing rms emittances.
+required before comparing rms emittances. The historical extraction study
+of Gordon and Taivassalo [@gordon1985] is one of the source references carried
+with this part of the legacy manual.
 
 Source links preserved from the original manual:
 
@@ -365,15 +367,4 @@ Source links preserved from the original manual:
 - [matched distribution regression test directory](https://github.com/OPALX-project/regression-tests/tree/master/RegressionTests/RingCyclotronMatched)
 - [matchedDistribution.output](https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/reference/RingCyclotronMatched.out)
 
-## References
-
-- M. M. Gordon and V. Taivassalo, [_Nonlinear Effects of Focusing Bars Used in
-  the Extraction Systems of Superconducting Cyclotrons_](https://ieeexplore.ieee.org/document/4333942),
-  IEEE Trans. Nucl. Sci. 32, 2447 (1985).
-- M. Howison et al., [_H5hut: A High-Performance I/O Library for Particle-based
-  Simulations_](http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098), IEEE Cluster
-  Workshops (2010).
-- [H5root: a ROOT Based Graphical User Interface for H5hut](h5root.html)
-- T. Schietinger, [_H5PartROOT - A visualization and post-processing tool for
-  accelerator simulations_](https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf).
 ::::

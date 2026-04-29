@@ -442,7 +442,7 @@ longitudinal profile generator.
 
 `BINOMIAL` generates a family of distributions governed by one parameter `m`
 per axis. Changing `m` moves continuously from hollow-shell and flat-profile
-shapes toward Gaussian-like limits @JohoDist.
+shapes toward Gaussian-like limits [@JohoDist].
 
 ![Representative transverse properties of binomial phase-space distributions.](figures/BinomialProperties.png){#fig-distribution-binomial width="80%"}
 
@@ -511,7 +511,7 @@ included in this matched-distribution construction.
 
 `MULTIGAUSS` models a train of Gaussian pulses. Transversely it uses a uniform
 elliptical profile, while longitudinally it generates `NPEAKS` equally spaced
-Gaussian peaks @laserPulseShaping.
+Gaussian peaks [@laserPulseShaping].
 
 Key attributes are:
 
@@ -585,7 +585,7 @@ with `x` a uniform random number on `[0, 1]`.
 ### `NONEQUIL`
 
 `NONEQUIL` is a more physical photoemission model for metal cathodes and
-materials such as `CsTe` @flo97 @clen2000 @dowe2009.
+materials such as `CsTe` [@flo97; @clen2000; @dowe2009].
 
 Its additional parameters are:
 

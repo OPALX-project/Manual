@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>Appendix E — Benchmarks – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
@@ -23,28 +20,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
-
-
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../sections/appendices/ics-design-note/index.html" rel="next">
-<link href="../../../sections/appendices/autophase/index.html" rel="prev">
+<meta content="../../../" name="quarto:offset"/>
+<link href="../../../sections/appendices/ics-design-note/index.html" rel="next"/>
+<link href="../../../sections/appendices/autophase/index.html" rel="prev"/>
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +135,6 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -172,10 +186,8 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -202,291 +214,280 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/benchmarks/index.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/benchmarks/index.html"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+<div class="sidebar margin-sidebar zindex-bottom" id="quarto-margin-sidebar">
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/benchmarks/index.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></a></li></ol></nav>
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/benchmarks/index.html"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Appendix E — Benchmarks</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked=""> Both</label>
+<span>View:</span>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
+<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
 </div>
 <div class="feature-opal">
-<section id="opal-t-compared-with-transport-and-trace-3d" class="level2" data-number="E.1">
-<h2 data-number="E.1" class="anchored" data-anchor-id="opal-t-compared-with-transport-and-trace-3d"><span class="header-section-number">E.1</span> <code>OPAL-T</code> Compared with TRANSPORT and TRACE 3D</h2>
-<p>The first benchmark family compares <code>OPAL-T</code> with the envelope and transport codes TRACE 3D and TRANSPORT.</p>
-<section id="trace-3d-units-and-input" class="level3" data-number="E.1.1">
-<h3 data-number="E.1.1" class="anchored" data-anchor-id="trace-3d-units-and-input"><span class="header-section-number">E.1.1</span> TRACE 3D Units and Input</h3>
+<section class="level2" data-number="E.1" id="opal-t-compared-with-transport-and-trace-3d">
+<h2 class="anchored" data-anchor-id="opal-t-compared-with-transport-and-trace-3d" data-number="E.1"><span class="header-section-number">E.1</span> <code>OPAL-T</code> Compared with TRANSPORT and TRACE 3D</h2>
+<p>The first benchmark family compares <code>OPAL-T</code> with the envelope and transport codes TRACE 3D and TRANSPORT <span class="citation" data-cites="crandallrusthoi1985 brown1980transport"><a href="../../literature/index.html#ref-crandallrusthoi1985" role="doc-biblioref">[15]</a>, <a href="../../literature/index.html#ref-brown1980transport" role="doc-biblioref">[16]</a></span>.</p>
+<section class="level3" data-number="E.1.1" id="trace-3d-units-and-input">
+<h3 class="anchored" data-anchor-id="trace-3d-units-and-input" data-number="E.1.1"><span class="header-section-number">E.1.1</span> TRACE 3D Units and Input</h3>
 <p>TRACE 3D uses the following phase-space conventions:</p>
 <ul>
 <li>horizontal plane: <code>x [mm]</code>, <code>x' [mrad]</code></li>
@@ -508,49 +509,49 @@ W = 7
 FREQ = 700
 BEAMI = 0.0, 4.0,0.0, 4.0, 0.0, 0.0756
 EMITI = 0.730, 0.730, 7.56</code></pre>
-<div id="fig-benchmarks-trace" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/Trace.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/Trace.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.1: TRACE 3D graphical interface used in the comparison.
+Figure E.1: TRACE 3D graphical interface used in the comparison.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-trace-z" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace-z">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-trace-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/TRACE_z.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/TRACE_z.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.2: TRACE 3D sigma-matrix layout used as the basis for the TRANSPORT comparison.
+Figure E.2: TRACE 3D sigma-matrix layout used as the basis for the TRANSPORT comparison.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-input-trace" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-input-trace">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-input-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/Input_Trace.png" class="img-fluid figure-img" style="width:33.0%">
+<img class="img-fluid figure-img" src="figures/Input_Trace.png" style="width:33.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-input-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.3: TRACE 3D input beam used in the benchmark.
+Figure E.3: TRACE 3D input beam used in the benchmark.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-trace-z-input" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace-z-input">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-trace-z-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/TRACE_z_input.png" class="img-fluid figure-img" style="width:50.0%">
+<img class="img-fluid figure-img" src="figures/TRACE_z_input.png" style="width:50.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-z-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.4: TRACE 3D sigma matrix for the benchmark input beam.
+Figure E.4: TRACE 3D sigma matrix for the benchmark input beam.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="transport-units-and-input" class="level3" data-number="E.1.2">
-<h3 data-number="E.1.2" class="anchored" data-anchor-id="transport-units-and-input"><span class="header-section-number">E.1.2</span> TRANSPORT Units and Input</h3>
+<section class="level3" data-number="E.1.2" id="transport-units-and-input">
+<h3 class="anchored" data-anchor-id="transport-units-and-input" data-number="E.1.2"><span class="header-section-number">E.1.2</span> TRANSPORT Units and Input</h3>
 <p>TRANSPORT uses the standard coordinates:</p>
 <ul>
 <li>horizontal plane: <code>x [cm]</code>, <code>theta [mrad]</code></li>
@@ -558,19 +559,19 @@ Figure&nbsp;E.4: TRACE 3D sigma matrix for the benchmark input beam.
 <li>longitudinal plane: <code>l [cm]</code>, <code>delta [%]</code></li>
 </ul>
 <p>The input beam can be taken from the TRACE 3D sigma matrix after changing the units with the TRANSPORT <code>card 15</code> settings documented in the appendix.</p>
-<div id="fig-benchmarks-transport" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-transport">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-transport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/TRANSPORT.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/TRANSPORT.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-transport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.5: TRANSPORT graphical interface used in the comparison.
+Figure E.5: TRANSPORT graphical interface used in the comparison.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="comparison-case" class="level3" data-number="E.1.3">
-<h3 data-number="E.1.3" class="anchored" data-anchor-id="comparison-case"><span class="header-section-number">E.1.3</span> Comparison Case</h3>
+<section class="level3" data-number="E.1.3" id="comparison-case">
+<h3 class="anchored" data-anchor-id="comparison-case" data-number="E.1.3"><span class="header-section-number">E.1.3</span> Comparison Case</h3>
 <p>The transport line consists of:</p>
 <ul>
 <li><code>DRIFT 1</code>: <code>0.250 m</code></li>
@@ -655,38 +656,38 @@ Figure&nbsp;E.5: TRANSPORT graphical interface used in the comparison.
 </tr>
 </tbody>
 </table>
-<div id="fig-benchmarks-trace-sbend" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace-sbend">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-trace-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/Trace_SBEND_edge.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/Trace_SBEND_edge.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.6: TRACE 3D <code>SBEND</code> with edge angles.
+Figure E.6: TRACE 3D <code>SBEND</code> with edge angles.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-transport-sbend" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-transport-sbend">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-transport-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/TRANS_SBEND_edge.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/TRANS_SBEND_edge.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-transport-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.7: TRANSPORT <code>SBEND</code> with edge angles.
+Figure E.7: TRANSPORT <code>SBEND</code> with edge angles.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="beam-size-and-emittance-comparison" class="level3" data-number="E.1.4">
-<h3 data-number="E.1.4" class="anchored" data-anchor-id="beam-size-and-emittance-comparison"><span class="header-section-number">E.1.4</span> Beam-Size and Emittance Comparison</h3>
+<section class="level3" data-number="E.1.4" id="beam-size-and-emittance-comparison">
+<h3 class="anchored" data-anchor-id="beam-size-and-emittance-comparison" data-number="E.1.4"><span class="header-section-number">E.1.4</span> Beam-Size and Emittance Comparison</h3>
 <p>The appendix reports agreement at the end of each line element.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
+<col style="width: 13%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -751,12 +752,12 @@ Figure&nbsp;E.7: TRANSPORT <code>SBEND</code> with edge angles.
 </table>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
+<col style="width: 13%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -819,36 +820,36 @@ Figure&nbsp;E.7: TRANSPORT <code>SBEND</code> with edge angles.
 </tr>
 </tbody>
 </table>
-<div id="fig-benchmarks-env" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-env">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-env-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/T3D_Tra_SBEND_edge_env.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/T3D_Tra_SBEND_edge_env.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-env-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.8: Beam-envelope comparison between TRACE 3D and TRANSPORT.
+Figure E.8: Beam-envelope comparison between TRACE 3D and TRANSPORT.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-emi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-emi">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-emi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/T3D_Tra_SBEND_edge_emi.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/T3D_Tra_SBEND_edge_emi.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-emi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.9: Emittance comparison between TRACE 3D and TRANSPORT.
+Figure E.9: Emittance comparison between TRACE 3D and TRANSPORT.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="relation-to-opal-t" class="level3" data-number="E.1.5">
-<h3 data-number="E.1.5" class="anchored" data-anchor-id="relation-to-opal-t"><span class="header-section-number">E.1.5</span> Relation to <code>OPAL-T</code></h3>
+<section class="level3" data-number="E.1.5" id="relation-to-opal-t">
+<h3 class="anchored" data-anchor-id="relation-to-opal-t" data-number="E.1.5"><span class="header-section-number">E.1.5</span> Relation to <code>OPAL-T</code></h3>
 <p>The appendix then maps the TRACE / TRANSPORT setup to <code>OPAL-T</code>. The main code feature comparison is:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -895,104 +896,104 @@ Figure&nbsp;E.9: Emittance comparison between TRACE 3D and TRANSPORT.
 <li><code>SBEND</code> with edge angles</li>
 <li><code>SBEND</code> with nonzero field index <code>K1</code></li>
 </ul>
-<div id="fig-benchmarks-opalt-noedge" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-noedge">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-opalt-noedge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/SBEND_noEdge.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/SBEND_noEdge.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-noedge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.10: <code>OPAL-T</code> hard-edge <code>SBEND</code> without fringe edges.
+Figure E.10: <code>OPAL-T</code> hard-edge <code>SBEND</code> without fringe edges.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-opalt-edge" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-edge">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-opalt-edge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/SBEND_Edges.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/SBEND_Edges.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-edge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.11: <code>OPAL-T</code> hard-edge <code>SBEND</code> with edge effects.
+Figure E.11: <code>OPAL-T</code> hard-edge <code>SBEND</code> with edge effects.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-opalt-fi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-fi">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-opalt-fi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/FI_SBEND_FMDef.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/FI_SBEND_FMDef.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-fi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.12: TRACE 3D and <code>OPAL-T</code> comparison with field index and default map.
+Figure E.12: TRACE 3D and <code>OPAL-T</code> comparison with field index and default map.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-opalt-fi-test" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-fi-test">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-opalt-fi-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/FI_SBEND_FMTest.png" class="img-fluid figure-img" style="width:90.0%">
+<img class="img-fluid figure-img" src="figures/FI_SBEND_FMTest.png" style="width:90.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-fi-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.13: TRACE 3D and <code>OPAL-T</code> comparison with field index and test map.
+Figure E.13: TRACE 3D and <code>OPAL-T</code> comparison with field index and test map.
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="hard-edge-dipole-comparison-with-elegant" class="level2" data-number="E.2">
-<h2 data-number="E.2" class="anchored" data-anchor-id="hard-edge-dipole-comparison-with-elegant"><span class="header-section-number">E.2</span> Hard-Edge Dipole Comparison with ELEGANT</h2>
-<p>The second benchmark family studies a hard-edge dipole against ELEGANT. Because the default <code>1DPROFILE1-DEFAULT</code> map in <code>OPAL</code> includes finite fringe extent, the appendix proposes the following hard-edge replacement:</p>
+<section class="level2" data-number="E.2" id="hard-edge-dipole-comparison-with-elegant">
+<h2 class="anchored" data-anchor-id="hard-edge-dipole-comparison-with-elegant" data-number="E.2"><span class="header-section-number">E.2</span> Hard-Edge Dipole Comparison with ELEGANT</h2>
+<p>The second benchmark family studies a hard-edge dipole against ELEGANT <span class="citation" data-cites="borland2000elegant"><a href="../../literature/index.html#ref-borland2000elegant" role="doc-biblioref">[17]</a></span>. Because the default <code>1DPROFILE1-DEFAULT</code> map in <code>OPAL</code> includes finite fringe extent, the appendix proposes the following hard-edge replacement:</p>
 <pre class="text"><code>1DProfile1  0  0  2
 -0.00000001 0.0 0.00000001 3
 -0.00000001 0.0 0.00000001 3
 -99.9
 -99.9</code></pre>
 <p>The intent is to suppress the fringe-field <code>B_z</code> contribution and recover the same hard-edge behavior that ELEGANT assumes when <code>FINT = 0</code>.</p>
-<div id="fig-benchmarks-elegant-default" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-default">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-elegant-default-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/report-compare-default.png" class="img-fluid figure-img" style="width:70.0%">
+<img class="img-fluid figure-img" src="figures/report-compare-default.png" style="width:70.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-default-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.14: Default dipole comparison report.
+Figure E.14: Default dipole comparison report.
 </figcaption>
 </figure>
 </div>
-<section id="integration-time-step-dependence" class="level3" data-number="E.2.1">
-<h3 data-number="E.2.1" class="anchored" data-anchor-id="integration-time-step-dependence"><span class="header-section-number">E.2.1</span> Integration Time-Step Dependence</h3>
+<section class="level3" data-number="E.2.1" id="integration-time-step-dependence">
+<h3 class="anchored" data-anchor-id="integration-time-step-dependence" data-number="E.2.1"><span class="header-section-number">E.2.1</span> Integration Time-Step Dependence</h3>
 <p>The appendix then studies the effect of integration time step and fringe-field range. The main conclusion is that time-step size has the larger impact on the accuracy.</p>
-<div id="fig-benchmarks-elegant-dt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-dt">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-elegant-dt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/report-emit-dt.png" class="img-fluid figure-img" style="width:66.0%">
+<img class="img-fluid figure-img" src="figures/report-emit-dt.png" style="width:66.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-dt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.15: Emittance sensitivity to the integration time step.
+Figure E.15: Emittance sensitivity to the integration time step.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-elegant-fringe" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-fringe">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-elegant-fringe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/report-fringe-size.png" class="img-fluid figure-img" style="width:66.0%">
+<img class="img-fluid figure-img" src="figures/report-fringe-size.png" style="width:66.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-fringe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.16: Fringe-size sensitivity study.
+Figure E.16: Fringe-size sensitivity study.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-elegant-fringe-zoom" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-fringe-zoom">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-elegant-fringe-zoom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/report-fringe-size-zoom.png" class="img-fluid figure-img" style="width:66.0%">
+<img class="img-fluid figure-img" src="figures/report-fringe-size-zoom.png" style="width:66.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-fringe-zoom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.17: Zoom of the final-emittance fringe-size study.
+Figure E.17: Zoom of the final-emittance fringe-size study.
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="d-csr-comparison-with-elegant" class="level2" data-number="E.3">
-<h2 data-number="E.3" class="anchored" data-anchor-id="d-csr-comparison-with-elegant"><span class="header-section-number">E.3</span> 1D CSR Comparison with ELEGANT</h2>
+<section class="level2" data-number="E.3" id="d-csr-comparison-with-elegant">
+<h2 class="anchored" data-anchor-id="d-csr-comparison-with-elegant" data-number="E.3"><span class="header-section-number">E.3</span> 1D CSR Comparison with ELEGANT</h2>
 <p>The CSR benchmark uses an <code>SBEND</code> followed by a drift, both with <code>WAKEF = FS_CSR_WAKE</code> enabled. For comparison with ELEGANT watch-point output, the appendix converts the trace-space quantities by</p>
 <p><span id="eq-benchmarks-csr-trace-conversion"><span class="math display">\[
 P_x = x'\,\beta\gamma,
@@ -1002,41 +1003,41 @@ P_y = y'\,\beta\gamma,
 s = (\bar t - t)\,\beta c.
 \tag{E.3}\]</span></span></p>
 <p>The benchmark uses a simple line with <code>0.1 m</code> drift, <code>30 deg</code> bend, and <code>0.4 m</code> drift. Without CSR, the codes agree closely; with CSR enabled, the average momentum change and longitudinal emittance still agree well, while the horizontal normalized emittance differs because <code>OPAL</code> and ELEGANT do not use exactly the same fringe-field treatment and emittance definition.</p>
-<div id="fig-benchmarks-csr-off" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-csr-off">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-csr-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/emit-csr-off.png" class="img-fluid figure-img" style="width:66.0%">
+<img class="img-fluid figure-img" src="figures/emit-csr-off.png" style="width:66.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-csr-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.18: Emittance evolution with CSR off.
+Figure E.18: Emittance evolution with CSR off.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-csr-dpp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-csr-dpp">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-csr-dpp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/dpp-csr-on.png" class="img-fluid figure-img" style="width:66.0%">
+<img class="img-fluid figure-img" src="figures/dpp-csr-on.png" style="width:66.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-csr-dpp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.19: Relative momentum spread with CSR on.
+Figure E.19: Relative momentum spread with CSR on.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-csr-on" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-csr-on">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-csr-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/emit-csr-on.png" class="img-fluid figure-img" style="width:66.0%">
+<img class="img-fluid figure-img" src="figures/emit-csr-on.png" style="width:66.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-csr-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.20: Emittance evolution with CSR on.
+Figure E.20: Emittance evolution with CSR on.
 </figcaption>
 </figure>
 </div>
 <p>One important detail from the original appendix is that the normalized horizontal emittance in <code>OPAL</code> continues to grow in the downstream drift, while the trace-like emittance does not. The source explains this as a real correlation between transverse position and energy that is visible in <code>\epsilon_x(x, P_x)</code> but not in <code>\epsilon_x(x, x')</code>.</p>
 </section>
-<section id="opal-and-impact-t" class="level2" data-number="E.4">
-<h2 data-number="E.4" class="anchored" data-anchor-id="opal-and-impact-t"><span class="header-section-number">E.4</span> <code>OPAL</code> and <code>Impact-T</code></h2>
-<p>The final benchmark family compares <code>OPAL</code> and <code>Impact-T</code> for a cold <code>10 mA</code> <code>H+</code> bunch expanding in a <code>1 m</code> drift. The setup uses:</p>
+<section class="level2" data-number="E.4" id="opal-and-impact-t">
+<h2 class="anchored" data-anchor-id="opal-and-impact-t" data-number="E.4"><span class="header-section-number">E.4</span> <code>OPAL</code> and <code>Impact-T</code></h2>
+<p>The final benchmark family compares <code>OPAL</code> and <code>Impact-T</code> for a cold <code>10 mA</code> <code>H+</code> bunch expanding in a <code>1 m</code> drift <span class="citation" data-cites="impacttmanual"><a href="../../literature/index.html#ref-impacttmanual" role="doc-biblioref">[18]</a></span>. The setup uses:</p>
 <ul>
 <li>Gaussian distribution cut at <code>4 sigma</code></li>
 <li><code>16^3</code> space-charge grid</li>
@@ -1044,8 +1045,8 @@ Figure&nbsp;E.20: Emittance evolution with CSR on.
 <li><code>10^5</code> macro particles</li>
 <li><code>1 MHz</code> bunch structure</li>
 </ul>
-<section id="opal-input" class="level3" data-number="E.4.1">
-<h3 data-number="E.4.1" class="anchored" data-anchor-id="opal-input"><span class="header-section-number">E.4.1</span> <code>OPAL</code> Input</h3>
+<section class="level3" data-number="E.4.1" id="opal-input">
+<h3 class="anchored" data-anchor-id="opal-input" data-number="E.4.1"><span class="header-section-number">E.4.1</span> <code>OPAL</code> Input</h3>
 <pre class="text"><code>OPTION, ECHO = FALSE, PSDUMPFREQ = 10,
 STATDUMPFREQ = 10, REPARTFREQ = 1000,
 PSDUMPFRAME = GLOBAL, VERSION=10600;
@@ -1084,8 +1085,8 @@ TRACK, LINE = L1, BEAM = Beam1, MAXSTEPS = 1000, ZSTOP = 1.0, DT = 1.0e-10;
 ENDTRACK;
 STOP;</code></pre>
 </section>
-<section id="impact-t-input" class="level3" data-number="E.4.2">
-<h3 data-number="E.4.2" class="anchored" data-anchor-id="impact-t-input"><span class="header-section-number">E.4.2</span> <code>Impact-T</code> Input</h3>
+<section class="level3" data-number="E.4.2" id="impact-t-input">
+<h3 class="anchored" data-anchor-id="impact-t-input" data-number="E.4.2"><span class="header-section-number">E.4.2</span> <code>Impact-T</code> Input</h3>
 <pre class="text"><code>!Welcome to Impact-t input file.
 !All comment lines start with "!" as the first character of the line.
 ! col row
@@ -1143,44 +1144,32 @@ STOP;</code></pre>
 ! L/m  N/A N/A  type  location of starting edge  v1  &lt;B0&gt;&lt;B0&gt;&lt;B0&gt;  v23 /
 1.0    0   0    0    0.0                           0.5            /</code></pre>
 </section>
-<section id="results" class="level3" data-number="E.4.3">
-<h3 data-number="E.4.3" class="anchored" data-anchor-id="results"><span class="header-section-number">E.4.3</span> Results</h3>
+<section class="level3" data-number="E.4.3" id="results">
+<h3 class="anchored" data-anchor-id="results" data-number="E.4.3"><span class="header-section-number">E.4.3</span> Results</h3>
 <p>The appendix treats the agreement in the following plots as a consistency check for the two space-charge implementations in a simple drift benchmark.</p>
-<div id="fig-benchmarks-impact" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-impact">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/opal-impact-1MHz.png" class="img-fluid figure-img" style="width:100.0%">
+<img class="img-fluid figure-img" src="figures/opal-impact-1MHz.png" style="width:100.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.21: Comparison of <code>OPAL</code> and <code>Impact-T</code> at 1 MHz.
+Figure E.21: Comparison of <code>OPAL</code> and <code>Impact-T</code> at 1 MHz.
 </figcaption>
 </figure>
 </div>
-<div id="fig-benchmarks-impact-z" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-impact-z">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-benchmarks-impact-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/opal-impact-1MHz-z.png" class="img-fluid figure-img" style="width:50.0%">
+<img class="img-fluid figure-img" src="figures/opal-impact-1MHz-z.png" style="width:50.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-impact-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;E.22: Longitudinal detail of the <code>OPAL</code> and <code>Impact-T</code> comparison.
+Figure E.22: Longitudinal detail of the <code>OPAL</code> and <code>Impact-T</code> comparison.
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
-<section id="references" class="level2" data-number="E.5">
-<h2 data-number="E.5" class="anchored" data-anchor-id="references"><span class="header-section-number">E.5</span> References</h2>
-<ul>
-<li>K. Crandall and D. Rusthoi, <a href="https://doi.org/10.2172/5937743"><em>Documentation for TRACE: An Interactive Beam-Transport Code</em></a>, Los Alamos report LA-10235-MS (1985).</li>
-<li>K. L. Brown et al., <a href="http://cds.cern.ch/record/133647"><em>TRANSPORT - A Computer Program for Designing Charged Particle Beam Transport Systems</em></a>, CERN 80-4 (1980).</li>
-<li>U. Rohrer, <a href="http://aea.web.psi.ch/Urs_Rohrer/MyWeb/trans.htm">PSI graphic transport framework</a>.</li>
-<li>M. Borland, <a href="https://publications.anl.gov/anlpubs/2000/08/36940.pdf"><em>elegant: a flexible SDDS-compliant code for accelerator simulation</em></a>, LS-287 (2000).</li>
-<li>L. Qiang et al., <code>Impact-T</code> references as cited in the original appendix.</li>
-</ul>
-</section>
 </div>
-
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1584,20 +1573,16 @@ Figure&nbsp;E.22: Longitudinal detail of the <code>OPAL</code> and <code>Impact-
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../sections/appendices/autophase/index.html" class="pagination-link" aria-label="Auto-phasing Algorithm">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../sections/appendices/ics-design-note/index.html" class="pagination-link" aria-label="OPALX Design Note: Laser--Electron ICS and gamma-gamma Collision Physics">
-        <span class="nav-page-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Auto-phasing Algorithm" class="pagination-link" href="../../../sections/appendices/autophase/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="OPALX Design Note: Laser--Electron ICS and gamma-gamma Collision Physics" class="pagination-link" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="nav-page-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/benchmarks/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/benchmarks/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

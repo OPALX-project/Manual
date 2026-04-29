@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>1&nbsp; Introduction – The OPAL(X) Framework Documentation</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>1  Introduction – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -62,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -78,27 +76,25 @@ div.csl-right-inline {
 div.csl-indent {
   margin-left: 2em;
 }</style>
-
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../sections/conventions/index.html" rel="next">
-<link href="../../index.html" rel="prev">
+<meta content="../../" name="quarto:offset"/>
+<link href="../../sections/conventions/index.html" rel="next"/>
+<link href="../../index.html" rel="prev"/>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -174,7 +170,6 @@ div.csl-indent {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -226,10 +221,8 @@ div.csl-indent {
     display: none;
   }
 </style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -256,335 +249,323 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/introduction/index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/introduction/index.html"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/introduction/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#history" id="toc-history" class="nav-link active" data-scroll-target="#history"><span class="header-section-number">1.1</span> History</a></li>
-  <li><a href="#project-resources-and-getting-started" id="toc-project-resources-and-getting-started" class="nav-link" data-scroll-target="#project-resources-and-getting-started"><span class="header-section-number">1.2</span> Project Resources and Getting Started</a></li>
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">1.3</span> Tools</a></li>
-  <li><a href="#parallel-processing-capabilities" id="toc-parallel-processing-capabilities" class="nav-link" data-scroll-target="#parallel-processing-capabilities"><span class="header-section-number">1.4</span> Parallel Processing Capabilities</a></li>
-  <li><a href="#quality-management" id="toc-quality-management" class="nav-link" data-scroll-target="#quality-management"><span class="header-section-number">1.5</span> Quality Management</a></li>
-  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output"><span class="header-section-number">1.6</span> Output</a></li>
-  <li><a href="#change-history" id="toc-change-history" class="nav-link" data-scroll-target="#change-history"><span class="header-section-number">1.7</span> Change History</a></li>
-  <li><a href="#known-issues-and-limitations" id="toc-known-issues-and-limitations" class="nav-link" data-scroll-target="#known-issues-and-limitations"><span class="header-section-number">1.8</span> Known Issues and Limitations</a></li>
-  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments"><span class="header-section-number">1.9</span> Acknowledgments</a></li>
-  <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation"><span class="header-section-number">1.10</span> Citation</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/introduction/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#history" href="#history" id="toc-history"><span class="header-section-number">1.1</span> History</a></li>
+<li><a class="nav-link" data-scroll-target="#project-resources-and-getting-started" href="#project-resources-and-getting-started" id="toc-project-resources-and-getting-started"><span class="header-section-number">1.2</span> Project Resources and Getting Started</a></li>
+<li><a class="nav-link" data-scroll-target="#tools" href="#tools" id="toc-tools"><span class="header-section-number">1.3</span> Tools</a></li>
+<li><a class="nav-link" data-scroll-target="#parallel-processing-capabilities" href="#parallel-processing-capabilities" id="toc-parallel-processing-capabilities"><span class="header-section-number">1.4</span> Parallel Processing Capabilities</a></li>
+<li><a class="nav-link" data-scroll-target="#quality-management" href="#quality-management" id="toc-quality-management"><span class="header-section-number">1.5</span> Quality Management</a></li>
+<li><a class="nav-link" data-scroll-target="#output" href="#output" id="toc-output"><span class="header-section-number">1.6</span> Output</a></li>
+<li><a class="nav-link" data-scroll-target="#change-history" href="#change-history" id="toc-change-history"><span class="header-section-number">1.7</span> Change History</a></li>
+<li><a class="nav-link" data-scroll-target="#known-issues-and-limitations" href="#known-issues-and-limitations" id="toc-known-issues-and-limitations"><span class="header-section-number">1.8</span> Known Issues and Limitations</a></li>
+<li><a class="nav-link" data-scroll-target="#acknowledgments" href="#acknowledgments" id="toc-acknowledgments"><span class="header-section-number">1.9</span> Acknowledgments</a></li>
+<li><a class="nav-link" data-scroll-target="#citation" href="#citation" id="toc-citation"><span class="header-section-number">1.10</span> Citation</a></li>
+</ul>
+<div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/introduction/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
+<span>View:</span>
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opal"/> OPAL
   </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opalx"/> OPALX
   </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked=""> Both
+<label class="feature-choice">
+<input checked="" name="feature-mode" type="radio" value="both"/> Both
   </label>
 </div>
-<section id="history" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="history"><span class="header-section-number">1.1</span> History</h2>
+<section class="level2" data-number="1.1" id="history">
+<h2 class="anchored" data-anchor-id="history" data-number="1.1"><span class="header-section-number">1.1</span> History</h2>
 <div class="feature-opal">
-<p>Using the MAD language with extensions, OPAL is derived from MAD9P and is based on the CLASSIC library <span class="citation" data-cites="classic">(<a href="#ref-classic" role="doc-biblioref">Iselin 1996</a>)</span>, which was started in 1995 by an international collaboration. IPPL (Independent Parallel Particle Layer) provides the parallel particles and fields using a data-parallel approach and was inspired by POOMA <span class="citation" data-cites="pooma">(<a href="#ref-pooma" role="doc-biblioref">Günther 2005</a>)</span>.</p>
+<p>Using the MAD language with extensions, OPAL is derived from MAD9P and is based on the CLASSIC library <span class="citation" data-cites="classic"><a href="../literature/index.html#ref-classic" role="doc-biblioref">[1]</a></span>, which was started in 1995 by an international collaboration. IPPL (Independent Parallel Particle Layer) provides the parallel particles and fields using a data-parallel approach and was inspired by POOMA <span class="citation" data-cites="pooma"><a href="../literature/index.html#ref-pooma" role="doc-biblioref">[2]</a></span>.</p>
 <p>OPAL-T can be used to model guns, injectors, ERLs, and complete XFELs.</p>
 </div>
 <div class="feature-opalx">
 <p>OPALX also uses an extended MAD language, but with a modernized implementation targeting performance portability and accelerator physics workflows on current CPU and GPU platforms.</p>
 </div>
 </section>
-<section id="project-resources-and-getting-started" class="level2 feature-opal" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="project-resources-and-getting-started"><span class="header-section-number">1.2</span> Project Resources and Getting Started</h2>
-<p>The public project pages at <a href="https://opalx-project.github.io" class="uri">https://opalx-project.github.io</a> collect the current landing-page material for both OPAL and OPALX. The published manual is available at <a href="https://opalx-project.github.io/Manual/" class="uri">https://opalx-project.github.io/Manual/</a>, and the OPAL mailing list can be joined via the subscription page at <a href="https://psilists.ethz.ch/sympa/subscribe/opal" class="uri">https://psilists.ethz.ch/sympa/subscribe/opal</a>. For a broader overview of current use cases and publications, see <a href="https://opalx-project.github.io/OPAL-References" class="uri">https://opalx-project.github.io/OPAL-References</a>.</p>
+<section class="level2 feature-opal" data-number="1.2" id="project-resources-and-getting-started">
+<h2 class="anchored" data-anchor-id="project-resources-and-getting-started" data-number="1.2"><span class="header-section-number">1.2</span> Project Resources and Getting Started</h2>
+<p>The public project pages at <a class="uri" href="https://opalx-project.github.io">https://opalx-project.github.io</a> collect the current landing-page material for both OPAL and OPALX. The published manual is available at <a class="uri" href="https://opalx-project.github.io/Manual/">https://opalx-project.github.io/Manual/</a>, and the OPAL mailing list can be joined via the subscription page at <a class="uri" href="https://psilists.ethz.ch/sympa/subscribe/opal">https://psilists.ethz.ch/sympa/subscribe/opal</a>. For a broader overview of current use cases and publications, see <a class="uri" href="https://opalx-project.github.io/OPAL-References">https://opalx-project.github.io/OPAL-References</a>.</p>
 <p>If you are starting with example problems, the following entry points are the most useful:</p>
 <ul>
-<li><a href="https://opalx-project.github.io/Examples/Cyclotron.html" class="uri">https://opalx-project.github.io/Examples/Cyclotron.html</a></li>
-<li><a href="https://opalx-project.github.io/Examples/RFPhotoInjector.html" class="uri">https://opalx-project.github.io/Examples/RFPhotoInjector.html</a></li>
-<li><a href="https://opalx-project.github.io/Examples/AWAEEXBeamline.html" class="uri">https://opalx-project.github.io/Examples/AWAEEXBeamline.html</a></li>
-<li><a href="https://opalx-project.github.io/Examples/AWADriveLinac.html" class="uri">https://opalx-project.github.io/Examples/AWADriveLinac.html</a></li>
-<li><a href="https://opalx-project.github.io/Examples/RegressionTestExamples.html" class="uri">https://opalx-project.github.io/Examples/RegressionTestExamples.html</a></li>
-<li><a href="https://opalx-project.github.io/Examples/FFA.html" class="uri">https://opalx-project.github.io/Examples/FFA.html</a> Users working at PSI can additionally consult <a href="https://opalx-project.github.io/Using-OPAL-at-PSI" class="uri">https://opalx-project.github.io/Using-OPAL-at-PSI</a>.</li>
+<li><a class="uri" href="https://opalx-project.github.io/Examples/Cyclotron.html">https://opalx-project.github.io/Examples/Cyclotron.html</a></li>
+<li><a class="uri" href="https://opalx-project.github.io/Examples/RFPhotoInjector.html">https://opalx-project.github.io/Examples/RFPhotoInjector.html</a></li>
+<li><a class="uri" href="https://opalx-project.github.io/Examples/AWAEEXBeamline.html">https://opalx-project.github.io/Examples/AWAEEXBeamline.html</a></li>
+<li><a class="uri" href="https://opalx-project.github.io/Examples/AWADriveLinac.html">https://opalx-project.github.io/Examples/AWADriveLinac.html</a></li>
+<li><a class="uri" href="https://opalx-project.github.io/Examples/RegressionTestExamples.html">https://opalx-project.github.io/Examples/RegressionTestExamples.html</a></li>
+<li><a class="uri" href="https://opalx-project.github.io/Examples/FFA.html">https://opalx-project.github.io/Examples/FFA.html</a> Users working at PSI can additionally consult <a class="uri" href="https://opalx-project.github.io/Using-OPAL-at-PSI">https://opalx-project.github.io/Using-OPAL-at-PSI</a>.</li>
 </ul>
 </section>
 <div class="feature-opalx">
-<p>For OPALX, user-facing material is still sparse. The current public entry point for execution and build instructions is <a href="https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/" class="uri">https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/</a>.</p>
+<p>For OPALX, user-facing material is still sparse. The current public entry point for execution and build instructions is <a class="uri" href="https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/">https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/</a>.</p>
 </div>
-<section id="tools" class="level2 feature-opal" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="tools"><span class="header-section-number">1.3</span> Tools</h2>
+<section class="level2 feature-opal" data-number="1.3" id="tools">
+<h2 class="anchored" data-anchor-id="tools" data-number="1.3"><span class="header-section-number">1.3</span> Tools</h2>
 <p>The project pages list a small set of supporting tools around the core simulation codes:</p>
 <ul>
 <li><code>runOPAL</code> provides Python scripts to launch and automate multiple jobs, including parameter scans.</li>
@@ -595,8 +576,8 @@ window.Quarto = {
 <div class="feature-opalx">
 <p>For OPALX, these tools are still evolving; the most stable interfaces remain the manual, the source repositories, and the regression/documentation pages.</p>
 </div>
-<section id="parallel-processing-capabilities" class="level2 feature-opal" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="parallel-processing-capabilities"><span class="header-section-number">1.4</span> Parallel Processing Capabilities</h2>
+<section class="level2 feature-opal" data-number="1.4" id="parallel-processing-capabilities">
+<h2 class="anchored" data-anchor-id="parallel-processing-capabilities" data-number="1.4"><span class="header-section-number">1.4</span> Parallel Processing Capabilities</h2>
 <p>OPAL is built to harness the power of parallel processing for an improved quantitative understanding of particle accelerators. This goal can only be achieved with detailed 3D modelling capabilities and a sufficient number of simulation particles to obtain meaningful statistics on beam properties such as emittance, slice emittance, and halo extension.</p>
 <p>The following example is representative:</p>
 <table class="caption-top table">
@@ -619,37 +600,37 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><a href="#fig-walldrift" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> shows the parallel efficiency time as a function of used cores for this test example. The data were obtained on a Cray XT5 at the Swiss Center for Scientific Computing.</p>
-<div id="fig-walldrift" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p><a class="quarto-xref" href="#fig-walldrift">Figure <span>1.1</span></a> shows the parallel efficiency time as a function of used cores for this test example. The data were obtained on a Cray XT5 at the Swiss Center for Scientific Computing.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-walldrift">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-walldrift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/drift2c1.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/drift2c1.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-walldrift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Parallel efficiency and particles pushed per <span class="math inline">\(\mu s\)</span> as a function of cores.
+Figure 1.1: Parallel efficiency and particles pushed per <span class="math inline">\(\mu s\)</span> as a function of cores.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="quality-management" class="level2 feature-opal" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="quality-management"><span class="header-section-number">1.5</span> Quality Management</h2>
+<section class="level2 feature-opal" data-number="1.5" id="quality-management">
+<h2 class="anchored" data-anchor-id="quality-management" data-number="1.5"><span class="header-section-number">1.5</span> Quality Management</h2>
 <p>Documentation and quality assurance are given very high priority because adequate documentation is a key factor in the usefulness of a code such as OPAL for present and future particle accelerators. With source control, Doxygen documentation, and a maintained user manual, the aim is to provide both users and co-developers with state-of-the-art documentation.</p>
-<p>One non-trivial test case is the PSI DC gun. <a href="#fig-guncomp1" class="quarto-xref">Figure&nbsp;<span>1.2</span></a> shows a comparison between IMPACT-T and OPAL-T.</p>
-<div id="fig-guncomp1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>One non-trivial test case is the PSI DC gun. <a class="quarto-xref" href="#fig-guncomp1">Figure <span>1.2</span></a> shows a comparison between IMPACT-T and OPAL-T.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-guncomp1">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-guncomp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/GunComp.png" class="img-fluid figure-img" style="width:80.0%">
+<img class="img-fluid figure-img" src="figures/GunComp.png" style="width:80.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-guncomp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.2: Comparison of energy and emittance in <span class="math inline">\(x\)</span> between IMPACT-T and OPAL-T.
+Figure 1.2: Comparison of energy and emittance in <span class="math inline">\(x\)</span> between IMPACT-T and OPAL-T.
 </figcaption>
 </figure>
 </div>
 <p>Misprints and obscurity are almost inevitable in a document of this size. Comments and active contributions from readers are therefore welcome.</p>
 </section>
-<section id="output" class="level2 feature-opal" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="output"><span class="header-section-number">1.6</span> Output</h2>
-<p>The phase space is stored in the H5hut file format <span class="citation" data-cites="howison2010_intro">(<a href="#ref-howison2010_intro" role="doc-biblioref">Howison et al. 2010</a>)</span> and can be analyzed using H5root and H5PartROOT-style post-processing workflows <span class="citation" data-cites="schietinger_intro">(<a href="#ref-schietinger_intro" role="doc-biblioref">Schietinger 2009</a>)</span>. The frequency of phase-space and statistical output is controlled by the relevant <code>OPTION</code> statement flags such as <code>PSDUMPFREQ</code> and <code>STATDUMPFREQ</code>.</p>
+<section class="level2 feature-opal" data-number="1.6" id="output">
+<h2 class="anchored" data-anchor-id="output" data-number="1.6"><span class="header-section-number">1.6</span> Output</h2>
+<p>The phase space is stored in the H5hut file format <span class="citation" data-cites="howison2010_intro"><a href="../literature/index.html#ref-howison2010_intro" role="doc-biblioref">[3]</a></span> and can be analyzed using H5root and H5PartROOT-style post-processing workflows <span class="citation" data-cites="schietinger_intro"><a href="../literature/index.html#ref-schietinger_intro" role="doc-biblioref">[4]</a></span>. The frequency of phase-space and statistical output is controlled by the relevant <code>OPTION</code> statement flags such as <code>PSDUMPFREQ</code> and <code>STATDUMPFREQ</code>.</p>
 <p>A SDDS-compatible ASCII file with statistical beam parameters is written to a file with extension <code>.stat</code>.</p>
 <p>For postprocessing we recommend <code>pyOPALTools</code>, which contains many tools for pre-processing, post-processing, analysis, and plotting output data.</p>
 </section>
@@ -663,53 +644,31 @@ Figure&nbsp;1.2: Comparison of energy and emittance in <span class="math inline"
 <li><code>5</code>: full debug or trace output</li>
 </ul>
 <p>For production runs we suggest <code>level == 1</code> or <code>level == 2</code>, for example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">opalx</span> inputfile.in <span class="at">--info</span> 1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1" tabindex="-1"></a><span class="ex">opalx</span> inputfile.in <span class="at">--info</span> 1</span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
 </div>
-<section id="change-history" class="level2 feature-opal" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="change-history"><span class="header-section-number">1.7</span> Change History</h2>
+<section class="level2 feature-opal" data-number="1.7" id="change-history">
+<h2 class="anchored" data-anchor-id="change-history" data-number="1.7"><span class="header-section-number">1.7</span> Change History</h2>
 <p>For the legacy manual, change history currently lives in the release notes set that is still maintained in the Asciidoctor tree.</p>
 </section>
-<section id="known-issues-and-limitations" class="level2 feature-opal" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="known-issues-and-limitations"><span class="header-section-number">1.8</span> Known Issues and Limitations</h2>
+<section class="level2 feature-opal" data-number="1.8" id="known-issues-and-limitations">
+<h2 class="anchored" data-anchor-id="known-issues-and-limitations" data-number="1.8"><span class="header-section-number">1.8</span> Known Issues and Limitations</h2>
 <p>The current OPAL issue tracker is:</p>
-<p><a href="https://github.com/OPALX-project/OPAL/issues" class="uri">https://github.com/OPALX-project/OPAL/issues</a></p>
+<p><a class="uri" href="https://github.com/OPALX-project/OPAL/issues">https://github.com/OPALX-project/OPAL/issues</a></p>
 </section>
-<section id="acknowledgments" class="level2 feature-opal" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="acknowledgments"><span class="header-section-number">1.9</span> Acknowledgments</h2>
+<section class="level2 feature-opal" data-number="1.9" id="acknowledgments">
+<h2 class="anchored" data-anchor-id="acknowledgments" data-number="1.9"><span class="header-section-number">1.9</span> Acknowledgments</h2>
 <p>The contributions of various individuals and groups are acknowledged in the relevant chapters. A few individuals have or had particularly strong influence on the development of OPAL, including Chris Iselin, John Jowett, Julian Cummings, Ji Qiang, Robert Ryne, Stefan Adam, Christian Baumgarten, J. Scott Berg, Yuanjie Bi, David Bruhwiler, Chris Cortes, Martin Duy Tat, Matthias Frey, Philippe Ganz, Colwyn Gulliford, Yves Ineichen, Tulin Kaman, Christopher Mayes, Xiaoying Pang, Valeria Rizzoglio, Chuan Wang, Jianjun Yang, and Hao Zha.</p>
 </section>
-<section id="citation" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="citation"><span class="header-section-number">1.10</span> Citation</h2>
+<section class="level2" data-number="1.10" id="citation">
+<h2 class="anchored" data-anchor-id="citation" data-number="1.10"><span class="header-section-number">1.10</span> Citation</h2>
 <div class="feature-opal">
-<p>Please cite OPAL using <span class="citation" data-cites="adelmann2019opal">(<a href="#ref-adelmann2019opal" role="doc-biblioref">Adelmann et al. 2019</a>)</span>.</p>
+<p>Please cite OPAL using <span class="citation" data-cites="adelmann2019opal"><a href="../literature/index.html#ref-adelmann2019opal" role="doc-biblioref">[5]</a></span>.</p>
 </div>
 <div class="feature-opalx">
 <p>No stable OPALX citation entry is defined yet in this pilot.</p>
 </div>
+
 </section>
-<section id="references" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-adelmann2019opal" class="csl-entry" role="listitem">
-Adelmann, Andreas, Pedro Calvo, Matthias Frey, et al. 2019. <span>“OPAL a Versatile Tool for Charged Particle Accelerator Simulations.”</span> <em>arXiv e-Prints</em>. <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv190506654A">https://ui.adsabs.harvard.edu/abs/2019arXiv190506654A</a>.
-</div>
-<div id="ref-pooma" class="csl-entry" role="listitem">
-Günther, R. 2005. <em>Parallel Object-Oriented Methods and Applications</em>. <a href="http://www.nongnu.org/freepooma/">http://www.nongnu.org/freepooma/</a>.
-</div>
-<div id="ref-howison2010_intro" class="csl-entry" role="listitem">
-Howison, Mark, E. Wes Bethel, Hank Childs, Christoph Garth, David Pugmire, and Prabhat. 2010. <span>“H5hut: A High-Performance i/o Library for Particle-Based Simulations.”</span> <em>2010 IEEE International Conference on Cluster Computing Workshops and Posters</em>, 1–8. <a href="https://doi.org/10.1109/CLUSTERWKSP.2010.5613098">https://doi.org/10.1109/CLUSTERWKSP.2010.5613098</a>.
-</div>
-<div id="ref-classic" class="csl-entry" role="listitem">
-Iselin, F. C. 1996. <em>The CLASSIC Project</em>. CERN/SL/96-061. CERN. <a href="https://cds.cern.ch/record/311682/files/sl-96-061.pdf">https://cds.cern.ch/record/311682/files/sl-96-061.pdf</a>.
-</div>
-<div id="ref-schietinger_intro" class="csl-entry" role="listitem">
-Schietinger, Thomas. 2009. <span>“H5PartROOT - a Visualization and Post-Processing Tool for Accelerator Simulations.”</span> <em>Proceedings of the 10th International Computational Accelerator Physics Conference (ICAP09)</em>, 343–46. <a href="https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf">https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf</a>.
-</div>
-</div>
-</section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1112,20 +1071,16 @@ Schietinger, Thomas. 2009. <span>“H5PartROOT - a Visualization and Post-Proces
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Home">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../sections/conventions/index.html" class="pagination-link" aria-label="Conventions">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Home" class="pagination-link" href="../../index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Conventions" class="pagination-link" href="../../sections/conventions/index.html">
+<span class="nav-page-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/introduction/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/introduction/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -193,4 +193,3 @@ Please cite OPAL using [@adelmann2019opal].
 No stable OPALX citation entry is defined yet in this pilot.
 :::
 
-## References {.unnumbered}

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>14&nbsp; Distribution Command – The OPAL(X) Framework Documentation</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>14  Distribution Command – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -43,27 +41,25 @@ div.csl-right-inline {
 div.csl-indent {
   margin-left: 2em;
 }</style>
-
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../sections/emission-source/index.html" rel="next">
-<link href="../../sections/beam-command/index.html" rel="prev">
+<meta content="../../" name="quarto:offset"/>
+<link href="../../sections/emission-source/index.html" rel="next"/>
+<link href="../../sections/beam-command/index.html" rel="prev"/>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,7 +135,6 @@ div.csl-indent {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -191,10 +186,8 @@ div.csl-indent {
     display: none;
   }
 </style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -221,330 +214,319 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/distribution/index.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/distribution/index.html"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/distribution/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#current-opalx-scope" id="toc-current-opalx-scope" class="nav-link active" data-scroll-target="#current-opalx-scope"><span class="header-section-number">14.1</span> Current OPALX Scope</a>
-  <ul class="collapse">
-  <li><a href="#injected-vs-emitted-in-opalx" id="toc-injected-vs-emitted-in-opalx" class="nav-link" data-scroll-target="#injected-vs-emitted-in-opalx"><span class="header-section-number">14.1.1</span> Injected vs emitted in OPALX</a></li>
-  <li><a href="#common-opalx-attributes" id="toc-common-opalx-attributes" class="nav-link" data-scroll-target="#common-opalx-attributes"><span class="header-section-number">14.1.2</span> Common OPALX attributes</a></li>
-  <li><a href="#gauss" id="toc-gauss" class="nav-link" data-scroll-target="#gauss"><span class="header-section-number">14.1.3</span> <code>GAUSS</code></a></li>
-  <li><a href="#multivariategauss" id="toc-multivariategauss" class="nav-link" data-scroll-target="#multivariategauss"><span class="header-section-number">14.1.4</span> <code>MULTIVARIATEGAUSS</code></a></li>
-  <li><a href="#flattop" id="toc-flattop" class="nav-link" data-scroll-target="#flattop"><span class="header-section-number">14.1.5</span> <code>FLATTOP</code></a></li>
-  <li><a href="#fromfile" id="toc-fromfile" class="nav-link" data-scroll-target="#fromfile"><span class="header-section-number">14.1.6</span> <code>FROMFILE</code></a></li>
-  <li><a href="#not-currently-part-of-opalx-distribution" id="toc-not-currently-part-of-opalx-distribution" class="nav-link" data-scroll-target="#not-currently-part-of-opalx-distribution"><span class="header-section-number">14.1.7</span> Not currently part of OPALX <code>DISTRIBUTION</code></a></li>
-  </ul></li>
-  <li><a href="#units" id="toc-units" class="nav-link" data-scroll-target="#units"><span class="header-section-number">14.2</span> Units</a>
-  <ul class="collapse">
-  <li><a href="#momentum-unit-conversion" id="toc-momentum-unit-conversion" class="nav-link" data-scroll-target="#momentum-unit-conversion"><span class="header-section-number">14.2.1</span> Momentum unit conversion</a></li>
-  </ul></li>
-  <li><a href="#general-distribution-attributes" id="toc-general-distribution-attributes" class="nav-link" data-scroll-target="#general-distribution-attributes"><span class="header-section-number">14.3</span> General Distribution Attributes</a>
-  <ul class="collapse">
-  <li><a href="#universal-attributes" id="toc-universal-attributes" class="nav-link" data-scroll-target="#universal-attributes"><span class="header-section-number">14.3.1</span> Universal Attributes</a></li>
-  <li><a href="#injected-distribution-attributes" id="toc-injected-distribution-attributes" class="nav-link" data-scroll-target="#injected-distribution-attributes"><span class="header-section-number">14.3.2</span> Injected Distribution Attributes</a></li>
-  <li><a href="#emitted-distribution-attributes" id="toc-emitted-distribution-attributes" class="nav-link" data-scroll-target="#emitted-distribution-attributes"><span class="header-section-number">14.3.3</span> Emitted Distribution Attributes</a></li>
-  </ul></li>
-  <li><a href="#distribution-types" id="toc-distribution-types" class="nav-link" data-scroll-target="#distribution-types"><span class="header-section-number">14.4</span> Distribution Types</a>
-  <ul class="collapse">
-  <li><a href="#fromfile-1" id="toc-fromfile-1" class="nav-link" data-scroll-target="#fromfile-1"><span class="header-section-number">14.4.1</span> <code>FROMFILE</code></a></li>
-  <li><a href="#gauss-1" id="toc-gauss-1" class="nav-link" data-scroll-target="#gauss-1"><span class="header-section-number">14.4.2</span> <code>GAUSS</code></a></li>
-  <li><a href="#flattop-1" id="toc-flattop-1" class="nav-link" data-scroll-target="#flattop-1"><span class="header-section-number">14.4.3</span> <code>FLATTOP</code></a></li>
-  <li><a href="#binomial" id="toc-binomial" class="nav-link" data-scroll-target="#binomial"><span class="header-section-number">14.4.4</span> <code>BINOMIAL</code></a></li>
-  <li><a href="#gaussmatched" id="toc-gaussmatched" class="nav-link" data-scroll-target="#gaussmatched"><span class="header-section-number">14.4.5</span> <code>GAUSSMATCHED</code></a></li>
-  <li><a href="#multigauss" id="toc-multigauss" class="nav-link" data-scroll-target="#multigauss"><span class="header-section-number">14.4.6</span> <code>MULTIGAUSS</code></a></li>
-  </ul></li>
-  <li><a href="#emission-models" id="toc-emission-models" class="nav-link" data-scroll-target="#emission-models"><span class="header-section-number">14.5</span> Emission Models</a>
-  <ul class="collapse">
-  <li><a href="#none" id="toc-none" class="nav-link" data-scroll-target="#none"><span class="header-section-number">14.5.1</span> <code>NONE</code></a></li>
-  <li><a href="#astra" id="toc-astra" class="nav-link" data-scroll-target="#astra"><span class="header-section-number">14.5.2</span> <code>ASTRA</code></a></li>
-  <li><a href="#nonequil" id="toc-nonequil" class="nav-link" data-scroll-target="#nonequil"><span class="header-section-number">14.5.3</span> <code>NONEQUIL</code></a></li>
-  </ul></li>
-  <li><a href="#distribution-list" id="toc-distribution-list" class="nav-link" data-scroll-target="#distribution-list"><span class="header-section-number">14.6</span> Distribution List</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/distribution/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#current-opalx-scope" href="#current-opalx-scope" id="toc-current-opalx-scope"><span class="header-section-number">14.1</span> Current OPALX Scope</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#injected-vs-emitted-in-opalx" href="#injected-vs-emitted-in-opalx" id="toc-injected-vs-emitted-in-opalx"><span class="header-section-number">14.1.1</span> Injected vs emitted in OPALX</a></li>
+<li><a class="nav-link" data-scroll-target="#common-opalx-attributes" href="#common-opalx-attributes" id="toc-common-opalx-attributes"><span class="header-section-number">14.1.2</span> Common OPALX attributes</a></li>
+<li><a class="nav-link" data-scroll-target="#gauss" href="#gauss" id="toc-gauss"><span class="header-section-number">14.1.3</span> <code>GAUSS</code></a></li>
+<li><a class="nav-link" data-scroll-target="#multivariategauss" href="#multivariategauss" id="toc-multivariategauss"><span class="header-section-number">14.1.4</span> <code>MULTIVARIATEGAUSS</code></a></li>
+<li><a class="nav-link" data-scroll-target="#flattop" href="#flattop" id="toc-flattop"><span class="header-section-number">14.1.5</span> <code>FLATTOP</code></a></li>
+<li><a class="nav-link" data-scroll-target="#fromfile" href="#fromfile" id="toc-fromfile"><span class="header-section-number">14.1.6</span> <code>FROMFILE</code></a></li>
+<li><a class="nav-link" data-scroll-target="#not-currently-part-of-opalx-distribution" href="#not-currently-part-of-opalx-distribution" id="toc-not-currently-part-of-opalx-distribution"><span class="header-section-number">14.1.7</span> Not currently part of OPALX <code>DISTRIBUTION</code></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#units" href="#units" id="toc-units"><span class="header-section-number">14.2</span> Units</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#momentum-unit-conversion" href="#momentum-unit-conversion" id="toc-momentum-unit-conversion"><span class="header-section-number">14.2.1</span> Momentum unit conversion</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#general-distribution-attributes" href="#general-distribution-attributes" id="toc-general-distribution-attributes"><span class="header-section-number">14.3</span> General Distribution Attributes</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#universal-attributes" href="#universal-attributes" id="toc-universal-attributes"><span class="header-section-number">14.3.1</span> Universal Attributes</a></li>
+<li><a class="nav-link" data-scroll-target="#injected-distribution-attributes" href="#injected-distribution-attributes" id="toc-injected-distribution-attributes"><span class="header-section-number">14.3.2</span> Injected Distribution Attributes</a></li>
+<li><a class="nav-link" data-scroll-target="#emitted-distribution-attributes" href="#emitted-distribution-attributes" id="toc-emitted-distribution-attributes"><span class="header-section-number">14.3.3</span> Emitted Distribution Attributes</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#distribution-types" href="#distribution-types" id="toc-distribution-types"><span class="header-section-number">14.4</span> Distribution Types</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#fromfile-1" href="#fromfile-1" id="toc-fromfile-1"><span class="header-section-number">14.4.1</span> <code>FROMFILE</code></a></li>
+<li><a class="nav-link" data-scroll-target="#gauss-1" href="#gauss-1" id="toc-gauss-1"><span class="header-section-number">14.4.2</span> <code>GAUSS</code></a></li>
+<li><a class="nav-link" data-scroll-target="#flattop-1" href="#flattop-1" id="toc-flattop-1"><span class="header-section-number">14.4.3</span> <code>FLATTOP</code></a></li>
+<li><a class="nav-link" data-scroll-target="#binomial" href="#binomial" id="toc-binomial"><span class="header-section-number">14.4.4</span> <code>BINOMIAL</code></a></li>
+<li><a class="nav-link" data-scroll-target="#gaussmatched" href="#gaussmatched" id="toc-gaussmatched"><span class="header-section-number">14.4.5</span> <code>GAUSSMATCHED</code></a></li>
+<li><a class="nav-link" data-scroll-target="#multigauss" href="#multigauss" id="toc-multigauss"><span class="header-section-number">14.4.6</span> <code>MULTIGAUSS</code></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#emission-models" href="#emission-models" id="toc-emission-models"><span class="header-section-number">14.5</span> Emission Models</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#none" href="#none" id="toc-none"><span class="header-section-number">14.5.1</span> <code>NONE</code></a></li>
+<li><a class="nav-link" data-scroll-target="#astra" href="#astra" id="toc-astra"><span class="header-section-number">14.5.2</span> <code>ASTRA</code></a></li>
+<li><a class="nav-link" data-scroll-target="#nonequil" href="#nonequil" id="toc-nonequil"><span class="header-section-number">14.5.3</span> <code>NONEQUIL</code></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#distribution-list" href="#distribution-list" id="toc-distribution-list"><span class="header-section-number">14.6</span> Distribution List</a></li>
+</ul>
+<div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/distribution/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
+<span>View:</span>
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opal"/> OPAL
   </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opalx"/> OPALX
   </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked=""> Both
+<label class="feature-choice">
+<input checked="" name="feature-mode" type="radio" value="both"/> Both
   </label>
 </div>
 <p>The <code>DISTRIBUTION</code> command defines how particles are introduced into a simulation. A distribution has a name, a type, and a set of attributes that control its geometry, momentum spread, emission behavior, and optional correlations.</p>
@@ -555,8 +537,8 @@ window.Quarto = {
 <div class="feature-opal">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -603,8 +585,8 @@ window.Quarto = {
 <div class="feature-opalx">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -632,8 +614,8 @@ window.Quarto = {
 </tbody>
 </table>
 </div>
-<section id="current-opalx-scope" class="level2 feature-opalx" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="current-opalx-scope"><span class="header-section-number">14.1</span> Current OPALX Scope</h2>
+<section class="level2 feature-opalx" data-number="14.1" id="current-opalx-scope">
+<h2 class="anchored" data-anchor-id="current-opalx-scope" data-number="14.1"><span class="header-section-number">14.1</span> Current OPALX Scope</h2>
 <p>OPALX already has a native <code>DISTRIBUTION</code> implementation, but its scope is smaller than the legacy OPAL chapter. The currently supported parser-side distribution types are:</p>
 <ul>
 <li><code>GAUSS</code></li>
@@ -647,8 +629,8 @@ window.Quarto = {
 <li><code>EMISSIONSOURCE</code>: source position, momentum offset, start time, and emission model</li>
 <li><code>EMISSIONSOURCELIST</code>: list of sources attached to the beam</li>
 </ul>
-<section id="injected-vs-emitted-in-opalx" class="level3" data-number="14.1.1">
-<h3 data-number="14.1.1" class="anchored" data-anchor-id="injected-vs-emitted-in-opalx"><span class="header-section-number">14.1.1</span> Injected vs emitted in OPALX</h3>
+<section class="level3" data-number="14.1.1" id="injected-vs-emitted-in-opalx">
+<h3 class="anchored" data-anchor-id="injected-vs-emitted-in-opalx" data-number="14.1.1"><span class="header-section-number">14.1.1</span> Injected vs emitted in OPALX</h3>
 <p>The <code>DISTRIBUTION</code> statement still owns the boolean <code>EMITTED</code>. In addition, an <code>EMISSIONSOURCE</code> contributes:</p>
 <ul>
 <li><code>R0X</code>, <code>R0Y</code>, <code>R0Z</code>: source position offset</li>
@@ -658,8 +640,8 @@ window.Quarto = {
 </ul>
 <p>This differs from the legacy OPAL manual, where emission-model parameters are documented directly under <code>DISTRIBUTION</code>.</p>
 </section>
-<section id="common-opalx-attributes" class="level3" data-number="14.1.2">
-<h3 data-number="14.1.2" class="anchored" data-anchor-id="common-opalx-attributes"><span class="header-section-number">14.1.2</span> Common OPALX attributes</h3>
+<section class="level3" data-number="14.1.2" id="common-opalx-attributes">
+<h3 class="anchored" data-anchor-id="common-opalx-attributes" data-number="14.1.2"><span class="header-section-number">14.1.2</span> Common OPALX attributes</h3>
 <p>The common OPALX distribution attributes currently exposed by the parser are:</p>
 <ul>
 <li><code>TYPE</code></li>
@@ -678,8 +660,8 @@ window.Quarto = {
 </ul>
 <p><code>NPARTDIST</code> is an OPALX-specific particle-count hook for the distribution itself. If it is not positive, the distribution does not enforce its own count.</p>
 </section>
-<section id="gauss" class="level3" data-number="14.1.3">
-<h3 data-number="14.1.3" class="anchored" data-anchor-id="gauss"><span class="header-section-number">14.1.3</span> <code>GAUSS</code></h3>
+<section class="level3" data-number="14.1.3" id="gauss">
+<h3 class="anchored" data-anchor-id="gauss" data-number="14.1.3"><span class="header-section-number">14.1.3</span> <code>GAUSS</code></h3>
 <p>The OPALX <code>GAUSS</code> sampler supports:</p>
 <ul>
 <li>diagonal RMS widths via <code>SIGMAX</code>, <code>SIGMAY</code>, <code>SIGMAZ</code></li>
@@ -690,12 +672,12 @@ window.Quarto = {
 <p>In the current implementation, <code>GAUSS</code> only supports <code>EMISSIONMODEL=NONE</code>. If a different emission model is attached to the <code>EMISSIONSOURCE</code>, OPALX throws.</p>
 <p>Delayed one-shot emission through <code>T0 &gt; 0</code> is supported.</p>
 </section>
-<section id="multivariategauss" class="level3" data-number="14.1.4">
-<h3 data-number="14.1.4" class="anchored" data-anchor-id="multivariategauss"><span class="header-section-number">14.1.4</span> <code>MULTIVARIATEGAUSS</code></h3>
+<section class="level3" data-number="14.1.4" id="multivariategauss">
+<h3 class="anchored" data-anchor-id="multivariategauss" data-number="14.1.4"><span class="header-section-number">14.1.4</span> <code>MULTIVARIATEGAUSS</code></h3>
 <p><code>MULTIVARIATEGAUSS</code> is the full-covariance Gaussian path. It uses the <code>CORR</code> array instead of only the named pairwise correlation scalars and is the natural OPALX counterpart when a full coupled Gaussian specification is needed.</p>
 </section>
-<section id="flattop" class="level3" data-number="14.1.5">
-<h3 data-number="14.1.5" class="anchored" data-anchor-id="flattop"><span class="header-section-number">14.1.5</span> <code>FLATTOP</code></h3>
+<section class="level3" data-number="14.1.5" id="flattop">
+<h3 class="anchored" data-anchor-id="flattop" data-number="14.1.5"><span class="header-section-number">14.1.5</span> <code>FLATTOP</code></h3>
 <p><code>FLATTOP</code> is the OPALX time-dependent emission sampler. It uses:</p>
 <ul>
 <li><code>SIGMAX</code>, <code>SIGMAY</code> for the transverse ellipse</li>
@@ -710,8 +692,8 @@ window.Quarto = {
 <li><code>ASTRA</code></li>
 </ul>
 </section>
-<section id="fromfile" class="level3" data-number="14.1.6">
-<h3 data-number="14.1.6" class="anchored" data-anchor-id="fromfile"><span class="header-section-number">14.1.6</span> <code>FROMFILE</code></h3>
+<section class="level3" data-number="14.1.6" id="fromfile">
+<h3 class="anchored" data-anchor-id="fromfile" data-number="14.1.6"><span class="header-section-number">14.1.6</span> <code>FROMFILE</code></h3>
 <p><code>FROMFILE</code> reads 6D particle coordinates from <code>FNAME</code>.</p>
 <p>One important OPALX runtime rule is enforced in tracking:</p>
 <ul>
@@ -720,8 +702,8 @@ window.Quarto = {
 </ul>
 <p>For all other OPALX distribution types, the beam energy must be set on the <code>BEAM</code> command.</p>
 </section>
-<section id="not-currently-part-of-opalx-distribution" class="level3" data-number="14.1.7">
-<h3 data-number="14.1.7" class="anchored" data-anchor-id="not-currently-part-of-opalx-distribution"><span class="header-section-number">14.1.7</span> Not currently part of OPALX <code>DISTRIBUTION</code></h3>
+<section class="level3" data-number="14.1.7" id="not-currently-part-of-opalx-distribution">
+<h3 class="anchored" data-anchor-id="not-currently-part-of-opalx-distribution" data-number="14.1.7"><span class="header-section-number">14.1.7</span> Not currently part of OPALX <code>DISTRIBUTION</code></h3>
 <p>The following legacy distribution features are not part of the current OPALX distribution implementation documented from source here:</p>
 <ul>
 <li><code>BINOMIAL</code></li>
@@ -733,14 +715,14 @@ window.Quarto = {
 </ul>
 </section>
 </section>
-<section id="units" class="level2 feature-opal" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="units"><span class="header-section-number">14.2</span> Units</h2>
+<section class="level2 feature-opal" data-number="14.2" id="units">
+<h2 class="anchored" data-anchor-id="units" data-number="14.2"><span class="header-section-number">14.2</span> Units</h2>
 <p>Lengths are given in meters and times in seconds. Momentum input units depend on <code>INPUTMOUNITS</code>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -762,8 +744,8 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<section id="momentum-unit-conversion" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="momentum-unit-conversion"><span class="header-section-number">14.2.1</span> Momentum unit conversion</h3>
+<section class="level3" data-number="14.2.1" id="momentum-unit-conversion">
+<h3 class="anchored" data-anchor-id="momentum-unit-conversion" data-number="14.2.1"><span class="header-section-number">14.2.1</span> Momentum unit conversion</h3>
 <p>To convert from normalized momentum to transverse angle in mrad, use <span class="math display">\[
 (\beta\gamma)_{\mathrm{ref}} = \frac{P}{m_0 c} = \frac{Pc}{m_0 c^2},
 \]</span> and <span class="math display">\[
@@ -776,14 +758,14 @@ P_x[\mathrm{mrad}] = 1000 \times \frac{\beta_x\gamma}{(\beta\gamma)_{\mathrm{ref
 <p>The same relations apply to the <code>y</code> and <code>z</code> components.</p>
 </section>
 </section>
-<section id="general-distribution-attributes" class="level2 feature-opal" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="general-distribution-attributes"><span class="header-section-number">14.3</span> General Distribution Attributes</h2>
+<section class="level2 feature-opal" data-number="14.3" id="general-distribution-attributes">
+<h2 class="anchored" data-anchor-id="general-distribution-attributes" data-number="14.3"><span class="header-section-number">14.3</span> General Distribution Attributes</h2>
 <p>The first major distinction is whether the distribution is injected at the start of the simulation or emitted over time.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -806,14 +788,14 @@ P_x[\mathrm{mrad}] = 1000 \times \frac{\beta_x\gamma}{(\beta\gamma)_{\mathrm{ref
 </tbody>
 </table>
 <p>For injected distributions, the longitudinal coordinate is <code>z</code> in meters. For emitted distributions, the longitudinal coordinate is <code>t</code> in seconds.</p>
-<section id="universal-attributes" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="universal-attributes"><span class="header-section-number">14.3.1</span> Universal Attributes</h3>
+<section class="level3" data-number="14.3.1" id="universal-attributes">
+<h3 class="anchored" data-anchor-id="universal-attributes" data-number="14.3.1"><span class="header-section-number">14.3.1</span> Universal Attributes</h3>
 <p>These attributes apply to all distribution types:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 40%">
-<col style="width: 30%">
+<col style="width: 30%"/>
+<col style="width: 40%"/>
+<col style="width: 30%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -876,8 +858,8 @@ P_x[\mathrm{mrad}] = 1000 \times \frac{\beta_x\gamma}{(\beta\gamma)_{\mathrm{ref
 </tbody>
 </table>
 </section>
-<section id="injected-distribution-attributes" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="injected-distribution-attributes"><span class="header-section-number">14.3.2</span> Injected Distribution Attributes</h3>
+<section class="level3" data-number="14.3.2" id="injected-distribution-attributes">
+<h3 class="anchored" data-anchor-id="injected-distribution-attributes" data-number="14.3.2"><span class="header-section-number">14.3.2</span> Injected Distribution Attributes</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -900,13 +882,13 @@ P_x[\mathrm{mrad}] = 1000 \times \frac{\beta_x\gamma}{(\beta\gamma)_{\mathrm{ref
 </tbody>
 </table>
 </section>
-<section id="emitted-distribution-attributes" class="level3" data-number="14.3.3">
-<h3 data-number="14.3.3" class="anchored" data-anchor-id="emitted-distribution-attributes"><span class="header-section-number">14.3.3</span> Emitted Distribution Attributes</h3>
+<section class="level3" data-number="14.3.3" id="emitted-distribution-attributes">
+<h3 class="anchored" data-anchor-id="emitted-distribution-attributes" data-number="14.3.3"><span class="header-section-number">14.3.3</span> Emitted Distribution Attributes</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 40%">
-<col style="width: 30%">
+<col style="width: 30%"/>
+<col style="width: 40%"/>
+<col style="width: 30%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -940,10 +922,10 @@ P_x[\mathrm{mrad}] = 1000 \times \frac{\beta_x\gamma}{(\beta\gamma)_{\mathrm{ref
 </table>
 </section>
 </section>
-<section id="distribution-types" class="level2 feature-opal" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="distribution-types"><span class="header-section-number">14.4</span> Distribution Types</h2>
-<section id="fromfile-1" class="level3" data-number="14.4.1">
-<h3 data-number="14.4.1" class="anchored" data-anchor-id="fromfile-1"><span class="header-section-number">14.4.1</span> <code>FROMFILE</code></h3>
+<section class="level2 feature-opal" data-number="14.4" id="distribution-types">
+<h2 class="anchored" data-anchor-id="distribution-types" data-number="14.4"><span class="header-section-number">14.4</span> Distribution Types</h2>
+<section class="level3" data-number="14.4.1" id="fromfile-1">
+<h3 class="anchored" data-anchor-id="fromfile-1" data-number="14.4.1"><span class="header-section-number">14.4.1</span> <code>FROMFILE</code></h3>
 <p><code>FROMFILE</code> reads coordinates from an external text file.</p>
 <pre class="text"><code>Name: DISTRIBUTION, TYPE=FROMFILE,
       FNAME="text file name";</code></pre>
@@ -977,13 +959,13 @@ xN pxN yN pyN tN pzN</code></pre>
 <p>The emitted case is internally shifted so that emission starts from negative time and particles appear as the simulation clock advances.</p>
 <p>When using <code>FROMFILE</code>, the particle count must match the <code>BEAM</code> <code>NPART</code> expectation, and the mean momentum in the file must be consistent with the beam energy settings.</p>
 </section>
-<section id="gauss-1" class="level3" data-number="14.4.2">
-<h3 data-number="14.4.2" class="anchored" data-anchor-id="gauss-1"><span class="header-section-number">14.4.2</span> <code>GAUSS</code></h3>
+<section class="level3" data-number="14.4.2" id="gauss-1">
+<h3 class="anchored" data-anchor-id="gauss-1" data-number="14.4.2"><span class="header-section-number">14.4.2</span> <code>GAUSS</code></h3>
 <p><code>GAUSS</code> creates a six-dimensional Gaussian bunch. The core attributes are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -1029,13 +1011,13 @@ xN pxN yN pyN tN pzN</code></pre>
       OFFSETY    = -0.002,
       OFFSETZ    = 0.01,
       OFFSETPZ   = 1200.0;</code></pre>
-<section id="gauss-for-photoinjectors" class="level4">
+<section class="level4" id="gauss-for-photoinjectors">
 <h4 class="anchored" data-anchor-id="gauss-for-photoinjectors"><code>GAUSS</code> for photoinjectors</h4>
 <p>For emitted beams, <code>GAUSS</code> can also produce a half-Gaussian rise, flat-top, half-Gaussian fall time profile. The key extra attributes are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -1066,13 +1048,13 @@ xN pxN yN pyN tN pzN</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="fig-distribution-flattop" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-distribution-flattop">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-distribution-flattop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/flattop.png" class="img-fluid figure-img" style="width:60.0%">
+<img class="img-fluid figure-img" src="figures/flattop.png" style="width:60.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distribution-flattop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.1: Emitted <code>GAUSS</code> and <code>FLATTOP</code> time profile with half-Gaussian edges and optional flat-top oscillations.
+Figure 14.1: Emitted <code>GAUSS</code> and <code>FLATTOP</code> time profile with half-Gaussian edges and optional flat-top oscillations.
 </figcaption>
 </figure>
 </div>
@@ -1089,7 +1071,7 @@ t_E = \mathrm{TPULSEFWHM}
        (\mathrm{TRISE} + \mathrm{TFALL}).
 \]</span></p>
 </section>
-<section id="correlations-for-gauss" class="level4">
+<section class="level4" id="correlations-for-gauss">
 <h4 class="anchored" data-anchor-id="correlations-for-gauss">Correlations for <code>GAUSS</code></h4>
 <p>The Gaussian generator also supports experimental correlations. They can be given either as a compact array <code>R</code> or through named coefficients such as:</p>
 <ul>
@@ -1109,10 +1091,10 @@ R_{61} &amp; R_{62} &amp; c_t &amp; 1
 <p>The implementation constructs correlated samples from the Cholesky factorization of this matrix. This feature is experimental and only documented for Gaussian distributions.</p>
 </section>
 </section>
-<section id="flattop-1" class="level3" data-number="14.4.3">
-<h3 data-number="14.4.3" class="anchored" data-anchor-id="flattop-1"><span class="header-section-number">14.4.3</span> <code>FLATTOP</code></h3>
+<section class="level3" data-number="14.4.3" id="flattop-1">
+<h3 class="anchored" data-anchor-id="flattop-1" data-number="14.4.3"><span class="header-section-number">14.4.3</span> <code>FLATTOP</code></h3>
 <p><code>FLATTOP</code> defines hard-edge distributions and is commonly used to model laser profiles in photoinjectors.</p>
-<section id="injected-flattop" class="level4">
+<section class="level4" id="injected-flattop">
 <h4 class="anchored" data-anchor-id="injected-flattop">Injected <code>FLATTOP</code></h4>
 <p>For injected beams, the distribution is a uniformly filled ellipse transversely and uniform in <code>z</code>.</p>
 <table class="caption-top table">
@@ -1138,14 +1120,14 @@ R_{61} &amp; R_{62} &amp; c_t &amp; 1
 </tbody>
 </table>
 </section>
-<section id="emitted-flattop" class="level4">
+<section class="level4" id="emitted-flattop">
 <h4 class="anchored" data-anchor-id="emitted-flattop">Emitted <code>FLATTOP</code></h4>
 <p>For emitted beams, <code>FLATTOP</code> uses the same longitudinal pulse-shape parameters as the photoinjector-style <code>GAUSS</code> case.</p>
 <p>Additional attributes include:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -1191,29 +1173,29 @@ R_{61} &amp; R_{62} &amp; c_t &amp; 1
       EMITTED = TRUE;</code></pre>
 <p>The legacy manual also describes a laser-image driven transverse sampling path through <code>LASERPROFFN</code>, but explicitly marks it as under development.</p>
 </section>
-<section id="gungaussflattopth-and-astraflattopth" class="level4">
+<section class="level4" id="gungaussflattopth-and-astraflattopth">
 <h4 class="anchored" data-anchor-id="gungaussflattopth-and-astraflattopth"><code>GUNGAUSSFLATTOPTH</code> and <code>ASTRAFLATTOPTH</code></h4>
 <p>These are legacy shorthands for emitted flat-top photoinjector distributions. Both correspond to <code>FLATTOP</code>-style emission. <code>GUNGAUSSFLATTOPTH</code> automatically enables <code>EMITTED=TRUE</code> and <code>EMISSIONMODEL=ASTRA</code>, while <code>ASTRAFLATTOPTH</code> follows the same idea with a slightly different legacy longitudinal profile generator.</p>
 </section>
 </section>
-<section id="binomial" class="level3" data-number="14.4.4">
-<h3 data-number="14.4.4" class="anchored" data-anchor-id="binomial"><span class="header-section-number">14.4.4</span> <code>BINOMIAL</code></h3>
-<p><code>BINOMIAL</code> generates a family of distributions governed by one parameter <code>m</code> per axis. Changing <code>m</code> moves continuously from hollow-shell and flat-profile shapes toward Gaussian-like limits <span class="citation" data-cites="JohoDist">Joho (<a href="#ref-JohoDist" role="doc-biblioref">1980</a>)</span>.</p>
-<div id="fig-distribution-binomial" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section class="level3" data-number="14.4.4" id="binomial">
+<h3 class="anchored" data-anchor-id="binomial" data-number="14.4.4"><span class="header-section-number">14.4.4</span> <code>BINOMIAL</code></h3>
+<p><code>BINOMIAL</code> generates a family of distributions governed by one parameter <code>m</code> per axis. Changing <code>m</code> moves continuously from hollow-shell and flat-profile shapes toward Gaussian-like limits <span class="citation" data-cites="JohoDist"><a href="../literature/index.html#ref-JohoDist" role="doc-biblioref">[8]</a></span>.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-distribution-binomial">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-distribution-binomial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/BinomialProperties.png" class="img-fluid figure-img" style="width:80.0%">
+<img class="img-fluid figure-img" src="figures/BinomialProperties.png" style="width:80.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distribution-binomial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.2: Representative transverse properties of binomial phase-space distributions.
+Figure 14.2: Representative transverse properties of binomial phase-space distributions.
 </figcaption>
 </figure>
 </div>
 <p>The key shape parameters are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -1261,13 +1243,13 @@ Figure&nbsp;14.2: Representative transverse properties of binomial phase-space d
       CORRT   = -0.5,
       MT      = 2.0;</code></pre>
 </section>
-<section id="gaussmatched" class="level3" data-number="14.4.5">
-<h3 data-number="14.4.5" class="anchored" data-anchor-id="gaussmatched"><span class="header-section-number">14.4.5</span> <code>GAUSSMATCHED</code></h3>
+<section class="level3" data-number="14.4.5" id="gaussmatched">
+<h3 class="anchored" data-anchor-id="gaussmatched" data-number="14.4.5"><span class="header-section-number">14.4.5</span> <code>GAUSSMATCHED</code></h3>
 <p><code>GAUSSMATCHED</code> constructs a matched Gaussian distribution, intended for cyclotron-style matched injection. The main control parameters are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -1312,14 +1294,14 @@ Figure&nbsp;14.2: Representative transverse properties of binomial phase-space d
 </table>
 <p>The legacy manual explicitly notes one limitation: trim-coil field maps are not included in this matched-distribution construction.</p>
 </section>
-<section id="multigauss" class="level3" data-number="14.4.6">
-<h3 data-number="14.4.6" class="anchored" data-anchor-id="multigauss"><span class="header-section-number">14.4.6</span> <code>MULTIGAUSS</code></h3>
-<p><code>MULTIGAUSS</code> models a train of Gaussian pulses. Transversely it uses a uniform elliptical profile, while longitudinally it generates <code>NPEAKS</code> equally spaced Gaussian peaks <span class="citation" data-cites="laserPulseShaping">Power and Jing (<a href="#ref-laserPulseShaping" role="doc-biblioref">2009</a>)</span>.</p>
+<section class="level3" data-number="14.4.6" id="multigauss">
+<h3 class="anchored" data-anchor-id="multigauss" data-number="14.4.6"><span class="header-section-number">14.4.6</span> <code>MULTIGAUSS</code></h3>
+<p><code>MULTIGAUSS</code> models a train of Gaussian pulses. Transversely it uses a uniform elliptical profile, while longitudinally it generates <code>NPEAKS</code> equally spaced Gaussian peaks <span class="citation" data-cites="laserPulseShaping"><a href="../literature/index.html#ref-laserPulseShaping" role="doc-biblioref">[9]</a></span>.</p>
 <p>Key attributes are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -1359,13 +1341,13 @@ Figure&nbsp;14.2: Representative transverse properties of binomial phase-space d
 </tbody>
 </table>
 <p>When emitted, the momentum is assigned by the selected emission model. When injected, the momentum components are sampled from normal distributions.</p>
-<div id="fig-distribution-multigauss" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-distribution-multigauss">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-distribution-multigauss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/MultiGaussInjected.png" class="img-fluid figure-img" style="width:55.0%">
+<img class="img-fluid figure-img" src="figures/MultiGaussInjected.png" style="width:55.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distribution-multigauss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.3: Example of an injected <code>MULTIGAUSS</code> bunch with several separated longitudinal peaks.
+Figure 14.3: Example of an injected <code>MULTIGAUSS</code> bunch with several separated longitudinal peaks.
 </figcaption>
 </figure>
 </div>
@@ -1381,11 +1363,11 @@ Figure&nbsp;14.3: Example of an injected <code>MULTIGAUSS</code> bunch with seve
       EMITTED = FALSE;</code></pre>
 </section>
 </section>
-<section id="emission-models" class="level2 feature-opal" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="emission-models"><span class="header-section-number">14.5</span> Emission Models</h2>
+<section class="level2 feature-opal" data-number="14.5" id="emission-models">
+<h2 class="anchored" data-anchor-id="emission-models" data-number="14.5"><span class="header-section-number">14.5</span> Emission Models</h2>
 <p>Emission models apply only to emitted distributions and determine how thermal energy and cathode physics are translated into initial particle momentum.</p>
-<section id="none" class="level3" data-number="14.5.1">
-<h3 data-number="14.5.1" class="anchored" data-anchor-id="none"><span class="header-section-number">14.5.1</span> <code>NONE</code></h3>
+<section class="level3" data-number="14.5.1" id="none">
+<h3 class="anchored" data-anchor-id="none" data-number="14.5.1"><span class="header-section-number">14.5.1</span> <code>NONE</code></h3>
 <p><code>NONE</code> is the default OPAL-T emission model. It adds a user-specified kinetic energy <code>EKIN</code> to the longitudinal momentum only.</p>
 <table class="caption-top table">
 <thead>
@@ -1405,8 +1387,8 @@ Figure&nbsp;14.3: Example of an injected <code>MULTIGAUSS</code> bunch with seve
 </table>
 <p>This model is useful for transversely cold emitted beams. If <code>EKIN=0</code>, emitted particles may fail to drift off the cathode cleanly.</p>
 </section>
-<section id="astra" class="level3" data-number="14.5.2">
-<h3 data-number="14.5.2" class="anchored" data-anchor-id="astra"><span class="header-section-number">14.5.2</span> <code>ASTRA</code></h3>
+<section class="level3" data-number="14.5.2" id="astra">
+<h3 class="anchored" data-anchor-id="astra" data-number="14.5.2"><span class="header-section-number">14.5.2</span> <code>ASTRA</code></h3>
 <p><code>ASTRA</code> uses the same <code>EKIN</code> parameter but distributes the momentum three-dimensionally: <span class="math display">\[
 p_{\mathrm{total}} = \sqrt{\left(\frac{\mathrm{EKIN}}{mc^2}+1\right)^2 - 1},
 \]</span> <span class="math display">\[
@@ -1418,9 +1400,9 @@ p_z = p_{\mathrm{total}}|\cos(\theta)|.
 \phi = 2 \arccos\!\left(\sqrt{x}\right),
 \]</span> with <code>x</code> a uniform random number on <code>[0, 1]</code>.</p>
 </section>
-<section id="nonequil" class="level3" data-number="14.5.3">
-<h3 data-number="14.5.3" class="anchored" data-anchor-id="nonequil"><span class="header-section-number">14.5.3</span> <code>NONEQUIL</code></h3>
-<p><code>NONEQUIL</code> is a more physical photoemission model for metal cathodes and materials such as <code>CsTe</code> <span class="citation" data-cites="flo97">Flöttmann (<a href="#ref-flo97" role="doc-biblioref">1997</a>)</span> <span class="citation" data-cites="clen2000"><span class="nocase">Clendenin et al.</span> (<a href="#ref-clen2000" role="doc-biblioref">2000</a>)</span> <span class="citation" data-cites="dowe2009">Dowell and Schmerge (<a href="#ref-dowe2009" role="doc-biblioref">2009</a>)</span>.</p>
+<section class="level3" data-number="14.5.3" id="nonequil">
+<h3 class="anchored" data-anchor-id="nonequil" data-number="14.5.3"><span class="header-section-number">14.5.3</span> <code>NONEQUIL</code></h3>
+<p><code>NONEQUIL</code> is a more physical photoemission model for metal cathodes and materials such as <code>CsTe</code> <span class="citation" data-cites="flo97 clen2000 dowe2009"><a href="../literature/index.html#ref-flo97" role="doc-biblioref">[10]</a>, <a href="../literature/index.html#ref-clen2000" role="doc-biblioref">[11]</a>, <a href="../literature/index.html#ref-dowe2009" role="doc-biblioref">[12]</a></span>.</p>
 <p>Its additional parameters are:</p>
 <table class="caption-top table">
 <thead>
@@ -1471,8 +1453,8 @@ p_z = p_{\mathrm{total}}|\cos(\theta)|.
       EMITTED = TRUE;</code></pre>
 </section>
 </section>
-<section id="distribution-list" class="level2 feature-opal" data-number="14.6">
-<h2 data-number="14.6" class="anchored" data-anchor-id="distribution-list"><span class="header-section-number">14.6</span> Distribution List</h2>
+<section class="level2 feature-opal" data-number="14.6" id="distribution-list">
+<h2 class="anchored" data-anchor-id="distribution-list" data-number="14.6"><span class="header-section-number">14.6</span> Distribution List</h2>
 <p>The <code>RUN</code> command can accept either a single distribution or a list:</p>
 <pre class="text"><code>RUN, METHOD = "PARALLEL-T",
      BEAM = beam_name,
@@ -1492,25 +1474,6 @@ p_z = p_{\mathrm{total}}|\cos(\theta)|.
 </ul>
 <p><code>FROMFILE</code> is the special case: its particle count comes from the file rather than from <code>BEAM</code> and <code>WEIGHT</code>.</p>
 </section>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-clen2000" class="csl-entry" role="listitem">
-<span class="nocase">Clendenin, J. E. et al.</span> 2000. <span>“Reduction of Thermal Emittance of RF Guns.”</span> <em>Nuclear Instruments and Methods in Physics Research Section A</em> 455: 198. <a href="https://www.sciencedirect.com/science/article/pii/S0168900200007312">https://www.sciencedirect.com/science/article/pii/S0168900200007312</a>.
-</div>
-<div id="ref-dowe2009" class="csl-entry" role="listitem">
-Dowell, D. H., and J. F. Schmerge. 2009. <span>“Quantum Efficiency and Thermal Emittance of Metal Photocathodes.”</span> <em>Physical Review Special Topics - Accelerators and Beams</em> 12: 074201. <a href="https://doi.org/10.1103/PhysRevSTAB.12.074201">https://doi.org/10.1103/PhysRevSTAB.12.074201</a>.
-</div>
-<div id="ref-flo97" class="csl-entry" role="listitem">
-Flöttmann, K. 1997. <em>Note on the Thermal Emittance of Electrons Emitted by Cesium Telluride Photo Cathodes</em>. DESY-TESLA-FEL-97-01. Deutsches Elektronen-Synchrotron.
-</div>
-<div id="ref-JohoDist" class="csl-entry" role="listitem">
-Joho, W. 1980. <em>Representation of Beam Ellipses for Transport Calculations</em>. TM-11-14. Paul Scherrer Institute. <a href="https://indico.psi.ch/event/3484/attachments/5948/7502/TM-11-14.pdf">https://indico.psi.ch/event/3484/attachments/5948/7502/TM-11-14.pdf</a>.
-</div>
-<div id="ref-laserPulseShaping" class="csl-entry" role="listitem">
-Power, J. G., and C. Jing. 2009. <span>“Temporal Laser Pulse Shaping for RF Photocathode Guns: The Cheap and Easy Way Using UV Birefringent Crystals.”</span> <em>AIP Conference Proceedings</em> 1086: 689. <a href="https://doi.org/10.1063/1.3080991">https://doi.org/10.1063/1.3080991</a>.
-</div>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1914,20 +1877,16 @@ Power, J. G., and C. Jing. 2009. <span>“Temporal Laser Pulse Shaping for RF Ph
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../sections/beam-command/index.html" class="pagination-link" aria-label="Beam Command">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../sections/emission-source/index.html" class="pagination-link" aria-label="Emission Sources">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Beam Command" class="pagination-link" href="../../sections/beam-command/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Emission Sources" class="pagination-link" href="../../sections/emission-source/index.html">
+<span class="nav-page-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/distribution/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/distribution/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

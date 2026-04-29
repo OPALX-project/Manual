@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>8&nbsp; Command Format – The OPAL(X) Framework Documentation</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>8  Command Format – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,27 +21,25 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../sections/control/index.html" rel="next">
-<link href="../../sections/opalmap/index.html" rel="prev">
+<meta content="../../" name="quarto:offset"/>
+<link href="../../sections/control/index.html" rel="next"/>
+<link href="../../sections/opalmap/index.html" rel="prev"/>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +115,6 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -172,328 +166,316 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/format/index.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/format/index.html"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/format/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#statements-and-comments" id="toc-statements-and-comments" class="nav-link active" data-scroll-target="#statements-and-comments"><span class="header-section-number">8.1</span> Statements and Comments</a></li>
-  <li><a href="#identifiers-or-labels" id="toc-identifiers-or-labels" class="nav-link" data-scroll-target="#identifiers-or-labels"><span class="header-section-number">8.2</span> Identifiers or Labels</a></li>
-  <li><a href="#command-attribute-types" id="toc-command-attribute-types" class="nav-link" data-scroll-target="#command-attribute-types"><span class="header-section-number">8.3</span> Command Attribute Types</a></li>
-  <li><a href="#string-attributes" id="toc-string-attributes" class="nav-link" data-scroll-target="#string-attributes"><span class="header-section-number">8.4</span> String Attributes</a>
-  <ul class="collapse">
-  <li><a href="#predefined-string-attributes" id="toc-predefined-string-attributes" class="nav-link" data-scroll-target="#predefined-string-attributes"><span class="header-section-number">8.4.1</span> Predefined String Attributes</a></li>
-  </ul></li>
-  <li><a href="#logical-expressions" id="toc-logical-expressions" class="nav-link" data-scroll-target="#logical-expressions"><span class="header-section-number">8.5</span> Logical Expressions</a></li>
-  <li><a href="#real-expressions" id="toc-real-expressions" class="nav-link" data-scroll-target="#real-expressions"><span class="header-section-number">8.6</span> Real Expressions</a></li>
-  <li><a href="#operators" id="toc-operators" class="nav-link" data-scroll-target="#operators"><span class="header-section-number">8.7</span> Operators</a></li>
-  <li><a href="#real-functions" id="toc-real-functions" class="nav-link" data-scroll-target="#real-functions"><span class="header-section-number">8.8</span> Real Functions</a></li>
-  <li><a href="#operands-in-expressions" id="toc-operands-in-expressions" class="nav-link" data-scroll-target="#operands-in-expressions"><span class="header-section-number">8.9</span> Operands in Expressions</a>
-  <ul class="collapse">
-  <li><a href="#literal-constants" id="toc-literal-constants" class="nav-link" data-scroll-target="#literal-constants"><span class="header-section-number">8.9.1</span> Literal Constants</a></li>
-  <li><a href="#symbolic-constants" id="toc-symbolic-constants" class="nav-link" data-scroll-target="#symbolic-constants"><span class="header-section-number">8.9.2</span> Symbolic Constants</a></li>
-  <li><a href="#variable-labels" id="toc-variable-labels" class="nav-link" data-scroll-target="#variable-labels"><span class="header-section-number">8.9.3</span> Variable Labels</a></li>
-  <li><a href="#element-or-command-attributes" id="toc-element-or-command-attributes" class="nav-link" data-scroll-target="#element-or-command-attributes"><span class="header-section-number">8.9.4</span> Element or Command Attributes</a></li>
-  <li><a href="#deferred-expressions-and-random-values" id="toc-deferred-expressions-and-random-values" class="nav-link" data-scroll-target="#deferred-expressions-and-random-values"><span class="header-section-number">8.9.5</span> Deferred Expressions and Random Values</a></li>
-  </ul></li>
-  <li><a href="#element-selection" id="toc-element-selection" class="nav-link" data-scroll-target="#element-selection"><span class="header-section-number">8.10</span> Element Selection</a>
-  <ul class="collapse">
-  <li><a href="#element-selection-1" id="toc-element-selection-1" class="nav-link" data-scroll-target="#element-selection-1"><span class="header-section-number">8.10.1</span> Element Selection</a></li>
-  <li><a href="#range-selection" id="toc-range-selection" class="nav-link" data-scroll-target="#range-selection"><span class="header-section-number">8.10.2</span> Range Selection</a></li>
-  </ul></li>
-  <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints"><span class="header-section-number">8.11</span> Constraints</a></li>
-  <li><a href="#variable-names" id="toc-variable-names" class="nav-link" data-scroll-target="#variable-names"><span class="header-section-number">8.12</span> Variable Names</a></li>
-  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions"><span class="header-section-number">8.13</span> Regular Expressions</a></li>
-  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays"><span class="header-section-number">8.14</span> Arrays</a>
-  <ul class="collapse">
-  <li><a href="#logical-arrays" id="toc-logical-arrays" class="nav-link" data-scroll-target="#logical-arrays"><span class="header-section-number">8.14.1</span> Logical Arrays</a></li>
-  <li><a href="#real-arrays" id="toc-real-arrays" class="nav-link" data-scroll-target="#real-arrays"><span class="header-section-number">8.14.2</span> Real Arrays</a></li>
-  <li><a href="#string-arrays" id="toc-string-arrays" class="nav-link" data-scroll-target="#string-arrays"><span class="header-section-number">8.14.3</span> String Arrays</a></li>
-  <li><a href="#token-list-arrays" id="toc-token-list-arrays" class="nav-link" data-scroll-target="#token-list-arrays"><span class="header-section-number">8.14.4</span> Token List Arrays</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/format/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#statements-and-comments" href="#statements-and-comments" id="toc-statements-and-comments"><span class="header-section-number">8.1</span> Statements and Comments</a></li>
+<li><a class="nav-link" data-scroll-target="#identifiers-or-labels" href="#identifiers-or-labels" id="toc-identifiers-or-labels"><span class="header-section-number">8.2</span> Identifiers or Labels</a></li>
+<li><a class="nav-link" data-scroll-target="#command-attribute-types" href="#command-attribute-types" id="toc-command-attribute-types"><span class="header-section-number">8.3</span> Command Attribute Types</a></li>
+<li><a class="nav-link" data-scroll-target="#string-attributes" href="#string-attributes" id="toc-string-attributes"><span class="header-section-number">8.4</span> String Attributes</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#predefined-string-attributes" href="#predefined-string-attributes" id="toc-predefined-string-attributes"><span class="header-section-number">8.4.1</span> Predefined String Attributes</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#logical-expressions" href="#logical-expressions" id="toc-logical-expressions"><span class="header-section-number">8.5</span> Logical Expressions</a></li>
+<li><a class="nav-link" data-scroll-target="#real-expressions" href="#real-expressions" id="toc-real-expressions"><span class="header-section-number">8.6</span> Real Expressions</a></li>
+<li><a class="nav-link" data-scroll-target="#operators" href="#operators" id="toc-operators"><span class="header-section-number">8.7</span> Operators</a></li>
+<li><a class="nav-link" data-scroll-target="#real-functions" href="#real-functions" id="toc-real-functions"><span class="header-section-number">8.8</span> Real Functions</a></li>
+<li><a class="nav-link" data-scroll-target="#operands-in-expressions" href="#operands-in-expressions" id="toc-operands-in-expressions"><span class="header-section-number">8.9</span> Operands in Expressions</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#literal-constants" href="#literal-constants" id="toc-literal-constants"><span class="header-section-number">8.9.1</span> Literal Constants</a></li>
+<li><a class="nav-link" data-scroll-target="#symbolic-constants" href="#symbolic-constants" id="toc-symbolic-constants"><span class="header-section-number">8.9.2</span> Symbolic Constants</a></li>
+<li><a class="nav-link" data-scroll-target="#variable-labels" href="#variable-labels" id="toc-variable-labels"><span class="header-section-number">8.9.3</span> Variable Labels</a></li>
+<li><a class="nav-link" data-scroll-target="#element-or-command-attributes" href="#element-or-command-attributes" id="toc-element-or-command-attributes"><span class="header-section-number">8.9.4</span> Element or Command Attributes</a></li>
+<li><a class="nav-link" data-scroll-target="#deferred-expressions-and-random-values" href="#deferred-expressions-and-random-values" id="toc-deferred-expressions-and-random-values"><span class="header-section-number">8.9.5</span> Deferred Expressions and Random Values</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#element-selection" href="#element-selection" id="toc-element-selection"><span class="header-section-number">8.10</span> Element Selection</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#element-selection-1" href="#element-selection-1" id="toc-element-selection-1"><span class="header-section-number">8.10.1</span> Element Selection</a></li>
+<li><a class="nav-link" data-scroll-target="#range-selection" href="#range-selection" id="toc-range-selection"><span class="header-section-number">8.10.2</span> Range Selection</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#constraints" href="#constraints" id="toc-constraints"><span class="header-section-number">8.11</span> Constraints</a></li>
+<li><a class="nav-link" data-scroll-target="#variable-names" href="#variable-names" id="toc-variable-names"><span class="header-section-number">8.12</span> Variable Names</a></li>
+<li><a class="nav-link" data-scroll-target="#regular-expressions" href="#regular-expressions" id="toc-regular-expressions"><span class="header-section-number">8.13</span> Regular Expressions</a></li>
+<li><a class="nav-link" data-scroll-target="#arrays" href="#arrays" id="toc-arrays"><span class="header-section-number">8.14</span> Arrays</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#logical-arrays" href="#logical-arrays" id="toc-logical-arrays"><span class="header-section-number">8.14.1</span> Logical Arrays</a></li>
+<li><a class="nav-link" data-scroll-target="#real-arrays" href="#real-arrays" id="toc-real-arrays"><span class="header-section-number">8.14.2</span> Real Arrays</a></li>
+<li><a class="nav-link" data-scroll-target="#string-arrays" href="#string-arrays" id="toc-string-arrays"><span class="header-section-number">8.14.3</span> String Arrays</a></li>
+<li><a class="nav-link" data-scroll-target="#token-list-arrays" href="#token-list-arrays" id="toc-token-list-arrays"><span class="header-section-number">8.14.4</span> Token List Arrays</a></li>
+</ul></li>
+</ul>
+<div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/format/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked=""> Both</label>
+<span>View:</span>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
+<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
 </div>
 <p>All flavors of OPAL use the same MAD-like input language. The dialect is close to MAD9; for older MAD8-style inputs a separate conversion guide exists.</p>
-<section id="statements-and-comments" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="statements-and-comments"><span class="header-section-number">8.1</span> Statements and Comments</h2>
+<section class="level2" data-number="8.1" id="statements-and-comments">
+<h2 class="anchored" data-anchor-id="statements-and-comments" data-number="8.1"><span class="header-section-number">8.1</span> Statements and Comments</h2>
 <p>Input is free format. Statements are tokenized and terminated by semicolons. Comments may be introduced by <code>//</code>, and C-style block comments are also accepted.</p>
 <p>General command form:</p>
 <pre class="text"><code>keyword, attribute, ..., attribute;
@@ -516,13 +498,13 @@ LMD: LMDIF, CALLS=10;
 LMD;
 LMD, CALLS=100, TOLERANCE=1E-5;</code></pre>
 </section>
-<section id="identifiers-or-labels" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="identifiers-or-labels"><span class="header-section-number">8.2</span> Identifiers or Labels</h2>
+<section class="level2" data-number="8.2" id="identifiers-or-labels">
+<h2 class="anchored" data-anchor-id="identifiers-or-labels" data-number="8.2"><span class="header-section-number">8.2</span> Identifiers or Labels</h2>
 <p>An identifier names a keyword, element, beamline, variable, or array. Unquoted identifiers begin with a letter and may contain letters, digits, periods, and underscores. Quoted identifiers may contain other special characters, though the source manual discourages that because it complicates downstream post-processing.</p>
 <p>Unquoted names are converted to upper case before storage.</p>
 </section>
-<section id="command-attribute-types" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="command-attribute-types"><span class="header-section-number">8.3</span> Command Attribute Types</h2>
+<section class="level2" data-number="8.3" id="command-attribute-types">
+<h2 class="anchored" data-anchor-id="command-attribute-types" data-number="8.3"><span class="header-section-number">8.3</span> Command Attribute Types</h2>
 <p>Object attributes are referenced as</p>
 <pre class="text"><code>object-name-&gt;attribute-name
 object-name-&gt;attribute-name[index]</code></pre>
@@ -579,8 +561,8 @@ object-name-&gt;attribute-name[index]</code></pre>
 </tbody>
 </table>
 </section>
-<section id="string-attributes" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="string-attributes"><span class="header-section-number">8.4</span> String Attributes</h2>
+<section class="level2" data-number="8.4" id="string-attributes">
+<h2 class="anchored" data-anchor-id="string-attributes" data-number="8.4"><span class="header-section-number">8.4</span> String Attributes</h2>
 <p>String attributes carry titles, file names, class names, or options. Strings may be quoted with single or double quotes. Concatenation uses <code>&amp;</code>, and the function <code>STRING(X)</code> converts a real expression to a string.</p>
 <table class="caption-top table">
 <thead>
@@ -606,13 +588,13 @@ CALL, FILE="save";
 
 REAL X=1;
 STRING L2=LEP&amp;STRING(X+1);</code></pre>
-<section id="predefined-string-attributes" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="predefined-string-attributes"><span class="header-section-number">8.4.1</span> Predefined String Attributes</h3>
+<section class="level3" data-number="8.4.1" id="predefined-string-attributes">
+<h3 class="anchored" data-anchor-id="predefined-string-attributes" data-number="8.4.1"><span class="header-section-number">8.4.1</span> Predefined String Attributes</h3>
 <p>Many string attributes are restricted to a predefined set of accepted values. Such attributes do not need to be quoted. If the supplied value is not in the allowed set, OPAL raises an exception.</p>
 </section>
 </section>
-<section id="logical-expressions" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="logical-expressions"><span class="header-section-number">8.5</span> Logical Expressions</h2>
+<section class="level2" data-number="8.5" id="logical-expressions">
+<h2 class="anchored" data-anchor-id="logical-expressions" data-number="8.5"><span class="header-section-number">8.5</span> Logical Expressions</h2>
 <p>Logical expressions use the same precedence and syntax style as C. They are built from relations combined with <code>&amp;&amp;</code> and <code>||</code>.</p>
 <p>Grammar sketch:</p>
 <pre class="text"><code>relation      ::= TRUE | FALSE | real-expr rel-operator real-expr
@@ -666,8 +648,8 @@ logical-expr  ::= and-expr | logical-expr || and-expr</code></pre>
 OPTION, ECHO;
 X&gt;10 &amp;&amp; Y&lt;20 || Z==15</code></pre>
 </section>
-<section id="real-expressions" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="real-expressions"><span class="header-section-number">8.6</span> Real Expressions</h2>
+<section class="level2" data-number="8.6" id="real-expressions">
+<h2 class="anchored" data-anchor-id="real-expressions" data-number="8.6"><span class="header-section-number">8.6</span> Real Expressions</h2>
 <p>Any real value may be given as an arithmetic expression. Expression definitions may be entered in any order; OPAL evaluates them when the required operands are available.</p>
 <p>Grammar sketch:</p>
 <pre class="text"><code>real-ref  ::= real-variable |
@@ -689,8 +671,8 @@ factor    ::= primary | factor ^ primary
 term      ::= factor | term * factor | term / factor
 real-expr ::= term | +term | -term | real-expr + term | real-expr - term</code></pre>
 </section>
-<section id="operators" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="operators"><span class="header-section-number">8.7</span> Operators</h2>
+<section class="level2" data-number="8.7" id="operators">
+<h2 class="anchored" data-anchor-id="operators" data-number="8.7"><span class="header-section-number">8.7</span> Operators</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -730,8 +712,8 @@ real-expr ::= term | +term | -term | real-expr + term | real-expr - term</code><
 </tbody>
 </table>
 </section>
-<section id="real-functions" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="real-functions"><span class="header-section-number">8.8</span> Real Functions</h2>
+<section class="level2" data-number="8.8" id="real-functions">
+<h2 class="anchored" data-anchor-id="real-functions" data-number="8.8"><span class="header-section-number">8.8</span> Real Functions</h2>
 <p>The source chapter lists the following built-ins:</p>
 <ul>
 <li>no arguments: <code>RANF()</code>, <code>GAUSS()</code>, <code>GETEKIN()</code>, <code>USER0()</code></li>
@@ -747,20 +729,20 @@ real-expr ::= term | +term | -term | real-expr + term | real-expr - term</code><
 </ul>
 <p>The source manual explicitly warns that random generators inside ordinary expressions may be re-evaluated at unexpected times. <code>EVAL(...)</code> can be used to force immediate evaluation and store the result as a constant.</p>
 </section>
-<section id="operands-in-expressions" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="operands-in-expressions"><span class="header-section-number">8.9</span> Operands in Expressions</h2>
-<section id="literal-constants" class="level3" data-number="8.9.1">
-<h3 data-number="8.9.1" class="anchored" data-anchor-id="literal-constants"><span class="header-section-number">8.9.1</span> Literal Constants</h3>
+<section class="level2" data-number="8.9" id="operands-in-expressions">
+<h2 class="anchored" data-anchor-id="operands-in-expressions" data-number="8.9"><span class="header-section-number">8.9</span> Operands in Expressions</h2>
+<section class="level3" data-number="8.9.1" id="literal-constants">
+<h3 class="anchored" data-anchor-id="literal-constants" data-number="8.9.1"><span class="header-section-number">8.9.1</span> Literal Constants</h3>
 <p>Numerical values follow FORTRAN-style literal syntax. Examples:</p>
 <pre class="text"><code>1, 10.35, 5E3, 314.1592E-2</code></pre>
 </section>
-<section id="symbolic-constants" class="level3" data-number="8.9.2">
-<h3 data-number="8.9.2" class="anchored" data-anchor-id="symbolic-constants"><span class="header-section-number">8.9.2</span> Symbolic Constants</h3>
+<section class="level3" data-number="8.9.2" id="symbolic-constants">
+<h3 class="anchored" data-anchor-id="symbolic-constants" data-number="8.9.2"><span class="header-section-number">8.9.2</span> Symbolic Constants</h3>
 <p>The predefined symbolic constants include mathematical constants and particle masses:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -792,8 +774,8 @@ real-expr ::= term | +term | -term | real-expr + term | real-expr - term</code><
 </tbody>
 </table>
 </section>
-<section id="variable-labels" class="level3" data-number="8.9.3">
-<h3 data-number="8.9.3" class="anchored" data-anchor-id="variable-labels"><span class="header-section-number">8.9.3</span> Variable Labels</h3>
+<section class="level3" data-number="8.9.3" id="variable-labels">
+<h3 class="anchored" data-anchor-id="variable-labels" data-number="8.9.3"><span class="header-section-number">8.9.3</span> Variable Labels</h3>
 <p>Global real and vector variables are defined with:</p>
 <pre class="text"><code>REAL X=expression;
 REAL X:=expression;
@@ -805,8 +787,8 @@ REAL X:=L;
 D1: DRIFT, L:=X;
 D2: DRIFT, L:=2.0-X;</code></pre>
 </section>
-<section id="element-or-command-attributes" class="level3" data-number="8.9.4">
-<h3 data-number="8.9.4" class="anchored" data-anchor-id="element-or-command-attributes"><span class="header-section-number">8.9.4</span> Element or Command Attributes</h3>
+<section class="level3" data-number="8.9.4" id="element-or-command-attributes">
+<h3 class="anchored" data-anchor-id="element-or-command-attributes" data-number="8.9.4"><span class="header-section-number">8.9.4</span> Element or Command Attributes</h3>
 <p>Attributes can appear directly in arithmetic expressions:</p>
 <pre class="text"><code>element-name-&gt;attribute-name
 command-name-&gt;attribute-name
@@ -816,16 +798,16 @@ command-name-&gt;attribute-name[index]</code></pre>
 <pre class="text"><code>D1: DRIFT, L=1.0;
 D2: DRIFT, L=2.0-D1-&gt;L;</code></pre>
 </section>
-<section id="deferred-expressions-and-random-values" class="level3" data-number="8.9.5">
-<h3 data-number="8.9.5" class="anchored" data-anchor-id="deferred-expressions-and-random-values"><span class="header-section-number">8.9.5</span> Deferred Expressions and Random Values</h3>
+<section class="level3" data-number="8.9.5" id="deferred-expressions-and-random-values">
+<h3 class="anchored" data-anchor-id="deferred-expressions-and-random-values" data-number="8.9.5"><span class="header-section-number">8.9.5</span> Deferred Expressions and Random Values</h3>
 <p>Expressions containing random generators may be deferred and sampled when the target command actually executes. Such a value cannot safely be used as an operand inside another deferred expression.</p>
 </section>
 </section>
-<section id="element-selection" class="level2" data-number="8.10">
-<h2 data-number="8.10" class="anchored" data-anchor-id="element-selection"><span class="header-section-number">8.10</span> Element Selection</h2>
+<section class="level2" data-number="8.10" id="element-selection">
+<h2 class="anchored" data-anchor-id="element-selection" data-number="8.10"><span class="header-section-number">8.10</span> Element Selection</h2>
 <p>Element selection is not available in <code>OPAL-T</code> and <code>OPAL-CYCL</code>, but it is part of the general language.</p>
-<section id="element-selection-1" class="level3" data-number="8.10.1">
-<h3 data-number="8.10.1" class="anchored" data-anchor-id="element-selection-1"><span class="header-section-number">8.10.1</span> Element Selection</h3>
+<section class="level3" data-number="8.10.1" id="element-selection-1">
+<h3 class="anchored" data-anchor-id="element-selection-1" data-number="8.10.1"><span class="header-section-number">8.10.1</span> Element Selection</h3>
 <p>A <code>place</code> denotes a specific element occurrence or the position immediately before or after the full line:</p>
 <pre class="text"><code>place ::= element-name |
           element-name[index] |
@@ -841,8 +823,8 @@ D2: DRIFT, L=2.0-D1-&gt;L;</code></pre>
 <li><code>S[1]::M[1]</code>: marker <code>M</code> nested in the first occurrence of sub-line <code>S</code></li>
 </ul>
 </section>
-<section id="range-selection" class="level3" data-number="8.10.2">
-<h3 data-number="8.10.2" class="anchored" data-anchor-id="range-selection"><span class="header-section-number">8.10.2</span> Range Selection</h3>
+<section class="level3" data-number="8.10.2" id="range-selection">
+<h3 class="anchored" data-anchor-id="range-selection" data-number="8.10.2"><span class="header-section-number">8.10.2</span> Range Selection</h3>
 <p>A range is one place or two places joined by <code>/</code>:</p>
 <pre class="text"><code>range ::= place | place/place</code></pre>
 <p>Examples:</p>
@@ -853,20 +835,20 @@ D2: DRIFT, L=2.0-D1-&gt;L;</code></pre>
 </ul>
 </section>
 </section>
-<section id="constraints" class="level2" data-number="8.11">
-<h2 data-number="8.11" class="anchored" data-anchor-id="constraints"><span class="header-section-number">8.11</span> Constraints</h2>
+<section class="level2" data-number="8.11" id="constraints">
+<h2 class="anchored" data-anchor-id="constraints" data-number="8.11"><span class="header-section-number">8.11</span> Constraints</h2>
 <p>Constraints are mainly used in matching and optimization:</p>
 <pre class="text"><code>constraint          ::= array-expr constraint-operator array-expr
 constraint-operator ::= == | &lt; | &gt;</code></pre>
 </section>
-<section id="variable-names" class="level2" data-number="8.12">
-<h2 data-number="8.12" class="anchored" data-anchor-id="variable-names"><span class="header-section-number">8.12</span> Variable Names</h2>
+<section class="level2" data-number="8.12" id="variable-names">
+<h2 class="anchored" data-anchor-id="variable-names" data-number="8.12"><span class="header-section-number">8.12</span> Variable Names</h2>
 <p>Variable references can be:</p>
 <pre class="text"><code>real-variable
 object-&gt;real-attribute</code></pre>
 </section>
-<section id="regular-expressions" class="level2" data-number="8.13">
-<h2 data-number="8.13" class="anchored" data-anchor-id="regular-expressions"><span class="header-section-number">8.13</span> Regular Expressions</h2>
+<section class="level2" data-number="8.13" id="regular-expressions">
+<h2 class="anchored" data-anchor-id="regular-expressions" data-number="8.13"><span class="header-section-number">8.13</span> Regular Expressions</h2>
 <p>Some commands accept UNIX-style regular expressions. The pattern must be quoted. The source chapter documents the usual forms:</p>
 <ul>
 <li><code>.</code></li>
@@ -879,20 +861,20 @@ object-&gt;real-attribute</code></pre>
 <pre class="text"><code>SELECT, PATTERN="D.."
 SELECT, PATTERN="K.*QD.*\\.R1"</code></pre>
 </section>
-<section id="arrays" class="level2" data-number="8.14">
-<h2 data-number="8.14" class="anchored" data-anchor-id="arrays"><span class="header-section-number">8.14</span> Arrays</h2>
+<section class="level2" data-number="8.14" id="arrays">
+<h2 class="anchored" data-anchor-id="arrays" data-number="8.14"><span class="header-section-number">8.14</span> Arrays</h2>
 <p>An array is normally entered as a list in braces:</p>
 <pre class="text"><code>{value, ..., value}</code></pre>
 <p>If the array has only one value, the braces may be omitted.</p>
-<section id="logical-arrays" class="level3" data-number="8.14.1">
-<h3 data-number="8.14.1" class="anchored" data-anchor-id="logical-arrays"><span class="header-section-number">8.14.1</span> Logical Arrays</h3>
+<section class="level3" data-number="8.14.1" id="logical-arrays">
+<h3 class="anchored" data-anchor-id="logical-arrays" data-number="8.14.1"><span class="header-section-number">8.14.1</span> Logical Arrays</h3>
 <pre class="text"><code>logical-array ::= { logical-list }
 logical-list  ::= logical-expr | logical-list , logical-expr</code></pre>
 <p>Example:</p>
 <pre class="text"><code>{true,true,a==b,false,x&gt;y &amp;&amp; y&gt;z,true,false}</code></pre>
 </section>
-<section id="real-arrays" class="level3" data-number="8.14.2">
-<h3 data-number="8.14.2" class="anchored" data-anchor-id="real-arrays"><span class="header-section-number">8.14.2</span> Real Arrays</h3>
+<section class="level3" data-number="8.14.2" id="real-arrays">
+<h3 class="anchored" data-anchor-id="real-arrays" data-number="8.14.2"><span class="header-section-number">8.14.2</span> Real Arrays</h3>
 <p>Real arrays mirror scalar arithmetic and support:</p>
 <ul>
 <li>array variables and object array attributes</li>
@@ -913,20 +895,17 @@ COLUMN(table, column)
 COLUMN(table, column, range)</code></pre>
 <p>In <code>TABLE(...)</code>, the special symbol <code>#</code> is replaced by the running index.</p>
 </section>
-<section id="string-arrays" class="level3" data-number="8.14.3">
-<h3 data-number="8.14.3" class="anchored" data-anchor-id="string-arrays"><span class="header-section-number">8.14.3</span> String Arrays</h3>
+<section class="level3" data-number="8.14.3" id="string-arrays">
+<h3 class="anchored" data-anchor-id="string-arrays" data-number="8.14.3"><span class="header-section-number">8.14.3</span> String Arrays</h3>
 <p>String arrays are lists of string expressions. Example:</p>
 <pre class="text"><code>{A, "xyz", A &amp; STRING(X)}</code></pre>
 </section>
-<section id="token-list-arrays" class="level3" data-number="8.14.4">
-<h3 data-number="8.14.4" class="anchored" data-anchor-id="token-list-arrays"><span class="header-section-number">8.14.4</span> Token List Arrays</h3>
+<section class="level3" data-number="8.14.4" id="token-list-arrays">
+<h3 class="anchored" data-anchor-id="token-list-arrays" data-number="8.14.4"><span class="header-section-number">8.14.4</span> Token List Arrays</h3>
 <p>Token-list arrays are lists of token lists. Example:</p>
 <pre class="text"><code>{X:12:8, Y:12:8}</code></pre>
-
-
 </section>
 </section>
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1329,20 +1308,16 @@ COLUMN(table, column, range)</code></pre>
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../sections/opalmap/index.html" class="pagination-link" aria-label="OPAL-MAP">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../sections/control/index.html" class="pagination-link" aria-label="Control Statements">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="OPAL-MAP" class="pagination-link" href="../../sections/opalmap/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Control Statements" class="pagination-link" href="../../sections/control/index.html">
+<span class="nav-page-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/format/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/format/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

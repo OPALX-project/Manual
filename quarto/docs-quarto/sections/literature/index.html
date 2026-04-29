@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="quarto-1.9.37" name="generator"/>
 <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
-<title>24  Sampler – The OPAL(X) Framework Documentation</title>
+<title>Appendix H — Literature – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -28,8 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta content="../../" name="quarto:offset"/>
-<link href="../../sections/appendices/fieldmaps/index.html" rel="next"/>
-<link href="../../sections/optimiser/index.html" rel="prev"/>
+<link href="../../sections/appendices/developer-build/index.html" rel="prev"/>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -166,34 +184,6 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 </head>
 <body class="nav-sidebar floating quarto-light">
 <div id="quarto-search-results"></div>
@@ -203,7 +193,7 @@ window.Quarto = {
 <button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
 <i class="bi bi-layout-text-sidebar-reverse"></i>
 </button>
-<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/sampler/index.html"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></a></li></ol></nav>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../sections/literature/index.html"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></a></li></ol></nav>
 <a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
 </a>
 <button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
@@ -377,7 +367,7 @@ window.Quarto = {
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link active" href="../../sections/sampler/index.html">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
 <span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
 </div>
 </li>
@@ -434,7 +424,7 @@ window.Quarto = {
 </li>
 <li class="sidebar-item">
 <div class="sidebar-item-container">
-<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/literature/index.html">
 <span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
 </div>
 </li>
@@ -449,256 +439,50 @@ window.Quarto = {
 </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<header class="quarto-title-block default" id="title-block-header">
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../sections/literature/index.html"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></h1>
+<h1 class="title">Appendix H — Literature</h1>
 </div>
 <div class="quarto-title-meta">
 </div>
 </header>
-<div class="feature-toggle">
-<span>View:</span>
-<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
-<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
-<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
-</div>
-<div class="feature-opalx">
-<p>The sampler chapter below describes the legacy <code>OPAL</code> sampling workflow. It is not currently mirrored as a corresponding <code>OPALX</code> user feature.</p>
-</div>
-<div class="feature-opal">
-<p>The sampler is a companion to the optimizer. Instead of evolving a multi-objective population, it generates samples of the design variables and runs the corresponding simulations. This is useful for surrogate-model training, validation studies, and uncertainty quantification.</p>
-<section class="level2" data-number="24.1" id="sampler-opal-commands">
-<h2 class="anchored" data-anchor-id="sampler-opal-commands" data-number="24.1"><span class="header-section-number">24.1</span> Sampler OPAL Commands</h2>
-<p>The syntax is intentionally close to the optimizer syntax, especially for the shared <code>DVAR</code> definitions.</p>
-<section class="level3" data-number="24.1.1" id="basic-syntax">
-<h3 class="anchored" data-anchor-id="basic-syntax" data-number="24.1.1"><span class="header-section-number">24.1.1</span> Basic Syntax</h3>
-<p>Design variables are still defined through <code>DVAR</code>. The sampler then specifies how each design variable is sampled and how the resulting combinations are evaluated.</p>
-</section>
-<section class="level3" data-number="24.1.2" id="sample-command">
-<h3 class="anchored" data-anchor-id="sample-command" data-number="24.1.2"><span class="header-section-number">24.1.2</span> <code>SAMPLE</code> Command</h3>
-<p><code>SAMPLE</code> controls the overall sampling run and whether the per-variable sample sets are combined in raster or non-raster fashion.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%"/>
-<col style="width: 50%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>RASTER</code></td>
-<td>Choose raster or non-raster combination of the individual sample sets</td>
-</tr>
-<tr class="even">
-<td><code>INPUT</code></td>
-<td>Path to the input or template file</td>
-</tr>
-<tr class="odd">
-<td><code>OUTPUT</code></td>
-<td>Base name for generated result files</td>
-</tr>
-<tr class="even">
-<td><code>OUTDIR</code></td>
-<td>Directory where simulations and results are written</td>
-</tr>
-<tr class="odd">
-<td><code>DVARS</code></td>
-<td>List of design variables to sample</td>
-</tr>
-<tr class="even">
-<td><code>OBJECTIVES</code></td>
-<td>Quantities to evaluate and store for each sample</td>
-</tr>
-<tr class="odd">
-<td><code>SAMPLINGS</code></td>
-<td>Sampling-method definitions</td>
-</tr>
-<tr class="even">
-<td><code>NUM_MASTERS</code></td>
-<td>Number of master ranks</td>
-</tr>
-<tr class="odd">
-<td><code>NUM_COWORKERS</code></td>
-<td>Number of worker ranks per simulation</td>
-</tr>
-<tr class="even">
-<td><code>TEMPLATEDIR</code></td>
-<td>Template directory</td>
-</tr>
-<tr class="odd">
-<td><code>FIELDMAPDIR</code></td>
-<td>Field-map directory</td>
-</tr>
-<tr class="even">
-<td><code>DISTDIR</code></td>
-<td>Distribution directory</td>
-</tr>
-<tr class="odd">
-<td><code>KEEP</code></td>
-<td>File extensions that should not be deleted after evaluation</td>
-</tr>
-<tr class="even">
-<td><code>RESTART_FILE</code></td>
-<td>Optional H5 restart file</td>
-</tr>
-<tr class="odd">
-<td><code>RESTART_STEP</code></td>
-<td>Restart step inside the H5 restart file</td>
-</tr>
-<tr class="even">
-<td><code>JSON_DUMP_FREQ</code></td>
-<td>Frequency of appending finished samples to the JSON result</td>
-</tr>
-</tbody>
-</table>
-<section class="level4" id="raster-versus-non-raster-mode">
-<h4 class="anchored" data-anchor-id="raster-versus-non-raster-mode">Raster versus non-raster mode</h4>
-<ul>
-<li><code>RASTER=TRUE</code>: evaluate every combination of the per-variable sample points</li>
-<li><code>RASTER=FALSE</code>: evaluate aligned sequences, giving a total count equal to the minimum sample count across all variables</li>
-</ul>
-<p>So with raster mode the total sample count is</p>
-<p><span id="eq-sampler-raster"><span class="math display">\[
-N = N_1 \times N_2 \times \cdots \times N_n,
-\tag{24.1}\]</span></span></p>
-<p>whereas with non-raster mode it is</p>
-<p><span id="eq-sampler-sequence"><span class="math display">\[
-N = \min(N_1, N_2, \ldots, N_n).
-\tag{24.2}\]</span></span></p>
-<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-sampler-raster-vs-sequence">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sampler-raster-vs-sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img class="img-fluid figure-img" src="figures/differenceSEQUENCESampler.svg" style="width:70.0%"/>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampler-raster-vs-sequence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 24.1: Difference between raster and non-raster sampling.
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section class="level3" data-number="24.1.3" id="sampling-command">
-<h3 class="anchored" data-anchor-id="sampling-command" data-number="24.1.3"><span class="header-section-number">24.1.3</span> <code>SAMPLING</code> Command</h3>
-<p>Each <code>SAMPLING</code> definition describes how one design variable is sampled.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>VARIABLE</code></td>
-<td>Name of the corresponding design variable</td>
-</tr>
-<tr class="even">
-<td><code>TYPE</code></td>
-<td>Sampling method</td>
-</tr>
-<tr class="odd">
-<td><code>RANDOM</code></td>
-<td>Random or sequential mode</td>
-</tr>
-<tr class="even">
-<td><code>SEED</code></td>
-<td>Random seed; default <code>42</code></td>
-</tr>
-<tr class="odd">
-<td><code>STEP</code></td>
-<td>Step size for randomized sequences</td>
-</tr>
-<tr class="even">
-<td><code>FNAME</code></td>
-<td>File containing sample values</td>
-</tr>
-<tr class="odd">
-<td><code>N</code></td>
-<td>Number of samples for this variable</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section class="level3" data-number="24.1.4" id="available-sampling-methods">
-<h3 class="anchored" data-anchor-id="available-sampling-methods" data-number="24.1.4"><span class="header-section-number">24.1.4</span> Available Sampling Methods</h3>
-<p>The legacy manual documents:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%"/>
-<col style="width: 50%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Method</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>FROMFILE</code></td>
-<td>Read values from a named column in a file</td>
-</tr>
-<tr class="even">
-<td><code>UNIFORM</code></td>
-<td>Uniform floating-point sampling between lower and upper bounds</td>
-</tr>
-<tr class="odd">
-<td><code>UNIFORM_INT</code></td>
-<td>Uniform integer sampling between lower and upper bounds</td>
-</tr>
-<tr class="even">
-<td><code>GAUSSIAN</code></td>
-<td>Gaussian sampling, with bounds interpreted as <code>+-5 sigma</code></td>
-</tr>
-<tr class="odd">
-<td><code>LATIN_HYPERCUBE</code></td>
-<td>Random Latin-hypercube sampling</td>
-</tr>
-<tr class="even">
-<td><code>RANDOM_SEQUENCE_UNIFORM_INT</code></td>
-<td>Randomized integer sequence sampling</td>
-</tr>
-<tr class="odd">
-<td><code>RANDOM_SEQUENCE_UNIFORM</code></td>
-<td>Randomized floating-point sequence sampling</td>
-</tr>
-</tbody>
-</table>
-<p>The method semantics depend on whether <code>RANDOM</code> is enabled:</p>
-<ul>
-<li>in sequential mode, the command generates a deterministic sequence</li>
-<li>in random mode, the same method produces randomized samples from the same bounds or file source</li>
-</ul>
-</section>
-</section>
-<section class="level2" data-number="24.2" id="example-input-file">
-<h2 class="anchored" data-anchor-id="example-input-file" data-number="24.2"><span class="header-section-number">24.2</span> Example Input File</h2>
-<p>The original manual gives a complete example in <a href="examples/Sample.in">Sample.in</a>:</p>
-<pre class="text"><code>nstep: DVAR, VARIABLE="nstep", LOWERBOUND=10, UPPERBOUND=40;
-MX:    DVAR, VARIABLE="MX",    LOWERBOUND=16, UPPERBOUND=32;
-
-SM1: SAMPLING, VARIABLE="nstep", TYPE="FROMFILE", FNAME="samples.dat";
-SM2: SAMPLING, VARIABLE="MX",    TYPE="UNIFORM_INT", SEED=122, N=6;
-
-SAMPLE,
-    RASTER        = FALSE,
-    DVARS         = {nstep, MX},
-    SAMPLINGS     = {SM1, SM2},
-    INPUT         = "Ring.tmpl",
-    OUTPUT        = "RingSample",
-    OUTDIR        = "RingSample",
-    TEMPLATEDIR   = "template",
-    FIELDMAPDIR   = "Fieldmaps",
-    NUM_MASTERS   = 1,
-    NUM_COWORKERS = 1;
-QUIT;</code></pre>
-<p>The accompanying <a href="examples/samples.dat">samples.dat</a> file provides named columns for the <code>FROMFILE</code>-based sampling source. The template file then uses placeholder variables such as <code>_nstep_</code> in the same way as the optimizer.</p>
-</section>
-</div>
+<div class="references csl-bib-body" data-entry-spacing="0" id="refs" role="list"><div class="csl-entry" id="ref-classic" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">F. C. Iselin, <span>“The CLASSIC project,”</span> CERN, CERN/SL/96-061, 1996. Available: <a href="https://cds.cern.ch/record/311682/files/sl-96-061.pdf">https://cds.cern.ch/record/311682/files/sl-96-061.pdf</a></div>
+</div><div class="csl-entry" id="ref-pooma" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">R. Günther, <span>“Parallel object-oriented methods and applications.”</span> 2005. Available: <a href="http://www.nongnu.org/freepooma/">http://www.nongnu.org/freepooma/</a></div>
+</div><div class="csl-entry" id="ref-howison2010_intro" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">M. Howison, E. W. Bethel, H. Childs, C. Garth, D. Pugmire, and Prabhat, <span>“H5hut: A high-performance i/o library for particle-based simulations,”</span> in <em>2010 IEEE international conference on cluster computing workshops and posters</em>, 2010, pp. 1–8. doi: <a href="https://doi.org/10.1109/CLUSTERWKSP.2010.5613098">10.1109/CLUSTERWKSP.2010.5613098</a>.</div>
+</div><div class="csl-entry" id="ref-schietinger_intro" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">T. Schietinger, <span>“H5PartROOT - a visualization and post-processing tool for accelerator simulations,”</span> in <em>Proceedings of the 10th international computational accelerator physics conference (ICAP09)</em>, 2009, pp. 343–346. Available: <a href="https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf">https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf</a></div>
+</div><div class="csl-entry" id="ref-adelmann2019opal" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">A. Adelmann <em>et al.</em>, <span>“OPAL a versatile tool for charged particle accelerator simulations,”</span> <em>arXiv e-prints</em>, 2019, Available: <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv190506654A">https://ui.adsabs.harvard.edu/abs/2019arXiv190506654A</a></div>
+</div><div class="csl-entry" id="ref-gordon1985" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">M. M. Gordon and V. Taivassalo, <span>“Nonlinear effects of focusing bars used in the extraction systems of superconducting cyclotrons,”</span> <em>IEEE Transactions on Nuclear Science</em>, vol. 32, no. 5, pp. 2447–2449, 1985, doi: <a href="https://doi.org/10.1109/TNS.1985.4333942">10.1109/TNS.1985.4333942</a>.</div>
+</div><div class="csl-entry" id="ref-berz1999" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">M. Berz, <em>Modern map methods in particle beam physics</em>. Academic Press, 1999.</div>
+</div><div class="csl-entry" id="ref-JohoDist" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">W. Joho, <span>“Representation of beam ellipses for transport calculations,”</span> Paul Scherrer Institute, TM-11-14, 1980. Available: <a href="https://indico.psi.ch/event/3484/attachments/5948/7502/TM-11-14.pdf">https://indico.psi.ch/event/3484/attachments/5948/7502/TM-11-14.pdf</a></div>
+</div><div class="csl-entry" id="ref-laserPulseShaping" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">J. G. Power and C. Jing, <span>“Temporal laser pulse shaping for RF photocathode guns: The cheap and easy way using UV birefringent crystals,”</span> in <em>AIP conference proceedings</em>, 2009, p. 689. doi: <a href="https://doi.org/10.1063/1.3080991">10.1063/1.3080991</a>.</div>
+</div><div class="csl-entry" id="ref-flo97" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">K. Flöttmann, <span>“Note on the thermal emittance of electrons emitted by cesium telluride photo cathodes,”</span> Deutsches Elektronen-Synchrotron, DESY-TESLA-FEL-97-01, 1997.</div>
+</div><div class="csl-entry" id="ref-clen2000" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline"><span class="nocase">J. E. Clendenin <em>et al.</em></span>, <span>“Reduction of thermal emittance of RF guns,”</span> <em>Nuclear Instruments and Methods in Physics Research Section A</em>, vol. 455, p. 198, 2000, Available: <a href="https://www.sciencedirect.com/science/article/pii/S0168900200007312">https://www.sciencedirect.com/science/article/pii/S0168900200007312</a></div>
+</div><div class="csl-entry" id="ref-dowe2009" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">D. H. Dowell and J. F. Schmerge, <span>“Quantum efficiency and thermal emittance of metal photocathodes,”</span> <em>Physical Review Special Topics - Accelerators and Beams</em>, vol. 12, p. 074201, 2009, doi: <a href="https://doi.org/10.1103/PhysRevSTAB.12.074201">10.1103/PhysRevSTAB.12.074201</a>.</div>
+</div><div class="csl-entry" id="ref-spencerenge1967" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">J. E. Spencer and H. A. Enge, <span>“Split-pole magnetic spectrograph for precision nuclear spectroscopy,”</span> <em>Nuclear Instruments and Methods</em>, vol. 49, pp. 181–193, 1967, doi: <a href="https://doi.org/10.1016/0029-554X(67)90684-2">10.1016/0029-554X(67)90684-2</a>.</div>
+</div><div class="csl-entry" id="ref-billenyoung2004" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">J. H. Billen and L. M. Young, <span>“POISSON SUPERFISH,”</span> Los Alamos National Laboratory, LA-UR-96-1834, 2004.</div>
+</div><div class="csl-entry" id="ref-crandallrusthoi1985" role="listitem">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">K. R. Crandall and D. P. Rusthoi, <span>“Documentation for TRACE: An interactive beam-transport code,”</span> Los Alamos National Laboratory, LA-10235-MS, 1985. doi: <a href="https://doi.org/10.2172/5937743">10.2172/5937743</a>.</div>
+</div><div class="csl-entry" id="ref-brown1980transport" role="listitem">
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">K. L. Brown, D. C. Carey, C. Iselin, and F. Rothacker, <span>“TRANSPORT: A computer program for designing charged particle beam transport systems,”</span> CERN, CERN 80-04, 1980. Available: <a href="http://cds.cern.ch/record/133647">http://cds.cern.ch/record/133647</a></div>
+</div><div class="csl-entry" id="ref-borland2000elegant" role="listitem">
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">M. Borland, <span>“Elegant: A flexible SDDS-compliant code for accelerator simulation,”</span> Argonne National Laboratory, LS-287, 2000. Available: <a href="https://publications.anl.gov/anlpubs/2000/08/36940.pdf">https://publications.anl.gov/anlpubs/2000/08/36940.pdf</a></div>
+</div><div class="csl-entry" id="ref-impacttmanual" role="listitem">
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">J. Qiang, <span>“IMPACT-t user document, version 2.2.”</span> 2022.</div>
+</div></div>
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1102,15 +886,12 @@ QUIT;</code></pre>
   </script>
 <nav class="page-navigation">
 <div class="nav-page nav-page-previous">
-<a aria-label="Multi Objective Optimization" class="pagination-link" href="../../sections/optimiser/index.html">
-<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span>
+<a aria-label="Build and Developer Resources" class="pagination-link" href="../../sections/appendices/developer-build/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span>
 </a>
 </div>
 <div class="nav-page nav-page-next">
-<a aria-label="OPAL-T Field Maps" class="pagination-link" href="../../sections/appendices/fieldmaps/index.html">
-<span class="nav-page-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span> <i class="bi bi-arrow-right-short"></i>
-</a>
 </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/sampler/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/literature/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

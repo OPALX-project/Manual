@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>5&nbsp; OPAL-T – The OPAL(X) Framework Documentation</title>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>5  OPAL-T – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,27 +21,25 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../sections/opalcycl/index.html" rel="next">
-<link href="../../sections/tutorial/index.html" rel="prev">
+<meta content="../../" name="quarto:offset"/>
+<link href="../../sections/opalcycl/index.html" rel="next"/>
+<link href="../../sections/tutorial/index.html" rel="prev"/>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +115,6 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -172,10 +166,8 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
 </style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -202,304 +194,293 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/opalt/index.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/opalt/index.html"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalt/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+<div class="sidebar margin-sidebar zindex-bottom" id="quarto-margin-sidebar">
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<header class="quarto-title-block default" id="title-block-header">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
+<span>View:</span>
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opal"/> OPAL
   </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opalx"/> OPALX
   </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked=""> Both
+<label class="feature-choice">
+<input checked="" name="feature-mode" type="radio" value="both"/> Both
   </label>
 </div>
 <div class="feature-opal">
-<section id="introduction" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<section class="level2" data-number="5.1" id="introduction">
+<h2 class="anchored" data-anchor-id="introduction" data-number="5.1"><span class="header-section-number">5.1</span> Introduction</h2>
 <p><code>OPAL-T</code> is the beam-line and linac flavor of OPAL. It is a fully three-dimensional time-domain tracking code for relativistic particles, with self-consistent space charge in the electrostatic approximation, wake-field support, and a broad element model that allows overlapping external fields. The legacy manual positions <code>OPAL-T</code> as one of the few production codes built from the start around parallel execution for high-statistics start-to-end simulations.</p>
 </section>
-<section id="variables-in-opal-t" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="variables-in-opal-t"><span class="header-section-number">5.2</span> Variables in <code>OPAL-T</code></h2>
+<section class="level2" data-number="5.2" id="variables-in-opal-t">
+<h2 class="anchored" data-anchor-id="variables-in-opal-t" data-number="5.2"><span class="header-section-number">5.2</span> Variables in <code>OPAL-T</code></h2>
 <p>The canonical variables are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -543,8 +524,8 @@ window.Quarto = {
 </table>
 <p>The independent variable is time <code>t [s]</code>.</p>
 </section>
-<section id="integration-of-the-equation-of-motion" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="integration-of-the-equation-of-motion"><span class="header-section-number">5.3</span> Integration of the Equation of Motion</h2>
+<section class="level2" data-number="5.3" id="integration-of-the-equation-of-motion">
+<h2 class="anchored" data-anchor-id="integration-of-the-equation-of-motion" data-number="5.3"><span class="header-section-number">5.3</span> Integration of the Equation of Motion</h2>
 <p><code>OPAL-T</code> integrates the relativistic Lorentz equation</p>
 <p><span id="eq-opalt-lorentz"><span class="math display">\[
 \frac{d(\gamma \mathbf v)}{dt} =
@@ -563,33 +544,33 @@ window.Quarto = {
 <li>updating diagnostics and output.</li>
 </ol>
 </section>
-<section id="positioning-of-elements" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="positioning-of-elements"><span class="header-section-number">5.4</span> Positioning of Elements</h2>
+<section class="level2" data-number="5.4" id="positioning-of-elements">
+<h2 class="anchored" data-anchor-id="positioning-of-elements" data-number="5.4"><span class="header-section-number">5.4</span> Positioning of Elements</h2>
 <p>Since OPAL 2.0, elements can be placed directly in space using <code>X</code>, <code>Y</code>, <code>Z</code>, <code>THETA</code>, <code>PHI</code>, and <code>PSI</code>. The older <code>ELEMEDGE</code> notation is still supported. In that legacy path <code>OPAL-T</code> reconstructs the 3D position from <code>ELEMEDGE</code>, <code>ANGLE</code>, and <code>DESIGNENERGY</code>, assuming a reference trajectory built from straight segments and circular arcs without fringe-field corrections.</p>
 <p>For simple migration, <code>OPAL-T</code> writes a <code>3D.opal</code> file in which the inferred placements are made explicit. Beamlines containing guns should be supplemented with the element <code>SOURCE</code> so the code can adjust the initial reference-particle energy correctly.</p>
 </section>
-<section id="coordinate-systems" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="coordinate-systems"><span class="header-section-number">5.5</span> Coordinate Systems</h2>
+<section class="level2" data-number="5.5" id="coordinate-systems">
+<h2 class="anchored" data-anchor-id="coordinate-systems" data-number="5.5"><span class="header-section-number">5.5</span> Coordinate Systems</h2>
 <p>The motion of the bunch is described relative to several coordinate systems. Because <code>OPAL-T</code> uses time as independent variable, the relation to a path-length derivative is</p>
 <p><span id="eq-opalt-time-to-s"><span class="math display">\[
 \frac{d}{dt} = \beta c \frac{d}{ds}.
 \tag{5.2}\]</span></span></p>
-<section id="global-cartesian-coordinate-system" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="global-cartesian-coordinate-system"><span class="header-section-number">5.5.1</span> Global Cartesian Coordinate System</h3>
+<section class="level3" data-number="5.5.1" id="global-cartesian-coordinate-system">
+<h3 class="anchored" data-anchor-id="global-cartesian-coordinate-system" data-number="5.5.1"><span class="header-section-number">5.5.1</span> Global Cartesian Coordinate System</h3>
 <p>The floor coordinate system <code>K</code> is the laboratory frame in which the placed beamline is embedded.</p>
-<div id="fig-opalt-coords" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-opalt-coords">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-opalt-coords-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/coords.png" class="img-fluid figure-img" style="width:50.0%">
+<img class="img-fluid figure-img" src="figures/coords.png" style="width:50.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-opalt-coords-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Illustration of local and global coordinates.
+Figure 5.1: Illustration of local and global coordinates.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="local-cartesian-coordinate-system" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="local-cartesian-coordinate-system"><span class="header-section-number">5.5.2</span> Local Cartesian Coordinate System</h3>
+<section class="level3" data-number="5.5.2" id="local-cartesian-coordinate-system">
+<h3 class="anchored" data-anchor-id="local-cartesian-coordinate-system" data-number="5.5.2"><span class="header-section-number">5.5.2</span> Local Cartesian Coordinate System</h3>
 <p>Each element <code>e_i</code> carries a local frame <code>K'_i</code> whose origin is at the entrance of the element. The displacement is described by a vector <code>v</code> and the orientation by a unitary matrix <code>W</code>. The source manual writes this as a product of Tait-Bryan rotations:</p>
 <p><span id="eq-opalt-local-displacement"><span class="math display">\[
 \mathbf v =
@@ -607,64 +588,64 @@ X \\ Y \\ Z
 \mathcal W_i = \mathcal W_{i-1}\mathcal S_i.
 \tag{5.4}\]</span></span></p>
 </section>
-<section id="space-charge-coordinate-system" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="space-charge-coordinate-system"><span class="header-section-number">5.5.3</span> Space-Charge Coordinate System</h3>
+<section class="level3" data-number="5.5.3" id="space-charge-coordinate-system">
+<h3 class="anchored" data-anchor-id="space-charge-coordinate-system" data-number="5.5.3"><span class="header-section-number">5.5.3</span> Space-Charge Coordinate System</h3>
 <p>For the electrostatic space-charge solve, <code>OPAL-T</code> introduces a co-moving frame whose origin is at the bunch mean position and whose <code>z</code> axis is aligned with the mean momentum.</p>
 </section>
-<section id="curvilinear-coordinate-system" class="level3" data-number="5.5.4">
-<h3 data-number="5.5.4" class="anchored" data-anchor-id="curvilinear-coordinate-system"><span class="header-section-number">5.5.4</span> Curvilinear Coordinate System</h3>
+<section class="level3" data-number="5.5.4" id="curvilinear-coordinate-system">
+<h3 class="anchored" data-anchor-id="curvilinear-coordinate-system" data-number="5.5.4"><span class="header-section-number">5.5.4</span> Curvilinear Coordinate System</h3>
 <p>For beam statistics and reference-orbit interpretation, <code>OPAL-T</code> uses a local curvilinear frame <code>(x, y, s)</code> attached to the reference trajectory.</p>
-<div id="fig-opalt-curvcoords" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-opalt-curvcoords">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-opalt-curvcoords-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/curvcoords.png" class="img-fluid figure-img" style="width:50.0%">
+<img class="img-fluid figure-img" src="figures/curvcoords.png" style="width:50.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-opalt-curvcoords-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Illustration of the space-charge and curvilinear frames.
+Figure 5.2: Illustration of the space-charge and curvilinear frames.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="design-or-reference-orbit" class="level3" data-number="5.5.5">
-<h3 data-number="5.5.5" class="anchored" data-anchor-id="design-or-reference-orbit"><span class="header-section-number">5.5.5</span> Design or Reference Orbit</h3>
+<section class="level3" data-number="5.5.5" id="design-or-reference-orbit">
+<h3 class="anchored" data-anchor-id="design-or-reference-orbit" data-number="5.5.5"><span class="header-section-number">5.5.5</span> Design or Reference Orbit</h3>
 <p>The reference orbit consists of straight sections and circular arcs and is computed by the Orbit Threader from the placed elements.</p>
 </section>
-<section id="compatibility-mode" class="level3" data-number="5.5.6">
-<h3 data-number="5.5.6" class="anchored" data-anchor-id="compatibility-mode"><span class="header-section-number">5.5.6</span> Compatibility Mode</h3>
+<section class="level3" data-number="5.5.6" id="compatibility-mode">
+<h3 class="anchored" data-anchor-id="compatibility-mode" data-number="5.5.6"><span class="header-section-number">5.5.6</span> Compatibility Mode</h3>
 <p>The compatibility mode was introduced so existing input files could remain valid while the geometry model moved to explicit 3D placement. The user can choose whether downstream <code>ELEMEDGE</code> positions should include fringe-field effects with the <code>IDEALIZED</code> option. The manual warns that this approximation is weakest for elements overlapping dipole fringe regions.</p>
 </section>
-<section id="orbit-threader-and-autophasing" class="level3" data-number="5.5.7">
-<h3 data-number="5.5.7" class="anchored" data-anchor-id="orbit-threader-and-autophasing"><span class="header-section-number">5.5.7</span> Orbit Threader and Autophasing</h3>
+<section class="level3" data-number="5.5.7" id="orbit-threader-and-autophasing">
+<h3 class="anchored" data-anchor-id="orbit-threader-and-autophasing" data-number="5.5.7"><span class="header-section-number">5.5.7</span> Orbit Threader and Autophasing</h3>
 <p>The <code>OrbitThreader</code> integrates a design particle through the lattice and builds the <code>IndexMap</code> structure used to accelerate active-element lookup during bunch tracking. When the reference particle reaches an RF structure for the first time, the legacy implementation also autophases it.</p>
 </section>
 </section>
-<section id="flow-diagram-of-opal-t" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="flow-diagram-of-opal-t"><span class="header-section-number">5.6</span> Flow Diagram of <code>OPAL-T</code></h2>
-<div id="fig-opalt-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section class="level2" data-number="5.6" id="flow-diagram-of-opal-t">
+<h2 class="anchored" data-anchor-id="flow-diagram-of-opal-t" data-number="5.6"><span class="header-section-number">5.6</span> Flow Diagram of <code>OPAL-T</code></h2>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-opalt-flow">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-opalt-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/flowdiagram.png" class="img-fluid figure-img" style="width:70.0%">
+<img class="img-fluid figure-img" src="figures/flowdiagram.png" style="width:70.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-opalt-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.3: Schematic workflow of <code>OPAL-T</code>.
+Figure 5.3: Schematic workflow of <code>OPAL-T</code>.
 </figcaption>
 </figure>
 </div>
 <p>A regular time step joins the transformation from the reference frame to the local element frames through the floor frame. The legacy manual notes that the rotations entering these transformations are accumulated with quaternions before conversion to matrix form for the actual particle rotation.</p>
 </section>
-<section id="output" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="output"><span class="header-section-number">5.7</span> Output</h2>
+<section class="level2" data-number="5.7" id="output">
+<h2 class="anchored" data-anchor-id="output" data-number="5.7"><span class="header-section-number">5.7</span> Output</h2>
 <p>In addition to progress information on standard output, <code>OPAL-T</code> writes several families of files.</p>
-<section id="statistics-output" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="statistics-output"><span class="header-section-number">5.7.1</span> Statistics Output</h3>
+<section class="level3" data-number="5.7.1" id="statistics-output">
+<h3 class="anchored" data-anchor-id="statistics-output" data-number="5.7.1"><span class="header-section-number">5.7.1</span> Statistics Output</h3>
 <p>The <code>&lt;input&gt;.stat</code> file stores bunch moments and diagnostics in ASCII SDDS style. The dump rate is controlled by <code>STATDUMPFREQ</code>.</p>
 <p>The original manual lists a long table. The most important columns are:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 23%">
+<col style="width: 30%"/>
+<col style="width: 23%"/>
+<col style="width: 23%"/>
+<col style="width: 23%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -749,15 +730,15 @@ Figure&nbsp;5.3: Schematic workflow of <code>OPAL-T</code>.
 <p>With <code>COMPUTEPERCENTILES = TRUE</code>, the file gains percentile columns for the beam size and the normalized emittance at <code>68.27%</code>, <code>95.45%</code>, <code>99.73%</code>, and <code>99.994%</code> in each of <code>x</code>, <code>y</code>, and <code>z</code>.</p>
 <p>With <code>DUMPBEAMMATRIX = TRUE</code>, the file gains the upper-triangular entries of the six-dimensional beam matrix: <code>S11</code>, <code>S12</code>, …, <code>S16</code>, <code>S22</code>, …, <code>S66</code>.</p>
 </section>
-<section id="monitor-statistics-output" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="monitor-statistics-output"><span class="header-section-number">5.7.2</span> Monitor Statistics Output</h3>
+<section class="level3" data-number="5.7.2" id="monitor-statistics-output">
+<h3 class="anchored" data-anchor-id="monitor-statistics-output" data-number="5.7.2"><span class="header-section-number">5.7.2</span> Monitor Statistics Output</h3>
 <p>Monitor elements write a dedicated second statistics file, <code>data/&lt;input&gt;_Monitors.stat</code>, each time the bunch crosses a monitor. The source chapter documents the payload as:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 23%">
+<col style="width: 30%"/>
+<col style="width: 23%"/>
+<col style="width: 23%"/>
+<col style="width: 23%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -843,12 +824,12 @@ Figure&nbsp;5.3: Schematic workflow of <code>OPAL-T</code>.
 </tbody>
 </table>
 </section>
-<section id="input-file-transcription" class="level3" data-number="5.7.3">
-<h3 data-number="5.7.3" class="anchored" data-anchor-id="input-file-transcription"><span class="header-section-number">5.7.3</span> Input File Transcription</h3>
+<section class="level3" data-number="5.7.3" id="input-file-transcription">
+<h3 class="anchored" data-anchor-id="input-file-transcription" data-number="5.7.3"><span class="header-section-number">5.7.3</span> Input File Transcription</h3>
 <p><code>OPAL-T</code> writes <code>data/&lt;input&gt;_3D.opal</code>. This is a transcription of the input file in which <code>ELEMEDGE</code> placements are replaced by the corresponding explicit <code>X</code>, <code>Y</code>, <code>Z</code>, <code>THETA</code>, <code>PHI</code>, and <code>PSI</code> values computed by the geometry layer.</p>
 </section>
-<section id="element-positions-output-files" class="level3" data-number="5.7.4">
-<h3 data-number="5.7.4" class="anchored" data-anchor-id="element-positions-output-files"><span class="header-section-number">5.7.4</span> Element Positions Output Files</h3>
+<section class="level3" data-number="5.7.4" id="element-positions-output-files">
+<h3 class="anchored" data-anchor-id="element-positions-output-files" data-number="5.7.4"><span class="header-section-number">5.7.4</span> Element Positions Output Files</h3>
 <p><code>OPAL-T</code> can dump placed element geometry in several formats:</p>
 <ul>
 <li><code>data/&lt;input&gt;_ElementPositions.txt</code></li>
@@ -856,13 +837,13 @@ Figure&nbsp;5.3: Schematic workflow of <code>OPAL-T</code>.
 <li><code>data/&lt;input&gt;_ElementPositions.sdds</code></li>
 </ul>
 <p>These are intended for visualization and placement cross-checking.</p>
-<div id="fig-opalt-element-indicator" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-opalt-element-indicator">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-opalt-element-indicator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/elementIndicator.png" class="img-fluid figure-img" style="width:48.0%">
+<img class="img-fluid figure-img" src="figures/elementIndicator.png" style="width:48.0%"/>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-opalt-element-indicator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.4: Element indicator used in the output discussion of the legacy manual.
+Figure 5.4: Element indicator used in the output discussion of the legacy manual.
 </figcaption>
 </figure>
 </div>
@@ -940,8 +921,8 @@ Figure&nbsp;5.4: Element indicator used in the output discussion of the legacy m
 </tbody>
 </table>
 </section>
-<section id="reference-particle-trajectory-output" class="level3" data-number="5.7.5">
-<h3 data-number="5.7.5" class="anchored" data-anchor-id="reference-particle-trajectory-output"><span class="header-section-number">5.7.5</span> Reference Particle Trajectory Output</h3>
+<section class="level3" data-number="5.7.5" id="reference-particle-trajectory-output">
+<h3 class="anchored" data-anchor-id="reference-particle-trajectory-output" data-number="5.7.5"><span class="header-section-number">5.7.5</span> Reference Particle Trajectory Output</h3>
 <p>The reference-particle path is written to <code>data/&lt;input&gt;_DesignPath.dat</code>. The documented columns are:</p>
 <table class="caption-top table">
 <thead>
@@ -983,20 +964,20 @@ Figure&nbsp;5.4: Element indicator used in the output discussion of the legacy m
 </table>
 </section>
 </section>
-<section id="multiple-species" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="multiple-species"><span class="header-section-number">5.8</span> Multiple Species</h2>
+<section class="level2" data-number="5.8" id="multiple-species">
+<h2 class="anchored" data-anchor-id="multiple-species" data-number="5.8"><span class="header-section-number">5.8</span> Multiple Species</h2>
 <p>The legacy manual notes support for workflows with more than one species or beam component sharing the same beamline. The exact setup depends on the beam and tracking commands and is one of the areas where the OPALX path diverges from the older <code>OPAL-T</code> control model.</p>
 </section>
-<section id="multipoles-in-different-coordinate-systems" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="multipoles-in-different-coordinate-systems"><span class="header-section-number">5.9</span> Multipoles in Different Coordinate Systems</h2>
+<section class="level2" data-number="5.9" id="multipoles-in-different-coordinate-systems">
+<h2 class="anchored" data-anchor-id="multipoles-in-different-coordinate-systems" data-number="5.9"><span class="header-section-number">5.9</span> Multipoles in Different Coordinate Systems</h2>
 <p>The last third of the source chapter is dedicated to the multipole fringe-field models. Multipole body fields and fringe fields must be interpreted in the local chart associated with the element:</p>
 <ul>
 <li>straight multipoles use the local Cartesian frame,</li>
 <li>curved multipoles use the curvilinear frame tied to the reference path.</li>
 </ul>
 <p>The practical consequence is that the same nominal multipole coefficients can lead to different field support and geometric interpretation depending on the element class and fringe model.</p>
-<section id="fringe-field-models" class="level3" data-number="5.9.1">
-<h3 data-number="5.9.1" class="anchored" data-anchor-id="fringe-field-models"><span class="header-section-number">5.9.1</span> Fringe Field Models</h3>
+<section class="level3" data-number="5.9.1" id="fringe-field-models">
+<h3 class="anchored" data-anchor-id="fringe-field-models" data-number="5.9.1"><span class="header-section-number">5.9.1</span> Fringe Field Models</h3>
 <p>The straight-multipole derivation starts from Maxwell’s equations,</p>
 <p><span id="eq-opalt-maxwell-start"><span class="math display">\[
 \nabla \cdot \mathbf{B} = 0,
@@ -1034,8 +1015,8 @@ C_{n,k}(z) = (-1)^k \frac{n!}{2^{2k} k! (n+k)!}
 \tag{5.9}\]</span></span></p>
 <p>The central-axis gradient profile <code>C_{n,0}(z)</code> is then modeled with an Enge function.</p>
 </section>
-<section id="fringe-field-of-a-curved-multipole" class="level3" data-number="5.9.2">
-<h3 data-number="5.9.2" class="anchored" data-anchor-id="fringe-field-of-a-curved-multipole"><span class="header-section-number">5.9.2</span> Fringe Field of a Curved Multipole</h3>
+<section class="level3" data-number="5.9.2" id="fringe-field-of-a-curved-multipole">
+<h3 class="anchored" data-anchor-id="fringe-field-of-a-curved-multipole" data-number="5.9.2"><span class="header-section-number">5.9.2</span> Fringe Field of a Curved Multipole</h3>
 <p>For a curved multipole with fixed curvature radius <code>rho</code>, the Frenet-Serret scale factor is</p>
 <p><span id="eq-opalt-hs"><span class="math display">\[
 h_s = 1 + \frac{x}{\rho}.
@@ -1063,8 +1044,8 @@ B_z(z=0) = B_{0,0} + B_{1,0}x + B_{2,0}x^2 + \cdots.
 \tag{5.14}\]</span></span></p>
 <p>The variable-curvature extension <code>rho = rho(s)</code> is then obtained by carrying an additional <code>\partial_s rho</code> term through the same expansion strategy.</p>
 </section>
-<section id="a-more-compact-fringe-field-treatment" class="level3" data-number="5.9.3">
-<h3 data-number="5.9.3" class="anchored" data-anchor-id="a-more-compact-fringe-field-treatment"><span class="header-section-number">5.9.3</span> A More Compact Fringe-Field Treatment</h3>
+<section class="level3" data-number="5.9.3" id="a-more-compact-fringe-field-treatment">
+<h3 class="anchored" data-anchor-id="a-more-compact-fringe-field-treatment" data-number="5.9.3"><span class="header-section-number">5.9.3</span> A More Compact Fringe-Field Treatment</h3>
 <p>The source closes with an alternative derivation based on the factorized mid-plane field</p>
 <p><span id="eq-opalt-compact-midplane"><span class="math display">\[
 B_z(x,z=0,s) = T(x)\,S(s),
@@ -1080,22 +1061,7 @@ f_{n+1}(x,s) = -(\partial_x^2 + \partial_s^2)\,f_n(x,s),
 <p>while for curved multipoles the operator is modified by the curvature terms through <code>h_s</code>. The point of this alternative derivation is to keep the geometry and fringe profile separated through <code>T(x)</code> and <code>S(s)</code>.</p>
 </section>
 </section>
-<section id="references" class="level2" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="references"><span class="header-section-number">5.10</span> References</h2>
-<p>The source chapter cites:</p>
-<ul>
-<li>J. Qiang et al.&nbsp;on the quasi-static model and integrated Green-function space charge</li>
-<li>E. Fubiani et al.&nbsp;on cathode image-charge treatment</li>
-<li>Langdon on the Boris-Buneman algorithm</li>
-<li>Tait-Bryan angle references</li>
-<li>Borland / SDDS output references</li>
-<li>ParaView and VisIt for geometry/output visualization</li>
-</ul>
-</section>
 </div>
-
-
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1498,20 +1464,16 @@ f_{n+1}(x,s) = -(\partial_x^2 + \partial_s^2)\,f_n(x,s),
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../sections/tutorial/index.html" class="pagination-link" aria-label="Tutorial">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../sections/opalcycl/index.html" class="pagination-link" aria-label="OPAL-CYCL">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Tutorial" class="pagination-link" href="../../sections/tutorial/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="OPAL-CYCL" class="pagination-link" href="../../sections/opalcycl/index.html">
+<span class="nav-page-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/opalt/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/opalt/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

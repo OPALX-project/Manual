@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
 <title>Appendix F — OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics – The OPAL(X) Framework Documentation</title>
 <style>
 /* Default styles provided by pandoc.
@@ -59,27 +56,25 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../sections/appendices/developer-build/index.html" rel="next">
-<link href="../../../sections/appendices/benchmarks/index.html" rel="prev">
+<meta content="../../../" name="quarto:offset"/>
+<link href="../../../sections/appendices/developer-build/index.html" rel="next"/>
+<link href="../../../sections/appendices/benchmarks/index.html" rel="prev"/>
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -155,7 +150,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     display: none;
   }
 </style>
-
 <script>
   (function () {
     var STORAGE_KEY = "feature-mode";
@@ -207,10 +201,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     display: none;
   }
 </style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -237,288 +229,277 @@ window.Quarto = {
   typesetMath
 };
 </script>
-
 </head>
-
 <body class="nav-sidebar floating quarto-light">
-
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/ics-design-note/index.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/ics-design-note/index.html"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">The OPAL(X) Framework Documentation</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual/tree/master/quarto/" title="Source Code"><i class="bi bi-github"></i></a>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/introduction/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/conventions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/pitfalls/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pitfalls and Limitations</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalt/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">OPAL-T</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalcycl/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">OPAL-CYCL</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/opalmap/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">OPAL-MAP</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/format/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Command Format</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/control/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/elements/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elements</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/field-output/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Field Output Commands</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/lines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Beam Lines</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/beam-command/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Beam Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/distribution/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Distribution Command</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/emission-source/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Emission Sources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/energybins/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Energy Bins</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/fieldsolvers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Field Solver</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/track/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Tracking</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/wakefields/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Wakefields</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/geometry/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Geometry</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/collisions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/partmatter/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/optimiser/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Multi Objective Optimization</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/sampler/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sampler</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/fieldmaps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">OPAL-T Field Maps</span></span></a>
-  </div>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/syntax/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OPAL Language Syntax</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/opal-madx/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/autophase/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/benchmarks/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/ics-design-note/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../sections/appendices/developer-build/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span></a>
-  </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
 </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">H</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+<div class="sidebar margin-sidebar zindex-bottom" id="quarto-margin-sidebar">
+</div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/ics-design-note/index.html"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></a></li></ol></nav>
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/ics-design-note/index.html"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Appendix F — OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
+</div>
 </header>
-
-
 <div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked=""> Both</label>
+<span>View:</span>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
+<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
 </div>
 <div class="feature-opalx">
-<section id="purpose" class="level2" data-number="F.1">
-<h2 data-number="F.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">F.1</span> Purpose</h2>
+<section class="level2" data-number="F.1" id="purpose">
+<h2 class="anchored" data-anchor-id="purpose" data-number="F.1"><span class="header-section-number">F.1</span> Purpose</h2>
 <p>This note proposes the next development step for <code>OPALX</code> after the new weak–weak colliding-beam scheme with 3D space charge. The larger objective is to support photons as tracked particles and to add a reusable discrete collision-process layer that can be attached to an interaction element.</p>
 <p>The staged physics roadmap is:</p>
 <ol type="1">
@@ -530,8 +511,8 @@ window.Quarto = {
 </ol>
 <p>This ordering is deliberate. In a photon collider, the laser conversion region and the <code>gamma-gamma</code> interaction point are physically distinct. The most useful first deliverable is therefore an in-code source-to-photon-beam model, followed by photon–photon luminosity, and only then by hard <code>gamma-gamma</code> event generation.</p>
 </section>
-<section id="why-this-is-the-right-next-cut" class="level2" data-number="F.2">
-<h2 data-number="F.2" class="anchored" data-anchor-id="why-this-is-the-right-next-cut"><span class="header-section-number">F.2</span> Why This Is the Right Next Cut</h2>
+<section class="level2" data-number="F.2" id="why-this-is-the-right-next-cut">
+<h2 class="anchored" data-anchor-id="why-this-is-the-right-next-cut" data-number="F.2"><span class="header-section-number">F.2</span> Why This Is the Right Next Cut</h2>
 <p>The current <code>OPALX</code> manual and code already expose the main ingredients needed for this design:</p>
 <ul>
 <li><code>TRACK</code> accepts <code>BEAMS = {...}</code> and allocates one particle container per beam in the current multi-beam path</li>
@@ -540,11 +521,11 @@ window.Quarto = {
 </ul>
 <p>The important design point is that laser–electron Compton conversion and <code>gamma-gamma</code> reactions are not new Poisson solves. They are stochastic reaction processes layered on top of transport, so they should live in a process layer attached to the interaction element rather than inside the space-charge solver.</p>
 </section>
-<section id="alignment-with-the-current-opalx-code-and-manual" class="level2" data-number="F.3">
-<h2 data-number="F.3" class="anchored" data-anchor-id="alignment-with-the-current-opalx-code-and-manual"><span class="header-section-number">F.3</span> Alignment with the Current OPALX Code and Manual</h2>
+<section class="level2" data-number="F.3" id="alignment-with-the-current-opalx-code-and-manual">
+<h2 class="anchored" data-anchor-id="alignment-with-the-current-opalx-code-and-manual" data-number="F.3"><span class="header-section-number">F.3</span> Alignment with the Current OPALX Code and Manual</h2>
 <p>The proposal is aligned with the public <code>OPALX</code> interfaces and with the interaction-point work already described in the design history.</p>
-<section id="manual-visible-anchor-points" class="level3" data-number="F.3.1">
-<h3 data-number="F.3.1" class="anchored" data-anchor-id="manual-visible-anchor-points"><span class="header-section-number">F.3.1</span> Manual-visible Anchor Points</h3>
+<section class="level3" data-number="F.3.1" id="manual-visible-anchor-points">
+<h3 class="anchored" data-anchor-id="manual-visible-anchor-points" data-number="F.3.1"><span class="header-section-number">F.3.1</span> Manual-visible Anchor Points</h3>
 <p>The current manual states that:</p>
 <ul>
 <li><code>TRACK</code> in <code>OPALX</code> accepts <code>BEAM</code> or <code>BEAMS</code>, with <code>BEAMS</code> taking precedence</li>
@@ -553,8 +534,8 @@ window.Quarto = {
 <li><code>ScatteringPhysics</code> in particle-matter interactions already uses internal substeps when the outer step is too large</li>
 </ul>
 </section>
-<section id="runtime-anchor-points" class="level3" data-number="F.3.2">
-<h3 data-number="F.3.2" class="anchored" data-anchor-id="runtime-anchor-points"><span class="header-section-number">F.3.2</span> Runtime Anchor Points</h3>
+<section class="level3" data-number="F.3.2" id="runtime-anchor-points">
+<h3 class="anchored" data-anchor-id="runtime-anchor-points" data-number="F.3.2"><span class="header-section-number">F.3.2</span> Runtime Anchor Points</h3>
 <p>The natural insertion point for this work is:</p>
 <ul>
 <li>tracker-owned lifecycle and lab-frame control in the tracking layer</li>
@@ -564,12 +545,12 @@ window.Quarto = {
 </ul>
 </section>
 </section>
-<section id="path" class="level2" data-number="F.4">
-<h2 data-number="F.4" class="anchored" data-anchor-id="path"><span class="header-section-number">F.4</span> Path</h2>
+<section class="level2" data-number="F.4" id="path">
+<h2 class="anchored" data-anchor-id="path" data-number="F.4"><span class="header-section-number">F.4</span> Path</h2>
 <p>Implement a generic <code>CollisionPhysics</code> layer and a real <code>PHOTON</code> species first, then build <code>LASERCOMPTON</code> on a dedicated <code>LASERBEAM</code> element, then add <code>GGLUMINOSITY</code>, and only after that add <code>GGBREITWHEELER</code>.</p>
 </section>
-<section id="scope-of-version-1" class="level2" data-number="F.5">
-<h2 data-number="F.5" class="anchored" data-anchor-id="scope-of-version-1"><span class="header-section-number">F.5</span> Scope of Version 1</h2>
+<section class="level2" data-number="F.5" id="scope-of-version-1">
+<h2 class="anchored" data-anchor-id="scope-of-version-1" data-number="F.5"><span class="header-section-number">F.5</span> Scope of Version 1</h2>
 <p>Version 1 should target the linear or weakly nonlinear ICS regime with an analytic laser pulse.</p>
 <p>Version 1 should include:</p>
 <ul>
@@ -590,8 +571,8 @@ window.Quarto = {
 <li>full cascade physics</li>
 </ul>
 </section>
-<section id="proposed-public-api" class="level2" data-number="F.6">
-<h2 data-number="F.6" class="anchored" data-anchor-id="proposed-public-api"><span class="header-section-number">F.6</span> Proposed Public API</h2>
+<section class="level2" data-number="F.6" id="proposed-public-api">
+<h2 class="anchored" data-anchor-id="proposed-public-api" data-number="F.6"><span class="header-section-number">F.6</span> Proposed Public API</h2>
 <p>The design note recommends three new user-facing objects:</p>
 <ul>
 <li><code>LASER</code></li>
@@ -599,8 +580,8 @@ window.Quarto = {
 <li><code>LASERBEAM</code></li>
 </ul>
 <p>and an extension of <code>BEAMBEAM</code> with a process list.</p>
-<section id="suggested-input-syntax" class="level3" data-number="F.6.1">
-<h3 data-number="F.6.1" class="anchored" data-anchor-id="suggested-input-syntax"><span class="header-section-number">F.6.1</span> Suggested Input Syntax</h3>
+<section class="level3" data-number="F.6.1" id="suggested-input-syntax">
+<h3 class="anchored" data-anchor-id="suggested-input-syntax" data-number="F.6.1"><span class="header-section-number">F.6.1</span> Suggested Input Syntax</h3>
 <pre class="text"><code>// Electron beams
 EL: BEAM, PARTICLE = ELECTRON, PC = P0L, NPART = nL, BFREQ = rf, BCURRENT = iL, SOURCES = srcL;
 ER: BEAM, PARTICLE = ELECTRON, PC = P0R, NPART = nR, BFREQ = rf, BCURRENT = iR, SOURCES = srcR;
@@ -649,10 +630,10 @@ LBL: LASERBEAM, ELEMEDGE = s_conv_l, L = 0.003, PHYSICS = ICSL;
 IP1: BEAMBEAM, ELEMEDGE = s_ip, L = 0.002, PROCESSES = (GGLUM, BW);</code></pre>
 </section>
 </section>
-<section id="required-data-model-extensions" class="level2" data-number="F.7">
-<h2 data-number="F.7" class="anchored" data-anchor-id="required-data-model-extensions"><span class="header-section-number">F.7</span> Required Data-Model Extensions</h2>
-<section id="photon-species" class="level3" data-number="F.7.1">
-<h3 data-number="F.7.1" class="anchored" data-anchor-id="photon-species"><span class="header-section-number">F.7.1</span> Photon Species</h3>
+<section class="level2" data-number="F.7" id="required-data-model-extensions">
+<h2 class="anchored" data-anchor-id="required-data-model-extensions" data-number="F.7"><span class="header-section-number">F.7</span> Required Data-Model Extensions</h2>
+<section class="level3" data-number="F.7.1" id="photon-species">
+<h3 class="anchored" data-anchor-id="photon-species" data-number="F.7.1"><span class="header-section-number">F.7.1</span> Photon Species</h3>
 <p>A photon macro-particle should carry at least:</p>
 <ul>
 <li>position</li>
@@ -666,12 +647,12 @@ IP1: BEAMBEAM, ELEMEDGE = s_ip, L = 0.002, PROCESSES = (GGLUM, BW);</code></pre>
 </ul>
 <p>Photons drift at <code>c</code>, do not deposit charge into space-charge solvers, and must participate in diagnostics.</p>
 </section>
-<section id="variable-macro-particle-weights" class="level3" data-number="F.7.2">
-<h3 data-number="F.7.2" class="anchored" data-anchor-id="variable-macro-particle-weights"><span class="header-section-number">F.7.2</span> Variable Macro-Particle Weights</h3>
+<section class="level3" data-number="F.7.2" id="variable-macro-particle-weights">
+<h3 class="anchored" data-anchor-id="variable-macro-particle-weights" data-number="F.7.2"><span class="header-section-number">F.7.2</span> Variable Macro-Particle Weights</h3>
 <p>Weighted reaction modes are essential because the event probabilities per substep are typically small. Every particle species therefore needs a floating-point weight.</p>
 </section>
-<section id="polarization-metadata" class="level3" data-number="F.7.3">
-<h3 data-number="F.7.3" class="anchored" data-anchor-id="polarization-metadata"><span class="header-section-number">F.7.3</span> Polarization Metadata</h3>
+<section class="level3" data-number="F.7.3" id="polarization-metadata">
+<h3 class="anchored" data-anchor-id="polarization-metadata" data-number="F.7.3"><span class="header-section-number">F.7.3</span> Polarization Metadata</h3>
 <p>The proposed storage is the Stokes vector</p>
 <p><span id="eq-ics-stokes"><span class="math display">\[
 \mathbf S = (S_0, S_1, S_2, S_3),
@@ -683,11 +664,11 @@ S_1^2 + S_2^2 + S_3^2 \le S_0^2.
 <p>For circular-helicity luminosity, <code>S_3</code> is the key quantity.</p>
 </section>
 </section>
-<section id="runtime-architecture" class="level2" data-number="F.8">
-<h2 data-number="F.8" class="anchored" data-anchor-id="runtime-architecture"><span class="header-section-number">F.8</span> Runtime Architecture</h2>
+<section class="level2" data-number="F.8" id="runtime-architecture">
+<h2 class="anchored" data-anchor-id="runtime-architecture" data-number="F.8"><span class="header-section-number">F.8</span> Runtime Architecture</h2>
 <p>The design rule is to keep collective fields and discrete reactions separate. Tracking owns the main loop, while collision processes inspect the active beams, build the interaction context, substep internally if needed, and emit diagnostics.</p>
-<section id="suggested-class-layout" class="level3" data-number="F.8.1">
-<h3 data-number="F.8.1" class="anchored" data-anchor-id="suggested-class-layout"><span class="header-section-number">F.8.1</span> Suggested Class Layout</h3>
+<section class="level3" data-number="F.8.1" id="suggested-class-layout">
+<h3 class="anchored" data-anchor-id="suggested-class-layout" data-number="F.8.1"><span class="header-section-number">F.8.1</span> Suggested Class Layout</h3>
 <p>Public objects:</p>
 <ul>
 <li><code>Laser.h</code>, <code>LaserRep.h</code>, <code>OpalLaser.h</code></li>
@@ -707,18 +688,18 @@ S_1^2 + S_2^2 + S_3^2 \le S_0^2.
 <li><code>H5GammaGammaDiagnosticsWriter</code></li>
 </ul>
 </section>
-<section id="process-interface" class="level3" data-number="F.8.2">
-<h3 data-number="F.8.2" class="anchored" data-anchor-id="process-interface"><span class="header-section-number">F.8.2</span> Process Interface</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DiscreteCollisionProcess <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">double</span> suggestDtMax<span class="op">(</span><span class="at">const</span> CollisionContext<span class="op">&amp;</span> ctx<span class="op">)</span> <span class="at">const</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">void</span> apply<span class="op">(</span>CollisionContext<span class="op">&amp;</span> ctx<span class="op">,</span> <span class="dt">double</span> dt_sub<span class="op">)</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">void</span> writeDiagnostics<span class="op">(</span><span class="at">const</span> CollisionContext<span class="op">&amp;</span> ctx<span class="op">)</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="op">~</span>DiscreteCollisionProcess<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section class="level3" data-number="F.8.2" id="process-interface">
+<h3 class="anchored" data-anchor-id="process-interface" data-number="F.8.2"><span class="header-section-number">F.8.2</span> Process Interface</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a aria-hidden="true" href="#cb2-1" tabindex="-1"></a><span class="kw">class</span> DiscreteCollisionProcess <span class="op">{</span></span>
+<span id="cb2-2"><a aria-hidden="true" href="#cb2-2" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb2-3"><a aria-hidden="true" href="#cb2-3" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">double</span> suggestDtMax<span class="op">(</span><span class="at">const</span> CollisionContext<span class="op">&amp;</span> ctx<span class="op">)</span> <span class="at">const</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-4"><a aria-hidden="true" href="#cb2-4" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">void</span> apply<span class="op">(</span>CollisionContext<span class="op">&amp;</span> ctx<span class="op">,</span> <span class="dt">double</span> dt_sub<span class="op">)</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-5"><a aria-hidden="true" href="#cb2-5" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="dt">void</span> writeDiagnostics<span class="op">(</span><span class="at">const</span> CollisionContext<span class="op">&amp;</span> ctx<span class="op">)</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-6"><a aria-hidden="true" href="#cb2-6" tabindex="-1"></a>    <span class="kw">virtual</span> <span class="op">~</span>DiscreteCollisionProcess<span class="op">()</span> <span class="op">=</span> <span class="cf">default</span><span class="op">;</span></span>
+<span id="cb2-7"><a aria-hidden="true" href="#cb2-7" tabindex="-1"></a><span class="op">};</span></span></code></pre></div><button class="code-copy-button" title="Copy to Clipboard"><i class="bi"></i></button></div>
 </section>
-<section id="suggested-tracker-call-pattern" class="level3" data-number="F.8.3">
-<h3 data-number="F.8.3" class="anchored" data-anchor-id="suggested-tracker-call-pattern"><span class="header-section-number">F.8.3</span> Suggested Tracker Call Pattern</h3>
+<section class="level3" data-number="F.8.3" id="suggested-tracker-call-pattern">
+<h3 class="anchored" data-anchor-id="suggested-tracker-call-pattern" data-number="F.8.3"><span class="header-section-number">F.8.3</span> Suggested Tracker Call Pattern</h3>
 <pre class="text"><code>advanceOneGlobalStep(dt):
     advanceExternalAndCollectiveFields(dt)
 
@@ -736,10 +717,10 @@ S_1^2 + S_2^2 + S_3^2 \le S_0^2.
             process.writeDiagnostics(ctx)</code></pre>
 </section>
 </section>
-<section id="physics-models" class="level2" data-number="F.9">
-<h2 data-number="F.9" class="anchored" data-anchor-id="physics-models"><span class="header-section-number">F.9</span> Physics Models</h2>
-<section id="photon-transport" class="level3" data-number="F.9.1">
-<h3 data-number="F.9.1" class="anchored" data-anchor-id="photon-transport"><span class="header-section-number">F.9.1</span> Photon Transport</h3>
+<section class="level2" data-number="F.9" id="physics-models">
+<h2 class="anchored" data-anchor-id="physics-models" data-number="F.9"><span class="header-section-number">F.9</span> Physics Models</h2>
+<section class="level3" data-number="F.9.1" id="photon-transport">
+<h3 class="anchored" data-anchor-id="photon-transport" data-number="F.9.1"><span class="header-section-number">F.9.1</span> Photon Transport</h3>
 <p>For version 1, photons free-stream between discrete interactions:</p>
 <p><span id="eq-ics-photon-transport"><span class="math display">\[
 \frac{d\mathbf x}{dt} = c\,\hat{\mathbf n},
@@ -749,8 +730,8 @@ S_1^2 + S_2^2 + S_3^2 \le S_0^2.
 \frac{dE_\gamma}{dt} = 0.
 \tag{F.2}\]</span></span></p>
 </section>
-<section id="analytic-laser-model" class="level3" data-number="F.9.2">
-<h3 data-number="F.9.2" class="anchored" data-anchor-id="analytic-laser-model"><span class="header-section-number">F.9.2</span> Analytic Laser Model</h3>
+<section class="level3" data-number="F.9.2" id="analytic-laser-model">
+<h3 class="anchored" data-anchor-id="analytic-laser-model" data-number="F.9.2"><span class="header-section-number">F.9.2</span> Analytic Laser Model</h3>
 <p>The note proposes a Gaussian pulse model with local power density</p>
 <p><span id="eq-ics-laser-factorization"><span class="math display">\[
 P(\tau,\xi,\eta,\zeta) = P_0\,F_t(\tau-\zeta)\,F_s(\xi,\eta,\zeta),
@@ -777,8 +758,8 @@ n_\gamma(\mathbf x,t) = \frac{P(\mathbf x,t)}{\hbar\omega_L c},
 \omega_L = \frac{2\pi c}{\lambda_L}.
 \tag{F.7}\]</span></span></p>
 </section>
-<section id="laserelectron-inverse-compton-scattering" class="level3" data-number="F.9.3">
-<h3 data-number="F.9.3" class="anchored" data-anchor-id="laserelectron-inverse-compton-scattering"><span class="header-section-number">F.9.3</span> Laser–Electron Inverse Compton Scattering</h3>
+<section class="level3" data-number="F.9.3" id="laserelectron-inverse-compton-scattering">
+<h3 class="anchored" data-anchor-id="laserelectron-inverse-compton-scattering" data-number="F.9.3"><span class="header-section-number">F.9.3</span> Laser–Electron Inverse Compton Scattering</h3>
 <p>In the incident-particle rest frame, Thomson scattering is elastic,</p>
 <p><span id="eq-ics-thomson-elastic"><span class="math display">\[
 E_f' = E_i',
@@ -822,8 +803,8 @@ E_\gamma(\theta) \simeq
 P_{\mathrm{int}} = 1 - \exp\!\left(-n_\gamma'\,\sigma_{\mathrm{tot}}\,c\,\Delta t'\right).
 \tag{F.15}\]</span></span></p>
 </section>
-<section id="gamma-gamma-luminosity" class="level3" data-number="F.9.4">
-<h3 data-number="F.9.4" class="anchored" data-anchor-id="gamma-gamma-luminosity"><span class="header-section-number">F.9.4</span> gamma-gamma Luminosity</h3>
+<section class="level3" data-number="F.9.4" id="gamma-gamma-luminosity">
+<h3 class="anchored" data-anchor-id="gamma-gamma-luminosity" data-number="F.9.4"><span class="header-section-number">F.9.4</span> gamma-gamma Luminosity</h3>
 <p>For two photons with energies <code>E_1</code>, <code>E_2</code> and crossing angle <code>psi</code>,</p>
 <p><span id="eq-gg-s"><span class="math display">\[
 s = 2 E_1 E_2 (1-\cos\psi)
@@ -846,8 +827,8 @@ L^{J_z=0} \propto \tfrac12 L(1+\lambda_1\lambda_2),
 L^{J_z=2} \propto \tfrac12 L(1-\lambda_1\lambda_2).
 \tag{F.19}\]</span></span></p>
 </section>
-<section id="breitwheeler-pair-creation" class="level3" data-number="F.9.5">
-<h3 data-number="F.9.5" class="anchored" data-anchor-id="breitwheeler-pair-creation"><span class="header-section-number">F.9.5</span> Breit–Wheeler Pair Creation</h3>
+<section class="level3" data-number="F.9.5" id="breitwheeler-pair-creation">
+<h3 class="anchored" data-anchor-id="breitwheeler-pair-creation" data-number="F.9.5"><span class="header-section-number">F.9.5</span> Breit–Wheeler Pair Creation</h3>
 <p>The threshold condition is</p>
 <p><span id="eq-bw-threshold"><span class="math display">\[
 s \ge 4m_e^2 c^4,
@@ -867,8 +848,8 @@ s \ge 4m_e^2 c^4,
 \tag{F.23}\]</span></span></p>
 </section>
 </section>
-<section id="monte-carlo-algorithms" class="level2" data-number="F.10">
-<h2 data-number="F.10" class="anchored" data-anchor-id="monte-carlo-algorithms"><span class="header-section-number">F.10</span> Monte Carlo Algorithms</h2>
+<section class="level2" data-number="F.10" id="monte-carlo-algorithms">
+<h2 class="anchored" data-anchor-id="monte-carlo-algorithms" data-number="F.10"><span class="header-section-number">F.10</span> Monte Carlo Algorithms</h2>
 <p>The common substepping rule is</p>
 <p><span id="eq-collision-substep-rule"><span class="math display">\[
 \max_i P_i(\Delta t_{sub}) \le P_{max}.
@@ -880,12 +861,12 @@ s \ge 4m_e^2 c^4,
 <li>true <code>STOCHASTIC</code> modes retained for validation</li>
 </ul>
 </section>
-<section id="recommended-defaults" class="level2" data-number="F.11">
-<h2 data-number="F.11" class="anchored" data-anchor-id="recommended-defaults"><span class="header-section-number">F.11</span> Recommended Defaults</h2>
+<section class="level2" data-number="F.11" id="recommended-defaults">
+<h2 class="anchored" data-anchor-id="recommended-defaults" data-number="F.11"><span class="header-section-number">F.11</span> Recommended Defaults</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 50%"/>
+<col style="width: 50%"/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -921,8 +902,8 @@ s \ge 4m_e^2 c^4,
 </tbody>
 </table>
 </section>
-<section id="diagnostics" class="level2" data-number="F.12">
-<h2 data-number="F.12" class="anchored" data-anchor-id="diagnostics"><span class="header-section-number">F.12</span> Diagnostics</h2>
+<section class="level2" data-number="F.12" id="diagnostics">
+<h2 class="anchored" data-anchor-id="diagnostics" data-number="F.12"><span class="header-section-number">F.12</span> Diagnostics</h2>
 <p>The proposed writers are:</p>
 <ul>
 <li><code>H5LaserBeamDiagnosticsWriter</code></li>
@@ -930,8 +911,8 @@ s \ge 4m_e^2 c^4,
 </ul>
 <p>The laser-beam writer records scattered-photon weight, energy and angle histograms, scattered-electron energy loss, and overlap statistics. The gamma-gamma writer records luminosity histograms, helicity-resolved spectra, pair-production summaries, and debugging parent-child references.</p>
 </section>
-<section id="validation-matrix" class="level2" data-number="F.13">
-<h2 data-number="F.13" class="anchored" data-anchor-id="validation-matrix"><span class="header-section-number">F.13</span> Validation Matrix</h2>
+<section class="level2" data-number="F.13" id="validation-matrix">
+<h2 class="anchored" data-anchor-id="validation-matrix" data-number="F.13"><span class="header-section-number">F.13</span> Validation Matrix</h2>
 <p>The staged validation plan is:</p>
 <ul>
 <li>Milestone A: photon species and weights</li>
@@ -950,8 +931,8 @@ s \ge 4m_e^2 c^4,
 <li>regression tests for exact versus sampled pair loops</li>
 </ul>
 </section>
-<section id="notes-on-accuracy-and-staged-extensions" class="level2" data-number="F.14">
-<h2 data-number="F.14" class="anchored" data-anchor-id="notes-on-accuracy-and-staged-extensions"><span class="header-section-number">F.14</span> Notes on Accuracy and Staged Extensions</h2>
+<section class="level2" data-number="F.14" id="notes-on-accuracy-and-staged-extensions">
+<h2 class="anchored" data-anchor-id="notes-on-accuracy-and-staged-extensions" data-number="F.14"><span class="header-section-number">F.14</span> Notes on Accuracy and Staged Extensions</h2>
 <p>The design note is intentionally scoped to the linear or weakly nonlinear regime and analytic laser pulses. The staged extension path is:</p>
 <ol type="1">
 <li>stable photon species and discrete-process infrastructure</li>
@@ -962,8 +943,8 @@ s \ge 4m_e^2 c^4,
 </ol>
 <p>This keeps the first implementation aligned with the present <code>OPALX</code> architecture and avoids overloading the initial PR with general-purpose QED event generation.</p>
 </section>
-<section id="suggested-first-pr-scope" class="level2" data-number="F.15">
-<h2 data-number="F.15" class="anchored" data-anchor-id="suggested-first-pr-scope"><span class="header-section-number">F.15</span> Suggested First PR Scope</h2>
+<section class="level2" data-number="F.15" id="suggested-first-pr-scope">
+<h2 class="anchored" data-anchor-id="suggested-first-pr-scope" data-number="F.15"><span class="header-section-number">F.15</span> Suggested First PR Scope</h2>
 <p>The note recommends keeping the first PR narrow:</p>
 <ol type="1">
 <li>add <code>PHOTON</code> species support</li>
@@ -975,8 +956,8 @@ s \ge 4m_e^2 c^4,
 </ol>
 <p>The next PR after that should add <code>GGLUMINOSITY</code>, followed by <code>GGBREITWHEELER</code>.</p>
 </section>
-<section id="references" class="level2" data-number="F.16">
-<h2 data-number="F.16" class="anchored" data-anchor-id="references"><span class="header-section-number">F.16</span> References</h2>
+<section class="level2" data-number="F.16" id="related-material">
+<h2 class="anchored" data-anchor-id="related-material" data-number="F.16"><span class="header-section-number">F.16</span> Related Material</h2>
 <ul>
 <li>The public <code>OPALX</code> manual chapters for <code>TRACK</code>, <code>BEAMBEAM</code>, and <code>PARTICLEMATTERINTERACTION</code></li>
 <li>the existing code path around tracking, bunch ownership, and HDF5 diagnostics</li>
@@ -984,9 +965,6 @@ s \ge 4m_e^2 c^4,
 </ul>
 </section>
 </div>
-
-
-
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1389,20 +1367,16 @@ s \ge 4m_e^2 c^4,
   });
   </script>
 <nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../sections/appendices/benchmarks/index.html" class="pagination-link" aria-label="Benchmarks">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Benchmarks</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../sections/appendices/developer-build/index.html" class="pagination-link" aria-label="Build and Developer Resources">
-        <span class="nav-page-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Build and Developer Resources</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
+<div class="nav-page nav-page-previous">
+<a aria-label="Benchmarks" class="pagination-link" href="../../../sections/appendices/benchmarks/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Build and Developer Resources" class="pagination-link" href="../../../sections/appendices/developer-build/index.html">
+<span class="nav-page-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
 </nav>
 </div> <!-- /content -->
-
-
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/ics-design-note/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/OPALX-project/Manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/quarto/sections/appendices/ics-design-note/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
