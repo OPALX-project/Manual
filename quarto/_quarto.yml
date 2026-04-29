@@ -4,6 +4,10 @@ project:
 
 book:
   title: "The OPAL(X) Framework Documentation"
+  site-url: "https://opalx-project.github.io/Manual-new/"
+  repo-url: "https://github.com/OPALX-project/Manual"
+  repo-branch: master
+  repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - sections/introduction/index.qmd
