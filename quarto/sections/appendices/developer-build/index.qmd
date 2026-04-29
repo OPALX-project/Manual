@@ -67,8 +67,8 @@ For `OPALX`, the linked developer resources are:
 - [Ideas](https://opalx-project.github.io/For-Developers/tech-ideas.html)
 - [OPALX Doxygen](https://opalx-project.github.io/PhysicsManual/api/opalx/html/)
 - [OPALX source code repository](https://github.com/OPALX-project/OPALX)
-- [OPALX unit tests](https://github.com/OPALX-project/OPALX/tree/master/unit_tests)
-- [OPALX regression tests](https://github.com/OPALX-project/regression-tests-x/tree/master/RegressionTests)
+- [OPALX unit test sources](https://github.com/OPALX-project/OPALX/tree/master/unit_tests)
+- [OPALX regression test sources](https://github.com/OPALX-project/regression-tests-x/tree/master/RegressionTests)
 :::
 
 ::: {.feature-opal}
