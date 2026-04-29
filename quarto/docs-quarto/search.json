@@ -2371,7 +2371,7 @@
     "href": "sections/appendices/developer-build/index.html#developer-resources",
     "title": "Appendix G — Build and Developer Resources",
     "section": "G.3 Developer Resources",
-    "text": "G.3 Developer Resources\n\nFor OPALX, the linked developer resources are:\n\nCoding Style\nAMD (Lumi) Debug Guide\nFile Format Statistical Output\nGuide to program structure\nDevelopment workflow\nUnit tests\nIdeas\nOPALX Doxygen\nOPALX source code repository\nOPALX regression tests\n\n\n\nFor OPAL, the linked developer resources are:\n\nCoding Style and conventions\nBuilding, executing, and writing unit tests\nDevelopment workflow\nRelease procedure\nOPAL Doxygen\nRegression-test repository\nRegression tests\nUnit tests",
+    "text": "G.3 Developer Resources\n\nFor OPALX, the linked developer resources are:\n\n\n\n\n\n\nFigure G.1: OPALX overview showing the recommended reading order through lattice setup, parser/runtime flow, particle generation, and solver components.\n\n\n\n\nCoding Style\nAMD (Lumi) Debug Guide\nFile Format Statistical Output\nGuide to program structure\nDevelopment workflow\nIdeas\nOPALX Doxygen\nOPALX overview (PDF)\nOPALX source code repository\nOPALX unit tests\nOPALX regression tests\n\n\n\nFor OPAL, the linked developer resources are:\n\nCoding Style and conventions\nBuilding, executing, and writing unit tests\nDevelopment workflow\nRelease procedure\nOPAL Doxygen\nRegression-test repository\nRegression tests\nUnit tests",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>G</span>  <span class='chapter-title'>Build and Developer Resources</span>"

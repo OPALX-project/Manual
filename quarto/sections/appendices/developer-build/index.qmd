@@ -59,6 +59,8 @@ For `OPALX`, the current public build and run instructions are:
 ::: {.feature-opalx}
 For `OPALX`, the linked developer resources are:
 
+![OPALX overview showing the recommended reading order through lattice setup, parser/runtime flow, particle generation, and solver components.](opalx-overview.png){#fig-opalx-overview width="100%"}
+
 - [Coding Style](https://opalx-project.github.io/For-Developers/CodingStyle.html)
 - [AMD (Lumi) Debug Guide](https://opalx-project.github.io/For-Developers/amd-lumi-debug.html)
 - [File Format Statistical Output](https://opalx-project.github.io/For-Developers/File-Format-for-stat-Storage.html)
@@ -66,6 +68,7 @@ For `OPALX`, the linked developer resources are:
 - [Development workflow](https://opalx-project.github.io/For-Developers/OPAL-Development-Workflow.html)
 - [Ideas](https://opalx-project.github.io/For-Developers/tech-ideas.html)
 - [OPALX Doxygen](https://opalx-project.github.io/PhysicsManual/api/opalx/html/)
+- [OPALX overview (PDF)](opalx-overview.pdf)
 - [OPALX source code repository](https://github.com/OPALX-project/OPALX)
 - [OPALX unit test sources](https://github.com/OPALX-project/OPALX/tree/master/unit_tests)
 - [OPALX regression test sources](https://github.com/OPALX-project/regression-tests-x/tree/master/RegressionTests)
