@@ -129,12 +129,14 @@ BEAMHALOBOUNDARY::
   Its default value is 0.0.
 opalx-begin
 BOUNDPDESTROY::
+  Governs how many sigmas away particles are deleted. Its default
+  value is 10.
 opalx-end
 opal-begin
 BOUNDPDESTROYFQ::
-opal-end
-The frequency to delete particles which are too far away from the
+  The frequency to delete particles which are too far away from the
   center of beam. Only used in _OPAL-cycl_. Its default value is 10.
+opal-end
 CLOTUNEONLY::
   If set to true, stop after closed orbit finder and tune calculation.
   Only used in _OPAL-cycl_. Its default value is false.
