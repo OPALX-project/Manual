@@ -91,7 +91,7 @@ exit face and the end of the exit fringe field the rectangular shape
 has width and height that are twice of what they are inside the
 dipole.
 +
-Default aperture for all other elements is a circle of 1.0m.
+Default aperture for all other elements is a circle of 1E6 m.
 L::
   The length of the element (default: 0m).
 ELEMEDGE::
