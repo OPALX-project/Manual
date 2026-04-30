@@ -78,6 +78,8 @@ The following attributes are shared by all elements.
 
 Dipoles are a special case because `GAP` and `HGAP` define their aperture
 instead of the generic `APERTURE` attribute.
+
+Default aperture for all other elements is a circle of `1E6 m`.
 :::
 
 ::: {.feature-opal}

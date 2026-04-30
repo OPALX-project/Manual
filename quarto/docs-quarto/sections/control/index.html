@@ -576,10 +576,10 @@ globally enable or disable HDF5 and VTK output support.
 <section class="level3" data-number="9.3.1" id="opal-opalx-differences">
 <h3 class="anchored" data-anchor-id="opal-opalx-differences" data-number="9.3.1"><span class="header-section-number">9.3.1</span> OPAL / OPALX differences</h3>
 <div class="feature-opal">
-<p>In the legacy OPAL manual, the particle-deletion frequency option is named <code>BOUNDPDESTROYFQ</code>.</p>
+<p>In the legacy OPAL manual, the particle-deletion frequency option is named <code>BOUNDPDESTROYFQ</code>. It controls the frequency for deleting particles that are too far away from the center of the beam in OPAL-cycl. Its default value is <code>10</code>.</p>
 </div>
 <div class="feature-opalx">
-<p>In OPALX, the corresponding option name is <code>BOUNDPDESTROY</code>.</p>
+<p>In OPALX, the corresponding option name is <code>BOUNDPDESTROY</code>. It governs how many sigmas away particles are deleted. Its default value is <code>10</code>.</p>
 <p>OPALX also adds:</p>
 <dl>
 <dt><code>QM_MODE</code></dt>

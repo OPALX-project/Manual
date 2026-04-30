@@ -129,11 +129,14 @@ In practice, the most important ones are:
 
 ::: {.feature-opal}
 In the legacy OPAL manual, the particle-deletion frequency option is named
-`BOUNDPDESTROYFQ`.
+`BOUNDPDESTROYFQ`. It controls the frequency for deleting particles that are
+too far away from the center of the beam in OPAL-cycl. Its default value is
+`10`.
 :::
 
 ::: {.feature-opalx}
-In OPALX, the corresponding option name is `BOUNDPDESTROY`.
+In OPALX, the corresponding option name is `BOUNDPDESTROY`. It governs how
+many sigmas away particles are deleted. Its default value is `10`.
 
 OPALX also adds:
 
