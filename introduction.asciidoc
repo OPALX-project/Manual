@@ -28,6 +28,59 @@ opalx-begin
 _OPALX_ also uses an extended _MAD_ language. 
 opalx-end
 
+[[sec.introduction.project-resources]]
+=== Project Resources and Getting Started
+
+The public project pages at {link_opal_pages} collect the current landing-page
+material for both _OPAL_ and _OPALX_. The published manual is available at
+{link_public_manual}[{link_public_manual}], and the _OPAL_ mailing list
+{mail_mailing_list} can be joined via
+{link_mailing_list}[the subscription page]. Please use the mailing list for
+questions, bug reports, and feature requests. For a broader overview of current
+use cases and publications, see {link_opal_references}[papers and presentations].
+
+If you are starting with example problems, the following entry points are the
+most useful:
+
+* link:Examples/cyclotron.html[Cyclotron examples]
+* link:Examples/RFPhotoInjector.html[RF photo injector examples]
+* link:Examples/AWAEEXBeamline.html[AWA EEX beamline examples]
+* link:Examples/AWADriveLinac.html[AWA drive linac examples]
+* link:Examples/regressiontestexamples.html[Regression-test examples]
+* link:Examples/FFA.html[FFA examples]
+* <<chp.tutorial,Tutorial>>
+
+Users working at PSI can additionally consult
+link:Using-OPAL-at-PSI.html[Using _OPAL_ at PSI].
+
+opalx-begin
+For _OPALX_, user-facing material is still sparse. The current public entry
+point for execution and build instructions is
+{link_merlin7_opalx}[Run/compile _OPALX_ on Merlin7].
+
+The user-level distributions page currently referenced from the project landing
+page is link:For-Users/Distributions.html[Distributions].
+opalx-end
+
+[[sec.introduction.tools]]
+=== Tools
+
+The project pages list a small set of supporting tools around the core
+simulation codes:
+
+* link:runOPAL.html[runOPAL] provides Python scripts to launch and
+  automate multiple jobs, including parameter scans.
+* {link_pyopaltools}/[pyOPALTools] provides pre-processing, post-processing,
+  analysis, and plotting utilities for simulation data.
+* link:OPAL-conversion-utilities.html[_OPAL_ conversion utilities]
+  provide format-conversion helpers.
+
+opalx-begin
+For _OPALX_, these tools are still evolving; the most stable interfaces remain
+the manual, the source repositories, and the regression and documentation pages
+listed in the developer appendix.
+opalx-end
+
 [[sec.introduction.parallel-processing-capabilities]]
 === Parallel Processing Capabilities
 
@@ -98,7 +151,7 @@ to a file with extension .stat. The frequency with which this data is
 written can be controlled with the <<sec.control.option,`OPTION` statement>>
 with the flag `STATDUMPFREQ`.
 
-For postprocessing we recommend to use the {link_pyOPALTools_wiki}/home[pyOPALTools]
+For postprocessing we recommend to use the {link_pyOPALTools}[pyOPALTools]
 Python package which contains many tools for pre- and postprocessing, and analysing and plotting output data.
 
 In addition to the output files, note that important information is displayed on the _stdout_ i.e. the _terminal_.
@@ -122,13 +175,13 @@ opalx-end
 [[sec.introduction.change-history]]
 === Change History
 
-See {link_OPAL_wiki}/ReleaseNotes[Release Notes]
+See link:ReleaseNotes/ReleaseNotes.html[Release Notes]
 for a detailed list of changes in _OPAL_.
 
 [[sec.introduction.known-issues-and-limitations]]
 === Known Issues and Limitations
 
-See the {link_OPAL}/issues[issue list] in the repository.
+See the {link_OPAL_issue_tracker}[issue list] in the repository.
 
 See also <<chp.pitfalls,pitfalls and limitations>>.
 
@@ -211,7 +264,7 @@ anchor:bib.howison2010_intro[[{counter:bib-cnt}\]]
 <<bib.howison2010_intro>> M. Howison et al., http://dx.doi.org/10.1109/CLUSTERWKSP.2010.5613098[_H5hut: A High-Performance I/O Library for Particle-based Simulations_], in 2010 IEEE International Conference on Cluster Computing Workshops and Posters, vol. 1, pp. 1–8 (Heraklion, Crete, 2010).
 
 anchor:bib.h5root_intro[[{counter:bib-cnt}\]]
-<<bib.h5root_intro>> https://gitlab.psi.ch/OPAL/src/-/wikis/h5root[_H5root: a ROOT Based Graphical User Interface for H5hut_].
+<<bib.h5root_intro>> link:h5root.html[_H5root: a ROOT Based Graphical User Interface for H5hut_].
 
 anchor:bib.schietinger_intro[[{counter:bib-cnt}\]]
 <<bib.schietinger_intro>> T. Schietinger, https://accelconf.web.cern.ch/ICAP2009/papers/thpsc049.pdf[_H5PartROOT - A visualization and post-processing tool for accelerator simulations_], in Proceedings of the 10th International Computational Accelerator Physics conference (ICAP09), pp. 343-346 (San Francisco, CA, USA, 2009).

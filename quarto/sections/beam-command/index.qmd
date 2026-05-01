@@ -1,0 +1,97 @@
+---
+title: "Beam Command"
+---
+
+```{=html}
+<div class="feature-toggle">
+  <span>View:</span>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
+  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
+</div>
+```
+
+The `BEAM` command defines the particle species, reference energy or momentum,
+and global beam properties used by tracking and diagnostics.
+
+::: {.feature-opal}
+```text
+label: BEAM, PARTICLE=name, MASS=real, CHARGE=real,
+      ENERGY=real, PC=real, GAMMA=real, BCURRENT=real,
+      NPART=real, BFREQ=real;
+```
+:::
+
+::: {.feature-opalx}
+```text
+label: BEAM, PARTICLE=name, MASS=real, CHARGE=real,
+      ENERGY=real, PC=real, GAMMA=real, BCURRENT=real,
+      NPART=real, BFREQ=real, SOURCES=name;
+```
+:::
+
+The label is optional and defaults to `UNNAMED_BEAM`.
+
+## Particle Definition
+
+`PARTICLE` selects one of the predefined species such as `ELECTRON`,
+`POSITRON`, `MUON`, `PROTON`, `DEUTERON`, `HMINUS`, `H2P`, `ALPHA`, `CARBON`,
+`XENON`, or `URANIUM`.
+
+For custom species, the user can provide:
+
+- `MASS` in `GeV`
+- `CHARGE` in elementary-charge units
+
+::: {.feature-opalx}
+OPALX also defines `PARTICLE=PHOTON`. For photons, the beam is neutral and
+massless, and the beam command follows the specialized photon rules described
+below.
+:::
+
+## Beam Energy
+
+There are three standard energy attributes, with the usual priority:
+
+- `GAMMA`
+- `ENERGY`
+- `PC`
+
+::: {.feature-opalx}
+For `PARTICLE=PHOTON`, only `ENERGY` is allowed. `MASS`, `CHARGE`, `PC`, and
+`GAMMA` are rejected by the beam validation path.
+:::
+
+## Other Attributes
+
+The other important beam attributes are:
+
+`BFREQ`
+: bunch frequency in `MHz`.
+
+`BCURRENT`
+: bunch current in `A`.
+
+`NPART`
+: number of macro particles used in the simulation.
+
+`NSLICE`
+: number of slices per bunch.
+
+`MOMENTUMTOLERANCE`
+: tolerance used when checking consistency between the distribution and the
+reference momentum.
+
+::: {.feature-opalx}
+`SOURCES`
+: name of the `EMISSIONSOURCELIST` that initializes the beam. This is required
+  for non-photon beams in the current OPALX path.
+
+Photon beams may be defined at the `BEAM` level, but the current `TRACK`
+implementation still rejects them.
+
+### CAIN Photon-Energy Convention
+
+For `PARTICLE=PHOTON`, OPALX follows the CAIN convention and interprets
+`ENERGY` in `eV`.
+:::

@@ -91,7 +91,7 @@ exit face and the end of the exit fringe field the rectangular shape
 has width and height that are twice of what they are inside the
 dipole.
 +
-Default aperture for all other elements is a circle of 1.0m.
+Default aperture for all other elements is a circle of 1E6 m.
 L::
   The length of the element (default: 0m).
 opalx-begin
@@ -1406,8 +1406,8 @@ In the curved case, the user may choose between constant or variable radius.
 --
 In the curved case, only constant radius is currently supported on _OPALX_.
 --
-This model includes fringe fields. The detailed description can be found at:
-https://gitlab.psi.ch/OPAL/src/uploads/0d3fc561b57e8962ed79a57cd6115e37/8FBB32A4-7FA1-4084-A4A7-CDDB1F949CD3_psi.ch.pdf.
+This model includes fringe fields. A separate internal design note exists
+for the fringe-field model, but it is not mirrored in this manual.
 
 ----
 label: MULTIPOLET, L=real, TP=real-vector, LFRINGE=real, RFRINGE=real, VAPERT=real, HAPERT=real,
@@ -1637,8 +1637,8 @@ ring: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0,
 ----
 
 If `TYPE` is set to `BANDRF`, the 3D electric field map of RF cavity will be
-read from external {link_H5hut_wiki}[H5Hut] file
-(see link:sec.opalcycl.read-3d-rf-field-map[Read 3D RF field-map]).
+read from external H5Hut file
+(see <<sec.opalcycl.read-3d-rf-field-map,Read 3D RF field-map>>).
 The following extra arguments need to specified:
 
 RFMAPFN::

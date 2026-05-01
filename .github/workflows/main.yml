@@ -1,4 +1,4 @@
-name: Publish AsciiDoc to GitHub Pages
+name: Build Manual
 
 on:
   push:
@@ -31,6 +31,17 @@ jobs:
       - name: Install Asciidoctor
         run: |
           gem install asciidoctor
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install Python HTML tooling
+        run: |
+          python3 -m pip install beautifulsoup4
+
+      - name: Build Quarto Manual
+        run: |
+          quarto render ./quarto --to html
 
       - name: Build AsciiDoc
         run: |

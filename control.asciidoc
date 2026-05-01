@@ -129,12 +129,14 @@ BEAMHALOBOUNDARY::
   Its default value is 0.0.
 opalx-begin
 BOUNDPDESTROY::
+  Governs how many sigmas away particles are deleted. Its default
+  value is 10.
 opalx-end
 opal-begin
 BOUNDPDESTROYFQ::
-opal-end
-The frequency to delete particles which are too far away from the
+  The frequency to delete particles which are too far away from the
   center of beam. Only used in _OPAL-cycl_. Its default value is 10.
+opal-end
 CLOTUNEONLY::
   If set to true, stop after closed orbit finder and tune calculation.
   Only used in _OPAL-cycl_. Its default value is false.
@@ -613,10 +615,10 @@ The `SYSTEM` command can also be used to execute an external script.
 
 Below is an example that generates a random seed with python.
 The python script
-{link_manual_src}/examples/gen_seed.py[gen_seed.py]
+link:examples/gen_seed.py[gen_seed.py]
 is called with the `SYSTEM` command.
 This scripts writes the seed to a file
-{link_manual_src}/examples/gen_seed.opal[gen_seed.opal]
+link:examples/gen_seed.opal[gen_seed.opal]
 that can be read with the `CALL` command.
 
 ----
