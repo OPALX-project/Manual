@@ -360,11 +360,11 @@ write the 6-dimensional beam matrix (upper triangle only) to statatistic file
 
 |11 |rms_ps |1 |RMS beamsize normalised momentum in s
 
-|12 |emit_x |mrad |Normalized emittance in x
+|12 |emit_x |m rad |Normalized emittance in x
 
-|13 |emit_y |mrad |Normalized emittance in y
+|13 |emit_y |m rad |Normalized emittance in y
 
-|14 |emit_s |mrad |Normalized emittance in s
+|14 |emit_s |m rad |Normalized emittance in s
 
 |15 |mean_x |m |X-component of mean position relative to reference
 particle
@@ -615,11 +615,11 @@ momenta
 |11 |rms_ps |1 |Standard deviation of the s-component of the particles
 momenta
 
-|12 |emit_x |mrad |X-component of the normalized emittance
+|12 |emit_x |m rad |X-component of the normalized emittance
 
-|13 |emit_y |mrad |Y-component of the normalized emittance
+|13 |emit_y |m rad |Y-component of the normalized emittance
 
-|14 |emit_s |mrad |S-component of the normalized emittance
+|14 |emit_s |m rad |S-component of the normalized emittance
 
 |15 |mean_x |m |X-component of mean position relative to reference
 particle
