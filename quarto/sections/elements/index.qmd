@@ -566,7 +566,6 @@ lrf0: TRAVELINGWAVE, L=0.0253, VOLT=14.750,
       FREQ=1498.956, LAG=248.0/360.0;
 ```
 :::
-::: {.feature-opal}
 ## Monitor
 
 A `MONITOR` detects all particles passing it and writes the position, momentum,
@@ -582,7 +581,6 @@ position and momentum one step before they would pass the monitor.
 
 If `TYPE=TEMPORAL`, the data of all particles are written when the reference
 particle hits the monitor.
-:::
 
 ::: {.feature-opal}
 ## Collimators
