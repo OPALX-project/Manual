@@ -184,7 +184,7 @@ The original manual lists a long table. The most important columns are:
 | 4 | `charge` | `C` | bunch charge |
 | 5 | `energy` | `MeV` | mean bunch energy |
 | 6-8 | `rms_x`, `rms_y`, `rms_s` | `m` | rms bunch size |
-| 12-14 | `emit_x`, `emit_y`, `emit_s` | `mrad` | normalized emittance |
+| 12-14 | `emit_x`, `emit_y`, `emit_s` | `m rad` | normalized emittance |
 | 18-23 | `ref_x ... ref_pz` | mixed | reference-particle phase space in floor coordinates |
 | 34-39 | `Bx_ref ... Ez_ref` | field units | fields at the reference particle |
 
@@ -225,7 +225,7 @@ chapter documents the payload as:
 | 5-7 | `rms_x`, `rms_y`, `rms_s` | `m` | rms beam size |
 | 8 | `rms_t` | `ns` | rms passage-time spread |
 | 9-11 | `rms_px`, `rms_py`, `rms_ps` | `1` | rms momenta |
-| 12-14 | `emit_x`, `emit_y`, `emit_s` | `mrad` | normalized emittance |
+| 12-14 | `emit_x`, `emit_y`, `emit_s` | `m rad` | normalized emittance |
 | 15-18 | `mean_x`, `mean_y`, `mean_s`, `mean_t` | mixed | mean bunch coordinates at the monitor |
 | 19-24 | `ref_x ... ref_pz` | mixed | reference-particle phase space in floor coordinates |
 | 25-27 | `max_x`, `max_y`, `max_s` | `m` | maximum beam size |
