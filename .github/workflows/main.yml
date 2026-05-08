@@ -32,12 +32,12 @@ jobs:
 
       - name: Build Quarto Manual
         run: |
-          quarto render ./quarto --to html
+          quarto render . --to html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./quarto/docs-quarto
+          path: ./docs-quarto
 
   deploy:
     needs: build

@@ -19,8 +19,8 @@ https://opalx-project.github.io/Manual-old/
 Render the Quarto manual with:
 
 ```sh
-quarto render ./quarto --to html
+quarto render . --to html
 ```
 
-The rendered site is written to `quarto/docs-quarto/` and deployed by the
-GitHub Pages workflow.
+The rendered site is written to `docs-quarto/` and deployed by the GitHub Pages
+workflow.

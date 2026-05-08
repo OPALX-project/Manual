@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>10  Elements – The OPAL(X) Framework Documentation</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta content="../../" name="quarto:offset"/>
+<link href="../../sections/field-output/index.html" rel="next"/>
+<link href="../../sections/control/index.html" rel="prev"/>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+  .feature-toggle {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.4rem 0 1.2rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #d9dee7;
+    border-radius: 0.6rem;
+    background: #f7f9fc;
+  }
+
+  .feature-toggle span {
+    font-weight: 600;
+  }
+
+  .feature-choice {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .feature-opal,
+  .feature-opalx {
+    margin: 0.8rem 0;
+    padding: 0.85rem 1rem;
+    border-left: 0.3rem solid #c7d2e5;
+    background: #fafbfd;
+  }
+
+  .feature-opal {
+    border-left-color: #2b6cb0;
+  }
+
+  .feature-opalx {
+    border-left-color: #2f855a;
+  }
+
+  html[data-feature-mode="opal"] .feature-opalx {
+    display: none;
+  }
+
+  html[data-feature-mode="opalx"] .feature-opal {
+    display: none;
+  }
+</style>
+<script>
+  (function () {
+    var STORAGE_KEY = "feature-mode";
+    var pendingInitialMode = "both";
+
+    function syncRadios(mode) {
+      var radios = document.querySelectorAll(".feature-toggle input[name='feature-mode']");
+      radios.forEach(function (r) {
+        r.checked = r.value === mode;
+      });
+    }
+
+    function setMode(mode) {
+      document.documentElement.setAttribute("data-feature-mode", mode);
+      syncRadios(mode);
+      try {
+        localStorage.setItem(STORAGE_KEY, mode);
+      } catch (err) {
+      }
+    }
+
+    window.setFeatureMode = setMode;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        pendingInitialMode = localStorage.getItem(STORAGE_KEY) || "both";
+      } catch (err) {
+      }
+
+      var radios = document.querySelectorAll(".feature-toggle input[name='feature-mode']");
+      radios.forEach(function (r) {
+        r.addEventListener("change", function (ev) {
+          setMode(ev.target.value);
+        });
+      });
+    });
+
+    window.addEventListener("load", function () {
+      setMode(pendingInitialMode);
+    });
+  })();
+</script>
+<style>
+  body:has(section#home) header#title-block-header,
+  body:has(section#home) section#home > h1.unnumbered,
+  body:has(section#home) #TOC > ul > li:first-child,
+  body:has(section#home) .quarto-page-breadcrumbs .breadcrumb-item:first-child,
+  body:has(section#home) .sidebar-menu-container > ul > li.sidebar-item:first-child {
+    display: none;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-sidebar floating quarto-light">
+<div id="quarto-search-results"></div>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/elements/index.html"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
+</header>
+<!-- content -->
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
+<!-- sidebar -->
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual" title="Source Code"><i class="bi bi-github"></i></a>
+</div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">25</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+<div class="sidebar margin-sidebar" id="quarto-margin-sidebar">
+<nav class="toc-active" id="TOC" role="doc-toc">
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a class="nav-link active" data-scroll-target="#element-input-format" href="#element-input-format" id="toc-element-input-format"><span class="header-section-number">10.1</span> Element Input Format</a></li>
+<li><a class="nav-link" data-scroll-target="#common-attributes-for-all-elements" href="#common-attributes-for-all-elements" id="toc-common-attributes-for-all-elements"><span class="header-section-number">10.2</span> Common Attributes for All Elements</a></li>
+<li><a class="nav-link" data-scroll-target="#drift-spaces" href="#drift-spaces" id="toc-drift-spaces"><span class="header-section-number">10.3</span> Drift Spaces</a></li>
+<li><a class="nav-link" data-scroll-target="#quadrupole" href="#quadrupole" id="toc-quadrupole"><span class="header-section-number">10.4</span> Quadrupole</a></li>
+<li><a class="nav-link" data-scroll-target="#sextupole" href="#sextupole" id="toc-sextupole"><span class="header-section-number">10.5</span> Sextupole</a></li>
+<li><a class="nav-link" data-scroll-target="#octupole" href="#octupole" id="toc-octupole"><span class="header-section-number">10.6</span> Octupole</a></li>
+<li><a class="nav-link" data-scroll-target="#general-multipole" href="#general-multipole" id="toc-general-multipole"><span class="header-section-number">10.7</span> General Multipole</a></li>
+<li><a class="nav-link" data-scroll-target="#general-multipole-with-fringe-field-model" href="#general-multipole-with-fringe-field-model" id="toc-general-multipole-with-fringe-field-model"><span class="header-section-number">10.8</span> General Multipole With Fringe Field Model</a></li>
+<li><a class="nav-link" data-scroll-target="#laser" href="#laser" id="toc-laser"><span class="header-section-number">10.9</span> Laser</a></li>
+<li><a class="nav-link" data-scroll-target="#solenoid" href="#solenoid" id="toc-solenoid"><span class="header-section-number">10.10</span> Solenoid</a></li>
+<li><a class="nav-link" data-scroll-target="#rf-cavities" href="#rf-cavities" id="toc-rf-cavities"><span class="header-section-number">10.11</span> RF Cavities</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#opal-t-mode" href="#opal-t-mode" id="toc-opal-t-mode"><span class="header-section-number">10.11.1</span> OPAL-T mode</a></li>
+<li><a class="nav-link" data-scroll-target="#opal-cycl-mode" href="#opal-cycl-mode" id="toc-opal-cycl-mode"><span class="header-section-number">10.11.2</span> OPAL-cycl mode</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#traveling-wave-structure" href="#traveling-wave-structure" id="toc-traveling-wave-structure"><span class="header-section-number">10.12</span> Traveling Wave Structure</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#fringe-fields" href="#fringe-fields" id="toc-fringe-fields"><span class="header-section-number">10.12.1</span> Fringe fields</a></li>
+<li><a class="nav-link" data-scroll-target="#reconstructed-body-field" href="#reconstructed-body-field" id="toc-reconstructed-body-field"><span class="header-section-number">10.12.2</span> Reconstructed body field</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#monitor" href="#monitor" id="toc-monitor"><span class="header-section-number">10.13</span> Monitor</a></li>
+<li><a class="nav-link" data-scroll-target="#collimators" href="#collimators" id="toc-collimators"><span class="header-section-number">10.14</span> Collimators</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#opal-t-mode-1" href="#opal-t-mode-1" id="toc-opal-t-mode-1"><span class="header-section-number">10.14.1</span> OPAL-T mode</a></li>
+<li><a class="nav-link" data-scroll-target="#opal-cycl-mode-1" href="#opal-cycl-mode-1" id="toc-opal-cycl-mode-1"><span class="header-section-number">10.14.2</span> OPAL-cycl mode</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#correctors" href="#correctors" id="toc-correctors"><span class="header-section-number">10.15</span> Correctors</a></li>
+<li><a class="nav-link" data-scroll-target="#bending-magnets" href="#bending-magnets" id="toc-bending-magnets"><span class="header-section-number">10.16</span> Bending Magnets</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#rbend" href="#rbend" id="toc-rbend"><span class="header-section-number">10.16.1</span> <code>RBEND</code></a></li>
+<li><a class="nav-link" data-scroll-target="#rbend3d" href="#rbend3d" id="toc-rbend3d"><span class="header-section-number">10.16.2</span> <code>RBEND3D</code></a></li>
+<li><a class="nav-link" data-scroll-target="#sbend" href="#sbend" id="toc-sbend"><span class="header-section-number">10.16.3</span> <code>SBEND</code></a></li>
+<li><a class="nav-link" data-scroll-target="#bend-setup-rules-in-opal-t" href="#bend-setup-rules-in-opal-t" id="toc-bend-setup-rules-in-opal-t"><span class="header-section-number">10.16.4</span> Bend setup rules in OPAL-T</a></li>
+<li><a class="nav-link" data-scroll-target="#rbend-and-sbend-examples" href="#rbend-and-sbend-examples" id="toc-rbend-and-sbend-examples"><span class="header-section-number">10.16.5</span> <code>RBEND</code> and <code>SBEND</code> examples</a></li>
+<li><a class="nav-link" data-scroll-target="#custom-1dprofile1-bend-maps" href="#custom-1dprofile1-bend-maps" id="toc-custom-1dprofile1-bend-maps"><span class="header-section-number">10.16.6</span> Custom <code>1DProfile1</code> bend maps</a></li>
+<li><a class="nav-link" data-scroll-target="#bend-fields-from-1dprofile1" href="#bend-fields-from-1dprofile1" id="toc-bend-fields-from-1dprofile1"><span class="header-section-number">10.16.7</span> Bend fields from <code>1DProfile1</code></a></li>
+<li><a class="nav-link" data-scroll-target="#default-bend-field-map" href="#default-bend-field-map" id="toc-default-bend-field-map"><span class="header-section-number">10.16.8</span> Default bend field map</a></li>
+<li><a class="nav-link" data-scroll-target="#sbend3d" href="#sbend3d" id="toc-sbend3d"><span class="header-section-number">10.16.9</span> <code>SBEND3D</code></a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#sec-elements-bends" href="#sec-elements-bends" id="toc-sec-elements-bends"><span class="header-section-number">10.17</span> Analytic sector and rectangular bends</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#body-extent-and-field-support-extent" href="#body-extent-and-field-support-extent" id="toc-body-extent-and-field-support-extent"><span class="header-section-number">10.17.1</span> Body extent and field-support extent</a></li>
+<li><a class="nav-link" data-scroll-target="#effective-field-length-and-bend-normalization" href="#effective-field-length-and-bend-normalization" id="toc-effective-field-length-and-bend-normalization"><span class="header-section-number">10.17.2</span> Effective field length and bend normalization</a></li>
+<li><a class="nav-link" data-scroll-target="#longitudinal-field-profile" href="#longitudinal-field-profile" id="toc-longitudinal-field-profile"><span class="header-section-number">10.17.3</span> Longitudinal field profile</a></li>
+<li><a class="nav-link" data-scroll-target="#first-order-fringe-optics" href="#first-order-fringe-optics" id="toc-first-order-fringe-optics"><span class="header-section-number">10.17.4</span> First-order fringe optics</a></li>
+<li><a class="nav-link" data-scroll-target="#sliced-bend-model" href="#sliced-bend-model" id="toc-sliced-bend-model"><span class="header-section-number">10.17.5</span> Sliced Bend Model</a></li>
+<li><a class="nav-link" data-scroll-target="#code-to-code-and-analytic-comparisons" href="#code-to-code-and-analytic-comparisons" id="toc-code-to-code-and-analytic-comparisons"><span class="header-section-number">10.17.6</span> Code-to-code and analytic comparisons</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#sec-elements-multipoles" href="#sec-elements-multipoles" id="toc-sec-elements-multipoles"><span class="header-section-number">10.18</span> Multipole family</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#field-expansion-and-conventions" href="#field-expansion-and-conventions" id="toc-field-expansion-and-conventions"><span class="header-section-number">10.18.1</span> Field expansion and conventions</a></li>
+<li><a class="nav-link" data-scroll-target="#multipole" href="#multipole" id="toc-multipole"><span class="header-section-number">10.18.2</span> <code>MULTIPOLE</code></a></li>
+<li><a class="nav-link" data-scroll-target="#quadrupole-1" href="#quadrupole-1" id="toc-quadrupole-1"><span class="header-section-number">10.18.3</span> <code>QUADRUPOLE</code></a></li>
+<li><a class="nav-link" data-scroll-target="#sextupole-1" href="#sextupole-1" id="toc-sextupole-1"><span class="header-section-number">10.18.4</span> <code>SEXTUPOLE</code></a></li>
+<li><a class="nav-link" data-scroll-target="#runtime-geometry-and-current-implementation-status" href="#runtime-geometry-and-current-implementation-status" id="toc-runtime-geometry-and-current-implementation-status"><span class="header-section-number">10.18.5</span> Runtime geometry and current implementation status</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#cyclotron" href="#cyclotron" id="toc-cyclotron"><span class="header-section-number">10.19</span> Cyclotron</a></li>
+<li><a class="nav-link" data-scroll-target="#ffa-magnet" href="#ffa-magnet" id="toc-ffa-magnet"><span class="header-section-number">10.20</span> FFA Magnet</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#scaling-ffa-magnet" href="#scaling-ffa-magnet" id="toc-scaling-ffa-magnet"><span class="header-section-number">10.20.1</span> Scaling FFA Magnet</a></li>
+<li><a class="nav-link" data-scroll-target="#vertical-ffa-magnet" href="#vertical-ffa-magnet" id="toc-vertical-ffa-magnet"><span class="header-section-number">10.20.2</span> Vertical FFA Magnet</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#ring-definition" href="#ring-definition" id="toc-ring-definition"><span class="header-section-number">10.21</span> Ring Definition</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#local-cartesian-offset" href="#local-cartesian-offset" id="toc-local-cartesian-offset"><span class="header-section-number">10.21.1</span> Local Cartesian Offset</a></li>
+<li><a class="nav-link" data-scroll-target="#local-cylindrical-offset" href="#local-cylindrical-offset" id="toc-local-cylindrical-offset"><span class="header-section-number">10.21.2</span> Local Cylindrical Offset</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#source" href="#source" id="toc-source"><span class="header-section-number">10.22</span> Source</a></li>
+<li><a class="nav-link" data-scroll-target="#variable-rf-cavities" href="#variable-rf-cavities" id="toc-variable-rf-cavities"><span class="header-section-number">10.23</span> Variable RF Cavities</a>
+<ul class="collapse">
+<li><a class="nav-link" data-scroll-target="#time-dependence-models" href="#time-dependence-models" id="toc-time-dependence-models"><span class="header-section-number">10.23.1</span> Time-dependence models</a></li>
+<li><a class="nav-link" data-scroll-target="#soft-edged-variable-cavities" href="#soft-edged-variable-cavities" id="toc-soft-edged-variable-cavities"><span class="header-section-number">10.23.2</span> Soft-edged variable cavities</a></li>
+</ul></li>
+<li><a class="nav-link" data-scroll-target="#septum" href="#septum" id="toc-septum"><span class="header-section-number">10.24</span> Septum</a></li>
+<li><a class="nav-link" data-scroll-target="#probe" href="#probe" id="toc-probe"><span class="header-section-number">10.25</span> Probe</a></li>
+<li><a class="nav-link" data-scroll-target="#output-plane" href="#output-plane" id="toc-output-plane"><span class="header-section-number">10.26</span> Output Plane</a></li>
+<li><a class="nav-link" data-scroll-target="#stripper" href="#stripper" id="toc-stripper"><span class="header-section-number">10.27</span> Stripper</a></li>
+<li><a class="nav-link" data-scroll-target="#degrader" href="#degrader" id="toc-degrader"><span class="header-section-number">10.28</span> Degrader</a></li>
+<li><a class="nav-link" data-scroll-target="#vacuum" href="#vacuum" id="toc-vacuum"><span class="header-section-number">10.29</span> Vacuum</a></li>
+<li><a class="nav-link" data-scroll-target="#undulator" href="#undulator" id="toc-undulator"><span class="header-section-number">10.30</span> Undulator</a></li>
+<li><a class="nav-link" data-scroll-target="#beam-beam-interaction-point" href="#beam-beam-interaction-point" id="toc-beam-beam-interaction-point"><span class="header-section-number">10.31</span> Beam-Beam Interaction Point</a></li>
+</ul>
+<div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/sections/elements/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header class="quarto-title-block default" id="title-block-header">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></h1>
+</div>
+<div class="quarto-title-meta">
+</div>
+</header>
+<div class="feature-toggle">
+<span>View:</span>
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opal"/> OPAL
+  </label>
+<label class="feature-choice">
+<input name="feature-mode" type="radio" value="opalx"/> OPALX
+  </label>
+<label class="feature-choice">
+<input checked="" name="feature-mode" type="radio" value="both"/> Both
+  </label>
+</div>
+<p>This chapter is the first mixed migration chapter in the Quarto pilot. It combines:</p>
+<ul>
+<li>legacy OPAL element semantics ported from the Asciidoctor manual</li>
+<li>OPALX-native analytic element descriptions already written directly in Quarto</li>
+</ul>
+<section class="level2 feature-opal" data-number="10.1" id="element-input-format">
+<h2 class="anchored" data-anchor-id="element-input-format" data-number="10.1"><span class="header-section-number">10.1</span> Element Input Format</h2>
+<p>All physical elements are defined by statements of the form</p>
+<pre class="text"><code>label:keyword, attribute,..., attribute</code></pre>
+<p>where:</p>
+<dl>
+<dt><code>label</code></dt>
+<dd>
+is the name given to the element, for example <code>QF</code>. It is an identifier.
+</dd>
+<dt><code>keyword</code></dt>
+<dd>
+is an element-type keyword, for example <code>QUADRUPOLE</code>.
+</dd>
+<dt><code>attribute</code></dt>
+<dd>
+usually has the form
+</dd>
+</dl>
+<pre class="text"><code>attribute-name=attribute-value</code></pre>
+<p>Omitted attributes are assigned a default value, normally zero.</p>
+<p>Example:</p>
+<pre class="text"><code>QF: QUADRUPOLE, L=1.8, K1=0.015832;</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.2" id="common-attributes-for-all-elements">
+<h2 class="anchored" data-anchor-id="common-attributes-for-all-elements" data-number="10.2"><span class="header-section-number">10.2</span> Common Attributes for All Elements</h2>
+<p>The following attributes are shared by all elements.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>TYPE</code></td>
+<td>Engineering type string used for element selection.</td>
+</tr>
+<tr class="even">
+<td><code>APERTURE</code></td>
+<td>Aperture specification such as <code>SQUARE(a,f)</code>, <code>RECTANGLE(a,b,f)</code>, <code>CIRCLE(d,f)</code>, or <code>ELLIPSE(a,b,f)</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>L</code></td>
+<td>Physical element length.</td>
+</tr>
+<tr class="even">
+<td><code>ELEMEDGE</code></td>
+<td>Position of the physical start of the element in <code>s</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>X</code>, <code>Y</code>, <code>Z</code></td>
+<td>Absolute position components when absolute placement is used.</td>
+</tr>
+<tr class="even">
+<td><code>THETA</code>, <code>PHI</code>, <code>PSI</code></td>
+<td>Orientation angles relative to the first beamline using absolute positioning.</td>
+</tr>
+<tr class="odd">
+<td><code>DX</code>, <code>DY</code>, <code>DZ</code></td>
+<td>Position errors that do not affect the design trajectory.</td>
+</tr>
+<tr class="even">
+<td><code>DTHETA</code>, <code>DPHI</code>, <code>DPSI</code></td>
+<td>Rotation errors that do not affect the design trajectory.</td>
+</tr>
+<tr class="odd">
+<td><code>WAKEF</code></td>
+<td>Attach a wakefield defined by the <code>WAKE</code> command.</td>
+</tr>
+<tr class="even">
+<td><code>PARTICLEMATTERINTERACTION</code></td>
+<td>Attach a particle-matter interaction handler.</td>
+</tr>
+<tr class="odd">
+<td><code>OUTFN</code></td>
+<td>Base file name for element-generated output.</td>
+</tr>
+<tr class="even">
+<td><code>DELETEONTRANSVERSEEXIT</code></td>
+<td>Control whether particles exiting on the transverse sides are deleted in OPAL-T.</td>
+</tr>
+</tbody>
+</table>
+<p>Dipoles are a special case because <code>GAP</code> and <code>HGAP</code> define their aperture instead of the generic <code>APERTURE</code> attribute.</p>
+<p>Default aperture for all other elements is a circle of <code>1E6 m</code>.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.3" id="drift-spaces">
+<h2 class="anchored" data-anchor-id="drift-spaces" data-number="10.3"><span class="header-section-number">10.3</span> Drift Spaces</h2>
+<pre class="text"><code>label: DRIFT, TYPE=string, APERTURE=string, L=real;</code></pre>
+<p>A <code>DRIFT</code> space has no additional attributes.</p>
+<p>Examples:</p>
+<pre class="text"><code>DR1: DRIFT, L=1.5;
+DR2: DRIFT, L=DR1-&gt;L, TYPE=DRF;</code></pre>
+<p>The length of <code>DR2</code> will always be equal to the length of <code>DR1</code>. The reference system for a drift space is a Cartesian coordinate system.</p>
+</section>
+<section class="level2" data-number="10.4" id="quadrupole">
+<h2 class="anchored" data-anchor-id="quadrupole" data-number="10.4"><span class="header-section-number">10.4</span> Quadrupole</h2>
+<pre class="text"><code>label: QUADRUPOLE, TYPE=string, APERTURE=real-vector,
+      L=real, K1=real, K1S=real;</code></pre>
+<p>A <code>QUADRUPOLE</code> is a straight Cartesian magnet with normal and skew quadrupole components.</p>
+<dl>
+<dt><code>K1</code></dt>
+<dd>
+normal quadrupole gradient <span class="math inline">\(K_1 = \partial B_y / \partial x\)</span> in <span class="math inline">\(\mathrm{Tm^{-1}}\)</span>. Positive <code>K1</code> means horizontal focusing for positively charged particles moving in the positive design direction.
+</dd>
+<dt><code>K1S</code></dt>
+<dd>
+skew quadrupole component <span class="math inline">\(K_{1s} = - \partial B_x / \partial x\)</span> in <span class="math inline">\(\mathrm{Tm^{-1}}\)</span>.
+</dd>
+<dt><code>DK1</code>, <code>DK1S</code></dt>
+<dd>
+normalized strength errors for the normal and skew component.
+</dd>
+</dl>
+<p>Example:</p>
+<pre class="text"><code>QP1: QUADRUPOLE, L=1.20, ELEMEDGE=-0.5265, K1=0.11;</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.5" id="sextupole">
+<h2 class="anchored" data-anchor-id="sextupole" data-number="10.5"><span class="header-section-number">10.5</span> Sextupole</h2>
+<pre class="text"><code>label: SEXTUPOLE, TYPE=string, APERTURE=real-vector,
+       L=real, K2=real, K2S=real;</code></pre>
+<p>A <code>SEXTUPOLE</code> is a straight Cartesian element with second-order normal and skew components.</p>
+<dl>
+<dt><code>K2</code></dt>
+<dd>
+normal sextupole strength <span class="math inline">\(K_2 = \partial^2 B_y / \partial x^2\)</span> in <span class="math inline">\(\mathrm{Tm^{-2}}\)</span>.
+</dd>
+<dt><code>K2S</code></dt>
+<dd>
+skew sextupole strength <span class="math inline">\(K_{2s} = - \partial^2 B_x / \partial x^2\)</span> in <span class="math inline">\(\mathrm{Tm^{-2}}\)</span>.
+</dd>
+<dt><code>DK2</code>, <code>DK2S</code></dt>
+<dd>
+normalized strength errors.
+</dd>
+</dl>
+<p>Example:</p>
+<pre class="text"><code>S1: SEXTUPOLE, L=0.4, K2=0.00134;</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.6" id="octupole">
+<h2 class="anchored" data-anchor-id="octupole" data-number="10.6"><span class="header-section-number">10.6</span> Octupole</h2>
+<pre class="text"><code>label: OCTUPOLE, TYPE=string, APERTURE=real-vector,
+      L=real, K3=real, K3S=real;</code></pre>
+<dl>
+<dt><code>K3</code></dt>
+<dd>
+normal octupole strength <span class="math inline">\(K_3 = \partial^3 B_y / \partial x^3\)</span> in <span class="math inline">\(\mathrm{Tm^{-3}}\)</span>.
+</dd>
+<dt><code>K3S</code></dt>
+<dd>
+skew octupole strength <span class="math inline">\(K_{3s} = - \partial^3 B_x / \partial x^3\)</span> in <span class="math inline">\(\mathrm{Tm^{-3}}\)</span>.
+</dd>
+<dt><code>DK3</code>, <code>DK3S</code></dt>
+<dd>
+normalized strength errors.
+</dd>
+</dl>
+<p>Example:</p>
+<pre class="text"><code>O3: OCTUPOLE, L=0.3, K3=0.543;</code></pre>
+</section>
+<section class="level2" data-number="10.7" id="general-multipole">
+<h2 class="anchored" data-anchor-id="general-multipole" data-number="10.7"><span class="header-section-number">10.7</span> General Multipole</h2>
+<p>The legacy <code>MULTIPOLE</code> element defines a thick straight multipole of arbitrary order.</p>
+<pre class="text"><code>label: MULTIPOLE, TYPE=string, APERTURE=real-vector,
+      L=real, KN=real-vector, KS=real-vector;</code></pre>
+<dl>
+<dt><code>KN</code></dt>
+<dd>
+array of normal coefficients <span class="math inline">\(K_n = \partial^n B_y / \partial x^n\)</span>.
+</dd>
+<dt><code>KS</code></dt>
+<dd>
+array of skew coefficients <span class="math inline">\(K_{ns} = - \partial^n B_x / \partial x^n\)</span>.
+</dd>
+<dt><code>DKN</code>, <code>DKS</code></dt>
+<dd>
+normalized strength-error arrays for the normal and skew coefficients.
+</dd>
+</dl>
+<p>If <code>L != 0</code>, the strengths are interpreted per unit length. If <code>L == 0</code>, they are integrated strengths. The multipole order of coefficient <code>n</code> corresponds to <code>2n+2</code> poles. Superposition of several orders is allowed.</p>
+<p>Example:</p>
+<pre class="text"><code>M27: MULTIPOLE, L=1.0, ELEMEDGE=3.8, KN={0.0, 0.11};</code></pre>
+</section>
+<section class="level2" data-number="10.8" id="general-multipole-with-fringe-field-model">
+<h2 class="anchored" data-anchor-id="general-multipole-with-fringe-field-model" data-number="10.8"><span class="header-section-number">10.8</span> General Multipole With Fringe Field Model</h2>
+<p><code>MULTIPOLET</code> is the extended cyclotron-side multipole element with explicit fringe fields. It can represent either a straight magnet or a curved magnet with a prescribed bend angle.</p>
+<pre class="text"><code>label: MULTIPOLET, L=real, TP=real-vector,
+       LFRINGE=real, RFRINGE=real,
+       VAPERT=real, HAPERT=real,
+       MAXFORDER=real, ROTATION=real,
+       EANGLE=real, BBLENGTH=real, ANGLE=real,
+       MAXXORDER=real, VARRADIUS=bool,
+       ENTRYOFFSET=real, SCALING_MODEL=string;</code></pre>
+<p>The most important attributes are:</p>
+<dl>
+<dt><code>TP</code></dt>
+<dd>
+transverse mid-plane polynomial coefficients <span class="math inline">\(T(x) = B_0 + B_1 x + B_2 x^2 + \dots\)</span>.
+</dd>
+<dt><code>LFRINGE</code>, <code>RFRINGE</code></dt>
+<dd>
+left and right fringe-field lengths.
+</dd>
+<dt><code>ANGLE</code></dt>
+<dd>
+physical bend angle of the magnet.
+</dd>
+<dt><code>VARRADIUS</code></dt>
+<dd>
+when <code>TRUE</code>, the bend radius can vary so that the reference path remains in the magnet center. This is a cyclotron-side restricted feature.
+</dd>
+<dt><code>ROTATION</code></dt>
+<dd>
+roll of a straight magnet about its central axis to obtain skew fields.
+</dd>
+<dt><code>SCALING_MODEL</code></dt>
+<dd>
+optional time-dependent scaling model for the multipole coefficients.
+</dd>
+</dl>
+<p>This element uses a fringe-field model based on a scalar-potential expansion with a mid-plane profile multiplied by a longitudinal fringe function.</p>
+<p>Example:</p>
+<pre class="text"><code>M30: MULTIPOLET, L=1, RFRINGE=0.3, LFRINGE=0.2,
+     ANGLE=PI/6, TP={2.0, 0.1}, VARRADIUS=TRUE, BBLENGTH=2;</code></pre>
+</section>
+<section class="level2 feature-opalx" data-number="10.9" id="laser">
+<h2 class="anchored" data-anchor-id="laser" data-number="10.9"><span class="header-section-number">10.9</span> Laser</h2>
+<pre class="text"><code>label: LASER, L=real, ELEMEDGE=real,
+       WAVELENGTH=real, PULSEENERGY=real, PULSELENGTH=real,
+       WAISTX=real, WAISTY=real, DIR=real-vector, STOKES=real-vector;</code></pre>
+<p>The <code>LASER</code> element defines a passive analytic laser pulse for OPALX. At the current stage it is an input object with validated pulse parameters and lattice placement, but it does not yet apply laser-particle interaction physics by itself.</p>
+<p>The required attributes are:</p>
+<dl>
+<dt><code>WAVELENGTH</code></dt>
+<dd>
+Laser wavelength in <code>m</code>. Must be greater than zero.
+</dd>
+<dt><code>PULSEENERGY</code></dt>
+<dd>
+Total pulse energy in <code>J</code>. Must be greater than zero.
+</dd>
+<dt><code>PULSELENGTH</code></dt>
+<dd>
+Pulse duration in <code>s</code>. Must be greater than zero.
+</dd>
+<dt><code>WAISTX</code>, <code>WAISTY</code></dt>
+<dd>
+Horizontal and vertical waist in <code>m</code>. Must be greater than zero.
+</dd>
+<dt><code>DIR</code></dt>
+<dd>
+Propagation direction as a 3-component vector. OPALX normalizes it internally.
+</dd>
+<dt><code>STOKES</code></dt>
+<dd>
+Optional normalized Stokes vector <code>{xi1, xi2, xi3}</code>. If omitted, <code>{0,0,0}</code> is used.
+</dd>
+</dl>
+<p>Example:</p>
+<pre class="text"><code>LASL: LASER,
+      WAVELENGTH = 1.03e-6,
+      PULSEENERGY = 1.0,
+      PULSELENGTH = 2.0e-12,
+      WAISTX = 5.0e-6,
+      WAISTY = 5.0e-6,
+      DIR = {0, 0, -1},
+      STOKES = {0, 0, 1};</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.10" id="solenoid">
+<h2 class="anchored" data-anchor-id="solenoid" data-number="10.10"><span class="header-section-number">10.10</span> Solenoid</h2>
+<pre class="text"><code>label: SOLENOID, TYPE=string, APERTURE=real-vector,
+      L=real, KS=real;</code></pre>
+<p>A <code>SOLENOID</code> has one principal strength attribute:</p>
+<dl>
+<dt><code>KS</code></dt>
+<dd>
+the solenoid strength <span class="math inline">\(K_s = \frac{\partial B_s}{\partial s}\)</span>, in <span class="math inline">\(\mathrm{Tm^{-1}}\)</span>. For positive <code>KS</code> and positive particle charge, the solenoid field points in the direction of increasing <code>s</code>.
+</dd>
+</dl>
+<p>The reference system for a solenoid is a Cartesian coordinate system.</p>
+<p>In OPAL-T mode, field maps are specified through:</p>
+<dl>
+<dt><code>FMAPFN</code></dt>
+<dd>
+file name of the field map.
+</dd>
+</dl>
+<p>Example:</p>
+<pre class="text"><code>SP1: SOLENOID, L=1.20, ELEMEDGE=-0.5265, KS=0.11,
+     FMAPFN="1T1.T7";</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.11" id="rf-cavities">
+<h2 class="anchored" data-anchor-id="rf-cavities" data-number="10.11"><span class="header-section-number">10.11</span> RF Cavities</h2>
+<p>An <code>RFCAVITY</code> is the legacy standing-wave cavity element used in both beamline and cyclotron workflows. The common syntax is:</p>
+<pre class="text"><code>label: RFCAVITY, APERTURE=real-vector, L=real,
+       VOLT=real, LAG=real;</code></pre>
+<dl>
+<dt><code>L</code></dt>
+<dd>
+cavity length in <code>m</code>.
+</dd>
+<dt><code>VOLT</code></dt>
+<dd>
+peak RF voltage in <code>MV</code>. The cavity kick is parameterized as <span class="math inline">\(\delta E = \mathrm{VOLT}\cdot\sin(2\pi(\mathrm{LAG}-\mathrm{HARMON}\cdot f_0 t))\)</span>.
+</dd>
+<dt><code>LAG</code></dt>
+<dd>
+phase lag in <code>rad</code>. In OPAL-T this is generally measured relative to the phase that maximizes the reference-particle energy gain. That phase is found by the auto-phasing algorithm unless the cavity is vetoed.
+</dd>
+<dt><code>DLAG</code></dt>
+<dd>
+phase-lag error in <code>rad</code>.
+</dd>
+</dl>
+<section class="level3" data-number="10.11.1" id="opal-t-mode">
+<h3 class="anchored" data-anchor-id="opal-t-mode" data-number="10.11.1"><span class="header-section-number">10.11.1</span> OPAL-T mode</h3>
+<p>Additional OPAL-T attributes are:</p>
+<dl>
+<dt><code>FMAPFN</code></dt>
+<dd>
+field-map file in <code>T7</code> format.
+</dd>
+<dt><code>TYPE</code></dt>
+<dd>
+cavity type, either <code>STANDING</code> (default) or <code>SINGLEGAP</code>.
+</dd>
+<dt><code>FREQ</code></dt>
+<dd>
+cavity frequency in <code>MHz</code>. If both the cavity card and the field map define a frequency, OPAL-T warns on mismatch and uses the card value.
+</dd>
+<dt><code>APVETO</code></dt>
+<dd>
+if <code>TRUE</code>, the cavity is excluded from auto-phasing and the phase equals <code>LAG</code> at the arrival time of the reference particle at the field boundary.
+</dd>
+</dl>
+<p>Example standing-wave cavity that mimics a DC gun:</p>
+<pre class="text"><code>gun: RFCAVITY, L=0.018, VOLT=-131/(1.052*2.658),
+     FMAPFN="1T3.T7", ELEMEDGE=0.00,
+     TYPE=STANDING, FREQ=1.0e-6;</code></pre>
+<p>Example two-frequency standing-wave system:</p>
+<pre class="text"><code>rf1: RFCAVITY, L=0.54, VOLT=19.961, LAG=193.0/360.0,
+     FMAPFN="1T3.T7", ELEMEDGE=0.129, TYPE=STANDING,
+     FREQ=1498.956;
+
+rf2: RFCAVITY, L=0.54, VOLT=6.250, LAG=136.0/360.0,
+     FMAPFN="1T4.T7", ELEMEDGE=0.129, TYPE=STANDING,
+     FREQ=4497.536;</code></pre>
+</section>
+<section class="level3" data-number="10.11.2" id="opal-cycl-mode">
+<h3 class="anchored" data-anchor-id="opal-cycl-mode" data-number="10.11.2"><span class="header-section-number">10.11.2</span> OPAL-cycl mode</h3>
+<p>Cyclotron-side <code>RFCAVITY</code> describes a single-gap cavity sampled from a normalized radial voltage profile. The additional parameters are:</p>
+<dl>
+<dt><code>FMAPFN</code></dt>
+<dd>
+ASCII file that stores the normalized voltage-amplitude curve of the cavity gap.
+</dd>
+<dt><code>TYPE</code></dt>
+<dd>
+in cyclotron usage this is typically <code>SINGLEGAP</code>.
+</dd>
+<dt><code>FREQ</code></dt>
+<dd>
+RF frequency in <code>MHz</code>.
+</dd>
+<dt><code>RMIN</code>, <code>RMAX</code></dt>
+<dd>
+inner and outer cavity radius in <code>mm</code>.
+</dd>
+<dt><code>ANGLE</code></dt>
+<dd>
+azimuthal cavity location in the global frame in <code>deg</code>.
+</dd>
+<dt><code>PDIS</code></dt>
+<dd>
+perpendicular distance of the cavity from the cyclotron center in <code>mm</code>.
+</dd>
+<dt><code>GAPWIDTH</code></dt>
+<dd>
+cavity gap width in <code>mm</code>.
+</dd>
+<dt><code>PHI0</code></dt>
+<dd>
+initial phase in <code>deg</code>.
+</dd>
+</dl>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-cyclotron-cavity">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-cyclotron-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/Cavity.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-cyclotron-cavity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.1: Simplified geometry of a cyclotron cavity gap and its defining parameters.
+</figcaption>
+</figure>
+</div>
+<p>Example:</p>
+<pre class="text"><code>rf0: RFCAVITY, VOLT=0.25796, FMAPFN="Cav1.dat",
+     TYPE=SINGLEGAP, FREQ=50.637, RMIN=350.0,
+     RMAX=3350.0, ANGLE=35.0, PDIS=0.0,
+     GAPWIDTH=0.0, PHI0=phi01;</code></pre>
+</section>
+</section>
+<section class="level2 feature-opal" data-number="10.12" id="traveling-wave-structure">
+<h2 class="anchored" data-anchor-id="traveling-wave-structure" data-number="10.12"><span class="header-section-number">10.12</span> Traveling Wave Structure</h2>
+<p>A <code>TRAVELINGWAVE</code> structure is an OPAL-T element reconstructed from a one-dimensional standing-wave field map and a repeated-cell model.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-finsb-rac-field">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-finsb-rac-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/FINSB-RAC-field.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-finsb-rac-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.2: The on-axis field of an S-band <code>TRAVELINGWAVE</code> structure. The field of a single cavity is shown between its entrance and exit fringe fields.
+</figcaption>
+</figure>
+</div>
+<p>An example of a 1D traveling-wave field map is shown in <a class="quarto-xref" href="#fig-finsb-rac-field">Figure <span>10.2</span></a>. The map itself is a standing-wave solution for a single accelerating cavity. OPAL-T reconstructs the full traveling-wave tank in three parts:</p>
+<ol type="1">
+<li>entrance fringe field,</li>
+<li>repeated accelerating-cell region,</li>
+<li>exit fringe field.</li>
+</ol>
+<section class="level3" data-number="10.12.1" id="fringe-fields">
+<h3 class="anchored" data-anchor-id="fringe-fields" data-number="10.12.1"><span class="header-section-number">10.12.1</span> Fringe fields</h3>
+<p>The entrance and exit fringe fields are treated as standing-wave regions: <span class="math display">\[
+\begin{aligned}
+\mathbf{E}_{\mathrm{entrance}}(\mathbf{r},t) &amp;= \mathbf{E}_{\mathrm{from\,map}}(\mathbf{r})\,\mathrm{VOLT}\,
+\cos\!\bigl(2\pi\,\mathrm{FREQ}\,t + \phi_{\mathrm{entrance}}\bigr), \\\\
+\mathbf{E}_{\mathrm{exit}}(\mathbf{r},t) &amp;= \mathbf{E}_{\mathrm{from\,map}}(\mathbf{r})\,\mathrm{VOLT}\,
+\cos\!\bigl(2\pi\,\mathrm{FREQ}\,t + \phi_{\mathrm{exit}}\bigr).
+\end{aligned}
+\]</span> Here <code>VOLT</code> and <code>FREQ</code> are the element amplitude and frequency, the entrance phase is <code>\phi_{entrance} = \mathrm{LAG}</code>, and the exit phase is determined internally from <code>LAG</code> and <code>NUMCELLS</code>.</p>
+</section>
+<section class="level3" data-number="10.12.2" id="reconstructed-body-field">
+<h3 class="anchored" data-anchor-id="reconstructed-body-field" data-number="10.12.2"><span class="header-section-number">10.12.2</span> Reconstructed body field</h3>
+<p>The field of the accelerating structure body is reconstructed from the central part of the standing-wave map by superposition: <span class="math display">\[
+\begin{aligned}
+\mathbf{E}(\mathbf{r},t) = \frac{\mathrm{VOLT}}{\sin(2\pi\,\mathrm{MODE})}
+\Bigl[
+&amp;\mathbf{E}_{\mathrm{from\,map}}(x,y,z)
+\cos\!\bigl(2\pi\,\mathrm{FREQ}\,t + \mathrm{LAG} + \tfrac{\pi}{2}\,\mathrm{MODE}\bigr) \\\\
++&amp;\mathbf{E}_{\mathrm{from\,map}}(x,y,z+d)
+\cos\!\bigl(2\pi\,\mathrm{FREQ}\,t + \mathrm{LAG} + \tfrac{3\pi}{2}\,\mathrm{MODE}\bigr)
+\Bigr].
+\end{aligned}
+\]</span> The cell spacing is <span class="math display">\[
+d = \lambda\,\mathrm{MODE},
+\]</span> where <code>MODE</code> is expressed in units of <code>2π</code>. When the longitudinal coordinate advances past the end of the available map interval, OPAL-T subtracts an integer number of cavity wavelengths until the position falls back inside the repeated-cell range.</p>
+<p>The legacy model therefore treats the entry and exit half cells through the standing-wave fringe fields and the interior through a repeated-cell traveling wave assembled from the same on-axis map.</p>
+<p>The element attributes are:</p>
+<pre class="text"><code>label: TRAVELINGWAVE, APERTURE=real-vector, L=real,
+       VOLT=real, LAG=real, FMAPFN=string,
+       ELEMEDGE=real, FREQ=real, NUMCELLS=integer,
+       MODE=real;</code></pre>
+<dl>
+<dt><code>L</code></dt>
+<dd>
+cavity length. In OPAL-T the effective structure length is reconstructed from the field map and <code>NUMCELLS</code>, so <code>L</code> is not the primary geometric input.
+</dd>
+<dt><code>VOLT</code></dt>
+<dd>
+peak RF voltage. The accelerating phase is again expressed by <code>LAG</code>.
+</dd>
+<dt><code>LAG</code></dt>
+<dd>
+phase lag in <code>rad</code>. In OPAL-T this is normally defined relative to the phase that maximizes energy gain of the reference particle, as determined by the auto-phasing algorithm.
+</dd>
+<dt><code>DLAG</code></dt>
+<dd>
+phase-lag error in <code>rad</code>.
+</dd>
+<dt><code>FMAPFN</code></dt>
+<dd>
+field map in <code>T7</code> format.
+</dd>
+<dt><code>FREQ</code></dt>
+<dd>
+traveling-wave frequency in <code>MHz</code>. As for <code>RFCAVITY</code>, OPAL-T warns when this differs from the frequency declared in the field map, and the map value takes precedence.
+</dd>
+<dt><code>NUMCELLS</code></dt>
+<dd>
+number of accelerating cells, excluding entry and exit half-cell fringes.
+</dd>
+<dt><code>MODE</code></dt>
+<dd>
+mode in units of <code>2π</code>; for example <code>1/3</code> stands for a <code>2π/3</code> structure.
+</dd>
+<dt><code>FAST</code></dt>
+<dd>
+if <code>TRUE</code> and the field map is 1D, OPAL-T builds a 2D interpolation map and avoids an FFT-based evaluation on every particle and every step.
+</dd>
+<dt><code>APVETO</code></dt>
+<dd>
+disable auto-phasing for this structure and use the user-supplied <code>LAG</code> directly at the arrival time of the reference particle at the field boundary.
+</dd>
+</dl>
+<p>The traveling-wave model requires the particle momentum <code>P</code> and charge <code>CHARGE</code> to be defined on the relevant optics command before the structure is used.</p>
+<p>Example:</p>
+<pre class="text"><code>lrf0: TRAVELINGWAVE, L=0.0253, VOLT=14.750,
+      NUMCELLS=40, ELEMEDGE=2.73066,
+      FMAPFN="INLB-02-RAC.Ez", MODE=1/3,
+      FREQ=1498.956, LAG=248.0/360.0;</code></pre>
+</section>
+</section>
+<section class="level2" data-number="10.13" id="monitor">
+<h2 class="anchored" data-anchor-id="monitor" data-number="10.13"><span class="header-section-number">10.13</span> Monitor</h2>
+<p>A <code>MONITOR</code> detects all particles passing it and writes the position, momentum, and time of impact into an H5hut file. It always has an effective length of 1 cm, consisting of a 0.5 cm drift, the monitor of zero length, and another 0.5 cm drift. This prevents OPAL-T from missing particles.</p>
+<p>The positions of the particles on the monitor are interpolated from the current position and momentum one step before they would pass the monitor.</p>
+<dl>
+<dt><code>OUTFN</code></dt>
+<dd>
+file name into which the monitor writes the collected data.
+</dd>
+</dl>
+<p>If <code>TYPE=TEMPORAL</code>, the data of all particles are written when the reference particle hits the monitor.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.14" id="collimators">
+<h2 class="anchored" data-anchor-id="collimators" data-number="10.14"><span class="header-section-number">10.14</span> Collimators</h2>
+<p>Four collimator families exist in the legacy manual:</p>
+<ul>
+<li><code>ECOLLIMATOR</code>: elliptic aperture</li>
+<li><code>RCOLLIMATOR</code>: rectangular aperture</li>
+<li><code>FLEXIBLECOLLIMATOR</code>: arbitrary aperture description</li>
+<li><code>CCOLLIMATOR</code>: cyclotron-specific radial rectangular collimator</li>
+</ul>
+<p>The common OPAL-T beamline syntax is:</p>
+<pre class="text"><code>label: ECOLLIMATOR, TYPE=string, APERTURE=real-vector,
+       L=real, XSIZE=real, YSIZE=real;
+
+label: RCOLLIMATOR, TYPE=string, APERTURE=real-vector,
+       L=real, XSIZE=real, YSIZE=real;
+
+label: FLEXIBLECOLLIMATOR, APERTURE=real-vector,
+       L=real, DESCRIPTION=string, FNAME=string, OUTFN=string;</code></pre>
+<p>Common attributes:</p>
+<dl>
+<dt><code>OUTFN</code></dt>
+<dd>
+file name for lost-particle output. If omitted, the element label is used. The output is written as H5hut, or ASCII when <code>ASCIIDUMP</code> is enabled.
+</dd>
+<dt><code>PARTICLEMATTERINTERACTION</code></dt>
+<dd>
+activates scattering and energy-loss modeling when configured.
+</dd>
+</dl>
+<section class="level3" data-number="10.14.1" id="opal-t-mode-1">
+<h3 class="anchored" data-anchor-id="opal-t-mode-1" data-number="10.14.1"><span class="header-section-number">10.14.1</span> OPAL-T mode</h3>
+<p>Optically, a collimator behaves like a drift space, but during tracking it also introduces an aperture limit. The aperture is checked at the entrance, and if the collimator has nonzero length it is also checked at the exit and at every timestep.</p>
+<dl>
+<dt><code>XSIZE</code></dt>
+<dd>
+horizontal half-aperture in <code>m</code>.
+</dd>
+<dt><code>YSIZE</code></dt>
+<dd>
+vertical half-aperture in <code>m</code>.
+</dd>
+</dl>
+<p>For <code>ECOLLIMATOR</code>, the values are ellipse half-axes; for <code>RCOLLIMATOR</code>, they are rectangle half-widths.</p>
+<p>Example:</p>
+<pre class="text"><code>Col: ECOLLIMATOR, L=1.0E-3, ELEMEDGE=3.0E-3, XSIZE=5.0E-4,
+     YSIZE=5.0E-4, OUTFN="Coll.h5";</code></pre>
+<p><code>FLEXIBLECOLLIMATOR</code> extends this with a small shape-description language. The supported primitive and composition commands are:</p>
+<dl>
+<dt><code>rectangle(width, height)</code></dt>
+<dd>
+rectangle centered at the origin.
+</dd>
+<dt><code>ellipse(width, height)</code></dt>
+<dd>
+ellipse centered at the origin.
+</dd>
+<dt><code>polygon(x0, y0; x1, y1; ...; xN, yN)</code></dt>
+<dd>
+polygon whose final point is implicitly connected back to the first point. The polygon is triangulated internally, so self-crossing edges are not allowed.
+</dd>
+<dt><code>mask('filename.pbm', width, height)</code></dt>
+<dd>
+black-and-white <code>PBM</code> bitmap mask. White pixels stop particles.
+</dd>
+<dt><code>translate(command, shiftx, shifty)</code></dt>
+<dd>
+translate a shape by <code>(shiftx, shifty)</code>.
+</dd>
+<dt><code>rotate(command, angle)</code></dt>
+<dd>
+rotate a shape about the origin.
+</dd>
+<dt><code>union(command1, command2, ...)</code></dt>
+<dd>
+union of several shape definitions.
+</dd>
+<dt><code>difference(command1, command2)</code></dt>
+<dd>
+particles pass <code>command1</code> but not <code>command2</code>.
+</dd>
+<dt><code>symmetric_difference(command1, command2)</code></dt>
+<dd>
+particles pass either command but not both at the same time.
+</dd>
+<dt><code>intersection(command1, command2)</code></dt>
+<dd>
+particles pass both commands simultaneously.
+</dd>
+<dt><code>repeat(command, N, shiftx, shifty)</code></dt>
+<dd>
+repeat a shape <code>N</code> times with a translational offset.
+</dd>
+<dt><code>repeat(command, N, angle)</code></dt>
+<dd>
+repeat a shape <code>N</code> times with successive rotation.
+</dd>
+</dl>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-difference">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-difference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/difference.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-difference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.3: Illustration of a difference between two circles.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-symmetric-difference">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-symmetric-difference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/symmetric_difference.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-symmetric-difference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.4: Illustration of a symmetric difference between two circles.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-intersection">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-intersection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/intersection.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-intersection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.5: Illustration of an intersection between two circles.
+</figcaption>
+</figure>
+</div>
+<p>The expression language supports the following constants and functions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constants and functions</th>
+<th>Constants and functions</th>
+<th>Constants and functions</th>
+<th>Constants and functions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>e</code></td>
+<td><code>pi</code></td>
+<td><code>abs(x)</code></td>
+<td><code>acos(x)</code></td>
+</tr>
+<tr class="even">
+<td><code>acosh(x)</code></td>
+<td><code>asin(x)</code></td>
+<td><code>asinh(x)</code></td>
+<td><code>atan(x)</code></td>
+</tr>
+<tr class="odd">
+<td><code>atanh(x)</code></td>
+<td><code>cbrt(x)</code></td>
+<td><code>ceil(x)</code></td>
+<td><code>cos(x)</code></td>
+</tr>
+<tr class="even">
+<td><code>cosh(x)</code></td>
+<td><code>deg2rad(x)</code></td>
+<td><code>erf(x)</code></td>
+<td><code>erfc(x)</code></td>
+</tr>
+<tr class="odd">
+<td><code>exp(x)</code></td>
+<td><code>exp2(x)</code></td>
+<td><code>floor(x)</code></td>
+<td><code>isinf(x)</code></td>
+</tr>
+<tr class="even">
+<td><code>isnan(x)</code></td>
+<td><code>log(x)</code></td>
+<td><code>log2(x)</code></td>
+<td><code>log10(x)</code></td>
+</tr>
+<tr class="odd">
+<td><code>rad2deg(x)</code></td>
+<td><code>round(x)</code></td>
+<td><code>sgn(x)</code></td>
+<td><code>sin(x)</code></td>
+</tr>
+<tr class="even">
+<td><code>sinh(x)</code></td>
+<td><code>sqrt(x)</code></td>
+<td><code>tan(x)</code></td>
+<td><code>tanh(x)</code></td>
+</tr>
+<tr class="odd">
+<td><code>tgamma(x)</code></td>
+<td><code>atan2(y,x)</code></td>
+<td><code>max(x,y)</code></td>
+<td><code>min(x,y)</code></td>
+</tr>
+<tr class="even">
+<td><code>pow(x,n)</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>A simple elliptic collimator can be described by:</p>
+<pre class="text"><code>ellipse(0.04, 0.03)</code></pre>
+<p>A regular pepper-pot with rectangular holes can be described by:</p>
+<pre class="text"><code>repeat(
+       repeat(
+              translate(
+                        rotate(
+                               rectangle(
+                                         0.002,
+                                         0.002
+                                        ),
+                               0.78539
+                              ),
+                        -0.028,
+                        -0.028
+                       ),
+              16,
+              0.004,
+              0.0
+             ),
+       16,
+       0.0,
+       0.004
+      )</code></pre>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-pepperpot">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-pepperpot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/pepperpot.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-pepperpot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.6: Pepper-pot with rectangular holes.
+</figcaption>
+</figure>
+</div>
+<p>In <code>FLEXIBLECOLLIMATOR</code>, the hole description can be supplied directly through <code>DESCRIPTION</code> or through an external file specified by <code>FNAME</code>. The external file form is the one that allows comments and line breaks.</p>
+</section>
+<section class="level3" data-number="10.14.2" id="opal-cycl-mode-1">
+<h3 class="anchored" data-anchor-id="opal-cycl-mode-1" data-number="10.14.2"><span class="header-section-number">10.14.2</span> OPAL-cycl mode</h3>
+<p>Only <code>CCOLLIMATOR</code> is available in OPAL-cycl. It is a radial rectangular collimator that may absorb or scatter particles using the particle-matter interaction module.</p>
+<dl>
+<dt><code>XSTART</code>, <code>XEND</code>, <code>YSTART</code>, <code>YEND</code></dt>
+<dd>
+start and end points of the collimator edge in <code>mm</code>.
+</dd>
+<dt><code>ZSTART</code>, <code>ZEND</code></dt>
+<dd>
+vertical bounds in <code>mm</code>.
+</dd>
+<dt><code>WIDTH</code></dt>
+<dd>
+collimator width in <code>mm</code>.
+</dd>
+</dl>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-collimator">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-collimator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/collimator.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-collimator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.7: Cyclotron <code>CCOLLIMATOR</code> geometry.
+</figcaption>
+</figure>
+</div>
+<p>Example:</p>
+<pre class="text"><code>REAL y1=-0.0;
+REAL y2=0.0;
+REAL y3=200.0;
+REAL y4=205.0;
+REAL x1=-215.0;
+REAL x2=-220.0;
+REAL x3=0.0;
+REAL x4=0.0;
+
+cmphys: PARTICLEMATTERINTERACTION, TYPE=SCATTERING, MATERIAL=COPPER;
+
+cma1: CCOLLIMATOR, XSTART=x1, XEND=x2, YSTART=y1, YEND=y2,
+      ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
+
+cma2: CCOLLIMATOR, XSTART=x3, XEND=x4, YSTART=y3, YEND=y4,
+      ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;</code></pre>
+</section>
+</section>
+<section class="level2 feature-opal" data-number="10.15" id="correctors">
+<h2 class="anchored" data-anchor-id="correctors" data-number="10.15"><span class="header-section-number">10.15</span> Correctors</h2>
+<p>Three types of correctors are available:</p>
+<ul>
+<li><code>HKICKER</code>: horizontal corrector</li>
+<li><code>VKICKER</code>: vertical corrector</li>
+<li><code>KICKER</code>: combined horizontal and vertical corrector</li>
+</ul>
+<p>They are defined as:</p>
+<pre class="text"><code>label: HKICKER, TYPE=string, APERTURE=real-vector,
+      L=real, KICK=real;
+label: VKICKER, TYPE=string, APERTURE=real-vector,
+      L=real, KICK=real;
+label: KICKER, TYPE=string, APERTURE=real-vector,
+      L=real, HKICK=real, VKICK=real;</code></pre>
+<p>Attributes:</p>
+<dl>
+<dt><code>KICK</code></dt>
+<dd>
+kick angle in <code>rad</code> for <code>HKICKER</code> or <code>VKICKER</code>.
+</dd>
+<dt><code>HKICK</code>, <code>VKICK</code></dt>
+<dd>
+horizontal and vertical kick angles for <code>KICKER</code>.
+</dd>
+<dt><code>DESIGNENERGY</code></dt>
+<dd>
+if set, fixes the magnetic field magnitude using the given design energy in <code>MeV</code> and the requested kick angle.
+</dd>
+</dl>
+<p>A positive kick increases <span class="math inline">\(p_x\)</span> or <span class="math inline">\(p_y\)</span> respectively.</p>
+<p>Examples:</p>
+<pre class="text"><code>HK1: HKICKER, KICK=0.001;
+VK3: VKICKER, KICK=0.0005;
+KHV: KICKER,  HKICK=0.001, VKICK=0.0005;</code></pre>
+<p>Correctors do not change the reference trajectory. Otherwise they are implemented like <code>RBEND</code> with <code>E1 = 0</code> and without fringe fields.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.16" id="bending-magnets">
+<h2 class="anchored" data-anchor-id="bending-magnets" data-number="10.16"><span class="header-section-number">10.16</span> Bending Magnets</h2>
+<p>Legacy OPAL supports four bend families:</p>
+<ul>
+<li><code>RBEND</code> for rectangular bends in OPAL-T</li>
+<li><code>RBEND3D</code> for rectangular bends with field-map support in OPAL-T</li>
+<li><code>SBEND</code> for sector bends in OPAL-T</li>
+<li><code>SBEND3D</code> for 3D field-map bends in OPAL-cycl</li>
+</ul>
+<p><code>RBEND</code> and <code>SBEND</code> share the same basic dipole semantics but differ in their reference geometry. <code>RBEND</code> has parallel pole faces and an exit angle fixed by <code>ANGLE - E1</code>; <code>SBEND</code> uses a sector reference arc and supports independent entrance and exit edge angles.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-rbend">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-rbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/rbend.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-rbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.8: Rectangular bend geometry with positive bend angle and positive entrance edge angle.
+</figcaption>
+</figure>
+</div>
+<section class="level3" data-number="10.16.1" id="rbend">
+<h3 class="anchored" data-anchor-id="rbend" data-number="10.16.1"><span class="header-section-number">10.16.1</span> <code>RBEND</code></h3>
+<p>Key attributes are:</p>
+<ul>
+<li><code>L</code>: physical magnet length</li>
+<li><code>GAP</code>: full vertical gap</li>
+<li><code>HAPERT</code>: non-bend-plane aperture</li>
+<li><code>ANGLE</code>: bend angle in <code>rad</code></li>
+<li><code>K0</code>, <code>K0S</code>: normal and skew dipole field amplitudes in <code>T</code></li>
+<li><code>E1</code>: entrance edge angle</li>
+<li><code>DESIGNENERGY</code>: reference-particle energy in <code>MeV</code></li>
+<li><code>FMAPFN</code>: fringe-field map, typically <code>1DProfile1</code></li>
+</ul>
+<p>If <code>ANGLE</code> is set, it overrides <code>K0</code> and OPAL adjusts the field strength to bend the design particle through the requested angle.</p>
+</section>
+<section class="level3" data-number="10.16.2" id="rbend3d">
+<h3 class="anchored" data-anchor-id="rbend3d" data-number="10.16.2"><span class="header-section-number">10.16.2</span> <code>RBEND3D</code></h3>
+<p><code>RBEND3D</code> keeps the rectangular bend geometry but uses explicit field-map support for the field model. The input attributes follow the same geometric meaning as <code>RBEND</code>, and the entrance/exit pole-face interpretation stays the same.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-sbend">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/sbend.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.9: Sector bend geometry with independent entrance and exit edge angles.
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="level3" data-number="10.16.3" id="sbend">
+<h3 class="anchored" data-anchor-id="sbend" data-number="10.16.3"><span class="header-section-number">10.16.3</span> <code>SBEND</code></h3>
+<p><code>SBEND</code> is the sector-bend version. The main difference is the interpretation of <code>L</code>: it is the chord length of the bend reference arc, <span class="math display">\[
+L = 2 R \sin(\alpha/2)
+\]</span> and the element has both <code>E1</code> and <code>E2</code> as independent edge angles. Very large bend angles are possible, but once the entrance and exit fringe regions begin to overlap, the approximation becomes unreliable.</p>
+</section>
+<section class="level3" data-number="10.16.4" id="bend-setup-rules-in-opal-t">
+<h3 class="anchored" data-anchor-id="bend-setup-rules-in-opal-t" data-number="10.16.4"><span class="header-section-number">10.16.4</span> Bend setup rules in OPAL-T</h3>
+<p>The original manual emphasizes the following practical points:</p>
+<ol type="1">
+<li>Internally OPAL-T treats all bends as positive bends in the local reference frame and then uses <code>ROTATION</code> to orient them in the laboratory transverse plane.</li>
+<li>If <code>ANGLE</code> is nonzero, <code>K0</code> and <code>K0S</code> are ignored.</li>
+<li>When <code>ANGLE</code> is used to define the bend strength, the actual beam bend still depends on whether the bunch energy matches <code>DESIGNENERGY</code>.</li>
+<li>The hard-edge geometry defines the ideal reference trajectory, while the <code>FMAPFN</code> field map defines the soft-edge magnet seen by tracked particles.</li>
+<li>If the default field map <code>1DPROFILE1-DEFAULT</code> is used, OPAL shifts the fringe-field origins so that the effective length of the soft-edge magnet matches the ideal hard-edge reference bend.</li>
+</ol>
+</section>
+<section class="level3" data-number="10.16.5" id="rbend-and-sbend-examples">
+<h3 class="anchored" data-anchor-id="rbend-and-sbend-examples" data-number="10.16.5"><span class="header-section-number">10.16.5</span> <code>RBEND</code> and <code>SBEND</code> examples</h3>
+<p>A simple <code>RBEND</code> driven by <code>ANGLE</code> and the default fringe-field map is:</p>
+<pre class="text"><code>Bend: RBEND, ANGLE = 30.0 * Pi / 180.0,
+      FMAPFN = "1DPROFILE1-DEFAULT",
+      ELEMEDGE = 0.25,
+      DESIGNENERGY = 10.0E6,
+      L = 0.5, GAP = 0.02;</code></pre>
+<p>For an electron design beam this produces a 30 degree positive bend, a 1 m reference radius, and a field amplitude of about <code>-0.0350195 T</code>. The important part of the diagnostic output is the final fringe-field integration report, which tells the user the actual bend angle of the reference particle through the soft-edge magnet.</p>
+<p>The same bend can be defined through <code>K0</code> instead of <code>ANGLE</code>:</p>
+<pre class="text"><code>Bend: RBEND, K0 = -0.0350195,
+      FMAPFN = "1DPROFILE1-DEFAULT",
+      ELEMEDGE = 0.25,
+      DESIGNENERGY = 10.0E6,
+      L = 0.5, GAP = 0.02;</code></pre>
+<p>To numerical precision this reproduces the same geometry and field.</p>
+<p>To bend in the opposite direction, the legacy manual gives four equivalent patterns:</p>
+<pre class="text"><code>Bend: RBEND, ANGLE = -30.0 * Pi / 180.0,
+             FMAPFN = "1DPROFILE1-DEFAULT",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             L = 0.5, GAP = 0.02;
+
+Bend: RBEND, ANGLE = 30.0 * Pi / 180.0,
+             FMAPFN = "1DPROFILE1-DEFAULT",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             L = 0.5, GAP = 0.02,
+             ROTATION = Pi;
+
+Bend: RBEND, K0 = 0.0350195,
+             FMAPFN = "1DPROFILE1-DEFAULT",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             L = 0.5, GAP = 0.02;
+
+Bend: RBEND, K0 = -0.0350195,
+             FMAPFN = "1DPROFILE1-DEFAULT",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             L = 0.5, GAP = 0.02,
+             ROTATION = Pi;</code></pre>
+<p>The recommended style is to define the bend in the positive reference orientation and then use <code>ROTATION</code> to place it elsewhere in the transverse plane.</p>
+<p>A representative four-dipole chicane setup is:</p>
+<pre class="text"><code>Bend1: RBEND, ANGLE = 20.0 * Pi / 180.0,
+              E1 = 0.0,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 0.25,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
+              ROTATION = Pi;
+
+Bend2: RBEND, ANGLE = 20.0 * Pi / 180.0,
+              E1 = 20.0 * Pi / 180.0,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 1.0,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
+              ROTATION = 0.0;
+
+Bend3: RBEND, ANGLE = 20.0 * Pi / 180.0,
+              E1 = 0.0,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 1.5,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
+              ROTATION = 0.0;
+
+Bend4: RBEND, ANGLE = 20.0 * Pi / 180.0,
+              E1 = 20.0 * Pi / 180.0,
+              FMAPFN = "1DPROFILE1-DEFAULT",
+              ELEMEDGE = 2.25,
+              DESIGNENERGY = 10.0E6,
+              L = 0.25,
+              GAP = 0.02,
+              ROTATION = Pi;</code></pre>
+<p><code>SBEND</code> can be used in the same role once <code>L</code>, <code>E1</code>, and <code>E2</code> are interpreted using the sector-bend geometry.</p>
+</section>
+<section class="level3" data-number="10.16.6" id="custom-1dprofile1-bend-maps">
+<h3 class="anchored" data-anchor-id="custom-1dprofile1-bend-maps" data-number="10.16.6"><span class="header-section-number">10.16.6</span> Custom <code>1DProfile1</code> bend maps</h3>
+<p>The source manual distinguishes two <code>1DProfile1</code> usage modes:</p>
+<ol type="1">
+<li>the map defines both the fringe fields and the magnet length,</li>
+<li>the map defines only the fringe fields and the element <code>L</code> defines the body length.</li>
+</ol>
+<p>In the first mode, a custom map can define an <code>SBEND</code> without supplying <code>L</code> in order to preserve the exit fringe placement:</p>
+<pre class="text"><code>1DProfile1 1 1 2.0
+ -10.0  0.0  10.0 1
+  15.0  25.0 35.0 1
+  0.00000E+00
+  2.00000E+00
+  0.00000E+00
+  2.00000E+00</code></pre>
+<pre class="text"><code>Bend: SBEND, ANGLE = 60.0 * Pi / 180.0,
+             E1 = -10.0 * Pi / 180.0,
+             E2 = 20.0 * Pi / 180.0,
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             GAP = 0.02;</code></pre>
+<p>In the second mode, the field map contains only the entrance and exit fringe profiles and the magnet body is set by <code>L</code>:</p>
+<pre class="text"><code>1DProfile1 1 1 2.0
+ -10.0  0.0  10.0 1
+ -10.0  0.0  10.0 1
+  0.00000E+00
+  2.00000E+00
+  0.00000E+00
+  2.00000E+00</code></pre>
+<pre class="text"><code>Bend: SBEND, ANGLE = 60.0 * Pi / 180.0,
+             E1 = -10.0 * Pi / 180.0,
+             E2 = 20.0 * Pi / 180.0,
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             L = 0.25,
+             GAP = 0.02;</code></pre>
+<p>With <code>ANGLE</code>, OPAL adjusts the field amplitude so that the reference particle is bent by the requested amount after the fringe fields are included. With <code>K0</code>, that compensation is not automatic:</p>
+<pre class="text"><code>Bend: SBEND, K0 = -0.1400778,
+             E1 = -10.0 * Pi / 180.0,
+             E2 = 20.0 * Pi / 180.0,
+             FMAPFN = "TEST-MAP.T7",
+             ELEMEDGE = 0.25,
+             DESIGNENERGY = 10.0E6,
+             L = 0.25,
+             GAP = 0.02;</code></pre>
+<p>In the original example this produces a small bend mismatch because the soft-edge effective length no longer matches the ideal hard-edge reference magnet. The manual then corrects this by moving the entrance and exit Enge origins outward by <code>0.03026 mm</code>:</p>
+<pre class="text"><code>1DProfile1 1 1 2.0
+ -10.0  -0.03026  10.0 1
+ -10.0   0.03026  10.0 1
+  0.00000E+00
+  2.00000E+00
+  0.00000E+00
+  2.00000E+00</code></pre>
+<p>This increases the effective magnet length until the final tracked bend of the reference particle matches the desired 60 degree design bend again.</p>
+</section>
+<section class="level3" data-number="10.16.7" id="bend-fields-from-1dprofile1">
+<h3 class="anchored" data-anchor-id="bend-fields-from-1dprofile1" data-number="10.16.7"><span class="header-section-number">10.16.7</span> Bend fields from <code>1DProfile1</code></h3>
+<p>For <code>RBEND</code> and <code>SBEND</code>, OPAL-T divides the field into three regions:</p>
+<ol type="1">
+<li>entrance fringe field</li>
+<li>central field region</li>
+<li>exit fringe field</li>
+</ol>
+<p>The fringe regions are modeled from the <code>1DProfile1</code> Enge functions associated with <code>FMAPFN</code>.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-enge-profile">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-enge-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/Enge-func-plot.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-enge-profile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.10: Entrance fringe field profile corresponding to the default Enge parameters.
+</figcaption>
+</figure>
+</div>
+<p>The Enge function is <span class="math display">\[
+F(z) = \frac{1}{1 + e^{\sum_{n=0}^{N_{\mathrm{order}}} c_n (z/D)^n}}
+\]</span> where <code>D</code> is the full magnet gap, <code>N_order</code> is the Enge order, and <code>z</code> is the perpendicular distance from the chosen fringe-field origin to the magnet face.</p>
+<p>For a positive bend OPAL-T works with:</p>
+<ul>
+<li><code>B_0</code>: dipole field amplitude,</li>
+<li><code>R</code>: bend radius,</li>
+<li><code>n = -(R/B_y)(\partial B_y/\partial x)</code>: field index set from <code>K1</code>,</li>
+<li><code>F(\Delta_z)</code>: the entrance, central, or exit Enge profile depending on the particle position.</li>
+</ul>
+<p>The transverse-local coordinates are:</p>
+<ul>
+<li><code>y</code>: vertical offset from the magnet mid-plane,</li>
+<li><code>\Delta_x</code>: perpendicular distance from the reference trajectory in the bend plane,</li>
+<li><code>\Delta_z</code>: perpendicular distance from the entrance or exit fringe-field origin.</li>
+</ul>
+<p>Starting from <span class="math display">\[
+\nabla \cdot \vec{B} = 0,
+\qquad
+\nabla \times \vec{B} = 0,
+\]</span> and defining <span class="math display">\[
+F' = \frac{dF}{dz},
+\qquad
+F'' = \frac{d^2F}{dz^2},
+\qquad
+F''' = \frac{d^3F}{dz^3},
+\]</span> one may write the exact off-axis field in terms of <span class="math display">\[
+\kappa(\Delta_z) = \sqrt{\frac{n^2}{R^2} + \frac{F''(\Delta_z)}{F(\Delta_z)}}.
+\]</span> Then <span class="math display">\[
+\begin{aligned}
+B_x(\Delta_x,y,\Delta_z) &amp;= -B_0 \frac{n}{R} e^{-n\Delta_x/R}
+\frac{F(\Delta_z)}{\kappa(\Delta_z)} \sin\!\bigl(\kappa(\Delta_z)y\bigr), \\\\
+B_y(\Delta_x,y,\Delta_z) &amp;= B_0 e^{-n\Delta_x/R}
+\cos\!\bigl(\kappa(\Delta_z)y\bigr) F(\Delta_z), \\\\
+B_z(\Delta_x,y,\Delta_z) &amp;= B_0 e^{-n\Delta_x/R}
+\Biggl[
+\frac{F'\!(\Delta_z)}{\kappa(\Delta_z)}\sin\!\bigl(\kappa(\Delta_z)y\bigr)
+- \frac{1}{2\kappa(\Delta_z)}
+\left(F'''\!(\Delta_z) - \frac{F'\!(\Delta_z)F''\!(\Delta_z)}{F(\Delta_z)}\right)
+\left(
+\frac{\sin\!\bigl(\kappa(\Delta_z)y\bigr)}{\kappa(\Delta_z)^2}
+- y\frac{\cos\!\bigl(\kappa(\Delta_z)y\bigr)}{\kappa(\Delta_z)}
+\right)
+\Biggr].
+\end{aligned}
+\]</span> For tracking, OPAL-T uses the small-<code>y</code> expansion up to <code>O(y^2)</code>.</p>
+<p>In the fringe regions: <span class="math display">\[
+\begin{aligned}
+B_x &amp;\approx -B_0 \frac{n}{R} e^{-n\Delta_x/R} y, \\\\
+B_y &amp;\approx B_0 e^{-n\Delta_x/R}
+\left[F(\Delta_z) - \left(\frac{n^2}{R^2}F(\Delta_z) + F''\!(\Delta_z)\right)\frac{y^2}{2}\right], \\\\
+B_z &amp;\approx B_0 e^{-n\Delta_x/R} y F'\!(\Delta_z).
+\end{aligned}
+\]</span> In the central region: <span class="math display">\[
+\begin{aligned}
+B_x &amp;\approx -B_0 \frac{n}{R} e^{-n\Delta_x/R} y, \\\\
+B_y &amp;\approx B_0 e^{-n\Delta_x/R}\left(1 - \frac{n^2}{R^2}\frac{y^2}{2}\right), \\\\
+B_z &amp;\approx 0.
+\end{aligned}
+\]</span> These are the expressions OPAL-T uses internally after it determines whether a particle is in the entrance fringe, body, or exit fringe region.</p>
+</section>
+<section class="level3" data-number="10.16.8" id="default-bend-field-map">
+<h3 class="anchored" data-anchor-id="default-bend-field-map" data-number="10.16.8"><span class="header-section-number">10.16.8</span> Default bend field map</h3>
+<p>When <code>FMAPFN="1DPROFILE1-DEFAULT"</code>, OPAL uses built-in Enge coefficients for both the entrance and exit fringe regions. The default map corresponds to a 2 cm gap, which may be overridden by the element <code>GAP</code> attribute.</p>
+<p>The coefficients are: <span class="math display">\[
+\begin{aligned}
+c_0 &amp;= 0.478959, &amp; c_1 &amp;= 1.911289, &amp; c_2 &amp;= -1.185953, \\
+c_3 &amp;= 1.630554, &amp; c_4 &amp;= -1.082657, &amp; c_5 &amp;= 0.318111.
+\end{aligned}
+\]</span></p>
+<p>The equivalent explicit <code>1DProfile1</code> map is:</p>
+<pre class="text"><code>1DProfile1 5 5 2.0
+ -10.0 0.0 10.0 1
+ -10.0 0.0 10.0 1
+  0.478959
+  1.911289
+ -1.185953
+  1.630554
+ -1.082657
+  0.318111
+  0.478959
+  1.911289
+ -1.185953
+  1.630554
+ -1.082657
+  0.318111</code></pre>
+</section>
+<section class="level3" data-number="10.16.9" id="sbend3d">
+<h3 class="anchored" data-anchor-id="sbend3d" data-number="10.16.9"><span class="header-section-number">10.16.9</span> <code>SBEND3D</code></h3>
+<p><code>SBEND3D</code> is the OPAL-cycl field-map bend. It is defined by:</p>
+<pre class="text"><code>label: SBEND3D, FMAPFN=string, LENGTH_UNITS=real, FIELD_UNITS=real;</code></pre>
+<dl>
+<dt><code>FMAPFN</code></dt>
+<dd>
+3D magnetic field-map file.
+</dd>
+<dt><code>LENGTH_UNITS</code></dt>
+<dd>
+scaling for the map coordinates.
+</dd>
+<dt><code>FIELD_UNITS</code></dt>
+<dd>
+scaling for the field values.
+</dd>
+</dl>
+<p>The field map is stored in Cartesian field components but arranged on a cylindrical <code>(r, z, \theta)</code> grid. The expected column ordering is <span class="math inline">\((x, z, y, B_x, B_z, B_y)\)</span>. <code>SBEND3D</code> assumes dipole symmetry across the median plane.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-sbend3d">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-sbend3d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/sbend3d.png" style="width:80.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-sbend3d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.11: Example 3D dipole field map used with <code>SBEND3D</code>.
+</figcaption>
+</figure>
+</div>
+<p>Example:</p>
+<pre class="text"><code>Dipole: SBEND3D, FMAPFN="90degree_Dipole_Magnet.out",
+        LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;</code></pre>
+</section>
+</section>
+<section class="level2 feature-opalx" data-number="10.17" id="sec-elements-bends">
+<h2 class="anchored" data-anchor-id="sec-elements-bends" data-number="10.17"><span class="header-section-number">10.17</span> Analytic sector and rectangular bends</h2>
+<p>The current OPALX-native analytic <code>SBEND</code> and <code>RBEND</code> implementation is a field-based bend model with explicit body placement, explicit field-support extent, and first-order fringe optics. The implementation does not replace bend tracking by transfer matrices. Instead, the reference particle and the bunch are integrated through the magnetic field that is evaluated in the local bend chart.</p>
+<section class="level3" data-number="10.17.1" id="body-extent-and-field-support-extent">
+<h3 class="anchored" data-anchor-id="body-extent-and-field-support-extent" data-number="10.17.1"><span class="header-section-number">10.17.1</span> Body extent and field-support extent</h3>
+<p>The <strong>nominal body extent</strong> is the placed hardware interval <span class="math display">\[
+z \in [0, L],
+\]</span> where (L) is the body length used for placement, body ports, and geometry export.</p>
+<p>The <strong>field-support extent</strong> may extend beyond the body through entry and exit fringe regions, <span class="math display">\[
+z \in [-\ell_{\mathrm{entry}},\, L + \ell_{\mathrm{exit}}],
+\]</span> with <span class="math display">\[
+\ell_{\mathrm{entry}} = \frac{h_{\mathrm{gap}} F_{\mathrm{int}}}{|\cos E_1|},
+\qquad
+\ell_{\mathrm{exit}} = \frac{h_{\mathrm{gap}} F_{\mathrm{int}}}{|\cos E_2|}.
+\]</span> Here (h_{}) is the half gap (<code>HGAP</code>), (F_{}) is the fringe integral (<code>FINT</code>), and (E_1), (E_2) are the entrance and exit pole-face angles. If <code>HGAP</code> is not given, OPALX uses the fallback <span class="math display">\[
+h_{\mathrm{gap}} = \frac{\mathrm{GAP}}{2}.
+\]</span></p>
+<p>The body extent drives placement and visualization. The field-support extent drives field evaluation, active-set occupancy, and timestep sanity checks.</p>
+</section>
+<section class="level3" data-number="10.17.2" id="effective-field-length-and-bend-normalization">
+<h3 class="anchored" data-anchor-id="effective-field-length-and-bend-normalization" data-number="10.17.2"><span class="header-section-number">10.17.2</span> Effective field length and bend normalization</h3>
+<p>The implemented fringe-support model uses a linear hard-edge ramp at both faces. The effective field length is therefore defined as <span class="math display">\[
+L_{\mathrm{eff}} = L_{\mathrm{ref}} +
+\frac{\ell_{\mathrm{entry}} + \ell_{\mathrm{exit}}}{2},
+\]</span> where (L_{}) is the body length measured along the design reference path.</p>
+<p>For <code>SBEND</code>, the design reference-path body length equals the sector-bend body length, <span class="math display">\[
+L_{\mathrm{ref}}^{\mathrm{SBEND}} = L.
+\]</span> For <code>RBEND</code>, the design reference-path body length is the curved reference-path length between the rotated entrance and exit faces, <span class="math display">\[
+L_{\mathrm{ref}}^{\mathrm{RBEND}} = L_{\mathrm{arc}},
+\]</span> not the straight body chord.</p>
+<p><code>ANGLE</code> is the primary geometric input. The analytic dipole coefficient is normalized against the effective field length, <span class="math display">\[
+k_0 = \frac{\theta}{L_{\mathrm{eff}}},
+\]</span> with total bend angle (). <code>K0</code> is treated only as a secondary consistency-check quantity.</p>
+</section>
+<section class="level3" data-number="10.17.3" id="longitudinal-field-profile">
+<h3 class="anchored" data-anchor-id="longitudinal-field-profile" data-number="10.17.3"><span class="header-section-number">10.17.3</span> Longitudinal field profile</h3>
+<p>The body field is multiplied by a longitudinal scale function ((z)) defined by <span class="math display">\[
+\lambda(z) =
+\begin{cases}
+0, &amp; z &lt; -\ell_{\mathrm{entry}}, \\
+\dfrac{z + \ell_{\mathrm{entry}}}{\ell_{\mathrm{entry}}},
+&amp; -\ell_{\mathrm{entry}} \le z \le 0, \\
+1, &amp; 0 \le z \le L, \\
+\dfrac{L + \ell_{\mathrm{exit}} - z}{\ell_{\mathrm{exit}}},
+&amp; L \le z \le L + \ell_{\mathrm{exit}}, \\
+0, &amp; z &gt; L + \ell_{\mathrm{exit}}.
+\end{cases}
+\]</span></p>
+<p>This is a field-support model, not a body-length remapping. Particles begin to see the bend field at <code>FIELD BEGIN</code>, not necessarily at <code>ENTRY EDGE</code>.</p>
+</section>
+<section class="level3" data-number="10.17.4" id="first-order-fringe-optics">
+<h3 class="anchored" data-anchor-id="first-order-fringe-optics" data-number="10.17.4"><span class="header-section-number">10.17.4</span> First-order fringe optics</h3>
+<p>In addition to the longitudinal field ramp, the implementation includes a first-order edge-focusing model. With signed curvature <span class="math display">\[
+h = \frac{\theta}{L_{\mathrm{eff}}},
+\]</span> the horizontal hard-edge relation is <span class="math display">\[
+x'_{\mathrm{out}} = x'_{\mathrm{in}} + h \tan(E)\,x.
+\]</span></p>
+<p>The vertical edge focusing includes the standard fringe correction <span class="math display">\[
+\psi = h\,h_{\mathrm{gap}}\,F_{\mathrm{int}}
+\frac{1 + \sin^2(E)}{\cos(E)},
+\]</span> so the implemented vertical law is <span class="math display">\[
+y'_{\mathrm{out}} = y'_{\mathrm{in}} - h \tan(E - \psi)\,y.
+\]</span></p>
+<p>In OPALX these optics effects are realized through an equivalent distributed fringe-field correction across the entry and exit support regions. The model is therefore field-based and first-order accurate in the edge optics, but it is not yet a full three-dimensional fringe-field model.</p>
+</section>
+<section class="level3" data-number="10.17.5" id="sliced-bend-model">
+<h3 class="anchored" data-anchor-id="sliced-bend-model" data-number="10.17.5"><span class="header-section-number">10.17.5</span> Sliced Bend Model</h3>
+<p>The current analytic <code>SBEND</code> and <code>RBEND</code> field model is already expressed in the local bend chart and is used consistently for the reference particle. The remaining many-particle tracking problem is geometric rather than magnetic: a quadrupole can be tracked in one rigid local frame, while a bend requires a local chart whose tangent direction rotates along the design path. The planned many-particle bend tracker therefore replaces a single rigid bend frame by a set of short rigid <strong>tracking slices</strong>.</p>
+<p>The guiding idea is to make bend tracking follow the same Kokkos execution pattern as a straight multipole:</p>
+<ul>
+<li>transform the particle container into one local frame,</li>
+<li>evaluate the field locally with a Kokkos kernel,</li>
+<li>transform back.</li>
+</ul>
+<section class="level4" id="slice-geometry">
+<h4 class="anchored" data-anchor-id="slice-geometry">Slice geometry</h4>
+<p>Let (s) denote the longitudinal coordinate along the bend design reference path. The reference path is split into (N) slices with intervals <span class="math display">\[
+I_j = [s_j, s_{j+1}], \qquad j = 0, \dots, N-1,
+\]</span> and slice length <span class="math display">\[
+\Delta s_j = s_{j+1} - s_j.
+\]</span></p>
+<p>Each slice is represented by a rigid local frame attached at the slice center. Within a slice, particle coordinates are approximated in a straight local tangent chart; the approximation becomes exact in the limit of sufficiently small slice size.</p>
+</section>
+<section class="level4" id="body-entry-fringe-and-exit-fringe-slices">
+<h4 class="anchored" data-anchor-id="body-entry-fringe-and-exit-fringe-slices">Body, entry-fringe, and exit-fringe slices</h4>
+<p>The slice construction must respect the field-support extent rather than only the placed body extent. In the local bend chart the three tracking regions are the entry fringe, the body, and the exit fringe. The body slices carry the full field scale, while the fringe slices carry the longitudinal ramp.</p>
+</section>
+<section class="level4" id="pole-face-rotations-and-slice-support-lengths">
+<h4 class="anchored" data-anchor-id="pole-face-rotations-and-slice-support-lengths">Pole-face rotations and slice support lengths</h4>
+<p>The pole-face angles (E_1) and (E_2) do not rotate the slice frames. Each slice frame remains tangent to the design path. The pole-face angles only determine:</p>
+<ol type="1">
+<li>how far the entry and exit fringe regions extend in (s),</li>
+<li>what first-order edge focusing strength is distributed over those fringe slices.</li>
+</ol>
+</section>
+</section>
+<section class="level3" data-number="10.17.6" id="code-to-code-and-analytic-comparisons">
+<h3 class="anchored" data-anchor-id="code-to-code-and-analytic-comparisons" data-number="10.17.6"><span class="header-section-number">10.17.6</span> Code-to-code and analytic comparisons</h3>
+<p>The current implementation has been benchmarked against Bmad for:</p>
+<ul>
+<li>a proton <code>SBEND</code> with kinetic energy <code>590 MeV</code>, body length <code>1 m</code>, and bend angle <code>45^\circ</code></li>
+<li>an electron <code>RBEND</code> with kinetic energy <code>1 GeV</code>, rectangular body length <code>1 m</code>, and bend angle <code>45^\circ</code></li>
+</ul>
+<p>For the <code>SBEND</code> benchmark, the OPALX trajectory has also been compared with the analytic circular-orbit solution.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" id="fig-elements-bend-code-comparison">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-bend-code-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid quarto-figure quarto-figure-center figure-img" src="figures/bend_code_comparison.png" style="width:100.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-bend-code-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.12: Comparison of the current OPALX <code>SBEND</code> and <code>RBEND</code> benchmarks against Bmad. The <code>SBEND</code> panel also includes the analytic circular-orbit solution. The right axis in each panel shows (x = x_{} - x_{}).
+</figcaption>
+</figure>
+</div>
+<p>The timestep study for the simple <code>SBEND</code> case is shown below.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" id="fig-elements-sbend-dt-l2">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-sbend-dt-l2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid quarto-figure quarto-figure-center figure-img" src="figures/sbend_dt_l2_error.png" style="width:80.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-sbend-dt-l2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.13: <code>SBEND</code> timestep study using the path-wise (L^2) error between OPALX and the analytic circular-orbit solution. The dashed line shows the theoretical second-order reference decay.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section class="level2 feature-opalx" data-number="10.18" id="sec-elements-multipoles">
+<h2 class="anchored" data-anchor-id="sec-elements-multipoles" data-number="10.18"><span class="header-section-number">10.18</span> Multipole family</h2>
+<p>The OPALX <code>MULTIPOLE</code> implementation is the common straight-magnet path for normal and skew magnetic multipole expansions. The present <code>QUADRUPOLE</code> front-end is a convenience wrapper on top of that common path. A dedicated <code>SEXTUPOLE</code> parser-side wrapper is not present in this checkout; sextupole content is therefore expressed through the generic <code>MULTIPOLE</code> coefficient arrays.</p>
+<section class="level3" data-number="10.18.1" id="field-expansion-and-conventions">
+<h3 class="anchored" data-anchor-id="field-expansion-and-conventions" data-number="10.18.1"><span class="header-section-number">10.18.1</span> Field expansion and conventions</h3>
+<p>The underlying magnetic field class <code>BMultipoleField</code> uses the complex transverse expansion <span class="math display">\[
+B_y + i B_x = \sum_{m=0}^{N-1} (B_m + i A_m) (x + i y)^m,
+\]</span> where:</p>
+<ul>
+<li>(m = 0) is the dipole term</li>
+<li>(m = 1) is the quadrupole term</li>
+<li>(m = 2) is the sextupole term</li>
+<li>(B_m) are normal coefficients</li>
+<li>(A_m) are skew coefficients</li>
+</ul>
+<p>For the first three nontrivial components, the transverse magnetic field is:</p>
+<p><span class="math display">\[
+\text{normal quadrupole:}\qquad
+B_x = B_1\,y,\qquad
+B_y = B_1\,x,
+\]</span></p>
+<p><span class="math display">\[
+\text{skew quadrupole:}\qquad
+B_x = -A_1\,x,\qquad
+B_y = A_1\,y,
+\]</span></p>
+<p><span class="math display">\[
+\text{normal sextupole:}\qquad
+B_x = 2 B_2\,x y,\qquad
+B_y = B_2 (x^2 - y^2),
+\]</span></p>
+<p><span class="math display">\[
+\text{skew sextupole:}\qquad
+B_x = -A_2 (x^2 - y^2),\qquad
+B_y = 2 A_2\,x y.
+\]</span></p>
+</section>
+<section class="level3" data-number="10.18.2" id="multipole">
+<h3 class="anchored" data-anchor-id="multipole" data-number="10.18.2"><span class="header-section-number">10.18.2</span> <code>MULTIPOLE</code></h3>
+<p>The parser-side element <code>OpalMultipole</code> accepts the coefficient arrays:</p>
+<ul>
+<li><code>KN</code>: normal normalized strengths</li>
+<li><code>DKN</code>: normal strength errors</li>
+<li><code>KS</code>: skew normalized strengths</li>
+<li><code>DKS</code>: skew strength errors</li>
+</ul>
+<p>The element semantics are:</p>
+<ul>
+<li>if <code>L != 0</code>, the strengths are interpreted per unit length</li>
+<li>if <code>L == 0</code>, they are interpreted as integrated strengths</li>
+</ul>
+<p>Internally the generic mapping is:</p>
+<p><span class="math display">\[
+\texttt{KN}[0] \to \text{dipole},\qquad
+\texttt{KN}[1] \to \text{quadrupole},\qquad
+\texttt{KN}[2] \to \text{sextupole},
+\]</span></p>
+<p>and likewise for <code>KS</code>.</p>
+</section>
+<section class="level3" data-number="10.18.3" id="quadrupole-1">
+<h3 class="anchored" data-anchor-id="quadrupole-1" data-number="10.18.3"><span class="header-section-number">10.18.3</span> <code>QUADRUPOLE</code></h3>
+<p>The parser-side <code>OpalQuadrupole</code> is not a separate runtime field model. It is a convenience wrapper that instantiates the same <code>MultipoleRep</code> used by <code>MULTIPOLE</code>, but exposes scalar quadrupole attributes instead of full coefficient arrays:</p>
+<ul>
+<li><code>K1</code>, <code>DK1</code>: normal quadrupole strength and error</li>
+<li><code>K1S</code>, <code>DK1S</code>: skew quadrupole strength and error</li>
+</ul>
+<p>The implementation writes those values into the multipole representation as:</p>
+<p><span class="math display">\[
+\texttt{KN} = \{0, K_1\},\qquad
+\texttt{KS} = \{0, K_{1s}\}.
+\]</span></p>
+</section>
+<section class="level3" data-number="10.18.4" id="sextupole-1">
+<h3 class="anchored" data-anchor-id="sextupole-1" data-number="10.18.4"><span class="header-section-number">10.18.4</span> <code>SEXTUPOLE</code></h3>
+<p>There is currently no dedicated <code>OpalSextupole</code> front-end class in this checkout. The sextupole physics is nevertheless available through the generic <code>MULTIPOLE</code> representation by populating the order-2 coefficients:</p>
+<p><span class="math display">\[
+\texttt{KN} = \{0, 0, K_2\},\qquad
+\texttt{KS} = \{0, 0, K_{2s}\}.
+\]</span></p>
+<p>That means the sextupole is currently a configuration of <code>MULTIPOLE</code>, not a distinct parser-side wrapper parallel to <code>QUADRUPOLE</code>.</p>
+</section>
+<section class="level3" data-number="10.18.5" id="runtime-geometry-and-current-implementation-status">
+<h3 class="anchored" data-anchor-id="runtime-geometry-and-current-implementation-status" data-number="10.18.5"><span class="header-section-number">10.18.5</span> Runtime geometry and current implementation status</h3>
+<p>The runtime representation <code>MultipoleRep</code> inherits from <code>Multipole</code> and owns:</p>
+<ul>
+<li>a <code>StraightGeometry</code></li>
+<li>a <code>BMultipoleField</code></li>
+</ul>
+<p>So the current multipole family described here is a straight-element model with field support over <span class="math display">\[
+z \in [0, L].
+\]</span></p>
+<p>One important current detail is that the device-side <code>computeField()</code> kernel still contains explicit special cases only for dipole and quadrupole, while the host-side implementation includes sextupole and higher orders as well. That means:</p>
+<ul>
+<li>the interface is generic up to higher order</li>
+<li>the host/orbit-threader path includes sextupole formulas</li>
+<li>the current device kernel is still more limited than the abstract interface</li>
+</ul>
+</section>
+</section>
+<section class="level2 feature-opal" data-number="10.19" id="cyclotron">
+<h2 class="anchored" data-anchor-id="cyclotron" data-number="10.19"><span class="header-section-number">10.19</span> Cyclotron</h2>
+<pre class="text"><code>label: CYCLOTRON, TYPE=string, CYHARMON=int,
+       PHIINIT=real, PRINIT=real, RINIT=real,
+       SYMMETRY=real, RFFREQ=real, FMAPFN=string;</code></pre>
+<p>The <code>CYCLOTRON</code> object defines the main machine field map, cyclotron symmetry, reference-particle initial conditions, and machine boundaries for cyclotron tracking.</p>
+<p>Key attributes are:</p>
+<dl>
+<dt><code>TYPE</code></dt>
+<dd>
+magnetic-field-map format, for example <code>RING</code>, <code>CARBONCYCL</code>, <code>CYCIAE</code>, <code>AVFEQ</code>, <code>FFA</code>, or <code>BANDRF</code>.
+</dd>
+<dt><code>CYHARMON</code>, <code>RFFREQ</code></dt>
+<dd>
+RF harmonic number and RF frequency.
+</dd>
+<dt><code>FMAPFN</code></dt>
+<dd>
+magnetic field-map file.
+</dd>
+<dt><code>RINIT</code>, <code>PHIINIT</code>, <code>ZINIT</code>, <code>PRINIT</code>, <code>PZINIT</code></dt>
+<dd>
+initial reference-particle position and momentum.
+</dd>
+<dt><code>SYMMETRY</code></dt>
+<dd>
+rotational symmetry fold of the machine.
+</dd>
+<dt><code>MINR</code>, <code>MAXR</code>, <code>MINZ</code>, <code>MAXZ</code></dt>
+<dd>
+machine boundaries used for particle termination.
+</dd>
+<dt><code>TRIMCOIL</code></dt>
+<dd>
+optional list of trim-coil models applied on top of the main field map.
+</dd>
+</dl>
+<p>For <code>TYPE=BANDRF</code>, additional electric-field map arrays can be supplied through <code>RFMAPFN</code>, <code>RFPHI</code>, <code>RFFREQ</code>, <code>ESCALE</code>, and <code>SUPERPOSE</code>.</p>
+<p>Example:</p>
+<pre class="text"><code>ring: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0,
+      PRINIT=-0.000240, RINIT=2131.4, SYMMETRY=8.0,
+      RFFREQ=50.650, FMAPFN="s03av.nar",
+      MAXZ=10, MINZ=-10, MINR=0, MAXR=2500;</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.20" id="ffa-magnet">
+<h2 class="anchored" data-anchor-id="ffa-magnet" data-number="10.20"><span class="header-section-number">10.20</span> FFA Magnet</h2>
+<p>OPAL provides two analytical FFA element families:</p>
+<ul>
+<li><code>SCALINGFFAMAGNET</code> for radially scaling sector magnets</li>
+<li><code>VERTICALFFAMAGNET</code> for vertically scaling magnets</li>
+</ul>
+<section class="level3" data-number="10.20.1" id="scaling-ffa-magnet">
+<h3 class="anchored" data-anchor-id="scaling-ffa-magnet" data-number="10.20.1"><span class="header-section-number">10.20.1</span> Scaling FFA Magnet</h3>
+<p>The scaling FFA model is a fully scaling field model including scaling fringe fields. In cylindrical-polar notation it has the form <span class="math display">\[
+B_\phi = \sum_{n=0} f_{2n+1}(\psi)\, h(r) \left(\frac{z}{r}\right)^{2n+1},
+\]</span> <span class="math display">\[
+B_r = \sum_{n=0} \left[ \frac{k-2n}{2n+1} f_{2n} - \tan(\delta) f_{2n+1} \right] h(r) \left(\frac{z}{r}\right)^{2n+1},
+\]</span> <span class="math display">\[
+B_z = \sum_{n=0} f_{2n}(\psi)\, h(r) \left(\frac{z}{r}\right)^{2n}.
+\]</span> Here <span class="math inline">\(r\)</span> and <span class="math inline">\(z\)</span> are cylindrical coordinates and <span class="math display">\[
+\psi = \phi - \tan(\delta)\ln(r/r_0)
+\]</span> is the azimuth in the spiral coordinate system. <span class="math inline">\(r_0\)</span>, <span class="math inline">\(\delta\)</span>, <span class="math inline">\(k\)</span>, and <span class="math inline">\(B_0\)</span> define the radial field scaling.</p>
+<p>Important attributes are:</p>
+<ul>
+<li><code>B0</code>: nominal dipole field at <code>R0</code> in <code>T</code></li>
+<li><code>R0</code>: radial scale in <code>m</code></li>
+<li><code>FIELD_INDEX</code>: scaling field index</li>
+<li><code>TAN_DELTA</code>: tangent of the spiral angle</li>
+<li><code>MAX_Y_POWER</code>: highest retained vertical power in the expansion</li>
+<li><code>END_LENGTH</code>, <code>CENTRE_LENGTH</code>: fringe and body lengths in <code>m</code></li>
+<li><code>HEIGHT</code>: full vertical aperture</li>
+<li><code>RADIAL_NEG_EXTENT</code>, <code>RADIAL_POS_EXTENT</code>: radial tracking limits about <code>R0</code></li>
+<li><code>MAGNET_START</code>, <code>MAGNET_END</code>: placement of the effective magnet body within the element</li>
+<li><code>AZIMUTHAL_EXTENT</code>: azimuthal support of the field model</li>
+</ul>
+</section>
+<section class="level3" data-number="10.20.2" id="vertical-ffa-magnet">
+<h3 class="anchored" data-anchor-id="vertical-ffa-magnet" data-number="10.20.2"><span class="header-section-number">10.20.2</span> Vertical FFA Magnet</h3>
+<p><code>VERTICALFFAMAGNET</code> is also a fully scaling model including scaling fringe fields, but it uses a vertically scaling exponential field law, <span class="math display">\[
+B_x = \sum_n B_0 e^{mz}\,\frac{1}{m}\,\partial_x f_n\, y^n,
+\]</span> <span class="math display">\[
+B_y = \sum_n B_0 e^{mz}\,\frac{n+1}{m}\, f_{n+1}\, y^n,
+\]</span> <span class="math display">\[
+B_z = \sum_n B_0 e^{mz} f_n y^n.
+\]</span></p>
+<p>Important attributes are:</p>
+<ul>
+<li><code>B0</code>: nominal dipole field at <code>z = 0</code></li>
+<li><code>FIELD_INDEX</code>: vertical scaling index <code>m</code> in <code>m^-1</code></li>
+<li><code>MAX_Y_POWER</code>: maximum retained power in <code>y</code></li>
+<li><code>END_LENGTH</code>, <code>CENTRE_LENGTH</code>: fringe and body lengths</li>
+<li><code>WIDTH</code>: full horizontal aperture</li>
+<li><code>HEIGHT_NEG_EXTENT</code>, <code>HEIGHT_POS_EXTENT</code>: lower and upper vertical limits</li>
+<li><code>BB_LENGTH</code>: bounding-box length used for placement of the next element</li>
+</ul>
+<p>Both FFA families are cyclotron-side restricted features intended for specialized fixed-field ring studies.</p>
+</section>
+</section>
+<section class="level2 feature-opal" data-number="10.21" id="ring-definition">
+<h2 class="anchored" data-anchor-id="ring-definition" data-number="10.21"><span class="header-section-number">10.21</span> Ring Definition</h2>
+<pre class="text"><code>label: RINGDEFINITION,
+       RFFREQ=real, HARMONIC_NUMBER=real, IS_CLOSED=string, SYMMETRY=int,
+       LAT_RINIT=real, LAT_PHIINIT=real, LAT_THETAINIT=real,
+       BEAM_PHIINIT=real, BEAM_THETAINIT=real, BEAM_PRINIT=real, BEAM_RINIT=real;</code></pre>
+<p>A <code>RINGDEFINITION</code> object stores the global properties of a generalized ring. It describes both machine-wide quantities such as harmonic number and the initial relationship between lattice placement and the reference trajectory.</p>
+<p>The element is intended to be used together with <code>SBEND3D</code>, local offsets, and <code>VARIABLE_RF_CAVITY</code> elements to assemble a complete ring.</p>
+<dl>
+<dt><code>RFFREQ</code></dt>
+<dd>
+nominal RF frequency in <code>MHz</code>.
+</dd>
+<dt><code>HARMONIC_NUMBER</code></dt>
+<dd>
+harmonic number, i.e. the number of bunches in a full revolution.
+</dd>
+<dt><code>SYMMETRY</code></dt>
+<dd>
+azimuthal repetition count of the ring cell.
+</dd>
+<dt><code>IS_CLOSED</code></dt>
+<dd>
+set to <code>FALSE</code> to disable ring-closure checking.
+</dd>
+<dt><code>LAT_RINIT</code>, <code>LAT_PHIINIT</code>, <code>LAT_THETAINIT</code></dt>
+<dd>
+initial radius, azimuth, and tangent-angle definition for placement of the first lattice element.
+</dd>
+<dt><code>BEAM_RINIT</code>, <code>BEAM_PHIINIT</code>, <code>BEAM_THETAINIT</code>, <code>BEAM_PRINIT</code></dt>
+<dd>
+initial reference-orbit state.
+</dd>
+<dt><code>MIN_R</code>, <code>MAX_R</code></dt>
+<dd>
+optional radial tracking limits; if either is set, the other should be set as well.
+</dd>
+</dl>
+<p>Example:</p>
+<pre class="text"><code>ringdef: RINGDEFINITION, HARMONIC_NUMBER=6, LAT_RINIT=2350.0,
+         LAT_PHIINIT=0.0, LAT_THETAINIT=0.0, BEAM_PHIINIT=0.0,
+         BEAM_PRINIT=0.0, BEAM_RINIT=2266.0, SYMMETRY=4.0, RFFREQ=0.2;</code></pre>
+<section class="level3" data-number="10.21.1" id="local-cartesian-offset">
+<h3 class="anchored" data-anchor-id="local-cartesian-offset" data-number="10.21.1"><span class="header-section-number">10.21.1</span> Local Cartesian Offset</h3>
+<p><code>LOCAL_CARTESIAN_OFFSET</code> places the next element at an arbitrary position in the coordinate system of the preceding element. It is mainly used to create drift gaps and overlapping placements.</p>
+<ul>
+<li><code>END_POSITION_X</code>, <code>END_POSITION_Y</code>: displacement of the next element start</li>
+<li><code>END_NORMAL_X</code>, <code>END_NORMAL_Y</code>: outgoing element normal in the preceding frame</li>
+</ul>
+</section>
+<section class="level3" data-number="10.21.2" id="local-cylindrical-offset">
+<h3 class="anchored" data-anchor-id="local-cylindrical-offset" data-number="10.21.2"><span class="header-section-number">10.21.2</span> Local Cylindrical Offset</h3>
+<p><code>LOCAL_CYLINDRICAL_OFFSET</code> performs the same task in cylindrical coordinates.</p>
+<ul>
+<li><code>THETA_IN</code>: angle from the previous element to the displacement vector</li>
+<li><code>THETA_OUT</code>: angle from the displacement vector to the next element</li>
+<li><code>LENGTH</code>: offset length</li>
+</ul>
+</section>
+</section>
+<section class="level2 feature-opal" data-number="10.22" id="source">
+<h2 class="anchored" data-anchor-id="source" data-number="10.22"><span class="header-section-number">10.22</span> Source</h2>
+<p>The <code>SOURCE</code> element is an OPAL-T gun-side helper element. Its first purpose is to mark the physical emission location so that the three-dimensional gun region can be placed correctly. Its second purpose is to delete particles that travel backward into the source plane.</p>
+<dl>
+<dt><code>TRANSPARENT</code></dt>
+<dd>
+if <code>FALSE</code> (default), particles impacting the source are deleted; if <code>TRUE</code>, they may continue through the source.
+</dd>
+</dl>
+<p>Hits on the source are written to the element output file configured through <code>OUTFN</code>.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.23" id="variable-rf-cavities">
+<h2 class="anchored" data-anchor-id="variable-rf-cavities" data-number="10.23"><span class="header-section-number">10.23</span> Variable RF Cavities</h2>
+<p><code>VARIABLE_RF_CAVITY</code> extends the hard-edge cavity model by making frequency, amplitude, and phase explicit functions of time:</p>
+<pre class="text"><code>FREQUENCY_MODEL=string, AMPLITUDE_MODEL=string, PHASE_MODEL=string</code></pre>
+<p>The field is modeled as <span class="math display">\[
+E(t) = a(t)\,\sin\!\left(2\pi \int_0^t f(\tau)\,d\tau + \phi(t)\right)
+\]</span> with no field outside the cavity boundary and no transverse dependence in the hard-edge model.</p>
+<p>Important geometry attributes are <code>WIDTH</code>, <code>HEIGHT</code>, and <code>L</code>. In OPAL-cycl, variable RF cavities are typically placed through <code>RINGDEFINITION</code>.</p>
+<section class="level3" data-number="10.23.1" id="time-dependence-models">
+<h3 class="anchored" data-anchor-id="time-dependence-models" data-number="10.23.1"><span class="header-section-number">10.23.1</span> Time-dependence models</h3>
+<dl>
+<dt><code>POLYNOMIAL_TIME_DEPENDENCE</code></dt>
+<dd>
+defines <span class="math display">\[
+g(t) = p_0 + p_1 t + p_2 t^2 + p_3 t^3,
+\]</span> either via <code>P0..P3</code> or a longer <code>COEFFICIENTS</code> array.
+</dd>
+<dt><code>SPLINE_TIME_DEPENDENCE</code></dt>
+<dd>
+uses tabulated <code>TIMES</code> and <code>VALUES</code> with <code>ORDER=1</code> or <code>3</code>.
+</dd>
+<dt><code>SINUSOIDAL_TIME_DEPENDENCE</code></dt>
+<dd>
+sums one or more sine waves from arrays <code>FREQUENCIES</code>, <code>AMPLITUDES</code>, <code>PHASE_OFFSETS</code>, and <code>DC_OFFSETS</code>.
+</dd>
+</dl>
+</section>
+<section class="level3" data-number="10.23.2" id="soft-edged-variable-cavities">
+<h3 class="anchored" data-anchor-id="soft-edged-variable-cavities" data-number="10.23.2"><span class="header-section-number">10.23.2</span> Soft-edged variable cavities</h3>
+<p>For soft-edged cavities, <code>VARIABLE_RF_CAVITY_FRINGE_FIELD</code> adds:</p>
+<ul>
+<li><code>CENTRE_LENGTH</code></li>
+<li><code>END_LENGTH</code></li>
+<li><code>CAVITY_CENTRE</code></li>
+<li><code>MAX_ORDER</code></li>
+</ul>
+<p>The intention is to place a full cavity including the central flat-top field region and explicit fringe-field ends. <code>VARIABLE_RF_CAVITY_FRINGE_FIELD</code> is the legacy soft-edge companion of <code>VARIABLE_RF_CAVITY</code>.</p>
+<p>Example:</p>
+<pre class="text"><code>RF_FREQUENCY: POLYNOMIAL_TIME_DEPENDENCE, P0=rf_p0, P1=rf_p1, P2=rf_p2, P3=rf_p3;
+RF_AMPLITUDE: POLYNOMIAL_TIME_DEPENDENCE, P0=1.0;
+RF_PHASE: POLYNOMIAL_TIME_DEPENDENCE, P0=phi;
+
+HARD_RF_CAVITY: VARIABLE_RF_CAVITY,
+                PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
+                FREQUENCY_MODEL="RF_FREQUENCY", L=0.100, HEIGHT=0.200, WIDTH=2.000;
+
+SOFT_RF_CAVITY: VARIABLE_RF_CAVITY_FRINGE_FIELD,
+                PHASE_MODEL="RF_PHASE", AMPLITUDE_MODEL="RF_AMPLITUDE",
+                FREQUENCY_MODEL="RF_FREQUENCY", L=0.200, HEIGHT=0.200, WIDTH=2.000,
+                CENTRE_LENGTH=0.1, END_LENGTH=0.01, CAVITY_CENTRE=0.1, MAX_ORDER=4;</code></pre>
+</section>
+</section>
+<section class="level2 feature-opal" data-number="10.24" id="septum">
+<h2 class="anchored" data-anchor-id="septum" data-number="10.24"><span class="header-section-number">10.24</span> Septum</h2>
+<p><code>SEPTUM</code> is a cyclotron-side extraction element. Particles hitting the septum are removed from the bunch and written to the element output file.</p>
+<p>Main geometric attributes:</p>
+<ul>
+<li><code>XSTART</code>, <code>XEND</code></li>
+<li><code>YSTART</code>, <code>YEND</code></li>
+<li><code>WIDTH</code></li>
+</ul>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-septum">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-septum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/septum.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-septum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.14: Cyclotron <code>SEPTUM</code> geometry.
+</figcaption>
+</figure>
+</div>
+<p>Example:</p>
+<pre class="text"><code>eec2: SEPTUM, XSTART=4100.0, XEND=4300.0,
+      YSTART=-1200.0, YEND=-150.0, WIDTH=0.05;</code></pre>
+<p>Lost particles are written to <code>OUTFN.h5</code> or ASCII when <code>ASCIIDUMP</code> is enabled.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.25" id="probe">
+<h2 class="anchored" data-anchor-id="probe" data-number="10.25"><span class="header-section-number">10.25</span> Probe</h2>
+<p><code>PROBE</code> records particles crossing a line-like detector while leaving them in the simulation.</p>
+<p>Main attributes:</p>
+<ul>
+<li><code>XSTART</code>, <code>XEND</code></li>
+<li><code>YSTART</code>, <code>YEND</code></li>
+<li><code>STEP</code>: histogram step size for the associated probe histogram and peak files</li>
+</ul>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-elements-probe">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elements-probe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/probe.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elements-probe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 10.15: Cyclotron <code>PROBE</code> geometry.
+</figcaption>
+</figure>
+</div>
+<p>Example:</p>
+<pre class="text"><code>prob1: PROBE, XSTART=4166.16, XEND=4250.0,
+       YSTART=-1226.85, YEND=-1241.3;</code></pre>
+<p>The hit particles are recorded in <code>OUTFN.h5</code> (or ASCII with <code>ASCIIDUMP</code>). The same crossings are also accumulated into the <code>.hist</code> and <code>.peaks</code> files that mimic measured probe histograms and their derived peak locations.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.26" id="output-plane">
+<h2 class="anchored" data-anchor-id="output-plane" data-number="10.26"><span class="header-section-number">10.26</span> Output Plane</h2>
+<p><code>OUTPUTPLANE</code> records particles crossing a plane in space. Unlike <code>PROBE</code>, the plane can be defined either by a probe-style segment or by an explicit center and normal.</p>
+<p>Two placement styles are available:</p>
+<ul>
+<li><code>PROBE</code>: uses <code>XSTART</code>, <code>XEND</code>, <code>YSTART</code>, <code>YEND</code></li>
+<li><code>CENTRE_NORMAL</code>: uses <code>CENTRE</code>, <code>NORMAL</code>, together with optional <code>WIDTH</code>, <code>HEIGHT</code>, and <code>RADIUS</code></li>
+</ul>
+<p>Additional controls include:</p>
+<ul>
+<li><code>REFERENCE_ALIGNMENT_PARTICLE</code></li>
+<li><code>TOLERANCE</code></li>
+<li><code>ALGORITHM = INTERPOLATION | RK4</code></li>
+<li><code>VERBOSE</code></li>
+</ul>
+<p>In <code>CENTRE_NORMAL</code> mode the plane may realign itself on the first crossing of <code>REFERENCE_ALIGNMENT_PARTICLE</code> so that the plane center and normal follow that reference trajectory.</p>
+<p>Example:</p>
+<pre class="text"><code>outplane1: OUTPUTPLANE, PLACEMENT_STYLE=CENTRE_NORMAL,
+           CENTRE={10, 13.5, 0}, NORMAL={1,0,0},
+           WIDTH=1.5, HEIGHT=0.8, RADIUS=1,
+           ALGORITHM=RK4, VERBOSE=1,
+           REFERENCE_ALIGNMENT_PARTICLE=0, OUTFN="FileName.txt";</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.27" id="stripper">
+<h2 class="anchored" data-anchor-id="stripper" data-number="10.27"><span class="header-section-number">10.27</span> Stripper</h2>
+<p><code>STRIPPER</code> is the cyclotron extraction element that changes particle charge and mass when a particle hits the stripping foil geometry.</p>
+<p>Important attributes are:</p>
+<ul>
+<li><code>XSTART</code>, <code>XEND</code>, <code>YSTART</code>, <code>YEND</code></li>
+<li><code>OPCHARGE</code>: output charge state</li>
+<li><code>OPMASS</code>: output particle mass</li>
+<li><code>OPYIELD</code>: number of outgoing particles per incoming particle</li>
+<li><code>STOP</code>: if <code>TRUE</code>, stop the particle after stripping</li>
+</ul>
+<p>The geometry matches the <code>PROBE</code>-style line segment. The struck particles are always written to the output file, regardless of <code>STOP</code>. The legacy manual also states explicitly that this element changes charge and mass but does not yet model the full microscopic stripping process.</p>
+<p>Example:</p>
+<pre class="text"><code>prob1: STRIPPER, XSTART=4166.16, XEND=4250.0,
+                 YSTART=-1226.85, YEND=-1241.3,
+                 OPCHARGE=1, OPMASS=PMASS,
+                 OPYIELD=2, STOP=FALSE;</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.28" id="degrader">
+<h2 class="anchored" data-anchor-id="degrader" data-number="10.28"><span class="header-section-number">10.28</span> Degrader</h2>
+<p><code>DEGRADER</code> is an OPAL-T particle-matter interaction element with an elliptical transverse profile and length <code>L</code>.</p>
+<p>Important attributes are:</p>
+<ul>
+<li><code>XSIZE</code>, <code>YSIZE</code>: ellipse axes</li>
+<li><code>PARTICLEMATTERINTERACTION</code>: attach scattering and energy-loss modeling</li>
+</ul>
+<p>If no particle-matter interaction handler is attached, particles hitting the degrader are simply recorded and deleted.</p>
+<p>Example:</p>
+<pre class="text"><code>DEGPHYS: PARTICLEMATTERINTERACTION, TYPE=SCATTERING, MATERIAL=GRAPHITE;
+DEG1: DEGRADER, L=0.15, ELEMEDGE=0.02, PARTICLEMATTERINTERACTION=DEGPHYS;</code></pre>
+</section>
+<section class="level2 feature-opal" data-number="10.29" id="vacuum">
+<h2 class="anchored" data-anchor-id="vacuum" data-number="10.29"><span class="header-section-number">10.29</span> Vacuum</h2>
+<p><code>VACUUM</code> represents interactions with residual gas and, when configured, the associated stripping physics. When an interaction occurs, the particle state at that instant is written out.</p>
+<p>In OPAL-cycl, the vacuum region is bounded by the cyclotron-wide <code>MINZ</code>, <code>MAXZ</code>, <code>MINR</code>, and <code>MAXR</code> limits. In OPAL-T it is described by the usual <code>L</code> and <code>ELEMEDGE</code> placement parameters.</p>
+<p>Important attributes are:</p>
+<ul>
+<li><code>PRESSURE</code>: average residual-gas pressure in <code>mbar</code></li>
+<li><code>TEMPERATURE</code>: gas temperature in <code>K</code></li>
+<li><code>GAS = H2 | AIR</code></li>
+<li><code>STOP</code>: whether the interacting particle is deleted immediately</li>
+<li><code>PARTICLEMATTERINTERACTION</code></li>
+</ul>
+<p>Cyclotron mode additionally supports a pressure map through:</p>
+<ul>
+<li><code>PMAPFN</code>: mid-plane pressure-map file</li>
+<li><code>PSCALE</code>: scale factor applied to that map</li>
+</ul>
+<p>If <code>PMAPFN</code> is supplied, <code>PRESSURE</code> acts as the default value outside the map extent. For stripping studies, <code>PARTICLEMATTERINTERACTION</code> should usually point to a handler with <code>TYPE=BEAMSTRIPPING</code>.</p>
+<p>Example:</p>
+<pre class="text"><code>bstp_phys: PARTICLEMATTERINTERACTION, TYPE=BEAMSTRIPPING;
+vac: VACUUM, PRESSURE=1E-8, TEMPERATURE=300,
+     GAS=H2, STOP=true, PARTICLEMATTERINTERACTION=bstp_phys;</code></pre>
+<p>The particles stripped in the residual gas are written to the configured output file regardless of the value of <code>STOP</code>.</p>
+</section>
+<section class="level2 feature-opal" data-number="10.30" id="undulator">
+<h2 class="anchored" data-anchor-id="undulator" data-number="10.30"><span class="header-section-number">10.30</span> Undulator</h2>
+<p><code>UNDULATOR</code> couples the beamline to OPAL’s full-wave FEL solver path. In the legacy implementation the field solve switches from Poisson to a Finite-Difference Time-Domain full-wave model while the bunch traverses the undulator. This path relies on the external MITHRA library.</p>
+<p>To use this feature, OPAL must be built with MITHRA support:</p>
+<ol type="1">
+<li>install the MITHRA library,</li>
+<li>set <code>MITHRA_PREFIX</code> to its installation path,</li>
+<li>configure OPAL with <code>-DENABLE_OPAL_FEL=yes</code>.</li>
+</ol>
+<p>When the head of the bunch crosses the undulator start, the solver switches to full-wave and returns to Poisson once the bunch has passed the undulator and its fringe fields.</p>
+<p>The effective undulator length is determined by the number of periods and the built-in fringe extent, <span class="math display">\[
+L = N\lambda + 2\,\mathrm{fringe}, \qquad \mathrm{fringe} = 2\lambda,
+\]</span> so there is no separate user-supplied <code>L</code> parameter.</p>
+<p>The idealized planar-undulator field is <span class="math display">\[
+B_x = B_0\cosh(kr)\sin(kz)\cos(\alpha),
+\]</span> <span class="math display">\[
+B_y = B_0\cosh(kr)\sin(kz)\sin(\alpha),
+\]</span> <span class="math display">\[
+B_z = B_0\sinh(kr)\cos(kz),
+\]</span> with <span class="math inline">\(k = 2\pi/\lambda\)</span> and polarization angle <span class="math inline">\(\alpha\)</span>.</p>
+<p>Important attributes are:</p>
+<ul>
+<li><code>K</code>: undulator strength parameter</li>
+<li><code>LAMBDA</code>: undulator period</li>
+<li><code>NUMPERIODS</code>: number of periods</li>
+<li><code>ANGLE</code>: polarization angle</li>
+<li><code>MESHLENGTH</code>: computational-domain size in the moving bunch frame</li>
+<li><code>MESHRESOLUTION</code>: computational-grid spacing</li>
+<li><code>DTBUNCH</code>: particle update timestep</li>
+<li><code>TRUNORDER</code>: absorbing-boundary truncation order</li>
+<li><code>TOTALTIME</code>: total full-wave simulation time</li>
+<li><code>FNAME</code>: optional job/output description file for the full-wave solver</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>UND: UNDULATOR, ELEMEDGE = 44.0e-2, K = 10.81, LAMBDA = 8.5e-2, NUMPERIODS = 10, ANGLE = PI/2,
+     MESHLENGTH = { 12e-3, 12e-3, 4e-3 }, MESHRESOLUTION = { 1e-5, 1e-5, 8e-6},
+     FNAME = "wiggler_sims_July_2020/mithra_output.job";</code></pre>
+</section>
+<section class="level2 feature-opalx" data-number="10.31" id="beam-beam-interaction-point">
+<h2 class="anchored" data-anchor-id="beam-beam-interaction-point" data-number="10.31"><span class="header-section-number">10.31</span> Beam-Beam Interaction Point</h2>
+<pre class="text"><code>label: BEAMBEAM, ELEMEDGE=real, L=real, VISUALIZE=bool;</code></pre>
+<p><code>BEAMBEAM</code> is the OPALX interaction-window element for direct bunch-bunch interaction. As soon as the head of the tracked bunch enters the interaction window, OPALX switches from ordinary beamline tracking to the collision update for that region.</p>
+<dl>
+<dt><code>L</code></dt>
+<dd>
+physical length of the interaction window in <code>m</code>.
+</dd>
+<dt><code>VISUALIZE</code></dt>
+<dd>
+enable ASCII interaction-window visualization and frame dumps.
+</dd>
+<dt><code>COPY</code></dt>
+<dd>
+reserved for a future mirrored-bunch mode. The keyword is documented in the design sketches but is not implemented in the current code path.
+</dd>
+</dl>
+<p>Example of a straight interaction-point element with ASCII visualization:</p>
+<pre class="text"><code>ip1: BEAMBEAM, ELEMEDGE=44.0, L=0.1, VISUALIZE=TRUE;</code></pre>
+<p>The legacy OPALX manual text also includes two forward-looking sketches:</p>
+<ul>
+<li>a mirrored-bunch <code>COPY=TRUE</code> mode in which the second bunch would be created by reflecting the tracked bunch about the interaction point,</li>
+<li>a two-source example with explicitly counter-propagating bunches.</li>
+</ul>
+<p>These sketches are useful for intended usage, but they remain design-level notes rather than supported input paths in the current implementation.</p>
+</section>
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+<div class="nav-page nav-page-previous">
+<a aria-label="Control Statements" class="pagination-link" href="../../sections/control/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Field Output Commands" class="pagination-link" href="../../sections/field-output/index.html">
+<span class="nav-page-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/sections/elements/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

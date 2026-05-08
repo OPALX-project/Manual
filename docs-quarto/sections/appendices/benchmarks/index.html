@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>Appendix E — Benchmarks – The OPAL(X) Framework Documentation</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta content="../../../" name="quarto:offset"/>
+<link href="../../../sections/appendices/ics-design-note/index.html" rel="next"/>
+<link href="../../../sections/appendices/autophase/index.html" rel="prev"/>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+  .feature-toggle {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.4rem 0 1.2rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #d9dee7;
+    border-radius: 0.6rem;
+    background: #f7f9fc;
+  }
+
+  .feature-toggle span {
+    font-weight: 600;
+  }
+
+  .feature-choice {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .feature-opal,
+  .feature-opalx {
+    margin: 0.8rem 0;
+    padding: 0.85rem 1rem;
+    border-left: 0.3rem solid #c7d2e5;
+    background: #fafbfd;
+  }
+
+  .feature-opal {
+    border-left-color: #2b6cb0;
+  }
+
+  .feature-opalx {
+    border-left-color: #2f855a;
+  }
+
+  html[data-feature-mode="opal"] .feature-opalx {
+    display: none;
+  }
+
+  html[data-feature-mode="opalx"] .feature-opal {
+    display: none;
+  }
+</style>
+<script>
+  (function () {
+    var STORAGE_KEY = "feature-mode";
+    var pendingInitialMode = "both";
+
+    function syncRadios(mode) {
+      var radios = document.querySelectorAll(".feature-toggle input[name='feature-mode']");
+      radios.forEach(function (r) {
+        r.checked = r.value === mode;
+      });
+    }
+
+    function setMode(mode) {
+      document.documentElement.setAttribute("data-feature-mode", mode);
+      syncRadios(mode);
+      try {
+        localStorage.setItem(STORAGE_KEY, mode);
+      } catch (err) {
+      }
+    }
+
+    window.setFeatureMode = setMode;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        pendingInitialMode = localStorage.getItem(STORAGE_KEY) || "both";
+      } catch (err) {
+      }
+
+      var radios = document.querySelectorAll(".feature-toggle input[name='feature-mode']");
+      radios.forEach(function (r) {
+        r.addEventListener("change", function (ev) {
+          setMode(ev.target.value);
+        });
+      });
+    });
+
+    window.addEventListener("load", function () {
+      setMode(pendingInitialMode);
+    });
+  })();
+</script>
+<style>
+  body:has(section#home) header#title-block-header,
+  body:has(section#home) section#home > h1.unnumbered,
+  body:has(section#home) #TOC > ul > li:first-child,
+  body:has(section#home) .quarto-page-breadcrumbs .breadcrumb-item:first-child,
+  body:has(section#home) .sidebar-menu-container > ul > li.sidebar-item:first-child {
+    display: none;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-sidebar floating quarto-light">
+<div id="quarto-search-results"></div>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/benchmarks/index.html"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
+</header>
+<!-- content -->
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
+<!-- sidebar -->
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual" title="Source Code"><i class="bi bi-github"></i></a>
+</div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">25</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+<div class="sidebar margin-sidebar zindex-bottom" id="quarto-margin-sidebar">
+</div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header class="quarto-title-block default" id="title-block-header"><nav aria-label="breadcrumb" class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../sections/appendices/fieldmaps/index.html">Appendices</a></li><li class="breadcrumb-item"><a href="../../../sections/appendices/benchmarks/index.html"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Appendix E — Benchmarks</h1>
+</div>
+<div class="quarto-title-meta">
+</div>
+</header>
+<div class="feature-toggle">
+<span>View:</span>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
+<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
+</div>
+<div class="feature-opal">
+<section class="level2" data-number="E.1" id="opal-t-compared-with-transport-and-trace-3d">
+<h2 class="anchored" data-anchor-id="opal-t-compared-with-transport-and-trace-3d" data-number="E.1"><span class="header-section-number">E.1</span> <code>OPAL-T</code> Compared with TRANSPORT and TRACE 3D</h2>
+<p>The first benchmark family compares <code>OPAL-T</code> with the envelope and transport codes TRACE 3D and TRANSPORT <span class="citation" data-cites="crandallrusthoi1985 brown1980transport"><a href="../../literature/index.html#ref-crandallrusthoi1985" role="doc-biblioref">[15]</a>, <a href="../../literature/index.html#ref-brown1980transport" role="doc-biblioref">[16]</a></span>.</p>
+<section class="level3" data-number="E.1.1" id="trace-3d-units-and-input">
+<h3 class="anchored" data-anchor-id="trace-3d-units-and-input" data-number="E.1.1"><span class="header-section-number">E.1.1</span> TRACE 3D Units and Input</h3>
+<p>TRACE 3D uses the following phase-space conventions:</p>
+<ul>
+<li>horizontal plane: <code>x [mm]</code>, <code>x' [mrad]</code></li>
+<li>vertical plane: <code>y [mm]</code>, <code>y' [mrad]</code></li>
+<li>longitudinal plane internally: <code>z [mm]</code>, <code>\Delta p/p [mrad]</code></li>
+<li>longitudinal plane for input and output: <code>\Delta\phi [deg]</code>, <code>\Delta W [keV]</code></li>
+</ul>
+<p>The longitudinal conversions quoted in the appendix are</p>
+<p><span id="eq-benchmarks-trace-z"><span class="math display">\[
+z = -\frac{\beta\lambda}{360}\,\Delta\phi,
+\tag{E.1}\]</span></span></p>
+<p>and</p>
+<p><span id="eq-benchmarks-trace-dpp"><span class="math display">\[
+\frac{\Delta p}{p} = \frac{\gamma}{\gamma+1}\frac{\Delta W}{W}.
+\tag{E.2}\]</span></span></p>
+<p>The benchmark input beam is defined in TRACE 3D by the parameters <code>ER</code>, <code>Q</code>, <code>W</code>, <code>XI</code>, <code>BEAMI</code>, and <code>EMITI</code>. The concrete test case used in the appendix is</p>
+<pre class="text"><code>ER = 938.27
+W = 7
+FREQ = 700
+BEAMI = 0.0, 4.0,0.0, 4.0, 0.0, 0.0756
+EMITI = 0.730, 0.730, 7.56</code></pre>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/Trace.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.1: TRACE 3D graphical interface used in the comparison.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace-z">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-trace-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/TRACE_z.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.2: TRACE 3D sigma-matrix layout used as the basis for the TRANSPORT comparison.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-input-trace">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-input-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/Input_Trace.png" style="width:33.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-input-trace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.3: TRACE 3D input beam used in the benchmark.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace-z-input">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-trace-z-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/TRACE_z_input.png" style="width:50.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-z-input-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.4: TRACE 3D sigma matrix for the benchmark input beam.
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="level3" data-number="E.1.2" id="transport-units-and-input">
+<h3 class="anchored" data-anchor-id="transport-units-and-input" data-number="E.1.2"><span class="header-section-number">E.1.2</span> TRANSPORT Units and Input</h3>
+<p>TRANSPORT uses the standard coordinates:</p>
+<ul>
+<li>horizontal plane: <code>x [cm]</code>, <code>theta [mrad]</code></li>
+<li>vertical plane: <code>y [cm]</code>, <code>phi [mrad]</code></li>
+<li>longitudinal plane: <code>l [cm]</code>, <code>delta [%]</code></li>
+</ul>
+<p>The input beam can be taken from the TRACE 3D sigma matrix after changing the units with the TRANSPORT <code>card 15</code> settings documented in the appendix.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-transport">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-transport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/TRANSPORT.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-transport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.5: TRANSPORT graphical interface used in the comparison.
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="level3" data-number="E.1.3" id="comparison-case">
+<h3 class="anchored" data-anchor-id="comparison-case" data-number="E.1.3"><span class="header-section-number">E.1.3</span> Comparison Case</h3>
+<p>The transport line consists of:</p>
+<ul>
+<li><code>DRIFT 1</code>: <code>0.250 m</code></li>
+<li>one <code>SBEND</code> or <code>RBEND</code> with <code>rho = 0.250 m</code></li>
+<li><code>DRIFT 2</code>: <code>0.250 m</code></li>
+</ul>
+<p>The benchmark discussed in detail is the <code>SBEND</code> case with entrance and exit edge angles.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>TRACE 3D bend parameter</th>
+<th style="text-align: right;">Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>NT</code></td>
+<td style="text-align: right;"><code>8</code></td>
+<td>type code for bending</td>
+</tr>
+<tr class="even">
+<td><code>alpha</code></td>
+<td style="text-align: right;"><code>30 deg</code></td>
+<td>angle of bend in the horizontal plane</td>
+</tr>
+<tr class="odd">
+<td><code>rho</code></td>
+<td style="text-align: right;"><code>250 mm</code></td>
+<td>radius of curvature of the central trajectory</td>
+</tr>
+<tr class="even">
+<td><code>n</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>field-index gradient</td>
+</tr>
+<tr class="odd">
+<td><code>vf</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>horizontal bend</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>TRACE 3D edge parameter</th>
+<th style="text-align: right;">Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>NT</code></td>
+<td style="text-align: right;"><code>9</code></td>
+<td>type code for edge</td>
+</tr>
+<tr class="even">
+<td><code>beta</code></td>
+<td style="text-align: right;"><code>10 deg</code></td>
+<td>pole-face rotation</td>
+</tr>
+<tr class="odd">
+<td><code>rho</code></td>
+<td style="text-align: right;"><code>250 mm</code></td>
+<td>radius of curvature</td>
+</tr>
+<tr class="even">
+<td><code>g</code></td>
+<td style="text-align: right;"><code>20 mm</code></td>
+<td>total gap</td>
+</tr>
+<tr class="odd">
+<td><code>K1</code></td>
+<td style="text-align: right;"><code>0.36945</code></td>
+<td>fringe-field factor</td>
+</tr>
+<tr class="even">
+<td><code>K2</code></td>
+<td style="text-align: right;"><code>0.36945</code></td>
+<td>fringe-field factor</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-trace-sbend">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-trace-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/Trace_SBEND_edge.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-trace-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.6: TRACE 3D <code>SBEND</code> with edge angles.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-transport-sbend">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-transport-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/TRANS_SBEND_edge.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-transport-sbend-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.7: TRANSPORT <code>SBEND</code> with edge angles.
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="level3" data-number="E.1.4" id="beam-size-and-emittance-comparison">
+<h3 class="anchored" data-anchor-id="beam-size-and-emittance-comparison" data-number="E.1.4"><span class="header-section-number">E.1.4</span> Beam-Size and Emittance Comparison</h3>
+<p>The appendix reports agreement at the end of each line element.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Position</th>
+<th style="text-align: right;"><code>z [m]</code></th>
+<th style="text-align: right;"><code>sigma_x [mm]</code> TRACE</th>
+<th style="text-align: right;"><code>sigma_y [mm]</code> TRACE</th>
+<th style="text-align: right;"><code>sigma_x [mm]</code> TRANSPORT</th>
+<th style="text-align: right;"><code>sigma_y [mm]</code> TRANSPORT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Input</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">1.709</td>
+<td style="text-align: right;">1.709</td>
+<td style="text-align: right;">1.709</td>
+<td style="text-align: right;">1.709</td>
+</tr>
+<tr class="even">
+<td>Drift 1</td>
+<td style="text-align: right;">0.250</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">1.712</td>
+</tr>
+<tr class="odd">
+<td>Edge</td>
+<td style="text-align: right;">0.250</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">1.712</td>
+<td style="text-align: right;">1.712</td>
+</tr>
+<tr class="even">
+<td>Bend</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">1.638</td>
+<td style="text-align: right;">1.587</td>
+<td style="text-align: right;">1.638</td>
+<td style="text-align: right;">1.587</td>
+</tr>
+<tr class="odd">
+<td>Edge</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">1.638</td>
+<td style="text-align: right;">1.587</td>
+<td style="text-align: right;">1.638</td>
+<td style="text-align: right;">1.587</td>
+</tr>
+<tr class="even">
+<td>Drift 2</td>
+<td style="text-align: right;">0.631</td>
+<td style="text-align: right;">1.206</td>
+<td style="text-align: right;">1.264</td>
+<td style="text-align: right;">1.206</td>
+<td style="text-align: right;">1.264</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+<col style="width: 17%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Position</th>
+<th style="text-align: right;"><code>z [m]</code></th>
+<th style="text-align: right;"><code>epsilon_x</code> TRACE</th>
+<th style="text-align: right;"><code>epsilon_z</code> TRACE</th>
+<th style="text-align: right;"><code>epsilon_x</code> TRANSPORT</th>
+<th style="text-align: right;"><code>epsilon_z</code> TRANSPORT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Input</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.730</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.730</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="even">
+<td>Drift 1</td>
+<td style="text-align: right;">0.250</td>
+<td style="text-align: right;">0.730</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.730</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="odd">
+<td>Edge</td>
+<td style="text-align: right;">0.250</td>
+<td style="text-align: right;">0.730</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.730</td>
+<td style="text-align: right;">0.08</td>
+</tr>
+<tr class="even">
+<td>Bend</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">0.65</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">0.65</td>
+</tr>
+<tr class="odd">
+<td>Edge</td>
+<td style="text-align: right;">0.381</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">0.65</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">0.65</td>
+</tr>
+<tr class="even">
+<td>Drift 2</td>
+<td style="text-align: right;">0.631</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">0.65</td>
+<td style="text-align: right;">0.973</td>
+<td style="text-align: right;">0.65</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-env">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-env-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/T3D_Tra_SBEND_edge_env.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-env-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.8: Beam-envelope comparison between TRACE 3D and TRANSPORT.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-emi">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-emi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/T3D_Tra_SBEND_edge_emi.png" style="width:60.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-emi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.9: Emittance comparison between TRACE 3D and TRANSPORT.
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="level3" data-number="E.1.5" id="relation-to-opal-t">
+<h3 class="anchored" data-anchor-id="relation-to-opal-t" data-number="E.1.5"><span class="header-section-number">E.1.5</span> Relation to <code>OPAL-T</code></h3>
+<p>The appendix then maps the TRACE / TRANSPORT setup to <code>OPAL-T</code>. The main code feature comparison is:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>TRACE 3D</th>
+<th>TRANSPORT</th>
+<th><code>OPAL-T</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>simulation type</td>
+<td>envelope</td>
+<td>envelope</td>
+<td>time integration</td>
+</tr>
+<tr class="even">
+<td>input beam</td>
+<td>Twiss, emittance</td>
+<td>sigma matrix, momentum</td>
+<td>sigma matrix, energy</td>
+</tr>
+<tr class="odd">
+<td>units</td>
+<td><code>mm-mrad</code>, <code>deg-keV</code></td>
+<td><code>cm-rad</code>, <code>cm-%</code></td>
+<td><code>m-beta gamma</code></td>
+</tr>
+</tbody>
+</table>
+<p>The input distribution conversion quoted by the appendix is</p>
+<pre class="text"><code>T3D SIGMA                        OPAL -T
+-------------------------------------------------------
+1.7088 mm             SIGMAX  = 1.7088/sqrt(5)e-3         m
+0.4272 mrad           SIGMAPX = 0.4272/sqrt(5)*0.1224e-3
+1.7088 mm             SIGMAY  = 1.7088/sqrt(5)e-3        m
+0.4272 mrad           SIGMAPY = 0.4272/sqrt(5)*0.1224e-3
+0.1092 mm             SIGMAZ  = 0.1092/sqrt(5)e-3        m
+0.0717 %              SIGMAPZ = (0.0717*10)/sqrt(5)*0.1224e-3</code></pre>
+<p>leading to the documented <code>GAUSS</code> distribution example.</p>
+<p>The <code>OPAL-T</code> bend comparison is shown for three cases:</p>
+<ul>
+<li><code>SBEND</code> without edge angles</li>
+<li><code>SBEND</code> with edge angles</li>
+<li><code>SBEND</code> with nonzero field index <code>K1</code></li>
+</ul>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-noedge">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-opalt-noedge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/SBEND_noEdge.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-noedge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.10: <code>OPAL-T</code> hard-edge <code>SBEND</code> without fringe edges.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-edge">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-opalt-edge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/SBEND_Edges.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-edge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.11: <code>OPAL-T</code> hard-edge <code>SBEND</code> with edge effects.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-fi">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-opalt-fi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/FI_SBEND_FMDef.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-fi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.12: TRACE 3D and <code>OPAL-T</code> comparison with field index and default map.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-opalt-fi-test">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-opalt-fi-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/FI_SBEND_FMTest.png" style="width:90.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-opalt-fi-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.13: TRACE 3D and <code>OPAL-T</code> comparison with field index and test map.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section class="level2" data-number="E.2" id="hard-edge-dipole-comparison-with-elegant">
+<h2 class="anchored" data-anchor-id="hard-edge-dipole-comparison-with-elegant" data-number="E.2"><span class="header-section-number">E.2</span> Hard-Edge Dipole Comparison with ELEGANT</h2>
+<p>The second benchmark family studies a hard-edge dipole against ELEGANT <span class="citation" data-cites="borland2000elegant"><a href="../../literature/index.html#ref-borland2000elegant" role="doc-biblioref">[17]</a></span>. Because the default <code>1DPROFILE1-DEFAULT</code> map in <code>OPAL</code> includes finite fringe extent, the appendix proposes the following hard-edge replacement:</p>
+<pre class="text"><code>1DProfile1  0  0  2
+-0.00000001 0.0 0.00000001 3
+-0.00000001 0.0 0.00000001 3
+-99.9
+-99.9</code></pre>
+<p>The intent is to suppress the fringe-field <code>B_z</code> contribution and recover the same hard-edge behavior that ELEGANT assumes when <code>FINT = 0</code>.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-default">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-elegant-default-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/report-compare-default.png" style="width:70.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-default-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.14: Default dipole comparison report.
+</figcaption>
+</figure>
+</div>
+<section class="level3" data-number="E.2.1" id="integration-time-step-dependence">
+<h3 class="anchored" data-anchor-id="integration-time-step-dependence" data-number="E.2.1"><span class="header-section-number">E.2.1</span> Integration Time-Step Dependence</h3>
+<p>The appendix then studies the effect of integration time step and fringe-field range. The main conclusion is that time-step size has the larger impact on the accuracy.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-dt">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-elegant-dt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/report-emit-dt.png" style="width:66.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-dt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.15: Emittance sensitivity to the integration time step.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-fringe">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-elegant-fringe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/report-fringe-size.png" style="width:66.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-fringe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.16: Fringe-size sensitivity study.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-elegant-fringe-zoom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-elegant-fringe-zoom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/report-fringe-size-zoom.png" style="width:66.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-elegant-fringe-zoom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.17: Zoom of the final-emittance fringe-size study.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section class="level2" data-number="E.3" id="d-csr-comparison-with-elegant">
+<h2 class="anchored" data-anchor-id="d-csr-comparison-with-elegant" data-number="E.3"><span class="header-section-number">E.3</span> 1D CSR Comparison with ELEGANT</h2>
+<p>The CSR benchmark uses an <code>SBEND</code> followed by a drift, both with <code>WAKEF = FS_CSR_WAKE</code> enabled. For comparison with ELEGANT watch-point output, the appendix converts the trace-space quantities by</p>
+<p><span id="eq-benchmarks-csr-trace-conversion"><span class="math display">\[
+P_x = x'\,\beta\gamma,
+\qquad
+P_y = y'\,\beta\gamma,
+\qquad
+s = (\bar t - t)\,\beta c.
+\tag{E.3}\]</span></span></p>
+<p>The benchmark uses a simple line with <code>0.1 m</code> drift, <code>30 deg</code> bend, and <code>0.4 m</code> drift. Without CSR, the codes agree closely; with CSR enabled, the average momentum change and longitudinal emittance still agree well, while the horizontal normalized emittance differs because <code>OPAL</code> and ELEGANT do not use exactly the same fringe-field treatment and emittance definition.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-csr-off">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-csr-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/emit-csr-off.png" style="width:66.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-csr-off-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.18: Emittance evolution with CSR off.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-csr-dpp">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-csr-dpp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/dpp-csr-on.png" style="width:66.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-csr-dpp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.19: Relative momentum spread with CSR on.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-csr-on">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-csr-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/emit-csr-on.png" style="width:66.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-csr-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.20: Emittance evolution with CSR on.
+</figcaption>
+</figure>
+</div>
+<p>One important detail from the original appendix is that the normalized horizontal emittance in <code>OPAL</code> continues to grow in the downstream drift, while the trace-like emittance does not. The source explains this as a real correlation between transverse position and energy that is visible in <code>\epsilon_x(x, P_x)</code> but not in <code>\epsilon_x(x, x')</code>.</p>
+</section>
+<section class="level2" data-number="E.4" id="opal-and-impact-t">
+<h2 class="anchored" data-anchor-id="opal-and-impact-t" data-number="E.4"><span class="header-section-number">E.4</span> <code>OPAL</code> and <code>Impact-T</code></h2>
+<p>The final benchmark family compares <code>OPAL</code> and <code>Impact-T</code> for a cold <code>10 mA</code> <code>H+</code> bunch expanding in a <code>1 m</code> drift <span class="citation" data-cites="impacttmanual"><a href="../../literature/index.html#ref-impacttmanual" role="doc-biblioref">[18]</a></span>. The setup uses:</p>
+<ul>
+<li>Gaussian distribution cut at <code>4 sigma</code></li>
+<li><code>16^3</code> space-charge grid</li>
+<li>open boundary conditions</li>
+<li><code>10^5</code> macro particles</li>
+<li><code>1 MHz</code> bunch structure</li>
+</ul>
+<section class="level3" data-number="E.4.1" id="opal-input">
+<h3 class="anchored" data-anchor-id="opal-input" data-number="E.4.1"><span class="header-section-number">E.4.1</span> <code>OPAL</code> Input</h3>
+<pre class="text"><code>OPTION, ECHO = FALSE, PSDUMPFREQ = 10,
+STATDUMPFREQ = 10, REPARTFREQ = 1000,
+PSDUMPFRAME = GLOBAL, VERSION=10600;
+
+TITLE, string="Gaussian bunch drift test";
+
+REAL Edes    = 0.001;        // GeV
+REAL CURRENT = 0.01;  // A
+
+REAL gamma=(Edes+PMASS)/PMASS;
+REAL beta=sqrt(1-(1/gamma^2));
+REAL gambet=gamma*beta;
+REAL P0 = gamma*beta*PMASS;
+
+D1: DRIFT, ELEMEDGE = 0.0, L = 1.0;
+
+L1: LINE = (D1);
+
+Fs1: FIELDSOLVER, FSTYPE = FFT, MX = 16, MY = 16, MT = 16, BBOXINCR=0.1;
+
+Dist1: DISTRIBUTION, TYPE = GAUSS,
+       OFFSETX = 0.0, OFFSETY = 0.0, OFFSETZ = 15.0e-3,
+       SIGMAX = 5.0e-3, SIGMAY = 5.0e-3, SIGMAZ = 5.0e-3,
+       OFFSETPX = 0.0, OFFSETPY = 0.0, OFFSETPZ = 0.0,
+       SIGMAPX = 0.0 , SIGMAPY = 0.0 , SIGMAPZ = 0.0 ,
+       CORRX = 0.0, CORRY = 0.0, CORRZ = 0.0,
+       CUTOFFX = 4.0, CUTOFFY = 4.0, CUTOFFLONG = 4.0;
+
+Beam1: BEAM, PARTICLE = PROTON, CHARGE = 1.0, BFREQ = 1.0, PC = P0,
+               NPART = 1E5, BCURRENT = CURRENT, FIELDSOLVER = Fs1;
+
+SELECT, LINE = L1;
+
+TRACK, LINE = L1, BEAM = Beam1, MAXSTEPS = 1000, ZSTOP = 1.0, DT = 1.0e-10;
+ RUN, METHOD = "PARALLEL-T", BEAM = Beam1, FIELDSOLVER = Fs1, DISTRIBUTION = Dist1;
+ENDTRACK;
+STOP;</code></pre>
+</section>
+<section class="level3" data-number="E.4.2" id="impact-t-input">
+<h3 class="anchored" data-anchor-id="impact-t-input" data-number="E.4.2"><span class="header-section-number">E.4.2</span> <code>Impact-T</code> Input</h3>
+<pre class="text"><code>!Welcome to Impact-t input file.
+!All comment lines start with "!" as the first character of the line.
+! col row
+1 1
+!
+! information needed by the integrator:
+! step-size, number of steps, and number of bunches/bins (??)
+!
+!   dt    Ntstep  Nbunch
+1.0e-10   700     1
+!
+! phase-space dimension, number of particles, a series of flags
+! that set the type of integrator, error study, diagnostics, and
+! image charge, and the cutoff distance for the image charge
+!
+! PSdim  Nptcl   integF  errF  diagF  imchgF  imgCutOff (m)
+6 100000  1 0 1 0 0.016
+!
+! information about mesh: number of points in x, y, and z, type
+! of boundary conditions, transverse aperture size (m),
+! and longitudinal domain size (m)
+!
+!  Nx  Ny  Nz  bcF   Rx    Ry    Lz
+16 16 16 1 0.15 0.15 1.0e5
+!
+!
+! distribution type number (2 == Gauss), restart flag, space-charge substep
+! flag, number of emission steps, and max emission time
+!
+! distType  restartF  substepF  Nemission  Temission
+2           0         0         -1          0.0
+!
+!  sig*   sigp*  mu*p*  *scale  p*scale  xmu*      xmu*
+!
+0.005 0.0 0.0  1. 1. 0.0 0.0
+0.005 0.0 0.0  1. 1. 0.0 0.0
+0.005 0.0 0.0  1. 1. 0.0 0.0462
+!
+! information about the beam: current, kinetic energy, particle
+! rest energy, particle charge, scale frequency, and initial cavity phase
+!
+! I/A   Ek/eV     Mc2/eV          Q/e  freq/Hz  phs/rad
+0.010   1.0e6     938.271998e+06  1.0  1.0e6      0.0
+!
+!
+! ======= machine description starts here =======
+! the following lines, which must each be terminated with a '/',
+! describe one beam-line element per line; the basic structure is
+! element length, ???, ???, element type, and then a sequence of
+! at most 24 numbers describing the element properties
+!   0  drift tube    2      zedge radius
+!   1  quadrupole    9      zedge, quad grad, fileID,
+!                             radius, alignment error x, y
+!                             rotation error x, y, z
+! L/m  N/A N/A  type  location of starting edge  v1  &lt;B0&gt;&lt;B0&gt;&lt;B0&gt;  v23 /
+1.0    0   0    0    0.0                           0.5            /</code></pre>
+</section>
+<section class="level3" data-number="E.4.3" id="results">
+<h3 class="anchored" data-anchor-id="results" data-number="E.4.3"><span class="header-section-number">E.4.3</span> Results</h3>
+<p>The appendix treats the agreement in the following plots as a consistency check for the two space-charge implementations in a simple drift benchmark.</p>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-impact">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/opal-impact-1MHz.png" style="width:100.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-impact-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.21: Comparison of <code>OPAL</code> and <code>Impact-T</code> at 1 MHz.
+</figcaption>
+</figure>
+</div>
+<div class="quarto-float quarto-figure quarto-figure-center anchored" id="fig-benchmarks-impact-z">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-benchmarks-impact-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img class="img-fluid figure-img" src="figures/opal-impact-1MHz-z.png" style="width:50.0%"/>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-benchmarks-impact-z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure E.22: Longitudinal detail of the <code>OPAL</code> and <code>Impact-T</code> comparison.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</div>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+<div class="nav-page nav-page-previous">
+<a aria-label="Auto-phasing Algorithm" class="pagination-link" href="../../../sections/appendices/autophase/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="OPALX Design Note: Laser--Electron ICS and gamma-gamma Collision Physics" class="pagination-link" href="../../../sections/appendices/ics-design-note/index.html">
+<span class="nav-page-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/sections/appendices/benchmarks/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

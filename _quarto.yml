@@ -1,0 +1,63 @@
+project:
+  type: book
+  output-dir: docs-quarto
+  post-render:
+    - python3 scripts/postprocess_bibliography.py
+
+book:
+  title: "The OPAL(X) Framework Documentation"
+  site-url: "https://opalx-project.github.io/Manual/"
+  repo-url: "https://github.com/OPALX-project/Manual"
+  repo-branch: master
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - sections/introduction/index.qmd
+    - sections/conventions/index.qmd
+    - sections/pitfalls/index.qmd
+    - sections/tutorial/index.qmd
+    - sections/opalt/index.qmd
+    - sections/opalcycl/index.qmd
+    - sections/opalmap/index.qmd
+    - sections/format/index.qmd
+    - sections/control/index.qmd
+    - sections/elements/index.qmd
+    - sections/field-output/index.qmd
+    - sections/lines/index.qmd
+    - sections/beam-command/index.qmd
+    - sections/distribution/index.qmd
+    - sections/emission-source/index.qmd
+    - sections/energybins/index.qmd
+    - sections/fieldsolvers/index.qmd
+    - sections/track/index.qmd
+    - sections/wakefields/index.qmd
+    - sections/geometry/index.qmd
+    - sections/collisions/index.qmd
+    - sections/partmatter/index.qmd
+    - sections/optimiser/index.qmd
+    - sections/sampler/index.qmd
+    - sections/literature/index.qmd
+  appendices:
+    - sections/appendices/fieldmaps/index.qmd
+    - sections/appendices/syntax/index.qmd
+    - sections/appendices/opal-madx/index.qmd
+    - sections/appendices/autophase/index.qmd
+    - sections/appendices/benchmarks/index.qmd
+    - sections/appendices/ics-design-note/index.qmd
+    - sections/appendices/developer-build/index.qmd
+
+number-sections: true
+number-depth: 3
+
+bibliography: references.bib
+csl: csl/ieee.csl
+
+format:
+  html:
+    toc: true
+    number-sections: true
+    html-math-method: mathjax
+    theme: cosmo
+    include-in-header:
+      - includes/feature-toggle.html
+      - includes/landing-page.html

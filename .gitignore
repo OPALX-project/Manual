@@ -1,4 +1,6 @@
 docs-quarto
+/.quarto/
+**/*.quarto_ipynb
 Manual.html
 build
 *~
@@ -16,8 +18,8 @@ OPAL_Manual.html
 *.lot
 *.out
 *.pdf
-!quarto/sections/appendices/developer-build/opalx-overview.pdf
-!quarto/docs-quarto/sections/appendices/developer-build/opalx-overview.pdf
+!sections/appendices/developer-build/opalx-overview.pdf
+!docs-quarto/sections/appendices/developer-build/opalx-overview.pdf
 *.tex
 *.toc
 *.xml

@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8"/>
+<meta content="quarto-1.9.37" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<title>17  Field Solver – The OPAL(X) Framework Documentation</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta content="../../" name="quarto:offset"/>
+<link href="../../sections/track/index.html" rel="next"/>
+<link href="../../sections/energybins/index.html" rel="prev"/>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" id="quarto-text-highlighting-styles" rel="stylesheet"/>
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/>
+<link append-hash="true" data-mode="light" href="../../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" id="quarto-bootstrap" rel="stylesheet"/>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+  .feature-toggle {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.4rem 0 1.2rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #d9dee7;
+    border-radius: 0.6rem;
+    background: #f7f9fc;
+  }
+
+  .feature-toggle span {
+    font-weight: 600;
+  }
+
+  .feature-choice {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .feature-opal,
+  .feature-opalx {
+    margin: 0.8rem 0;
+    padding: 0.85rem 1rem;
+    border-left: 0.3rem solid #c7d2e5;
+    background: #fafbfd;
+  }
+
+  .feature-opal {
+    border-left-color: #2b6cb0;
+  }
+
+  .feature-opalx {
+    border-left-color: #2f855a;
+  }
+
+  html[data-feature-mode="opal"] .feature-opalx {
+    display: none;
+  }
+
+  html[data-feature-mode="opalx"] .feature-opal {
+    display: none;
+  }
+</style>
+<script>
+  (function () {
+    var STORAGE_KEY = "feature-mode";
+    var pendingInitialMode = "both";
+
+    function syncRadios(mode) {
+      var radios = document.querySelectorAll(".feature-toggle input[name='feature-mode']");
+      radios.forEach(function (r) {
+        r.checked = r.value === mode;
+      });
+    }
+
+    function setMode(mode) {
+      document.documentElement.setAttribute("data-feature-mode", mode);
+      syncRadios(mode);
+      try {
+        localStorage.setItem(STORAGE_KEY, mode);
+      } catch (err) {
+      }
+    }
+
+    window.setFeatureMode = setMode;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        pendingInitialMode = localStorage.getItem(STORAGE_KEY) || "both";
+      } catch (err) {
+      }
+
+      var radios = document.querySelectorAll(".feature-toggle input[name='feature-mode']");
+      radios.forEach(function (r) {
+        r.addEventListener("change", function (ev) {
+          setMode(ev.target.value);
+        });
+      });
+    });
+
+    window.addEventListener("load", function () {
+      setMode(pendingInitialMode);
+    });
+  })();
+</script>
+<style>
+  body:has(section#home) header#title-block-header,
+  body:has(section#home) section#home > h1.unnumbered,
+  body:has(section#home) #TOC > ul > li:first-child,
+  body:has(section#home) .quarto-page-breadcrumbs .breadcrumb-item:first-child,
+  body:has(section#home) .sidebar-menu-container > ul > li.sidebar-item:first-child {
+    display: none;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-sidebar floating quarto-light">
+<div id="quarto-search-results"></div>
+<header class="headroom fixed-top" id="quarto-header">
+<nav class="quarto-secondary-nav">
+<div class="container-fluid d-flex">
+<button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button" type="button">
+<i class="bi bi-layout-text-sidebar-reverse"></i>
+</button>
+<nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/fieldsolvers/index.html"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></a></li></ol></nav>
+<a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="navigation">
+</a>
+<button aria-label="Search" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button">
+<i class="bi bi-search"></i>
+</button>
+</div>
+</nav>
+</header>
+<!-- content -->
+<div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content">
+<!-- sidebar -->
+<nav class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" id="quarto-sidebar">
+<div class="pt-lg-2 mt-2 text-left sidebar-header">
+<div class="sidebar-title mb-0 py-0">
+<a href="../../">The OPAL(X) Framework Documentation</a>
+<div class="sidebar-tools-main">
+<a aria-label="Source Code" class="quarto-navigation-tool px-1" href="https://github.com/OPALX-project/Manual" title="Source Code"><i class="bi bi-github"></i></a>
+</div>
+</div>
+</div>
+<div class="mt-2 flex-shrink-0 align-items-center">
+<div class="sidebar-search">
+<div class="" id="quarto-search" title="Search"></div>
+</div>
+</div>
+<div class="sidebar-menu-container">
+<ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../index.html">
+<span class="menu-text">Home</span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/introduction/index.html">
+<span class="menu-text"><span class="chapter-number">1</span>  <span class="chapter-title">Introduction</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/conventions/index.html">
+<span class="menu-text"><span class="chapter-number">2</span>  <span class="chapter-title">Conventions</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/pitfalls/index.html">
+<span class="menu-text"><span class="chapter-number">3</span>  <span class="chapter-title">Pitfalls and Limitations</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/tutorial/index.html">
+<span class="menu-text"><span class="chapter-number">4</span>  <span class="chapter-title">Tutorial</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalt/index.html">
+<span class="menu-text"><span class="chapter-number">5</span>  <span class="chapter-title">OPAL-T</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalcycl/index.html">
+<span class="menu-text"><span class="chapter-number">6</span>  <span class="chapter-title">OPAL-CYCL</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/opalmap/index.html">
+<span class="menu-text"><span class="chapter-number">7</span>  <span class="chapter-title">OPAL-MAP</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/format/index.html">
+<span class="menu-text"><span class="chapter-number">8</span>  <span class="chapter-title">Command Format</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/control/index.html">
+<span class="menu-text"><span class="chapter-number">9</span>  <span class="chapter-title">Control Statements</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/elements/index.html">
+<span class="menu-text"><span class="chapter-number">10</span>  <span class="chapter-title">Elements</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/field-output/index.html">
+<span class="menu-text"><span class="chapter-number">11</span>  <span class="chapter-title">Field Output Commands</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/lines/index.html">
+<span class="menu-text"><span class="chapter-number">12</span>  <span class="chapter-title">Beam Lines</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/beam-command/index.html">
+<span class="menu-text"><span class="chapter-number">13</span>  <span class="chapter-title">Beam Command</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/distribution/index.html">
+<span class="menu-text"><span class="chapter-number">14</span>  <span class="chapter-title">Distribution Command</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/emission-source/index.html">
+<span class="menu-text"><span class="chapter-number">15</span>  <span class="chapter-title">Emission Sources</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/energybins/index.html">
+<span class="menu-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link active" href="../../sections/fieldsolvers/index.html">
+<span class="menu-text"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/track/index.html">
+<span class="menu-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/wakefields/index.html">
+<span class="menu-text"><span class="chapter-number">19</span>  <span class="chapter-title">Wakefields</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/geometry/index.html">
+<span class="menu-text"><span class="chapter-number">20</span>  <span class="chapter-title">Geometry</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/collisions/index.html">
+<span class="menu-text"><span class="chapter-number">21</span>  <span class="chapter-title">Physics Models Used in Modelling Collisions</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/partmatter/index.html">
+<span class="menu-text"><span class="chapter-number">22</span>  <span class="chapter-title">Physics Models Used in the Particle Matter Interaction Model</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/optimiser/index.html">
+<span class="menu-text"><span class="chapter-number">23</span>  <span class="chapter-title">Multi Objective Optimization</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/sampler/index.html">
+<span class="menu-text"><span class="chapter-number">24</span>  <span class="chapter-title">Sampler</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/literature/index.html">
+<span class="menu-text"><span class="chapter-number">25</span>  <span class="chapter-title">Literature</span></span></a>
+</div>
+</li>
+<li class="sidebar-item sidebar-item-section">
+<div class="sidebar-item-container">
+<a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<span class="menu-text">Appendices</span></a>
+<a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse" role="navigation">
+<i class="bi bi-chevron-right ms-2"></i>
+</a>
+</div>
+<ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1">
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/fieldmaps/index.html">
+<span class="menu-text"><span class="chapter-number">A</span>  <span class="chapter-title">OPAL-T Field Maps</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/syntax/index.html">
+<span class="menu-text"><span class="chapter-number">B</span>  <span class="chapter-title">OPAL Language Syntax</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/opal-madx/index.html">
+<span class="menu-text"><span class="chapter-number">C</span>  <span class="chapter-title">OPAL - MADX Conversion Guide</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/autophase/index.html">
+<span class="menu-text"><span class="chapter-number">D</span>  <span class="chapter-title">Auto-phasing Algorithm</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/benchmarks/index.html">
+<span class="menu-text"><span class="chapter-number">E</span>  <span class="chapter-title">Benchmarks</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/ics-design-note/index.html">
+<span class="menu-text"><span class="chapter-number">F</span>  <span class="chapter-title">OPALX Design Note: Laser–Electron ICS and gamma-gamma Collision Physics</span></span></a>
+</div>
+</li>
+<li class="sidebar-item">
+<div class="sidebar-item-container">
+<a class="sidebar-item-text sidebar-link" href="../../sections/appendices/developer-build/index.html">
+<span class="menu-text"><span class="chapter-number">G</span>  <span class="chapter-title">Build and Developer Resources</span></span></a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div class="quarto-sidebar-collapse-item" data-bs-target=".quarto-sidebar-collapse-item" data-bs-toggle="collapse" id="quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+<div class="sidebar margin-sidebar zindex-bottom" id="quarto-margin-sidebar">
+</div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header class="quarto-title-block default" id="title-block-header">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">17</span>  <span class="chapter-title">Field Solver</span></h1>
+</div>
+<div class="quarto-title-meta">
+</div>
+</header>
+<div class="feature-toggle">
+<span>View:</span>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opal"/> OPAL</label>
+<label class="feature-choice"><input name="feature-mode" type="radio" value="opalx"/> OPALX</label>
+<label class="feature-choice"><input checked="" name="feature-mode" type="radio" value="both"/> Both</label>
+</div>
+<div class="feature-opalx">
+<p>For the legacy manual, the <code>FIELDSOLVER</code> command is primarily an <code>OPAL</code> interface. The current <code>OPALX</code> code path does not mirror this chapter one-to-one, so the detailed command semantics below should be read as <code>OPAL</code> documentation.</p>
+</div>
+<div class="feature-opal">
+<p>Space-charge effects are attached to the tracking setup through a <code>FIELDSOLVER</code> command and then referenced from <code>RUN</code> as described in the tracking chapter. The standard model is fully three-dimensional. The field solve is based on Poisson’s equation with open boundaries, either through FFT-based convolution, iterative irregular-domain solvers, or adaptive mesh refinement.</p>
+<section class="level2" data-number="17.1" id="fft-based-particle-mesh-pm-solver">
+<h2 class="anchored" data-anchor-id="fft-based-particle-mesh-pm-solver" data-number="17.1"><span class="header-section-number">17.1</span> FFT Based Particle-Mesh (PM) Solver</h2>
+<p>The classical particle-mesh solver discretizes the charge density on a regular Cartesian mesh</p>
+<p><span class="math display">\[
+\Omega = [-L_x, L_x] \times [-L_y, L_y] \times [-L_t, L_t]
+\]</span></p>
+<p>with <code>MX x MY x MT</code> grid points. Instead of computing all pairwise particle-particle interactions, <code>OPAL</code> deposits the charge to the mesh and solves Poisson’s equation there.</p>
+<p>For isolated bunches the potential satisfies</p>
+<p><span id="eq-fieldsolver-poisson"><span class="math display">\[
+\nabla^2 \phi = -\rho / \epsilon_0
+\tag{17.1}\]</span></span></p>
+<p>and can be written as a convolution of the charge density with the open-space Green function. The FFT-based solver uses the Hockney zero-padding construction so that the open-boundary convolution can be evaluated with periodic FFTs on an enlarged mesh.</p>
+<section class="level3" data-number="17.1.1" id="fft-based-convolutions-and-zero-padding">
+<h3 class="anchored" data-anchor-id="fft-based-convolutions-and-zero-padding" data-number="17.1.1"><span class="header-section-number">17.1.1</span> FFT-based Convolutions and Zero Padding</h3>
+<p>The key idea is:</p>
+<ol type="1">
+<li>deposit the physical charge density on the unpadded mesh</li>
+<li>enlarge the mesh so the convolution can be represented as a periodic one</li>
+<li>construct the periodic Green-function array</li>
+<li>solve the convolution in Fourier space</li>
+<li>retain the potential and field only in the physical region</li>
+</ol>
+<p>This gives the physical open-boundary solution while preserving the efficiency of FFTs.</p>
+</section>
+<section class="level3" data-number="17.1.2" id="algorithm-used-in-opal">
+<h3 class="anchored" data-anchor-id="algorithm-used-in-opal" data-number="17.1.2"><span class="header-section-number">17.1.2</span> Algorithm used in OPAL</h3>
+<p>In practical terms, the FFT space-charge solve proceeds as:</p>
+<ol type="1">
+<li>deposit charge to the mesh</li>
+<li>build or reuse the Green-function array</li>
+<li>perform the FFT-based convolution solve</li>
+<li>compute the electric field on the mesh</li>
+<li>interpolate the field back to particles</li>
+</ol>
+<p>The method scales much better than direct particle-particle summation and is the standard stable space-charge path for most <code>OPAL</code> workflows.</p>
+</section>
+<section class="level3" data-number="17.1.3" id="interpolation-schemes">
+<h3 class="anchored" data-anchor-id="interpolation-schemes" data-number="17.1.3"><span class="header-section-number">17.1.3</span> Interpolation Schemes</h3>
+<p>The interpolation from mesh fields back to particles follows the standard particle-mesh deposition/interpolation choices used throughout <code>OPAL</code>. The legacy manual reserves the detailed interpolation discussion for later revisions, but the solver is intended for ordinary 3D PIC workflows.</p>
+</section>
+</section>
+<section class="level2" data-number="17.2" id="particle-particle-particle-mesh-p3m-solver">
+<h2 class="anchored" data-anchor-id="particle-particle-particle-mesh-p3m-solver" data-number="17.2"><span class="header-section-number">17.2</span> Particle-Particle-Particle-Mesh (P3M) Solver</h2>
+<p>The <code>P3M</code> solver splits the total electrostatic force into a short-range direct part and a long-range mesh part,</p>
+<p><span id="eq-fieldsolver-p3m-force"><span class="math display">\[
+F = F_{\mathrm{sr}} + F_{\mathrm{lr}}
+\tag{17.2}\]</span></span></p>
+<p>so that close encounters are handled by direct summation inside a cutoff radius, while the smooth long-range contribution is handled on the mesh.</p>
+<p>In this formulation the Green function is likewise split into short-range and long-range components. <code>OPAL</code> supports two practical choices:</p>
+<ul>
+<li><code>STANDARD</code>: the Ewald-type splitting with interaction parameter <code>ALPHA</code></li>
+<li><code>INTEGRATED</code>: an integrated polynomial form with a convenient closed-form cell integration</li>
+</ul>
+<section class="level3" data-number="17.2.1" id="use-of-p3m-solver">
+<h3 class="anchored" data-anchor-id="use-of-p3m-solver" data-number="17.2.1"><span class="header-section-number">17.2.1</span> Use of <code>P^3M</code> solver</h3>
+<p>The legacy implementation notes are important:</p>
+<ul>
+<li><code>P3M</code> is only available in <code>OPAL-T</code></li>
+<li>emission must not be active</li>
+<li>the solver uses <code>OPEN</code> boundary conditions</li>
+<li><code>ALPHA</code> is only used together with <code>GREENSF=STANDARD</code></li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>REAL inter_rad = 3.125e-5;
+
+FS_P3M: FIELDSOLVER, FSTYPE="P3M", MX=64, MY=64, MT=64,
+        PARFFTX=decx, PARFFTY=decy, PARFFTT=decz,
+        RC=inter_rad, GREENSF=INTEGRATED;</code></pre>
+</section>
+</section>
+<section class="level2" data-number="17.3" id="iterative-space-charge-solver">
+<h2 class="anchored" data-anchor-id="iterative-space-charge-solver" data-number="17.3"><span class="header-section-number">17.3</span> Iterative Space Charge Solver</h2>
+<p>The iterative Poisson solver is intended for irregular geometries where the plain FFT open-boundary solve is not the best model. The discretization is based on finite differences, and the resulting linear system is solved by a preconditioned iterative method with smoothed-aggregation algebraic multigrid preconditioning.</p>
+<p>Compilation requirements:</p>
+<ul>
+<li><code>ENABLE_SAAMG_SOLVER=ON</code></li>
+<li>Parmetis</li>
+<li>Trilinos</li>
+</ul>
+<p>This is the solver family behind <code>FSTYPE=SAAMG</code>.</p>
+</section>
+<section class="level2" data-number="17.4" id="energy-binning">
+<h2 class="anchored" data-anchor-id="energy-binning" data-number="17.4"><span class="header-section-number">17.4</span> Energy Binning</h2>
+<p>When the bunch energy spread is too large for a single boosted-frame electrostatic approximation, <code>OPAL</code> can split the bunch into several energy bins and perform multiple field solves. This is the basis of the multi-Lorentz-frame approximation.</p>
+<p>In cyclotron multi-bunch mode the number of energy bins should be at least the number of neighboring bunches represented by <code>NNEIGHBB</code>. The companion control parameter <code>MINSTEPFORREBIN</code> defines after how many integration steps the energy bins are merged again.</p>
+</section>
+<section class="level2" data-number="17.5" id="the-fieldsolver-command">
+<h2 class="anchored" data-anchor-id="the-fieldsolver-command" data-number="17.5"><span class="header-section-number">17.5</span> The <code>FIELDSOLVER</code> Command</h2>
+<p>The <code>FIELDSOLVER</code> command selects the solver type, mesh resolution, domain decomposition, boundary conditions, and optional solver-specific parameters.</p>
+<section class="level3" data-number="17.5.1" id="core-command-attributes">
+<h3 class="anchored" data-anchor-id="core-command-attributes" data-number="17.5.1"><span class="header-section-number">17.5.1</span> Core command attributes</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>FSTYPE</code></td>
+<td>Solver type: <code>FFT</code>, <code>FFTPERIODIC</code>, <code>SAAMG</code>, <code>P3M</code>, <code>NONE</code></td>
+</tr>
+<tr class="even">
+<td><code>PARFFTX</code></td>
+<td>Distribute the <code>x</code> direction over MPI ranks</td>
+</tr>
+<tr class="odd">
+<td><code>PARFFTY</code></td>
+<td>Distribute the <code>y</code> direction over MPI ranks</td>
+</tr>
+<tr class="even">
+<td><code>PARFFTT</code></td>
+<td>Distribute the <code>z</code> direction over MPI ranks</td>
+</tr>
+<tr class="odd">
+<td><code>MX</code></td>
+<td>Number of mesh points in <code>x</code></td>
+</tr>
+<tr class="even">
+<td><code>MY</code></td>
+<td>Number of mesh points in <code>y</code></td>
+</tr>
+<tr class="odd">
+<td><code>MT</code></td>
+<td>Number of mesh points in <code>z</code></td>
+</tr>
+<tr class="even">
+<td><code>BCFFTX</code></td>
+<td>Boundary condition in <code>x</code></td>
+</tr>
+<tr class="odd">
+<td><code>BCFFTY</code></td>
+<td>Boundary condition in <code>y</code></td>
+</tr>
+<tr class="even">
+<td><code>BCFFTZ</code></td>
+<td>Boundary condition in <code>z</code></td>
+</tr>
+<tr class="odd">
+<td><code>GREENSF</code></td>
+<td>Green-function choice for FFT-based solvers</td>
+</tr>
+<tr class="even">
+<td><code>BBOXINCR</code></td>
+<td>Bounding-box enlargement factor in percent</td>
+</tr>
+<tr class="odd">
+<td><code>GEOMETRY</code></td>
+<td>Geometry list for irregular-domain solves</td>
+</tr>
+<tr class="even">
+<td><code>ITSOLVER</code></td>
+<td>Iterative linear solver</td>
+</tr>
+<tr class="odd">
+<td><code>INTERPL</code></td>
+<td>Boundary-point interpolation scheme</td>
+</tr>
+<tr class="even">
+<td><code>TOL</code></td>
+<td>Iterative solver tolerance</td>
+</tr>
+<tr class="odd">
+<td><code>MAXITERS</code></td>
+<td>Maximum number of iterations</td>
+</tr>
+<tr class="even">
+<td><code>PRECMODE</code></td>
+<td>Preconditioner reuse policy</td>
+</tr>
+<tr class="odd">
+<td><code>RC</code></td>
+<td>P3M short-range cutoff radius</td>
+</tr>
+<tr class="even">
+<td><code>ALPHA</code></td>
+<td>P3M interaction splitting parameter</td>
+</tr>
+<tr class="odd">
+<td><code>ENBINS</code></td>
+<td>Number of energy bins</td>
+</tr>
+<tr class="even">
+<td><code>MINSTEPFORREBIN</code></td>
+<td>Merge energy bins after this many steps</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="level3" data-number="17.5.2" id="fieldsolver-type">
+<h3 class="anchored" data-anchor-id="fieldsolver-type" data-number="17.5.2"><span class="header-section-number">17.5.2</span> Fieldsolver type</h3>
+<p><code>FSTYPE</code> selects the actual solver backend.</p>
+<ul>
+<li><code>FFT</code>: standard open-boundary FFT-based particle-mesh solver</li>
+<li><code>FFTPERIODIC</code>: FFT solver with periodic longitudinal treatment</li>
+<li><code>SAAMG</code>: iterative irregular-domain solver</li>
+<li><code>P3M</code>: mixed mesh plus short-range direct solver</li>
+<li><code>NONE</code>: disable space-charge field solving</li>
+</ul>
+<p>The legacy manual describes the FFT solver as the most stable default path.</p>
+</section>
+<section class="level3" data-number="17.5.3" id="domain-decomposition">
+<h3 class="anchored" data-anchor-id="domain-decomposition" data-number="17.5.3"><span class="header-section-number">17.5.3</span> Domain Decomposition</h3>
+<p><code>PARFFTX</code>, <code>PARFFTY</code>, and <code>PARFFTT</code> decide whether the corresponding mesh direction is distributed over MPI processes.</p>
+<p>Legacy default:</p>
+<ul>
+<li><code>PARFFTX = FALSE</code></li>
+<li><code>PARFFTY = FALSE</code></li>
+<li><code>PARFFTT = TRUE</code></li>
+</ul>
+<p>So the conventional decomposition is serial in <code>x</code> and <code>y</code>, parallel in <code>z</code>.</p>
+</section>
+<section class="level3" data-number="17.5.4" id="number-of-grid-points">
+<h3 class="anchored" data-anchor-id="number-of-grid-points" data-number="17.5.4"><span class="header-section-number">17.5.4</span> Number of Grid Points</h3>
+<p><code>MX</code>, <code>MY</code>, and <code>MT</code> define the rectangular mesh resolution in <code>x</code>, <code>y</code>, and <code>z</code>. These values determine both the field resolution and the FFT problem size, so they are the main tuning parameters for accuracy and cost.</p>
+</section>
+<section class="level3" data-number="17.5.5" id="boundary-conditions">
+<h3 class="anchored" data-anchor-id="boundary-conditions" data-number="17.5.5"><span class="header-section-number">17.5.5</span> Boundary Conditions</h3>
+<p>Boundary conditions are specified independently per axis:</p>
+<ul>
+<li><code>BCFFTX</code>: <code>OPEN</code></li>
+<li><code>BCFFTY</code>: <code>OPEN</code></li>
+<li><code>BCFFTZ</code>: <code>OPEN</code> or <code>PERIODIC</code></li>
+</ul>
+<p>Using <code>PERIODIC</code> in <code>z</code> is the standard way to model a DC beam rather than an isolated bunch.</p>
+</section>
+<section class="level3" data-number="17.5.6" id="greens-function">
+<h3 class="anchored" data-anchor-id="greens-function" data-number="17.5.6"><span class="header-section-number">17.5.6</span> Greens Function</h3>
+<p><code>GREENSF</code> controls the Green-function model for FFT-based solvers and <code>P3M</code>.</p>
+<p>Allowed values:</p>
+<ul>
+<li><code>INTEGRATED</code></li>
+<li><code>STANDARD</code></li>
+</ul>
+<p>The default is <code>INTEGRATED</code>. This is the usual recommendation for FFT-based space-charge calculations in <code>OPAL</code>.</p>
+</section>
+<section class="level3" data-number="17.5.7" id="bounding-box-enlargement">
+<h3 class="anchored" data-anchor-id="bounding-box-enlargement" data-number="17.5.7"><span class="header-section-number">17.5.7</span> Bounding Box Enlargement</h3>
+<p>The solver constructs a minimal rectangular box that encloses all particles. <code>BBOXINCR</code> enlarges that box by a user-specified percentage before the solve.</p>
+<p>Default:</p>
+<ul>
+<li><code>BBOXINCR = 2.0</code></li>
+</ul>
+<p>This is often used to avoid an overly tight computational box around the bunch.</p>
+</section>
+<section class="level3" data-number="17.5.8" id="geometry">
+<h3 class="anchored" data-anchor-id="geometry" data-number="17.5.8"><span class="header-section-number">17.5.8</span> Geometry</h3>
+<p><code>GEOMETRY</code> attaches a list of geometry objects that define the boundary of the computational domain for the irregular-domain solver. This option is relevant to <code>SAAMG</code> workflows.</p>
+</section>
+<section class="level3" data-number="17.5.9" id="iterative-solver">
+<h3 class="anchored" data-anchor-id="iterative-solver" data-number="17.5.9"><span class="header-section-number">17.5.9</span> Iterative Solver</h3>
+<p><code>ITSOLVER</code> selects the Krylov or direct linear solver used by the iterative field-solver family.</p>
+<p>For <code>SAAMG</code>, the documented choices are:</p>
+<ul>
+<li><code>CG</code> default</li>
+<li><code>BICGSTAB</code></li>
+<li><code>GMRES</code></li>
+</ul>
+</section>
+<section class="level3" data-number="17.5.10" id="interpolation-for-boundary-points">
+<h3 class="anchored" data-anchor-id="interpolation-for-boundary-points" data-number="17.5.10"><span class="header-section-number">17.5.10</span> Interpolation for Boundary Points</h3>
+<p><code>INTERPL</code> controls how grid points near the irregular boundary are interpolated.</p>
+<p>Allowed values:</p>
+<ul>
+<li><code>CONSTANT</code></li>
+<li><code>LINEAR</code> default</li>
+<li><code>QUADRATIC</code></li>
+</ul>
+<p>This parameter is specific to <code>SAAMG</code>.</p>
+</section>
+<section class="level3" data-number="17.5.11" id="tolerance">
+<h3 class="anchored" data-anchor-id="tolerance" data-number="17.5.11"><span class="header-section-number">17.5.11</span> Tolerance</h3>
+<p><code>TOL</code> is the convergence tolerance for the iterative solver.</p>
+<p>Default:</p>
+<ul>
+<li><code>TOL = 1e-8</code></li>
+</ul>
+</section>
+<section class="level3" data-number="17.5.12" id="maximal-iterations">
+<h3 class="anchored" data-anchor-id="maximal-iterations" data-number="17.5.12"><span class="header-section-number">17.5.12</span> Maximal Iterations</h3>
+<p><code>MAXITERS</code> limits the number of iterations taken by the iterative solver.</p>
+<p>Default:</p>
+<ul>
+<li><code>MAXITERS = 100</code></li>
+</ul>
+</section>
+<section class="level3" data-number="17.5.13" id="preconditioner-behavior">
+<h3 class="anchored" data-anchor-id="preconditioner-behavior" data-number="17.5.13"><span class="header-section-number">17.5.13</span> Preconditioner Behavior</h3>
+<p><code>PRECMODE</code> controls how aggressively the <code>SAAMG</code> preconditioner is rebuilt or reused.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>STD</code></td>
+<td>Rebuild the preconditioner every step</td>
+</tr>
+<tr class="even">
+<td><code>HIERARCHY</code></td>
+<td>Reuse the hierarchy only; this is the default</td>
+</tr>
+<tr class="odd">
+<td><code>REUSE</code></td>
+<td>Reuse the full preconditioner</td>
+</tr>
+</tbody>
+</table>
+<p>This parameter should only be changed deliberately, because it affects both performance and solver robustness.</p>
+</section>
+<section class="level3" data-number="17.5.14" id="cut-off-radius">
+<h3 class="anchored" data-anchor-id="cut-off-radius" data-number="17.5.14"><span class="header-section-number">17.5.14</span> Cut-off Radius</h3>
+<p><code>RC</code> is the short-range cutoff radius for the <code>P3M</code> solver in the boosted frame. Particles separated by less than this radius are included in the direct particle-particle correction.</p>
+<p>Default:</p>
+<ul>
+<li><code>RC = 0</code></li>
+</ul>
+<p>This corresponds to disabling the direct short-range correction.</p>
+</section>
+<section class="level3" data-number="17.5.15" id="interaction-splitting-parameter">
+<h3 class="anchored" data-anchor-id="interaction-splitting-parameter" data-number="17.5.15"><span class="header-section-number">17.5.15</span> Interaction splitting parameter</h3>
+<p><code>ALPHA</code> controls the balance between the short-range and mesh parts of the <code>P3M</code> Green-function split. Large <code>ALPHA</code> gives greater weight to the mesh part; small <code>ALPHA</code> gives greater weight to the particle-particle part.</p>
+<p>It is commonly chosen as</p>
+<p><span id="eq-fieldsolver-alpha"><span class="math display">\[
+\alpha = C / r_c
+\tag{17.3}\]</span></span></p>
+<p>with <code>C</code> of order one and <code>r_c</code> the cutoff radius.</p>
+<p>Default:</p>
+<ul>
+<li><code>ALPHA = 1e8</code></li>
+</ul>
+<p>This parameter is only used for <code>GREENSF=STANDARD</code>.</p>
+</section>
+<section class="level3" data-number="17.5.16" id="number-of-energy-bins">
+<h3 class="anchored" data-anchor-id="number-of-energy-bins" data-number="17.5.16"><span class="header-section-number">17.5.16</span> Number of Energy Bins</h3>
+<p><code>ENBINS</code> selects how many energy bins are used when the bunch is split for multi-frame space-charge treatment. In cyclotron multi-bunch mode this should not be smaller than <code>NNEIGHBB</code>.</p>
+<p><code>MINSTEPFORREBIN</code> defines after how many steps the temporarily split energy-bin representation is merged back into one.</p>
+</section>
+</section>
+<section class="level2" data-number="17.6" id="adaptive-mesh-refinement-amr-solver">
+<h2 class="anchored" data-anchor-id="adaptive-mesh-refinement-amr-solver" data-number="17.6"><span class="header-section-number">17.6</span> Adaptive Mesh Refinement (AMR) Solver</h2>
+<p>The AMR path extends the <code>FIELDSOLVER</code> command with hierarchy and refinement controls. It is enabled by compiling <code>OPAL</code> with <code>ENABLE_AMR=ON</code> and enabling <code>OPTION, AMR=TRUE</code>.</p>
+<p>The legacy interface describes three AMR solver types:</p>
+<ul>
+<li><code>FMG</code></li>
+<li><code>ML</code></li>
+<li><code>AMR_MG</code></li>
+</ul>
+<p>The hierarchy is defined from the base grid by the number of AMR levels, refinement ratios, blocking factors, and maximum grid sizes.</p>
+<section class="level3" data-number="17.6.1" id="amr-extensions-to-fieldsolver">
+<h3 class="anchored" data-anchor-id="amr-extensions-to-fieldsolver" data-number="17.6.1"><span class="header-section-number">17.6.1</span> AMR extensions to <code>FIELDSOLVER</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>AMR_MAXLEVEL</code></td>
+<td>Maximum AMR refinement level</td>
+</tr>
+<tr class="even">
+<td><code>AMR_REFX</code>, <code>AMR_REFY</code>, <code>AMR_REFZ</code></td>
+<td>Refinement ratio per coordinate</td>
+</tr>
+<tr class="odd">
+<td><code>AMR_MAXGRIDX</code>, <code>AMR_MAXGRIDY</code>, <code>AMR_MAXGRIDZ</code></td>
+<td>Maximum base-level box size</td>
+</tr>
+<tr class="even">
+<td><code>AMR_BFX</code>, <code>AMR_BFY</code>, <code>AMR_BFZ</code></td>
+<td>Blocking factors</td>
+</tr>
+<tr class="odd">
+<td><code>AMR_TAGGING</code></td>
+<td>Mesh-refinement rule</td>
+</tr>
+<tr class="even">
+<td><code>AMR_DENSITY</code></td>
+<td>Density threshold for <code>CHARGE_DENSITY</code> tagging</td>
+</tr>
+<tr class="odd">
+<td><code>AMR_MAX_NUM_PART</code></td>
+<td>Threshold for <code>MAX_NUM_PARTICLES</code> tagging</td>
+</tr>
+<tr class="even">
+<td><code>AMR_MIN_NUM_PART</code></td>
+<td>Threshold for <code>MIN_NUM_PARTICLES</code> tagging</td>
+</tr>
+<tr class="odd">
+<td><code>AMR_SCALING</code></td>
+<td>Scaling threshold for <code>POTENTIAL</code>, <code>EFIELD</code>, <code>MOMENTA</code></td>
+</tr>
+<tr class="even">
+<td><code>AMR_DOMAIN_RATIO</code></td>
+<td>Computational-domain aspect ratio</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="level3" data-number="17.6.2" id="mesh-refinement-strategies">
+<h3 class="anchored" data-anchor-id="mesh-refinement-strategies" data-number="17.6.2"><span class="header-section-number">17.6.2</span> Mesh refinement strategies</h3>
+<p>The manual documents these tagging modes:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><code>AMR_TAGGING</code></th>
+<th>Refinement criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>POTENTIAL</code></td>
+<td>refine where the potential exceeds a scaled level maximum</td>
+</tr>
+<tr class="even">
+<td><code>EFIELD</code></td>
+<td>refine where any field component exceeds a scaled level maximum</td>
+</tr>
+<tr class="odd">
+<td><code>MOMENTA</code></td>
+<td>refine cells containing particles above a scaled momentum threshold</td>
+</tr>
+<tr class="even">
+<td><code>CHARGE_DENSITY</code></td>
+<td>refine cells whose density exceeds <code>AMR_DENSITY</code></td>
+</tr>
+<tr class="odd">
+<td><code>MIN_NUM_PARTICLES</code></td>
+<td>refine cells based on <code>AMR_MIN_NUM_PART</code></td>
+</tr>
+<tr class="even">
+<td><code>MAX_NUM_PARTICLES</code></td>
+<td>refine cells based on <code>AMR_MAX_NUM_PART</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>AMR_TAGGING</code> is a string attribute and therefore must be quoted in the input deck.</p>
+</section>
+<section class="level3" data-number="17.6.3" id="hardware-architecture-independent-amr-poisson-solver">
+<h3 class="anchored" data-anchor-id="hardware-architecture-independent-amr-poisson-solver" data-number="17.6.3"><span class="header-section-number">17.6.3</span> Hardware-Architecture Independent AMR Poisson Solver</h3>
+<p>The <code>AMR_MG</code> path is the Trilinos-based AMR Poisson solver. It requires <code>ENABLE_AMR_MG_SOLVER=ON</code> and a working Trilinos installation. The legacy manual lists these core packages:</p>
+<ul>
+<li>Tpetra</li>
+<li>Ifpack2</li>
+<li>Amesos2</li>
+<li>Belos</li>
+<li>MueLu</li>
+</ul>
+<p>Some base-level linear solvers require additional third-party packages such as <code>SUPERLU</code>, <code>UMFPACK</code>, <code>PARDISO_MKL</code>, <code>MUMPS</code>, or <code>LAPACK</code>.</p>
+<p>The AMR multigrid extensions are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>AMR_MG_SMOOTHER</code></td>
+<td><code>GS</code>, <code>JACOBI</code>, or <code>SGS</code>; default <code>GS</code></td>
+</tr>
+<tr class="even">
+<td><code>AMR_MG_NSWEEPS</code></td>
+<td>Number of smoothing sweeps; default <code>8</code></td>
+</tr>
+<tr class="odd">
+<td><code>AMR_MG_PREC</code></td>
+<td>Bottom-level preconditioner; default <code>NONE</code></td>
+</tr>
+<tr class="even">
+<td><code>AMR_MG_INTERP</code></td>
+<td>Prolongation operator; default <code>PC</code></td>
+</tr>
+<tr class="odd">
+<td><code>AMR_MG_NORM</code></td>
+<td>Convergence norm; default <code>LINF_NORM</code></td>
+</tr>
+<tr class="even">
+<td><code>AMR_MG_VERBOSE</code></td>
+<td>Write solver diagnostics; default <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td><code>AMR_MG_REBALANCE</code></td>
+<td>Rebalance solver/preconditioner communicators; default <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td><code>AMR_MG_REUSE</code></td>
+<td>MueLu reuse mode; default <code>RAP</code></td>
+</tr>
+<tr class="odd">
+<td><code>AMR_MG_TOL</code></td>
+<td>Solver tolerance; default <code>1e-10</code></td>
+</tr>
+<tr class="even">
+<td><code>ITSOLVER</code></td>
+<td>Base-level linear solver; default <code>CG</code></td>
+</tr>
+</tbody>
+</table>
+<p>For <code>ITSOLVER</code> on the AMR base level, the legacy interface documents:</p>
+<ul>
+<li><code>BICGSTAB</code></li>
+<li><code>MINRES</code></li>
+<li><code>PCPG</code></li>
+<li><code>CG</code></li>
+<li><code>GMRES</code></li>
+<li><code>STOCHASTIC_CG</code></li>
+<li><code>RECYCLING_CG</code></li>
+<li><code>RECYCLING_GMRES</code></li>
+<li><code>KLU2</code></li>
+<li><code>SUPERLU</code></li>
+<li><code>UMFPACK</code></li>
+<li><code>PARDISO_MKL</code></li>
+<li><code>MUMPS</code></li>
+<li><code>LAPACK</code></li>
+<li><code>SA</code></li>
+</ul>
+</section>
+<section class="level3" data-number="17.6.4" id="use-of-amr">
+<h3 class="anchored" data-anchor-id="use-of-amr" data-number="17.6.4"><span class="header-section-number">17.6.4</span> Use of AMR</h3>
+<p>The legacy manual states that AMR is available only in <code>OPAL-cycl</code> multi-bunch mode. Once more than one bunch is present, the AMR hierarchy is built. In this setup the AMR backend manages the MPI parallelism itself, so the other Poisson-solver backends are not combined with the AMR run mode.</p>
+</section>
+<section class="level3" data-number="17.6.5" id="amr-example">
+<h3 class="anchored" data-anchor-id="amr-example" data-number="17.6.5"><span class="header-section-number">17.6.5</span> AMR Example</h3>
+<pre class="text"><code>OPTION, AMR              = TRUE;
+OPTION, AMR_REGRID_FREQ  = 10;
+OPTION, AMR_YT_DUMP_FREQ = 100000;
+
+REAL Edes      = .072;
+REAL turns     = 8;
+REAL nstep     = 360;
+REAL frequency = 50.650;
+
+ring: CYCLOTRON, ...;
+rf0: RFCAVITY, ...;
+rf1: RFCAVITY, ...;
+rf2: RFCAVITY, ...;
+rf3: RFCAVITY, ...;
+rf4: RFCAVITY, ...;
+l1: LINE = (ring, rf0, rf1, rf2, rf3, rf4);
+
+Dist1: DISTRIBUTION, ...;
+
+Fs1: FIELDSOLVER, FSTYPE=AMR_MG,
+                  MX=128, MY=128, MT=128,
+                  PARFFTX=TRUE, PARFFTY=TRUE, PARFFTT=TRUE,
+                  BCFFTX=OPEN, BCFFTY=OPEN, BCFFTZ=OPEN,
+                  BBOXINCR=20, AMR_MAXLEVEL=2,
+                  AMR_MAXGRIDX=32, AMR_MAXGRIDY=32, AMR_MAXGRIDZ=32,
+                  AMR_BFX=16, AMR_BFY=16, AMR_BFZ=16,
+                  AMR_REFX=2, AMR_REFY=2, AMR_REFZ=2,
+                  AMR_DOMAIN_RATIO={1.0, 0.75, 0.75},
+                  AMR_TAGGING="CHARGE_DENSITY", AMR_DENSITY=1.0e-9,
+                  AMR_MG_VERBOSE=TRUE, AMR_MG_REBALANCE=TRUE, AMR_MG_REUSE=FULL,
+                  ITSOLVER=SA, AMR_MG_NORM=LINF_NORM, AMR_MG_NSWEEPS=12;
+
+beam1: BEAM, PARTICLE=PROTON, PC=P0, NPART=1e5, BCURRENT=2.0E-3, CHARGE=1.0, BFREQ=frequency;
+
+SELECT, LINE=l1;
+
+TRACK, LINE=l1, BEAM=beam1, MAXSTEPS=nstep*turns, STEPSPERTURN=nstep;
+RUN, METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1,
+    MBMODE=FORCE, TURNS=11, MB_BINNING=GAMMA_BINNING, MB_ETA=0.25;
+
+ENDTRACK;
+STOP;</code></pre>
+</section>
+</section>
+</div>
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+<div class="nav-page nav-page-previous">
+<a aria-label="Energy Bins" class="pagination-link" href="../../sections/energybins/index.html">
+<i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>  <span class="chapter-title">Energy Bins</span></span>
+</a>
+</div>
+<div class="nav-page nav-page-next">
+<a aria-label="Tracking" class="pagination-link" href="../../sections/track/index.html">
+<span class="nav-page-text"><span class="chapter-number">18</span>  <span class="chapter-title">Tracking</span></span> <i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/edit/master/sections/fieldsolvers/index.qmd"><i class="bi bi-github"></i>Edit this page</a></li><li><a class="toc-action" href="https://github.com/OPALX-project/Manual/issues/new"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
