@@ -65,18 +65,14 @@ for execution and build instructions is
 <https://hpce.pages.psi.ch/merlin7/05-Software-Support/opal-x/>.
 :::
 
-::: {.feature-opal}
 ## Tools
 
 The project pages list a small set of supporting tools around the core
 simulation codes:
 
-- `runOPAL` provides Python scripts to launch and automate multiple jobs,
-  including parameter scans.
-- `pyOPALTools` provides pre-processing, post-processing, analysis, and
-  plotting utilities for simulation data.
-- OPAL conversion utilities provide format-conversion helpers.
-:::
+- The [runOPAL](https://opalx-project.github.io/runOPAL.html) Python scripts allows you to run, automated, several OPAL jobs and obtain the data in a conceived way. Scans of multiple dimensions are easy to perform.                                                              
+- The [pyOPALTools.md](https://github.com/OPALX-project/pyOPALTools) Python package contains many tools for pre- and postprocessing, and analysing and plotting output data.                                                                                                      
+- The [Conversion Utilities](https://amas.pages.psi.ch/Tools/scripts/)
 
 ::: {.feature-opalx}
 For OPALX, these tools are still evolving; the most stable interfaces remain
