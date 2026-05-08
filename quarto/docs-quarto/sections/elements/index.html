@@ -660,7 +660,7 @@ usually has the form
 DR2: DRIFT, L=DR1-&gt;L, TYPE=DRF;</code></pre>
 <p>The length of <code>DR2</code> will always be equal to the length of <code>DR1</code>. The reference system for a drift space is a Cartesian coordinate system.</p>
 </section>
-<section class="level2 feature-opal" data-number="10.4" id="quadrupole">
+<section class="level2" data-number="10.4" id="quadrupole">
 <h2 class="anchored" data-anchor-id="quadrupole" data-number="10.4"><span class="header-section-number">10.4</span> Quadrupole</h2>
 <pre class="text"><code>label: QUADRUPOLE, TYPE=string, APERTURE=real-vector,
       L=real, K1=real, K1S=real;</code></pre>
@@ -725,7 +725,7 @@ normalized strength errors.
 <p>Example:</p>
 <pre class="text"><code>O3: OCTUPOLE, L=0.3, K3=0.543;</code></pre>
 </section>
-<section class="level2 feature-opal" data-number="10.7" id="general-multipole">
+<section class="level2" data-number="10.7" id="general-multipole">
 <h2 class="anchored" data-anchor-id="general-multipole" data-number="10.7"><span class="header-section-number">10.7</span> General Multipole</h2>
 <p>The legacy <code>MULTIPOLE</code> element defines a thick straight multipole of arbitrary order.</p>
 <pre class="text"><code>label: MULTIPOLE, TYPE=string, APERTURE=real-vector,
@@ -748,7 +748,7 @@ normalized strength-error arrays for the normal and skew coefficients.
 <p>Example:</p>
 <pre class="text"><code>M27: MULTIPOLE, L=1.0, ELEMEDGE=3.8, KN={0.0, 0.11};</code></pre>
 </section>
-<section class="level2 feature-opal" data-number="10.8" id="general-multipole-with-fringe-field-model">
+<section class="level2" data-number="10.8" id="general-multipole-with-fringe-field-model">
 <h2 class="anchored" data-anchor-id="general-multipole-with-fringe-field-model" data-number="10.8"><span class="header-section-number">10.8</span> General Multipole With Fringe Field Model</h2>
 <p><code>MULTIPOLET</code> is the extended cyclotron-side multipole element with explicit fringe fields. It can represent either a straight magnet or a curved magnet with a prescribed bend angle.</p>
 <pre class="text"><code>label: MULTIPOLET, L=real, TP=real-vector,
@@ -1068,7 +1068,7 @@ disable auto-phasing for this structure and use the user-supplied <code>LAG</cod
       FREQ=1498.956, LAG=248.0/360.0;</code></pre>
 </section>
 </section>
-<section class="level2 feature-opal" data-number="10.13" id="monitor">
+<section class="level2" data-number="10.13" id="monitor">
 <h2 class="anchored" data-anchor-id="monitor" data-number="10.13"><span class="header-section-number">10.13</span> Monitor</h2>
 <p>A <code>MONITOR</code> detects all particles passing it and writes the position, momentum, and time of impact into an H5hut file. It always has an effective length of 1 cm, consisting of a 0.5 cm drift, the monitor of zero length, and another 0.5 cm drift. This prevents OPAL-T from missing particles.</p>
 <p>The positions of the particles on the monitor are interpolated from the current position and momentum one step before they would pass the monitor.</p>
@@ -2461,7 +2461,7 @@ reserved for a future mirrored-bunch mode. The keyword is documented in the desi
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual-new\/");
+        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
