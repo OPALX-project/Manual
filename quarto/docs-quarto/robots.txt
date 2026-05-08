@@ -1,1 +1,1 @@
-Sitemap: https://opalx-project.github.io/Manual-new/sitemap.xml
+Sitemap: https://opalx-project.github.io/Manual/sitemap.xml

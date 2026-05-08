@@ -23,15 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-
-      - name: Install Asciidoctor
-        run: |
-          gem install asciidoctor
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
@@ -43,22 +34,10 @@ jobs:
         run: |
           quarto render ./quarto --to html
 
-      - name: Build AsciiDoc
-        run: |
-          declare revdate=$(git log -1 --date=format:'%Y-%m-%d' --format=%cd)
-          sed -i.bak "s/@REVDATE@/${revdate}/" Manual.asciidoc
-          ./scripts/fix_latexmath
-          mkdir -p build/figures
-          mkdir -p build/logos
-          cp Manual.adoc index.adoc
-          asciidoctor -r ./extensions/feature_blocks.rb -a stylesheet=./stylesheets/readthedocs.css -d book --destination-dir build index.adoc
-          cp -rv figures/* build/figures
-          cp -rv logos/* build/logos
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./quarto/docs-quarto
 
   deploy:
     needs: build

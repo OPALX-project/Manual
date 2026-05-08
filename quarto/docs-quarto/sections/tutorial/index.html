@@ -868,7 +868,7 @@ P[\mathrm{eV/c}]\,c = mc^2\sqrt{\left(\frac{P[\mathrm{eV}]}{mc^2} + 1\right)^2 -
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual-new\/");
+        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

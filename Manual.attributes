@@ -41,7 +41,7 @@
 :link_OPALX_issue_tracker:              {link_OPALX_repo}/issues
 
 :link_opal_pages:                       https://opalx-project.github.io
-:link_public_manual:                    {link_opal_pages}/Manual
+:link_public_manual:                    {link_opal_pages}/Manual-old
 :link_doxydoc:                          {link_opal_pages}/OPAL
 :link_pyopaltools:                      {link_org}/pyOPALTools
 :link_opal_references:                  {link_opal_pages}/OPAL-References

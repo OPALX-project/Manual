@@ -6,7 +6,7 @@ project:
 
 book:
   title: "The OPAL(X) Framework Documentation"
-  site-url: "https://opalx-project.github.io/Manual-new/"
+  site-url: "https://opalx-project.github.io/Manual/"
   repo-url: "https://github.com/OPALX-project/Manual"
   repo-branch: master
   repo-subdir: quarto

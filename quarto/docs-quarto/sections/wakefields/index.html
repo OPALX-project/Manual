@@ -742,7 +742,7 @@ f'_i = \frac{f_{i-2} - 8 f_{i-1} + 8 f_{i+1} - f_{i+2}}{h}.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual-new\/");
+        var filterRegex = new RegExp("https:\/\/opalx-project\.github\.io\/Manual\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
