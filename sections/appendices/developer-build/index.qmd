@@ -61,6 +61,7 @@ For `OPALX`, the linked developer resources are:
 
 ![OPALX overview showing the recommended reading order through lattice setup, parser/runtime flow, particle generation, and solver components.](opalx-overview.png){#fig-opalx-overview width="100%"}
 
+- [Latest regression and unit tests](https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html)
 - [Coding Style](https://opalx-project.github.io/For-Developers/CodingStyle.html)
 - [AMD (Lumi) Debug Guide](https://opalx-project.github.io/For-Developers/amd-lumi-debug.html)
 - [File Format Statistical Output](https://opalx-project.github.io/For-Developers/File-Format-for-stat-Storage.html)
