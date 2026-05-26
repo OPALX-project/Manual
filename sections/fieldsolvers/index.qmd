@@ -160,13 +160,13 @@ decomposition, boundary conditions, and optional solver-specific parameters.
 | `PARFFTZ` | Parallelized grid in `z` direction |
 | `NX` | Number of mesh points in `x` |
 | `NY` | Number of mesh points in `y` |
-| `NT` | Number of mesh points in `z` |
+| `NZ` | Number of mesh points in `z` |
 | `BCFFTX` | Boundary condition in `x` |
 | `BCFFTY` | Boundary condition in `y` |
 | `BCFFTZ` | Boundary condition in `z` |
 | `GREENSF` | Green-function choice for FFT-based solvers |
 | `BBOXINCR` | Bounding-box enlargement factor in percent |
-| `BINS` | Number of energy bins |
+| `BINS` | Name of a `BINNING` definition, or `NONE` for no binning |
 
 ### Fieldsolver type
 
