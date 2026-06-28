@@ -22,6 +22,6 @@ Quick links:
 - [Build and Developer Resources](sections/appendices/developer-build/index.qmd)
 - [Download OPAL Binary Packages](sections/appendices/developer-build/index.qmd#download-of-binaries-and-clone-of-repository)
 - [OPALX Physics Manual](https://opalx-project.github.io/PhysicsManual/)
-- [OPALX Unit and Regressiontests](https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/master/index.html)
+- [OPALX Unit and Regressiontests](https://amas.pages.psi.ch/opal-live-doc/opalx-regression-test/overview/index.html)
 
 Use the sidebar to navigate the chapters.
