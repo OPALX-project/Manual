@@ -1,6 +1,6 @@
 # Home {.unnumbered}
 
-Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Achim Gsell (PSI); Sriramkrishnan Muralikrishnan (JSC); Philippe Piot (NIU); Chris Rogers (RAL); Mohsen Sadr (PSI/MIT); Jochem Snuverink (PSI); Jonathan Thompson (RAL); Daniel Winklehner (MIT)
+Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Achim Gsell (PSI); Sriramkrishnan Muralikrishnan (JSC); Philippe Piot (NIU); Chris Rogers (RAL); Mohsen Sadr (PSI/MIT); Jochem Snuverink (PSI); Jonathan Thompson (RAL); Daniel Winklehner (MIT); Yuanjie Bi (Sun Yat-sen University); John Biddiscombe (CSCS/ETH)
 
 ```{=html}
 <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;align-items:center;justify-items:center;margin:1.5rem 0 2rem 0;">
@@ -10,6 +10,8 @@ Andreas Adelmann (PSI); Pedro Calvo (CIEMAT); Achim Gsell (PSI); Sriramkrishnan 
   <img src="logos/MIT-logo-with-spelling-design1-large-black-red.svg" alt="MIT" style="max-width:175px;max-height:72px;">
   <img src="logos/Logo_FZ_Juelich_1561x454_rgb_jpg.jpg" alt="FZ Juelich" style="max-width:165px;max-height:72px;">
   <img src="logos/NIU_horz_3Clr.png" alt="NIU" style="max-width:165px;max-height:72px;">
+  <img src="logos/sunyat.png" alt="NIU" style="max-width:165px;max-height:72px;">
+  <img src="logos/cscs.png" alt="NIU" style="max-width:165px;max-height:72px;">
 </div>
 ```
 
