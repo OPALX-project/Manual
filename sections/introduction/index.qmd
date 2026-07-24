@@ -15,7 +15,7 @@ OPAL-T can be used to model guns, injectors, ERLs, and complete XFELs.
 ## Project Resources and Getting Started
 
 The public project pages collect the current landing-page material for OPAL.
-The [OPAL manual](https://opalx-project.github.io/Manual/) is published online,
+The [OPAL manual](https://opalx-project.github.io/opal-manual/) is published online,
 and the OPAL mailing list can be joined via the
 [subscription page](https://psilists.ethz.ch/sympa/subscribe/opal). For a
 broader overview of current use cases and publications, see
