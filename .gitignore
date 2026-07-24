@@ -25,3 +25,4 @@ OPAL_Manual.html
 *.dvi
 *.tmp
 *.xref
+*.DS_Store
