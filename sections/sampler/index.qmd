@@ -2,21 +2,6 @@
 title: "Sampler"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::: {.feature-opalx}
-The sampler chapter below describes the legacy `OPAL` sampling workflow. It is
-not currently mirrored as a corresponding `OPALX` user feature.
-:::
-
-::: {.feature-opal}
 The sampler is a companion to the optimizer. Instead of evolving a
 multi-objective population, it generates samples of the design variables and
 runs the corresponding simulations. This is useful for surrogate-model
@@ -140,4 +125,3 @@ QUIT;
 The accompanying [samples.dat](examples/samples.dat) file provides named
 columns for the `FROMFILE`-based sampling source. The template file then uses
 placeholder variables such as `_nstep_` in the same way as the optimizer.
-:::

@@ -2,16 +2,6 @@
 title: "Field Output Commands"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-:::: {.feature-opal}
 There are two routines that can be used to write out the external field used in
 `OPAL-CYCL`:
 
@@ -20,16 +10,7 @@ There are two routines that can be used to write out the external field used in
   space-time; Cartesian and cylindrical grids are supported
 
 `DUMPEMFIELDS` is an extension of `DUMPFIELDS`.
-::::
 
-:::: {.feature-opalx}
-`OPALX` currently supports a single field-output command:
-
-- `DUMPEMFIELDS`: write out the external electromagnetic field on a 4D grid in
-  space-time; Cartesian and cylindrical grids are supported
-::::
-
-:::: {.feature-opal}
 ## `DUMPFIELDS` Command
 
 `DUMPFIELDS` writes the static magnetic field on a 3D Cartesian grid. The file
@@ -69,7 +50,6 @@ DUMPFIELDS, X_START=0., X_STEPS=101, DX=0.100,
 
 This writes a mid-plane map in the `x-y` plane, starting at `(0,0)` with
 `101 x 101` samples and `z = 0`.
-::::
 
 ## `DUMPEMFIELDS` Command
 
@@ -77,13 +57,12 @@ This writes a mid-plane map in the `x-y` plane, starting at `(0,0)` with
 systems are supported:
 
 - Cartesian: `(x, y, z, t)`
-- cylindrical about the `z` axis: `(r, phi, z, t)` in OPAL, `(r, phi, y, t)` in OPALX
+- cylindrical about the `z` axis: `(r, phi, z, t)`
 
 ### Cartesian Mode
 
 Cartesian mode is selected with `COORDINATE_SYSTEM = CARTESIAN`.
 
-:::: {.feature-opal}
 The file format is:
 
 ```text
@@ -102,28 +81,6 @@ The file format is:
 <x0> <y0> <z0> <t0> <Bx0> <By0> <Bz0> <Ex0> <Ey0> <Ez0>
 ...
 ```
-::::
-
-:::: {.feature-opalx}
-The file format is:
-
-```text
-<number of rows>
-1  x [m]
-2  y [m]
-3  z [m]
-4  t [ns]
-5  Bx [T]
-6  By [T]
-7  Bz [T]
-8  Ex [MV/m]
-9  Ey [MV/m]
-10 Ez [MV/m]
-0
-<x0> <y0> <z0> <t0> <Bx0> <By0> <Bz0> <Ex0> <Ey0> <Ez0>
-...
-```
-::::
 
 Attributes in Cartesian mode:
 
@@ -142,7 +99,6 @@ Attributes in Cartesian mode:
 
 Cylindrical mode is selected with `COORDINATE_SYSTEM = CYLINDRICAL`.
 
-:::: {.feature-opal}
 The file format is:
 
 ```text
@@ -161,28 +117,6 @@ The file format is:
 <r0> <phi0> <z0> <t0> <Br0> <Bphi0> <Bz0> <Er0> <Ephi0> <Ez0>
 ...
 ```
-::::
-
-:::: {.feature-opalx}
-The file format is:
-
-```text
-<number of rows>
-1 r [m]
-2 phi [deg]
-3 y [m]
-4 t [ns]
-5 Br   [T]
-6 Bphi [T]
-7 By   [T]
-8 Er   [MV/m]
-9 Ephi [MV/m]
-10 Ey  [MV/m]
-0
-<r0> <phi0> <y0> <t0> <Br0> <Bphi0> <By0> <Er0> <Ephi0> <Ey0>
-...
-```
-::::
 
 Attributes in cylindrical mode:
 
@@ -200,23 +134,10 @@ Attributes in cylindrical mode:
 | `DT` | time step size in `ns` |
 | `T_STEPS` | number of time steps; must be a positive integer |
 
-:::: {.feature-opal}
-Additional OPAL cylindrical attributes:
+Additional cylindrical attributes:
 
 | Attribute | Meaning |
 |---|---|
 | `Z_START` | start point in `z [m]` |
 | `DZ` | step size in `z [m]` |
 | `Z_STEPS` | number of `z` steps; must be a positive integer |
-::::
-
-:::: {.feature-opalx}
-Additional OPALX cylindrical attributes:
-
-| Attribute | Meaning |
-|---|---|
-| `Y_START` | start point in `y [m]` |
-| `DY` | step size in `y [m]` |
-| `Y_STEPS` | number of `y` steps; must be a positive integer |
-| `CYL_ORIGIN_X`, `CYL_ORIGIN_Y`, `CYL_ORIGIN_Z` | optional cylindrical-origin coordinates in `m`; defaults are `0` |
-::::

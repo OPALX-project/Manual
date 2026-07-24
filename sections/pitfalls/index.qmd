@@ -2,28 +2,10 @@
 title: "Pitfalls and Limitations"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
-
-::: {.feature-opal}
 A loose collection of pitfalls that may be difficult to avoid. In particular,
 new users may find these notes useful, but experienced users can also benefit
 from them.
-:::
 
-::: {.feature-opal}
 ## Hard Edge Fields
 
 Fields that feature steps, such as hard-edge fringe fields, are strongly
@@ -31,9 +13,7 @@ advised against. In sector magnets where particles have different path lengths
 inside the magnet, they are kicked one, two, or even more steps differently
 depending on position and momentum. Combined with large time steps, this can
 lead to visibly split beams and other artificial effects.
-:::
 
-::: {.feature-opal}
 ## Very Short Active Elements / Large Time Steps
 
 This is closely related to the hard-edge problem. It concerns elements that
@@ -41,4 +21,3 @@ model electromagnetic devices whose lengths are very short and comparable to
 the time step. In this case, a split of the bunch can be observed because some
 particles are kicked more often than others. The time step should then be
 reduced to mitigate the effect.
-:::

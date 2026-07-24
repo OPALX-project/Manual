@@ -2,21 +2,6 @@
 title: "Distribution Command"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
-
 The `DISTRIBUTION` command defines how particles are introduced into a
 simulation. A distribution has a name, a type, and a set of attributes that
 control its geometry, momentum spread, emission behavior, and optional
@@ -28,10 +13,8 @@ Name: DISTRIBUTION, TYPE = DISTRIBUTION_TYPE,
       ATTRIBUTE2 = ...;
 ```
 
-The supported distribution types depend on whether you are looking at the
-legacy OPAL manual path or the current OPALX implementation.
+The supported distribution types are:
 
-::: {.feature-opal}
 | Type | Description |
 |---|---|
 | `FROMFILE` | Read initial particle coordinates from a user-provided text file. |
@@ -42,220 +25,7 @@ legacy OPAL manual path or the current OPALX implementation.
 | `MULTIGAUSS` | Train of Gaussian pulses along the longitudinal direction. |
 | `GUNGAUSSFLATTOPTH` | Legacy shorthand for emitted `FLATTOP` with `ASTRA`. |
 | `ASTRAFLATTOPTH` | Legacy emitted flat-top photoinjector distribution. |
-:::
 
-::: {.feature-opalx}
-| Type | Description |
-|---|---|
-| `GAUSS` | Gaussian bunch with diagonal sigma specification and optional pairwise correlations. |
-| `MULTIVARIATEGAUSS` | Gaussian bunch defined from a full correlation array. |
-| `FLATTOP` | Uniform transverse disk with time-dependent emission profile. |
-| `FROMFILE` | Particle coordinates read from an external file. |
-:::
-
-::: {.feature-opalx}
-## Current OPALX Scope
-
-OPALX already has a native `DISTRIBUTION` implementation, but its scope is
-smaller than the legacy OPAL chapter. The currently supported parser-side
-distribution types are:
-
-- `GAUSS`
-- `MULTIVARIATEGAUSS`
-- `FLATTOP`
-- `FROMFILE`
-
-The implementation is split across three statements:
-
-- `DISTRIBUTION`: shape and sampling parameters
-- `EMISSIONSOURCE`: source position, momentum offset, start time, and emission model
-- `EMISSIONSOURCELIST`: list of sources attached to the beam
-
-### Injected vs emitted in OPALX
-
-The `DISTRIBUTION` statement still owns the boolean `EMITTED`. In addition, an
-`EMISSIONSOURCE` contributes:
-
-- `R0X`, `R0Y`, `R0Z`: source position offset
-- `P0X`, `P0Y`, `P0Z`: source momentum offset
-- `T0`: delayed start time
-- `EMISSIONMODEL`: currently `NONE` or `ASTRA`
-
-This differs from the legacy OPAL manual, where emission-model parameters are
-documented directly under `DISTRIBUTION`.
-
-### Common OPALX attributes
-
-The common OPALX distribution attributes currently exposed by the parser are:
-
-- `TYPE`
-- `FNAME`
-- `SIGMAX`, `SIGMAY`, `SIGMAZ`
-- `SIGMAPX`, `SIGMAPY`, `SIGMAPZ`
-- `CORR`
-- `CORRX`, `CORRY`, `CORRZ`, `CORRT`
-- `CUTOFFX`, `CUTOFFY`, `CUTOFFLONG`
-- `CUTOFFPX`, `CUTOFFPY`, `CUTOFFPZ`
-- `SIGMAT`
-- `TPULSEFWHM`, `TRISE`, `TFALL`
-- `FTOSCAMPLITUDE`, `FTOSCPERIODS`
-- `EMITTED`
-- `NPARTDIST`
-
-`NPARTDIST` is an OPALX-specific particle-count hook for the distribution
-itself. If it is not positive, the distribution does not enforce its own count.
-
-### `GAUSS`
-
-The OPALX `GAUSS` sampler supports:
-
-- diagonal RMS widths via `SIGMAX`, `SIGMAY`, `SIGMAZ`
-- diagonal RMS momentum widths via `SIGMAPX`, `SIGMAPY`, `SIGMAPZ`
-- cutoffs via `CUTOFFX`, `CUTOFFY`, `CUTOFFLONG`, `CUTOFFPX`, `CUTOFFPY`, `CUTOFFPZ`
-- pairwise transport-style correlations via `CORRX`, `CORRY`, `CORRZ`, `CORRT`
-
-In the current implementation, `GAUSS` only supports `EMISSIONMODEL=NONE`. If a
-different emission model is attached to the `EMISSIONSOURCE`, OPALX throws.
-
-Delayed one-shot emission through `T0 > 0` is supported.
-
-### `MULTIVARIATEGAUSS`
-
-`MULTIVARIATEGAUSS` is the full-covariance Gaussian path. It uses the `CORR`
-array instead of only the named pairwise correlation scalars and is the natural
-OPALX counterpart when a full coupled Gaussian specification is needed.
-
-### `FLATTOP`
-
-`FLATTOP` is the OPALX time-dependent emission sampler. It uses:
-
-- `SIGMAX`, `SIGMAY` for the transverse ellipse
-- `TPULSEFWHM`, `TRISE`, `TFALL` for the pulse shape
-- `CUTOFFLONG` for the rise/fall truncation
-- `FTOSCAMPLITUDE`, `FTOSCPERIODS` for oscillations on the flat top
-
-Its emitted particles are born on a transverse uniform disk and are advanced
-with per-particle fractional timesteps during emission.
-
-For `FLATTOP`, the supported emission models are the `EMISSIONSOURCE` models:
-
-- `NONE`
-- `ASTRA`
-
-### `FROMFILE`
-
-`FROMFILE` reads 6D particle coordinates from `FNAME`.
-The `FROMFILE` distribution loads the initial particle phase space from a plain ASCII file.
-This is useful when importing particles from another code or from a previous _OPALX_ run (e.g. after converting an HDF5 phase-space dump to ASCII).
-
-One important OPALX runtime rule is enforced in tracking:
-
-- `FROMFILE` carries absolute particle momenta from the file
-- therefore it must not be combined with `PC`, `ENERGY`, or `GAMMA` on `BEAM`
-
-For all other OPALX distribution types, the beam energy must be set on the `BEAM` command.
-
-#### Required file format
-
-The file *must* follow this structure (no variations allowed):
-
-* Line 1: A single integer: the number of particles `N`.
-* Line 2: A header line with column names (space- or tab-separated). The names define which column is position/momentum. Recognized names (case-insensitive): `x`, `y`, `z`, `px`, `py`, `pz` (or `px/momentumx`, `py/momentumy`, `pz/momentumz`).
-  The order of columns in the file may be arbitrary; the header is used to map them.
-* Line 3:  Data lines. Each non-empty, non-comment line must contain at least 6 numeric values in the order implied by the header. Blank lines and lines starting with `#` are skipped. There must be exactly `N` such data lines.
-
-#### Example file
-```text
-1000
-x px y py z pz
-0.1 0.2 0.3 0.4 0.5 0.6
-...
-```
-
-#### Usage
-
-Set the distribution type to `FROMFILE` and set the attribute `FNAME` to the path of the ASCII file (relative to the input file or absolute). E.g.:
-```text
-Dist1: DISTRIBUTION, TYPE=FROMFILE,
-    FNAME = "inputdistr.dat";
-```
-Make sure that the number of particles in the input distribution matches the number of expected particles in the `BEAM` element, otherwise you will get a warning.
-
-
-#### Getting a correctly formatted file
-
-The following minimal Python script converts the first phase space in an _OPAL_-format HDF5 file to the ASCII format required by the FROMFILE distribution
-(first line = N, second line = header, then data rows). It uses only the first step/snapshot in the HDF5 file.
-
-```python
-#!/usr/bin/env python3
-"""Convert the first phase space in an OPAL-format HDF5 file to the ASCII format
-required by the FROMFILE distribution (N, header, data rows)."""
-import h5py
-import numpy as np
-import sys
-
-def first_phase_space_h5_to_ascii(h5_filename, out_filename=None):
-    if out_filename is None:
-        out_filename = h5_filename.rsplit(".", 1)[0] + "_fromfile.txt"
-    with h5py.File(h5_filename, "r") as f:
-        # Use first group that looks like a step (e.g. "Step#0" or first key)
-        step_key = None
-        for k in sorted(f.keys()):
-            if isinstance(f[k], h5py.Group):
-                step_key = k
-                break
-        if step_key is None:
-            raise ValueError("No step group found in HDF5 file")
-        g = f[step_key]
-        required = ["x", "px", "y", "py", "z", "pz"]
-        for k in required:
-            if k not in g:
-                raise ValueError(f"Missing dataset '{k}' in {step_key}")
-        x = g["x"][()]
-        px = g["px"][()]
-        y = g["y"][()]
-        py = g["py"][()]
-        z = g["z"][()]
-        pz = g["pz"][()]
-        n = len(x)
-        assert all(len(a) == n for a in (px, y, py, z, pz))
-        # Column order in file: x px y py z pz (matches typical OPAL H5 layout)
-        data = np.column_stack([x, px, y, py, z, pz])
-        header_names = "x px y py z pz"
-    with open(out_filename, "w") as out:
-        out.write(f"{n}\n")
-        out.write(header_names + "\n")
-        for row in data:
-            out.write(" ".join(f"{v:.10e}" for v in row) + "\n")
-    print(f"Wrote {n} particles to {out_filename}")
-    return out_filename
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python h5_to_fromfile_ascii.py <file.h5> [output.txt]")
-        sys.exit(1)
-    h5_path = sys.argv[1]
-    out_path = sys.argv[2] if len(sys.argv) > 2 else None
-    first_phase_space_h5_to_ascii(h5_path, out_path)
-```
-*Usage:* `python h5_to_fromfile_ascii.py <file.h5> [output.txt]`. If `output.txt` is omitted, the output is written to `<basename>_fromfile.txt`.
-
-
-### Not currently part of OPALX `DISTRIBUTION`
-
-The following legacy distribution features are not part of the current OPALX
-distribution implementation documented from source here:
-
-- `BINOMIAL`
-- `GAUSSMATCHED`
-- `MULTIGAUSS`
-- `GUNGAUSSFLATTOPTH`
-- `ASTRAFLATTOPTH`
-- `NONEQUIL`
-:::
-
-::: {.feature-opal}
 ## Units
 
 Lengths are given in meters and times in seconds. Momentum input units depend on
@@ -284,9 +54,7 @@ $$
 $$
 
 The same relations apply to the `y` and `z` components.
-:::
 
-::: {.feature-opal}
 ## General Distribution Attributes
 
 The first major distinction is whether the distribution is injected at the
@@ -332,9 +100,7 @@ These attributes apply to all distribution types:
 | `OFFSETT` | `0.0` | Delay emission relative to the reference particle. |
 | `EMISSIONSTEPS` | `1` | Number of timesteps used during emission. |
 | `EMISSIONMODEL` | `NONE` | Emission model applied at the cathode. |
-:::
 
-::: {.feature-opal}
 ## Distribution Types
 
 ### `FROMFILE`
@@ -631,9 +397,7 @@ Dist: DISTRIBUTION, TYPE = MULTIGAUSS,
       NPEAKS = 4,
       EMITTED = FALSE;
 ```
-:::
 
-::: {.feature-opal}
 ## Emission Models
 
 Emission models apply only to emitted distributions and determine how thermal
@@ -703,9 +467,7 @@ Dist: DISTRIBUTION, TYPE = GAUSS,
       CATHTEMP = 325,
       EMITTED = TRUE;
 ```
-:::
 
-::: {.feature-opal}
 ## Distribution List
 
 The `RUN` command can accept either a single distribution or a list:
@@ -735,4 +497,3 @@ In a distribution list:
 
 `FROMFILE` is the special case: its particle count comes from the file rather
 than from `BEAM` and `WEIGHT`.
-:::

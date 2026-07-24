@@ -2,16 +2,6 @@
 title: "Benchmarks"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::::: {.feature-opal}
 ## `OPAL-T` Compared with TRANSPORT and TRACE 3D
 
 The first benchmark family compares `OPAL-T` with the envelope and transport
@@ -353,6 +343,3 @@ for the two space-charge implementations in a simple drift benchmark.
 ![Comparison of `OPAL` and `Impact-T` at 1 MHz.](figures/opal-impact-1MHz.png){#fig-benchmarks-impact width="100%"}
 
 ![Longitudinal detail of the `OPAL` and `Impact-T` comparison.](figures/opal-impact-1MHz-z.png){#fig-benchmarks-impact-z width="50%"}
-
-:::::
-

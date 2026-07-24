@@ -2,16 +2,6 @@
 title: "OPAL-T Field Maps"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::::: {.feature-opal}
 ## Introduction
 
 This appendix documents the field-map types accepted by `OPAL-T`. The legacy
@@ -494,5 +484,3 @@ The grid ordering is again `z` fastest, then `y`, then `x`.
 | 4 | `y_start y_end Ny` in cm |
 | 5 | `z_start z_end Nz` in cm |
 | remaining lines | `Ex Ey Ez Hx Hy Hz` |
-
-::::::

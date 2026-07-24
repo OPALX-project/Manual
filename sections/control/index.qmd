@@ -2,26 +2,9 @@
 title: "Control Statements"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
+This chapter collects the commands that control OPAL execution, global options,
+variables, file inclusion, and simple flow control inside the input language.
 
-This chapter collects the commands that control OPAL and OPALX execution,
-global options, variables, file inclusion, and simple flow control inside the
-input language.
-
-::: {.feature-opal}
 ## Getting Help
 
 ### `HELP` Command
@@ -41,9 +24,7 @@ HELP;
 HELP, NAME=FIELDSOLVER;
 HELP, FIELDSOLVER;
 ```
-:::
 
-::: {.feature-opal}
 ## `STOP` / `QUIT`
 
 ```text
@@ -54,9 +35,7 @@ QUIT;
 `STOP` and `QUIT` terminate execution of the current input stream. In a nested
 `CALL` file they return to the caller; in the main input file they end the run.
 Any statements after `STOP` or `QUIT` in the same file are ignored.
-:::
 
-::: {.feature-opal}
 ## `OPTION` Statement
 
 The `OPTION` command controls global execution behavior and a small set of
@@ -125,26 +104,10 @@ In practice, the most important ones are:
 `ENABLEHDF5`, `ENABLEVTK`
 : globally enable or disable HDF5 and VTK output support.
 
-### OPAL / OPALX differences
-
-::: {.feature-opal}
-In the legacy OPAL manual, the particle-deletion frequency option is named
+The particle-deletion frequency option is named
 `BOUNDPDESTROYFQ`. It controls the frequency for deleting particles that are
 too far away from the center of the beam in OPAL-cycl. Its default value is
 `10`.
-:::
-
-::: {.feature-opalx}
-In OPALX, the corresponding option name is `BOUNDPDESTROY`. It governs how
-many sigmas away particles are deleted. Its default value is `10`.
-
-OPALX also adds:
-
-`QM_MODE`
-: control how particle charge and mass are stored internally.
-  - `SINGLE`: one shared charge and mass per container
-  - `ATTRIBUTES`: per-particle charge and mass attributes
-:::
 
 ### Default settings
 
@@ -156,7 +119,7 @@ OPALX also adds:
 | `ASCIIDUMP` | `FALSE` |
 | `AUTOPHASE` | `6` |
 | `BEAMHALOBOUNDARY` | `0.0` |
-| `BOUNDPDESTROYFQ` / `BOUNDPDESTROY` | `10` |
+| `BOUNDPDESTROYFQ` | `10` |
 | `CLOTUNEONLY` | `FALSE` |
 | `COMPUTEPERCENTILES` | `FALSE` |
 | `CSRDUMP` | `FALSE` |
@@ -180,7 +143,6 @@ OPALX also adds:
 | `PSDUMPEACHTURN` | `FALSE` |
 | `PSDUMPFRAME` | `GLOBAL` |
 | `PSDUMPFREQ` | `10` |
-| `QM_MODE` | `SINGLE` (OPALX) |
 | `RECYCLEBLOCKS` | `0` |
 | `REBINFREQ` | `100` |
 | `REMOTEPARTDEL` | `0.0` |
@@ -195,9 +157,7 @@ OPALX also adds:
 | `TRACE` | `FALSE` |
 | `VERSION` | `none` |
 | `WARN` | `TRUE` |
-:::
 
-::: {.feature-opal}
 ## Parameter Statements
 
 ### Variable Definitions
@@ -332,9 +292,7 @@ REAL P1 = 5;
 REAL P2 = 7;
 VALUE, VALUE = {P1, P2, P1*P2-3};
 ```
-:::
 
-::: {.feature-opal}
 ## Miscellaneous Commands
 
 ### `ECHO` Statement
@@ -369,9 +327,7 @@ with `CALL`.
 
 `PSYSTEM` is the parallel counterpart to `SYSTEM`: the command is executed on
 all ranks instead of only one.
-:::
 
-::: {.feature-opal}
 ## `TITLE` Statement
 
 ```text
@@ -382,9 +338,7 @@ TITLE, STRING="";
 
 `TITLE` sets the page header used for subsequent output pages. Before the first
 `TITLE` statement, the page header is empty.
-:::
 
-::: {.feature-opal}
 ## File Handling
 
 ### `CALL` Statement
@@ -424,9 +378,7 @@ Typical uses are:
 Because it is implicit, it can also be a source of confusion when switching
 machines. For portable input decks, an explicit `CALL` is often easier to
 manage.
-:::
 
-::: {.feature-opal}
 ## `IF`: Conditional Execution
 
 The input language supports C-like conditional execution:
@@ -441,9 +393,7 @@ IF (logical) { statement-group; }
 
 Statements inside the block still end with semicolons, but the closing brace
 does not.
-:::
 
-::: {.feature-opal}
 ## `WHILE`: Repeated Execution
 
 Repeated execution is expressed as:
@@ -455,9 +405,7 @@ WHILE (logical) { statement-group; }
 
 The logical condition is re-evaluated on every iteration. Some variable inside
 the loop must change in a way that allows termination.
-:::
 
-::: {.feature-opal}
 ## `MACRO`: Macro Statements
 
 Macros provide subroutine-like token substitution.
@@ -500,4 +448,3 @@ REAL X = 2;
 REAL Y;
 KS(X,Y);
 ```
-:::

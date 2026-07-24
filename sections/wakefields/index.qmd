@@ -2,22 +2,6 @@
 title: "Wakefields"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::: {.feature-opalx}
-The wakefield chapter below documents the legacy `OPAL-T` wakefield interface.
-It should not be interpreted as a statement that the same user-facing command
-set is presently available in `OPALX`.
-:::
-
-::: {.feature-opal}
 `OPAL-T` provides methods to model coherent synchrotron radiation and
 short-range geometric wakefields.
 
@@ -195,4 +179,3 @@ and the smoothed profile is reconstructed by inverse transform.
 - `FIXEDFFTLOWPASS` keeps the `NFREQ` lowest modes.
 - `RELATIVEFFTLOWPASS` keeps modes above a threshold relative to the dominant
   coefficient.
-:::

@@ -2,36 +2,16 @@
 title: "Tutorial"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
-
-::: {.feature-opal}
 This chapter provides a jump start for some of the most commonly used OPAL
 features. The complete set of examples is still broader than this pilot, but
 the examples below are representative and can be run with modest computing
 resources. Most run on a single core, and several can still be used efficiently
  on a small number of cores.
-:::
 
-::: {.feature-opal}
 ## The Simulation Cycle
 
 ![The simulation cycle.](figures/gen-str.png){#fig-simulation-cycle width="30%"}
-:::
 
-::: {.feature-opal}
 ## Starting OPAL
 
 The application name is `opal`. When called without any argument, an
@@ -85,9 +65,7 @@ Example:
 ```sh
 opal input.in --restartfn input.h5 --restart -1 --info 3
 ```
-:::
 
-::: {.feature-opal}
 ## Auto-phase Example
 
 This is a partially complete example. First, OPAL must be set into
@@ -120,9 +98,7 @@ FINSS_RGUN
 ```
 
 The first entry defines the number of cavities in the simulation.
-:::
 
-::: {.feature-opal}
 ## Examples of Particle Accelerators and Beamlines
 
 ### Laser Emission, OBLA (SwissFEL Test Facility) 4 MeV Gun and Beamline
@@ -219,9 +195,7 @@ displacement from their radial position. OPAL-CYCL provides the `PDIS`
 attribute to model this.
 
 ![Reference orbit (left) and tune diagram (right) in the Ring cyclotron.](figures/ReferenceOrbit.png){#fig-ringref width="90%"}
-:::
 
-::: {.feature-opal}
 ## Translate Old to New Distribution Commands
 
 As of OPAL 1.2, the distribution command was changed significantly. Many of the
@@ -269,4 +243,3 @@ Then set:
 ```text
 INPUTMOUNITS = EVOVERC
 ```
-:::

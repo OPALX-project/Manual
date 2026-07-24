@@ -2,28 +2,8 @@
 title: "Elements"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
+This chapter documents the elements available in OPAL.
 
-This chapter is the first mixed migration chapter in the Quarto pilot. It
-combines:
-
-- legacy OPAL element semantics ported from the Asciidoctor manual
-- OPALX-native analytic element descriptions already written directly in Quarto
-
-::: {.feature-opal}
 ## Element Input Format
 
 All physical elements are defined by statements of the form
@@ -54,9 +34,7 @@ Example:
 ```text
 QF: QUADRUPOLE, L=1.8, K1=0.015832;
 ```
-:::
 
-::: {.feature-opal}
 ## Common Attributes for All Elements
 
 The following attributes are shared by all elements.
@@ -80,9 +58,7 @@ Dipoles are a special case because `GAP` and `HGAP` define their aperture
 instead of the generic `APERTURE` attribute.
 
 Default aperture for all other elements is a circle of `1E6 m`.
-:::
 
-::: {.feature-opal}
 ## Drift Spaces
 
 ```text
@@ -100,7 +76,6 @@ DR2: DRIFT, L=DR1->L, TYPE=DRF;
 
 The length of `DR2` will always be equal to the length of `DR1`. The reference
 system for a drift space is a Cartesian coordinate system.
-:::
 
 ## Quadrupole
 
@@ -131,7 +106,6 @@ Example:
 QP1: QUADRUPOLE, L=1.20, ELEMEDGE=-0.5265, K1=0.11;
 ```
 
-::: {.feature-opal}
 ## Sextupole
 
 ```text
@@ -158,9 +132,7 @@ Example:
 ```text
 S1: SEXTUPOLE, L=0.4, K2=0.00134;
 ```
-:::
 
-::: {.feature-opal}
 ## Octupole
 
 ```text
@@ -184,7 +156,6 @@ Example:
 ```text
 O3: OCTUPOLE, L=0.3, K3=0.543;
 ```
-:::
 
 ## General Multipole
 
@@ -216,7 +187,6 @@ Example:
 ```text
 M27: MULTIPOLE, L=1.0, ELEMEDGE=3.8, KN={0.0, 0.11};
 ```
-
 
 ## General Multipole With Fringe Field Model
 
@@ -266,55 +236,6 @@ M30: MULTIPOLET, L=1, RFRINGE=0.3, LFRINGE=0.2,
      ANGLE=PI/6, TP={2.0, 0.1}, VARRADIUS=TRUE, BBLENGTH=2;
 ```
 
-::: {.feature-opalx}
-## Laser
-
-```text
-label: LASER, L=real, ELEMEDGE=real,
-       WAVELENGTH=real, PULSEENERGY=real, PULSELENGTH=real,
-       WAISTX=real, WAISTY=real, DIR=real-vector, STOKES=real-vector;
-```
-
-The `LASER` element defines a passive analytic laser pulse for OPALX. At the
-current stage it is an input object with validated pulse parameters and lattice
-placement, but it does not yet apply laser-particle interaction physics by
-itself.
-
-The required attributes are:
-
-`WAVELENGTH`
-: Laser wavelength in `m`. Must be greater than zero.
-
-`PULSEENERGY`
-: Total pulse energy in `J`. Must be greater than zero.
-
-`PULSELENGTH`
-: Pulse duration in `s`. Must be greater than zero.
-
-`WAISTX`, `WAISTY`
-: Horizontal and vertical waist in `m`. Must be greater than zero.
-
-`DIR`
-: Propagation direction as a 3-component vector. OPALX normalizes it internally.
-
-`STOKES`
-: Optional normalized Stokes vector `{xi1, xi2, xi3}`. If omitted, `{0,0,0}` is used.
-
-Example:
-
-```text
-LASL: LASER,
-      WAVELENGTH = 1.03e-6,
-      PULSEENERGY = 1.0,
-      PULSELENGTH = 2.0e-12,
-      WAISTX = 5.0e-6,
-      WAISTY = 5.0e-6,
-      DIR = {0, 0, -1},
-      STOKES = {0, 0, 1};
-```
-:::
-
-::: {.feature-opal}
 ## Solenoid
 
 ```text
@@ -343,9 +264,7 @@ Example:
 SP1: SOLENOID, L=1.20, ELEMEDGE=-0.5265, KS=0.11,
      FMAPFN="1T1.T7";
 ```
-:::
 
-::: {.feature-opal}
 ## RF Cavities
 
 An `RFCAVITY` is the legacy standing-wave cavity element used in both beamline
@@ -448,8 +367,6 @@ rf0: RFCAVITY, VOLT=0.25796, FMAPFN="Cav1.dat",
      RMAX=3350.0, ANGLE=35.0, PDIS=0.0,
      GAPWIDTH=0.0, PHI0=phi01;
 ```
-::::
-::: {.feature-opal}
 ## Traveling Wave Structure
 
 A `TRAVELINGWAVE` structure is an OPAL-T element reconstructed from a
@@ -565,7 +482,6 @@ lrf0: TRAVELINGWAVE, L=0.0253, VOLT=14.750,
       FMAPFN="INLB-02-RAC.Ez", MODE=1/3,
       FREQ=1498.956, LAG=248.0/360.0;
 ```
-:::
 ## Monitor
 
 A `MONITOR` detects all particles passing it and writes the position, momentum,
@@ -582,7 +498,6 @@ position and momentum one step before they would pass the monitor.
 If `TYPE=TEMPORAL`, the data of all particles are written when the reference
 particle hits the monitor.
 
-::: {.feature-opal}
 ## Collimators
 
 Four collimator families exist in the legacy manual:
@@ -774,8 +689,6 @@ cma1: CCOLLIMATOR, XSTART=x1, XEND=x2, YSTART=y1, YEND=y2,
 cma2: CCOLLIMATOR, XSTART=x3, XEND=x4, YSTART=y3, YEND=y4,
       ZSTART=2, ZEND=100, WIDTH=10.0, PARTICLEMATTERINTERACTION=cmphys;
 ```
-:::
-::: {.feature-opal}
 ## Correctors
 
 Three types of correctors are available:
@@ -819,9 +732,7 @@ KHV: KICKER,  HKICK=0.001, VKICK=0.0005;
 
 Correctors do not change the reference trajectory. Otherwise they are
 implemented like `RBEND` with `E1 = 0` and without fringe fields.
-:::
 
-::: {.feature-opal}
 ## Bending Magnets
 
 Legacy OPAL supports four bend families:
@@ -1245,13 +1156,7 @@ Example:
 Dipole: SBEND3D, FMAPFN="90degree_Dipole_Magnet.out",
         LENGTH_UNITS=1000.0, FIELD_UNITS=-10.0;
 ```
-:::
 
-{{< include bend.qmd >}}
-
-{{< include multipole.qmd >}}
-
-::: {.feature-opal}
 ## Cyclotron
 
 ```text
@@ -1299,9 +1204,7 @@ ring: CYCLOTRON, TYPE=RING, CYHARMON=6, PHIINIT=0.0,
       RFFREQ=50.650, FMAPFN="s03av.nar",
       MAXZ=10, MINZ=-10, MINR=0, MAXR=2500;
 ```
-:::
 
-::: {.feature-opal}
 ## FFA Magnet
 
 OPAL provides two analytical FFA element families:
@@ -1368,8 +1271,6 @@ Important attributes are:
 
 Both FFA families are cyclotron-side restricted features intended for specialized
 fixed-field ring studies.
-::::
-::: {.feature-opal}
 ## Ring Definition
 
 ```text
@@ -1433,8 +1334,6 @@ drift gaps and overlapping placements.
 - `THETA_IN`: angle from the previous element to the displacement vector
 - `THETA_OUT`: angle from the displacement vector to the next element
 - `LENGTH`: offset length
-::::
-::: {.feature-opal}
 ## Source
 
 The `SOURCE` element is an OPAL-T gun-side helper element. Its first purpose is
@@ -1448,8 +1347,6 @@ backward into the source plane.
 
 Hits on the source are written to the element output file configured through
 `OUTFN`.
-:::
-::: {.feature-opal}
 ## Variable RF Cavities
 
 `VARIABLE_RF_CAVITY` extends the hard-edge cavity model by making frequency,
@@ -1514,8 +1411,6 @@ SOFT_RF_CAVITY: VARIABLE_RF_CAVITY_FRINGE_FIELD,
                 FREQUENCY_MODEL="RF_FREQUENCY", L=0.200, HEIGHT=0.200, WIDTH=2.000,
                 CENTRE_LENGTH=0.1, END_LENGTH=0.01, CAVITY_CENTRE=0.1, MAX_ORDER=4;
 ```
-::::
-::: {.feature-opal}
 ## Septum
 
 `SEPTUM` is a cyclotron-side extraction element. Particles hitting the septum
@@ -1537,8 +1432,6 @@ eec2: SEPTUM, XSTART=4100.0, XEND=4300.0,
 ```
 
 Lost particles are written to `OUTFN.h5` or ASCII when `ASCIIDUMP` is enabled.
-:::
-::: {.feature-opal}
 ## Probe
 
 `PROBE` records particles crossing a line-like detector while leaving them in
@@ -1562,8 +1455,6 @@ prob1: PROBE, XSTART=4166.16, XEND=4250.0,
 The hit particles are recorded in `OUTFN.h5` (or ASCII with `ASCIIDUMP`). The
 same crossings are also accumulated into the `.hist` and `.peaks` files that
 mimic measured probe histograms and their derived peak locations.
-:::
-::: {.feature-opal}
 ## Output Plane
 
 `OUTPUTPLANE` records particles crossing a plane in space. Unlike `PROBE`, the
@@ -1596,8 +1487,6 @@ outplane1: OUTPUTPLANE, PLACEMENT_STYLE=CENTRE_NORMAL,
            ALGORITHM=RK4, VERBOSE=1,
            REFERENCE_ALIGNMENT_PARTICLE=0, OUTFN="FileName.txt";
 ```
-:::
-::: {.feature-opal}
 ## Stripper
 
 `STRIPPER` is the cyclotron extraction element that changes particle charge and
@@ -1624,8 +1513,6 @@ prob1: STRIPPER, XSTART=4166.16, XEND=4250.0,
                  OPCHARGE=1, OPMASS=PMASS,
                  OPYIELD=2, STOP=FALSE;
 ```
-:::
-::: {.feature-opal}
 ## Degrader
 
 `DEGRADER` is an OPAL-T particle-matter interaction element with an elliptical
@@ -1645,9 +1532,7 @@ Example:
 DEGPHYS: PARTICLEMATTERINTERACTION, TYPE=SCATTERING, MATERIAL=GRAPHITE;
 DEG1: DEGRADER, L=0.15, ELEMEDGE=0.02, PARTICLEMATTERINTERACTION=DEGPHYS;
 ```
-:::
 
-::: {.feature-opal}
 ## Vacuum
 
 `VACUUM` represents interactions with residual gas and, when configured, the
@@ -1685,8 +1570,6 @@ vac: VACUUM, PRESSURE=1E-8, TEMPERATURE=300,
 
 The particles stripped in the residual gas are written to the configured output
 file regardless of the value of `STOP`.
-::::
-::: {.feature-opal}
 ## Undulator
 
 `UNDULATOR` couples the beamline to OPAL's full-wave FEL solver path. In the
@@ -1743,41 +1626,3 @@ UND: UNDULATOR, ELEMEDGE = 44.0e-2, K = 10.81, LAMBDA = 8.5e-2, NUMPERIODS = 10,
      MESHLENGTH = { 12e-3, 12e-3, 4e-3 }, MESHRESOLUTION = { 1e-5, 1e-5, 8e-6},
      FNAME = "wiggler_sims_July_2020/mithra_output.job";
 ```
-::::
-::: {.feature-opalx}
-## Beam-Beam Interaction Point
-
-```text
-label: BEAMBEAM, ELEMEDGE=real, L=real, VISUALIZE=bool;
-```
-
-`BEAMBEAM` is the OPALX interaction-window element for direct bunch-bunch
-interaction. As soon as the head of the tracked bunch enters the interaction
-window, OPALX switches from ordinary beamline tracking to the collision update
-for that region.
-
-`L`
-: physical length of the interaction window in `m`.
-
-`VISUALIZE`
-: enable ASCII interaction-window visualization and frame dumps.
-
-`COPY`
-: reserved for a future mirrored-bunch mode. The keyword is documented in the
-  design sketches but is not implemented in the current code path.
-
-Example of a straight interaction-point element with ASCII visualization:
-
-```text
-ip1: BEAMBEAM, ELEMEDGE=44.0, L=0.1, VISUALIZE=TRUE;
-```
-
-The legacy OPALX manual text also includes two forward-looking sketches:
-
-- a mirrored-bunch `COPY=TRUE` mode in which the second bunch would be created
-  by reflecting the tracked bunch about the interaction point,
-- a two-source example with explicitly counter-propagating bunches.
-
-These sketches are useful for intended usage, but they remain design-level notes
-rather than supported input paths in the current implementation.
-::::
