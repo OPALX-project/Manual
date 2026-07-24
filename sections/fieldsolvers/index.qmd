@@ -2,15 +2,6 @@
 title: "Field Solver"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
 Space-charge effects are attached to the tracking setup through a
 `FIELDSOLVER` command and then referenced from `RUN` as described in the
 tracking chapter. The standard model is fully three-dimensional. The field
@@ -75,7 +66,6 @@ particle-mesh deposition/interpolation choices used. The
 legacy manual reserves the detailed interpolation discussion for later
 revisions, but the solver is intended for ordinary 3D PIC workflows.
 
-::: {.feature-opal}
 ## Particle-Particle-Particle-Mesh (P3M) Solver
 
 The `P3M` solver splits the total electrostatic force into a short-range
@@ -141,67 +131,12 @@ In cyclotron multi-bunch mode the number of energy bins should be at least the
 number of neighboring bunches represented by `NNEIGHBB`. The companion control
 parameter `MINSTEPFORREBIN` defines after how many integration steps the energy
 bins are merged again.
-:::
 
 ## The `FIELDSOLVER` Command
 
 The `FIELDSOLVER` command selects the solver type, mesh resolution, domain
 decomposition, boundary conditions, and optional solver-specific parameters.
 
-::: {.feature-opalx}
-
-### Core command attributes
-
-| Attribute | Meaning |
-|---|---|
-| `TYPE` | Solver type: `NONE`, `FFT`, `OPEN`, `CG` |
-| `PARFFTX` | Parallelized grid in `x` direction |
-| `PARFFTY` | Parallelized grid in `y` direction |
-| `PARFFTZ` | Parallelized grid in `z` direction |
-| `NX` | Number of mesh points in `x` |
-| `NY` | Number of mesh points in `y` |
-| `NZ` | Number of mesh points in `z` |
-| `BCFFTX` | Boundary condition in `x` |
-| `BCFFTY` | Boundary condition in `y` |
-| `BCFFTZ` | Boundary condition in `z` |
-| `GREENSF` | Green-function choice for FFT-based solvers |
-| `BBOXINCR` | Bounding-box enlargement factor in percent |
-| `BINS` | Name of a `BINNING` definition, or `NONE` for no binning |
-
-### Fieldsolver type
-
-`TYPE` selects the actual solver backend. At present `FFT` based
-solver is the most stable solver.
-
-### Domain Decomposition
-
-`PARFFTX`, `PARFFTY`, and `PARFFTZ` decide whether the corresponding mesh
-direction is distributed over MPI processes.
-
-Default:
-
-- `PARFFTX = FALSE`
-- `PARFFTY = FALSE`
-- `PARFFTZ = TRUE`
-
-So the conventional decomposition is serial in `x` and `y`, parallel in `z`.
-
-### Number of Grid Points
-
-`NX`, `NY`, and `NT` define the rectangular mesh resolution in `x`, `y`, and
-`z`. These values determine both the field resolution and the FFT problem
-size, so they are the main tuning parameters for accuracy and cost.
-
-### Boundary Conditions
-
-Boundary conditions are specified independently per axis:
-
-- `BCFFTX`: `OPEN` (default), `DIRICHLET` or `PERIODIC`
-- `BCFFTY`: `OPEN` (default), `DIRICHLET` or `PERIODIC`
-- `BCFFTZ`: `OPEN`(default), `DIRICHLET` or `PERIODIC`
-:::
-
-::: {.feature-opal}
 ### Core command attributes
 
 | Attribute | Meaning |
@@ -270,7 +205,6 @@ Boundary conditions are specified independently per axis:
 
 Using `PERIODIC` in `z` is the standard way to model a DC beam rather than an
 isolated bunch.
-:::
 
 ### Greens Function
 
@@ -296,7 +230,6 @@ Default:
 This is often used to avoid an overly tight computational box around the
 bunch.
 
-::: {.feature-opal}
 ### Geometry
 
 `GEOMETRY` attaches a list of geometry objects that define the boundary of the
@@ -545,4 +478,3 @@ RUN, METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1, DISTRIBUTION=Dist1,
 ENDTRACK;
 STOP;
 ```
-:::

@@ -2,16 +2,6 @@
 title: "Multi Objective Optimization"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::: {.feature-opal}
 Optimization problems with more than one criterion are treated in `OPAL` as
 multi-objective optimization problems. The legacy implementation is based on
 `opt-pilot`, integrated into `OPAL`.
@@ -225,8 +215,3 @@ The optimizer writes generation data in JSON format and optionally in the
 legacy plain-text format. The Pareto-front data are written to
 `ParetoFront_.json`, while runtime logs such as `opt.trace.0`,
 `opt-progress.0`, and `pilot.trace.0` record job dispatch and validity.
-:::
-
-::: {.feature-opalx}
-This optimization feature is not yet available in `OPALX`.
-:::

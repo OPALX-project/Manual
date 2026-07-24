@@ -2,15 +2,6 @@
 title: "Energy Bins"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
 ## The `BINNING` Command
 
 The `BINNING` command controls how particles are grouped into energy bins for

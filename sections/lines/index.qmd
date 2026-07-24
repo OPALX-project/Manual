@@ -2,15 +2,6 @@
 title: "Beam Lines"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
 The accelerator to be studied is known to OPAL as a sequence of physical
 elements called a beam line. A beam line is built from simpler beam lines whose
 definitions can be nested to any level. A `LINE` command provides the formal

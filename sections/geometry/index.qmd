@@ -2,22 +2,6 @@
 title: "Geometry"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::: {.feature-opalx}
-The command described here is the legacy `OPAL` geometry interface. It should
-not be read as a statement that the same user-facing command set is currently
-mirrored in `OPALX`.
-:::
-
-::: {.feature-opal}
 At present the `GEOMETRY` command is treated as an experimental feature. It has
 two roles:
 
@@ -85,4 +69,3 @@ If the geometry should also define field-solver boundary conditions, it must be:
 
 In all cases where particle termination is desired, the boundary geometry must
 be named on `RUN` so it is loaded and applied during tracking.
-:::

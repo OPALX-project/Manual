@@ -1,0 +1,25 @@
+/* Keep the retired Quarto manual visually distinct from maintained documentation. */
+body::before {
+  content: "OLD Manual not maintained anymore";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-28deg);
+  z-index: 9999;
+  pointer-events: none;
+  color: rgba(150, 0, 0, 0.156);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(2rem, 5.6vw, 5.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media print {
+  body::before {
+    color: rgba(150, 0, 0, 0.216);
+  }
+}

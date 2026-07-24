@@ -2,27 +2,11 @@
 title: "Tracking"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
-
 The `TRACK` command enters tracking mode. In that mode the input accepts only
 tracking-related commands such as `RUN` and `ENDTRACK`. The command selects the
 lattice, the beam, timestep arrays, and stopping conditions that define a
 tracking block.
 
-::: {.feature-opal}
 ## Track Mode
 
 Before tracking starts, a `LINE` and a `BEAM` must be selected. The timestep
@@ -101,84 +85,7 @@ remaining segments.
 When switching from `RK4` or `LF2` to `MTS`, all step-count based options such
 as `PSDUMPFREQ`, `REPARTFREQ`, and `SPTDUMPFREQ` must be rescaled consistently
 with the chosen `MTSSUBSTEPS`.
-:::
 
-::: {.feature-opalx}
-## Current OPALX Track Mode
-
-The current OPALX `TRACK` implementation is narrower than the legacy OPAL
-manual path and is best described from source.
-
-The parser-side `TRACK` attributes currently implemented are:
-
-- `LINE`
-- `SOURCES`
-- `BEAM`
-- `BEAMS`
-- `DT`
-- `DTSCINIT`
-- `DTAU`
-- `T0`
-- `MAXSTEPS`
-- `ZSTART`
-- `ZSTOP`
-- `STEPSPERTURN`
-- `TIMEINTEGRATOR`
-- `MAP_ORDER`
-
-### Beam selection
-
-OPALX accepts either:
-
-- `BEAM=name` for a single beam
-- `BEAMS={name1, name2, ...}` for several beams
-
-`BEAMS` takes precedence over `BEAM`. The current code resolves the full beam
-list, but the tracker still uses only the first beam in that list as the active
-tracking beam while the broader multi-container path is being developed.
-
-Photon beams are explicitly rejected during tracking even though `BEAM,
-PARTICLE=PHOTON` can be defined for future work.
-
-### Sources
-
-`TRACK,SOURCES=...` is currently optional and ignored by the OPALX path. The
-effective emission sources are resolved from the selected beam via its attached
-`EMISSIONSOURCELIST`.
-
-### Time-step controls
-
-`DT`, `MAXSTEPS`, and `ZSTOP` are still array-valued and are normalized to a
-common segment count internally by repeating the last provided value.
-
-Additional OPALX-specific control knobs exposed on `TRACK` are:
-
-`DTSCINIT`
-: initial space-charge timestep for the adaptive path.
-
-`DTAU`
-: alternative accuracy-style control for space-charge stepping.
-
-`MAP_ORDER`
-: truncation order of maps for the thick tracker. The default is first order.
-
-### Default values
-
-The current OPALX defaults from code are:
-
-- `DT = {1e-12}`
-- `MAXSTEPS = {10}`
-- `ZSTART = 0.0`
-- `ZSTOP = {1e6}`
-- `STEPSPERTURN = 720`
-- `TIMEINTEGRATOR = RK4`
-- `DTSCINIT = 1e-12`
-- `DTAU = -1.0`
-- `T0 = 0.0`
-- `MAP_ORDER = 1`
-:::
-
-::: {.feature-opal}
 ## Track Particles
 
 The `RUN` command starts or continues the actual tracking. In the legacy OPAL
@@ -235,79 +142,7 @@ RUN, FILE="table", TURNS=5, MBMODE=AUTO, PARAMB=10.0,
      METHOD="CYCLOTRON-T", BEAM=beam1, FIELDSOLVER=Fs1,
      DISTRIBUTION=Dist1;
 ```
-:::
 
-::: {.feature-opalx}
-## Current OPALX `RUN`
-
-The current OPALX `RUN` command is much smaller than the legacy OPAL form.
-From source, the implemented attributes are:
-
-- `METHOD`
-- `TURNS`
-- `FIELDSOLVER`
-- `BOUNDARYGEOMETRY`
-- `TRACKBACK`
-
-The method set is currently a single predefined value:
-
-- `PARALLEL`
-
-So the minimal OPALX form is:
-
-```text
-TRACK, LINE=myLine, BEAM=myBeam, DT={1e-12}, MAXSTEPS={100};
-  RUN, METHOD=PARALLEL, FIELDSOLVER=myFieldSolver;
-ENDTRACK;
-```
-
-### Important OPALX differences from legacy OPAL
-
-`RUN` does not currently take:
-
-- `BEAM`
-- `DISTRIBUTION`
-- `MBMODE`
-- `PARAMB`
-- `PARALLEL-T`
-- `CYCLOTRON-T`
-
-Beam selection comes from the enclosing `TRACK` block through `BEAM` or
-`BEAMS`, not from `RUN`.
-
-Distribution setup is also no longer taken from `RUN`. Instead, it is resolved
-from the beam's `EMISSIONSOURCELIST`, which links each `EMISSIONSOURCE` to a
-named `DISTRIBUTION`.
-
-### Field solver and boundary geometry
-
-`FIELDSOLVER` is mandatory in OPALX `RUN`. If it is missing, tracking throws.
-
-`BOUNDARYGEOMETRY` is accepted and defaults to `NONE`.
-
-`TRACKBACK` is accepted and defaults to `FALSE`, but the current OPALX path is
-still centered on forward parallel tracking.
-
-### What `RUN` does internally
-
-At execution time, the current OPALX path:
-
-1. validates the input-file version
-2. resolves the field solver
-3. resolves the beam list from `TRACK`
-4. rejects photon beams
-5. resolves each beam's `EMISSIONSOURCELIST`
-6. computes per-beam particle allocations
-7. builds the particle containers and global processes
-8. constructs the distribution samplers for each emission source
-9. creates the `ParallelTracker`
-10. executes the tracking loop
-
-That is the key architectural difference from the legacy manual: `RUN` no
-longer directly owns the beam-distribution wiring.
-:::
-
-::: {.feature-opal}
 ## Leaving Track Mode
 
 Tracking mode ends when the parser sees:
@@ -317,12 +152,3 @@ ENDTRACK;
 ```
 
 After `ENDTRACK`, the input returns to ordinary command mode.
-:::
-
-::: {.feature-opalx}
-## Leaving Track Mode
-
-OPALX uses the same `ENDTRACK;` terminator. Internally, the command parser
-returns after the `RUN` block has been executed and the temporary `Track`
-communication object has been cleaned up.
-:::

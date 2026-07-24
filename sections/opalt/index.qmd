@@ -2,22 +2,6 @@
 title: "OPAL-T"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opal"> OPAL
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="opalx"> OPALX
-  </label>
-  <label class="feature-choice">
-    <input type="radio" name="feature-mode" value="both" checked> Both
-  </label>
-</div>
-```
-
-:::: {.feature-opal}
 ## Introduction
 
 `OPAL-T` is the beam-line and linac flavor of OPAL. It is a fully
@@ -295,10 +279,8 @@ The reference-particle path is written to
 
 ## Multiple Species
 
-The legacy manual notes support for workflows with more than one species or beam
-component sharing the same beamline. The exact setup depends on the beam and
-tracking commands and is one of the areas where the OPALX path diverges from
-the older `OPAL-T` control model.
+OPAL supports workflows with more than one species or beam component sharing
+the same beamline. The exact setup depends on the beam and tracking commands.
 
 ## Multipoles in Different Coordinate Systems
 
@@ -432,5 +414,3 @@ $$ {#eq-opalt-compact-straight}
 while for curved multipoles the operator is modified by the curvature terms
 through `h_s`. The point of this alternative derivation is to keep the geometry
 and fringe profile separated through `T(x)` and `S(s)`.
-
-::::

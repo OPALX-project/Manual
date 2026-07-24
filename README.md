@@ -1,18 +1,17 @@
-# OPAL(X) Manual
+# OPAL User Manual
 
-This repository now hosts the Quarto version of the OPAL(X) manual.
+This repository hosts the Quarto version of the historical OPAL manual. It is
+retained for users of old OPAL and is no longer maintained.
+
+The maintained successor manual is available at:
+
+https://amas.pages.psi.ch/opal/
 
 The published manual is deployed to:
 
-https://opalx-project.github.io/Manual/
+https://opalx-project.github.io/opal-manual/
 
-The legacy AsciiDoc manual has been moved to the separate repository:
-
-https://github.com/OPALX-project/Manual-old
-
-and is intended to publish at:
-
-https://opalx-project.github.io/Manual-old/
+The equivalent AsciiDoc manual is archived and not publicly available anymore.
 
 ## Build
 

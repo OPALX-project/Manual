@@ -5,9 +5,9 @@ project:
     - python3 scripts/postprocess_bibliography.py
 
 book:
-  title: "The OPAL(X) Framework Documentation"
-  site-url: "https://opalx-project.github.io/Manual/"
-  repo-url: "https://github.com/OPALX-project/Manual"
+  title: "The OPAL Framework Documentation"
+  site-url: "https://opalx-project.github.io/opal-manual/"
+  repo-url: "https://github.com/OPALX-project/opal-manual"
   repo-branch: master
   repo-actions: [edit, issue]
   chapters:
@@ -26,13 +26,11 @@ book:
     - sections/lines/index.qmd
     - sections/beam-command/index.qmd
     - sections/distribution/index.qmd
-    - sections/emission-source/index.qmd
     - sections/energybins/index.qmd
     - sections/fieldsolvers/index.qmd
     - sections/track/index.qmd
     - sections/wakefields/index.qmd
     - sections/geometry/index.qmd
-    - sections/collisions/index.qmd
     - sections/partmatter/index.qmd
     - sections/optimiser/index.qmd
     - sections/sampler/index.qmd
@@ -43,7 +41,6 @@ book:
     - sections/appendices/opal-madx/index.qmd
     - sections/appendices/autophase/index.qmd
     - sections/appendices/benchmarks/index.qmd
-    - sections/appendices/ics-design-note/index.qmd
     - sections/appendices/developer-build/index.qmd
 
 number-sections: true
@@ -58,6 +55,6 @@ format:
     number-sections: true
     html-math-method: mathjax
     theme: cosmo
+    css: styles/legacy-manual.css
     include-in-header:
-      - includes/feature-toggle.html
       - includes/landing-page.html

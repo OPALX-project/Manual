@@ -2,22 +2,6 @@
 title: "Physics Models Used in the Particle Matter Interaction Model"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-::: {.feature-opalx}
-The chapter below describes the legacy `OPAL` particle-matter interaction
-module. It is not currently mirrored as a like-for-like user interface in
-`OPALX`.
-:::
-
-::: {.feature-opal}
 Particle-matter interactions are defined through
 `PARTICLEMATTERINTERACTION`.
 
@@ -269,4 +253,3 @@ populations as well as the downstream energy and angular spectra.
 ![Passage of protons through the collimator.](figures/longcoll6.png){#fig-partmatter-protons-collimator width="80%"}
 
 ![Energy spectrum and scattering angle after the elliptic collimator.](figures/spectandscatter.png){#fig-partmatter-spectrum width="80%"}
-:::

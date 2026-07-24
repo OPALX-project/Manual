@@ -18,8 +18,6 @@ OPAL_Manual.html
 *.lot
 *.out
 *.pdf
-!sections/appendices/developer-build/opalx-overview.pdf
-!docs-quarto/sections/appendices/developer-build/opalx-overview.pdf
 *.tex
 *.toc
 *.xml

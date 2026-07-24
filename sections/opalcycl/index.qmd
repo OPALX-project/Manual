@@ -2,16 +2,6 @@
 title: "OPAL-CYCL"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
-:::: {.feature-opal}
 ## Introduction
 
 `OPAL-CYCL` is the cyclotron and FFA flavor of OPAL. It uses time as the
@@ -366,5 +356,3 @@ Source links preserved from the original manual:
 - [matchedDistribution.in](https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/RingCyclotronMatched.in)
 - [matched distribution regression test directory](https://github.com/OPALX-project/regression-tests/tree/master/RegressionTests/RingCyclotronMatched)
 - [matchedDistribution.output](https://github.com/OPALX-project/regression-tests/blob/master/RegressionTests/RingCyclotronMatched/reference/RingCyclotronMatched.out)
-
-::::

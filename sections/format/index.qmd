@@ -2,15 +2,6 @@
 title: "Command Format"
 ---
 
-```{=html}
-<div class="feature-toggle">
-  <span>View:</span>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opal"> OPAL</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="opalx"> OPALX</label>
-  <label class="feature-choice"><input type="radio" name="feature-mode" value="both" checked> Both</label>
-</div>
-```
-
 All flavors of OPAL use the same MAD-like input language. The dialect is close
 to MAD9; for older MAD8-style inputs a separate conversion guide exists.
 
